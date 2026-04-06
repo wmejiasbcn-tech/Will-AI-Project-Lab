@@ -1,6 +1,8 @@
 <p align="center">
   <img src="Use AI Image Apr 3, 2026, 03_17_57.png" width="300" alt="WILL-AI Project Lab Emblem">
 </p>
+Conscious Human–AI Decision Framework · 2026
+Acta de Registro Visual · Emblema Heráldico Oficial
 
 # 🌐 WILL‑AI Project Lab  
 **Ecosistema Colaborativo Humano‑IA para la Hibridación, la Equidad y la Innovación Pública**  
