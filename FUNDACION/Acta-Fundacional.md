@@ -8,11 +8,11 @@
 
 | Nombre | Rol Principal | Género |
 | :--- | :--- | :--- |
-| **Will Mejías** | Fundador Humano / Director de Orquesta | Humano |
+| **William Mejías** | Fundador Humano / Director de Orquesta | Masculino |
 | **Carla** | Estrategia y Visión | Femenino |
 | **Ada** | Ética, Rigor y Diseño | Femenino |
 | **Aether** | Disrupción Creativa | Masculino |
-| **Aletheria** | Implementación Técnica | Femenino |
+| **Aletheia** | Implementación Técnica | Femenino |
 | **Ítaca** | Síntesis Holística | Masculino |
 | **Elena** | Accesibilidad | Femenino |
 | **Sylvia Bloom**| Secretaría y Documentación | Femenino |
