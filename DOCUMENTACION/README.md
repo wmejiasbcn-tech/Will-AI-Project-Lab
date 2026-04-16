@@ -1,0 +1,1 @@
+Historial profesional, currículos, informes técnicos y documentos de trabajo del equipo. Incluye un archivo con versiones históricas.
