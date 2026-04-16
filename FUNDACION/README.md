@@ -1,0 +1,1 @@
+Documentación fundamental del Will-AI Project Lab, incluyendo misión, visión, valores y el documento matriz resumen.
