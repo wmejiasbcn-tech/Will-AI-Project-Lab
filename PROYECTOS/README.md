@@ -1,0 +1,1 @@
+Documentación relativa a los proyectos activos del Lab, como la WILL App y presentaciones estratégicas.
