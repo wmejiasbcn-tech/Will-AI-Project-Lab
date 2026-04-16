@@ -1,0 +1,1 @@
+Gestión administrativa, seguimiento de adquisiciones y transcripciones de coordinación.
