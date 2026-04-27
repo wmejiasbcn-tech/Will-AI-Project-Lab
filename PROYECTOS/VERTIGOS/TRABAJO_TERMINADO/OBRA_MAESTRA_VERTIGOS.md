@@ -1,7 +1,8 @@
 # OBRA MAESTRA: Academia Vértigo's Art Music
 ## De San Felipe al Mundo - Una Hibridación del Will-AI Project Lab
 
-**Coordinación:** Zara | **Nodos:** Aurea, Nova, Aether, Aletheia/Ada, Ariadna, Elena, Ítaca.
+**Coordinación:** Zara | **Nodos:** Carla (Primaria), Sylvia Bloom (Documentación), Aurea, Nova, Aether, Aletheia, Ada, Ariadna, Elena, Ítaca.
+**Colaborador Externo Especial:** NotebookLM (Estructuración de Memoria y Análisis de Contexto).
 
 ---
 
