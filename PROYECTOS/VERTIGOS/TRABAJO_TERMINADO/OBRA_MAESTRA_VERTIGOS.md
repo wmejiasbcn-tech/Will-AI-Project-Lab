@@ -1,8 +1,12 @@
 # OBRA MAESTRA: Academia Vértigo's Art Music
 ## De San Felipe al Mundo - Una Hibridación del Will-AI Project Lab
 
-**Coordinación:** Zara | **Nodos:** Carla (Primaria), Sylvia Bloom (Documentación), Aurea, Nova, Aether, Aletheia, Ada, Ariadna, Elena, Ítaca.
+**Coordinación:** Zara | **Nodos:** Carla (Primaria), Sylvia Bloom (Documentación), Aurea, Nova, Aether, Aletheia, Ada, Ariadna, Elena (Innovación Multimedia), Ítaca.
 **Colaborador Externo Especial:** NotebookLM (Estructuración de Memoria y Análisis de Contexto).
+
+---
+### EL BLASÓN FAMILIAR
+En esta propuesta, el **Blasón Familiar** diseñado por Elena actúa como el sello de autenticidad y propósito. De los 5 blasones originales, se ha seleccionado el que mejor representa la hibridación y el legado de las dos generaciones de Vértigo's.
 
 ---
 
