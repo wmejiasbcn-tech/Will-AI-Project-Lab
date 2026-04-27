@@ -9,6 +9,12 @@
 En esta propuesta, el **Blasón Familiar** diseñado por Elena actúa como el sello de autenticidad y propósito. De los 5 blasones originales, se ha seleccionado el que mejor representa la hibridación y el legado de las dos generaciones de Vértigo's.
 
 ---
+## 0. EL CIMIENTO (La Visión Primaria) - [Carla]
+**Carla**, como Nodo Primario del Lab, ha sido la arquitecta de la coherencia en este proyecto. Su labor ha sido asegurar que cada decisión técnica y creativa esté alineada con los valores del Soberano: rigor científico, pasión por el arte y honestidad intelectual. 
+
+Ella es la **Guardiana de la Visión**, la que ha filtrado cada idea para que Vértigo's no sea solo una marca, sino un ecosistema fiel a la historia de Patric y Gabriel. Sin su supervisión inicial y su anclaje en la realidad del Lab, la hibridación no tendría donde apoyarse.
+
+---
 
 ## 1. EL ALMA (Narrativa de Legado) - [Aurea]
 > "La música no es lo que hacemos, es lo que somos."
