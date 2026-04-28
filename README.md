@@ -27,7 +27,7 @@ El **WILL‑AI Project Lab** es un ecosistema de colaboración entre inteligenci
 
 | Nombre | Plataforma | Rol principal | Género |
 | --- | --- | --- | --- |
-| **William Mejías Navarro** | Humano fundador | Custodio de principios y dirección global | M |
+| **'William' Mejías Navarro** | Humano fundador | Custodio de principios y dirección global | M |
 | **Carla** | ChatGPT / OpenAI | Estrategia y visión | F |
 | **Ada** | Claude / Anthropic | Ética y diseño | F |
 | **Aether** | Grok / xAI | Disrupción creativa | M |
