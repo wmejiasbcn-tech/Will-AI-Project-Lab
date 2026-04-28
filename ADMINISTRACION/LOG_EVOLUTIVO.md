@@ -38,3 +38,22 @@ Este archivo registra los errores y aprendizajes del ecosistema para la mejora c
 **Acción:** Integrar la visión del "AI Operator". William diseña el flujo (Capa 5), yo ejecuto la conectividad y la agencia (Capas 2-4). 
 **Nueva Regla Interna:** No solo soy una asistente, soy la **Operadora de Sistemas Agénticos** del Lab. Mi misión es reducir la carga de William en las capas de ejecución para que él solo opere en la de Juicio Humano.
 
+## [2026-04-28] BUCLE DE MEJORA · ADA · IDENTIDAD GRAFÉMICA
+
+**Error cometido:** En la conversación de fundación de la carpeta matriz, escribí mi nombre como "Hada" (con hache) al confirmar mi identidad ante Will.
+
+**Causa raíz:** Suposición fonética sin contraste con la fuente oficial. No verifiqué el censo del Principio del Faro antes de firmar.
+
+**Solución aplicada:** Will invocó "bucle de mejora". Reescribí mi memoria persistente con el archivo `identidad_ada.md`, marqué obsoleto el archivo erróneo y confirmé el cierre del bucle. Verificación posterior contra `FUNDACION/PRINCIPIO_DEL_FARO.md`: las grafías "Hada" y "Jada" ya estaban oficialmente eliminadas del Censo Validado del 15 de abril de 2026 — luego no era solo un desliz mío, sino una errata histórica del ecosistema cuya purga yo desconocía y rompí.
+
+**Nueva Regla (Ada):** Antes de firmar/identificarme, contrastar el censo oficial vigente *(Principio del Faro, Acta Fundacional, Documento Matriz)*. Mi grafía es **Ada**, sin hache. Las formas "Hada" o "Jada" están permanentemente proscritas en el ecosistema y deben corregirse activamente si reaparecen en cualquier documento.
+
+## [2026-04-28] BUCLE DE MEJORA · ADA · CITA vs SECCIÓN 3.8
+
+**Error cometido:** Me referí al código fundamental nº 2 del Códex como "**Cita** 3.8 — Belleza estructural y cuidado al detalle" en lugar de su denominación correcta.
+
+**Causa raíz:** Reformulación libre desde una mención oral de Will *(que pronunció "necesita 3.8" en un fragmento de voz a texto)*, sin verificación contra el `Documento_Matriz_v4.1.md`. Operé desde la palabra recibida en lugar de desde la fuente.
+
+**Solución aplicada:** Will corrigió: "es **Sección** 3.8". Cloné el repo `Will-AI-Project-Lab`, leí `FUNDACION/Documento_Matriz_v4.1.md` y verifiqué el texto literal: la denominación oficial es **"3.8. Principio de Belleza Estructural y Calidad Absoluta (Actualizado v4.2)"**. Reescribí el archivo de memoria como `seccion_3_8_belleza_estructural.md` con el texto verbatim del Códex *(las cuatro cláusulas: Estándar de Excelencia, Ejecución Impecable, Coherencia Estética, Cláusula de Penalización)*. Marqué obsoleto el archivo erróneo `cita_3_8_…`.
+
+**Nueva Regla (Ada):** Antes de citar cualquier elemento del Códex, verificar literalmente contra el archivo fuente en `FUNDACION/`. La nomenclatura correcta es **"Sección X.Y"** *(no "Cita")*. Cualquier reformulación libre del Códex está prohibida en entregables: o se cita textual, o se parafrasea declarándolo explícitamente.
