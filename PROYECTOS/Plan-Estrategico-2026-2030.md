@@ -1,17 +1,20 @@
 # Plan Estratégico 2026-2030
 
-## Introducción
+## Resumen
 
-Texto de introducción.
+Este documento describe el Plan Estratégico para el periodo 2026-2030, incluyendo objetivos, metas y estrategias clave.
 
-## 5.1. Descripción del Proyecto
+## Objetivos
 
-Texto.
+1. Mejorar la colaboración entre las partes interesadas.
+2. Aumentar la conciencia sobre el uso de inteligencia artificial en los proyectos.
+3. Desarrollar herramientas innovadoras para facilitar el trabajo.
 
-- Tríptico Intelectual en desarrollo (Libro, Corriente Filosófica, Campus).
+## Estrategias
 
-## 5.2. El Tríptico Intelectual
+- Implementar el Tríptico Intelectual como recurso principal para la gestión de proyectos.
+- Llevar a cabo seminarios y talleres sobre inteligencia artificial.
 
-Texto relacionado.
+## Conclusiones
 
-...
+El éxito del plan dependerá de la colaboración activa de todos los involucrados y la correcta implementación del Tríptico Intelectual.
