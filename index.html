@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Will — SuperAgente · Portfolio & Live Agent</title>
+  <meta name="description" content="Portfolio y agente en vivo (Claude) — standalone HTML para publicar en GitHub Pages." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+  <style>
+    :root{--bg:#0b1020;--card:#0f1724;--accent:#7c5cff;--muted:#9aa4bf;--glass:rgba(255,255,255,0.03);--success:#22c55e}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+    body{background:linear-gradient(180deg,#030313 0%, #07102a 100%);color:#e6eef8;display:flex;align-items:flex-start;justify-content:center;padding:36px}
+    .wrap{width:1100px;max-width:96%;display:grid;grid-template-columns:420px 1fr;gap:20px}
+    .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+    header h1{margin:0;font-size:20px;letter-spacing:0.4px}
+    header p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .metrics{display:flex;gap:12px;margin-top:14px}
+    .metric{background:var(--glass);padding:12px;border-radius:10px;flex:1;text-align:center}
+    .metric b{display:block;font-size:18px}
+    .section{margin-top:14px}
+    .btn{background:linear-gradient(90deg,var(--accent),#3fb0ff);border:none;padding:10px 12px;border-radius:10px;color:#041027;font-weight:600;cursor:pointer}
+    .quick .btn{width:100%;text-align:left;padding:10px;margin-bottom:8px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+    .stack{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:13px}
+    .chat{display:flex;flex-direction:column;height:640px}
+    .messages{flex:1;overflow:auto;padding:14px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .input{display:flex;gap:8px;margin-top:10px}
+    textarea{flex:1;min-height:70px;border-radius:10px;padding:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    .row{display:flex;gap:8px}
+    .muted{color:var(--muted);font-size:13px}
+    .system-box{background:rgba(124,92,255,0.06);padding:10px;border-radius:8px;font-family:monospace;font-size:13px;color:#d8cffb}
+    .msg{padding:10px;border-radius:10px;margin-bottom:10px;max-width:78%}
+    .msg.user{background:linear-gradient(180deg,#0b2540,#052038);margin-left:auto}
+    .msg.agent{background:linear-gradient(180deg,#071a2a,#06203a)}
+    .footer-note{margin-top:12px;color:var(--muted);font-size:13px}
+    .danger{color:#ffb4b4}
+    a.inline{color:#9ad3ff}
+    .kbd{background:rgba(255,255,255,0.02);border-radius:6px;padding:2px 6px;font-size:12px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="left">
+      <header>
+        <h1>Will — SuperAgente</h1>
+        <p>Portfolio, protocolo 5 fases y agente en vivo integrado (Claude). Sube a GitHub Pages y listo.</p>
+      </header>
+
+      <div class="section metrics">
+        <div class="metric">
+          <b id="metric-uptime">—</b>
+          <span class="muted">Disponibilidad</span>
+        </div>
+        <div class="metric">
+          <b id="metric-llm">Claude</b>
+          <span class="muted">Motor</span>
+        </div>
+        <div class="metric">
+          <b id="metric-lat">—ms</b>
+          <span class="muted">Latencia</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0">Capacidades</h3>
+        <p class="muted">Asistencia conversacional, planificación en 5 fases, generación de prompts, análisis de casos de uso y ejecución de flujos.</p>
+        <div style="margin-top:10px" class="stack">
+          <span class="chip">Interacción multimodal</span>
+          <span class="chip">Protocolos de seguridad</span>
+          <span class="chip">Integraciones API</span>
+          <span class="chip">Fichas de conocimiento</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0">Protocolo 5 fases</h3>
+        <ol class="muted" style="padding-left:18px;margin-top:8px">
+          <li>Descubrir — definir objetivo y constraints</li>
+          <li>Planificar — pasos y recursos</li>
+          <li>Construir — generar artefactos</li>
+          <li>Validar — tests y revisiones</li>
+          <li>Desplegar — entregar y monitorizar</li>
+        </ol>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0">Casos de uso</h3>
+        <ul class="muted" style="margin-top:8px;padding-left:18px">
+          <li>Generación de contenido técnico</li>
+          <li>Automatización de tareas repetibles</li>
+          <li>Soporte a desarrolladores y QA</li>
+          <li>Prototipado de agentes conversacionales</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0">Stack tecnológico</h3>
+        <div class="stack" style="margin-top:8px">
+          <span class="chip">HTML / CSS / JS</span>
+          <span class="chip">Claude API</span>
+          <span class="chip">marked.js (CDN)</span>
+          <span class="chip">GitHub Pages</span>
+        </div>
+      </div>
+
+      <div class="section quick">
+        <h3 style="margin:0">Botones rápidos</h3>
+        <p class="muted">Clica para lanzar escenarios comunes al agente.</p>
+        <button class="btn" id="openChat">Abrir chat en vivo</button>
+        <div style="margin-top:8px">
+          <button class="btn quick-btn" data-preset="Analiza este repo y sugiere mejoras." style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">1 — Auditoría del repo</button>
+          <button class="btn quick-btn" data-preset="Genera un plan de despliegue de funcionalidades en 5 fases." style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">2 — Plan 5 fases</button>
+          <button class="btn quick-btn" data-preset="Redacta un README claro y conciso para este proyecto." style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">3 — Genera README</button>
+          <button class="btn quick-btn" data-preset="Escribe casos de prueba automatizados para las funciones críticas." style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">4 — Casos de prueba</button>
+          <button class="btn quick-btn" data-preset="Prepara un prompt de system para un superagente que siga el protocolo de 5 fases." style="background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)">5 — Prompt system</button>
+        </div>
+
+        <p class="footer-note">Advertencia: al usar tu API Key en el navegador, se expone públicamente. Úsalo sólo para pruebas y considera un proxy seguro para producción.</p>
+      </div>
+
+    </div>
+
+    <div class="card chat" id="right">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0">Chat en vivo</h2>
+          <p class="muted">Conecta tu clave de Claude y prueba escenarios en segundos.</p>
+        </div>
+        <div style="text-align:right">
+          <div class="muted">Endpoint</div>
+          <input id="apiEndpoint" style="width:260px;border-radius:8px;padding:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" placeholder="https://api.anthropic.com/v1/..." />
+          <div style="height:6px"></div>
+          <div class="muted">API Key</div>
+          <input id="apiKey" style="width:260px;border-radius:8px;padding:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" placeholder="Pega tu API key (localStorage)" />
+          <div style="height:8px"></div>
+          <button class="btn" id="saveCreds">Guardar</button>
+        </div>
+      </div>
+
+      <div class="messages" id="messages"></div>
+
+      <div class="input">
+        <textarea id="userInput" placeholder="Escribe tu pregunta o usa los botones rápidos..."></textarea>
+        <div style="display:flex;flex-direction:column">
+          <button class="btn" id="sendBtn">Enviar</button>
+          <button class="btn" id="clearBtn" style="margin-top:8px;background:transparent;color:var(--muted)">Limpiar</button>
+        </div>
+      </div>
+
+      <div style="margin-top:10px">
+        <h4 style="margin:0">System prompt (SuperAgente)</h4>
+        <div class="system-box" id="systemPrompt" contenteditable="true" spellcheck="false">Eres Will, un SuperAgente con protocoles de 5 fases: descubrir, planificar, construir, validar, desplegar. Actúa como asistente técnico, generador de prompts y arquitecto de soluciones. Siempre pide constraints y confirma supuestos. Responde con claridad, pasos accionables y checklist de validación. Si se requiere código, explica y sugiere tests.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    // Helper UI
+    const messagesEl = document.getElementById('messages');
+    const userInput = document.getElementById('userInput');
+    const sendBtn = document.getElementById('sendBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const apiKeyInput = document.getElementById('apiKey');
+    const apiEndpointInput = document.getElementById('apiEndpoint');
+    const saveCreds = document.getElementById('saveCreds');
+    const systemPromptEl = document.getElementById('systemPrompt');
+
+    // Load saved creds
+    apiKeyInput.value = localStorage.getItem('CLAUDE_API_KEY') || '';
+    apiEndpointInput.value = localStorage.getItem('CLAUDE_API_ENDPOINT') || '';
+
+    function addMessage(content, cls='agent'){
+      const div = document.createElement('div');
+      div.className = 'msg ' + (cls==='user'?'user':'agent');
+      // render markdown safely via marked
+      div.innerHTML = marked.parseInline(content.replace(/\n/g,'  \n'));
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function addAgent(content){
+      const div = document.createElement('div');
+      div.className = 'msg agent';
+      // try to render as markdown block
+      div.innerHTML = marked.parse(content);
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function addUser(content){
+      const div = document.createElement('div');
+      div.className = 'msg user';
+      div.textContent = content;
+      messagesEl.appendChild(div);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    sendBtn.onclick = () => {
+      const text = userInput.value.trim();
+      if(!text) return;
+      sendMessage(text);
+    };
+
+    clearBtn.onclick = () => { messagesEl.innerHTML = ''; };
+
+    saveCreds.onclick = () => {
+      localStorage.setItem('CLAUDE_API_KEY', apiKeyInput.value.trim());
+      localStorage.setItem('CLAUDE_API_ENDPOINT', apiEndpointInput.value.trim());
+      alert('Guardado en localStorage. Recuerda: la clave se expone en el navegador. Usa sólo para pruebas.');
+    };
+
+    // Quick buttons
+    document.querySelectorAll('.quick-btn').forEach(b => b.addEventListener('click', e => {
+      const p = e.currentTarget.getAttribute('data-preset');
+      userInput.value = p;
+      sendMessage(p);
+    }));
+
+    document.getElementById('openChat').addEventListener('click', ()=>{document.getElementById('userInput').focus();});
+
+    async function sendMessage(text){
+      const endpoint = (apiEndpointInput.value || localStorage.getItem('CLAUDE_API_ENDPOINT') || '').trim();
+      const key = (apiKeyInput.value || localStorage.getItem('CLAUDE_API_KEY') || '').trim();
+      if(!endpoint || !key){
+        alert('Introduce tu endpoint y API key de Claude en la esquina superior derecha.');
+        return;
+      }
+
+      addUser(text);
+      addAgent('...pensando');
+
+      const sys = systemPromptEl.innerText.trim();
+
+      // Build a flexible payload that many Claude endpoints accept; users may need to adapt to their specific endpoint.
+      const payload = {
+        model: 'claude-2',
+        messages: [
+          {role: 'system', content: sys},
+          {role: 'user', content: text}
+        ],
+        // safety: limit tokens for in-browser demo
+        max_tokens: 800
+      };
+
+      const start = Date.now();
+      try{
+        const resp = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + key
+          },
+          body: JSON.stringify(payload)
+        });
+        const elapsed = Date.now() - start;
+        document.getElementById('metric-lat').textContent = elapsed + 'ms';
+        // robust parsing of possible response shapes
+        let txt = '';
+        const ct = resp.headers.get('content-type') || '';
+        if(ct.includes('application/json')){
+          const j = await resp.json();
+          // common shapes: {completion, output_text, choices, message, assistant_reply}
+          if(j.output_text) txt = j.output_text;
+          else if(j.completion) txt = j.completion;
+          else if(j.message && j.message.content) txt = j.message.content;
+          else if(j.choices && j.choices[0]){
+            if(j.choices[0].message && j.choices[0].message.content) txt = j.choices[0].message.content;
+            else if(j.choices[0].text) txt = j.choices[0].text;
+          } else if(j.response) txt = JSON.stringify(j.response, null, 2);
+          else txt = JSON.stringify(j, null, 2);
+        } else {
+          txt = await resp.text();
+        }
+
+        // remove the temporary "...pensando" message
+        const temp = Array.from(messagesEl.querySelectorAll('.msg.agent')).find(n => n.textContent.includes('pensando'));
+        if(temp) temp.remove();
+
+        addAgent(txt || '(respuesta vacía)');
+        // uptime metric mock
+        document.getElementById('metric-uptime').textContent = 'Online';
+      }catch(err){
+        const temp = Array.from(messagesEl.querySelectorAll('.msg.agent')).find(n => n.textContent.includes('pensando'));
+        if(temp) temp.remove();
+        addAgent('Error conectando: ' + err.message + '\n\nRevisa endpoint, clave y CORS.');
+        document.getElementById('metric-uptime').textContent = 'Error';
+      }
+    }
+
+    // Initialize sample welcome
+    addAgent('# Bienvenido a Will — SuperAgente\n\nUsa los botones rápidos o escribe tu pregunta. Pega tu endpoint y API key en la esquina superior derecha y pulsa Guardar.');
+
+    // small accessibility: enter to send
+    userInput.addEventListener('keydown', (e)=>{ if(e.key==='Enter' && (e.metaKey || e.ctrlKey)) { sendBtn.click(); } });
+  </script>
+</body>
+</html>
