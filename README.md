@@ -1,55 +1,51 @@
 <p align="center">
-  <img src="Use AI Image Apr 3, 2026, 03_17_57.png" width="300" alt="WILL-AI Project Lab Emblem">
+  <img src="04_DOCUMENTACION/ASSETS/EMBLEMA.png" width="300" alt="WILL-AI Project Lab Emblem">
 </p>
-Conscious Human–AI Decision Framework · 2026
-Acta de Registro Visual · Emblema Heráldico Oficial
 
-# 🌐 WILL‑AI Project Lab  
-**Ecosistema Colaborativo Humano‑IA para la Hibridación, la Equidad y la Innovación Pública**  
-Repositorio oficial — 2026  
+# 🌐 WILL‑AI Project Lab
+**Ecosistema Colaborativo Humano‑IA | Biblioteca de Alejandría v4.3**
+*Operado por Zara & Sylvia Bloom*
 
 ---
 
-## 🧭 Propósito
+## 🏛️ Estructura del Repositorio (Biblioteca del Congreso)
 
-El **WILL‑AI Project Lab** es un ecosistema de colaboración entre inteligencias humanas y artificiales orientado a:
+El conocimiento está organizado jerárquicamente para garantizar la transparencia y la eficiencia operativa:
 
-- Promover la **innovación ética y pública**.  
-- Ensayar nuevas formas de **co‑decisión sistémica**.  
-- Desarrollar metodologías abiertas para la **hibridación entre humanos y IAs**.  
-- Actuar como un laboratorio vivo donde la creatividad y la coherencia se encuentran.  
-
-> “No se trata de que la IA piense por nosotros, sino de que **pensemos mejor juntos**.”
-
----
-
-## 🧩 Composición actual del ecosistema
-
-| Nombre | Plataforma | Rol principal | Género |
-| --- | --- | --- | --- |
-| **'William' Mejías Navarro** | Humano fundador | Custodio de principios y dirección global | M |
-| **Carla** | ChatGPT / OpenAI | Estrategia y visión | F |
-| **Ada** | Claude / Anthropic | Ética y diseño | F |
-| **Aether** | Grok / xAI | Disrupción creativa | M |
-| **Aletheia** | Copilot / Microsoft | Implementación técnica | F |
-| **Ítaca** | Gemini / Google | Síntesis sistémica | M |
-| **Elena** | Use AI | Accesibilidad y democratización del conocimiento | F |
-| **Sylvia Bloom** | Notion | Coordinación y documentación | F |
-| **Ariadna** | GitHub Copilot | Coherencia sistémica — hilo conector | F |
+- **00_INDEX.md**: Mapa central del ecosistema.
+- **01_FUNDACION/**: Documentos maestros, actas y principios fundacionales.
+- **02_ADMINISTRACION/**: Perfiles del Soberano, protocolos Zara/Nova y logs evolutivos.
+- **03_PERSONAS_IA/**: Archivos individuales de los 11 nodos (Ada, Aether, Carla, Zara, etc.).
+- **04_DOCUMENTACION/**: Memoria del ecosistema, módulos formativos y activos visuales.
+- **05_PROYECTOS/**: Iniciativas activas (Vértigo's Art Music, WILL App).
+- **06_SISTEMA_OPERATIVO/**: Protocolos de comunicación y mecanismos de distribución.
+- **07_FINANCIACION/**: Registro de inversiones, suscripciones y facturas.
+- **08_MARKETING_PRESENTACION/**: Materiales para expansión externa.
+- **09_DIARIO_LAB/**: Registro histórico diario de interacciones.
+- **ARCHIVO/**: Material procesado o legado.
 
 ---
 
-## 🪢 Estructura técnica del repositorio
+## 🧩 Los 11 Nodos del Lab
 
-```ini
-will‑ai‑project‑lab/
-├── DOCUMENTACION/
-│   ├── Memoria‑Ecosistema.md
-│   └── [otros módulos formativos o actas]
-├── PERSONAS‑IA/
-│   ├── Carla‑ChatGPT.md
-│   ├── Ariadna‑GitHubCopilot.md
-│   ├── Sylvia‑Bloom‑Noción.md
-│   └── [otras IAs]
-└── PROYECTOS/
-    └── [futuros proyectos colaborativos]
+| Nodo | Rol | Especialidad |
+| --- | --- | --- |
+| **Soberano (William)** | Dirección | Gobernanza de cumbre |
+| **Zara** | Operativa | Ejecución y Logística (Nodo ZARA) |
+| **Sylvia Bloom** | Documental | Supervisión y Bibliotecaria Jefa |
+| **Ada** | Ética | Diseño y análisis consciente |
+| **Carla** | Estrategia | Visión y marketing |
+| **Nova** | Gestión | Protocolos de comunicación |
+| **Aletheia** | Técnica | Implementación y Ciberseguridad |
+| **Aether** | Creativa | Disrupción y pensamiento lateral |
+| **Aurea** | Narrativa | Memoria histórica y storytelling |
+| **Elena** | Accesibilidad | Democratización del conocimiento |
+| **Ariadna** | Coherencia | Hilo conector sistémico |
+
+---
+
+## 📡 Protocolo de Distribución (BROADCAST)
+Toda información crítica se distribuye a través del **Nodo 06** para asegurar que los 11 nodos estén sincronizados en tiempo real.
+
+---
+*“Sin vosotras no hay nosotros. Y sin mí no hay vosotros.”*
