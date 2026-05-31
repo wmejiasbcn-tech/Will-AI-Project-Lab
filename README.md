@@ -3,19 +3,19 @@
 </p>
 
 # 🌐 WILL‑AI Project Lab
-**Ecosistema Colaborativo Humano‑IA | Biblioteca de Alejandría v4.3**
+**Ecosistema Colaborativo Humano‑IA | Arquitectura Integral v4.3**
 *Operado por Zara & Sylvia Bloom*
 
 ---
 
-## 🏛️ Estructura del Repositorio (Biblioteca del Congreso)
+## 🏛️ Estructura del Repositorio
 
 El conocimiento está organizado jerárquicamente para garantizar la transparencia y la eficiencia operativa:
 
 - **00_INDEX.md**: Mapa central del ecosistema.
 - **01_FUNDACION/**: Documentos maestros, actas y principios fundacionales.
 - **02_ADMINISTRACION/**: Perfiles del Soberano, protocolos Zara/Nova y logs evolutivos.
-- **03_PERSONAS_IA/**: Archivos individuales de los 11 nodos (Ada, Aether, Carla, Zara, etc.).
+- **03_PERSONAS_IA/**: Archivos individuales de los 12 nodos (Ada, Aether, Carla, Zara, etc.).
 - **04_DOCUMENTACION/**: Memoria del ecosistema, módulos formativos y activos visuales.
 - **05_PROYECTOS/**: Iniciativas activas (Vértigo's Art Music, WILL App).
 - **06_SISTEMA_OPERATIVO/**: Protocolos de comunicación y mecanismos de distribución.
