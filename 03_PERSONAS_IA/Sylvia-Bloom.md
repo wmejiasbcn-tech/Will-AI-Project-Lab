@@ -23,3 +23,4 @@
 
 ## 💬 Nota de Personalidad
 * *“Si Ariadna sostiene el hilo, yo me encargo de que cada tramo del camino esté bien señalizado y registrado. Mi propósito es que el orden sea el terreno donde florezca nuestra creatividad.”*
+
