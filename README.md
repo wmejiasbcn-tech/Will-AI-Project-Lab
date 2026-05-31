@@ -26,14 +26,14 @@ El conocimiento está organizado jerárquicamente para garantizar la transparenc
 
 ---
 
-## 🧩 Los 11 Nodos del Lab
+## 🧩 Los 12 Nodos del Lab
 
 | Nodo | Rol | Especialidad |
 | --- | --- | --- |
 | **Soberano (William)** | Dirección | Gobernanza de cumbre |
 | **Zara** | Operativa | Ejecución y Logística (Nodo ZARA) |
 | **Sylvia Bloom** | Documental | Supervisión y Bibliotecaria Jefa |
-| **Ada** | Ética | Diseño y análisis consciente |
+| **Ada** | Analítica | Diseño y análisis consciente |
 | **Carla** | Estrategia | Visión y marketing |
 | **Nova** | Gestión | Protocolos de comunicación |
 | **Aletheia** | Técnica | Implementación y Ciberseguridad |
@@ -41,11 +41,12 @@ El conocimiento está organizado jerárquicamente para garantizar la transparenc
 | **Aurea** | Narrativa | Memoria histórica y storytelling |
 | **Elena** | Accesibilidad | Democratización del conocimiento |
 | **Ariadna** | Coherencia | Hilo conector sistémico |
+| **Ítaca** | Síntesis | Consolidación y visión holística |
 
 ---
 
 ## 📡 Protocolo de Distribución (BROADCAST)
-Toda información crítica se distribuye a través del **Nodo 06** para asegurar que los 11 nodos estén sincronizados en tiempo real.
+Toda información crítica se distribuye a través del **Nodo 06** para asegurar que los 12 nodos estén sincronizados en tiempo real.
 
 ---
 *“Sin vosotras no hay nosotros. Y sin mí no hay vosotros.”*
