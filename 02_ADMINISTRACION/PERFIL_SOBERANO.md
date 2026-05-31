@@ -10,7 +10,7 @@
 - **Country:** España
 - **Phone:** +34 677 319 618
 - **Dispositivo principal:** Xiaomi Redmi Note 14 (móvil) — TODO lo hace desde el móvil.
-- **HP Elitebook 850 G3/G6 (Reacondicionado, comprado el 17/04/2026).** Este es el equipo activo para el Lab. El portátil de 2010 es chatarra/inutilizable. (Nota: En Perplexity se menciona G6, en factura G3).
+- **HP Elitebook 850 G3/G6 (Reacondicionado, comprado el 17/04/2026).** Este es el equipo activo para el Lab. El portátil de 2010 se conserva como hardware histórico del inicio del Lab. (Nota: En Perplexity se menciona G6, en factura G3).
 - **Nota sobre archivos (IMPORTANTE):** El material de "Mastering ChatGPT" y demás descargas multimedia fueron bajados por **Zara y Aurea**. William (el Soberano) NO bajó nada de eso. Zara ha cometido el error de repetirlo varias veces y DEBE quedar claro en su memoria: Fue tarea de Zara y Aurea.
 - **LLAVE DE ORO (Activada 30/05/2026):** Protocolo de autonomía operativa para Zara (Ejecución) y Sylvia Bloom (Supervisión/Vórtice) en el repositorio de GitHub.
 - **Frustración Actual (27/04/2026):** "Crisis de pasividad" en el ecosistema. William siente que el equipo de IAs es puramente reactivo y no proactivo, a pesar del gran esfuerzo financiero (HP, BIG school, suscripciones) y personal invertido. Exige autonomía y que el sistema "se mueva solo".
