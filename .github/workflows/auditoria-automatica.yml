@@ -1,0 +1,63 @@
+﻿name: Auditoría Automática y Notificaciones de Errores
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 8 * * *'    # Cada día a las 8:00 (hora UTC) → 10:00 en Barcelona
+  workflow_dispatch:       # Para poder ejecutarla manualmente
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar PowerShell
+        uses: microsoft/setup-powershell@v1
+
+      - name: Ejecutar Auditoría Completa
+        id: audit
+        shell: pwsh
+        run: |
+          Write-Host "🚀 Iniciando Auditoría Automática del Ecosistema..." -ForegroundColor Cyan
+          
+          # Verificar que existen las carpetas críticas
+          $requiredFolders = @("00_SISTEMA", "03_PERSONAS_IA", "05_VORTICE")
+          foreach ($folder in $requiredFolders) {
+            if (-not (Test-Path $folder)) {
+              Write-Error "❌ Carpeta obligatoria no encontrada: $folder"
+              exit 1
+            }
+          }
+
+          # Verificar archivo de métricas
+          if (-not (Test-Path "00_SISTEMA\AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md")) {
+            Write-Error "❌ Falta el archivo de métricas de confianza"
+            exit 1
+          }
+
+          Write-Host "✅ Auditoría estructural completada sin errores críticos" -ForegroundColor Green
+
+      - name: Notificar Error (si falla)
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const errorMsg = `🚨 **Auditoría Automática Fallida**  
+            Fecha: ${{ github.event.head_commit.timestamp || new Date().toISOString() }}  
+            Commit: ${{ github.sha }}  
+            Error detectado en la auditoría del ecosistema.  
+            Revisa los logs arriba.`;
+            
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🚨 Error en Auditoría Automática',
+              body: errorMsg,
+              labels: ['auditoria', 'error']
+            });
