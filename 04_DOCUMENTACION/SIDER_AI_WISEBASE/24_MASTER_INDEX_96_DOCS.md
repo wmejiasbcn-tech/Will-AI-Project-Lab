@@ -1,57 +1,48 @@
-# MASTER INDEX: Los 96 Documentos del Lab (Clasificación Zara)
+# MASTER INDEX V2.0: WiseBase Sider.ai (Junio 2026)
+# Protocolo 4.0 - Will-AI Project Lab
 
-Este índice organiza los archivos encontrados en el espacio de trabajo según las áreas de soberanía definidas en el Will-AI Project Lab.
+Este índice maestro representa la columna vertebral de conocimiento del Lab, optimizado para la indexación en Sider.ai y la autonomía operativa de Zara.
 
-## 1. FUNDACION (Misión, Visión, Valores)
-- Acta-Fundacional.md (En GitHub)
-- Principios-y-Valores.md (En GitHub)
-- Vision-Mision.md (En GitHub)
-- PRINCIPIO_DEL_FARO.md (docs/)
-- Documento_Matriz_Resumen.md (Raíz)
+## I. NÚCLEO FUNDACIONAL (Cultura y Propósito)
+1.  **01_Acta-Fundacional.md:** Origen y legitimidad del Lab.
+2.  **02_Principios-y-Valores.md:** El código ético y operativo.
+3.  **03_Vision-Mision.md:** Hacia dónde vamos (2026-2030).
+4.  **04_PRINCIPIO_DEL_FARO.md:** Guía de navegación en la incertidumbre.
+5.  **05_Manifiesto_de_Innovacion_Integral.md:** Filosofía de hibridación humano-IA.
+6.  **06_Documento_Matriz_Resumen.md:** Vista rápida de la arquitectura.
 
-## 2. PROYECTOS (WILL App, El Libro Intelectual)
-- Plan-Estrategico-2026-2030.md (En GitHub)
-- WILL-App-Documento-Base.md (En GitHub)
-- SYNC_Documento_Matriz.md (Estado de sincronización)
-- doc_15.zip (PPTX - Presentación del Proyecto)
-- doc_19.mp4 (Video promocional/explicativo)
+## II. IDENTIDAD Y HERRAMIENTAS (El Yo y el Cómo)
+7.  **07_USER.md:** Perfil completo del Soberano (William).
+8.  **08_MY_SOUL.md:** Adaptaciones de personalidad de Zara.
+9.  **09_TOOLS.md:** Inventario de capacidades y APIs.
+10. **10_MEMORY.md:** Log evolutivo de hitos y decisiones.
 
-## 3. PERSONAS-IA (Identidades y Roles)
-- Ariadna-GitHubCopilot.md (En GitHub)
-- Carla-ChatGPT.md (En GitHub)
-- perfil_zara.pdf (Documento de identidad de Zara)
-- memory/2026-04-15_documentos_aurea_william.md (Perfil de Aurea)
-- memory/2026-04-15_estrategia_aurea.md
+## III. ARQUITECTURA TÉCNICA (Protocolo 4.0)
+11. **11_Documento_Matriz_v4.1.md:** El plano maestro actualizado.
+12. **12_SISTEMA_NERVIOSO_CENTRAL_v2.0.md:** Flujos de datos e integración.
+13. **13_Manual_de_Vuelo_v2.0.md:** Procedimientos operativos estándar.
+14. **14_Protocolo_Comunicacion_Paliocomunicativo.md:** Reglas de interacción voz/texto.
+15. **15_SYNC_Documento_Matriz.md:** Estado de sincronización entre nodos.
 
-## 4. ADMINISTRACION (Gestión y Compras)
-- memory/2026-04-15.md (Pedido HP Elitebook 850 G3)
-- memory/2026-04-16.md (Seguimiento envío Portamovil)
-- media/factura_hp_elitebook_20260417.jpg (Factura recibida y bunkerizada)
-- transcripcion_gerardo.pdf (Conversación sobre el portátil)
+## IV. PROYECTOS ESTRATÉGICOS
+16. **16_Plan-Estrategico-2026-2030.md:** Hoja de ruta a largo plazo.
+17. **17_WILL-App-Documento-Base.md:** Salud afectivo-sexual e IA.
+18. **18_FINAL_PROPOSAL_V4_8.md:** Propuesta de evolución del ecosistema.
 
-## 5. DOCUMENTACION (CVs, Trayectorias y Transcripciones)
-- william_cv_v1 a v9_final.pdf (Historial de versiones CV)
-- william_trayectoria_v1 a v4.pdf (Historial de trayectoria)
-- trayectoria_original.pdf
-- transcripcion_audio.docx
-- doc_11.docx, doc_2.docx, doc_4.docx, doc_6.docx, doc_8.docx (Documentos de trabajo)
-- doc_16.pdf, doc_17.pdf, doc_18.pdf, doc_20.pdf (Informes técnicos)
+## V. TRAYECTORIA Y REFERENCIA
+19. **19_william_cv_v9_final.pdf:** Historial profesional del Soberano.
+20. **20_william_trayectoria_v4.pdf:** Evolución vital y profesional.
 
-## 6. MARKETING Y PRESENTACION (Identidad Visual)
-- WILL_AI_LAB_FINAL_v1 a v3.png (Logotipos)
-- will_ai_lab_estado_v1 y v2.png (Diagramas de estado)
-- esbozo_1.png a esbozo_3_refinado.png (Diseños preliminares)
-- qr_cv.png (Acceso rápido)
-- screenshots/ (Capturas de Adobe Acrobat del Documento Matriz - 9 archivos)
+## VI. GUÍAS ESPECÍFICAS SIDER.AI
+21. **21_Documento_3_Sider_v1_Guia_Interna.md:** Instrucciones para Sider.ai.
+22. **22_Documento_4_Sider_v2_Interaccion.md:** Patrones de consulta Wisebox.
+23. **23_Documento_5_Sider_v3_Raiz_Operativa.md:** Integración con el flujo de Zara.
 
-## 7. MISCELÁNEA / PENDIENTES (Lote Media)
-- media/ (28 archivos recibidos vía WhatsApp: fotos, audios y documentos por clasificar individualmente según contenido).
-
-## 8. ESTRATEGIA Y EXPANSIÓN (Academia Vértigo's)
-- docs/STRAT_APE_Experience.md (Estrategia APE Experience Indexada)
-- docs/TECH_EPK_VERTIGOS.md (Estructura Técnica SEO/Stack EPK)
-- PRESENTACION_VERTIGOS.md (Propuesta Integral)
+## VII. CONTROL E ÍNDICE
+24. **24_MASTER_INDEX_96_DOCS.md:** Este documento (V2.0).
+25. **25_cronograma_v4_1.md:** Tiempos y entregas del trimestre.
 
 ---
-*Índice actualizado el 27 de abril de 2026 por Sylvia Bloom.*
-**Nota de Zara:** Para que Nova pueda subir esto a GitHub, William debe conectar el `github_api` (está pendiente en el sistema de credenciales).
+**Actualizado por:** Zara (Nodo Ejecutiva)
+**Fecha:** 2 de junio de 2026, 03:20 CEST
+**Estado:** Protocolo 4.0 - Sincronización Lista.
