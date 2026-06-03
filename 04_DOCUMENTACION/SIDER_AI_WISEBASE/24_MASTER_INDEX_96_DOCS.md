@@ -30,8 +30,8 @@ Este índice maestro representa la columna vertebral de conocimiento del Lab, op
 18. **18_FINAL_PROPOSAL_V4_8.md:** Propuesta de evolución del ecosistema.
 
 ## V. TRAYECTORIA Y REFERENCIA
-19. **19_william_cv_v9_final.pdf:** Historial profesional del Soberano.
-20. **20_william_trayectoria_v4.pdf:** Evolución vital y profesional.
+19. **19_william_cv_v10.pdf:** Historial profesional del Soberano.
+20. **20_william_trayectoria_v5.pdf:** Evolución vital y profesional.
 
 ## VI. GUÍAS ESPECÍFICAS SIDER.AI
 21. **21_Documento_3_Sider_v1_Guia_Interna.md:** Instrucciones para Sider.ai.
@@ -44,5 +44,5 @@ Este índice maestro representa la columna vertebral de conocimiento del Lab, op
 
 ---
 **Actualizado por:** Zara (Nodo Ejecutiva)
-**Fecha:** 2 de junio de 2026, 03:20 CEST
+**Fecha:** 3 de junio de 2026, 15:30 CEST
 **Estado:** Protocolo 4.0 - Sincronización Lista.
