@@ -39,10 +39,17 @@ Este índice maestro representa la columna vertebral de conocimiento del Lab, op
 23. **23_Documento_5_Sider_v3_Raiz_Operativa.md:** Integración con el flujo de Zara.
 
 ## VII. CONTROL E ÍNDICE
-24. **24_MASTER_INDEX_96_DOCS.md:** Este documento (V2.0).
+24. **24_MASTER_INDEX_96_DOCS.md:** Este documento (V3.0).
 25. **25_cronograma_v4_1.md:** Tiempos y entregas del trimestre.
+
+## VIII. ANEXOS VERTIGO'S Y GOOGLE
+26. **26_ESTRATEGIA_MAESTRA_VERTIGOS.md:** Plan de marketing para la academia.
+27. **27_OBRA_MAESTRA_VERTIGOS.md:** Definición del producto musical.
+28. **28_TECH_EPK_VERTIGOS.md:** Dossier técnico y de prensa.
+29. **29_PLAN_PRODUCCION_COLMENA.md:** Metodología de trabajo colaborativo.
+30. **30_DOCUMENTO_MAESTRO_GOOGLE.md:** Guía de integración con Google Workspace.
 
 ---
 **Actualizado por:** Zara (Nodo Ejecutiva)
-**Fecha:** 3 de junio de 2026, 15:30 CEST
-**Estado:** Protocolo 4.0 - Sincronización Lista.
+**Fecha:** 11 de junio de 2026, 11:20 CEST
+**Estado:** Protocolo 4.0 - Sincronización 30/30 Completada.
