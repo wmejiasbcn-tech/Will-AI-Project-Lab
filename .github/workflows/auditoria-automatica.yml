@@ -1,4 +1,4 @@
-﻿name: Auditoría Automática y Notificaciones de Errores
+name: Auditoría Automática y Notificaciones de Errores
 
 on:
   push:
@@ -17,9 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Configurar PowerShell
-        uses: microsoft/setup-powershell@v1
-
+      # Usamos el PowerShell nativo del sistema directamente, sin intermediarios rotos
       - name: Ejecutar Auditoría Completa
         id: audit
         shell: pwsh
