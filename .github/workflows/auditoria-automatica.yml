@@ -34,13 +34,11 @@ jobs:
               exit 1
             }
           }
-
           # Verificar archivo de métricas
           if (-not (Test-Path "00_SISTEMA\AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md")) {
             Write-Error "❌ Falta el archivo de métricas de confianza"
             exit 1
           }
-
           Write-Host "✅ Auditoría estructural completada sin errores críticos" -ForegroundColor Green
 
       - name: Notificar Error (si falla)
@@ -48,8 +46,10 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const errorMsg = `🚨 **Auditoría Automática Fallida**  
-            Fecha: ${{ github.event.head_commit.timestamp || new Date().toISOString() }}  
+            const commitTimestamp = '${{ github.event.head_commit.timestamp }}';
+            const fechaError = commitTimestamp || new Date().toISOString();
+            
+            const errorMsg = `🚨 **Auditoría Automática Fallida** Fecha: ${fechaError}  
             Commit: ${{ github.sha }}  
             Error detectado en la auditoría del ecosistema.  
             Revisa los logs arriba.`;
