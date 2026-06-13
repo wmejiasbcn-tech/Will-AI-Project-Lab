@@ -10,11 +10,11 @@ Periodo: semana del 2026-06-13
 
 1. Consolidar el Sistema Operativo del Lab.
    - Resultado esperado: mesa de control basica creada y usable.
-   - Estado: en construccion.
+   - Estado: base validada por el Soberano.
 
 2. Reducir el cuello de botella comunicacional del Soberano.
    - Resultado esperado: cada asunto pueda clasificarse por nodo y proximo paso.
-   - Estado: pendiente de primera prueba real.
+   - Estado: listo para primera prueba operativa.
 
 3. Identificar automatizaciones gratuitas de alto impacto.
    - Resultado esperado: elegir 1 automatizacion inicial y activarla con una cadencia clara.
@@ -22,7 +22,6 @@ Periodo: semana del 2026-06-13
 
 ## Decisiones pendientes del Soberano
 
-- [ ] Confirmar si esta estructura inicial sirve como base.
 - [ ] Elegir la primera automatizacion a activar.
 - [ ] Definir si la revision diaria debe hacerse por la manana, tarde o noche.
 

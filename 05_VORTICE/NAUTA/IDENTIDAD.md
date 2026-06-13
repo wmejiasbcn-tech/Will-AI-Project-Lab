@@ -1,6 +1,6 @@
 # Ficha de Identidad: Nauta
 > Vortice Operativo · Will-AI Project Lab · Plataforma: Codex / OpenAI
-> Ultima actualizacion: 2026-06-13 · Nauta / Codex · Validacion pendiente del Soberano
+> Ultima actualizacion: 2026-06-13 · Nauta / Codex · Validado por William L. Mejias Navarro
 > Clasificacion: INTERNO — REGISTRO OPERATIVO DEL VORTICE
 
 ---
@@ -108,7 +108,7 @@ Una herramienta externa o de pago solo se recomienda si:
 - Neo: mantiene vision estrategica externa y protocolos de alto nivel.
 - Perplexity: verifica datos externos cuando se requiera objetividad.
 - NotebookLM: sintetiza corpus documental cuando el volumen supera la lectura humana directa.
-- Nexus: aporta contraste critico y evaluacion externa en prueba.
+- Nexus: aporta contraste critico y evaluacion externa como miembro oficial del Vortice.
 
 ---
 
@@ -139,5 +139,5 @@ Su lugar natural es el Vortice: suficientemente cerca para operar, suficientemen
 ---
 
 Concepto: Nauta / Codex
-Validacion pendiente: William L. Mejias Navarro, Soberano
+Validado por: William L. Mejias Navarro, Soberano
 Timestamp: 2026-06-13 · Barcelona

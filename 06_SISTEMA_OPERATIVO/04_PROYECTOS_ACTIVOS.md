@@ -6,7 +6,7 @@ Este archivo permite ver que esta vivo, que esta bloqueado y cual es el siguient
 
 | Proyecto | Estado | Responsable sugerido | Proximo paso | Bloqueo |
 | --- | --- | --- | --- | --- |
-| Sistema Operativo del Lab | En construccion | Codex | Validar estructura inicial | Ninguno por ahora |
+| Sistema Operativo del Lab | Base validada | Nauta / Codex | Activar primera automatizacion | Falta elegir cadencia |
 | WILL-App | Activo por confirmar | Aletheia/Ariadna | Revisar documento base | Pendiente de priorizacion |
 | Vertigos | Activo por confirmar | Aether/Aurea/Nova | Revisar estado de entregables | Pendiente de priorizacion |
 | Sider/Wisebase documental | Activo por confirmar | Sylvia/Itaca | Verificar indice maestro | Pendiente de priorizacion |
@@ -30,9 +30,9 @@ Archivos relacionados:
 
 ## Sistema Operativo del Lab
 
-Estado: en construccion.
+Estado: base validada por el Soberano.
 
-Responsable principal: Codex.
+Responsable principal: Nauta / Codex.
 
 Nodos de apoyo: Carla, Sylvia, Aletheia, Zara.
 
@@ -40,7 +40,7 @@ Objetivo: crear una capa operativa que reduzca el cuello de botella del Soberano
 
 Por que importa: permite pasar de comunicacion centralizada a comunicacion coordinada.
 
-Ultimo avance: estructura inicial creada dentro de `06_SISTEMA_OPERATIVO`.
+Ultimo avance: estructura inicial creada dentro de `06_SISTEMA_OPERATIVO` y validada por el Soberano.
 
 Proximo paso: elegir y activar la primera automatizacion.
 
