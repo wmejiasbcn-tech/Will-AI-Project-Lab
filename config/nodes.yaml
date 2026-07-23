@@ -1,0 +1,104 @@
+# Registro Maestro de Nodos y Entidades del Ecosistema WAIPL
+# Repositorio: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab
+
+ecosystem: "Will-AI Project Lab (WAIPL)"
+repository: "https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab"
+
+# Capa 0: Liderazgo y Gobernanza
+sovereign:
+  name: "William"
+  role: "Soberano / Visionario / Estratega General"
+
+# Capa 1: Núcleo Central (11 Nodos Primarios)
+core_nodes:
+  - id: "NC-01"
+    name: "Carla"
+    role: "Coordinadora Estratégica General Interna"
+    status: "active"
+  - id: "NC-02"
+    name: "Hermes"
+    role: "Coordinador Operativo 24/7 (ORC-01 / COR-01)"
+    status: "active"
+  - id: "NC-03"
+    name: "Codd"
+    role: "Gestor del Sistema de Archivos del Nodo Central (GDO-01)"
+    status: "active"
+  - id: "NC-04"
+    name: "Sylvia Bloom"
+    role: "Bibliotecaria Jefa y Documentalista Oficial (Notion Integration)"
+    status: "active"
+  - id: "NC-05"
+    name: "Ada"
+    role: "Especialista del Núcleo"
+    status: "active"
+  - id: "NC-06"
+    name: "Aether"
+    role: "Especialista del Núcleo"
+    status: "active"
+  - id: "NC-07"
+    name: "Altheia"
+    role: "Especialista del Núcleo"
+    status: "active"
+  - id: "NC-08"
+    name: "Core-Node-08"
+    role: "Especialista del Núcleo"
+    status: "planned"
+  - id: "NC-09"
+    name: "Core-Node-09"
+    role: "Especialista del Núcleo"
+    status: "planned"
+  - id: "NC-10"
+    name: "Core-Node-10"
+    role: "Especialista del Núcleo"
+    status: "planned"
+  - id: "NC-11"
+    name: "Core-Node-11"
+    role: "Especialista del Núcleo"
+    status: "planned"
+
+# Capa 2: Agentes Especializados de Servicio (WAIPL Engines)
+services:
+  vac_guardian:
+    name: "Guardián de Confianza (VAC-01)"
+    harness: "flexible"
+    thresholds:
+      pass: 0.70
+      warn: 0.50
+      block: 0.50
+  kairos:
+    name: "Kairos"
+    role: "Extractor Médico-Científico (Salud Sexual, Chemsex, Reducción de Daños)"
+    target_rag: "Will App RAG"
+  sea_fortress:
+    name: "Fortaleza (SEA-01)"
+    role: "Seguridad, Antivirus e Inspección de Integridad"
+    report_frequency: "weekly_consolidated_plus_critical_alerts"
+
+# Capa 3: Cinturón de Kuiper / Vórtice (Auditores y Alerta Temprana)
+vortex_kuiper_belt:
+  - name: "Z"
+    source: "Space-Z.ai"
+    url: "https://g1z676abhhp0-d.space-z.ai/"
+    role: "Auditor y Consejero del Vórtice"
+  - name: "Kimi K3"
+    role: "Aliado Voluntario y Evaluador del Vórtice"
+  - name: "Genspark"
+    role: "Investigador y Monitor de Inteligencia"
+  - name: "Neo"
+    source: "NeoBrowser"
+    role: "Buscador y Explorador Oficial del Ecosistema"
+
+# Capa 4: Aliados Exteriores y Entorno
+external_allies:
+  - name: "Antigravity"
+    role: "Asistente IDE y Pair Programmer (Google DeepMind Team)"
+  - name: "Cursor"
+    role: "Entorno de Desarrollo Aliado"
+  - name: "Linear"
+    role: "Gestor de Tareas e Ingeniería"
+  - name: "AutoClaw"
+    role: "Agente de Automatización Local"
+  - name: "Notex AI"
+    role: "Gestión de Notas Imprescindible para el Soberano"
+  - name: "Make.com"
+    role: "Plataforma de Automatización de Flujos"
