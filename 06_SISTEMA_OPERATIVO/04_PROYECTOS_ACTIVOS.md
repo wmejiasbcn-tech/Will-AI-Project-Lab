@@ -6,7 +6,7 @@ Este archivo permite ver que esta vivo, que esta bloqueado y cual es el siguient
 
 | Proyecto | Estado | Responsable sugerido | Proximo paso | Bloqueo |
 | --- | --- | --- | --- | --- |
-| Sistema Operativo del Lab | Base validada | Nauta / Codex | Activar primera automatizacion | Falta elegir cadencia |
+| Sistema Operativo del Lab | Piloto manual iniciado | Nauta / Codex | Ejecutar 3 revisiones diarias y evaluar automatizacion | Evaluar valor tras 3 dias |
 | Sistema de Comunicacion Interna Make + SDD | En estudio | Nauta / Carla / Ada | Validar DS-001 y definir piloto | Definir SDD y registro inicial |
 | WILL-App | Activo por confirmar | Aletheia/Ariadna | Revisar documento base | Pendiente de priorizacion |
 | Vertigos | Activo por confirmar | Aether/Aurea/Nova | Revisar estado de entregables | Pendiente de priorizacion |
@@ -31,7 +31,7 @@ Archivos relacionados:
 
 ## Sistema Operativo del Lab
 
-Estado: base validada por el Soberano.
+Estado: piloto manual iniciado por decision del Soberano.
 
 Responsable principal: Nauta / Codex.
 
@@ -41,13 +41,13 @@ Objetivo: crear una capa operativa que reduzca el cuello de botella del Soberano
 
 Por que importa: permite pasar de comunicacion centralizada a comunicacion coordinada.
 
-Ultimo avance: estructura inicial creada dentro de `06_SISTEMA_OPERATIVO` y validada por el Soberano.
+Ultimo avance: iniciada la revision diaria manual del Lab el 2026-07-23.
 
-Proximo paso: elegir y activar la primera automatizacion.
+Proximo paso: ejecutar 3 revisiones diarias y decidir si se convierte en automatizacion recurrente.
 
-Bloqueo actual: falta decision sobre cadencia y tipo de automatizacion inicial.
+Bloqueo actual: ninguno critico. Queda evaluar si el piloto aporta valor suficiente.
 
-Decision requerida del Soberano: confirmar si empezamos con revision diaria, digest de comunicacion o auditoria semanal.
+Decision requerida del Soberano: tras 3 dias, confirmar si se automatiza la revision diaria.
 
 Archivos relacionados:
 

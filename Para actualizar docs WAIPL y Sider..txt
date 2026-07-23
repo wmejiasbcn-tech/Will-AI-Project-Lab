@@ -1,0 +1,25 @@
+Para actualizar docs WAIPL y Sider.ai
+
+Lección aprendida #001 — Contexto de ejecución
+
+Observación:
+
+Los usuarios no técnicos pueden confundir contenido, comandos y entornos cuando las instrucciones no especifican dónde debe ejecutarse cada acción.
+
+Mejora propuesta:
+
+Toda instrucción operativa debe indicar explícitamente:
+Dónde se hace.
+Qué se hace.
+Qué resultado se espera.
+Punto de confirmación.
+
+Estado:
+
+Pendiente de validar con usuarios adicionales antes de incorporar a una nueva versión documental.
+
+Y además hemos detectado algo muy útil para el protocolo:
+
+Cuando trabajemos con nano, es mejor verificar cada transición porque los mensajes de guardado pueden parecer que ya has salido cuando en realidad sigues dentro del editor.
+
+Eso lo incorporaría al protocolo que estáis preparando para Sider.ai porque es exactamente el tipo de fricción que confunde a usuarios no técnicos.

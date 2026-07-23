@@ -31,7 +31,7 @@ Salida esperada:
 - Bloqueos que requieren decision del Soberano.
 - Tareas que pueden delegarse a nodos.
 
-Estado: pendiente de activar.
+Estado: piloto manual iniciado el 2026-07-23. Evaluar tras 3 revisiones.
 
 ### 2. Digest de comunicacion para nodos
 
@@ -70,11 +70,13 @@ Empezar con la Revision diaria del Lab.
 
 Por que: es pequena, barata, util y entrena el sistema sin depender de conectores externos.
 
+Estado actual: decision aprobada por el Soberano. Piloto manual de 3 dias iniciado antes de automatizar.
+
 ## Preguntas necesarias para activarla
 
-1. A que hora quieres recibir la revision diaria.
-2. Si debe ejecutarse todos los dias o solo de lunes a viernes.
-3. Si debe continuar en este mismo hilo o aparecer como tarea independiente en Codex.
+1. A que hora quieres recibir la revision diaria. Resuelto provisionalmente: manana.
+2. Si debe ejecutarse todos los dias o solo de lunes a viernes. Pendiente para automatizacion real.
+3. Si debe continuar en este mismo hilo o aparecer como tarea independiente en Codex. Resuelto provisionalmente: este mismo hilo durante el piloto.
 
 ## Prompt base para la revision diaria
 
