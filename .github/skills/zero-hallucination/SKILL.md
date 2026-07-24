@@ -3,7 +3,7 @@ user-invocable: true
 description: "Usar cuando necesites producir o revisar salidas de IA con un flujo de trabajo 'evidencia-primero' y zero-hallucination. Aplica esta skill a planes, documentos, especificaciones técnicas, afirmaciones y decisiones que deben ser verificables, auditables y seguras de confiar."
 ---
 
-# Zero Hallucination Verification Skill
+# Skill de verificación Zero Hallucination
 
 ## Alcance
 
@@ -139,7 +139,6 @@ No hacer:
 - tratar “parece razonable” como prueba
 
 ## Prompts sugeridos
-
 - “Verifica este plan técnico contra las fuentes del workspace y marca cada afirmación no soportada.”
 - “Revisa este documento en busca de alucinaciones y produce una checklist de evidencia con puntuación de confianza.”
 - “Reescribe esta respuesta para que solo queden afirmaciones respaldadas por evidencia.”

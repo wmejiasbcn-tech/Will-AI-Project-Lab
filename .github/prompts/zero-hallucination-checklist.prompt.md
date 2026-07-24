@@ -3,7 +3,7 @@ mode: agent
 description: "Ejecuta una comprobación previa a la entrega, rápida y basada en evidencia, para cualquier respuesta, plan o documento usando el flujo de trabajo zero-hallucination del repositorio."
 ---
 
- # Lista de comprobación Zero Hallucination
+# Lista de comprobación Zero Hallucination
 
 Usa la skill del repositorio en [.github/skills/zero-hallucination/SKILL.md](../skills/zero-hallucination/SKILL.md) como el método rector de verificación.
 
