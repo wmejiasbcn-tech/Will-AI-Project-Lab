@@ -2,7 +2,7 @@
 
 Fecha: 2026-07-31
 
-Estado: BORRADOR PARA VALIDACION SOBERANA
+Estado: VALIDADO POR EL SOBERANO - AUDITORIA VIGENTE
 
 Alcance: contraste entre el repositorio operativo, el PSI v1.1, la mesa de control, `BROADCAST.md`, la carta interactiva v1.5.1 y las laminas de arquitectura WAIPL v1.4/v2.0 aportadas por el Soberano.
 

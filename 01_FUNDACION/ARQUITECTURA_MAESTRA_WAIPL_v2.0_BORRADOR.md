@@ -1,6 +1,6 @@
 # Arquitectura Maestra WAIPL v2.0
 
-Estado: BORRADOR PARA VALIDACION SOBERANA
+Estado: OFICIAL - VALIDADO POR EL SOBERANO
 
 Fecha: 2026-07-31
 
@@ -143,6 +143,6 @@ La frontera entre Santuario Personal y Plaza del Ecosistema se implementa median
 
 ## 11. Validacion requerida
 
-Este documento no sustituye el Codex Ley, el PSI ni las identidades existentes. Propone su marco comun y requiere validacion del Soberano antes de ser marcado como oficial.
+Este documento no sustituye el Codex Ley, el PSI ni las identidades existentes. Establece su marco comun y queda marcado como oficial tras validacion del Soberano.
 
-Validado por: pendiente.
+Validado por: William L. Mejias Navarro, Soberano.
