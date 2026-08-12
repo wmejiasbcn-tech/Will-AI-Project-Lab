@@ -1,0 +1,37 @@
+name: Repo Health Check
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * 1'  # Cada lunes a las 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Validación del repositorio
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ejecutar Super-Linter para Markdown y YAML
+        uses: github/super-linter@v6
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
+          VALIDATE_JSON: false
+          VALIDATE_SHELL: false
+          VALIDATE_CPP: false
+          VALIDATE_PYTHON: false
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_WORKSPACE: ${{ github.workspace }}
+
+      - name: Comprobar errores de git
+        run: git diff --check

@@ -1,0 +1,43 @@
+labels:
+  - name: bug
+    description: "Defecto, error o comportamiento inesperado."
+    color: "d73a4a"
+  - name: enhancement
+    description: "Solicitud de mejora o nueva funcionalidad."
+    color: "a2eeef"
+  - name: documentation
+    description: "Mejoras de documentación, guías y notas del proyecto."
+    color: "0075ca"
+  - name: process
+    description: "Cambios en procesos, protocolos o flujos internos del Lab."
+    color: "0e8a16"
+  - name: audit
+    description: "Tareas de auditoría, revisión de calidad o seguridad."
+    color: "d4c5f9"
+  - name: error
+    description: "Incidentes detectados en automatizaciones o monitoreo."
+    color: "b60205"
+  - name: good first issue
+    description: "Tareas apropiadas para empezar a contribuir al repo."
+    color: "7057ff"
+  - name: help wanted
+    description: "Se necesita colaboración o apoyo adicional."
+    color: "008672"
+  - name: review needed
+    description: "Solicitud de revisión por parte del Vórtice o equipo de código."
+    color: "fbca04"
+  - name: duplicate
+    description: "Issue duplicado de otro problema ya registrado."
+    color: "cccccc"
+  - name: wontfix
+    description: "Problema identificado que no se corregirá por ahora."
+    color: "ffffff"
+  - name: task
+    description: "Tarea de mantenimiento, organización o seguimiento."
+    color: "1d76db"
+  - name: infra
+    description: "Cambios en infraestructura, despliegue o automatizaciones."
+    color: "0052cc"
+  - name: security
+    description: "Problemas o mejoras relacionadas con seguridad."
+    color: "b60205"

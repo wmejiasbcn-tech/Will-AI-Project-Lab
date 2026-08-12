@@ -1,0 +1,10 @@
+# Dueños de código y revisiones automáticas
+
+# El mantenimiento central del repositorio lo hace el equipo principal del Lab.
+* @wmejiasbcn-tech
+
+# Revisión de archivos de GitHub y automatizaciones.
+/.github/ @wmejiasbcn-tech
+
+# Protocolos y sistema operativo del Lab.
+/06_SISTEMA_OPERATIVO/ @wmejiasbcn-tech

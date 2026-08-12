@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Soporte del Lab
+    url: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/issues/new
+    about: Usa esta plantilla para reportar errores o proponer mejoras.
