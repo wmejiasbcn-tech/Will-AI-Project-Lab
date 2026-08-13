@@ -9,12 +9,15 @@
 *   **Principio:** "Nada nace, nada se hace y nada funciona sin haber sido concebido previamente con el ADN del ecosistema."
 *   **Mandatos Clave:** Autoclaw debe aplicar cero invención, trazabilidad absoluta, soberanía humana y enfoque outcome-first en el desarrollo de estos tres agentes.
 
-## 2. PARÁMETROS DE INICIALIZACIÓN Y GOBERNANZA
+## 2. INTEGRACIÓN OBLIGATORIA CON GRAPHIFY (CARTOGRAFÍA RELACIONAL)
+Autoclaw debe garantizar que Hermes, Kairos y Dike no operen como silos ciegos. Todos deben estar integrados en la cartografía de Graphify (`graph.json`). Cada agente utilizará la matriz relacional para conocer su posición en el ecosistema, leer las dependencias documentales y operar asíncronamente (ej. mediante buzones) sin fricciones.
+
+## 3. PARÁMETROS DE INICIALIZACIÓN Y GOBERNANZA
 Para **Hermes**, **Kairos** y **Dike**, Autoclaw debe asegurar que cada uno pueda responder:
 *   ¿Para qué existe y qué problema resuelve?
 *   ¿Qué recibe y qué produce?
 *   ¿Con quién se coordina dentro de la matriz relacional (Graphify)?
 *   ¿Cuáles son sus reglas de parada y restricciones?
 
-## 3. COMPARTIMENTACIÓN
+## 4. COMPARTIMENTACIÓN
 Estos agentes operan bajo el Muro de Cristal. Su inicialización, pruebas y despliegue deben ser reportados especificando sus estados de producción (proposed, generated, reviewed, approved, implemented, tested, deployed) sin solaparse con las competencias de Codd o de Heimdall.
