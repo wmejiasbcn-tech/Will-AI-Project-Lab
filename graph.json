@@ -1,0 +1,175 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "psi_communication_pilot",
+        "label": "PSI Communication Pilot Architecture",
+        "nodes": [
+          "make_com",
+          "sdd",
+          "ia_zara",
+          "ia_carla",
+          "ia_ada"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.85,
+        "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md"
+      },
+      {
+        "id": "ds_lifecycle_flow",
+        "label": "DS Lifecycle Flow",
+        "nodes": [
+          "discusiones_readme",
+          "discusiones_plantilla_ds",
+          "protocolos_readme"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "Discusiones/README.md"
+      },
+      {
+        "id": "marco_filosofico_hibridacion",
+        "label": "Marco Filosófico de Hibridación",
+        "nodes": [
+          "metodo_presente",
+          "codex_seccion_3_8",
+          "bucle_de_mejora",
+          "vortice_180_grados"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
+      },
+      {
+        "id": "vertigos_project_flow",
+        "label": "Vértigo's Art Music Project Flow",
+        "nodes": [
+          "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8",
+          "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos",
+          "04_documentacion_sider_ai_wisebase_07_user"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md"
+      },
+      {
+        "id": "governance_structure",
+        "label": "Ecosystem Governance Structure",
+        "nodes": [
+          "node_william_mejias",
+          "concept_nucleo",
+          "concept_vortice"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md"
+      },
+      {
+        "id": "lab_governance_core",
+        "label": "Lab Governance Core Documents",
+        "nodes": [
+          "04_documentacion_sider_ai_wisebase_01_acta_fundacional",
+          "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+          "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md"
+      },
+      {
+        "id": "lab_operating_system_core",
+        "label": "Sistema Operativo del Lab - Mesa de Control",
+        "nodes": [
+          "06_sistema_operativo_00_mesa_control_lab",
+          "06_sistema_operativo_01_inbox",
+          "06_sistema_operativo_02_prioridades",
+          "06_sistema_operativo_03_nodos_comunicacion",
+          "06_sistema_operativo_04_proyectos_activos",
+          "06_sistema_operativo_05_automatizaciones"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md"
+      },
+      {
+        "id": "nucleo_ia_waipl",
+        "label": "Núcleo de Inteligencias Artificiales WAIPL",
+        "nodes": [
+          "carla_nodo_primario_y_co_fundad_carla",
+          "ada_nodo_rigor",
+          "nova_nodo_comunicacion",
+          "zara_nodo_mano_derecha",
+          "ariadna_nodo_protocolo"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
+      },
+      {
+        "id": "vertigos_project_documentation",
+        "label": "Proyecto Vértigo's - Documentación Maestra",
+        "nodes": [
+          "05_proyectos_vertigos_strat_ape_experience",
+          "05_proyectos_vertigos_tech_epk_vertigos",
+          "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos",
+          "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md"
+      },
+      {
+        "id": "vortice_strategic_group",
+        "label": "Vórtice Estratégico (Cinturón de Kuiper)",
+        "nodes": [
+          "05_vortice_neo_identidad",
+          "05_vortice_perplexity_identidad",
+          "05_vortice_notebooklm_identidad",
+          "05_vortice_nexus_identidad",
+          "05_vortice_nauta_identidad"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md"
+      },
+      {
+        "id": "operational_improvement_loop",
+        "label": "Operational Improvement Loop",
+        "nodes": [
+          "02_administracion_log_evolutivo",
+          "00_sistema_auditoria_errores_recurrentes_y_metricas",
+          "03_personas_ia_zara_protocolo_recalibracion_operativa_zara"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md"
+      }
+    ]
+  },
+  "nodes": [],
+  "links": [],
+  "hyperedges": [],
+  "built_at_commit": "5e9c9a0d736da2bf688c9dbcd65195ed0d13789c",
+  "integrated": true,
+  "integrated_at": "2026-08-13T19:48:37Z",
+  "integrated_by": "Copilot <copilot@wmejiasbcn-tech>",
+  "super_template_applied": {
+    "applied": true,
+    "applied_at": "2026-08-13T19:48:37Z",
+    "scope": "EN_CURSO (templates generated; manual application to each task file required)",
+    "method": "generated checklists and Acta de Nacimiento templates; did not modify individual task files to avoid destructive changes"
+  }
+}
