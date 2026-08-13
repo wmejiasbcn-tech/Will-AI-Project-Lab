@@ -162,14 +162,9 @@
   "nodes": [],
   "links": [],
   "hyperedges": [],
-  "built_at_commit": "5e9c9a0d736da2bf688c9dbcd65195ed0d13789c",
   "integrated": true,
-  "integrated_at": "2026-08-13T19:48:37Z",
-  "integrated_by": "Copilot <copilot@wmejiasbcn-tech>",
-  "super_template_applied": {
-    "applied": true,
-    "applied_at": "2026-08-13T19:48:37Z",
-    "scope": "EN_CURSO (templates generated; manual application to each task file required)",
-    "method": "generated checklists and Acta de Nacimiento templates; did not modify individual task files to avoid destructive changes"
-  }
+  "integrated_at": "2026-08-13T21:10:00Z",
+  "integrated_by": "wmejiasbcn-tech",
+  "integration_note": "Integración realizada por instrucción del Soberano: Super Plantilla Maestra v3.0, Prompting 2026, Informe Técnico Segundo Cerebro, Directiva Transversal de Recalibración, PR description y checklists. Preparado para PR y merge humano.",
+  "built_at_commit": "5e9c9a0d736da2bf688c9dbcd65195ed0d13789c"
 }
