@@ -1,0 +1,302 @@
+{
+  "# CARLA \u2014 Nodo Primario y Co-fundad.txt": {
+    "mtime": 1780422799.0965273,
+    "ast_hash": "fad8ef9e6986e137795d4d73c17bf7d9",
+    "semantic_hash": "fad8ef9e6986e137795d4d73c17bf7d9"
+  },
+  "# Informe t\u00e9cnico de Ada para Nexus.txt": {
+    "mtime": 1780712985.803941,
+    "ast_hash": "e224c844fb44799b42d1a00b5beb1701",
+    "semantic_hash": "e224c844fb44799b42d1a00b5beb1701"
+  },
+  "00_SISTEMA/AUDITORIA_COHERENCIA_WAIPL_2026-07-31.md": {
+    "mtime": 1785471628.3017657,
+    "ast_hash": "a75d1e348c23a136e15a1152bde7b6bd",
+    "semantic_hash": "a75d1e348c23a136e15a1152bde7b6bd"
+  },
+  "00_SISTEMA/AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md": {
+    "mtime": 1780410944.512712,
+    "ast_hash": "d1b1df0585d4ebcbb4a9cc7dc49333f7",
+    "semantic_hash": "d1b1df0585d4ebcbb4a9cc7dc49333f7"
+  },
+  "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md": {
+    "mtime": 1785471638.998025,
+    "ast_hash": "92bc8d11c830a6a0b30f0580bfc52dd1",
+    "semantic_hash": "92bc8d11c830a6a0b30f0580bfc52dd1"
+  },
+  "01_FUNDACION/Acta-Fundacional.md": {
+    "mtime": 1780411076.7712314,
+    "ast_hash": "e255d6c622b4116a98020a2c32c19c90",
+    "semantic_hash": "e255d6c622b4116a98020a2c32c19c90"
+  },
+  "01_FUNDACION/Documento_Matriz_v4.1.md": {
+    "mtime": 1780411076.7769494,
+    "ast_hash": "c1cfc20785924884454d521b2ddfd552",
+    "semantic_hash": "c1cfc20785924884454d521b2ddfd552"
+  },
+  "01_FUNDACION/PRINCIPIO_DEL_FARO.md": {
+    "mtime": 1780410944.5258174,
+    "ast_hash": "a64fbf21878de527e159c1c914af87aa",
+    "semantic_hash": "a64fbf21878de527e159c1c914af87aa"
+  },
+  "02_ADMINISTRACION/LOG_EVOLUTIVO.md": {
+    "mtime": 1780411076.7931142,
+    "ast_hash": "aa1d3b9b841c54c72fce66c3ffeaca61",
+    "semantic_hash": "aa1d3b9b841c54c72fce66c3ffeaca61"
+  },
+  "02_ADMINISTRACION/PERFIL_SOBERANO.md": {
+    "mtime": 1780410944.5427423,
+    "ast_hash": "4f7772a54e6952a174ef2f464daf8043",
+    "semantic_hash": "4f7772a54e6952a174ef2f464daf8043"
+  },
+  "03_PERSONAS_IA/ZARA/PROTOCOLO_RECALIBRACION_OPERATIVA_ZARA.md": {
+    "mtime": 1781361120.5695157,
+    "ast_hash": "88637e1202e98fd55ad42d6c688d67fd",
+    "semantic_hash": "88637e1202e98fd55ad42d6c688d67fd"
+  },
+  "04_DOCUMENTACION/PROTOCOLOS/IDENTIDAD_SOUL_ZARA.md": {
+    "mtime": 1780410944.6268384,
+    "ast_hash": "994957c9e33f01007a39a370f992c9c0",
+    "semantic_hash": "994957c9e33f01007a39a370f992c9c0"
+  },
+  "04_DOCUMENTACION/PROTOCOLOS/REGLAS_OPERATIVAS_ZARA.md": {
+    "mtime": 1780410944.6280055,
+    "ast_hash": "49841f0f406120a76ddcbde3a511606b",
+    "semantic_hash": "49841f0f406120a76ddcbde3a511606b"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/01_Acta-Fundacional.md": {
+    "mtime": 1781354667.8930094,
+    "ast_hash": "0b3f3fdaacaf9907bacce72c7d1bf02e",
+    "semantic_hash": "0b3f3fdaacaf9907bacce72c7d1bf02e"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/06_Documento_Matriz_Resumen.md": {
+    "mtime": 1780410944.638809,
+    "ast_hash": "c192b7bb06f9f235ab39a75ec0f51c1e",
+    "semantic_hash": "c192b7bb06f9f235ab39a75ec0f51c1e"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/07_USER.md": {
+    "mtime": 1780410944.6398125,
+    "ast_hash": "ae28aa2771117b667d20c8e6765cc97a",
+    "semantic_hash": "ae28aa2771117b667d20c8e6765cc97a"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md": {
+    "mtime": 1780410944.64413,
+    "ast_hash": "c1cfc20785924884454d521b2ddfd552",
+    "semantic_hash": "c1cfc20785924884454d521b2ddfd552"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/12_SISTEMA_NERVIOSO_CENTRAL_v2.0.md": {
+    "mtime": 1780410944.6461303,
+    "ast_hash": "645b0a19e15d5b4430897134354cf6a9",
+    "semantic_hash": "645b0a19e15d5b4430897134354cf6a9"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/14_Protocolo_Comunicacion_Paliocomunicativo.md": {
+    "mtime": 1780410944.6491077,
+    "ast_hash": "167d94c4bb87b0ce0406206c60610767",
+    "semantic_hash": "167d94c4bb87b0ce0406206c60610767"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/18_FINAL_PROPOSAL_V4_8.md": {
+    "mtime": 1780410944.6542692,
+    "ast_hash": "ffe9bfced498309a3f1cc33c959b8b05",
+    "semantic_hash": "ffe9bfced498309a3f1cc33c959b8b05"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/24_MASTER_INDEX_96_DOCS.md": {
+    "mtime": 1781354667.9012785,
+    "ast_hash": "14b4335175df365c03aa00e892db217f",
+    "semantic_hash": "14b4335175df365c03aa00e892db217f"
+  },
+  "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md": {
+    "mtime": 1781354667.9062815,
+    "ast_hash": "0de3b98e33c5c472a5b378bf2ebcd362",
+    "semantic_hash": "0de3b98e33c5c472a5b378bf2ebcd362"
+  },
+  "04_DOCUMENTACION/WEB/index.html": {
+    "mtime": 1780410944.6697702,
+    "ast_hash": "2865e9c62e848111a2d33079848de0d2",
+    "semantic_hash": "2865e9c62e848111a2d33079848de0d2"
+  },
+  "05_PROYECTOS/Plan-Estrategico-2026-2030.md": {
+    "mtime": 1780410944.6801546,
+    "ast_hash": "c31ab2469ddbad267ed2dfa46404ed61",
+    "semantic_hash": "c31ab2469ddbad267ed2dfa46404ed61"
+  },
+  "05_PROYECTOS/SYNC_Documento_Matriz.md": {
+    "mtime": 1780411076.870981,
+    "ast_hash": "bc6988bb100519eb824b42bbb5a5b82e",
+    "semantic_hash": "bc6988bb100519eb824b42bbb5a5b82e"
+  },
+  "05_PROYECTOS/SYNOPSIS_FOR_NOVA.md": {
+    "mtime": 1780411076.8719785,
+    "ast_hash": "03b1875627e14cb4535c9264aaa59b6e",
+    "semantic_hash": "03b1875627e14cb4535c9264aaa59b6e"
+  },
+  "05_PROYECTOS/VERTIGOS/COMPILADOS/ESTRATEGIA_MAESTRA_VERTIGOS.md": {
+    "mtime": 1780411076.8741403,
+    "ast_hash": "33a24cf5834d95073d9f623a8d970278",
+    "semantic_hash": "33a24cf5834d95073d9f623a8d970278"
+  },
+  "05_PROYECTOS/VERTIGOS/STRAT_APE_Experience.md": {
+    "mtime": 1780411076.8751392,
+    "ast_hash": "d0f5458277ad84d182208be772fafdcd",
+    "semantic_hash": "d0f5458277ad84d182208be772fafdcd"
+  },
+  "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md": {
+    "mtime": 1780411076.876139,
+    "ast_hash": "a5cd3fff6326535ab5e7600fca555a9a",
+    "semantic_hash": "a5cd3fff6326535ab5e7600fca555a9a"
+  },
+  "05_PROYECTOS/VERTIGOS/TRABAJO_TERMINADO/OBRA_MAESTRA_VERTIGOS.md": {
+    "mtime": 1780411076.877296,
+    "ast_hash": "a0fcaf97bb866ffca129e57fa715db36",
+    "semantic_hash": "a0fcaf97bb866ffca129e57fa715db36"
+  },
+  "05_PROYECTOS/WILL-App-Documento-Base.md": {
+    "mtime": 1780411076.8796034,
+    "ast_hash": "809c5045866724d63c761d46640b104d",
+    "semantic_hash": "809c5045866724d63c761d46640b104d"
+  },
+  "05_VORTICE/NAUTA/IDENTIDAD.md": {
+    "mtime": 1781356588.5745282,
+    "ast_hash": "ab1056d931096a7fcff0632fbe5738bf",
+    "semantic_hash": "ab1056d931096a7fcff0632fbe5738bf"
+  },
+  "05_VORTICE/NEO/IDENTIDAD.md": {
+    "mtime": 1781357422.3072684,
+    "ast_hash": "ffc608c1fc81ecd29447941a23771d00",
+    "semantic_hash": "ffc608c1fc81ecd29447941a23771d00"
+  },
+  "05_VORTICE/NEXUS/IDENTIDAD.md": {
+    "mtime": 1781357422.6829772,
+    "ast_hash": "035d9d93e2e3ea38beb028de5add1c67",
+    "semantic_hash": "035d9d93e2e3ea38beb028de5add1c67"
+  },
+  "05_VORTICE/NOTEBOOKLM/IDENTIDAD.md": {
+    "mtime": 1781354667.9142735,
+    "ast_hash": "d9d824726d349f736fae1ec7f60aed97",
+    "semantic_hash": "d9d824726d349f736fae1ec7f60aed97"
+  },
+  "05_VORTICE/PERPLEXITY/IDENTIDAD.md": {
+    "mtime": 1781354667.9162347,
+    "ast_hash": "af89656ce7526489e4952a0c50407672",
+    "semantic_hash": "af89656ce7526489e4952a0c50407672"
+  },
+  "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md": {
+    "mtime": 1781353706.5086634,
+    "ast_hash": "250087006ada027f2b3be376bfe7365e",
+    "semantic_hash": "250087006ada027f2b3be376bfe7365e"
+  },
+  "06_SISTEMA_OPERATIVO/01_INBOX.md": {
+    "mtime": 1781351957.509138,
+    "ast_hash": "9bd46a3927ddc40c3518513615899e3f",
+    "semantic_hash": "9bd46a3927ddc40c3518513615899e3f"
+  },
+  "06_SISTEMA_OPERATIVO/02_PRIORIDADES.md": {
+    "mtime": 1784827345.4376092,
+    "ast_hash": "4a006a7af4be0c99bf4b2c45c4170317",
+    "semantic_hash": "4a006a7af4be0c99bf4b2c45c4170317"
+  },
+  "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md": {
+    "mtime": 1781351959.7146363,
+    "ast_hash": "5ffdbf2e91abd16e760829b2297fed32",
+    "semantic_hash": "5ffdbf2e91abd16e760829b2297fed32"
+  },
+  "06_SISTEMA_OPERATIVO/04_PROYECTOS_ACTIVOS.md": {
+    "mtime": 1784925776.475044,
+    "ast_hash": "29b6c0aa779a99aae567343e50762918",
+    "semantic_hash": "29b6c0aa779a99aae567343e50762918"
+  },
+  "06_SISTEMA_OPERATIVO/05_AUTOMATIZACIONES.md": {
+    "mtime": 1784827380.3398368,
+    "ast_hash": "fe1672e23f47267f8e7de886aee97f20",
+    "semantic_hash": "fe1672e23f47267f8e7de886aee97f20"
+  },
+  "06_SISTEMA_OPERATIVO/BROADCAST.md": {
+    "mtime": 1781363466.258118,
+    "ast_hash": "da93cc0de2e9953d7b1fe7d9209714d7",
+    "semantic_hash": "da93cc0de2e9953d7b1fe7d9209714d7"
+  },
+  "06_SISTEMA_OPERATIVO/GITHUB_FLOW_PROTOCOLO.md": {
+    "mtime": 1780410944.945018,
+    "ast_hash": "0a30fa4cb80ac870a6f14310ab3a5b07",
+    "semantic_hash": "0a30fa4cb80ac870a6f14310ab3a5b07"
+  },
+  "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_IDENTIDAD_VISUAL_v1.0.md": {
+    "mtime": 1780432188.4438846,
+    "ast_hash": "edcf67fe4d71391f77b018a0c3d8f634",
+    "semantic_hash": "edcf67fe4d71391f77b018a0c3d8f634"
+  },
+  "06_SISTEMA_OPERATIVO/PSI/PSI_v1.1_OFICIAL.md": {
+    "mtime": 1780428054.9718978,
+    "ast_hash": "9162492a70f06332255645b4d745549f",
+    "semantic_hash": "9162492a70f06332255645b4d745549f"
+  },
+  "09_DIARIO_LAB/revision_diaria_2026-07-23.md": {
+    "mtime": 1784827397.78214,
+    "ast_hash": "a866cf0569ad6cd1efca4288b7b54709",
+    "semantic_hash": "a866cf0569ad6cd1efca4288b7b54709"
+  },
+  "Arquitectura de Tr\u00edptico intelectual.txt": {
+    "mtime": 1778475131.2990067,
+    "ast_hash": "11899f16b3f90def38a34ca38eaa6f3e",
+    "semantic_hash": "11899f16b3f90def38a34ca38eaa6f3e"
+  },
+  "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md": {
+    "mtime": 1784925776.4825556,
+    "ast_hash": "f1fa81eed5558169c268f50f7021b882",
+    "semantic_hash": "f1fa81eed5558169c268f50f7021b882"
+  },
+  "Discusiones/PLANTILLA_DS.md": {
+    "mtime": 1780497889.788108,
+    "ast_hash": "2b47f67f7ba80c2e986fc9a6d8107ef6",
+    "semantic_hash": "2b47f67f7ba80c2e986fc9a6d8107ef6"
+  },
+  "Discusiones/README.md": {
+    "mtime": 1780497889.7895257,
+    "ast_hash": "ba059216b42751af6678ce774ac80875",
+    "semantic_hash": "ba059216b42751af6678ce774ac80875"
+  },
+  "Protocolo de Ejecuci\u00f3n de Proyectos Ariadna GITHUB.txt": {
+    "mtime": 1780796269.2173102,
+    "ast_hash": "ac0b0cf90b891ba2b9bad80fe8c8e1a3",
+    "semantic_hash": "ac0b0cf90b891ba2b9bad80fe8c8e1a3"
+  },
+  "README.md": {
+    "mtime": 1780411077.1949642,
+    "ast_hash": "2705430f50105ecf1ae069f7fd28e90f",
+    "semantic_hash": "2705430f50105ecf1ae069f7fd28e90f"
+  },
+  "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt": {
+    "mtime": 1780708785.1801004,
+    "ast_hash": "5801e9cfee6ca18e5c42a4606e7ccbf0",
+    "semantic_hash": "5801e9cfee6ca18e5c42a4606e7ccbf0"
+  },
+  "04_DOCUMENTACION/ASSETS/EMBLEMA.png": {
+    "mtime": 1780411076.837464,
+    "ast_hash": "46e8c25851cc8a54ce3da3d604390a5f",
+    "semantic_hash": "46e8c25851cc8a54ce3da3d604390a5f"
+  },
+  "08_MARKETING_PRESENTACION/WILL_AI_LAB_FINAL.png": {
+    "mtime": 1780411077.1379738,
+    "ast_hash": "d481e0e2080e5cc6887fc8f178abc94c",
+    "semantic_hash": "d481e0e2080e5cc6887fc8f178abc94c"
+  },
+  "08_MARKETING_PRESENTACION/qr_cv.png": {
+    "mtime": 1780411077.1551712,
+    "ast_hash": "22ae1248cabd12bffc9f88594e60eddc",
+    "semantic_hash": "22ae1248cabd12bffc9f88594e60eddc"
+  },
+  "08_MARKETING_PRESENTACION/will_ai_lab_estado.png": {
+    "mtime": 1780411077.1916156,
+    "ast_hash": "b508bd4a5415588ba93d0203206a2fc5",
+    "semantic_hash": "b508bd4a5415588ba93d0203206a2fc5"
+  },
+  "05_PROYECTOS/doc_19.mp4": {
+    "mtime": 1780411077.1314492,
+    "ast_hash": "a4bab7da63b819bcb062e175b9955311",
+    "semantic_hash": "a4bab7da63b819bcb062e175b9955311"
+  },
+  "V\u00e9rtigo_s Jingle/V\u00e9rtigo_s 6 De San Felipe.wav": {
+    "mtime": 1782010135.5903375,
+    "ast_hash": "64443b4fa5339748afcc6303b4fed256",
+    "semantic_hash": "64443b4fa5339748afcc6303b4fed256"
+  }
+}

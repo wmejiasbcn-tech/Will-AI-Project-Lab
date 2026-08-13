@@ -1,0 +1,310 @@
+{
+  "communities": {
+    "0": [
+      "06_sistema_operativo_03_nodos_comunicacion",
+      "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "discusiones_plantilla_ds",
+      "discusiones_readme",
+      "ia_ada",
+      "ia_carla",
+      "ia_zara",
+      "make_com",
+      "protocolos_readme",
+      "sdd"
+    ],
+    "1": [
+      "05_vortice_nauta_identidad",
+      "05_vortice_nexus_identidad",
+      "06_sistema_operativo_00_mesa_control_lab",
+      "06_sistema_operativo_01_inbox",
+      "06_sistema_operativo_02_prioridades",
+      "06_sistema_operativo_04_proyectos_activos",
+      "06_sistema_operativo_broadcast",
+      "08_marketing_presentacion_will_ai_lab_estado",
+      "09_diario_lab_revision_diaria_2026_07_23"
+    ],
+    "2": [
+      "04_documentacion_assets_emblema",
+      "ariadna_nodo_protocolo",
+      "carla_nodo_primario_y_co_fundad_carla",
+      "metodo_presente",
+      "nova_nodo_comunicacion",
+      "triptico_intelectual",
+      "will_ai_project_lab"
+    ],
+    "3": [
+      "04_web_index",
+      "05_vortice_neo_identidad",
+      "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0",
+      "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0",
+      "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0",
+      "06_sistema_operativo_psi_psi_v1_1_oficial",
+      "08_marketing_presentacion_will_ai_lab_final"
+    ],
+    "4": [
+      "00_sistema_auditoria_errores_recurrentes_y_metricas",
+      "02_administracion_log_evolutivo",
+      "03_personas_ia_zara_protocolo_recalibracion_operativa_zara",
+      "node_ada",
+      "node_ariadna",
+      "node_zara"
+    ],
+    "5": [
+      "00_sistema_auditoria_coherencia_waipl_2026_07_31",
+      "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador",
+      "01_fundacion_documento_matriz_v4_1",
+      "node_carla",
+      "node_william_mejias"
+    ],
+    "6": [
+      "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+      "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0",
+      "04_documentacion_sider_ai_wisebase_14_protocolo_comunicacion_paliocomunicativo",
+      "04_documentacion_sider_ai_wisebase_24_master_index_96_docs",
+      "soberano_william"
+    ],
+    "7": [
+      "ada_nodo_rigor",
+      "nexus_nodo_externo",
+      "vortice_180_grados"
+    ],
+    "8": [
+      "bucle_de_mejora",
+      "codex_seccion_3_8",
+      "zara_nodo_mano_derecha"
+    ],
+    "9": [
+      "04_documentacion_protocolos_reglas_operativas_zara",
+      "zara_node"
+    ],
+    "10": [
+      "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8",
+      "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos"
+    ],
+    "11": [
+      "05_proyectos_plan_estrategico_2026_2030",
+      "05_proyectos_sync_documento_matriz"
+    ],
+    "12": [
+      "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos",
+      "05_vortice_notebooklm_identidad"
+    ],
+    "13": [
+      "01_fundacion_acta_fundacional"
+    ],
+    "14": [
+      "01_fundacion_principio_del_faro"
+    ],
+    "15": [
+      "02_administracion_perfil_soberano"
+    ],
+    "16": [
+      "04_documentacion_protocolos_identidad_soul_zara"
+    ],
+    "17": [
+      "04_documentacion_sider_ai_wisebase_01_acta_fundacional"
+    ],
+    "18": [
+      "04_documentacion_sider_ai_wisebase_06_documento_matriz_resumen"
+    ],
+    "19": [
+      "04_documentacion_sider_ai_wisebase_07_user"
+    ],
+    "20": [
+      "05_proyectos_synopsis_for_nova"
+    ],
+    "21": [
+      "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos"
+    ],
+    "22": [
+      "05_proyectos_vertigos_strat_ape_experience"
+    ],
+    "23": [
+      "05_proyectos_vertigos_tech_epk_vertigos"
+    ],
+    "24": [
+      "05_proyectos_will_app_documento_base"
+    ],
+    "25": [
+      "05_vortice_perplexity_identidad"
+    ],
+    "26": [
+      "06_sistema_operativo_05_automatizaciones"
+    ],
+    "27": [
+      "06_sistema_operativo_github_flow_protocolo"
+    ],
+    "28": [
+      "08_marketing_presentacion_qr_cv"
+    ],
+    "29": [
+      "concept_nucleo"
+    ],
+    "30": [
+      "concept_vortice"
+    ],
+    "31": [
+      "node_sylvia"
+    ]
+  },
+  "cohesion": {
+    "0": 0.2,
+    "1": 0.2222222222222222,
+    "2": 0.2857142857142857,
+    "3": 0.2857142857142857,
+    "4": 0.3333333333333333,
+    "5": 0.4,
+    "6": 0.4,
+    "7": 0.6666666666666666,
+    "8": 0.6666666666666666,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0
+  },
+  "gods": [
+    {
+      "id": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "label": "DS-001 - Sistema de Comunicacion Interna Make + SDD",
+      "degree": 11
+    },
+    {
+      "id": "06_sistema_operativo_00_mesa_control_lab",
+      "label": "Mesa de Control del Lab",
+      "degree": 5
+    },
+    {
+      "id": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+      "label": "Documento Matriz v4.1",
+      "degree": 4
+    },
+    {
+      "id": "discusiones_readme",
+      "label": "README: Discusiones — PSI",
+      "degree": 3
+    },
+    {
+      "id": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0",
+      "label": "Protocolo Obligatorio de Planificación v1.0",
+      "degree": 3
+    },
+    {
+      "id": "nexus_nodo_externo",
+      "label": "Nexus",
+      "degree": 2
+    },
+    {
+      "id": "codex_seccion_3_8",
+      "label": "Codex Sección 3.8",
+      "degree": 2
+    },
+    {
+      "id": "05_vortice_nauta_identidad",
+      "label": "Ficha de Identidad: Nauta",
+      "degree": 2
+    },
+    {
+      "id": "06_sistema_operativo_04_proyectos_activos",
+      "label": "Proyectos Activos",
+      "degree": 2
+    },
+    {
+      "id": "05_vortice_neo_identidad",
+      "label": "Ficha de Identidad: Neo",
+      "degree": 2
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Will-AI Lab Status Diagram",
+      "target": "Proyectos Activos",
+      "source_files": [
+        "08_MARKETING_PRESENTACION/will_ai_lab_estado.png",
+        "06_SISTEMA_OPERATIVO/04_PROYECTOS_ACTIVOS.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ image); connects across different repos/directories"
+    },
+    {
+      "source": "Will-AI Lab Final Diagram",
+      "target": "Protocolo de Identidad Visual v1.0",
+      "source_files": [
+        "08_MARKETING_PRESENTACION/WILL_AI_LAB_FINAL.png",
+        "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_IDENTIDAD_VISUAL_v1.0.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (doc ↔ image); connects across different repos/directories"
+    },
+    {
+      "source": "DS-001 - Sistema de Comunicacion Interna Make + SDD",
+      "target": "Protocolo Recalibracion Operativa Zara",
+      "source_files": [
+        "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+        "03_PERSONAS_IA/ZARA/PROTOCOLO_RECALIBRACION_OPERATIVA_ZARA.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `Protocolo Recalibracion Operativa Zara` unexpectedly reaches hub `DS-001 - Sistema de Comunicacion Interna Make + SDD`"
+    },
+    {
+      "source": "DS-001 - Sistema de Comunicacion Interna Make + SDD",
+      "target": "PSI v1.1 OFICIAL",
+      "source_files": [
+        "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+        "06_SISTEMA_OPERATIVO/PSI/PSI_v1.1_OFICIAL.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `PSI v1.1 OFICIAL` unexpectedly reaches hub `DS-001 - Sistema de Comunicacion Interna Make + SDD`"
+    },
+    {
+      "source": "William L. Mejías Navarro (Soberano)",
+      "target": "DS-001 - Sistema de Comunicacion Interna Make + SDD",
+      "source_files": [
+        "01_FUNDACION/Documento_Matriz_v4.1.md",
+        "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; bridges separate communities; peripheral node `William L. Mejías Navarro (Soberano)` unexpectedly reaches hub `DS-001 - Sistema de Comunicacion Interna Make + SDD`"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `DS-001 - Sistema de Comunicacion Interna Make + SDD` connect `DS-001 - Sistema de Comunicacion Interna Make + SDD` to `Mesa de Control del Lab`, `Protocolo Obligatorio de Planificación v1.0`, `Auditoría Errores Recurrentes y Métricas`, `Auditoria de Coherencia WAIPL 2026-07-31`?",
+      "why": "High betweenness centrality (0.168) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `PSI v1.1 OFICIAL` connect `Protocolo Obligatorio de Planificación v1.0` to `DS-001 - Sistema de Comunicacion Interna Make + SDD`?",
+      "why": "High betweenness centrality (0.056) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `Nova`, `Ada`, `Carla` to the rest of the system?",
+      "why": "56 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}
