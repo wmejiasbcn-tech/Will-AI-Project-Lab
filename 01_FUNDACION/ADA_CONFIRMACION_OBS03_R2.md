@@ -1,24 +1,19 @@
-# ADA — CONFIRMACIÓN DE OBS-03 R2
+# REGISTRO HISTÓRICO — ADA — CONFIRMACIÓN DE OBS-03 R2
 
-**Estado:** PENDIENTE DE CONFIRMACIÓN DE ADA
+> **DOCUMENTO HISTÓRICO DE PROCESO. NO ES LA FUENTE DEL ESTADO ACTUAL.**
+>
+> **Documento de referencia actual:** `01_FUNDACION/ARQUITECTURA_CANONICA_ECOSISTEMA_WAIPL_v1.0.md`
 
-## Punto a confirmar
+Este archivo fue creado originalmente como solicitud de confirmación de OBS-03.
 
-La decisión del Soberano establece la **Opción A** para el posicionamiento normativo de la Arquitectura Canónica del Ecosistema WAIPL:
+La solicitud quedó posteriormente resuelta: Ada confirmó el posicionamiento normativo elegido por el Soberano y el dictamen final de la arquitectura quedó en `VALIDADO`.
 
-> Documento complementario de referencia arquitectónica especializada, externo a la jerarquía normativa general, con autoridad específica sobre pertenencia, identidad ecosistémica, clasificación de entidades, relaciones y trazabilidad.
+### Resultado histórico
 
-No constituye un quinto nivel de la jerarquía normativa.
+- **OBS-03:** `RESUELTA`
+- **Posición:** documento complementario de referencia arquitectónica especializada, externo a la jerarquía normativa general.
+- **Quinto nivel jerárquico:** `NO`
+- **Dictamen final de Ada:** `VALIDADO`
+- **Estado actual de canonización del documento:** `PENDIENTE DE CANONIZACIÓN`
 
-## Jerarquía superior vigente
-
-1. SUPER PLANTILLA MAESTRA CANÓNICA v3.0
-2. INFORME TÉCNICO DEL SEGUNDO CEREBRO POSITRÓNICO
-3. PROMPTING 2026 WAIPL
-4. COMPENDIO OPERATIVO WAIPL v1.0
-
-## Confirmación solicitada
-
-Ada debe confirmar que la redacción anterior atiende OBS-03 y que, con esta decisión, no queda ninguna observación sustancial abierta en la arquitectura R2.
-
-**Dictamen esperado:** `VALIDADO` o `VALIDADO CON OBSERVACIONES`.
+Este registro se conserva para reconstruir la cadena de decisión y no debe interpretarse como una solicitud todavía pendiente.
