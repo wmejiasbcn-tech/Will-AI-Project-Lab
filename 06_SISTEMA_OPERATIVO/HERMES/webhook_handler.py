@@ -27,28 +27,42 @@ def verify_signature(raw_body: bytes, header: str | None, secret: str) -> None:
         raise WebhookAuthError("HERMES_WEBHOOK_SECRET vacío")
     if not header or not header.startswith("sha256="):
         raise WebhookAuthError("falta X-Hub-Signature-256")
+    provided = header.strip()
+    if len(provided) != len("sha256=") + 64:
+        raise WebhookAuthError("firma inválida")
     expected = "sha256=" + hmac.new(secret.encode("utf-8"), raw_body, hashlib.sha256).hexdigest()
-    if not _compare(expected, header.strip()):
+    if not _compare(expected, provided):
         raise WebhookAuthError("firma inválida")
 
 
 def parse_event(raw_body: bytes) -> dict[str, Any]:
-    data = json.loads(raw_body.decode("utf-8"))
+    try:
+        data = json.loads(raw_body.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError("payload JSON inválido") from exc
+
     for key in ("issue_number", "de", "para", "sender_login", "sender_association"):
         if not data.get(key):
             raise ValueError(f"payload incompleto: {key}")
-    # La identidad del nodo DE no se acepta por sí sola: el workflow debe
-    # haber verificado al actor real contra los permisos del repositorio.
+
     if data["sender_association"] not in {"OWNER", "MEMBER", "COLLABORATOR"}:
         raise WebhookAuthError("remitente sin relación autorizada con el repositorio")
+
     return data
 
 
 def ingest(raw_body: bytes, signature_header: str | None, secret: str | None = None) -> dict[str, Any]:
-    secret = secret if secret is not None else os.environ.get("HERMES_WEBHOOK_SECRET", "")
-    verify_signature(raw_body, signature_header, secret)
+    effective_secret = secret if secret is not None else os.environ.get("HERMES_WEBHOOK_SECRET", "")
+    verify_signature(raw_body, signature_header, effective_secret)
     event = parse_event(raw_body)
     # El runtime debe: asentar ledger, aplicar default-deny, NUNCA marcar DELIVERED.
+    # La deduplicación debe ser atómica en el ledger del runtime usando una clave
+    # determinista del evento (issue_number + comment_id/event/action/trace).
+    event_id = ":".join(
+        str(event.get(key, ""))
+        for key in ("issue_number", "comment_id", "event", "action", "trace")
+    )
+    event["event_id"] = event_id
     event["decision"] = "recorded"
     event["received"] = False
     return event
