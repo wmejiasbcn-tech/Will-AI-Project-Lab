@@ -15,6 +15,9 @@ permissions:
 jobs:
   ingest:
     runs-on: ubuntu-latest
+    concurrency:
+      group: waipl-bus-issue-${{ github.event.issue.number || github.run_id }}
+      cancel-in-progress: false
     if: >-
       github.event.issue &&
       (
@@ -34,6 +37,7 @@ jobs:
             const body = issue.body || '';
             const labels = (issue.labels || []).map(l => l.name);
             const marker = '<!-- waipl-bus:seen -->';
+            const allowedAssociations = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
 
             function field(name) {
               const line = body.match(new RegExp('^' + name + ':\\s*(.+)$', 'mi'));
@@ -62,6 +66,17 @@ jobs:
               await github.rest.issues.addLabels({ ...context.repo, issue_number: issue.number, labels: names });
             }
 
+            async function markInvalid(markerText, message) {
+              const comments = await github.rest.issues.listComments({ ...context.repo, issue_number: issue.number, per_page: 100 });
+              if (!comments.data.some(c => (c.body || '').includes(markerText))) {
+                await github.rest.issues.createComment({
+                  ...context.repo,
+                  issue_number: issue.number,
+                  body: markerText + '\n' + message
+                });
+              }
+            }
+
             if (!labels.includes('bus')) {
               await addLabels(['bus']);
               labels.push('bus');
@@ -74,14 +89,24 @@ jobs:
 
             if (!valid) {
               await addLabels(['bus:invalid']);
-              const comments = await github.rest.issues.listComments({ ...context.repo, issue_number: issue.number, per_page: 50 });
-              if (!comments.data.some(c => (c.body || '').includes('<!-- waipl-bus:invalid -->'))) {
-                await github.rest.issues.createComment({
-                  ...context.repo,
-                  issue_number: issue.number,
-                  body: '<!-- waipl-bus:invalid -->\nFaltan campos DE y PARA. El bus no asienta este mensaje.'
-                });
-              }
+              await markInvalid(
+                '<!-- waipl-bus:invalid -->',
+                'Faltan campos DE y PARA. El bus no asienta este mensaje.'
+              );
+              return;
+            }
+
+            // El actor real de GitHub es la única identidad autorizable aquí.
+            // DE/PARA son datos de enrutamiento y nunca sirven como autenticación.
+            const sender = context.payload.sender || {};
+            const senderLogin = sender.login || '';
+            const senderAssociation = sender.association || '';
+            if (!senderLogin || !allowedAssociations.has(senderAssociation)) {
+              await addLabels(['bus:unauthorized']);
+              await markInvalid(
+                '<!-- waipl-bus:unauthorized -->',
+                'Remitente no autorizado. El actor real de GitHub debe tener asociación OWNER, MEMBER o COLLABORATOR.'
+              );
               return;
             }
 
@@ -96,14 +121,26 @@ jobs:
               labels,
               de: de.toLowerCase(),
               para: para.toLowerCase(),
+              sender_login: senderLogin,
+              sender_association: senderAssociation,
               html_url: issue.html_url,
               trace,
               comment_id: context.payload.comment ? context.payload.comment.id : null
             };
-            const payload = JSON.stringify(payloadObj);
+
             const url = process.env.HERMES_WEBHOOK_URL;
             const secret = process.env.HERMES_WEBHOOK_SECRET || '';
 
+            if (url && !secret) {
+              await addLabels(['bus:config-error']);
+              await markInvalid(
+                '<!-- waipl-bus:config-error -->',
+                'Configuración insegura: HERMES_WEBHOOK_URL está definido pero HERMES_WEBHOOK_SECRET no está configurado. No se envía ningún webhook.'
+              );
+              return;
+            }
+
+            const payload = JSON.stringify(payloadObj);
             let statusLabel = 'bus:queued';
             let note = 'Sin HERMES_WEBHOOK_URL. Hermes debe hacer poll de este Issue.';
 
@@ -138,6 +175,6 @@ jobs:
               await github.rest.issues.createComment({
                 ...context.repo,
                 issue_number: issue.number,
-                body: marker + '\n**WAIPL-BUS** \u00b7 de=' + payloadObj.de + ' para=' + payloadObj.para + ' \u00b7 ' + statusLabel + '\n' + note + '\nEsto no es un *recibido*. Recibido = comentario del nodo destino.'
+                body: marker + '\n**WAIPL-BUS** \\u00b7 de=' + payloadObj.de + ' para=' + payloadObj.para + ' \\u00b7 actor=' + payloadObj.sender_login + ' (' + payloadObj.sender_association + ') \\u00b7 ' + statusLabel + '\n' + note + '\nEsto no es un *recibido*. Recibido = comentario del nodo destino.'
               });
             }
