@@ -4,53 +4,17 @@
   "canon": "git-blob-bytes",
   "note": "Este manifiesto no se hashea a sí mismo. El Action imprime su sha256 en el log.",
   "files": {
-    "03_PERSONAS_IA/AETHER/IDENTIDAD.md": {
-      "sha256": "ed8698e25bb08b26c8c28e16f7504cdc3001bb1dce87585174c5d5a6e4611b5d",
-      "bytes": 1304
-    },
-    "03_PERSONAS_IA/AETHER-HERMES/IDENTIDAD.md": {
-      "sha256": "39d749b8500bab6cbe216291392919d105d4c31658921e06b28367e113bf9e6d",
-      "bytes": 628
-    },
-    "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md": {
-      "sha256": "a8682f7c12a18ff01b65286a0fecad76db2f33d14d1d23b4c465804c4d590860",
-      "bytes": 2679
-    },
-    "06_SISTEMA_OPERATIVO/2026-08-23_WAIPL_GOBERNANZA_ADDENDA_DirectivaTransversal_v1.0_12PrincipioOperativo_CANONIZADO.md": {
-      "sha256": "1cde5908d454457163ecc3dc5d3eb8072af27d4cb4dad410fb8b27939e8d1fda",
-      "bytes": 3430
-    },
-    "06_SISTEMA_OPERATIVO/HERMES/GLOSARIO.md": {
-      "sha256": "f87cdb378ad169cc72e6a9869181e6723a7b3a7658f7403c7a0a7c960d5321d1",
-      "bytes": 1431
-    },
-    "06_SISTEMA_OPERATIVO/HERMES/IDENTIDAD.md": {
-      "sha256": "ba1998bb3fe74179c2e2c1ae77a282699f3294c341580887f2b4d3413aeee452",
-      "bytes": 1420
-    },
-    "06_SISTEMA_OPERATIVO/HERMES/N3-AUTOCLAW-RUNTIME.md": {
-      "sha256": "c4ff3b733302f01f9f0c5afc6787d3aaad07cd2327b94138e04ba0f6bb4de7c5",
-      "bytes": 3518
-    },
-    "06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md": {
-      "sha256": "676c55fb9014f3b94b9f9f834701c5d4375055d2",
-      "bytes": 8626
-    },
-    "06_SISTEMA_OPERATIVO/HERMES/webhook_handler.py": {
-      "sha256": "84a719f1d6325c8f88a4152a73b26fde0921934ae3d5d38e7371d643d56fd0e4",
-      "bytes": 1690
-    },
-    "06_SISTEMA_OPERATIVO/INTEGRITY/SPEC-INTEGRITY-v1.0.md": {
-      "sha256": "39cfcede5791d88d5095ab4c028eccc796eecfbc401a71ba292889e03b1bb06e",
-      "bytes": 1495
-    },
-    "06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py": {
-      "sha256": "744bded616ff73844a4a58d3130794529e8a815f34362b82b74c25a45a894f66",
-      "bytes": 7680
-    },
-    "graph.json": {
-      "sha256": "01cb0bf91b52c14145a3549d6c6a8e7880ae5006a7a91a1cc26639c13b9d9967",
-      "bytes": 6126
-    }
+    "03_PERSONAS_IA/AETHER/IDENTIDAD.md": {"sha256": "ed8698e25bb08b26c8c28e16f7504cdc3001bb1dce87585174c5d5a6e4611b5d", "bytes": 1304},
+    "03_PERSONAS_IA/AETHER-HERMES/IDENTIDAD.md": {"sha256": "39d749b8500bab6cbe216291392919d105d4c31658921e06b28367e113bf9e6d", "bytes": 628},
+    "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md": {"sha256": "a8682f7c12a18ff01b65286a0fecad76db2f33d14d1d23b4c465804c4d590860", "bytes": 2679},
+    "06_SISTEMA_OPERATIVO/2026-08-23_WAIPL_GOBERNANZA_ADDENDA_DirectivaTransversal_v1.0_12PrincipioOperativo_CANONIZADO.md": {"sha256": "1cde5908d454457163ecc3dc5d3eb8072af27d4cb4dad410fb8b27939e8d1fda", "bytes": 3430},
+    "06_SISTEMA_OPERATIVO/HERMES/GLOSARIO.md": {"sha256": "f87cdb378ad169cc72e6a9869181e6723a7b3a7658f7403c7a0a7c960d5321d1", "bytes": 1431},
+    "06_SISTEMA_OPERATIVO/HERMES/IDENTIDAD.md": {"sha256": "ba1998bb3fe74179c2e2c1ae77a282699f3294c341580887f2b4d3413aeee452", "bytes": 1420},
+    "06_SISTEMA_OPERATIVO/HERMES/N3-AUTOCLAW-RUNTIME.md": {"sha256": "c4ff3b733302f01f9f0c5afc6787d3aaad07cd2327b94138e04ba0f6bb4de7c5", "bytes": 3518},
+    "06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md": {"sha256": "e4f178b6af1fa2e2b023ce614f107298b01cf01f99f4c021672c3e7a50d092e0", "bytes": 8626},
+    "06_SISTEMA_OPERATIVO/HERMES/webhook_handler.py": {"sha256": "84a719f1d6325c8f88a4152a73b26fde0921934ae3d5d38e7371d643d56fd0e4", "bytes": 1690},
+    "06_SISTEMA_OPERATIVO/INTEGRITY/SPEC-INTEGRITY-v1.0.md": {"sha256": "39cfcede5791d88d5095ab4c028eccc796eecfbc401a71ba292889e03b1bb06e", "bytes": 1495},
+    "06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py": {"sha256": "744bded616ff73844a4a58d3130794529e8a815f34362b82b74c25a45a894f66", "bytes": 7680},
+    "graph.json": {"sha256": "01cb0bf91b52c14145a3549d6c6a8e7880ae5006a7a91a1cc26639c13b9d9967", "bytes": 6126}
   }
 }
