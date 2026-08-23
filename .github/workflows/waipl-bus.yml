@@ -35,6 +35,13 @@ jobs:
             const labels = (issue.labels || []).map(l => l.name);
             const marker = '<!-- waipl-bus:seen -->';
 
+            function field(name) {
+              const line = body.match(new RegExp('^' + name + ':\\s*(.+)$', 'mi'));
+              if (line) return line[1].trim();
+              const form = body.match(new RegExp('###\\s*' + name + '\\s*\\n+([^#\\n][^\\n]*)', 'i'));
+              return form ? form[1].trim() : '';
+            }
+
             async function ensureLabel(name) {
               try {
                 await github.rest.issues.getLabel({ ...context.repo, name });
@@ -60,9 +67,9 @@ jobs:
               labels.push('bus');
             }
 
-            const de = (body.match(/^DE:\s*(.+)$/mi) || [])[1];
-            const para = (body.match(/^PARA:\s*(.+)$/mi) || [])[1];
-            const trace = (body.match(/^TRACE:\s*(.+)$/mi) || [])[1] || null;
+            const de = field('DE');
+            const para = field('PARA');
+            const trace = field('TRACE') || null;
             const valid = Boolean(de && para);
 
             if (!valid) {
@@ -72,7 +79,7 @@ jobs:
                 await github.rest.issues.createComment({
                   ...context.repo,
                   issue_number: issue.number,
-                  body: `${marker.replace('seen','invalid')}\nFaltan campos DE: y PARA:. El bus no asienta este mensaje.`
+                  body: '<!-- waipl-bus:invalid -->\nFaltan campos DE y PARA. El bus no asienta este mensaje.'
                 });
               }
               return;
@@ -87,8 +94,8 @@ jobs:
               issue_number: issue.number,
               title: issue.title,
               labels,
-              de: de.trim().toLowerCase(),
-              para: para.trim().toLowerCase(),
+              de: de.toLowerCase(),
+              para: para.toLowerCase(),
               html_url: issue.html_url,
               trace,
               comment_id: context.payload.comment ? context.payload.comment.id : null
@@ -114,14 +121,14 @@ jobs:
                 });
                 if (res.ok) {
                   statusLabel = 'bus:seen';
-                  note = `Webhook Hermes HTTP ${res.status}.`;
+                  note = 'Webhook Hermes HTTP ' + res.status + '.';
                 } else {
                   statusLabel = 'bus:webhook-failed';
-                  note = `Webhook Hermes HTTP ${res.status}. El Issue sigue siendo el registro.`;
+                  note = 'Webhook Hermes HTTP ' + res.status + '. El Issue sigue siendo el registro.';
                 }
               } catch (err) {
                 statusLabel = 'bus:webhook-failed';
-                note = `Webhook inalcanzable: ${err.message}. El Issue sigue siendo el registro.`;
+                note = 'Webhook inalcanzable: ' + err.message + '. El Issue sigue siendo el registro.';
               }
             }
 
@@ -131,6 +138,6 @@ jobs:
               await github.rest.issues.createComment({
                 ...context.repo,
                 issue_number: issue.number,
-                body: `${marker}\n**WAIPL-BUS** · de=${payloadObj.de} para=${payloadObj.para} · ${statusLabel}\n${note}\nEsto no es un *recibido*. Recibido = comentario del nodo destino.`
+                body: marker + '\n**WAIPL-BUS** \u00b7 de=' + payloadObj.de + ' para=' + payloadObj.para + ' \u00b7 ' + statusLabel + '\n' + note + '\nEsto no es un *recibido*. Recibido = comentario del nodo destino.'
               });
             }
