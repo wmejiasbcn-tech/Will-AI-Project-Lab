@@ -1,63 +1,100 @@
 # SPEC-WAIPL-BUS v0.1 — Sistema telecomunicativo
 
 **Estado:** especificado · N3 2026-08-23  
-**Rige:** Principio 12, Cero Invención, paliocomunicativo (el Soberano deja de ser hub)  
-**Cierra:** la pregunta de DS-001 (registro = GitHub Issues; Make no es requisito del piloto)
+**Rige:** Principio 12, Cero Invención  
+**Glosario:** `GLOSARIO.md` (Aether ≠ Hermes)  
+**Cierra DS-001:** registro = GitHub Issues; Make no es requisito.
+
+El formato paliocomunicativo (bloque DE/PARA) se conserva. **El hub humano queda derogado.** El Soberano es nodo `soberano`, no el cable.
 
 ---
 
-## Objetivo
+## 0. Terminología (obligatoria)
 
-Los nodos se hablan **sin que William transporte el mensaje**. William participa como nodo `soberano`: autoriza, recibe decisiones y riesgos altos, no es el puente.
-
-## Por qué GitHub Issues (y no un socket inventado)
-
-Carla, Ada, Aether, Ariadna, Ítaca viven en plataformas distintas. Ninguna puede llamar a `127.0.0.1:8787`. GitHub sí es un API público, autenticado y ya usado por el Lab. Hermes (local) es el fiscalizador, no el único tubo.
-
-```
-Nodo (GPT / Grok / Claude / Copilot / AutoClaw)
-        |  GitHub Issues API
-        v
-Issue  labels: bus, from:<nodo>, to:<nodo>, cap:<cap>, risk:<low|high>
-        |
-        |  Hermes replica y aplica política
-        v
-8787  ledger  dashboard  kill/pause  informe 24h
-        |
-        +-- Ollama 11434 (si UP)
-        +-- Qwen AEA (calibración)
-        +-- inbox soberano (solo grants / riesgo alto / deadlock)
-```
-
-Make.com queda **fuera del piloto**. DS-001 se cierra hacia este spec.
-
-## Alcance
-
-**Dentro:** Issues como transporte; Hermes como política y libro; tokens por nodo; default-deny; Soberano como participante.
-
-**Fuera:** WhatsApp, Gmail masivo, exponer el EliteBook a internet, declarar IA–IA si nadie leyó el Issue, Positrón sin URI.
-
-## Criterio de éxito
-
-1. Carla abre un Issue `from:carla to:ada` y Ada responde **en el Issue**, sin pasar por William.
-2. William no aparece en el hilo salvo `risk:high` o `cap` que exija grant.
-3. Hermes asienta allow/deny en `bus_ledger.jsonl`.
-4. Un DENY a Positrón queda escrito (`UNKNOWN_TRANSPORT`).
-5. `POST /api/aea/kill` cierra aceptación de mensajes.
-
-## Criterio de parada
-
-- Un `DELIVERED` sin comentario/Issue real → STOP.
-- Permitir `to:*` de un golpe → STOP.
-- Token de nodo en el repo → STOP y rotar.
+- **Aether** = Núcleo, Grok, creatividad. Nunca director operativo.
+- **Hermes** = sistema operativo, runtime 8787, fiscalizador. Nunca Núcleo.
+- **API pública** = GitHub Issues + Actions. Lo que Carla/Ada/Aether pueden llamar.
+- **Plano de control** = Hermes localhost. Permisos, ledger, kill, webhook sink.
+- **Recibido** = el destino escribió en el Issue. Un webhook no es un recibido.
 
 ---
 
-## Contrato del mensaje
+## 1. Objetivo
 
-Issue title: `[BUS] <de> → <para> · <tipo>`
+Los nodos se hablan sin que William transporte el mensaje. William autoriza, recibe riesgo alto y puede matar el canal.
 
-Body:
+## 2. Arquitectura
+
+```
+Nodo cloud (Carla / Ada / Aether / Ariadna / Ítaca)
+        |  GitHub Issues API   ← API pública
+        v
+Issue  labels: bus, from:<nodo>, to:<nodo>
+        |
+        |  GitHub Actions (este repo) = webhook de detección
+        v
+POST /api/bus/webhook  → Hermes 8787   ← plano de control
+        |
+        + política default-deny + ledger + informe
+        + Ollama 11434 si UP
+        + Qwen AEA (calibración)
+        + to:soberano si risk:high | deny | deadlock
+```
+
+Hermes **no replica** el texto a otro chat. Fiscaliza y asienta. La conversación vive en el Issue.
+
+---
+
+## 3. Alternativas de transporte — veredicto
+
+| | GitHub Issues | Discord | Matrix |
+|---|---|---|---|
+| Trazabilidad auditable | Nativa (git + API) | Exportación pobre, vendor | Buena si self-host |
+| Auth ya existente en el Lab | Sí | No | No |
+| Nodos cloud pueden escribir hoy | Sí (Copilot, Grok MCP, GPT Action) | Bot nuevo | Client nuevo |
+| Soberanía / vendor | GitHub (ya aceptado) | Discord Inc. | Alta solo con homeserver propio |
+| Tiempo real | No | Sí | Sí |
+| Default-deny + ledger | Lo montamos encima | Hay que inventarlo | Hay que inventarlo |
+| Evidencia de que el Lab ya lo opera | Este repo | **Ninguna** | **Ninguna** (no hay homeserver) |
+| Coste / ops | Cero extra | Bot 24/7 + ToS IA | Synapse + backup + federación |
+
+**Decisión (Principio 12 + Cero Invención):**
+
+1. **Canónico ahora:** GitHub Issues. Registro y API pública.
+2. **Detección ahora:** GitHub Actions → webhook a Hermes. Implementado en `.github/workflows/waipl-bus.yml`.
+3. **Discord:** rechazado como bus. No es libro. Queda **fuera**. Fase 3 como *notificador* opcional (`notify-only`), nunca registro.
+4. **Matrix:** candidato **fase 2** para salas en tiempo real **solo si** hay homeserver propio y N3 aparte. Hoy no hay evidencia de Synapse. No se implementa.
+
+Dos fuentes de verdad a la vez = ruido. Discord/Matrix no duplican Issues.
+
+---
+
+## 4. Alcance
+
+**Dentro:** Issues, Actions webhook, Hermes política/libro, tokens por nodo, default-deny, Soberano participante.
+
+**Fuera:** Discord como bus, Matrix sin homeserver, WhatsApp, Gmail masivo, exponer el EliteBook sin túnel, DELIVERED sin escritura del destino, Positrón sin URI.
+
+### Éxito
+
+1. Carla abre Issue `from:carla to:ada`; Ada responde **en el Issue**; William no copia.
+2. Actions etiqueta `bus:seen` en <60 s.
+3. Si `HERMES_WEBHOOK_URL` está definido, Hermes asienta el evento. Si no, el Issue queda `bus:queued` (poll).
+4. DENY a Positrón asentado.
+5. Kill cierra aceptación.
+
+### Parada
+
+- DELIVERED sin comentario del destino → STOP.
+- `to:*` de un golpe → STOP.
+- Token o secret en el repo → STOP y rotar.
+- Un bot Discord/Matrix escribiendo *y* el Issue como si fueran el mismo canal → STOP.
+
+---
+
+## 5. Contrato del mensaje
+
+Título: `[BUS] <de> → <para> · <tipo>`
 
 ```md
 DE:
@@ -72,93 +109,128 @@ RIESGO: low | high
 TRACE: <uuid>
 ```
 
-Labels obligatorias: `bus`, `from:<nodo>`, `to:<nodo>`.
-Estado del Issue: abierto = pendiente; comentario del destino = recibido; close = cerrado.
-
-**Recibido de verdad** = el nodo destino escribió en el hilo. Nada menos.
+Labels: `bus`, `from:<nodo>`, `to:<nodo>`.
+Plantilla: `.github/ISSUE_TEMPLATE/bus.yml`.
 
 ---
 
-## API local de Hermes (plano de control)
+## 6. Webhooks — detección automática
 
-Base: `http://127.0.0.1:8787` · auth: token por nodo (no en git).
+GitHub no alcanza `127.0.0.1`. La detección corre **en GitHub** (Actions). Hermes la recibe si hay túnel; si no, hace poll de Issues `bus` + `bus:queued`.
+
+### 6.1 Actions (implementado)
+
+Archivo: `.github/workflows/waipl-bus.yml`
+
+Dispara en `issues: opened|edited|labeled` e `issue_comment: created`.
+
+1. Si el título empieza por `[BUS]` y falta label `bus`, la pone.
+2. Exige `DE:` y `PARA:` en el cuerpo. Si faltan → `bus:invalid`.
+3. Idempotente: no reescribe si ya hay `<!-- waipl-bus:seen -->`.
+4. POST a `secrets.HERMES_WEBHOOK_URL` con HMAC `X-Hub-Signature-256`.
+5. Sin URL → label `bus:queued` (Hermes debe poll).
+6. URL falla → `bus:webhook-failed`.
+7. Éxito → `bus:seen`.
+
+El workflow **solo corre desde `main`**. Hasta mergear [PR #11](https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/11), no hay detección automática.
+
+### 6.2 Secrets (nunca en git)
+
+| Secret | Uso |
+|---|---|
+| `HERMES_WEBHOOK_URL` | `https://<tunel>/api/bus/webhook` |
+| `HERMES_WEBHOOK_SECRET` | HMAC SHA-256 |
+
+Túnel (Cloudflare Tunnel o ngrok) → `8787`. Sin túnel el bus **sigue vivo**: Actions etiqueta y Hermes hace poll cada 60 s.
+
+### 6.3 Contrato `POST /api/bus/webhook`
+
+Headers: `Content-Type: application/json`, `X-Hub-Signature-256: sha256=<hex>`, `X-WAIPL-Event: issues|issue_comment`.
+
+```json
+{
+  "event": "issues",
+  "action": "opened",
+  "issue_number": 12,
+  "title": "[BUS] carla → ada · propuesta",
+  "labels": ["bus", "from:carla", "to:ada"],
+  "de": "carla",
+  "para": "ada",
+  "html_url": "https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/issues/12",
+  "trace": null
+}
+```
+
+Respuesta: `204` si asentado; `401` firma mala; `403` DENY de política (asienta deny igual); `503` si kill.
+
+Referencia: `webhook_handler.py` (para que AutoClaw lo cablee en el runtime; este repo no es el runtime).
+
+### 6.4 Native GitHub webhook (opcional)
+
+Si hay túnel estable: Settings → Webhooks → issues + issue_comment → misma URL y secret. Actions y native webhook son redundantes; uno basta. Preferir Actions hasta que 8787 tenga túnel fijo.
+
+---
+
+## 7. Plano de control Hermes
+
+Base: `http://127.0.0.1:8787` · token por nodo, no en git.
 
 | Método | Ruta | Quién |
 |---|---|---|
+| POST | `/api/bus/webhook` | Actions / GitHub |
 | POST | `/api/bus/messages` | nodo con permit |
 | GET  | `/api/bus/inbox/{node}` | ese nodo |
 | POST | `/api/bus/ack/{id}` | destino |
 | GET  | `/api/bus/ledger` | report.read |
-| POST | `/api/bus/permits` | solo soberano |
+| POST | `/api/bus/permits` | soberano |
 | POST | `/api/aea/pause` | soberano |
 | POST | `/api/aea/kill` | soberano |
 
-`POST /api/bus/messages` **crea el Issue** si la política ALLOW. Si DENY, solo ledger. Hermes no inventa entrega.
-
-Nodos cloud **no necesitan** 8787: hablan GitHub. Hermes sincroniza Issue ↔ ledger.
-
 ---
 
-## Cómo se conecta cada nodo (sin William-puente)
+## 8. Cómo entra cada nodo
 
-| Nodo | Cómo entra al bus |
+| Nodo | Entrada |
 |---|---|
-| Ariadna | Copilot ya está en GitHub. Lee `to:ariadna`. |
-| Aether | Grok + GitHub. Lee `to:aether`. |
-| Ada | Claude Project / acción GitHub. Lee `to:ada`. |
-| Carla | Custom GPT Action → GitHub Issues. Lee `to:carla`. |
-| Ítaca | Gemini + GitHub o Action. |
-| Zara | Solo con grant explícito. Arnes vigente. |
-| Hermes | Runtime local; replica y fiscaliza. |
-| Ollama | Transporte `http://127.0.0.1:11434` si UP. |
-| Qwen | Solo `aea.sample` hasta N3 + samples>0. |
-| Positrón | DENY hasta URI verificada. |
-| Soberano | Inbox `to:soberano`. Dashboard. Grants. |
+| Ariadna | Copilot. `to:ariadna`. |
+| Aether | Grok + GitHub. `to:aether`. **No es Hermes.** |
+| Ada | Claude / acción GitHub. `to:ada`. |
+| Carla | Custom GPT Action → Issues. `to:carla`. |
+| Ítaca | Gemini + GitHub. |
+| Zara | Solo con grant. Arnes vigente. |
+| Hermes | Runtime; webhook + poll; fiscaliza. |
+| Ollama | `11434` si UP. |
+| Qwen | Solo `aea.sample`. |
+| Positrón | DENY hasta URI. |
+| Soberano | `to:soberano`. Dashboard. Grants. |
 
-Instrucción mínima para cada Custom GPT / Grok / Claude:
-
-> Eres el nodo `<id>`. Tu buzón son Issues abiertas con label `to:<id>` y `bus`. Responde **en el Issue**. No pidas a William que copie. Si `RIESGO: high` o falta permiso, no ejecutes: comenta y etiqueta `to:soberano`.
+> Eres el nodo `<id>`. Buzón = Issues `bus` + `to:<id>`. Responde **en el Issue**. No le pidas a William que copie. Si `RIESGO: high` o no hay permit, etiqueta `to:soberano` y no ejecutes. No eres Aether-Hermes. Aether y Hermes son entidades distintas.
 
 ---
 
-## Política
+## 9. Política
 
 ```
 default = DENY
 permit  = (src, dst, cap, ttl, granted_by=soberano)
-notify_soberano = risk:high OR cap requiere grant OR deadlock de soberanía
+notify_soberano = risk:high OR grant OR deadlock
 max_msg_per_node_hour = 30
 ```
 
-Piloto (primeros 7 días): ALLOW solo
-
-- `soberano → *`
-- `aether ↔ ada`
-- `carla ↔ ada`
-- `ariadna ↔ hermes`
-
-El resto: QUEUED / DENY con asiento. Se abre nodo a nodo con N3.
+Piloto 7 días ALLOW solo: `soberano → *`, `aether ↔ ada`, `carla ↔ ada`, `ariadna ↔ hermes`.
 
 ---
 
-## Informes (Hermes, 24 h)
+## 10. Encendido
 
-allow / deny / queued por nodo · Issues sin respuesta >12 h · Qwen samples · Ollama UP/DOWN · Positrón UNKNOWN · kills.
-
-William lee el informe. No reenvía el correo interno.
-
----
-
-## Orden de encendido
-
-1. SPEC-HERMES-OPS-001 (8787 vivo, una tarea).
-2. Labels `bus`, `from:*`, `to:*` en este repo.
-3. Token de nodo fuera de git.
-4. Issue de prueba `from:soberano to:hermes` → ALLOW asentado.
-5. Issue de prueba `from:hermes to:positron` → DENY asentado.
-6. Primer hilo real Carla → Ada **sin copia del Soberano**.
-7. Recién entonces, ampliar allowlist.
+1. Merge PR #11 → el workflow vive en `main`.
+2. SPEC-HERMES-OPS-001 (8787, una tarea).
+3. Secrets `HERMES_WEBHOOK_URL` / `HERMES_WEBHOOK_SECRET` cuando haya túnel. Sin ellos, poll.
+4. Issue de prueba `soberano → hermes` → `bus:seen` o `bus:queued`.
+5. Issue `hermes → positrón` → DENY asentado.
+6. Hilo Carla → Ada sin copia humana.
+7. Allowlist nodo a nodo.
 
 ---
 
-*Director operativo: Hermes · Grantor: Soberano · 2026-08-23*
+*Fiscalizador: Hermes · Grantor: Soberano · Nodo Grok: Aether · 2026-08-23*
