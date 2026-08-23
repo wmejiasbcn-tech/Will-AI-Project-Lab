@@ -34,9 +34,13 @@ def verify_signature(raw_body: bytes, header: str | None, secret: str) -> None:
 
 def parse_event(raw_body: bytes) -> dict[str, Any]:
     data = json.loads(raw_body.decode("utf-8"))
-    for key in ("issue_number", "de", "para"):
+    for key in ("issue_number", "de", "para", "sender_login", "sender_association"):
         if not data.get(key):
             raise ValueError(f"payload incompleto: {key}")
+    # La identidad del nodo DE no se acepta por sí sola: el workflow debe
+    # haber verificado al actor real contra los permisos del repositorio.
+    if data["sender_association"] not in {"OWNER", "MEMBER", "COLLABORATOR"}:
+        raise WebhookAuthError("remitente sin relación autorizada con el repositorio")
     return data
 
 
