@@ -33,7 +33,7 @@
       "bytes": 3518
     },
     "06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md": {
-      "sha256": "308595671597628b0341936d415f80c2939dd01fff4daffd79671b928511a660",
+      "sha256": "e4f178b6af1fa2e2b023ce614f107298b01cf01f99f4c021672c3e7a50d092e0",
       "bytes": 8336
     },
     "06_SISTEMA_OPERATIVO/HERMES/webhook_handler.py": {
