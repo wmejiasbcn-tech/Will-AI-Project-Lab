@@ -38,6 +38,7 @@ jobs:
             const labels = (issue.labels || []).map(l => l.name);
             const marker = '<!-- waipl-bus:seen -->';
             const allowedAssociations = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
+            const allowedPermissions = new Set(['admin', 'maintain', 'push']);
 
             function field(name) {
               const line = body.match(new RegExp('^' + name + ':\\s*(.+)$', 'mi'));
@@ -96,8 +97,8 @@ jobs:
               return;
             }
 
-            // El actor real de GitHub es la única identidad autorizable aquí.
-            // DE/PARA son datos de enrutamiento y nunca sirven como autenticación.
+            // DE/PARA son datos de enrutamiento, nunca credenciales.
+            // La autorización depende del actor real y de su permiso efectivo en el repo.
             const sender = context.payload.sender || {};
             const senderLogin = sender.login || '';
             const senderAssociation = sender.association || '';
@@ -106,6 +107,31 @@ jobs:
               await markInvalid(
                 '<!-- waipl-bus:unauthorized -->',
                 'Remitente no autorizado. El actor real de GitHub debe tener asociación OWNER, MEMBER o COLLABORATOR.'
+              );
+              return;
+            }
+
+            let permission = '';
+            try {
+              const permissionResponse = await github.rest.repos.getCollaboratorPermissionLevel({
+                ...context.repo,
+                username: senderLogin
+              });
+              permission = permissionResponse.data.permission || '';
+            } catch (e) {
+              await addLabels(['bus:unauthorized']);
+              await markInvalid(
+                '<!-- waipl-bus:unauthorized-permission -->',
+                'No se pudo verificar el permiso efectivo del remitente. El bus aplica DENY por defecto.'
+              );
+              return;
+            }
+
+            if (!allowedPermissions.has(permission)) {
+              await addLabels(['bus:unauthorized']);
+              await markInvalid(
+                '<!-- waipl-bus:unauthorized-permission -->',
+                'Remitente sin permiso efectivo suficiente. Se requiere admin, maintain o push.'
               );
               return;
             }
@@ -123,6 +149,7 @@ jobs:
               para: para.toLowerCase(),
               sender_login: senderLogin,
               sender_association: senderAssociation,
+              sender_permission: permission,
               html_url: issue.html_url,
               trace,
               comment_id: context.payload.comment ? context.payload.comment.id : null
@@ -131,11 +158,11 @@ jobs:
             const url = process.env.HERMES_WEBHOOK_URL;
             const secret = process.env.HERMES_WEBHOOK_SECRET || '';
 
-            if (url && !secret) {
+            if (url && (!secret || secret.length < 32)) {
               await addLabels(['bus:config-error']);
               await markInvalid(
                 '<!-- waipl-bus:config-error -->',
-                'Configuración insegura: HERMES_WEBHOOK_URL está definido pero HERMES_WEBHOOK_SECRET no está configurado. No se envía ningún webhook.'
+                'Configuración insegura: HERMES_WEBHOOK_SECRET debe existir y tener al menos 32 caracteres. No se envía ningún webhook.'
               );
               return;
             }
@@ -175,6 +202,6 @@ jobs:
               await github.rest.issues.createComment({
                 ...context.repo,
                 issue_number: issue.number,
-                body: marker + '\n**WAIPL-BUS** \\u00b7 de=' + payloadObj.de + ' para=' + payloadObj.para + ' \\u00b7 actor=' + payloadObj.sender_login + ' (' + payloadObj.sender_association + ') \\u00b7 ' + statusLabel + '\n' + note + '\nEsto no es un *recibido*. Recibido = comentario del nodo destino.'
+                body: marker + '\n**WAIPL-BUS** · de=' + payloadObj.de + ' para=' + payloadObj.para + ' · actor=' + payloadObj.sender_login + ' (' + payloadObj.sender_association + ', ' + payloadObj.sender_permission + ') · ' + statusLabel + '\n' + note + '\nEsto no es un *recibido*. Recibido = comentario del nodo destino.'
               });
             }
