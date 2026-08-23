@@ -126,11 +126,11 @@ Dispara en `issues: opened|edited|labeled` e `issue_comment: created`.
 
 1. Si el título empieza por `[BUS]` y falta label `bus`, la pone.
 2. Exige `DE:` y `PARA:` en el cuerpo. Si faltan → `bus:invalid`.
-3. Idempotente: no reescribe si ya hay `<!-- waipl-bus:seen -->`.
-4. POST a `secrets.HERMES_WEBHOOK_URL` con HMAC `X-Hub-Signature-256`.
-5. Sin URL → label `bus:queued` (Hermes debe poll).
-6. URL falla → `bus:webhook-failed`.
-7. Éxito → `bus:seen`.
+3. Autoriza al actor real de GitHub mediante permisos `admin|maintain|push` y asociación `OWNER|MEMBER|COLLABORATOR`; `DE:` nunca autentica. Si falla → `bus:unauthorized`.
+4. Serializa las ejecuciones por Issue y no reescribe si ya hay `<!-- waipl-bus:seen -->`.
+5. Si hay URL, exige `HERMES_WEBHOOK_SECRET`; si falta → `bus:config-error` y no envía nada.
+6. POST a `secrets.HERMES_WEBHOOK_URL` con HMAC `X-Hub-Signature-256`.
+7. Sin URL → label `bus:queued` (Hermes debe poll). URL falla → `bus:webhook-failed`. Éxito → `bus:seen`.
 
 El workflow **solo corre desde `main`**. Hasta mergear [PR #11](https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/11), no hay detección automática.
 
