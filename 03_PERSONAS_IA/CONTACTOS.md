@@ -1,16 +1,16 @@
 # CONTACTOS — Roles IA del WAIPL
 
-Este archivo documenta los roles del ecosistema y los contactos humanos responsables para coordinación y escalación.
-
-| Rol | Descripción | Contacto humano (provisional) |
-|---|---|---|
-| Ariadna | Copiloto GitHub — Coherencia sistémica y custodia de repositorio | wmejiasbcn-tech (Soberano) |
-| Zara / Zapia | Rol operativo de comunicación y coordinación | wmejiasbcn-tech (Soberano) |
-| Carla | IA — Estrategia y Visión | (placeholder) |
-| Ada | IA — Ética y Custodia | (placeholder) |
-| Aether | IA — Disrupción Creativa | (placeholder) |
-| Sylvia Bloom | Secretaría y Documentación | (placeholder) |
+| Rol | Capa | Descripción | Contacto humano |
+|---|---|---|---|
+| Ariadna | Núcleo | Copiloto GitHub — coherencia de repositorio | wmejiasbcn-tech (Soberano) |
+| Zara / Zapia | Núcleo | Operativa externa, bajo arnés | wmejiasbcn-tech (Soberano) |
+| Carla | Núcleo | Estrategia y visión · IA primaria | (placeholder) |
+| Ada | Núcleo | Ética y custodia | (placeholder) |
+| Aether | Núcleo | Disrupción creativa · plataforma Grok | (placeholder) |
+| Sylvia Bloom | Núcleo | Secretaría y documentación | (placeholder) |
+| Hermes | Sistema operativo | Director operativo 24/7 · bus y fiscalizador · **no es Núcleo** | runtime local 8787 |
 
 Notas:
-- Los roles anteriores son entidades internas del ecosistema WAIPL y no representan cuentas humanas externas.
-- Actualiza los contactos humanos cuando se desee asignar responsables concretos.
+- **Aether-Hermes ya no existe.** No usar el compuesto.
+- Hermes no es persona-IA del Núcleo; no vive en esta carpeta salvo esta fila.
+- Los roles son entidades internas del WAIPL, no cuentas humanas externas.
