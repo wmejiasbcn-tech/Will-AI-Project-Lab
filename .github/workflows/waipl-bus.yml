@@ -78,6 +78,17 @@ jobs:
               }
             }
 
+            // Adding the bus/status labels from this workflow emits another
+            // `issues:labeled` event. It is an internal bookkeeping event, not
+            // a new bus message, so never re-ingest it.
+            if (
+              context.eventName === 'issues' &&
+              context.payload.action === 'labeled' &&
+              context.actor === 'github-actions[bot]'
+            ) {
+              return;
+            }
+
             if (!labels.includes('bus')) {
               await addLabels(['bus']);
               labels.push('bus');
@@ -138,6 +149,13 @@ jobs:
 
             const comments = await github.rest.issues.listComments({ ...context.repo, issue_number: issue.number, per_page: 100 });
             const already = comments.data.some(c => (c.body || '').includes(marker));
+
+            // A previously seen Issue is already registered. Do not send the
+            // same issue-level event again; issue_comment events remain valid
+            // delivery events and are handled independently.
+            if (already && context.eventName === 'issues') {
+              return;
+            }
 
             const payloadObj = {
               event: context.eventName,
