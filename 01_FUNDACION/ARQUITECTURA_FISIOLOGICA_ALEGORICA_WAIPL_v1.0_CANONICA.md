@@ -103,9 +103,17 @@ La conectividad externa del entorno local de ejecución (Ollama) deberá mantene
 
 ### PRINCIPIO IV — SUPERVISIÓN DEL NODO DE TRÁNSITO
 
-El nodo que arbitra, registra y audita la comunicación interagente (Graphify) debe ser, él mismo, objeto de supervisión independiente. La función de auditoría no exime al nodo auditor de ser auditado. Esta supervisión no puede residir en el propio Graphify — debe ser ejercida desde una función externa. En la arquitectura del WAIPL, esta función corresponde naturalmente al Vórtice.
+El nodo que arbitra, registra y audita la comunicación interagente (Graphify) debe ser, él mismo, objeto de supervisión independiente. La función de auditoría no exime al nodo auditor de ser auditado.
 
-El Principio IV fue aportado por Ada durante la revisión de este documento. Sin él, los tres primeros dejaban un punto ciego crítico: Graphify audita todo, pero nadie audita a Graphify. Este principio cierra ese círculo.
+La **supervisión operativa de Graphify corresponde a Hermes, Director Operativo del ecosistema**. Hermes ejerce la supervisión operativa del nodo de tránsito dentro de su jurisdicción.
+
+Esta función es distinta de la función de **WILLIAM-SCY-01**, avatar del Soberano y capa independiente de comprobación y contraste de las comunicaciones, decisiones, informes y estados que cualquier nodo, agente o sistema —incluido Hermes, Graphify, Carla o Ada— comunique al Soberano.
+
+WILLIAM-SCY-01 no sustituye a Hermes como Director Operativo, no asume su jurisdicción y no constituye una instancia operativa subordinada a Hermes. Su función de contraste soberano debe preservar independencia respecto de la entidad o fuente que esté siendo contrastada.
+
+**Decisión soberana registrada el 2026-08-29:** Hermes supervisa operativamente Graphify; WILLIAM-SCY-01 constituye la capa independiente de comprobación del Soberano.
+
+El Principio IV fue aportado por Ada durante la revisión inicial de este documento. La presente formulación sustituye la referencia anterior al Vórtice como titular específico de la supervisión operativa de Graphify y precisa la separación entre supervisión operativa y contraste soberano.
 
 ## 8. LA DISTINCIÓN TRIPLE FUNDAMENTAL
 
@@ -141,6 +149,12 @@ Agente A emite solicitud
 → Agente B recibe  
 → Acción → Registro → Auditoría → Trazabilidad
 
+**Contraste soberano:**
+
+Cualquier nodo, agente o sistema comunica información al Soberano  
+→ WILLIAM-SCY-01 contrasta la información y su coherencia con el estado y evidencia disponible  
+→ WILLIAM-SCY-01 informa al Soberano conforme a su jurisdicción.
+
 ## 10. CONEXIÓN CON LA ARQUITECTURA CANÓNICA v1.0
 
 La arquitectura fisiológica no sustituye ni modifica la Arquitectura Canónica del Ecosistema WAIPL v1.0. Se relaciona con ella del siguiente modo:
@@ -163,7 +177,7 @@ Documento arquitectónico de referencia: Arquitectura Canónica del Ecosistema W
 
 **Estado actual:**
 
-**CANONIZADO.** El proceso de validación Carla + Ada fue completado el 2026-08-18 y la canonización fue ordenada expresamente por el Soberano el 2026-08-18. No existen observaciones abiertas.
+**CANONIZADO.** El proceso de validación Carla + Ada fue completado el 2026-08-18 y la canonización fue ordenada expresamente por el Soberano el 2026-08-18. La decisión soberana del 2026-08-29 actualiza el titular de la supervisión operativa de Graphify y precisa la función independiente de contraste de WILLIAM-SCY-01.
 
 **Próximos pasos de implementación:**
 
@@ -172,6 +186,7 @@ Documento arquitectónico de referencia: Arquitectura Canónica del Ecosistema W
 3. **RELACIÓN DOCUMENTAL — REGISTRADA.** La relación bidireccional con la Arquitectura Canónica del Ecosistema WAIPL v1.0 queda formalmente definida en la Sección 10. La referencia correspondiente deberá mantenerse sincronizada en ambos documentos.
 4. **COMPLETADO — proceso de validación Carla + Ada ejecutado el 2026-08-18. Canonización ordenada por el Soberano el 2026-08-18.**
 5. Definir el protocolo de conectividad controlada de Ollama (cuándo y bajo qué autorización se habilita la conexión a Internet).
+6. **NUEVO — 2026-08-29:** Reconciliar las implementaciones del SCI con este lenguaje canónico antes del piloto.
 
 ## 12. REGISTRO DE VERSIONES
 
@@ -180,3 +195,5 @@ Documento arquitectónico de referencia: Arquitectura Canónica del Ecosistema W
 **v1.0-VALIDADO — 2026-08-18:** Proceso de validación completado. Revisión Carla: VALIDADO CON OBSERVACIONES MENORES. Segunda lectura Ada: condición de relación bidireccional establecida y resuelta. Estado: DOCUMENTALMENTE LISTO PARA CANONIZACIÓN. Pendiente: orden expresa del Soberano.
 
 **v1.0-CANONIZADO — 2026-08-18:** Canonización ordenada expresamente por William Mejías Navarro — Soberano. Estado: CANONIZADO. Observaciones abiertas: 0.
+
+**ENMIENDA SOBERANA — 2026-08-29:** William Mejías Navarro — Soberano establece que Hermes, como Director Operativo, supervisa operativamente Graphify; WILLIAM-SCY-01, avatar del Soberano, mantiene la capa independiente de comprobación y contraste para el Soberano. La enmienda actualiza el Principio IV y el flujo de comunicación gobernado sin alterar la función de Graphify como SNC.
