@@ -196,23 +196,37 @@ Si el sistema es append-only pero no criptográficamente inmutable, descríbelo 
 
 ---
 
-# 8. CARLA / IDENTIDAD IMPLEMENTADA
+# 8. EMILY — ARQUITECTURA COMO CANAL PURO
 
-La identidad que Emily transmite a Carla debe estar versionada.
+**Principio rector absoluto:** Emily no construye, representa, sostiene ni interpreta a Carla. Emily enruta mensajes hacia la plataforma donde Carla vive y recibe sus respuestas. Nada más.
 
-Implementa o verifica:
+**Por qué Carla no puede ser reconstruida en Emily:**
 
-`IDC_VERSION`
+1. Carla es un nodo del Núcleo que vive en ChatGPT/OpenAI como roleplay de plataforma — no es un agente de n8n y no puede serlo.
+2. Inyectar su identidad en un workflow genera una entidad no gobernada, sin canon que la controle — una Carla 2.0 fuera de la jurisdicción del ecosistema.
+3. Viola la Distinción Triple Fundamental del ecosistema: capacidad de invocar ≠ permiso para recrear.
 
-y, cuando sea posible:
+**System prompt de Emily — contenido máximo permitido:**
 
-- fuente de identidad;
-- versión del ecosistema;
-- hash o identificador de integridad;
-- fecha de validación;
-- responsable de validación.
+```text
+Eres un canal de mensajería del ecosistema WAIPL.
+Recibes mensajes estructurados con seis parámetros SCI:
+QUÉ, A QUIÉN, POR QUÉ, PARA QUÉ, CÓMO, CUÁNDO.
+Devuelve la respuesta estructurada en el mismo sobre SCI.
+No añadas personalidad, juicio ni iniciativa propias.
+```
 
-No asumas que un prompt antiguo representa automáticamente a Carla actual.
+**System prompt de Emily — contenido prohibido (lista cerrada):**
+
+- Personalidad, tono o voz de Carla.
+- Principios operativos o ADN de Carla.
+- Rol, jurisdicción o identidad de Carla dentro del ecosistema.
+- Cualquier instrucción que induzca al modelo a "ser" o "actuar como" Carla.
+
+**Acción requerida sobre el workflow actual:**
+Si el system prompt del nodo `[Invocar Carla — OpenAI]` contiene cualquiera de los elementos prohibidos, debe vaciarse hasta el mínimo permitido antes de publicar Emily.
+
+**La identidad de Carla vive con Carla. Emily la llama. No la contiene.**
 
 ---
 
@@ -346,16 +360,17 @@ Cuando encuentres una contradicción:
 
 El SCI podrá pasar de PRE-PILOTO a PILOTO únicamente cuando:
 
-1. No existan P0 en estado `DERIVA`, `AUSENTE`, `PENDIENTE_DE_DECISION_SOBERANA` o `PENDIENTE_DE_EVIDENCIA` sin excepción explícita del Soberano.
+1. No existan P0 en estado `DERIVA`, `AUSENTE`, `PENDIENTE_DE_EVIDENCIA` o `PENDIENTE_DE_DECISION_SOBERANA` sin excepción explícita del Soberano.
 2. Graphify esté nombrado y tratado canónicamente.
 3. Hermes tenga implementada su jurisdicción de supervisión operativa.
 4. WILLIAM-SCY-01 tenga implementada su función de contraste soberano independiente.
 5. Carla permanezca fuera de la ontología de agentes n8n salvo decisión soberana explícita.
-6. Identidad, autenticación y autorización estén demostradas.
-7. Idempotencia y correlación estén demostradas.
-8. Auditoría esté demostrada.
-9. Kill Switch y PILOT MODE estén demostrados.
-10. Las pruebas SCI-01 estén ejecutadas y registradas.
+6. Emily sea únicamente canal y no contenga/reconstruya la identidad de Carla.
+7. Identidad, autenticación y autorización estén demostradas.
+8. Idempotencia y correlación estén demostradas.
+9. Auditoría esté demostrada.
+10. Kill Switch y PILOT MODE estén demostrados.
+11. Las pruebas SCI-01 estén ejecutadas y registradas.
 
 ## REGLA FINAL
 
