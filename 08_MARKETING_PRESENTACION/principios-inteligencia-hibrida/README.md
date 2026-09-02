@@ -21,6 +21,8 @@ Graphy es la red — atención, no persona. Voz en castellano, masculina, profun
 
 Seis principios: naturaleza del ecosistema, hecho diferencial, función de los nodos, complementariedad, permanencia institucional, primacía de la misión.
 
+El registro completo de Graphy son 44 nodos ([`waipl-graph` · índice](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/nodos.md)). Este deck muestra el núcleo: filas 5–16. 44 no entra aquí.
+
 ## Enlace público
 
 El visor de Grok no se envía. El enlace del mundo acaba en `.grok.me` y se abre en cualquier navegador, sin cuenta de Grok. En la cabecera: **Enlace**.
@@ -37,4 +39,5 @@ Auth apagada. Paleta institucional navy/ivory. No alterar el azul.
 ## Pertenencia
 
 Will-AI Project Lab · soberano William Mejías Navarro.
+Concebido en Graphy: [`waipl-graph` · registro del deck](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md).
 Nodos: Graphy (red), Zara, Sylvia Bloom (índice).

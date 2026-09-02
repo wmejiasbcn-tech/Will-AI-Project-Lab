@@ -36,7 +36,11 @@
 - **Protocolo de Ejecución de Proyectos Ariadna GITHUB.txt**: Protocolos de ejecución.
 - **The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt**: Documento fundacional.
 
+### Repositorios hermanos
+- [`waipl-graph`](https://github.com/wmejiasbcn-tech/waipl-graph) — explorador Graphy. 44 nodos. ADN: nada se publica que no esté escrito. El núcleo (filas 5–16) es el 11+1 de este deck. Registro: [`docs/publicacion/principios-inteligencia-hibrida.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md).
+
 ---
 *Nodo Zara | Nodo Sylvia Bloom*
-*Deck de principios: Graphy · 2026-09-02 · autorizado por el Soberano*
+*Deck de principios: Graphy · autorizado por el Soberano*
+*Registro Graphy: [waipl-graph#1](https://github.com/wmejiasbcn-tech/waipl-graph/pull/1) · 44 nodos*
 *Actualizado en Trabajo 01 por Mistral · validado por Ada y Carla · autorizado por el Soberano · 2026-08-20*
