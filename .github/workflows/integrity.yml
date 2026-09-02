@@ -21,8 +21,7 @@ jobs:
           set +e
           python3 06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py 2>&1 | tee harness-verification.log
           status=${PIPESTATUS[0]}
-          printf '%s
-' "$status" > harness-verification-exit-code.txt
+          printf '%s\n' "$status" > harness-verification-exit-code.txt
           exit "$status"
 
       - name: Publicar evidencia del Arnés
