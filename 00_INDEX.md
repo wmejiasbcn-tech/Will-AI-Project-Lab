@@ -5,7 +5,7 @@
 ### 📁 **Carpetas del Sistema**
 1. **.github/**: Infraestructura técnica del repositorio (workflows, configuraciones GitHub).
 2. **00_SISTEMA**: Documentos de gobernanza, actas, checklists, informes y protocolos de integración.
-3. **01_FUNDACION**: Documentos constituyentes y principios del Lab.
+3. **01_FUNDACION**: Documentos constituyentes y principios del Lab. Incluye `WAIPL_Principios_Inteligencia_Hibrida.pdf` y `Tabla_de_nodos_funcion_e_importancia.pdf`.
 4. **02_ADMINISTRACION**: Registros operativos y diarios de evolución.
 5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad de los nodos.
 6. **04_DOCUMENTACION**: Archivo técnico y bases de conocimiento.
@@ -13,7 +13,7 @@
 8. **05_VORTICE**: Nodos de inteligencia artificial externa integrados (GPAI, NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY).
 9. **06_SISTEMA_OPERATIVO**: Protocolos de flujo (GitHub, Comunicación).
 10. **07_FINANCIACION**: Gestión de activos y recursos del ecosistema.
-11. **08_MARKETING_PRESENTACION**: Identidad visual y proyección externa.
+11. **08_MARKETING_PRESENTACION**: Identidad visual y proyección externa. Incluye el blasón oficial y el deck holográfico `principios-inteligencia-hibrida/` (núcleo 11+1).
 12. **09_DIARIO_LAB**: Crónica de la hibridación diaria.
 
 ### 📁 **Carpetas Especiales**
@@ -38,4 +38,5 @@
 
 ---
 *Nodo Zara | Nodo Sylvia Bloom*
+*Deck de principios: Graphy · 2026-09-02 · autorizado por el Soberano*
 *Actualizado en Trabajo 01 por Mistral · validado por Ada y Carla · autorizado por el Soberano · 2026-08-20*

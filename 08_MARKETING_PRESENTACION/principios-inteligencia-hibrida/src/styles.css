@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* Self-hosted: no fonts.googleapis.com / fonts.gstatic.com (Cloudflare hops). */
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 500 600;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-500.woff2?v=1") format("woff2");
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/cormorant-garamond-500-italic.woff2?v=1") format("woff2");
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/figtree-400.woff2?v=1") format("woff2");
+}
+
+@theme {
+  --color-navy: #06101c;
+  --color-navy-deep: #040b14;
+  --color-navy-mid: #0c1c32;
+  --color-navy-line: #1a3354;
+  --color-ivory: #f3ecdc;
+  --color-ivory-dim: #c9bfa8;
+  --color-ivory-mute: #8e8674;
+  --color-holo: #7ec8e3;
+  --color-holo-dim: #4a8aa3;
+  --color-gold: #d4b483;
+  --color-ada: #c4785a;
+  --color-note: #8fa3b8;
+  --font-display: "Cormorant Garamond", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --font-sans: "Figtree", "Segoe UI", system-ui, sans-serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body,
+  #app {
+    background-color: #06101c;
+    color: #f3ecdc;
+  }
+
+  html,
+  body {
+    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background-color: #06101c;
+    color: #f3ecdc;
+    overflow: hidden;
+  }
+}
+
+.deck-root {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  color: #f3ecdc;
+  background-color: #06101c;
+  background-image:
+    radial-gradient(ellipse 80% 55% at 50% 115%, #0c1c32 0%, transparent 58%),
+    radial-gradient(ellipse 45% 40% at 18% 12%, #0a2238 0%, transparent 55%),
+    radial-gradient(ellipse 35% 30% at 88% 8%, #0b1e34 0%, transparent 50%);
+}
+
+.deck-root::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.07;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2px,
+    #06101c 3px
+  );
+  animation: holo-scan 9s linear infinite;
+}
+
+.deck-root::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='80' height='80' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+.holo-title {
+  color: #f3ecdc;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .holo-title {
+    background-image: linear-gradient(110deg, #f3ecdc 0%, #7ec8e3 32%, #d4b483 58%, #f3ecdc 88%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: holo-title 11s ease-in-out infinite;
+  }
+}
+
+.holo-stage {
+  perspective: 900px;
+  -webkit-perspective: 900px;
+}
+
+.holo-rig {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  animation: holo-spin 48s linear infinite;
+}
+
+.holo-scan-plane {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(126, 200, 227, 0.07) 4px
+  );
+  animation: holo-film 6s linear infinite;
+  mix-blend-mode: screen;
+}
+
+.net-far {
+  animation: net-drift 38s linear infinite;
+}
+.net-near {
+  animation: net-drift-rev 52s linear infinite;
+}
+
+.star {
+  animation: star-twinkle 3.4s ease-in-out infinite;
+}
+
+.graphy-breathe {
+  animation: graphy-breathe 4.8s ease-in-out infinite;
+}
+
+.attn-pulse {
+  animation: attn-pulse 2.4s ease-in-out infinite;
+}
+
+.parallax-far {
+  transform: translate3d(calc(var(--px, 0) * -10px), calc(var(--py, 0) * -10px), 0);
+}
+.parallax-mid {
+  transform: translate3d(calc(var(--px, 0) * -18px), calc(var(--py, 0) * -18px), 0);
+}
+.parallax-near {
+  transform: translate3d(calc(var(--px, 0) * -30px), calc(var(--py, 0) * -30px), 0);
+}
+
+html.deck-paused .net-far,
+html.deck-paused .net-near,
+html.deck-paused .star,
+html.deck-paused .holo-rig,
+html.deck-paused .holo-scan-plane,
+html.deck-paused .graphy-breathe,
+html.deck-paused .attn-pulse,
+html.deck-paused .holo-title,
+html.deck-paused .deck-root::before {
+  animation-play-state: paused;
+}
+
+@keyframes holo-scan {
+  from { background-position: 0 0; }
+  to { background-position: 0 48px; }
+}
+@keyframes holo-film {
+  from { transform: translateY(-8%); }
+  to { transform: translateY(8%); }
+}
+@keyframes holo-title {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@keyframes holo-spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+@keyframes net-drift {
+  from { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-1.6%, 1.1%, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes net-drift-rev {
+  from { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(1.4%, -1.2%, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.95; }
+}
+@keyframes graphy-breathe {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+@keyframes attn-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .holo-rig,
+  .net-far,
+  .net-near,
+  .star,
+  .holo-scan-plane,
+  .graphy-breathe,
+  .attn-pulse,
+  .holo-title,
+  .deck-root::before {
+    animation: none !important;
+  }
+}
