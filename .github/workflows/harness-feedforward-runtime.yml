@@ -37,5 +37,5 @@ jobs:
           name: harness-feedforward-runtime-evidence-${{ github.run_id }}
           path: |
             harness-feedforward.json
-            harness-runtime-context.json
+            06_SISTEMA_OPERATIVO/ARNES/harness-runtime-context.json
           if-no-files-found: error
