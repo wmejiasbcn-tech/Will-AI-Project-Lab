@@ -1,6 +1,6 @@
 # SCI-ARNES-CONTRACT-001 — Contrato de Integración SCI ↔ Arnés
 
-**Estado:** MATERIALIZACIÓN DOCUMENTAL — sujeto a contraste de Aletheia.
+**Estado:** A — ACREDITADO como contrato documental/contractual; la implementación física completa de cada extremo/campo no queda declarada por este documento.
 
 ## 1. Propósito
 
