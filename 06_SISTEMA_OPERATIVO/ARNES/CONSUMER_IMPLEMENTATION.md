@@ -1,0 +1,1 @@
+Canonical implementation target: consume the existing repository-root harness-feedforward.json, validate schema and SHA-256, emit a runtime context marked CONSUMED_FOR_RUNTIME_CONTEXT, and explicitly preserve NOT_EXECUTED_BY_CONSUMER and NOT_GRANTED boundaries.
