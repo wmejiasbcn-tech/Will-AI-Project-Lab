@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Minimal, deterministic Guide loader for the WAIPL Agentic Harness.
 
-Loads only the explicitly allowlisted COMANDO 05 Guide from the repository,
-validates its structural markers, and emits a feedforward record for the
+Loads only the explicitly allowlisted COMANDO 05 Guide, validates its
+structural markers, and emits a prepared feedforward payload for the
 preparation stage. It does not execute the Guide and grants no authority.
 """
 
@@ -10,7 +10,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
+import tempfile
 from pathlib import Path
 
 GUIDE_PATH = Path("04_DOCUMENTACION/ARNES_AGENTEICO/GUIDE-ARNES-COMANDO-05.md")
@@ -30,6 +32,27 @@ def fail(message: str) -> int:
     return 1
 
 
+def atomic_write_json(path: Path, payload: dict) -> None:
+    """Write beside the destination, fsync, then atomically replace it."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temp_name = tempfile.mkstemp(
+        prefix=f".{path.name}.", suffix=".tmp", dir=path.parent
+    )
+    temp_path = Path(temp_name)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as handle:
+            handle.write(json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.chmod(temp_path, 0o644)
+        os.replace(temp_path, path)
+    finally:
+        if temp_path.exists():
+            temp_path.unlink()
+    if path.is_symlink() or not path.is_file():
+        raise RuntimeError(f"output path is not a regular file: {path}")
+
+
 def main() -> int:
     if not GUIDE_PATH.is_file():
         return fail(f"Guide not found: {GUIDE_PATH}")
@@ -42,20 +65,26 @@ def main() -> int:
     if missing:
         return fail("missing structural markers: " + ", ".join(missing))
 
+    sha256 = hashlib.sha256(content.encode("utf-8")).hexdigest()
     record = {
         "type": "HARNESS_FEEDFORWARD",
+        "schema_version": "1.0",
         "guide_id": "GUIDE-ARNES-COMANDO-05",
         "source_path": str(GUIDE_PATH).replace("\\", "/"),
-        "sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
+        "sha256": sha256,
+        "guide_content": content,
         "status": "LOADED_FOR_PREPARATION",
         "execution": "NOT_EXECUTED_BY_LOADER",
         "authority": "NOT_GRANTED",
     }
 
-    OUTPUT_PATH.write_text(
-        json.dumps(record, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    try:
+        atomic_write_json(OUTPUT_PATH, record)
+    except OSError as exc:
+        return fail(f"cannot write feedforward output: {exc}")
+    except RuntimeError as exc:
+        return fail(str(exc))
+
     print(json.dumps(record, ensure_ascii=False))
     return 0
 
