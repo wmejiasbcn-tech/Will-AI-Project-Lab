@@ -61,7 +61,8 @@ CREATE TABLE IF NOT EXISTS "radar_signals" (
   "target" TEXT NOT NULL,
   "intensity" DOUBLE PRECISION NOT NULL DEFAULT 0.0,
   "metadata" JSONB,
-  "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  "timestamp" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTA
+MP,
   CONSTRAINT "radar_signals_pkey" PRIMARY KEY ("id")
 );
 

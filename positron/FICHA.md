@@ -52,7 +52,8 @@ Ver `MIGRATION_GUIDE.md` para pasos detallados.
 | EJE | Ejecutar con planes B/C | DEUDA: simulado |
 | AUD | Medir, detectar desviaciones | Operativo |
 | CON | Prevenir/corregir incidentes | Operativo |
-| MEJ | Evolucionar basado en datos | Operativo |
+| MEJ | Evolucio
+nar basado en datos | Operativo |
 
 ## 12 rutas API
 
@@ -109,7 +110,8 @@ Ver `MIGRATION_GUIDE.md` para pasos detallados.
 - Codigo fuente: pendiente de subida desde sandbox Z.ai
 - Produccion: URL caida (y14c76f1v751-d.space-z.ai)
 - Bus Hermes: deny-until-uri (UNKNOWN)
-- Repo: carpeta `positron/` creada en rama `positron-migration`
+- Repo: carpeta `positron/` creada en r
+ama `positron-migration`
 
 ## CANON-CIERRE
 

@@ -57,7 +57,8 @@ El SCI/n8n ya tiene operativo:
 7. Contingencia DS-07 (escalada a WILLIAM-SCY-01)
 8. Nomenclatura Graphify/Graphy corregida
 9. Ejecución E2E con respuesta de Carla
-10. Canal Emily → OpenAI → Carla verificado
+10. Canal Emily → OpenAI → Carla ve
+rificado
 
 Positrón NO debe duplicar estos mecanismos. Debe consumirlos via contrato SCI (Sección 44).
 
@@ -120,7 +121,8 @@ El SCI debe poder transportar esa incertidumbre sin convertirla en falso hecho.
 3. Necesita endpoint para recibir webhook SCI: POST /api/sci/webhook
 4. Necesita validar integridad SHA-256 del payload SCI
 5. Necesita respetar Kill Switch (consultar estado antes de procesar)
-6. Necesita escribir al Audit Log (tabla en DB o via SCI)
+6. Necesita escribir al 
+Audit Log (tabla en DB o via SCI)
 7. NO debe duplicar: idempotencia, Kill Switch, Audit Log (ya en SCI)
 8. Debe devolver estados SCI correctos (no simular)
 
