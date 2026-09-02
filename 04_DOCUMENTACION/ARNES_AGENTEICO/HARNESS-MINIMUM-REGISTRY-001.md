@@ -19,6 +19,7 @@ Registrar únicamente piezas físicamente localizadas que forman parte del mater
 | `06_SISTEMA_OPERATIVO/ARNES/harness_feedback_sensor.py` | A | repositorio + ejecución | A — sensor mínimo de feedback ejecutado |
 | `HARNESS-VERIFICATION-INTEGRATION-001.md` | C | repositorio | propuesta documental de integración |
 | `HARNESS-SENSOR-FEEDBACK-001.md` | C | repositorio | especificación documental del sensor |
+| `HARNESS-INTEGRATION-TEST-001.md` | A | repositorio + ejecución real | A — prueba mínima acreditada |
 
 ## 3. Evidencia de ejecución
 
@@ -52,8 +53,14 @@ El sensor observa el resultado del verificador; no lo sustituye ni añade autori
 
 **A:** Existe un sensor mínimo de feedback acreditado mediante la misma ejecución.
 
+**A:** La prueba mínima de integración está documentada en `HARNESS-INTEGRATION-TEST-001.md` y respaldada por ejecución real.
+
 Esto no demuestra por sí solo integración de Graphify, Positrón, Ollama, Vár/Yata ni ninguna otra pieza no acreditada.
 
-## 7. Próximo límite operativo
+## 7. Límite alcanzado
 
-El mínimo Sensors/Feedback queda materializado y probado. El siguiente paso es la prueba de integración estrictamente necesaria para el cierre operativo del mínimo del Arnés, sin ampliar alcance ni crear una segunda batería de verificación.
+El materializado mínimo previsto en la secuencia explícita de `HARNESS-SPEC-001` ha quedado cubierto en sus seis bloques funcionales: estructura documental/contractual, contrato SCI ↔ Arnés, Guide mínima, Sensors/Feedback mínimo, mecanismo de verificación e integración mínima.
+
+El registro completo continúa como **C — PROPUESTA / NO VALIDADA** porque contiene piezas documentales C y porque el cierre del mínimo no convierte automáticamente el Arnés completo en operativo.
+
+No se crea un bloque adicional sin una necesidad material acreditada.
