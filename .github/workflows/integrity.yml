@@ -13,5 +13,60 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Verificar SHA-256 del manifiesto
-        run: python3 06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py
+        id: integrity
+        shell: bash
+        run: |
+          set +e
+          python3 06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py 2>&1 | tee harness-verification.log
+          status=${PIPESTATUS[0]}
+          printf '%s\n' "$status" > harness-verification-exit-code.txt
+          exit "$status"
+
+      - name: Publicar evidencia del Arnés
+        if: always()
+        shell: bash
+        env:
+          VERIFICATION_OUTCOME: ${{ steps.integrity.outcome }}
+          GITHUB_SHA_VALUE: ${{ github.sha }}
+          RUN_ID_VALUE: ${{ github.run_id }}
+          WORKFLOW_VALUE: ${{ github.workflow }}
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data = {
+              "evidence_type": "HARNESS_VERIFICATION",
+              "verification": "06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py",
+              "workflow": "${WORKFLOW_VALUE}",
+              "run_id": "${RUN_ID_VALUE}",
+              "commit": "${GITHUB_SHA_VALUE}",
+              "outcome": "${VERIFICATION_OUTCOME}",
+              "log_file": "harness-verification.log",
+              "exit_code_file": "harness-verification-exit-code.txt",
+          }
+          Path("harness-verification-evidence.json").write_text(
+              json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Conservar evidencia como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-verification-evidence-${{ github.run_id }}
+          path: |
+            harness-verification-evidence.json
+            harness-verification.log
+            harness-verification-exit-code.txt
+          if-no-files-found: error
+
+      - name: Reflejar resultado de verificación
+        if: always()
+        run: |
+          echo "## Harness — verificación" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Resultado del verificador: ${{ steps.integrity.outcome }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Evidencia: artefacto harness-verification-evidence-${{ github.run_id }}" >> "$GITHUB_STEP_SUMMARY"
