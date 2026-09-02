@@ -1,0 +1,86 @@
+// Prisma schema for Positron - PostgreSQL (Vercel Postgres/Neon)
+// Migrated from SQLite. 7 models. ADN: Super Plantilla v3.0
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Message {
+  id        String   @id @default(cuid())
+  role      String
+  content   String   @db.Text
+  timestamp DateTime @default(now())
+  audio     Boolean  @default(false)
+  @@map("messages")
+}
+
+model Capture {
+  id        String   @id @default(cuid())
+  uuid      String   @unique
+  timestamp DateTime @default(now())
+  hash      String
+  origen    String
+  tipo      String
+  prioridad String
+  tags      String?
+  contenido String   @db.Text
+  estadoCLA String   @default("sin_clasificar")
+  estadoANA String   @default("pendiente")
+  @@map("captures")
+}
+
+model Command {
+  id        String   @id @default(cuid())
+  target    String
+  content   String   @db.Text
+  status    String   @default("enviado")
+  timestamp DateTime @default(now())
+  @@map("commands")
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  type      String
+  title     String
+  content   String   @db.Text
+  read      Boolean  @default(false)
+  timestamp DateTime @default(now())
+  @@map("notifications")
+}
+
+model Email {
+  id        String   @id @default(cuid())
+  to        String
+  subject   String
+  body      String   @db.Text
+  status    String   @default("pendiente")
+  timestamp DateTime @default(now())
+  @@map("emails")
+}
+
+model RadarSignal {
+  id         String   @id @default(cuid())
+  signalType String
+  target     String
+  intensity  Float    @default(0.0)
+  metadata   Json?
+  timestamp  DateTime @default(now())
+  @@map("radar_signals")
+}
+
+model QuarantineEntry {
+  id         String   @id @default(cuid())
+  entityId   String
+  reason     String
+  severity   String
+  status     String   @default("active")
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  releasedAt DateTime?
+  @@map("quarantine_entries")
+}
