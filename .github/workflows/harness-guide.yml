@@ -23,15 +23,30 @@ jobs:
         run: |
           test -s harness-feedforward.json
           python3 - <<'PY'
+          import hashlib
           import json
           from pathlib import Path
+
           data = json.loads(Path("harness-feedforward.json").read_text(encoding="utf-8"))
+          guide_content = data["guide_content"]
           assert data["type"] == "HARNESS_FEEDFORWARD"
+          assert data["schema_version"] == "1.0"
           assert data["guide_id"] == "GUIDE-ARNES-COMANDO-05"
+          assert data["source_path"] == "04_DOCUMENTACION/ARNES_AGENTEICO/GUIDE-ARNES-COMANDO-05.md"
           assert data["status"] == "LOADED_FOR_PREPARATION"
           assert data["execution"] == "NOT_EXECUTED_BY_LOADER"
           assert data["authority"] == "NOT_GRANTED"
           assert len(data["sha256"]) == 64
+          assert hashlib.sha256(guide_content.encode("utf-8")).hexdigest() == data["sha256"]
+          for marker in (
+              "# GUIDE-ARNES-COMANDO-05",
+              "**Capa:** Arnés Agéntico WAIPL · Guides / Feedforward",
+              "## 1. Finalidad",
+              "## 2. Regla de decisión",
+              "## 3. Prohibiciones operativas",
+              "## 5. Fronteras de jurisdicción",
+          ):
+              assert marker in guide_content
           PY
 
       - name: Publicar evidencia de carga
