@@ -52,6 +52,7 @@ export function jsonLd(canonical?: string) {
           "Will-AI Project Lab",
           "nodos",
           "Graphy",
+          "Emily",
         ],
         articleSection: [
           "Naturaleza del ecosistema",

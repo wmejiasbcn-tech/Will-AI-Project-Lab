@@ -1,4 +1,5 @@
 import { aiIdentities, sovereign } from "@/lib/deck-data";
+import { EmilyArc } from "./emily-arc";
 
 const RING = aiIdentities.map((n, i) => {
   const a = (i / aiIdentities.length) * Math.PI * 2 - Math.PI / 2;
@@ -10,6 +11,7 @@ export function HoloVolume({ compact = false }: { compact?: boolean }) {
   const radius = compact ? "92px" : "118px";
   return (
     <div className={`holo-stage relative mx-auto w-full max-w-xl ${size}`}>
+      <EmilyArc tone="volume" labeled={!compact} />
       <div className="pointer-events-none absolute inset-x-[12%] bottom-[8%] h-[18%] rounded-[100%] bg-holo/10" />
       <div className="holo-rig absolute inset-0">
         <div

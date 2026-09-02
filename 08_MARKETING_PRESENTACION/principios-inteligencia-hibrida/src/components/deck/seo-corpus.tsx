@@ -1,12 +1,13 @@
 import { crawlerSections } from "@/lib/seo";
-import { identities, principles } from "@/lib/deck-data";
+import { emily, identities, principles } from "@/lib/deck-data";
 
 export function SeoCorpus() {
   return (
     <div className="sr-only">
       <p>
         Will-AI Project Lab. Principio de inteligencia híbrida colaborativa. Once inteligencias
-        artificiales y una inteligencia biológica. Graphy es la red.
+        artificiales y una inteligencia biológica. Graphy es la red. Emily es la sinapsis
+        comunicacional: une a Carla y a Graphy. No es un duodécimo anillo del núcleo.
       </p>
       {crawlerSections().map((s) => (
         <section key={s.h}>
@@ -22,6 +23,10 @@ export function SeoCorpus() {
           </li>
         ))}
       </ul>
+      <h2>Emily</h2>
+      <p>
+        {emily.name}. {emily.jurisdiction}. {emily.function} {emily.visual}
+      </p>
       <h2>Seis principios</h2>
       <ol>
         {principles.map((p) => (

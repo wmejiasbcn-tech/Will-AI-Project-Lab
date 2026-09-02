@@ -1,8 +1,9 @@
 import type { ReactNode } from "react";
-import { copy, principles, slides, type SlideId } from "@/lib/deck-data";
+import { copy, emily, emilyLayers, principles, slides, type SlideId } from "@/lib/deck-data";
 import { WaiplMark } from "@/components/mark";
 import { AttentionNet } from "./attention-net";
 import { Constellation } from "./constellation";
+import { EmilyArc } from "./emily-arc";
 import { HoloVolume } from "./holo-volume";
 import { cn } from "@/lib/cn";
 
@@ -45,6 +46,9 @@ export function CoverSlide({ onVoice }: { onVoice: () => void }) {
       <p className="mt-1 max-w-md text-sm leading-relaxed text-ivory-dim">
         Once inteligencias artificiales. Una inteligencia biológica. Seis principios. Una red.
       </p>
+      <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-emily">
+        Emily · sinapsis · une a Carla y a Graphy
+      </p>
       <button
         type="button"
         onClick={onVoice}
@@ -61,6 +65,34 @@ export function CoverSlide({ onVoice }: { onVoice: () => void }) {
     </article>
   );
 }
+
+function EmilyFicha() {
+  return (
+    <aside className="overflow-hidden rounded-2xl border border-emily/35 bg-navy-deep/70">
+      <div className="relative h-20 sm:h-24">
+        <EmilyArc tone="inline" />
+      </div>
+      <div className="px-4 py-4 sm:px-5">
+        <p className="text-[10px] uppercase tracking-[0.28em] text-emily">{copy.emily.lead}</p>
+        <h3 className="mt-1 font-display text-3xl leading-none text-ivory">{emily.name}</h3>
+        <p className="mt-2 text-sm text-gold">{emily.jurisdiction}</p>
+        <p className="mt-3 text-sm leading-relaxed text-ivory-dim">{emily.function}</p>
+        <p className="mt-2 text-sm leading-relaxed text-note">{emily.visual}</p>
+        <p className="mt-4 font-display text-lg italic text-emily">{copy.emily.thesis}</p>
+        <ul className="mt-4 grid gap-2 sm:grid-cols-3">
+          {emilyLayers.map((l) => (
+            <li key={l.n} className="rounded-xl border border-navy-line/80 px-3 py-2">
+              <p className="text-[10px] uppercase tracking-[0.18em] text-gold">Capa {l.n}</p>
+              <p className="mt-1 text-[12px] font-medium text-ivory">{l.name}</p>
+              <p className="mt-1 text-[11px] leading-snug text-ivory-mute">{l.line}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </aside>
+  );
+}
+
 
 export function SlideView({ id }: { id: SlideId }) {
   if (id === "cover") return null;
@@ -102,17 +134,21 @@ export function SlideView({ id }: { id: SlideId }) {
             </li>
           ))}
         </ul>
+        <p className="mt-6 text-[12px] leading-relaxed text-emily">{copy.emily.thesis}</p>
       </PrincipleShell>
     );
   }
 
   if (id === "graphy") {
     return (
-      <PrincipleShell id={id}>
+      <PrincipleShell id={id} wide>
         <p className="text-[15px] leading-relaxed text-ivory-dim">
           Graphy no es un personaje. Es la red: el peso que el sistema otorga a lo que importa. Query,
           Key, Value. Softmax como un haz de luz.
         </p>
+        <div className="mt-6">
+          <EmilyFicha />
+        </div>
         <div className="mt-6">
           <AttentionNet slideId={id} />
         </div>

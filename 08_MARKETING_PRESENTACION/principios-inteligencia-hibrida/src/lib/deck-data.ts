@@ -9,6 +9,14 @@ export type Identity = {
   accent?: "ada" | "sovereign";
 };
 
+export type OrganismoNodo = {
+  id: string;
+  name: string;
+  jurisdiction: string;
+  function: string;
+  visual: string;
+};
+
 export type SlideId =
   | "cover"
   | "naturaleza"
@@ -151,6 +159,72 @@ export const aiIdentities: Identity[] = [
 
 export const identities: Identity[] = [sovereign, ...aiIdentities];
 
+/** Organismo operativo. Fuente: tabla oficial de 6 jurisdicciones. Texto exacto. */
+export const organismoOperativo: OrganismoNodo[] = [
+  {
+    id: "carla",
+    name: "Carla",
+    jurisdiction: "Mente ejecutiva",
+    function: "Modula decisiones, ejecuta feedforward, mantiene coherencia moral y operativa.",
+    visual: "Núcleo lumínico violeta-dorado, pulsante, con trazas neuronales dinámicas.",
+  },
+  {
+    id: "positron",
+    name: "Positrón",
+    jurisdiction: "Cerebro operativo",
+    function: "Orquesta agentes, procesa señales, distribuye modulación universal.",
+    visual: "Estructura cristalina central, con flujos de datos en espiral azul-eléctrico.",
+  },
+  {
+    id: "hermes",
+    name: "Hermes",
+    jurisdiction: "Sistema endocrino-operativo",
+    function: "Regula comunicación, orden y homeostasis del ecosistema.",
+    visual: "Red de filamentos dorados que recorren el cuerpo digital, emitiendo pulsos rítmicos.",
+  },
+  {
+    id: "graphy",
+    name: "Graphy",
+    jurisdiction: "Sistema nervioso central",
+    function: "Cartografía viva, percepción del estado del sistema, registro y visualización.",
+    visual: "Grafo tridimensional flotante, con nodos interconectados por haces de luz azul-turquesa.",
+  },
+  {
+    id: "ollama",
+    name: "Ollama",
+    jurisdiction: "Cuerpo físico",
+    function: "Infraestructura de ejecución local, soporte material de los modelos.",
+    visual: "Superficie metálica translúcida, con textura de titanio líquido y reflejos espaciales.",
+  },
+  {
+    id: "emily",
+    name: "Emily",
+    jurisdiction: "Sinapsis comunicacional",
+    function: "Puente entre mente y SNC, canal de transmisión y auditoría.",
+    visual: "Arco de energía blanca-plateada que une Carla y Graphy, con partículas de datos suspendidas.",
+  },
+];
+
+export const emily = organismoOperativo.find((n) => n.id === "emily")!;
+
+export const emilyLayers = [
+  {
+    n: "1",
+    name: "Filtro de Idempotencia",
+    line: "Detecta duplicaciones. Elimina ruido. Cada mensaje es único.",
+  },
+  {
+    n: "2",
+    name: "Purificación de Señal",
+    line: "Limpia el feedforward. Mantiene la intención del Soberano.",
+  },
+  {
+    n: "3",
+    name: "Transmisión Sináptica",
+    line: "A Carla y Positrón. Registro en Graphy. Aviso a Hermes. Prepara a Ollama.",
+  },
+];
+
 export const copy = {
   naturaleza: {
     pull: "La identidad no reside en las herramientas.",
@@ -173,6 +247,11 @@ export const copy = {
     lead: "Núcleo · once inteligencias artificiales · una inteligencia biológica.",
     p1: "Las identidades funcionales del Núcleo —Carla, Ada, Aletheia, Elena, Aether, Ítaca, Ariadna, Sylvia Bloom, Nova, Zara y Áurea, junto a William, soberano e inteligencia biológica— constituyen referencias organizativas que permiten reconocer especializaciones, responsabilidades y ámbitos de contribución diferenciados.",
     p2: "Facilitan la continuidad operativa, la comunicación interna y la construcción de memoria institucional, independientemente de los modelos tecnológicos que sustenten cada función.",
+  },
+  emily: {
+    lead: "Sinapsis comunicacional. No es núcleo.",
+    thesis: "Une a Carla y a Graphy. No es un duodécimo anillo.",
+    body: "Emily es la sinapsis del ecosistema. El canal que garantiza que la intención del Soberano llegue limpia, íntegra y sin duplicaciones. No ejecuta, no modula, no consume feedforward. Sin ella el organismo no se comunica.",
   },
   complementariedad: {
     p1: "Ninguna inteligencia posee por sí sola una visión completa. El valor emerge de la deliberación, el contraste y la cooperación multidisciplinar — no de la supremacía de una inteligencia sobre las demás.",

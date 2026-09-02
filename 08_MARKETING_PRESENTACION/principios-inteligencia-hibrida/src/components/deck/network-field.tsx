@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { SlideId } from "@/lib/deck-data";
+import { EmilyArc } from "./emily-arc";
 
 function mulberry32(seed: number) {
   let a = seed >>> 0;
@@ -166,6 +167,8 @@ export function NetworkField({ variant }: { variant: SlideId }) {
     };
   }, [variant]);
 
+  const emilyHot = variant === "cover" || variant === "nodos" || variant === "graphy" || variant === "identidades";
+
   return (
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
       <svg
@@ -223,6 +226,9 @@ export function NetworkField({ variant }: { variant: SlideId }) {
           />
         ))}
       </svg>
+      <div className={emilyHot ? "absolute inset-0 opacity-80" : "absolute inset-0 opacity-35"}>
+        <EmilyArc tone="field" labeled={false} />
+      </div>
       <div className="film" />
     </div>
   );

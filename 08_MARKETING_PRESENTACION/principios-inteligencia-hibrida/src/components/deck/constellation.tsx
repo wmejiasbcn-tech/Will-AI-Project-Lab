@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { cn } from "@/lib/cn";
-import { identities, type Identity } from "@/lib/deck-data";
+import { copy, emily, identities, type Identity } from "@/lib/deck-data";
 
 function IdentityCard({ node }: { node: Identity }) {
   const isSovereign = node.accent === "sovereign";
   const isAda = node.accent === "ada";
+  const isCarla = node.id === "carla";
   return (
     <article
       className={cn(
@@ -29,6 +30,11 @@ function IdentityCard({ node }: { node: Identity }) {
       </p>
       <p className="mt-4 text-sm leading-relaxed text-ivory-dim">{node.function}</p>
       <p className="mt-3 text-sm leading-relaxed text-note">{node.importance}</p>
+      {isCarla ? (
+        <p className="mt-4 border-t border-navy-line/70 pt-3 text-[12px] leading-relaxed text-emily">
+          {emily.name} · {emily.jurisdiction}. {copy.emily.thesis}
+        </p>
+      ) : null}
     </article>
   );
 }
