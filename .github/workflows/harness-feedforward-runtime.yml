@@ -1,0 +1,41 @@
+name: Arnés — Feedforward Runtime
+
+on:
+  push:
+    paths:
+      - '06_SISTEMA_OPERATIVO/ARNES/harness_feedforward_runtime.py'
+      - '06_SISTEMA_OPERATIVO/ARNES/harness_feedforward_runtime_test.py'
+      - '04_DOCUMENTACION/ARNES_AGENTEICO/GUIDE-ARNES-COMANDO-05.md'
+      - '06_SISTEMA_OPERATIVO/ARNES/harness_guide_loader.py'
+      - '.github/workflows/harness-feedforward-runtime.yml'
+  pull_request:
+    paths:
+      - '06_SISTEMA_OPERATIVO/ARNES/**'
+      - '04_DOCUMENTACION/ARNES_AGENTEICO/GUIDE-ARNES-COMANDO-05.md'
+      - '.github/workflows/harness-feedforward-runtime.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  consume-feedforward:
+    name: Consumo runtime del feedforward
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Load feedforward
+        run: python3 06_SISTEMA_OPERATIVO/ARNES/harness_guide_loader.py
+      - name: Consume feedforward in runtime context
+        run: python3 06_SISTEMA_OPERATIVO/ARNES/harness_feedforward_runtime.py
+      - name: Validate runtime consumption
+        run: python3 06_SISTEMA_OPERATIVO/ARNES/harness_feedforward_runtime_test.py
+      - name: Publish runtime evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-feedforward-runtime-evidence-${{ github.run_id }}
+          path: |
+            harness-feedforward.json
+            harness-runtime-context.json
+          if-no-files-found: error
