@@ -28,30 +28,30 @@ def safe_write_json(path: Path, data: dict) -> None:
     # Reject if the target path is a symlink
     if path.is_symlink():
         raise RuntimeError(
-            f"Refusing to write: {path} is a symlink — possible redirection attack."
+            f"Refusing to write: {path} is a symlink - possible redirection attack."
         )
 
-    # If the path exists and is not a regular file, refuse
+    # If the path exists and is not a regular file, reject
     if path.exists() and not path.is_file():
         raise RuntimeError(
             f"Refusing to write: {path} exists but is not a regular file."
         )
 
-    # Resolve to absolute and ensure it stays within cwd
+    # Resolve and verify the path is within the current working directory
     resolved = path.resolve()
     cwd = Path.cwd().resolve()
     if not str(resolved).startswith(str(cwd)):
         raise RuntimeError(
-            f"Refusing to write: {resolved} resolves outside cwd {cwd}."
+            f"Refusing to write: {path} resolves outside the working directory."
         )
 
-    # Atomic write: write to temp file, then rename
-    tmp = path.with_suffix(path.suffix + ".tmp")
-    tmp.write_text(
+    # Write to a temporary file first, then atomically replace
+    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    tmp_path.write_text(
         json.dumps(data, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    tmp.replace(path)
+    tmp_path.replace(path)
 
 
 exit_code = read_exit_code(Path("harness-verification-exit-code.txt"))
