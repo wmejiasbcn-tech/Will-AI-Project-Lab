@@ -14,21 +14,46 @@ Registrar únicamente piezas físicamente localizadas que forman parte del mater
 | `HARNESS-SPEC-001-ERRATA-01.md` | A | repositorio | documental |
 | `SCI-ARNES-CONTRACT-001.md` | A | repositorio | contractual |
 | `GUIDE-ARNES-COMANDO-05.md` | C | repositorio | Guide propuesta |
-| `.github/workflows/integrity.yml` | A | workflow existente | D — no acreditada |
-| `06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py` | A | ejecutable existente | D — no acreditada |
+| `.github/workflows/integrity.yml` | A | workflow + ejecución | A — integración de verificación/feedback acreditada por ejecución |
+| `06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py` | A | ejecutable + ejecución | A — integrado como mecanismo de verificación del Harness |
+| `06_SISTEMA_OPERATIVO/ARNES/harness_feedback_sensor.py` | A | repositorio + ejecución | A — sensor mínimo de feedback ejecutado |
+| `HARNESS-VERIFICATION-INTEGRATION-001.md` | C | repositorio | propuesta documental de integración |
+| `HARNESS-SENSOR-FEEDBACK-001.md` | C | repositorio | especificación documental del sensor |
 
-## 3. Regla de no sobreinterpretación
+## 3. Evidencia de ejecución
 
-La inclusión de una pieza en este registro demuestra únicamente su localización/evidencia correspondiente. No convierte una pieza D en integrada, ni una pieza C en canónica u operativa.
+**A:** Workflow `Integridad canónica`, run `33596370801`, asociado al PR #35 y al commit de trabajo `0d4da531ff8d626384eeb1741fac69ab608792ec`.
 
-## 4. Estado de Sensors
+La ejecución acreditó:
 
-**D — NO DETERMINADO.** No se declara ningún sensor específico del Arnés como existente u operativo.
+- verificación de integridad: `success`;
+- código de salida del verificador: `0`;
+- ejecución del sensor: `success`;
+- estado observado: `VERIFICATION_OBSERVED_SUCCESS`;
+- generación y conservación de `harness-feedback.json`;
+- artefacto de evidencia finalizado correctamente;
+- reflejo del resultado en el resumen del workflow.
 
-## 5. Estado del mecanismo ejecutable
+## 4. Regla de no sobreinterpretación
 
-Existe un mecanismo ejecutable de integridad en WAIPL. Su existencia y ejecución no se reinterpretan como una integración interna del Arnés hasta disponer de evidencia específica.
+La inclusión de una pieza en este registro demuestra únicamente su localización/evidencia correspondiente. No convierte una pieza C en canónica ni amplía las jurisdicciones del Arnés.
 
-## 6. Próximo límite operativo
+El sensor observa el resultado del verificador; no lo sustituye ni añade autoridad epistemológica.
 
-El siguiente paso deberá limitarse a una integración ejecutable únicamente si puede acreditarse sin introducir una nueva decisión material. En caso contrario, el vacío permanece D y se consulta al Soberano.
+## 5. Estado de Sensors
+
+**A — ACREDITADO para el mínimo implementado:** existe y se ejecutó `06_SISTEMA_OPERATIVO/ARNES/harness_feedback_sensor.py`, integrado en `Integridad canónica` y conservado como parte del artefacto de evidencia.
+
+**D — NO DETERMINADO:** catálogo completo de Sensors, cobertura general de observabilidad y arquitectura definitiva de feedback del Arnés.
+
+## 6. Estado del mecanismo ejecutable
+
+**A:** Existe un mecanismo ejecutable de integridad y una integración mínima acreditada mediante ejecución del workflow.
+
+**A:** Existe un sensor mínimo de feedback acreditado mediante la misma ejecución.
+
+Esto no demuestra por sí solo integración de Graphify, Positrón, Ollama, Vár/Yata ni ninguna otra pieza no acreditada.
+
+## 7. Próximo límite operativo
+
+El mínimo Sensors/Feedback queda materializado y probado. El siguiente paso es la prueba de integración estrictamente necesaria para el cierre operativo del mínimo del Arnés, sin ampliar alcance ni crear una segunda batería de verificación.
