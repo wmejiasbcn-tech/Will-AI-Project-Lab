@@ -1,0 +1,1 @@
+Temporary implementation note: the runtime consumer must consume the repository-root harness-feedforward.json emitted by the Guide loader and must not grant authority or execute the Guide.
