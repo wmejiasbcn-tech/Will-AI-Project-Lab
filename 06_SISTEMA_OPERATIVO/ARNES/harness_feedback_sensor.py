@@ -19,11 +19,12 @@ def read_exit_code(path: Path) -> str:
 
 
 def safe_write_json(path: Path, data: dict) -> None:
-    """Write JSON to path safely, rejecting symlinks and writing atomically.
+    """Write JSON to path safely, rejecting symlinks to prevent redirection.
 
     - Rejects symlinks at the target path (prevents redirection attacks).
     - Refuses to write outside the current working directory.
-    - Writes to a temporary file first, then atomically replaces the target.
+    - Uses O_NOFOLLOW when creating the temp file to reject symlinks.
+    - Writes atomically: temp file then atomic rename.
     """
     # Reject if the target path is a symlink
     if path.is_symlink():
@@ -40,18 +41,32 @@ def safe_write_json(path: Path, data: dict) -> None:
     # Resolve and verify the path is within the current working directory
     resolved = path.resolve()
     cwd = Path.cwd().resolve()
-    if not str(resolved).startswith(str(cwd)):
+    try:
+        resolved.relative_to(cwd)
+    except ValueError:
         raise RuntimeError(
             f"Refusing to write: {path} resolves outside the working directory."
         )
 
-    # Write to a temporary file first, then atomically replace
+    payload = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+
+    # Write to a temporary file first, then atomically replace the target.
+    # O_NOFOLLOW rejects if the temp path is a symlink (prevents redirection).
     tmp_path = path.with_suffix(path.suffix + ".tmp")
-    tmp_path.write_text(
-        json.dumps(data, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
+    if tmp_path.is_symlink() or tmp_path.exists():
+        tmp_path.unlink()
+    fd = os.open(
+        str(tmp_path),
+        os.O_WRONLY | os.O_CREAT | os.O_NOFOLLOW | os.O_TRUNC,
+        0o644,
     )
-    tmp_path.replace(path)
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        f.write(payload)
+
+    # Atomic rename. os.replace replaces the destination atomically.
+    # If destination was replaced by a symlink (TOCTOU), os.replace
+    # replaces the link itself, not its target.
+    os.replace(str(tmp_path), str(path))
 
 
 exit_code = read_exit_code(Path("harness-verification-exit-code.txt"))
