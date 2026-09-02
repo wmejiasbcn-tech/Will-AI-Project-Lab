@@ -1,0 +1,17 @@
+name: Integridad canónica
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verificar SHA-256 del manifiesto
+        run: python3 06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py

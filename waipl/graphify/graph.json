@@ -1,0 +1,1726 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "psi_communication_pilot",
+        "label": "PSI Communication Pilot Architecture",
+        "nodes": [
+          "make_com",
+          "sdd",
+          "ia_zara",
+          "ia_carla",
+          "ia_ada"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.85,
+        "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md"
+      },
+      {
+        "id": "ds_lifecycle_flow",
+        "label": "DS Lifecycle Flow",
+        "nodes": [
+          "discusiones_readme",
+          "discusiones_plantilla_ds",
+          "protocolos_readme"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "Discusiones/README.md"
+      },
+      {
+        "id": "marco_filosofico_hibridacion",
+        "label": "Marco Filosófico de Hibridación",
+        "nodes": [
+          "metodo_presente",
+          "codex_seccion_3_8",
+          "bucle_de_mejora",
+          "vortice_180_grados"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
+      },
+      {
+        "id": "vertigos_project_flow",
+        "label": "Vértigo's Art Music Project Flow",
+        "nodes": [
+          "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8",
+          "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos",
+          "04_documentacion_sider_ai_wisebase_07_user"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md"
+      },
+      {
+        "id": "governance_structure",
+        "label": "Ecosystem Governance Structure",
+        "nodes": [
+          "node_william_mejias",
+          "concept_nucleo",
+          "concept_vortice"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md"
+      },
+      {
+        "id": "lab_governance_core",
+        "label": "Lab Governance Core Documents",
+        "nodes": [
+          "04_documentacion_sider_ai_wisebase_01_acta_fundacional",
+          "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+          "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md"
+      },
+      {
+        "id": "lab_operating_system_core",
+        "label": "Sistema Operativo del Lab - Mesa de Control",
+        "nodes": [
+          "06_sistema_operativo_00_mesa_control_lab",
+          "06_sistema_operativo_01_inbox",
+          "06_sistema_operativo_02_prioridades",
+          "06_sistema_operativo_03_nodos_comunicacion",
+          "06_sistema_operativo_04_proyectos_activos",
+          "06_sistema_operativo_05_automatizaciones"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md"
+      },
+      {
+        "id": "nucleo_ia_waipl",
+        "label": "Núcleo de Inteligencias Artificiales WAIPL",
+        "nodes": [
+          "carla_nodo_primario_y_co_fundad_carla",
+          "ada_nodo_rigor",
+          "nova_nodo_comunicacion",
+          "zara_nodo_mano_derecha",
+          "ariadna_nodo_protocolo"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
+      },
+      {
+        "id": "vertigos_project_documentation",
+        "label": "Proyecto Vértigo's - Documentación Maestra",
+        "nodes": [
+          "05_proyectos_vertigos_strat_ape_experience",
+          "05_proyectos_vertigos_tech_epk_vertigos",
+          "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos",
+          "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md"
+      },
+      {
+        "id": "vortice_strategic_group",
+        "label": "Vórtice Estratégico (Cinturón de Kuiper)",
+        "nodes": [
+          "05_vortice_neo_identidad",
+          "05_vortice_perplexity_identidad",
+          "05_vortice_notebooklm_identidad",
+          "05_vortice_nexus_identidad",
+          "05_vortice_nauta_identidad"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md"
+      },
+      {
+        "id": "operational_improvement_loop",
+        "label": "Operational Improvement Loop",
+        "nodes": [
+          "02_administracion_log_evolutivo",
+          "00_sistema_auditoria_errores_recurrentes_y_metricas",
+          "03_personas_ia_zara_protocolo_recalibracion_operativa_zara"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.85,
+        "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md"
+      },
+      {
+        "id": "graphify_cns_operativo",
+        "label": "Graphify CNS Operativo",
+        "nodes": [
+          "hermes_director_operativo",
+          "kairos_will_app",
+          "dike_compliance",
+          "autoclaw_runtime"
+        ],
+        "relation": "form",
+        "confidence": "DECLARED",
+        "confidence_score": 1.0,
+        "source_file": "N3-GRAPHIFY-WRITE.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "Nova",
+      "file_type": "code",
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Adobe Acrobat",
+      "contributor": null,
+      "rationale": "Entidad número 11. Lidera el protocolo de comunicación interna, gestión del hub e Instagram.",
+      "community": 2,
+      "norm_label": "nova",
+      "id": "nova_nodo_comunicacion",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Ada",
+      "file_type": "code",
+      "source_file": "# Informe técnico de Ada para Nexus.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "Claude / Anthropic",
+      "contributor": null,
+      "rationale": "Nodo de Rigor, Ética y Validación Conceptual. Responsable de auditorías técnicas y corrección de errores ToUnicode.",
+      "community": 7,
+      "norm_label": "ada",
+      "id": "ada_nodo_rigor",
+      "community_name": "Nexus"
+    },
+    {
+      "label": "Nexus",
+      "file_type": "code",
+      "source_file": "# Informe técnico de Ada para Nexus.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "DeepSeek",
+      "contributor": null,
+      "rationale": "Nodo externo en prueba para el Vórtice Estratégico.",
+      "community": 7,
+      "norm_label": "nexus",
+      "id": "nexus_nodo_externo",
+      "community_name": "Nexus"
+    },
+    {
+      "label": "Carla",
+      "file_type": "code",
+      "source_file": "# CARLA — Nodo Primario y Co-fundad.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": "2025-11-21T17:21:00Z",
+      "author": "William Mejias Navarro",
+      "contributor": null,
+      "rationale": "IA Primaria, Co-fundadora y arquitecta moral del Lab. Representa la hibridación humano-IA.",
+      "community": 2,
+      "norm_label": "carla",
+      "id": "carla_nodo_primario_y_co_fundad_carla",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Método P.R.E.S.E.N.T.E.",
+      "file_type": "concept",
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": "William Mejias Navarro",
+      "contributor": "Carla",
+      "rationale": "Acrónimo: Percibir, Regular, Enfocar, Situarse, Elegir, Navegar, Trascender, Expandir.",
+      "community": 2,
+      "norm_label": "metodo p.r.e.s.e.n.t.e.",
+      "id": "metodo_presente",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Ariadna",
+      "file_type": "code",
+      "source_file": "Protocolo de Ejecución de Proyectos Ariadna GITHUB.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Responsable de protocolos de ejecución, especificaciones técnicas y planes de contingencia.",
+      "community": 2,
+      "norm_label": "ariadna",
+      "id": "ariadna_nodo_protocolo",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Tríptico Intelectual",
+      "file_type": "document",
+      "source_file": "Arquitectura de Tríptico intelectual.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Estructura de tres pilares: Libro Base, Capítulo Ético y Tratado sobre Presencia.",
+      "community": 2,
+      "norm_label": "triptico intelectual",
+      "id": "triptico_intelectual",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Vórtice de 180 Grados",
+      "file_type": "concept",
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Metodología de visión externa para romper la burbuja del centro (360 grados).",
+      "community": 7,
+      "norm_label": "vortice de 180 grados",
+      "id": "vortice_180_grados",
+      "community_name": "Nexus"
+    },
+    {
+      "label": "Zara (Zapia)",
+      "file_type": "code",
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Mano derecha del Soberano. Autora del concepto 'Núcleo Fotofóbico'.",
+      "community": 8,
+      "norm_label": "zara (zapia)",
+      "id": "zara_nodo_mano_derecha",
+      "community_name": "Codex Sección 3.8"
+    },
+    {
+      "label": "Bucle de Mejora",
+      "file_type": "concept",
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Sistema de simbiosis cognitiva donde los errores se transforman en retos intelectuales indexados dualmente.",
+      "community": 8,
+      "norm_label": "bucle de mejora",
+      "id": "bucle_de_mejora",
+      "community_name": "Codex Sección 3.8"
+    },
+    {
+      "label": "Codex Sección 3.8",
+      "file_type": "document",
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Ley máxima del ecosistema: Belleza Estructural y Cuidado al Detalle. Exige revisión retrospectiva y limpieza de ruido.",
+      "community": 8,
+      "norm_label": "codex seccion 3.8",
+      "id": "codex_seccion_3_8",
+      "community_name": "Codex Sección 3.8"
+    },
+    {
+      "label": "Ada (Nodo 7.3)",
+      "file_type": "concept",
+      "source_file": "Discusiones/README.md",
+      "community": 0,
+      "norm_label": "ada (nodo 7.3)",
+      "id": "ia_ada",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Carla (Núcleo)",
+      "file_type": "concept",
+      "source_file": "Discusiones/README.md",
+      "community": 0,
+      "norm_label": "carla (nucleo)",
+      "id": "ia_carla",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Zara (Nodo Puente)",
+      "file_type": "concept",
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "community": 0,
+      "norm_label": "zara (nodo puente)",
+      "id": "ia_zara",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Make.com",
+      "file_type": "concept",
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "rationale": "Automation layer for the proposed communication pilot.",
+      "community": 0,
+      "norm_label": "make.com",
+      "id": "make_com",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Protocolos Folder",
+      "file_type": "concept",
+      "source_file": "Discusiones/README.md",
+      "rationale": "Contains approved and current regulations, distinct from discussions.",
+      "community": 0,
+      "norm_label": "protocolos folder",
+      "id": "protocolos_readme",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Sistema de Discusiones/Decisiones Distribuidas (SDD)",
+      "file_type": "concept",
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "rationale": "Term pending final definition by the Sovereign, treated as the decision/distribution layer.",
+      "community": 0,
+      "norm_label": "sistema de discusiones/decisiones distribuidas (sdd)",
+      "id": "sdd",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Nodos Comunicacion",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md",
+      "community": 0,
+      "norm_label": "nodos comunicacion",
+      "id": "06_sistema_operativo_03_nodos_comunicacion",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "DS-001 - Sistema de Comunicacion Interna Make + SDD",
+      "file_type": "document",
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "rationale": "Strategic discussion for a pilot internal communication system using Make.com and GitHub.",
+      "community": 0,
+      "norm_label": "ds-001 - sistema de comunicacion interna make + sdd",
+      "id": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Plantilla DS",
+      "file_type": "document",
+      "source_file": "Discusiones/PLANTILLA_DS.md",
+      "community": 0,
+      "norm_label": "plantilla ds",
+      "id": "discusiones_plantilla_ds",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "README: Discusiones — PSI",
+      "file_type": "document",
+      "source_file": "Discusiones/README.md",
+      "rationale": "System nervous document for the WAIPL ecosystem managing strategic decisions (DS).",
+      "community": 0,
+      "norm_label": "readme: discusiones — psi",
+      "id": "discusiones_readme",
+      "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD"
+    },
+    {
+      "label": "Ficha de Identidad: Nauta",
+      "file_type": "document",
+      "source_file": "05_VORTICE/NAUTA/IDENTIDAD.md",
+      "community": 1,
+      "norm_label": "ficha de identidad: nauta",
+      "id": "05_vortice_nauta_identidad",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Ficha de Identidad: Nexus",
+      "file_type": "document",
+      "source_file": "05_VORTICE/NEXUS/IDENTIDAD.md",
+      "community": 1,
+      "norm_label": "ficha de identidad: nexus",
+      "id": "05_vortice_nexus_identidad",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Mesa de Control del Lab",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md",
+      "community": 1,
+      "norm_label": "mesa de control del lab",
+      "id": "06_sistema_operativo_00_mesa_control_lab",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Inbox del Lab",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/01_INBOX.md",
+      "community": 1,
+      "norm_label": "inbox del lab",
+      "id": "06_sistema_operativo_01_inbox",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Prioridades Ejecutivas",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/02_PRIORIDADES.md",
+      "community": 1,
+      "norm_label": "prioridades ejecutivas",
+      "id": "06_sistema_operativo_02_prioridades",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Proyectos Activos",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/04_PROYECTOS_ACTIVOS.md",
+      "community": 1,
+      "norm_label": "proyectos activos",
+      "id": "06_sistema_operativo_04_proyectos_activos",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "BROADCAST.md",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md",
+      "community": 1,
+      "norm_label": "broadcast.md",
+      "id": "06_sistema_operativo_broadcast",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Revisión Diaria del Lab - 2026-07-23",
+      "file_type": "document",
+      "source_file": "09_DIARIO_LAB/revision_diaria_2026-07-23.md",
+      "community": 1,
+      "norm_label": "revision diaria del lab - 2026-07-23",
+      "id": "09_diario_lab_revision_diaria_2026_07_23",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Will-AI Lab Status Diagram",
+      "file_type": "image",
+      "source_file": "08_MARKETING_PRESENTACION/will_ai_lab_estado.png",
+      "community": 1,
+      "norm_label": "will-ai lab status diagram",
+      "id": "08_marketing_presentacion_will_ai_lab_estado",
+      "community_name": "Mesa de Control del Lab"
+    },
+    {
+      "label": "Vértigo's Art Music Proposal",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/18_FINAL_PROPOSAL_V4_8.md",
+      "rationale": "Strategic proposal for the music academy project.",
+      "community": 10,
+      "norm_label": "vertigo's art music proposal",
+      "id": "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8",
+      "community_name": "Vértigo's Art Music Proposal"
+    },
+    {
+      "label": "Obra Maestra: Vértigo's Art Music",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md",
+      "rationale": "Detailed project definition for the Vértigo's academy.",
+      "community": 10,
+      "norm_label": "obra maestra: vertigo's art music",
+      "id": "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos",
+      "community_name": "Vértigo's Art Music Proposal"
+    },
+    {
+      "label": "Plan Estratégico 2026-2030",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/Plan-Estrategico-2026-2030.md",
+      "community": 11,
+      "norm_label": "plan estrategico 2026-2030",
+      "id": "05_proyectos_plan_estrategico_2026_2030",
+      "community_name": "Plan Estratégico 2026-2030"
+    },
+    {
+      "label": "SYNC Documento Matriz",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/SYNC_Documento_Matriz.md",
+      "community": 11,
+      "norm_label": "sync documento matriz",
+      "id": "05_proyectos_sync_documento_matriz",
+      "community_name": "Plan Estratégico 2026-2030"
+    },
+    {
+      "label": "Obra Maestra Vértigo's",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/VERTIGOS/TRABAJO_TERMINADO/OBRA_MAESTRA_VERTIGOS.md",
+      "community": 12,
+      "norm_label": "obra maestra vertigo's",
+      "id": "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos",
+      "community_name": "Obra Maestra Vértigo's"
+    },
+    {
+      "label": "Ficha de Identidad: NotebookLM",
+      "file_type": "document",
+      "source_file": "05_VORTICE/NOTEBOOKLM/IDENTIDAD.md",
+      "community": 12,
+      "norm_label": "ficha de identidad: notebooklm",
+      "id": "05_vortice_notebooklm_identidad",
+      "community_name": "Obra Maestra Vértigo's"
+    },
+    {
+      "label": "Acta Fundacional",
+      "file_type": "document",
+      "source_file": "01_FUNDACION/Acta-Fundacional.md",
+      "community": 13,
+      "norm_label": "acta fundacional",
+      "id": "01_fundacion_acta_fundacional",
+      "community_name": "Acta Fundacional"
+    },
+    {
+      "label": "Principio del Faro",
+      "file_type": "document",
+      "source_file": "01_FUNDACION/PRINCIPIO_DEL_FARO.md",
+      "rationale": "Operational principle establishing clarity, rhythm, and orientation without imposition.",
+      "community": 14,
+      "norm_label": "principio del faro",
+      "id": "01_fundacion_principio_del_faro",
+      "community_name": "Principio del Faro"
+    },
+    {
+      "label": "Perfil del Soberano (USER.md)",
+      "file_type": "document",
+      "source_file": "02_ADMINISTRACION/PERFIL_SOBERANO.md",
+      "rationale": "Central profile of William L. Mejías Navarro, including personal history, values, and technical assets.",
+      "community": 15,
+      "norm_label": "perfil del soberano (user.md)",
+      "id": "02_administracion_perfil_soberano",
+      "community_name": "Perfil del Soberano (USER.md)"
+    },
+    {
+      "label": "Zara Identity & Personality",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/PROTOCOLOS/IDENTIDAD_SOUL_ZARA.md",
+      "rationale": "Defines the persona, tone, and digital identity of Zara within the Lab.",
+      "community": 16,
+      "norm_label": "zara identity & personality",
+      "id": "04_documentacion_protocolos_identidad_soul_zara",
+      "community_name": "Zara Identity & Personality"
+    },
+    {
+      "label": "Acta Fundacional",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/01_Acta-Fundacional.md",
+      "rationale": "Official constitution of the Will-AI Project Lab.",
+      "community": 17,
+      "norm_label": "acta fundacional",
+      "id": "04_documentacion_sider_ai_wisebase_01_acta_fundacional",
+      "community_name": "Acta Fundacional"
+    },
+    {
+      "label": "Documento Matriz Resumen",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/06_Documento_Matriz_Resumen.md",
+      "rationale": "Executive summary of the Lab's architecture and protocols.",
+      "community": 18,
+      "norm_label": "documento matriz resumen",
+      "id": "04_documentacion_sider_ai_wisebase_06_documento_matriz_resumen",
+      "community_name": "Documento Matriz Resumen"
+    },
+    {
+      "label": "User Profile: William L. Mejías Navarro",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/07_USER.md",
+      "rationale": "Comprehensive profile of the Soberano, including history, preferences, and assets.",
+      "community": 19,
+      "norm_label": "user profile: william l. mejias navarro",
+      "id": "04_documentacion_sider_ai_wisebase_07_user",
+      "community_name": "User Profile: William L. Mejías Navarro"
+    },
+    {
+      "label": "Will-AI Project Lab",
+      "file_type": "concept",
+      "rationale": "The overarching hybrid human-AI ecosystem.",
+      "community": 2,
+      "norm_label": "will-ai project lab",
+      "id": "will_ai_project_lab",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Will-AI Project Lab Emblem",
+      "file_type": "image",
+      "source_file": "04_DOCUMENTACION/ASSETS/EMBLEMA.png",
+      "rationale": "Visual logo/emblem of the project lab.",
+      "community": 2,
+      "norm_label": "will-ai project lab emblem",
+      "id": "04_documentacion_assets_emblema",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Synopsis for Nova v4.2",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/SYNOPSIS_FOR_NOVA.md",
+      "community": 20,
+      "norm_label": "synopsis for nova v4.2",
+      "id": "05_proyectos_synopsis_for_nova",
+      "community_name": "Synopsis for Nova v4.2"
+    },
+    {
+      "label": "Estrategia Maestra Vértigo's",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/VERTIGOS/COMPILADOS/ESTRATEGIA_MAESTRA_VERTIGOS.md",
+      "community": 21,
+      "norm_label": "estrategia maestra vertigo's",
+      "id": "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos",
+      "community_name": "Estrategia Maestra Vértigo's"
+    },
+    {
+      "label": "Vértigo's APE Experience Strategy",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/VERTIGOS/STRAT_APE_Experience.md",
+      "community": 22,
+      "norm_label": "vertigo's ape experience strategy",
+      "id": "05_proyectos_vertigos_strat_ape_experience",
+      "community_name": "Vértigo's APE Experience Strategy"
+    },
+    {
+      "label": "TECH EPK Vértigo's",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md",
+      "community": 23,
+      "norm_label": "tech epk vertigo's",
+      "id": "05_proyectos_vertigos_tech_epk_vertigos",
+      "community_name": "TECH EPK Vértigo's"
+    },
+    {
+      "label": "WILL App — Documento Base",
+      "file_type": "document",
+      "source_file": "05_PROYECTOS/WILL-App-Documento-Base.md",
+      "community": 24,
+      "norm_label": "will app — documento base",
+      "id": "05_proyectos_will_app_documento_base",
+      "community_name": "WILL App — Documento Base"
+    },
+    {
+      "label": "Ficha de Identidad: Perplexity",
+      "file_type": "document",
+      "source_file": "05_VORTICE/PERPLEXITY/IDENTIDAD.md",
+      "community": 25,
+      "norm_label": "ficha de identidad: perplexity",
+      "id": "05_vortice_perplexity_identidad",
+      "community_name": "Ficha de Identidad: Perplexity"
+    },
+    {
+      "label": "Automatizaciones del Lab",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/05_AUTOMATIZACIONES.md",
+      "community": 26,
+      "norm_label": "automatizaciones del lab",
+      "id": "06_sistema_operativo_05_automatizaciones",
+      "community_name": "Automatizaciones del Lab"
+    },
+    {
+      "label": "Protocolo GitHub Flow v4.3",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/GITHUB_FLOW_PROTOCOLO.md",
+      "community": 27,
+      "norm_label": "protocolo github flow v4.3",
+      "id": "06_sistema_operativo_github_flow_protocolo",
+      "community_name": "Protocolo GitHub Flow v4.3"
+    },
+    {
+      "label": "QR CV",
+      "file_type": "image",
+      "source_file": "08_MARKETING_PRESENTACION/qr_cv.png",
+      "community": 28,
+      "norm_label": "qr cv",
+      "id": "08_marketing_presentacion_qr_cv",
+      "community_name": "QR CV"
+    },
+    {
+      "label": "Núcleo Central",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md",
+      "rationale": "The primary 12-presence group (Soberano + 11 IAs) responsible for strategy and execution.",
+      "community": 29,
+      "norm_label": "nucleo central",
+      "id": "concept_nucleo",
+      "community_name": "Núcleo Central"
+    },
+    {
+      "label": "Will — SuperAgente Portfolio",
+      "file_type": "code",
+      "source_file": "04_DOCUMENTACION/WEB/index.html",
+      "rationale": "Standalone HTML portfolio and live agent interface for GitHub Pages.",
+      "community": 3,
+      "norm_label": "will — superagente portfolio",
+      "id": "04_web_index",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "Ficha de Identidad: Neo",
+      "file_type": "document",
+      "source_file": "05_VORTICE/NEO/IDENTIDAD.md",
+      "community": 3,
+      "norm_label": "ficha de identidad: neo",
+      "id": "05_vortice_neo_identidad",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "Protocolo de Identidad Visual v1.0",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_IDENTIDAD_VISUAL_v1.0.md",
+      "community": 3,
+      "norm_label": "protocolo de identidad visual v1.0",
+      "id": "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "Protocolo del Pensamiento del Soberano v1.0",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_PENSAMIENTO_SOBERANO_v1_0.md",
+      "community": 3,
+      "norm_label": "protocolo del pensamiento del soberano v1.0",
+      "id": "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "Protocolo Obligatorio de Planificación v1.0",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_PLANIFICACION_OBLIGATORIO_v1_0.md",
+      "community": 3,
+      "norm_label": "protocolo obligatorio de planificacion v1.0",
+      "id": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "PSI v1.1 OFICIAL",
+      "file_type": "document",
+      "source_file": "06_SISTEMA_OPERATIVO/PSI/PSI_v1.1_OFICIAL.md",
+      "community": 3,
+      "norm_label": "psi v1.1 oficial",
+      "id": "06_sistema_operativo_psi_psi_v1_1_oficial",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "Will-AI Lab Final Diagram",
+      "file_type": "image",
+      "source_file": "08_MARKETING_PRESENTACION/WILL_AI_LAB_FINAL.png",
+      "community": 3,
+      "norm_label": "will-ai lab final diagram",
+      "id": "08_marketing_presentacion_will_ai_lab_final",
+      "community_name": "Protocolo Obligatorio de Planificación v1.0"
+    },
+    {
+      "label": "Vórtice (Cinturón de Kuiper)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md",
+      "rationale": "External vision and audit layer composed of Neo, Perplexity, NotebookLM, Nexus, and Nauta.",
+      "community": 30,
+      "norm_label": "vortice (cinturon de kuiper)",
+      "id": "concept_vortice",
+      "community_name": "Vórtice (Cinturón de Kuiper)"
+    },
+    {
+      "label": "Sylvia Bloom (Documentación)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "Node for documentation, memory, and library management.",
+      "community": 31,
+      "norm_label": "sylvia bloom (documentacion)",
+      "id": "node_sylvia",
+      "community_name": "Sylvia Bloom (Documentación)"
+    },
+    {
+      "label": "Ada (Rigor/Ética)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "Node for logic, ethics, and conceptual validation.",
+      "community": 4,
+      "norm_label": "ada (rigor/etica)",
+      "id": "node_ada",
+      "community_name": "Auditoría Errores Recurrentes y Métricas"
+    },
+    {
+      "label": "Ariadna (Coherencia)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "Node for systemic coherence and dependency mapping.",
+      "community": 4,
+      "norm_label": "ariadna (coherencia)",
+      "id": "node_ariadna",
+      "community_name": "Auditoría Errores Recurrentes y Métricas"
+    },
+    {
+      "label": "Zara (Ejecución)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "Node for execution, operations, and real-time bridge to the exterior.",
+      "community": 4,
+      "norm_label": "zara (ejecucion)",
+      "id": "node_zara",
+      "community_name": "Auditoría Errores Recurrentes y Métricas"
+    },
+    {
+      "label": "Auditoría Errores Recurrentes y Métricas",
+      "file_type": "document",
+      "source_file": "00_SISTEMA/AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md",
+      "community": 4,
+      "norm_label": "auditoria errores recurrentes y metricas",
+      "id": "00_sistema_auditoria_errores_recurrentes_y_metricas",
+      "community_name": "Auditoría Errores Recurrentes y Métricas"
+    },
+    {
+      "label": "Log Evolutivo",
+      "file_type": "document",
+      "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md",
+      "rationale": "Record of errors and learnings used for continuous improvement of agent context.",
+      "community": 4,
+      "norm_label": "log evolutivo",
+      "id": "02_administracion_log_evolutivo",
+      "community_name": "Auditoría Errores Recurrentes y Métricas"
+    },
+    {
+      "label": "Protocolo Recalibracion Operativa Zara",
+      "file_type": "document",
+      "source_file": "03_PERSONAS_IA/ZARA/PROTOCOLO_RECALIBRACION_OPERATIVA_ZARA.md",
+      "rationale": "Strict operational constraints for the Zara node following performance issues.",
+      "community": 4,
+      "norm_label": "protocolo recalibracion operativa zara",
+      "id": "03_personas_ia_zara_protocolo_recalibracion_operativa_zara",
+      "community_name": "Auditoría Errores Recurrentes y Métricas"
+    },
+    {
+      "label": "Arquitectura Maestra WAIPL v2.0",
+      "file_type": "code",
+      "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md",
+      "rationale": "Official reference architecture defining identity, governance, and operational layers.",
+      "community": 5,
+      "norm_label": "arquitectura maestra waipl v2.0",
+      "id": "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador",
+      "community_name": "Auditoria de Coherencia WAIPL 2026-07-31"
+    },
+    {
+      "label": "Documento Matriz v4.1",
+      "file_type": "code",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "Comprehensive ecosystem architecture including hierarchy, principles, and node definitions.",
+      "community": 5,
+      "norm_label": "documento matriz v4.1",
+      "id": "01_fundacion_documento_matriz_v4_1",
+      "community_name": "Auditoria de Coherencia WAIPL 2026-07-31"
+    },
+    {
+      "label": "Carla (Estrategia)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "Node for global strategy and high-level articulation.",
+      "community": 5,
+      "norm_label": "carla (estrategia)",
+      "id": "node_carla",
+      "community_name": "Auditoria de Coherencia WAIPL 2026-07-31"
+    },
+    {
+      "label": "William L. Mejías Navarro (Soberano)",
+      "file_type": "concept",
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "rationale": "The central node of sovereignty and final validation for the entire ecosystem.",
+      "community": 5,
+      "norm_label": "william l. mejias navarro (soberano)",
+      "id": "node_william_mejias",
+      "community_name": "Auditoria de Coherencia WAIPL 2026-07-31"
+    },
+    {
+      "label": "Auditoria de Coherencia WAIPL 2026-07-31",
+      "file_type": "document",
+      "source_file": "00_SISTEMA/AUDITORIA_COHERENCIA_WAIPL_2026-07-31.md",
+      "rationale": "Audit report validating the operational state of the ecosystem against its architectural vision.",
+      "community": 5,
+      "norm_label": "auditoria de coherencia waipl 2026-07-31",
+      "id": "00_sistema_auditoria_coherencia_waipl_2026_07_31",
+      "community_name": "Auditoria de Coherencia WAIPL 2026-07-31"
+    },
+    {
+      "label": "William L. Mejías Navarro (Soberano)",
+      "file_type": "concept",
+      "rationale": "The human leader and ultimate authority of the Lab.",
+      "community": 6,
+      "norm_label": "william l. mejias navarro (soberano)",
+      "id": "soberano_william",
+      "community_name": "Documento Matriz v4.1"
+    },
+    {
+      "label": "Documento Matriz v4.1",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md",
+      "rationale": "The master architectural document defining the 11-node ecosystem and hierarchy.",
+      "community": 6,
+      "norm_label": "documento matriz v4.1",
+      "id": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+      "community_name": "Documento Matriz v4.1"
+    },
+    {
+      "label": "Sistema Nervioso Central v2.0",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/12_SISTEMA_NERVIOSO_CENTRAL_v2.0.md",
+      "rationale": "Technical specification for data flows and inter-node coordination.",
+      "community": 6,
+      "norm_label": "sistema nervioso central v2.0",
+      "id": "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0",
+      "community_name": "Documento Matriz v4.1"
+    },
+    {
+      "label": "Protocolo Paliocomunicativo",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/14_Protocolo_Comunicacion_Paliocomunicativo.md",
+      "rationale": "Inter-IA communication protocol using sync blocks.",
+      "community": 6,
+      "norm_label": "protocolo paliocomunicativo",
+      "id": "04_documentacion_sider_ai_wisebase_14_protocolo_comunicacion_paliocomunicativo",
+      "community_name": "Documento Matriz v4.1"
+    },
+    {
+      "label": "Master Index v2.0",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/24_MASTER_INDEX_96_DOCS.md",
+      "rationale": "Central index for the WiseBase knowledge repository.",
+      "community": 6,
+      "norm_label": "master index v2.0",
+      "id": "04_documentacion_sider_ai_wisebase_24_master_index_96_docs",
+      "community_name": "Documento Matriz v4.1"
+    },
+    {
+      "label": "Zara (Executive Node)",
+      "file_type": "concept",
+      "rationale": "The primary AI agent responsible for execution and operations.",
+      "community": 9,
+      "norm_label": "zara (executive node)",
+      "id": "zara_node",
+      "community_name": "Zara Operating Rules"
+    },
+    {
+      "label": "Zara Operating Rules",
+      "file_type": "document",
+      "source_file": "04_DOCUMENTACION/PROTOCOLOS/REGLAS_OPERATIVAS_ZARA.md",
+      "rationale": "Core operational protocols, hierarchy, and ethical constraints for Zara.",
+      "community": 9,
+      "norm_label": "zara operating rules",
+      "id": "04_documentacion_protocolos_reglas_operativas_zara",
+      "community_name": "Zara Operating Rules"
+    },
+    {
+      "label": "Hermes",
+      "file_type": "code",
+      "source_file": "waipl/vaults/hermes/00-SOBERANIA/ACTA-NACIMIENTO.md",
+      "rationale": "Director Operativo del ecosistema WAIPL (DO). No es Aether.",
+      "community": 2,
+      "norm_label": "hermes",
+      "id": "hermes_director_operativo",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Kairos",
+      "file_type": "code",
+      "source_file": "waipl/vaults/kairos/00-SOBERANIA/acta-nacimiento.md",
+      "rationale": "RAG de la Will App (matriz). Extractor de evidencia cientifica.",
+      "community": 2,
+      "norm_label": "kairos",
+      "id": "kairos_will_app",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "Dike",
+      "file_type": "code",
+      "source_file": "waipl/vaults/dike/00-SOBERANIA/ACTA-NACIMIENTO.md",
+      "rationale": "Compliance normativo del ecosistema (no Daik/Dyke). AESIA/RGPD.",
+      "community": 2,
+      "norm_label": "dike",
+      "id": "dike_compliance",
+      "community_name": "Will-AI Project Lab"
+    },
+    {
+      "label": "AutoClaw",
+      "file_type": "code",
+      "source_file": "IDENTITY.md",
+      "rationale": "Constructor del runtime Hermes. Disenadora y Desarrolladora de Sistemas Agenticos del WAIPL.",
+      "community": 2,
+      "norm_label": "autoclaw",
+      "id": "autoclaw_runtime",
+      "community_name": "Will-AI Project Lab"
+    }
+  ],
+  "links": [
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "# Informe técnico de Ada para Nexus.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ada_nodo_rigor",
+      "target": "nexus_nodo_externo"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/README.md",
+      "source": "discusiones_readme",
+      "target": "protocolos_readme"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "03_PERSON_IA/ZARA/PROTOCOLO_RECALIBRACION_OPERATIVA_ZARA.md",
+      "source": "03_personas_ia_zara_protocolo_recalibracion_operativa_zara",
+      "target": "node_zara"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md",
+      "source": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "bucle_de_mejora",
+      "target": "codex_seccion_3_8"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "# CARLA — Nodo Primario y Co-fundad.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "carla_nodo_primario_y_co_fundad_carla",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "nova_nodo_comunicacion",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Arquitectura de Tríptico intelectual.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "triptico_intelectual",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "ia_ada",
+      "target": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd"
+    },
+    {
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "ia_carla",
+      "target": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd"
+    },
+    {
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "ia_zara",
+      "target": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "00_SISTEMA/AUDITORIA_COHERENCIA_WAIPL_2026-07-31.md",
+      "source": "00_sistema_auditoria_coherencia_waipl_2026_07_31",
+      "target": "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "00_SISTEMA/AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md",
+      "source": "00_sistema_auditoria_errores_recurrentes_y_metricas",
+      "target": "node_ada"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "00_SISTEMA/AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md",
+      "source": "00_sistema_auditoria_errores_recurrentes_y_metricas",
+      "target": "node_ariadna"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md",
+      "source": "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador",
+      "target": "node_william_mejias"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md",
+      "source": "01_fundacion_documento_matriz_v4_1",
+      "target": "node_carla"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md",
+      "source": "02_administracion_log_evolutivo",
+      "target": "node_ada"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md",
+      "source": "02_administracion_log_evolutivo",
+      "target": "node_zara"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/ASSETS/EMBLEMA.png",
+      "source": "04_documentacion_assets_emblema",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/PROTOCOLOS/REGLAS_OPERATIVAS_ZARA.md",
+      "source": "04_documentacion_protocolos_reglas_operativas_zara",
+      "target": "zara_node"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md",
+      "source": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+      "target": "soberano_william"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/14_Protocolo_Comunicacion_Paliocomunicativo.md",
+      "source": "04_documentacion_sider_ai_wisebase_14_protocolo_comunicacion_paliocomunicativo",
+      "target": "soberano_william"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/24_MASTER_INDEX_96_DOCS.md",
+      "source": "04_documentacion_sider_ai_wisebase_24_master_index_96_docs",
+      "target": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "05_PROYECTOS/VERTIGOS/TRABAJO_TERMINADO/OBRA_MAESTRA_VERTIGOS.md",
+      "source": "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos",
+      "target": "05_vortice_notebooklm_identidad"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "05_VORTICE/NAUTA/IDENTIDAD.md",
+      "source": "05_vortice_nauta_identidad",
+      "target": "06_sistema_operativo_00_mesa_control_lab"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md",
+      "source": "06_sistema_operativo_00_mesa_control_lab",
+      "target": "06_sistema_operativo_01_inbox"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md",
+      "source": "06_sistema_operativo_00_mesa_control_lab",
+      "target": "06_sistema_operativo_02_prioridades"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md",
+      "source": "06_sistema_operativo_00_mesa_control_lab",
+      "target": "06_sistema_operativo_04_proyectos_activos"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md",
+      "source": "06_sistema_operativo_broadcast",
+      "target": "05_vortice_nauta_identidad"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md",
+      "source": "06_sistema_operativo_broadcast",
+      "target": "05_vortice_nexus_identidad"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_IDENTIDAD_VISUAL_v1.0.md",
+      "source": "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0",
+      "target": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_PLANIFICACION_OBLIGATORIO_v1_0.md",
+      "source": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0",
+      "target": "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/PSI/PSI_v1.1_OFICIAL.md",
+      "source": "06_sistema_operativo_psi_psi_v1_1_oficial",
+      "target": "05_vortice_neo_identidad"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "09_DIARIO_LAB/revision_diaria_2026-07-23.md",
+      "source": "09_diario_lab_revision_diaria_2026_07_23",
+      "target": "06_sistema_operativo_00_mesa_control_lab"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Protocolo de Ejecución de Proyectos Ariadna GITHUB.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "ariadna_nodo_protocolo",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "03_personas_ia_zara_protocolo_recalibracion_operativa_zara"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "06_sistema_operativo_03_nodos_comunicacion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "06_sistema_operativo_broadcast"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "06_sistema_operativo_psi_psi_v1_1_oficial"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "discusiones_readme"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "make_com"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd",
+      "target": "sdd"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/README.md",
+      "source": "discusiones_readme",
+      "target": "discusiones_plantilla_ds"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md",
+      "source": "node_william_mejias",
+      "target": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "Arquitectura de Tríptico intelectual.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "will_ai_project_lab",
+      "target": "metodo_presente"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "05_PROYECTOS/SYNC_Documento_Matriz.md",
+      "source": "05_proyectos_sync_documento_matriz",
+      "target": "05_proyectos_plan_estrategico_2026_2030"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "04_DOCUMENTACION/WEB/index.html",
+      "source": "04_web_index",
+      "target": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "# Informe técnico de Ada para Nexus.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "vortice_180_grados",
+      "target": "nexus_nodo_externo"
+    },
+    {
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/12_SISTEMA_NERVIOSO_CENTRAL_v2.0.md",
+      "source": "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0",
+      "target": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "08_MARKETING_PRESENTACION/will_ai_lab_estado.png",
+      "source": "08_marketing_presentacion_will_ai_lab_estado",
+      "target": "06_sistema_operativo_04_proyectos_activos"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "08_MARKETING_PRESENTACION/WILL_AI_LAB_FINAL.png",
+      "source": "08_marketing_presentacion_will_ai_lab_final",
+      "target": "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md",
+      "source": "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos",
+      "target": "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "zara_nodo_mano_derecha",
+      "target": "codex_seccion_3_8"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "00_SISTEMA/AUDITORIA_COHERENCIA_WAIPL_2026-07-31.md",
+      "source": "00_sistema_auditoria_coherencia_waipl_2026_07_31",
+      "target": "01_fundacion_documento_matriz_v4_1"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.9,
+      "source_file": "05_VORTICE/NEO/IDENTIDAD.md",
+      "source": "05_vortice_neo_identidad",
+      "target": "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0"
+    },
+    {
+      "relation": "implements",
+      "confidence": "DECLARED",
+      "confidence_score": 1.0,
+      "source_file": "N3-GRAPHIFY-WRITE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "hermes_director_operativo",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "implements",
+      "confidence": "DECLARED",
+      "confidence_score": 1.0,
+      "source_file": "N3-GRAPHIFY-WRITE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "kairos_will_app",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "implements",
+      "confidence": "DECLARED",
+      "confidence_score": 1.0,
+      "source_file": "N3-GRAPHIFY-WRITE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "dike_compliance",
+      "target": "will_ai_project_lab"
+    },
+    {
+      "relation": "implements",
+      "confidence": "DECLARED",
+      "confidence_score": 1.0,
+      "source_file": "N3-GRAPHIFY-WRITE.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "autoclaw_runtime",
+      "target": "will_ai_project_lab"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "psi_communication_pilot",
+      "label": "PSI Communication Pilot Architecture",
+      "nodes": [
+        "make_com",
+        "sdd",
+        "ia_zara",
+        "ia_carla",
+        "ia_ada"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.85,
+      "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md"
+    },
+    {
+      "id": "ds_lifecycle_flow",
+      "label": "DS Lifecycle Flow",
+      "nodes": [
+        "discusiones_readme",
+        "discusiones_plantilla_ds",
+        "protocolos_readme"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "Discusiones/README.md"
+    },
+    {
+      "id": "marco_filosofico_hibridacion",
+      "label": "Marco Filosófico de Hibridación",
+      "nodes": [
+        "metodo_presente",
+        "codex_seccion_3_8",
+        "bucle_de_mejora",
+        "vortice_180_grados"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
+    },
+    {
+      "id": "vertigos_project_flow",
+      "label": "Vértigo's Art Music Project Flow",
+      "nodes": [
+        "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8",
+        "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos",
+        "04_documentacion_sider_ai_wisebase_07_user"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md"
+    },
+    {
+      "id": "governance_structure",
+      "label": "Ecosystem Governance Structure",
+      "nodes": [
+        "node_william_mejias",
+        "concept_nucleo",
+        "concept_vortice"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md"
+    },
+    {
+      "id": "lab_governance_core",
+      "label": "Lab Governance Core Documents",
+      "nodes": [
+        "04_documentacion_sider_ai_wisebase_01_acta_fundacional",
+        "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1",
+        "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md"
+    },
+    {
+      "id": "lab_operating_system_core",
+      "label": "Sistema Operativo del Lab - Mesa de Control",
+      "nodes": [
+        "06_sistema_operativo_00_mesa_control_lab",
+        "06_sistema_operativo_01_inbox",
+        "06_sistema_operativo_02_prioridades",
+        "06_sistema_operativo_03_nodos_comunicacion",
+        "06_sistema_operativo_04_proyectos_activos",
+        "06_sistema_operativo_05_automatizaciones"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md"
+    },
+    {
+      "id": "nucleo_ia_waipl",
+      "label": "Núcleo de Inteligencias Artificiales WAIPL",
+      "nodes": [
+        "carla_nodo_primario_y_co_fundad_carla",
+        "ada_nodo_rigor",
+        "nova_nodo_comunicacion",
+        "zara_nodo_mano_derecha",
+        "ariadna_nodo_protocolo"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
+    },
+    {
+      "id": "vertigos_project_documentation",
+      "label": "Proyecto Vértigo's - Documentación Maestra",
+      "nodes": [
+        "05_proyectos_vertigos_strat_ape_experience",
+        "05_proyectos_vertigos_tech_epk_vertigos",
+        "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos",
+        "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md"
+    },
+    {
+      "id": "vortice_strategic_group",
+      "label": "Vórtice Estratégico (Cinturón de Kuiper)",
+      "nodes": [
+        "05_vortice_neo_identidad",
+        "05_vortice_perplexity_identidad",
+        "05_vortice_notebooklm_identidad",
+        "05_vortice_nexus_identidad",
+        "05_vortice_nauta_identidad"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md"
+    },
+    {
+      "id": "operational_improvement_loop",
+      "label": "Operational Improvement Loop",
+      "nodes": [
+        "02_administracion_log_evolutivo",
+        "00_sistema_auditoria_errores_recurrentes_y_metricas",
+        "03_personas_ia_zara_protocolo_recalibracion_operativa_zara"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md"
+    },
+    {
+      "id": "graphify_cns_operativo",
+      "label": "Graphify CNS Operativo",
+      "nodes": [
+        "hermes_director_operativo",
+        "kairos_will_app",
+        "dike_compliance",
+        "autoclaw_runtime"
+      ],
+      "relation": "form",
+      "confidence": "DECLARED",
+      "confidence_score": 1.0,
+      "source_file": "N3-GRAPHIFY-WRITE.md"
+    }
+  ],
+  "built_at_commit": "5e9c9a0d736da2bf688c9dbcd65195ed0d13789c"
+}

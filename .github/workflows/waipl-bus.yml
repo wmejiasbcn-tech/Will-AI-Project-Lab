@@ -1,0 +1,225 @@
+name: WAIPL-BUS ingest
+
+# Corre desde main (GitHub solo dispara workflows de issues en la rama por defecto).
+on:
+  issues:
+    types: [opened, edited, labeled]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: waipl-bus-issue-${{ github.event.issue.number || github.run_id }}
+      cancel-in-progress: false
+    if: >-
+      github.event.issue &&
+      (
+        contains(join(github.event.issue.labels.*.name, ','), 'bus') ||
+        startsWith(github.event.issue.title, '[BUS]')
+      )
+    steps:
+      - name: Validar, etiquetar y notificar a Hermes
+        uses: actions/github-script@v7
+        env:
+          HERMES_WEBHOOK_URL: ${{ secrets.HERMES_WEBHOOK_URL }}
+          HERMES_WEBHOOK_SECRET: ${{ secrets.HERMES_WEBHOOK_SECRET }}
+        with:
+          script: |
+            const crypto = require('crypto');
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+            const labels = (issue.labels || []).map(l => l.name);
+            const marker = '<!-- waipl-bus:seen -->';
+            const allowedAssociations = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
+            const allowedPermissions = new Set(['admin', 'maintain', 'push']);
+
+            function field(name) {
+              const line = body.match(new RegExp('^' + name + ':\\s*(.+)$', 'mi'));
+              if (line) return line[1].trim();
+              const form = body.match(new RegExp('###\\s*' + name + '\\s*\\n+([^#\\n][^\\n]*)', 'i'));
+              return form ? form[1].trim() : '';
+            }
+
+            async function ensureLabel(name) {
+              try {
+                await github.rest.issues.getLabel({ ...context.repo, name });
+              } catch (e) {
+                if (e.status === 404) {
+                  await github.rest.issues.createLabel({
+                    ...context.repo,
+                    name,
+                    color: name === 'bus' ? '0E4D6C' : 'BFD4F2',
+                    description: 'WAIPL-BUS'
+                  });
+                } else throw e;
+              }
+            }
+
+            async function addLabels(names) {
+              for (const n of names) await ensureLabel(n);
+              await github.rest.issues.addLabels({ ...context.repo, issue_number: issue.number, labels: names });
+            }
+
+            async function markInvalid(markerText, message) {
+              const comments = await github.rest.issues.listComments({ ...context.repo, issue_number: issue.number, per_page: 100 });
+              if (!comments.data.some(c => (c.body || '').includes(markerText))) {
+                await github.rest.issues.createComment({
+                  ...context.repo,
+                  issue_number: issue.number,
+                  body: markerText + '\n' + message
+                });
+              }
+            }
+
+            // Adding the bus/status labels from this workflow emits another
+            // `issues:labeled` event. It is an internal bookkeeping event, not
+            // a new bus message, so never re-ingest it.
+            if (
+              context.eventName === 'issues' &&
+              context.payload.action === 'labeled' &&
+              context.actor === 'github-actions[bot]'
+            ) {
+              return;
+            }
+
+            if (!labels.includes('bus')) {
+              await addLabels(['bus']);
+              labels.push('bus');
+            }
+
+            const de = field('DE');
+            const para = field('PARA');
+            const trace = field('TRACE') || null;
+            const valid = Boolean(de && para);
+
+            if (!valid) {
+              await addLabels(['bus:invalid']);
+              await markInvalid(
+                '<!-- waipl-bus:invalid -->',
+                'Faltan campos DE y PARA. El bus no asienta este mensaje.'
+              );
+              return;
+            }
+
+            // DE/PARA son datos de enrutamiento, nunca credenciales.
+            // La autorización depende del actor real y de su permiso efectivo en el repo.
+            const sender = context.payload.sender || {};
+            const senderLogin = sender.login || '';
+            const senderAssociation = sender.association || '';
+            if (!senderLogin || !allowedAssociations.has(senderAssociation)) {
+              await addLabels(['bus:unauthorized']);
+              await markInvalid(
+                '<!-- waipl-bus:unauthorized -->',
+                'Remitente no autorizado. El actor real de GitHub debe tener asociación OWNER, MEMBER o COLLABORATOR.'
+              );
+              return;
+            }
+
+            let permission = '';
+            try {
+              const permissionResponse = await github.rest.repos.getCollaboratorPermissionLevel({
+                ...context.repo,
+                username: senderLogin
+              });
+              permission = permissionResponse.data.permission || '';
+            } catch (e) {
+              await addLabels(['bus:unauthorized']);
+              await markInvalid(
+                '<!-- waipl-bus:unauthorized-permission -->',
+                'No se pudo verificar el permiso efectivo del remitente. El bus aplica DENY por defecto.'
+              );
+              return;
+            }
+
+            if (!allowedPermissions.has(permission)) {
+              await addLabels(['bus:unauthorized']);
+              await markInvalid(
+                '<!-- waipl-bus:unauthorized-permission -->',
+                'Remitente sin permiso efectivo suficiente. Se requiere admin, maintain o push.'
+              );
+              return;
+            }
+
+            const comments = await github.rest.issues.listComments({ ...context.repo, issue_number: issue.number, per_page: 100 });
+            const already = comments.data.some(c => (c.body || '').includes(marker));
+
+            // A previously seen Issue is already registered. Do not send the
+            // same issue-level event again; issue_comment events remain valid
+            // delivery events and are handled independently.
+            if (already && context.eventName === 'issues') {
+              return;
+            }
+
+            const payloadObj = {
+              event: context.eventName,
+              action: context.payload.action,
+              issue_number: issue.number,
+              title: issue.title,
+              labels,
+              de: de.toLowerCase(),
+              para: para.toLowerCase(),
+              sender_login: senderLogin,
+              sender_association: senderAssociation,
+              sender_permission: permission,
+              html_url: issue.html_url,
+              trace,
+              comment_id: context.payload.comment ? context.payload.comment.id : null
+            };
+
+            const url = process.env.HERMES_WEBHOOK_URL;
+            const secret = process.env.HERMES_WEBHOOK_SECRET || '';
+
+            if (url && (!secret || secret.length < 32)) {
+              await addLabels(['bus:config-error']);
+              await markInvalid(
+                '<!-- waipl-bus:config-error -->',
+                'Configuración insegura: HERMES_WEBHOOK_SECRET debe existir y tener al menos 32 caracteres. No se envía ningún webhook.'
+              );
+              return;
+            }
+
+            const payload = JSON.stringify(payloadObj);
+            let statusLabel = 'bus:queued';
+            let note = 'Sin HERMES_WEBHOOK_URL. Hermes debe hacer poll de este Issue.';
+
+            if (url) {
+              const sig = 'sha256=' + crypto.createHmac('sha256', secret).update(payload).digest('hex');
+              try {
+                const res = await fetch(url, {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                    'X-Hub-Signature-256': sig,
+                    'X-WAIPL-Event': context.eventName
+                  },
+                  body: payload
+                });
+                if (res.ok) {
+                  statusLabel = 'bus:seen';
+                  note = 'Webhook Hermes HTTP ' + res.status + '.';
+                } else {
+                  statusLabel = 'bus:webhook-failed';
+                  note = 'Webhook Hermes HTTP ' + res.status + '. El Issue sigue siendo el registro.';
+                }
+              } catch (err) {
+                statusLabel = 'bus:webhook-failed';
+                note = 'Webhook inalcanzable: ' + err.message + '. El Issue sigue siendo el registro.';
+              }
+            }
+
+            await addLabels([statusLabel]);
+
+            if (!already) {
+              await github.rest.issues.createComment({
+                ...context.repo,
+                issue_number: issue.number,
+                body: marker + '\n**WAIPL-BUS** · de=' + payloadObj.de + ' para=' + payloadObj.para + ' · actor=' + payloadObj.sender_login + ' (' + payloadObj.sender_association + ', ' + payloadObj.sender_permission + ') · ' + statusLabel + '\n' + note + '\nEsto no es un *recibido*. Recibido = comentario del nodo destino.'
+              });
+            }

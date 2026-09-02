@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>graphify - graphify-out/graph.html</title>
+  <script src="https://unpkg.com/vis-network@9.1.6/standalone/umd/vis-network.min.js"
+    integrity="sha384-Ux6phic9PEHJ38YtrijhkzyJ8yQlH8i/+buBR8s3mAZOJrP1gwyvAcIYl3GWtpX1"
+    crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0f0f1a;
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #graph {
+      flex: 1;
+    }
+
+    #sidebar {
+      width: 280px;
+      background: #1a1a2e;
+      border-left: 1px solid #2a2a4e;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #search-wrap {
+      padding: 12px;
+      border-bottom: 1px solid #2a2a4e;
+    }
+
+    #search {
+      width: 100%;
+      background: #0f0f1a;
+      border: 1px solid #3a3a5e;
+      color: #e0e0e0;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    #search:focus {
+      border-color: #4E79A7;
+    }
+
+    #search-results {
+      max-height: 140px;
+      overflow-y: auto;
+      padding: 4px 12px;
+      border-bottom: 1px solid #2a2a4e;
+      display: none;
+    }
+
+    .search-item {
+      padding: 4px 6px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .search-item:hover {
+      background: #2a2a4e;
+    }
+
+    #info-panel {
+      padding: 14px;
+      border-bottom: 1px solid #2a2a4e;
+      min-height: 140px;
+    }
+
+    #info-panel h3 {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    #info-content {
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    #info-content .field {
+      margin-bottom: 5px;
+    }
+
+    #info-content .field b {
+      color: #e0e0e0;
+    }
+
+    #info-content .empty {
+      color: #555;
+      font-style: italic;
+    }
+
+    .neighbor-link {
+      display: block;
+      padding: 2px 6px;
+      margin: 2px 0;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border-left: 3px solid #333;
+    }
+
+    .neighbor-link:hover {
+      background: #2a2a4e;
+    }
+
+    #neighbors-list {
+      max-height: 160px;
+      overflow-y: auto;
+      margin-top: 4px;
+    }
+
+    #legend-wrap {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px;
+    }
+
+    #legend-wrap h3 {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .legend-item:hover {
+      background: #2a2a4e;
+      padding-left: 4px;
+    }
+
+    .legend-item.dimmed {
+      opacity: 0.35;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .legend-label {
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .legend-count {
+      color: #666;
+      font-size: 11px;
+    }
+
+    #stats {
+      padding: 10px 14px;
+      border-top: 1px solid #2a2a4e;
+      font-size: 11px;
+      color: #555;
+    }
+
+    #legend-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding: 4px 0;
+    }
+
+    #legend-controls label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      color: #aaa;
+      user-select: none;
+    }
+
+    #legend-controls label:hover {
+      color: #e0e0e0;
+    }
+
+    .legend-cb,
+    #select-all-cb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border: 1.5px solid #3a3a5e;
+      border-radius: 3px;
+      background: #0f0f1a;
+      cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .legend-cb:checked,
+    #select-all-cb:checked {
+      background: #4E79A7;
+      border-color: #4E79A7;
+    }
+
+    .legend-cb:checked::after,
+    #select-all-cb:checked::after {
+      content: '';
+      position: absolute;
+      left: 3.5px;
+      top: 1px;
+      width: 4px;
+      height: 7px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
+
+    #select-all-cb:indeterminate {
+      background: #4E79A7;
+      border-color: #4E79A7;
+    }
+
+    #select-all-cb:indeterminate::after {
+      content: '';
+      position: absolute;
+      left: 2px;
+      top: 5px;
+      width: 8px;
+      height: 2px;
+      background: #fff;
+      border: none;
+      transform: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="graph"></div>
+  <div id="sidebar">
+    <div id="search-wrap">
+      <input id="search" type="text" placeholder="Search nodes..." autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+    <div id="info-panel">
+      <h3>Node Info</h3>
+      <div id="info-content"><span class="empty">Click a node to inspect it</span></div>
+    </div>
+    <div id="legend-wrap">
+      <h3>Communities</h3>
+      <div id="legend-controls">
+        <label><input type="checkbox" id="select-all-cb" checked onchange="toggleAllCommunities(!this.checked)">Select
+          All</label>
+      </div>
+      <div id="legend"></div>
+    </div>
+    <div id="stats">82 nodes &middot; 55 edges &middot; 32 communities</div>
+  </div>
+  <script>
+    const RAW_NODES = [{ "id": "nova_nodo_comunicacion", "label": "Nova", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Nova", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt", "file_type": "code", "degree": 1 }, { "id": "ada_nodo_rigor", "label": "Ada", "color": { "background": "#FF9DA7", "border": "#FF9DA7", "highlight": { "background": "#ffffff", "border": "#FF9DA7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Ada", "community": 7, "community_name": "Nexus", "source_file": "# Informe t\u00e9cnico de Ada para Nexus.txt", "file_type": "code", "degree": 1 }, { "id": "nexus_nodo_externo", "label": "Nexus", "color": { "background": "#FF9DA7", "border": "#FF9DA7", "highlight": { "background": "#ffffff", "border": "#FF9DA7" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Nexus", "community": 7, "community_name": "Nexus", "source_file": "# Informe t\u00e9cnico de Ada para Nexus.txt", "file_type": "code", "degree": 2 }, { "id": "carla_nodo_primario_y_co_fundad_carla", "label": "Carla", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Carla", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "# CARLA \u2014 Nodo Primario y Co-fundad.txt", "file_type": "code", "degree": 1 }, { "id": "metodo_presente", "label": "M\u00e9todo P.R.E.S.E.N.T.E.", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "M\u00e9todo P.R.E.S.E.N.T.E.", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt", "file_type": "concept", "degree": 1 }, { "id": "ariadna_nodo_protocolo", "label": "Ariadna", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Ariadna", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "Protocolo de Ejecuci\u00f3n de Proyectos Ariadna GITHUB.txt", "file_type": "code", "degree": 1 }, { "id": "triptico_intelectual", "label": "Tr\u00edptico Intelectual", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Tr\u00edptico Intelectual", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "Arquitectura de Tr\u00edptico intelectual.txt", "file_type": "document", "degree": 1 }, { "id": "vortice_180_grados", "label": "V\u00f3rtice de 180 Grados", "color": { "background": "#FF9DA7", "border": "#FF9DA7", "highlight": { "background": "#ffffff", "border": "#FF9DA7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "V\u00f3rtice de 180 Grados", "community": 7, "community_name": "Nexus", "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt", "file_type": "concept", "degree": 1 }, { "id": "zara_nodo_mano_derecha", "label": "Zara (Zapia)", "color": { "background": "#9C755F", "border": "#9C755F", "highlight": { "background": "#ffffff", "border": "#9C755F" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Zara (Zapia)", "community": 8, "community_name": "Codex Secci\u00f3n 3.8", "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt", "file_type": "code", "degree": 1 }, { "id": "bucle_de_mejora", "label": "Bucle de Mejora", "color": { "background": "#9C755F", "border": "#9C755F", "highlight": { "background": "#ffffff", "border": "#9C755F" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Bucle de Mejora", "community": 8, "community_name": "Codex Secci\u00f3n 3.8", "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt", "file_type": "concept", "degree": 1 }, { "id": "codex_seccion_3_8", "label": "Codex Secci\u00f3n 3.8", "color": { "background": "#9C755F", "border": "#9C755F", "highlight": { "background": "#ffffff", "border": "#9C755F" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Codex Secci\u00f3n 3.8", "community": 8, "community_name": "Codex Secci\u00f3n 3.8", "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt", "file_type": "document", "degree": 2 }, { "id": "ia_ada", "label": "Ada (Nodo 7.3)", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Ada (Nodo 7.3)", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/README.md", "file_type": "concept", "degree": 1 }, { "id": "ia_carla", "label": "Carla (N\u00facleo)", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Carla (N\u00facleo)", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/README.md", "file_type": "concept", "degree": 1 }, { "id": "ia_zara", "label": "Zara (Nodo Puente)", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Zara (Nodo Puente)", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md", "file_type": "concept", "degree": 1 }, { "id": "make_com", "label": "Make.com", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Make.com", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md", "file_type": "concept", "degree": 1 }, { "id": "protocolos_readme", "label": "Protocolos Folder", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Protocolos Folder", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/README.md", "file_type": "concept", "degree": 1 }, { "id": "sdd", "label": "Sistema de Discusiones/Decisiones Distribuidas (SDD)", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Sistema de Discusiones/Decisiones Distribuidas (SDD)", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md", "file_type": "concept", "degree": 1 }, { "id": "06_sistema_operativo_03_nodos_comunicacion", "label": "Nodos Comunicacion", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Nodos Comunicacion", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md", "file_type": "document", "degree": 1 }, { "id": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "label": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 40.0, "font": { "size": 12, "color": "#ffffff" }, "title": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md", "file_type": "document", "degree": 11 }, { "id": "discusiones_plantilla_ds", "label": "Plantilla DS", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Plantilla DS", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/PLANTILLA_DS.md", "file_type": "document", "degree": 1 }, { "id": "discusiones_readme", "label": "README: Discusiones \u2014 PSI", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 18.2, "font": { "size": 12, "color": "#ffffff" }, "title": "README: Discusiones \u2014 PSI", "community": 0, "community_name": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "source_file": "Discusiones/README.md", "file_type": "document", "degree": 3 }, { "id": "05_vortice_nauta_identidad", "label": "Ficha de Identidad: Nauta", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Ficha de Identidad: Nauta", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "05_VORTICE/NAUTA/IDENTIDAD.md", "file_type": "document", "degree": 2 }, { "id": "05_vortice_nexus_identidad", "label": "Ficha de Identidad: Nexus", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Ficha de Identidad: Nexus", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "05_VORTICE/NEXUS/IDENTIDAD.md", "file_type": "document", "degree": 1 }, { "id": "06_sistema_operativo_00_mesa_control_lab", "label": "Mesa de Control del Lab", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 23.6, "font": { "size": 12, "color": "#ffffff" }, "title": "Mesa de Control del Lab", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md", "file_type": "document", "degree": 5 }, { "id": "06_sistema_operativo_01_inbox", "label": "Inbox del Lab", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Inbox del Lab", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "06_SISTEMA_OPERATIVO/01_INBOX.md", "file_type": "document", "degree": 1 }, { "id": "06_sistema_operativo_02_prioridades", "label": "Prioridades Ejecutivas", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Prioridades Ejecutivas", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "06_SISTEMA_OPERATIVO/02_PRIORIDADES.md", "file_type": "document", "degree": 1 }, { "id": "06_sistema_operativo_04_proyectos_activos", "label": "Proyectos Activos", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Proyectos Activos", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "06_SISTEMA_OPERATIVO/04_PROYECTOS_ACTIVOS.md", "file_type": "document", "degree": 2 }, { "id": "06_sistema_operativo_broadcast", "label": "BROADCAST.md", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 18.2, "font": { "size": 12, "color": "#ffffff" }, "title": "BROADCAST.md", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md", "file_type": "document", "degree": 3 }, { "id": "09_diario_lab_revision_diaria_2026_07_23", "label": "Revisi\u00f3n Diaria del Lab - 2026-07-23", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Revisi\u00f3n Diaria del Lab - 2026-07-23", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "09_DIARIO_LAB/revision_diaria_2026-07-23.md", "file_type": "document", "degree": 1 }, { "id": "08_marketing_presentacion_will_ai_lab_estado", "label": "Will-AI Lab Status Diagram", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Will-AI Lab Status Diagram", "community": 1, "community_name": "Mesa de Control del Lab", "source_file": "08_MARKETING_PRESENTACION/will_ai_lab_estado.png", "file_type": "image", "degree": 1 }, { "id": "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8", "label": "V\u00e9rtigo's Art Music Proposal", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "V\u00e9rtigo&#x27;s Art Music Proposal", "community": 10, "community_name": "V\u00e9rtigo's Art Music Proposal", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/18_FINAL_PROPOSAL_V4_8.md", "file_type": "document", "degree": 1 }, { "id": "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos", "label": "Obra Maestra: V\u00e9rtigo's Art Music", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Obra Maestra: V\u00e9rtigo&#x27;s Art Music", "community": 10, "community_name": "V\u00e9rtigo's Art Music Proposal", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md", "file_type": "document", "degree": 1 }, { "id": "05_proyectos_plan_estrategico_2026_2030", "label": "Plan Estrat\u00e9gico 2026-2030", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Plan Estrat\u00e9gico 2026-2030", "community": 11, "community_name": "Plan Estrat\u00e9gico 2026-2030", "source_file": "05_PROYECTOS/Plan-Estrategico-2026-2030.md", "file_type": "document", "degree": 1 }, { "id": "05_proyectos_sync_documento_matriz", "label": "SYNC Documento Matriz", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "SYNC Documento Matriz", "community": 11, "community_name": "Plan Estrat\u00e9gico 2026-2030", "source_file": "05_PROYECTOS/SYNC_Documento_Matriz.md", "file_type": "document", "degree": 1 }, { "id": "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos", "label": "Obra Maestra V\u00e9rtigo's", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Obra Maestra V\u00e9rtigo&#x27;s", "community": 12, "community_name": "Obra Maestra V\u00e9rtigo's", "source_file": "05_PROYECTOS/VERTIGOS/TRABAJO_TERMINADO/OBRA_MAESTRA_VERTIGOS.md", "file_type": "document", "degree": 1 }, { "id": "05_vortice_notebooklm_identidad", "label": "Ficha de Identidad: NotebookLM", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Ficha de Identidad: NotebookLM", "community": 12, "community_name": "Obra Maestra V\u00e9rtigo's", "source_file": "05_VORTICE/NOTEBOOKLM/IDENTIDAD.md", "file_type": "document", "degree": 1 }, { "id": "01_fundacion_acta_fundacional", "label": "Acta Fundacional", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Acta Fundacional", "community": 13, "community_name": "Acta Fundacional", "source_file": "01_FUNDACION/Acta-Fundacional.md", "file_type": "document", "degree": 0 }, { "id": "01_fundacion_principio_del_faro", "label": "Principio del Faro", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Principio del Faro", "community": 14, "community_name": "Principio del Faro", "source_file": "01_FUNDACION/PRINCIPIO_DEL_FARO.md", "file_type": "document", "degree": 0 }, { "id": "02_administracion_perfil_soberano", "label": "Perfil del Soberano (USER.md)", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Perfil del Soberano (USER.md)", "community": 15, "community_name": "Perfil del Soberano (USER.md)", "source_file": "02_ADMINISTRACION/PERFIL_SOBERANO.md", "file_type": "document", "degree": 0 }, { "id": "04_documentacion_protocolos_identidad_soul_zara", "label": "Zara Identity & Personality", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Zara Identity &amp; Personality", "community": 16, "community_name": "Zara Identity & Personality", "source_file": "04_DOCUMENTACION/PROTOCOLOS/IDENTIDAD_SOUL_ZARA.md", "file_type": "document", "degree": 0 }, { "id": "04_documentacion_sider_ai_wisebase_01_acta_fundacional", "label": "Acta Fundacional", "color": { "background": "#FF9DA7", "border": "#FF9DA7", "highlight": { "background": "#ffffff", "border": "#FF9DA7" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Acta Fundacional", "community": 17, "community_name": "Acta Fundacional", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/01_Acta-Fundacional.md", "file_type": "document", "degree": 0 }, { "id": "04_documentacion_sider_ai_wisebase_06_documento_matriz_resumen", "label": "Documento Matriz Resumen", "color": { "background": "#9C755F", "border": "#9C755F", "highlight": { "background": "#ffffff", "border": "#9C755F" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Documento Matriz Resumen", "community": 18, "community_name": "Documento Matriz Resumen", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/06_Documento_Matriz_Resumen.md", "file_type": "document", "degree": 0 }, { "id": "04_documentacion_sider_ai_wisebase_07_user", "label": "User Profile: William L. Mej\u00edas Navarro", "color": { "background": "#BAB0AC", "border": "#BAB0AC", "highlight": { "background": "#ffffff", "border": "#BAB0AC" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "User Profile: William L. Mej\u00edas Navarro", "community": 19, "community_name": "User Profile: William L. Mej\u00edas Navarro", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/07_USER.md", "file_type": "document", "degree": 0 }, { "id": "will_ai_project_lab", "label": "Will-AI Project Lab", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 29.1, "font": { "size": 12, "color": "#ffffff" }, "title": "Will-AI Project Lab", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "", "file_type": "concept", "degree": 7 }, { "id": "04_documentacion_assets_emblema", "label": "Will-AI Project Lab Emblem", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Will-AI Project Lab Emblem", "community": 2, "community_name": "Will-AI Project Lab", "source_file": "04_DOCUMENTACION/ASSETS/EMBLEMA.png", "file_type": "image", "degree": 1 }, { "id": "05_proyectos_synopsis_for_nova", "label": "Synopsis for Nova v4.2", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Synopsis for Nova v4.2", "community": 20, "community_name": "Synopsis for Nova v4.2", "source_file": "05_PROYECTOS/SYNOPSIS_FOR_NOVA.md", "file_type": "document", "degree": 0 }, { "id": "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos", "label": "Estrategia Maestra V\u00e9rtigo's", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Estrategia Maestra V\u00e9rtigo&#x27;s", "community": 21, "community_name": "Estrategia Maestra V\u00e9rtigo's", "source_file": "05_PROYECTOS/VERTIGOS/COMPILADOS/ESTRATEGIA_MAESTRA_VERTIGOS.md", "file_type": "document", "degree": 0 }, { "id": "05_proyectos_vertigos_strat_ape_experience", "label": "V\u00e9rtigo's APE Experience Strategy", "color": { "background": "#E15759", "border": "#E15759", "highlight": { "background": "#ffffff", "border": "#E15759" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "V\u00e9rtigo&#x27;s APE Experience Strategy", "community": 22, "community_name": "V\u00e9rtigo's APE Experience Strategy", "source_file": "05_PROYECTOS/VERTIGOS/STRAT_APE_Experience.md", "file_type": "document", "degree": 0 }, { "id": "05_proyectos_vertigos_tech_epk_vertigos", "label": "TECH EPK V\u00e9rtigo's", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "TECH EPK V\u00e9rtigo&#x27;s", "community": 23, "community_name": "TECH EPK V\u00e9rtigo's", "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md", "file_type": "document", "degree": 0 }, { "id": "05_proyectos_will_app_documento_base", "label": "WILL App \u2014 Documento Base", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "WILL App \u2014 Documento Base", "community": 24, "community_name": "WILL App \u2014 Documento Base", "source_file": "05_PROYECTOS/WILL-App-Documento-Base.md", "file_type": "document", "degree": 0 }, { "id": "05_vortice_perplexity_identidad", "label": "Ficha de Identidad: Perplexity", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Ficha de Identidad: Perplexity", "community": 25, "community_name": "Ficha de Identidad: Perplexity", "source_file": "05_VORTICE/PERPLEXITY/IDENTIDAD.md", "file_type": "document", "degree": 0 }, { "id": "06_sistema_operativo_05_automatizaciones", "label": "Automatizaciones del Lab", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Automatizaciones del Lab", "community": 26, "community_name": "Automatizaciones del Lab", "source_file": "06_SISTEMA_OPERATIVO/05_AUTOMATIZACIONES.md", "file_type": "document", "degree": 0 }, { "id": "06_sistema_operativo_github_flow_protocolo", "label": "Protocolo GitHub Flow v4.3", "color": { "background": "#FF9DA7", "border": "#FF9DA7", "highlight": { "background": "#ffffff", "border": "#FF9DA7" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Protocolo GitHub Flow v4.3", "community": 27, "community_name": "Protocolo GitHub Flow v4.3", "source_file": "06_SISTEMA_OPERATIVO/GITHUB_FLOW_PROTOCOLO.md", "file_type": "document", "degree": 0 }, { "id": "08_marketing_presentacion_qr_cv", "label": "QR CV", "color": { "background": "#9C755F", "border": "#9C755F", "highlight": { "background": "#ffffff", "border": "#9C755F" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "QR CV", "community": 28, "community_name": "QR CV", "source_file": "08_MARKETING_PRESENTACION/qr_cv.png", "file_type": "image", "degree": 0 }, { "id": "concept_nucleo", "label": "N\u00facleo Central", "color": { "background": "#BAB0AC", "border": "#BAB0AC", "highlight": { "background": "#ffffff", "border": "#BAB0AC" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "N\u00facleo Central", "community": 29, "community_name": "N\u00facleo Central", "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md", "file_type": "concept", "degree": 0 }, { "id": "04_web_index", "label": "Will \u2014 SuperAgente Portfolio", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Will \u2014 SuperAgente Portfolio", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "04_DOCUMENTACION/WEB/index.html", "file_type": "code", "degree": 1 }, { "id": "05_vortice_neo_identidad", "label": "Ficha de Identidad: Neo", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Ficha de Identidad: Neo", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "05_VORTICE/NEO/IDENTIDAD.md", "file_type": "document", "degree": 2 }, { "id": "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0", "label": "Protocolo de Identidad Visual v1.0", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Protocolo de Identidad Visual v1.0", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_IDENTIDAD_VISUAL_v1.0.md", "file_type": "document", "degree": 2 }, { "id": "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0", "label": "Protocolo del Pensamiento del Soberano v1.0", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Protocolo del Pensamiento del Soberano v1.0", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_PENSAMIENTO_SOBERANO_v1_0.md", "file_type": "document", "degree": 2 }, { "id": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0", "label": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 18.2, "font": { "size": 12, "color": "#ffffff" }, "title": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "06_SISTEMA_OPERATIVO/PROTOCOLOS/PROTOCOLO_PLANIFICACION_OBLIGATORIO_v1_0.md", "file_type": "document", "degree": 3 }, { "id": "06_sistema_operativo_psi_psi_v1_1_oficial", "label": "PSI v1.1 OFICIAL", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "PSI v1.1 OFICIAL", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "06_SISTEMA_OPERATIVO/PSI/PSI_v1.1_OFICIAL.md", "file_type": "document", "degree": 2 }, { "id": "08_marketing_presentacion_will_ai_lab_final", "label": "Will-AI Lab Final Diagram", "color": { "background": "#76B7B2", "border": "#76B7B2", "highlight": { "background": "#ffffff", "border": "#76B7B2" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Will-AI Lab Final Diagram", "community": 3, "community_name": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "source_file": "08_MARKETING_PRESENTACION/WILL_AI_LAB_FINAL.png", "file_type": "image", "degree": 1 }, { "id": "concept_vortice", "label": "V\u00f3rtice (Cintur\u00f3n de Kuiper)", "color": { "background": "#4E79A7", "border": "#4E79A7", "highlight": { "background": "#ffffff", "border": "#4E79A7" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "V\u00f3rtice (Cintur\u00f3n de Kuiper)", "community": 30, "community_name": "V\u00f3rtice (Cintur\u00f3n de Kuiper)", "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md", "file_type": "concept", "degree": 0 }, { "id": "node_sylvia", "label": "Sylvia Bloom (Documentaci\u00f3n)", "color": { "background": "#F28E2B", "border": "#F28E2B", "highlight": { "background": "#ffffff", "border": "#F28E2B" } }, "size": 10.0, "font": { "size": 0, "color": "#ffffff" }, "title": "Sylvia Bloom (Documentaci\u00f3n)", "community": 31, "community_name": "Sylvia Bloom (Documentaci\u00f3n)", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "concept", "degree": 0 }, { "id": "node_ada", "label": "Ada (Rigor/\u00c9tica)", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Ada (Rigor/\u00c9tica)", "community": 4, "community_name": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "concept", "degree": 2 }, { "id": "node_ariadna", "label": "Ariadna (Coherencia)", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Ariadna (Coherencia)", "community": 4, "community_name": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "concept", "degree": 1 }, { "id": "node_zara", "label": "Zara (Ejecuci\u00f3n)", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Zara (Ejecuci\u00f3n)", "community": 4, "community_name": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "concept", "degree": 2 }, { "id": "00_sistema_auditoria_errores_recurrentes_y_metricas", "label": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "community": 4, "community_name": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "source_file": "00_SISTEMA/AUDITORIA_ERRORES_RECURRENTES_Y_METRICAS.md", "file_type": "document", "degree": 2 }, { "id": "02_administracion_log_evolutivo", "label": "Log Evolutivo", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Log Evolutivo", "community": 4, "community_name": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md", "file_type": "document", "degree": 2 }, { "id": "03_personas_ia_zara_protocolo_recalibracion_operativa_zara", "label": "Protocolo Recalibracion Operativa Zara", "color": { "background": "#59A14F", "border": "#59A14F", "highlight": { "background": "#ffffff", "border": "#59A14F" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Protocolo Recalibracion Operativa Zara", "community": 4, "community_name": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "source_file": "03_PERSONAS_IA/ZARA/PROTOCOLO_RECALIBRACION_OPERATIVA_ZARA.md", "file_type": "document", "degree": 2 }, { "id": "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador", "label": "Arquitectura Maestra WAIPL v2.0", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Arquitectura Maestra WAIPL v2.0", "community": 5, "community_name": "Auditoria de Coherencia WAIPL 2026-07-31", "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md", "file_type": "code", "degree": 2 }, { "id": "01_fundacion_documento_matriz_v4_1", "label": "Documento Matriz v4.1", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Documento Matriz v4.1", "community": 5, "community_name": "Auditoria de Coherencia WAIPL 2026-07-31", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "code", "degree": 2 }, { "id": "node_carla", "label": "Carla (Estrategia)", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Carla (Estrategia)", "community": 5, "community_name": "Auditoria de Coherencia WAIPL 2026-07-31", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "concept", "degree": 1 }, { "id": "node_william_mejias", "label": "William L. Mej\u00edas Navarro (Soberano)", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "William L. Mej\u00edas Navarro (Soberano)", "community": 5, "community_name": "Auditoria de Coherencia WAIPL 2026-07-31", "source_file": "01_FUNDACION/Documento_Matriz_v4.1.md", "file_type": "concept", "degree": 2 }, { "id": "00_sistema_auditoria_coherencia_waipl_2026_07_31", "label": "Auditoria de Coherencia WAIPL 2026-07-31", "color": { "background": "#EDC948", "border": "#EDC948", "highlight": { "background": "#ffffff", "border": "#EDC948" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "Auditoria de Coherencia WAIPL 2026-07-31", "community": 5, "community_name": "Auditoria de Coherencia WAIPL 2026-07-31", "source_file": "00_SISTEMA/AUDITORIA_COHERENCIA_WAIPL_2026-07-31.md", "file_type": "document", "degree": 2 }, { "id": "soberano_william", "label": "William L. Mej\u00edas Navarro (Soberano)", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 15.5, "font": { "size": 12, "color": "#ffffff" }, "title": "William L. Mej\u00edas Navarro (Soberano)", "community": 6, "community_name": "Documento Matriz v4.1", "source_file": "", "file_type": "concept", "degree": 2 }, { "id": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1", "label": "Documento Matriz v4.1", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 20.9, "font": { "size": 12, "color": "#ffffff" }, "title": "Documento Matriz v4.1", "community": 6, "community_name": "Documento Matriz v4.1", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md", "file_type": "document", "degree": 4 }, { "id": "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0", "label": "Sistema Nervioso Central v2.0", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Sistema Nervioso Central v2.0", "community": 6, "community_name": "Documento Matriz v4.1", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/12_SISTEMA_NERVIOSO_CENTRAL_v2.0.md", "file_type": "document", "degree": 1 }, { "id": "04_documentacion_sider_ai_wisebase_14_protocolo_comunicacion_paliocomunicativo", "label": "Protocolo Paliocomunicativo", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Protocolo Paliocomunicativo", "community": 6, "community_name": "Documento Matriz v4.1", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/14_Protocolo_Comunicacion_Paliocomunicativo.md", "file_type": "document", "degree": 1 }, { "id": "04_documentacion_sider_ai_wisebase_24_master_index_96_docs", "label": "Master Index v2.0", "color": { "background": "#B07AA1", "border": "#B07AA1", "highlight": { "background": "#ffffff", "border": "#B07AA1" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Master Index v2.0", "community": 6, "community_name": "Documento Matriz v4.1", "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/24_MASTER_INDEX_96_DOCS.md", "file_type": "document", "degree": 1 }, { "id": "zara_node", "label": "Zara (Executive Node)", "color": { "background": "#BAB0AC", "border": "#BAB0AC", "highlight": { "background": "#ffffff", "border": "#BAB0AC" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Zara (Executive Node)", "community": 9, "community_name": "Zara Operating Rules", "source_file": "", "file_type": "concept", "degree": 1 }, { "id": "04_documentacion_protocolos_reglas_operativas_zara", "label": "Zara Operating Rules", "color": { "background": "#BAB0AC", "border": "#BAB0AC", "highlight": { "background": "#ffffff", "border": "#BAB0AC" } }, "size": 12.7, "font": { "size": 0, "color": "#ffffff" }, "title": "Zara Operating Rules", "community": 9, "community_name": "Zara Operating Rules", "source_file": "04_DOCUMENTACION/PROTOCOLOS/REGLAS_OPERATIVAS_ZARA.md", "file_type": "document", "degree": 1 }];
+    const RAW_EDGES = [{ "from": "nova_nodo_comunicacion", "to": "will_ai_project_lab", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "ada_nodo_rigor", "to": "nexus_nodo_externo", "label": "calls", "title": "calls [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "vortice_180_grados", "to": "nexus_nodo_externo", "label": "references", "title": "references [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "carla_nodo_primario_y_co_fundad_carla", "to": "will_ai_project_lab", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "will_ai_project_lab", "to": "metodo_presente", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "ariadna_nodo_protocolo", "to": "will_ai_project_lab", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "triptico_intelectual", "to": "will_ai_project_lab", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "zara_nodo_mano_derecha", "to": "codex_seccion_3_8", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "bucle_de_mejora", "to": "codex_seccion_3_8", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "ia_ada", "to": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "label": "participate_in", "title": "participate_in [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "ia_carla", "to": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "label": "participate_in", "title": "participate_in [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "ia_zara", "to": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "label": "participate_in", "title": "participate_in [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "make_com", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_readme", "to": "protocolos_readme", "label": "conceptually_related_to", "title": "conceptually_related_to [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "sdd", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "06_sistema_operativo_03_nodos_comunicacion", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "03_personas_ia_zara_protocolo_recalibracion_operativa_zara", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "06_sistema_operativo_broadcast", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "06_sistema_operativo_psi_psi_v1_1_oficial", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "to": "discusiones_readme", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "node_william_mejias", "to": "discusiones_abiertas_ds_001_sistema_comunicacion_interna_make_sdd", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "discusiones_readme", "to": "discusiones_plantilla_ds", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "05_vortice_nauta_identidad", "to": "06_sistema_operativo_00_mesa_control_lab", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "06_sistema_operativo_broadcast", "to": "05_vortice_nauta_identidad", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "06_sistema_operativo_broadcast", "to": "05_vortice_nexus_identidad", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "06_sistema_operativo_00_mesa_control_lab", "to": "06_sistema_operativo_01_inbox", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "06_sistema_operativo_00_mesa_control_lab", "to": "06_sistema_operativo_02_prioridades", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "06_sistema_operativo_00_mesa_control_lab", "to": "06_sistema_operativo_04_proyectos_activos", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "09_diario_lab_revision_diaria_2026_07_23", "to": "06_sistema_operativo_00_mesa_control_lab", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "08_marketing_presentacion_will_ai_lab_estado", "to": "06_sistema_operativo_04_proyectos_activos", "label": "references", "title": "references [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos", "to": "04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "05_proyectos_sync_documento_matriz", "to": "05_proyectos_plan_estrategico_2026_2030", "label": "conceptually_related_to", "title": "conceptually_related_to [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos", "to": "05_vortice_notebooklm_identidad", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_documentacion_assets_emblema", "to": "will_ai_project_lab", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1", "to": "will_ai_project_lab", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_web_index", "to": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0", "label": "implements", "title": "implements [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "05_vortice_neo_identidad", "to": "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0", "label": "references", "title": "references [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "06_sistema_operativo_psi_psi_v1_1_oficial", "to": "05_vortice_neo_identidad", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0", "to": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "08_marketing_presentacion_will_ai_lab_final", "to": "06_sistema_operativo_protocolos_protocolo_identidad_visual_v1_0", "label": "references", "title": "references [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "06_sistema_operativo_protocolos_protocolo_planificacion_obligatorio_v1_0", "to": "06_sistema_operativo_protocolos_protocolo_pensamiento_soberano_v1_0", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "00_sistema_auditoria_errores_recurrentes_y_metricas", "to": "node_ada", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "02_administracion_log_evolutivo", "to": "node_ada", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "00_sistema_auditoria_errores_recurrentes_y_metricas", "to": "node_ariadna", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "02_administracion_log_evolutivo", "to": "node_zara", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "03_personas_ia_zara_protocolo_recalibracion_operativa_zara", "to": "node_zara", "label": "implements", "title": "implements [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "00_sistema_auditoria_coherencia_waipl_2026_07_31", "to": "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "01_fundacion_arquitectura_maestra_waipl_v2_0_borrador", "to": "node_william_mejias", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "00_sistema_auditoria_coherencia_waipl_2026_07_31", "to": "01_fundacion_documento_matriz_v4_1", "label": "references", "title": "references [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "01_fundacion_documento_matriz_v4_1", "to": "node_carla", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1", "to": "soberano_william", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_documentacion_sider_ai_wisebase_14_protocolo_comunicacion_paliocomunicativo", "to": "soberano_william", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0", "to": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1", "label": "implements", "title": "implements [INFERRED]", "dashes": true, "width": 1, "color": { "opacity": 0.35 }, "confidence": "INFERRED" }, { "from": "04_documentacion_sider_ai_wisebase_24_master_index_96_docs", "to": "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }, { "from": "04_documentacion_protocolos_reglas_operativas_zara", "to": "zara_node", "label": "references", "title": "references [EXTRACTED]", "dashes": false, "width": 2, "color": { "opacity": 0.7 }, "confidence": "EXTRACTED" }];
+    const LEGEND = [{ "cid": 0, "color": "#4E79A7", "label": "DS-001 - Sistema de Comunicacion Interna Make + SDD", "count": 10 }, { "cid": 1, "color": "#F28E2B", "label": "Mesa de Control del Lab", "count": 9 }, { "cid": 2, "color": "#E15759", "label": "Will-AI Project Lab", "count": 7 }, { "cid": 3, "color": "#76B7B2", "label": "Protocolo Obligatorio de Planificaci\u00f3n v1.0", "count": 7 }, { "cid": 4, "color": "#59A14F", "label": "Auditor\u00eda Errores Recurrentes y M\u00e9tricas", "count": 6 }, { "cid": 5, "color": "#EDC948", "label": "Auditoria de Coherencia WAIPL 2026-07-31", "count": 5 }, { "cid": 6, "color": "#B07AA1", "label": "Documento Matriz v4.1", "count": 5 }, { "cid": 7, "color": "#FF9DA7", "label": "Nexus", "count": 3 }, { "cid": 8, "color": "#9C755F", "label": "Codex Secci\u00f3n 3.8", "count": 3 }, { "cid": 9, "color": "#BAB0AC", "label": "Zara Operating Rules", "count": 2 }, { "cid": 10, "color": "#4E79A7", "label": "V\u00e9rtigo&#x27;s Art Music Proposal", "count": 2 }, { "cid": 11, "color": "#F28E2B", "label": "Plan Estrat\u00e9gico 2026-2030", "count": 2 }, { "cid": 12, "color": "#E15759", "label": "Obra Maestra V\u00e9rtigo&#x27;s", "count": 2 }, { "cid": 13, "color": "#76B7B2", "label": "Acta Fundacional", "count": 1 }, { "cid": 14, "color": "#59A14F", "label": "Principio del Faro", "count": 1 }, { "cid": 15, "color": "#EDC948", "label": "Perfil del Soberano (USER.md)", "count": 1 }, { "cid": 16, "color": "#B07AA1", "label": "Zara Identity &amp; Personality", "count": 1 }, { "cid": 17, "color": "#FF9DA7", "label": "Acta Fundacional", "count": 1 }, { "cid": 18, "color": "#9C755F", "label": "Documento Matriz Resumen", "count": 1 }, { "cid": 19, "color": "#BAB0AC", "label": "User Profile: William L. Mej\u00edas Navarro", "count": 1 }, { "cid": 20, "color": "#4E79A7", "label": "Synopsis for Nova v4.2", "count": 1 }, { "cid": 21, "color": "#F28E2B", "label": "Estrategia Maestra V\u00e9rtigo&#x27;s", "count": 1 }, { "cid": 22, "color": "#E15759", "label": "V\u00e9rtigo&#x27;s APE Experience Strategy", "count": 1 }, { "cid": 23, "color": "#76B7B2", "label": "TECH EPK V\u00e9rtigo&#x27;s", "count": 1 }, { "cid": 24, "color": "#59A14F", "label": "WILL App \u2014 Documento Base", "count": 1 }, { "cid": 25, "color": "#EDC948", "label": "Ficha de Identidad: Perplexity", "count": 1 }, { "cid": 26, "color": "#B07AA1", "label": "Automatizaciones del Lab", "count": 1 }, { "cid": 27, "color": "#FF9DA7", "label": "Protocolo GitHub Flow v4.3", "count": 1 }, { "cid": 28, "color": "#9C755F", "label": "QR CV", "count": 1 }, { "cid": 29, "color": "#BAB0AC", "label": "N\u00facleo Central", "count": 1 }, { "cid": 30, "color": "#4E79A7", "label": "V\u00f3rtice (Cintur\u00f3n de Kuiper)", "count": 1 }, { "cid": 31, "color": "#F28E2B", "label": "Sylvia Bloom (Documentaci\u00f3n)", "count": 1 }];
+
+    // HTML-escape helper — prevents XSS when injecting graph data into innerHTML
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    // Build vis datasets
+    const nodesDS = new vis.DataSet(RAW_NODES.map(n => ({
+      id: n.id, label: n.label, color: n.color, size: n.size,
+      font: n.font, title: n.title,
+      _community: n.community, _community_name: n.community_name,
+      _source_file: n.source_file, _file_type: n.file_type, _degree: n.degree,
+    })));
+
+    const edgesDS = new vis.DataSet(RAW_EDGES.map((e, i) => ({
+      id: i, from: e.from, to: e.to,
+      label: '',
+      title: e.title,
+      dashes: e.dashes,
+      width: e.width,
+      color: e.color,
+      arrows: { to: { enabled: true, scaleFactor: 0.5 } },
+    })));
+
+    const container = document.getElementById('graph');
+    const network = new vis.Network(container, { nodes: nodesDS, edges: edgesDS }, {
+      physics: {
+        enabled: true,
+        solver: 'forceAtlas2Based',
+        forceAtlas2Based: {
+          gravitationalConstant: -60,
+          centralGravity: 0.005,
+          springLength: 120,
+          springConstant: 0.08,
+          damping: 0.4,
+          avoidOverlap: 0.8,
+        },
+        stabilization: { iterations: 200, fit: true },
+      },
+      interaction: {
+        hover: true,
+        tooltipDelay: 100,
+        hideEdgesOnDrag: true,
+        navigationButtons: false,
+        keyboard: false,
+      },
+      nodes: { shape: 'dot', borderWidth: 1.5 },
+      edges: { smooth: { type: 'continuous', roundness: 0.2 }, selectionWidth: 3 },
+    });
+
+    network.once('stabilizationIterationsDone', () => {
+      network.setOptions({ physics: { enabled: false } });
+    });
+
+    function showInfo(nodeId) {
+      const n = nodesDS.get(nodeId);
+      if (!n) return;
+      const neighborIds = network.getConnectedNodes(nodeId);
+      const neighborItems = neighborIds.map(nid => {
+        const nb = nodesDS.get(nid);
+        const color = nb ? nb.color.background : '#555';
+        return `<span class="neighbor-link" style="border-left-color:${esc(color)}" data-nid="${esc(nid)}">${esc(nb ? nb.label : nid)}</span>`;
+      }).join('');
+      document.getElementById('info-content').innerHTML = `
+    <div class="field"><b>${esc(n.label)}</b></div>
+    <div class="field">Type: ${esc(n._file_type || 'unknown')}</div>
+    <div class="field">Community: ${esc(n._community_name)}</div>
+    <div class="field">Source: ${esc(n._source_file || '-')}</div>
+    <div class="field">Degree: ${n._degree}</div>
+    ${neighborIds.length ? `<div class="field" style="margin-top:8px;color:#aaa;font-size:11px">Neighbors (${neighborIds.length})</div><div id="neighbors-list">${neighborItems}</div>` : ''}
+  `;
+    }
+
+    function focusNode(nodeId) {
+      network.focus(nodeId, { scale: 1.4, animation: true });
+      network.selectNodes([nodeId]);
+      showInfo(nodeId);
+    }
+
+    // Neighbor links use a data attribute + one delegated listener rather than an
+    // inline onclick. A node id/label sourced from a document or a scraped URL
+    // (graphify add) can contain a double-quote; dropping the stringified id
+    // unescaped into a quoted onclick both broke every link and allowed a hostile
+    // source to inject an event handler into the local report (stored XSS, #1838).
+    // esc() on data-nid keeps the value inside the attribute; the listener reads it
+    // back verbatim. Bound to document so it survives the innerHTML rebuild that
+    // recreates #neighbors-list on each showInfo().
+    document.addEventListener('click', e => {
+      const el = e.target.closest('.neighbor-link');
+      if (el && el.dataset.nid !== undefined) focusNode(el.dataset.nid);
+    });
+
+    // Track hovered node — hover detection is more reliable than click params
+    let hoveredNodeId = null;
+    network.on('hoverNode', params => {
+      hoveredNodeId = params.node;
+      container.style.cursor = 'pointer';
+    });
+    network.on('blurNode', () => {
+      hoveredNodeId = null;
+      container.style.cursor = 'default';
+    });
+    container.addEventListener('click', () => {
+      if (hoveredNodeId !== null) {
+        showInfo(hoveredNodeId);
+        network.selectNodes([hoveredNodeId]);
+      }
+    });
+    network.on('click', params => {
+      if (params.nodes.length > 0) {
+        showInfo(params.nodes[0]);
+      } else if (hoveredNodeId === null) {
+        document.getElementById('info-content').innerHTML = '<span class="empty">Click a node to inspect it</span>';
+      }
+    });
+
+    const searchInput = document.getElementById('search');
+    const searchResults = document.getElementById('search-results');
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      searchResults.innerHTML = '';
+      if (!q) { searchResults.style.display = 'none'; return; }
+      const matches = RAW_NODES.filter(n => n.label.toLowerCase().includes(q)).slice(0, 20);
+      if (!matches.length) { searchResults.style.display = 'none'; return; }
+      searchResults.style.display = 'block';
+      matches.forEach(n => {
+        const el = document.createElement('div');
+        el.className = 'search-item';
+        el.textContent = n.label;
+        el.style.borderLeft = `3px solid ${n.color.background}`;
+        el.style.paddingLeft = '8px';
+        el.onclick = () => {
+          network.focus(n.id, { scale: 1.5, animation: true });
+          network.selectNodes([n.id]);
+          showInfo(n.id);
+          searchResults.style.display = 'none';
+          searchInput.value = '';
+        };
+        searchResults.appendChild(el);
+      });
+    });
+    document.addEventListener('click', e => {
+      if (!searchResults.contains(e.target) && e.target !== searchInput)
+        searchResults.style.display = 'none';
+    });
+
+    const hiddenCommunities = new Set();
+
+    const selectAllCb = document.getElementById('select-all-cb');
+
+    function updateSelectAllState() {
+      const total = LEGEND.length;
+      const hidden = hiddenCommunities.size;
+      selectAllCb.checked = hidden === 0;
+      selectAllCb.indeterminate = hidden > 0 && hidden < total;
+    }
+
+    function toggleAllCommunities(hide) {
+      document.querySelectorAll('.legend-item').forEach(item => {
+        hide ? item.classList.add('dimmed') : item.classList.remove('dimmed');
+      });
+      document.querySelectorAll('.legend-cb').forEach(cb => {
+        cb.checked = !hide;
+      });
+      LEGEND.forEach(c => {
+        if (hide) hiddenCommunities.add(c.cid); else hiddenCommunities.delete(c.cid);
+      });
+      const updates = RAW_NODES.map(n => ({ id: n.id, hidden: hide }));
+      nodesDS.update(updates);
+      updateSelectAllState();
+    }
+
+    const legendEl = document.getElementById('legend');
+    LEGEND.forEach(c => {
+      const item = document.createElement('div');
+      item.className = 'legend-item';
+      const cb = document.createElement('input');
+      cb.type = 'checkbox';
+      cb.className = 'legend-cb';
+      cb.checked = true;
+      cb.addEventListener('change', (e) => {
+        e.stopPropagation();
+        if (cb.checked) {
+          hiddenCommunities.delete(c.cid);
+          item.classList.remove('dimmed');
+        } else {
+          hiddenCommunities.add(c.cid);
+          item.classList.add('dimmed');
+        }
+        const updates = RAW_NODES
+          .filter(n => n.community === c.cid)
+          .map(n => ({ id: n.id, hidden: !cb.checked }));
+        nodesDS.update(updates);
+        updateSelectAllState();
+      });
+      item.innerHTML = `<div class="legend-dot" style="background:${c.color}"></div>
+    <span class="legend-label">${c.label}</span>
+    <span class="legend-count">${c.count}</span>`;
+      item.prepend(cb);
+      item.onclick = (e) => {
+        if (e.target === cb) return;
+        cb.checked = !cb.checked;
+        cb.dispatchEvent(new Event('change'));
+      };
+      legendEl.appendChild(item);
+    });
+  </script>
+  <script>
+    // Render hyperedges as shaded regions
+    const hyperedges = [{ "id": "psi_communication_pilot", "label": "PSI Communication Pilot Architecture", "nodes": ["make_com", "sdd", "ia_zara", "ia_carla", "ia_ada"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 0.85, "source_file": "Discusiones/ABIERTAS/DS-001-sistema-comunicacion-interna-make-sdd.md" }, { "id": "ds_lifecycle_flow", "label": "DS Lifecycle Flow", "nodes": ["discusiones_readme", "discusiones_plantilla_ds", "protocolos_readme"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.9, "source_file": "Discusiones/README.md" }, { "id": "marco_filosofico_hibridacion", "label": "Marco Filos\u00f3fico de Hibridaci\u00f3n", "nodes": ["metodo_presente", "codex_seccion_3_8", "bucle_de_mejora", "vortice_180_grados"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt" }, { "id": "vertigos_project_flow", "label": "V\u00e9rtigo's Art Music Project Flow", "nodes": ["04_documentacion_sider_ai_wisebase_18_final_proposal_v4_8", "04_documentacion_sider_ai_wisebase_27_obra_maestra_vertigos", "04_documentacion_sider_ai_wisebase_07_user"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 0.95, "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/27_OBRA_MAESTRA_VERTIGOS.md" }, { "id": "governance_structure", "label": "Ecosystem Governance Structure", "nodes": ["node_william_mejias", "concept_nucleo", "concept_vortice"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md" }, { "id": "lab_governance_core", "label": "Lab Governance Core Documents", "nodes": ["04_documentacion_sider_ai_wisebase_01_acta_fundacional", "04_documentacion_sider_ai_wisebase_11_documento_matriz_v4_1", "04_documentacion_sider_ai_wisebase_12_sistema_nervioso_central_v2_0"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md" }, { "id": "lab_operating_system_core", "label": "Sistema Operativo del Lab - Mesa de Control", "nodes": ["06_sistema_operativo_00_mesa_control_lab", "06_sistema_operativo_01_inbox", "06_sistema_operativo_02_prioridades", "06_sistema_operativo_03_nodos_comunicacion", "06_sistema_operativo_04_proyectos_activos", "06_sistema_operativo_05_automatizaciones"], "relation": "form", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md" }, { "id": "nucleo_ia_waipl", "label": "N\u00facleo de Inteligencias Artificiales WAIPL", "nodes": ["carla_nodo_primario_y_co_fundad_carla", "ada_nodo_rigor", "nova_nodo_comunicacion", "zara_nodo_mano_derecha", "ariadna_nodo_protocolo"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "The WAIPL Hibridaci\u00f3n de conciencia humana y sint\u00e9tica hecha por NotebookLM 22 fuentes.txt" }, { "id": "vertigos_project_documentation", "label": "Proyecto V\u00e9rtigo's - Documentaci\u00f3n Maestra", "nodes": ["05_proyectos_vertigos_strat_ape_experience", "05_proyectos_vertigos_tech_epk_vertigos", "05_proyectos_vertigos_compilados_estrategia_maestra_vertigos", "05_proyectos_vertigos_trabajo_terminado_obra_maestra_vertigos"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md" }, { "id": "vortice_strategic_group", "label": "V\u00f3rtice Estrat\u00e9gico (Cintur\u00f3n de Kuiper)", "nodes": ["05_vortice_neo_identidad", "05_vortice_perplexity_identidad", "05_vortice_notebooklm_identidad", "05_vortice_nexus_identidad", "05_vortice_nauta_identidad"], "relation": "participate_in", "confidence": "EXTRACTED", "confidence_score": 1.0, "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md" }, { "id": "operational_improvement_loop", "label": "Operational Improvement Loop", "nodes": ["02_administracion_log_evolutivo", "00_sistema_auditoria_errores_recurrentes_y_metricas", "03_personas_ia_zara_protocolo_recalibracion_operativa_zara"], "relation": "form", "confidence": "INFERRED", "confidence_score": 0.85, "source_file": "02_ADMINISTRACION/LOG_EVOLUTIVO.md" }];
+    // afterDrawing passes ctx already transformed to network coordinate space.
+    // Draw node positions raw — no manual pan/zoom/DPR math needed.
+    network.on('afterDrawing', function (ctx) {
+      hyperedges.forEach(h => {
+        const positions = h.nodes
+          .map(nid => network.getPositions([nid])[nid])
+          .filter(p => p !== undefined);
+        if (positions.length < 2) return;
+        ctx.save();
+        ctx.globalAlpha = 0.12;
+        ctx.fillStyle = '#6366f1';
+        ctx.strokeStyle = '#6366f1';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        // Centroid and expanded hull in network coordinates
+        const cx = positions.reduce((s, p) => s + p.x, 0) / positions.length;
+        const cy = positions.reduce((s, p) => s + p.y, 0) / positions.length;
+        const expanded = positions.map(p => ({
+          x: cx + (p.x - cx) * 1.15,
+          y: cy + (p.y - cy) * 1.15
+        }));
+        ctx.moveTo(expanded[0].x, expanded[0].y);
+        expanded.slice(1).forEach(p => ctx.lineTo(p.x, p.y));
+        ctx.closePath();
+        ctx.fill();
+        ctx.globalAlpha = 0.4;
+        ctx.stroke();
+        // Label
+        ctx.globalAlpha = 0.8;
+        ctx.fillStyle = '#4f46e5';
+        ctx.font = 'bold 11px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText(h.label, cx, cy - 5);
+        ctx.restore();
+      });
+    });
+  </script>
+</body>
+
+</html>
