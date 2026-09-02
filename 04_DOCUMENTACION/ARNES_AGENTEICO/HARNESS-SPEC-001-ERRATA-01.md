@@ -1,6 +1,6 @@
 # HARNESS-SPEC-001 — ERRATA 01
 
-**Estado:** PROPUESTA DE CORRECCIÓN — pendiente de contraste independiente por Aletheia.
+**Estado:** A — ACREDITADO como corrección documental contrastada por Aletheia.
 
 **Propósito:** fijar las tres correcciones materiales señaladas en el contraste de Aletheia del BLOQUE 02, sin rediseñar la especificación ni introducir nuevas capacidades.
 
@@ -31,4 +31,4 @@ Todo elemento cuya existencia física, implementación, ubicación, carga, integ
 
 Esta errata no crea nuevas jurisdicciones, permisos, capacidades, agentes, sensores, guías, FSM ni mecanismos de transporte. Su única función es hacer explícitas las fronteras y estados ya establecidos para evitar interpretaciones indebidas.
 
-**Relación:** forma parte del expediente de materialización del Arnés y debe leerse junto con `HARNESS-SPEC-001.md` hasta que el contraste independiente determine su estado.
+**Relación:** forma parte del expediente de materialización del Arnés y debe leerse junto con `HARNESS-SPEC-001.md`.
