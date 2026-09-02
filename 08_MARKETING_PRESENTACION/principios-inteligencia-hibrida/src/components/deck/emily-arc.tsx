@@ -1,6 +1,6 @@
 const PATH = {
   volume: "M 36 214 C 92 28, 248 12, 364 132",
-  field: "M 10 74 C 28 16, 64 8, 90 36",
+  field: "M 12 78 C 32 52, 68 50, 88 72",
   inline: "M 16 92 C 70 8, 210 4, 304 58",
 };
 
@@ -50,9 +50,10 @@ export function EmilyArc({
   const gid = `emily-stroke-${tone}`;
   const glow = `emily-glow-${tone}`;
   const sw = tone === "field" ? 0.55 : tone === "inline" ? 1.35 : 1.7;
+  const blend = tone === "field" ? "emily-arc emily-arc-field" : "emily-arc";
   return (
     <svg
-      className="emily-arc pointer-events-none absolute inset-0 h-full w-full"
+      className={`pointer-events-none absolute inset-0 z-0 h-full w-full ${blend}`}
       viewBox={VIEW[tone]}
       preserveAspectRatio={tone === "field" ? "xMidYMid slice" : "xMidYMid meet"}
       aria-hidden="true"
@@ -88,13 +89,13 @@ export function EmilyArc({
         strokeLinecap="round"
       />
       <Particles d={d} tone={tone} />
-      {labeled && tone !== "field" ? (
+      {labeled && tone === "inline" ? (
         <text
-          x={tone === "inline" ? 160 : 200}
-          y={tone === "inline" ? 22 : 36}
+          x="160"
+          y="22"
           textAnchor="middle"
           fill="#c8d8ec"
-          fontSize={tone === "inline" ? 9 : 11}
+          fontSize="9"
           fontFamily="Figtree, sans-serif"
           letterSpacing="2.4"
         >
