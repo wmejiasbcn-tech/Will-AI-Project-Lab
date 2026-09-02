@@ -1,0 +1,57 @@
+name: Arnés — Guide Load
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  harness-guide-load:
+    name: Carga de Guide del Arnés
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cargar Guide de preparación
+        run: python3 06_SISTEMA_OPERATIVO/ARNES/harness_guide_loader.py
+
+      - name: Validar evidencia de carga
+        run: |
+          test -s harness-feedforward.json
+          python3 - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path("harness-feedforward.json").read_text(encoding="utf-8"))
+          guide_content = data["guide_content"]
+          assert data["type"] == "HARNESS_FEEDFORWARD"
+          assert data["schema_version"] == "1.0"
+          assert data["guide_id"] == "GUIDE-ARNES-COMANDO-05"
+          assert data["source_path"] == "04_DOCUMENTACION/ARNES_AGENTEICO/GUIDE-ARNES-COMANDO-05.md"
+          assert data["status"] == "LOADED_FOR_PREPARATION"
+          assert data["execution"] == "NOT_EXECUTED_BY_LOADER"
+          assert data["authority"] == "NOT_GRANTED"
+          assert len(data["sha256"]) == 64
+          assert hashlib.sha256(guide_content.encode("utf-8")).hexdigest() == data["sha256"]
+          for marker in (
+              "# GUIDE-ARNES-COMANDO-05",
+              "**Capa:** Arnés Agéntico WAIPL · Guides / Feedforward",
+              "## 1. Finalidad",
+              "## 2. Regla de decisión",
+              "## 3. Prohibiciones operativas",
+              "## 5. Fronteras de jurisdicción",
+          ):
+              assert marker in guide_content
+          PY
+
+      - name: Publicar evidencia de carga
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-guide-load-evidence-${{ github.run_id }}
+          path: harness-feedforward.json
+          if-no-files-found: error
