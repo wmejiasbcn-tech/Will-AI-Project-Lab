@@ -9,11 +9,49 @@ import json
 import os
 from pathlib import Path
 
+FEEDBACK_PATH = Path("harness-feedback.json")
+
 
 def read_exit_code(path: Path) -> str:
     if not path.exists():
         return "NOT_AVAILABLE"
     return path.read_text(encoding="utf-8").strip() or "EMPTY"
+
+
+def safe_write_json(path: Path, data: dict) -> None:
+    """Write JSON to path safely, rejecting symlinks and writing atomically.
+
+    - Rejects symlinks at the target path (prevents redirection attacks).
+    - Refuses to write outside the current working directory.
+    - Writes to a temporary file first, then atomically replaces the target.
+    """
+    # Reject if the target path is a symlink
+    if path.is_symlink():
+        raise RuntimeError(
+            f"Refusing to write: {path} is a symlink — possible redirection attack."
+        )
+
+    # If the path exists and is not a regular file, refuse
+    if path.exists() and not path.is_file():
+        raise RuntimeError(
+            f"Refusing to write: {path} exists but is not a regular file."
+        )
+
+    # Resolve to absolute and ensure it stays within cwd
+    resolved = path.resolve()
+    cwd = Path.cwd().resolve()
+    if not str(resolved).startswith(str(cwd)):
+        raise RuntimeError(
+            f"Refusing to write: {resolved} resolves outside cwd {cwd}."
+        )
+
+    # Atomic write: write to temp file, then rename
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    tmp.write_text(
+        json.dumps(data, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    tmp.replace(path)
 
 
 exit_code = read_exit_code(Path("harness-verification-exit-code.txt"))
@@ -39,8 +77,5 @@ record = {
     "feedback_state": feedback_state,
 }
 
-Path("harness-feedback.json").write_text(
-    json.dumps(record, indent=2, ensure_ascii=False) + "\n",
-    encoding="utf-8",
-)
+safe_write_json(FEEDBACK_PATH, record)
 print(json.dumps(record, ensure_ascii=False))

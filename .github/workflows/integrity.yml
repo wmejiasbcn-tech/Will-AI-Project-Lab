@@ -21,7 +21,8 @@ jobs:
           set +e
           python3 06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py 2>&1 | tee harness-verification.log
           status=${PIPESTATUS[0]}
-          printf '%s\n' "$status" > harness-verification-exit-code.txt
+          printf '%s
+' "$status" > harness-verification-exit-code.txt
           exit "$status"
 
       - name: Publicar evidencia del Arnés
@@ -64,7 +65,7 @@ jobs:
         run: |
           python3 06_SISTEMA_OPERATIVO/ARNES/harness_feedback_sensor.py
 
-      - name: Conservar evidencia como artefacto
+      - name: Conservar evidencia de verificación como artefacto
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -73,8 +74,15 @@ jobs:
             harness-verification-evidence.json
             harness-verification.log
             harness-verification-exit-code.txt
-            harness-feedback.json
           if-no-files-found: error
+
+      - name: Conservar feedback del Arnés como artefacto
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: harness-feedback-${{ github.run_id }}
+          path: harness-feedback.json
+          if-no-files-found: ignore
 
       - name: Reflejar resultado de verificación y feedback
         if: always()
