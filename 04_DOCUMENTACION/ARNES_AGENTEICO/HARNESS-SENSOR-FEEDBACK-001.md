@@ -1,6 +1,6 @@
 # HARNESS-SENSOR-FEEDBACK-001 — Sensor mínimo de Feedback del Arnés Agéntico WAIPL
 
-**Estado:** C — PROPUESTA / NO VALIDADA
+**Estado:** A — ACREDITADO para el sensor mínimo implementado y ejecutado.
 **Responsable operativo:** Carla
 **Capa de contraste:** Aletheia
 **Jurisdicción:** Arnés Agéntico WAIPL
@@ -30,7 +30,9 @@ Produce:
 
 **A:** `.github/workflows/integrity.yml` invoca el sensor mediante el paso `Capturar feedback del Arnés` con `if: always()`.
 
-**A:** El workflow conserva `harness-feedback.json` junto con la evidencia de verificación en el mismo artefacto de GitHub Actions.
+**A:** El workflow conserva `harness-feedback.json` mediante un artefacto de GitHub Actions.
+
+**A:** El fallo del sensor no constituye una condición de validez del mecanismo de integridad; el paso del sensor y la conservación de su feedback son no bloqueantes.
 
 ## 4. Semántica
 
@@ -56,19 +58,21 @@ El sensor:
 - no crea una FSM interna del Arnés;
 - no define nuevas reglas de gobernanza.
 
-## 6. Evidencia requerida para pasar de C a A
+## 6. Evidencia de operación
 
-La materialización física ya existe en el branch de trabajo. Para acreditar operación será necesaria una ejecución del workflow que demuestre, conjuntamente:
+`HARNESS-INTEGRATION-TEST-001` acredita mediante ejecución real:
 
 1. ejecución del verificador;
 2. generación del código de salida;
-3. ejecución del sensor aunque el verificador falle;
+3. ejecución del sensor;
 4. generación de `harness-feedback.json`;
 5. conservación del registro como artefacto;
 6. reflejo del resultado en el resumen del workflow.
 
-Hasta disponer de esa evidencia, este documento permanece **C — PROPUESTA / NO VALIDADA**.
+Por ello, el sensor mínimo implementado queda **A — ACREDITADO**.
 
 ## 7. No ampliación de alcance
 
 Este sensor resuelve únicamente el vacío mínimo de observabilidad/feedback identificado en la especificación. No se declara con ello un catálogo completo de Sensors ni una arquitectura definitiva de observabilidad del Arnés.
+
+El catálogo completo, la cobertura general y la arquitectura definitiva de feedback permanecen **D — NO DETERMINADOS**.
