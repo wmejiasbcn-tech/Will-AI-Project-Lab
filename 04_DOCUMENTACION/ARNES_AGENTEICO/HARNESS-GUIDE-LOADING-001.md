@@ -1,6 +1,6 @@
 # HARNESS-GUIDE-LOADING-001 — Mecanismo mínimo de carga de Guides
 
-**Estado:** C — PROPUESTA / NO VALIDADA hasta ejecución real del workflow específico.
+**Estado:** A — ACREDITADO para el mecanismo mínimo de carga/preparación de `GUIDE-ARNES-COMANDO-05`.
 
 ## 1. Objetivo
 
@@ -29,11 +29,23 @@ El loader no ejecuta la Guide, no interpreta sus reglas, no concede autorizació
 
 `authority = NOT_GRANTED`
 
-## 4. Verificación
+## 4. Verificación acreditada
 
-`.github/workflows/harness-guide.yml` ejecuta el loader, valida identidad, estructura, contenido, hash y estados del payload, y conserva `harness-feedforward.json` como artefacto.
+Workflow: `Arnés — Guide Load`
 
-La ejecución real del workflow es necesaria para elevar este documento de C a A respecto del mecanismo físico acreditado.
+Run: `33606459694`
+
+Check: `Carga de Guide del Arnés` — `success`
+
+Commit: `cac1fa094d0e28a0113a94e3b0cf559765c12c9e`
+
+Artefacto: `harness-guide-load-evidence-33606459694`
+
+Artifact ID: `9837196795`
+
+Digest: `sha256:1c639dda30ea837cab5cf9bcf0c227b161f6dd0775a62ed13903b42ffb91f0d7`
+
+La prueba validó identidad, estructura, contenido, correspondencia SHA-256 y estados del payload, y conservó la evidencia como artefacto.
 
 ## 5. Distinción de estados
 
@@ -45,8 +57,10 @@ DOCUMENTADA
 ≠ VERIFICADA COMO VERDAD MATERIAL
 ```
 
+La ejecución acredita carga/preparación del payload. No acredita que un runtime de agente concreto lo consuma.
+
 ## 6. Alcance deliberadamente limitado
 
 Este mecanismo resuelve únicamente la carga/preparación de la Guide concreta identificada. No declara un catálogo universal de Guides, plugins, FSM interna del Arnés ni un mecanismo general de Context Engineering.
 
-La existencia de un payload preparado tampoco acredita que un runtime de agente concreto lo consuma; esa integración requerirá evidencia específica antes de declararse.
+La integración de consumo del payload por un runtime de agente concreto permanece sin acreditar y deberá tratarse como bloque independiente si resulta material para la siguiente fase.
