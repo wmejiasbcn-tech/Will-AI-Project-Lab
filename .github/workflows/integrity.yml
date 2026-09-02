@@ -35,14 +35,16 @@ jobs:
         run: |
           python3 - <<'PY'
           import json
+          import os
           from pathlib import Path
+
           data = {
               "evidence_type": "HARNESS_VERIFICATION",
               "verification": "06_SISTEMA_OPERATIVO/INTEGRITY/verify_integrity.py",
-              "workflow": "${WORKFLOW_VALUE}",
-              "run_id": "${RUN_ID_VALUE}",
-              "commit": "${GITHUB_SHA_VALUE}",
-              "outcome": "${VERIFICATION_OUTCOME}",
+              "workflow": os.environ["WORKFLOW_VALUE"],
+              "run_id": os.environ["RUN_ID_VALUE"],
+              "commit": os.environ["GITHUB_SHA_VALUE"],
+              "outcome": os.environ["VERIFICATION_OUTCOME"],
               "log_file": "harness-verification.log",
               "exit_code_file": "harness-verification-exit-code.txt",
           }
