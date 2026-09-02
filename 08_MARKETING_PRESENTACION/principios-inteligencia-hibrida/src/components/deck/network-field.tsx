@@ -170,7 +170,11 @@ export function NetworkField({ variant }: { variant: SlideId }) {
   const emilyHot = variant === "cover" || variant === "nodos" || variant === "graphy" || variant === "identidades";
 
   return (
-    <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+    <div
+      className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
+      style={{ isolation: "isolate" }}
+      aria-hidden="true"
+    >
       <svg
         className="parallax-far net-layer net-far h-full w-full"
         viewBox="0 0 100 100"

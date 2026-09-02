@@ -127,6 +127,10 @@
 }
 
 .holo-stage {
+  isolation: isolate;
+}
+
+.holo-3d {
   perspective: 900px;
   -webkit-perspective: 900px;
 }
@@ -168,7 +172,7 @@
   animation: attn-pulse 2.4s ease-in-out infinite;
 }
 
-.emily-arc {
+.emily-arc-field {
   mix-blend-mode: screen;
 }
 
