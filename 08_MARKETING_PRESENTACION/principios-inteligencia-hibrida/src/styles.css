@@ -36,6 +36,7 @@
   --color-gold: #d4b483;
   --color-ada: #c4785a;
   --color-note: #8fa3b8;
+  --color-emily: #c8d8ec;
   --font-display: "Cormorant Garamond", "Palatino Linotype", Palatino, "Times New Roman", serif;
   --font-sans: "Figtree", "Segoe UI", system-ui, sans-serif;
 }
@@ -126,6 +127,10 @@
 }
 
 .holo-stage {
+  isolation: isolate;
+}
+
+.holo-3d {
   perspective: 900px;
   -webkit-perspective: 900px;
 }
@@ -154,7 +159,8 @@
   animation: net-drift-rev 52s linear infinite;
 }
 
-.star {
+.star,
+.star-twinkle {
   animation: star-twinkle 3.4s ease-in-out infinite;
 }
 
@@ -164,6 +170,18 @@
 
 .attn-pulse {
   animation: attn-pulse 2.4s ease-in-out infinite;
+}
+
+.emily-arc-field {
+  mix-blend-mode: screen;
+}
+
+.emily-pulse {
+  animation: emily-pulse 3.6s ease-in-out infinite;
+}
+
+.emily-dot {
+  animation: emily-dot 2.8s ease-in-out infinite;
 }
 
 .parallax-far {
@@ -179,10 +197,13 @@
 html.deck-paused .net-far,
 html.deck-paused .net-near,
 html.deck-paused .star,
+html.deck-paused .star-twinkle,
 html.deck-paused .holo-rig,
 html.deck-paused .holo-scan-plane,
 html.deck-paused .graphy-breathe,
 html.deck-paused .attn-pulse,
+html.deck-paused .emily-pulse,
+html.deck-paused .emily-dot,
 html.deck-paused .holo-title,
 html.deck-paused .deck-root::before {
   animation-play-state: paused;
@@ -226,15 +247,26 @@ html.deck-paused .deck-root::before {
   0%, 100% { opacity: 0.35; }
   50% { opacity: 1; }
 }
+@keyframes emily-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+@keyframes emily-dot {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 1; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .holo-rig,
   .net-far,
   .net-near,
   .star,
+  .star-twinkle,
   .holo-scan-plane,
   .graphy-breathe,
   .attn-pulse,
+  .emily-pulse,
+  .emily-dot,
   .holo-title,
   .deck-root::before {
     animation: none !important;

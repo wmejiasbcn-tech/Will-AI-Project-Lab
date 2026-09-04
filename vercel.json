@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd 08_MARKETING_PRESENTACION/principios-inteligencia-hibrida && npm ci && npm run build && rm -rf ../../.vercel/output && mkdir -p ../../.vercel && cp -R .vercel/output ../../.vercel/output"
+}
