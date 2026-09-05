@@ -10,11 +10,17 @@ const ALLOWED_ORIGINS = [
 
 const MAX_TEXT_LENGTH = 5000;
 
-// --- Rate limiting scaffold -------------------------------------------------
-// This endpoint should be protected against abuse in production. Vercel
-// serverless functions are stateless/ephemeral, so an in-memory counter is
-// not reliable across invocations/instances. Wire up a shared store (e.g.
-// Redis/Upstash) here before going to production:
+// --- Rate limiting -----------------------------------------------------
+// In-memory sliding-window limiter, keyed by client IP. Module-scope state
+// (`requestLog`) persists across invocations within the same warm Vercel
+// serverless instance/container, so this actually throttles repeated abuse
+// from the same client hitting the same instance — it is not a no-op.
+//
+// Known limitation: Vercel can route requests to multiple concurrent
+// instances/containers, each with its own independent `requestLog`, so the
+// effective limit is "N requests per window per instance", not a single
+// global limit. For a hard global cap across all instances, replace this
+// with a shared store, e.g.:
 //
 // const { Ratelimit } = require('@upstash/ratelimit');
 // const { Redis } = require('@upstash/redis');
@@ -24,7 +30,23 @@ const MAX_TEXT_LENGTH = 5000;
 // });
 // const { success } = await ratelimit.limit(clientIp);
 // if (!success) return res.status(429).json({ error: 'Too many requests' });
-// -----------------------------------------------------------------------
+const RATE_LIMIT_WINDOW_MS = 60 * 1000;
+const RATE_LIMIT_MAX_REQUESTS = 10;
+const requestLog = new Map(); // clientIp -> array of request timestamps (ms)
+
+function isRateLimited(clientIp) {
+  const now = Date.now();
+  const timestamps = (requestLog.get(clientIp) || []).filter(
+    (t) => now - t < RATE_LIMIT_WINDOW_MS
+  );
+  if (timestamps.length >= RATE_LIMIT_MAX_REQUESTS) {
+    requestLog.set(clientIp, timestamps);
+    return true;
+  }
+  timestamps.push(now);
+  requestLog.set(clientIp, timestamps);
+  return false;
+}
 
 module.exports = async function handler(req, res) {
   const origin = req.headers.origin;
@@ -62,10 +84,13 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: `text exceeds maximum length of ${MAX_TEXT_LENGTH} characters` });
   }
 
-  // NOTE: rate limiting check should happen here once the store above is
-  // configured, e.g.:
-  // const clientIp = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown';
-  // if (limiter rejects) return res.status(429).json({ error: 'Too many requests' });
+  const forwardedFor = req.headers['x-forwarded-for'];
+  const clientIp = (Array.isArray(forwardedFor) ? forwardedFor[0] : forwardedFor || '')
+    .split(',')[0]
+    .trim() || req.socket?.remoteAddress || 'unknown';
+  if (isRateLimited(clientIp)) {
+    return res.status(429).json({ error: 'Too many requests, please try again later' });
+  }
 
   const voiceId = 'l32B8XDoylOsZKiSdfhE';
   const postData = JSON.stringify({
