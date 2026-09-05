@@ -1,0 +1,1 @@
+The canonical runtime consumer entrypoint is harness_feedforward_runtime.py. It consumes the loader's repository-root harness-feedforward.json and emits harness-runtime-context.json.

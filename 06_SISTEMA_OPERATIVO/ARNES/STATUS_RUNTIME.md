@@ -1,0 +1,1 @@
+Implementation status: runtime consumer materialized on branch; canonicalization and execution verification must precede merge.

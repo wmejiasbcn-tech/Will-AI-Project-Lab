@@ -1,0 +1,1 @@
+Corrected runtime consumer logic is represented by harness_feedforward_runtime_v2.py while the existing entrypoint is reconciled before merge.

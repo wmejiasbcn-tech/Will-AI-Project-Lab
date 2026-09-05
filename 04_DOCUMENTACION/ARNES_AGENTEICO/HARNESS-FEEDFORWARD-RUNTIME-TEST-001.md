@@ -1,7 +1,20 @@
 # HARNESS-FEEDFORWARD-RUNTIME-TEST-001 — Prueba mínima
 
-**Estado:** C — PROPUESTA / NO VALIDADA.
+**Estado:** C — PROPUESTA / NO VALIDADA hasta ejecución real.
 
-La prueba ejecuta loader y consumidor y verifica payload, `guide_id`, SHA-256, contenido, estado `CONSUMED_FOR_RUNTIME_CONTEXT`, `NOT_EXECUTED_BY_CONSUMER` y `NOT_GRANTED`.
+## Prueba
 
-La acreditación depende del workflow `Arnés — Feedforward Runtime` y de su artefacto de evidencia.
+La prueba ejecuta el consumidor después del loader y comprueba:
+
+- payload presente;
+- contexto runtime materializado;
+- `guide_id` conservado;
+- SHA-256 conservado y coincidente;
+- contenido del Guide conservado;
+- estado `CONSUMED_FOR_RUNTIME_CONTEXT`;
+- `execution = NOT_EXECUTED_BY_CONSUMER`;
+- `authority = NOT_GRANTED`.
+
+## Evidencia
+
+La evidencia será el artefacto del workflow `Arnés — Feedforward Runtime`.
