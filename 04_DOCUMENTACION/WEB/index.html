@@ -157,6 +157,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.4.14/dist/purify.min.js"></script>
   <script>
     // Helper UI
     const messagesEl = document.getElementById('messages');
@@ -175,8 +176,8 @@
     function addMessage(content, cls='agent'){
       const div = document.createElement('div');
       div.className = 'msg ' + (cls==='user'?'user':'agent');
-      // render markdown safely via marked
-      div.innerHTML = marked.parseInline(content.replace(/\n/g,'  \n'));
+      // render markdown safely via marked and DOMPurify
+      div.innerHTML = DOMPurify.sanitize(marked.parseInline(content.replace(/\n/g,'  \n')));
       messagesEl.appendChild(div);
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
@@ -184,8 +185,8 @@
     function addAgent(content){
       const div = document.createElement('div');
       div.className = 'msg agent';
-      // try to render as markdown block
-      div.innerHTML = marked.parse(content);
+      // try to render as markdown block safely
+      div.innerHTML = DOMPurify.sanitize(marked.parse(content));
       messagesEl.appendChild(div);
       messagesEl.scrollTop = messagesEl.scrollHeight;
     }
