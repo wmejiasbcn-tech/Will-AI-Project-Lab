@@ -65,9 +65,6 @@ module.exports = async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests' });
   }
 
-  const apiKey = process.env.ELEVENLABS_API_KEY;
-  if (!apiKey) return res.status(503).json({ error: 'Service unavailable' });
-
   let body = req.body;
   if (typeof body === 'string') {
     if (Buffer.byteLength(body, 'utf8') > MAX_BODY_LENGTH) return res.status(413).json({ error: 'Request too large' });
@@ -80,6 +77,9 @@ module.exports = async function handler(req, res) {
   if (typeof text !== 'string' || !text.trim() || text.length > MAX_TEXT_LENGTH) {
     return res.status(400).json({ error: 'Invalid text' });
   }
+
+  const apiKey = process.env.ELEVENLABS_API_KEY;
+  if (!apiKey) return res.status(503).json({ error: 'Service unavailable' });
 
   const voiceId = 'l32B8XDoylOsZKiSdfhE';
   const postData = JSON.stringify({
