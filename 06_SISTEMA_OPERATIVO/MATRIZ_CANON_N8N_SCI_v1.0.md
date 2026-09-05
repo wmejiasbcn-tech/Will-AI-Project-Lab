@@ -1,10 +1,15 @@
 # MATRIZ CANON → n8n — SCI v1.0
 
-**Estado:** EN RECONCILIACIÓN  
+**Estado:** EN RECONCILIACIÓN — GATE P0 BLOQUEADO
 **Fecha:** 2026-08-29  
 **Fuente canónica:** GitHub / corpus WAIPL canónico  
 **Implementación objetivo:** SCI n8n-WAIPL  
 **Condición:** esta matriz debe completarse antes de autorizar el piloto.
+
+**Registro SCI-01:** `06_SISTEMA_OPERATIVO/EVIDENCIA_SCI-01_PREPILOTO_2026-09-05.md`
+**Resultado de la evaluación:** P01–P15 no ejecutables en este entorno por ausencia de
+runtime n8n y de configuración/exportación verificable. Las filas P0 permanecen
+abiertas; el piloto no está autorizado.
 
 ## Regla superior
 
