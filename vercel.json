@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "npm ci --prefix 08_MARKETING_PRESENTACION/principios-inteligencia-hibrida",
-  "buildCommand": "npm --prefix 08_MARKETING_PRESENTACION/principios-inteligencia-hibrida run build && rm -rf .vercel/output && mkdir -p .vercel && cp -a 08_MARKETING_PRESENTACION/principios-inteligencia-hibrida/.vercel/output .vercel/output"
+  "buildCommand": "mkdir -p .vercel-static && cp index.html .vercel-static/index.html",
+  "outputDirectory": ".vercel-static",
+  "cleanUrls": true
 }
