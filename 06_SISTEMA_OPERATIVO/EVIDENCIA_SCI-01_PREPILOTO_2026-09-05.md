@@ -1,8 +1,8 @@
 # EVIDENCIA SCI-01 — GATE PRE-PILOTO
 
-**Fecha de evaluación:** 2026-09-05  
-**Alcance:** SCI n8n-WAIPL  
-**Prompt aplicable:** `06_SISTEMA_OPERATIVO/PROMPT_ABSOLUTO_N8N_SCI_PREPILOTO_v2.0.md`  
+**Fecha de evaluación:** 2026-09-05
+**Alcance:** SCI n8n-WAIPL
+**Prompt aplicable:** `06_SISTEMA_OPERATIVO/PROMPT_ABSOLUTO_N8N_SCI_PREPILOTO_v2.0.md`
 **Matriz:** `06_SISTEMA_OPERATIVO/MATRIZ_CANON_N8N_SCI_v1.0.md`  
 **Estado del gate:** `BLOQUEADO — NO AUTORIZAR PILOTO`
 
