@@ -1,6 +1,5 @@
 const https = require('https');
 
-// Allowlist of origins permitted to call this endpoint.
 const ALLOWED_ORIGINS = [
   'https://will-ai-project-lab.vercel.app',
   'https://www.will-ai-project-lab.vercel.app',
@@ -11,30 +10,9 @@ const ALLOWED_ORIGINS = [
 ];
 
 const MAX_TEXT_LENGTH = 5000;
-
-// --- Rate limiting -----------------------------------------------------
-// In-memory sliding-window limiter, keyed by client IP. Module-scope state
-// (`requestLog`) persists across invocations within the same warm Vercel
-// serverless instance/container, so this actually throttles repeated abuse
-// from the same client hitting the same instance — it is not a no-op.
-//
-// Known limitation: Vercel can route requests to multiple concurrent
-// instances/containers, each with its own independent `requestLog`, so the
-// effective limit is "N requests per window per instance", not a single
-// global limit. For a hard global cap across all instances, replace this
-// with a shared store, e.g.:
-//
-// const { Ratelimit } = require('@upstash/ratelimit');
-// const { Redis } = require('@upstash/redis');
-// const ratelimit = new Ratelimit({
-//   redis: Redis.fromEnv(),
-//   limiter: Ratelimit.slidingWindow(10, '1 m'),
-// });
-// const { success } = await ratelimit.limit(clientIp);
-// if (!success) return res.status(429).json({ error: 'Too many requests' });
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 10;
-const requestLog = new Map(); // clientIp -> array of request timestamps (ms)
+const requestLog = new Map();
 
 function isRateLimited(clientIp) {
   const now = Date.now();
@@ -48,6 +26,85 @@ function isRateLimited(clientIp) {
   timestamps.push(now);
   requestLog.set(clientIp, timestamps);
   return false;
+}
+
+function elevenRequest(apiKey, method, path, body, accept) {
+  return new Promise((resolve, reject) => {
+    const postData = body ? JSON.stringify(body) : '';
+    const headers = {
+      Accept: accept || 'application/json',
+      'xi-api-key': apiKey
+    };
+    if (postData) {
+      headers['Content-Type'] = 'application/json';
+      headers['Content-Length'] = Buffer.byteLength(postData);
+    }
+    const r = https.request({
+      hostname: 'api.elevenlabs.io',
+      path,
+      method,
+      headers
+    }, (res) => {
+      const chunks = [];
+      res.on('data', (c) => chunks.push(c));
+      res.on('end', () => resolve({ status: res.statusCode, buf: Buffer.concat(chunks) }));
+    });
+    r.on('error', reject);
+    if (postData) r.write(postData);
+    r.end();
+  });
+}
+
+function safeReason(buf) {
+  try {
+    const parsed = JSON.parse(buf.toString('utf-8').substring(0, 400));
+    let detail = '';
+    if (typeof parsed.detail === 'string') detail = parsed.detail;
+    else if (parsed.detail && typeof parsed.detail === 'object') {
+      detail = parsed.detail.message || parsed.detail.status || '';
+    } else {
+      detail = parsed.message || parsed.error || '';
+    }
+    if (detail && !/xi-api-key|api.key|sk_/i.test(String(detail))) {
+      return String(detail).substring(0, 160);
+    }
+  } catch (e) { /* ignore */ }
+  return '';
+}
+
+async function resolveVoiceId(apiKey, raw) {
+  const token = String(raw || 'Zara').trim().replace(/^["']|["']$/g, '');
+  if (/^[a-zA-Z0-9]{16,32}$/.test(token)) return token;
+  const listed = await elevenRequest(apiKey, 'GET', '/v1/voices');
+  if (listed.status !== 200) return null;
+  let data;
+  try { data = JSON.parse(listed.buf.toString('utf-8')); } catch (e) { return null; }
+  const voices = data.voices || [];
+  const want = token.toLowerCase();
+  const named = voices.find((v) => String(v.name || '').toLowerCase() === want)
+    || voices.find((v) => /^(zara|sara)$/i.test(v.name || ''))
+    || voices.find((v) => /zara|sara/i.test(v.name || ''));
+  return named ? named.voice_id : null;
+}
+
+async function synthesize(apiKey, voiceId, text) {
+  const models = ['eleven_multilingual_v2', 'eleven_turbo_v2_5', 'eleven_flash_v2_5'];
+  const bodyBase = {
+    text,
+    voice_settings: { stability: 0.5, similarity_boost: 0.8 }
+  };
+  let last = { status: 500, buf: Buffer.from('{}') };
+  for (const model_id of models) {
+    last = await elevenRequest(
+      apiKey,
+      'POST',
+      '/v1/text-to-speech/' + encodeURIComponent(voiceId),
+      { ...bodyBase, model_id },
+      'audio/mpeg'
+    );
+    if (last.status === 200) return last;
+  }
+  return last;
 }
 
 module.exports = async function handler(req, res) {
@@ -94,64 +151,31 @@ module.exports = async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests, please try again later' });
   }
 
-  // Zara / Graphy: same ElevenLabs voice. ID from env only.
-  const voiceId = String(process.env.ELEVENLABS_VOICE_ID || 'l32B8XDoylOsZKiSdfhE')
-    .trim()
-    .replace(/^["']|["']$/g, '');
-  const postData = JSON.stringify({
-    text: text,
-    model_id: 'eleven_multilingual_v2',
-    voice_settings: { stability: 0.50, similarity_boost: 0.80 }
-  });
+  let voiceId;
+  try {
+    voiceId = await resolveVoiceId(apiKey, process.env.ELEVENLABS_VOICE_ID);
+  } catch (e) {
+    return res.status(502).json({ error: 'Voice lookup failed' });
+  }
+  if (!voiceId) {
+    return res.status(500).json({ error: 'Zara voice not found' });
+  }
 
-  return new Promise((resolve) => {
-    const options = {
-      hostname: 'api.elevenlabs.io',
-      path: '/v1/text-to-speech/' + voiceId,
-      method: 'POST',
-      headers: {
-        'Accept': 'audio/mpeg',
-        'Content-Type': 'application/json',
-        'xi-api-key': apiKey,
-        'Content-Length': Buffer.byteLength(postData)
-      }
-    };
-    const r = https.request(options, function(r11) {
-      const chunks = [];
-      r11.on('data', function(c) { chunks.push(c); });
-      r11.on('end', function() {
-        const buf = Buffer.concat(chunks);
-        if (r11.statusCode !== 200) {
-          let detail = '';
-          try {
-            const raw = buf.toString('utf-8').substring(0, 240);
-            const parsed = JSON.parse(raw);
-            detail = (parsed && parsed.detail && (parsed.detail.message || parsed.detail.status))
-              || parsed.message
-              || '';
-          } catch (e) { detail = ''; }
-          const payload = { error: 'Failed to synthesize audio', status: r11.statusCode };
-          if (detail && !/xi-api-key|api.key|sk_/i.test(String(detail))) {
-            payload.reason = String(detail).substring(0, 160);
-          }
-          res.status(r11.statusCode).json(payload);
-        } else {
-          res.setHeader('Content-Type', 'audio/mpeg');
-          res.setHeader('Cache-Control', 'public, max-age=86400');
-          res.send(buf);
-        }
-        resolve();
-      });
-    });
-    r.on('error', function(e) {
-      const payload = { error: 'Internal server error' };
-      if (process.env.NODE_ENV === 'development') {
-        payload.details = e.message;
-      }
-      res.status(500).json(payload);
-      resolve();
-    });
-    r.write(postData);
-    r.end();
-  });
+  let result;
+  try {
+    result = await synthesize(apiKey, voiceId, text);
+  } catch (e) {
+    return res.status(500).json({ error: 'Internal server error' });
+  }
+
+  if (result.status !== 200) {
+    const payload = { error: 'Failed to synthesize audio', status: result.status };
+    const reason = safeReason(result.buf);
+    if (reason) payload.reason = reason;
+    return res.status(result.status).json(payload);
+  }
+
+  res.setHeader('Content-Type', 'audio/mpeg');
+  res.setHeader('Cache-Control', 'public, max-age=86400');
+  return res.send(result.buf);
 };
