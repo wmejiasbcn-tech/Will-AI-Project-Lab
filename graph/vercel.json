@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/carta",
+      "destination": "https://will-ai-project-lab.vercel.app/",
+      "permanent": false
+    },
+    {
+      "source": "/lab",
+      "destination": "https://will-ai-project-lab.vercel.app/",
+      "permanent": false
+    }
+  ]
+}
