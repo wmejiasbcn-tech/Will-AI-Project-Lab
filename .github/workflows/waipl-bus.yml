@@ -26,7 +26,7 @@ jobs:
       )
     steps:
       - name: Validar, etiquetar y notificar a Hermes
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           HERMES_WEBHOOK_URL: ${{ secrets.HERMES_WEBHOOK_URL }}
           HERMES_WEBHOOK_SECRET: ${{ secrets.HERMES_WEBHOOK_SECRET }}
