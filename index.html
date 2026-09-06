@@ -245,7 +245,7 @@
  <div class="nd" data-target="puerta" data-lbl="Contacto"></div>
  <div class="nd" data-target="closing" data-lbl="Cierre"></div>
 </nav>
-<button id="vbtn" title="Narrar carta">
+<button id="vbtn" title="Narrar carta · Graphy">
  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
  <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
@@ -777,7 +777,7 @@ document.querySelectorAll('.nr-nm').forEach(function(el){
  var row=el.closest('.nr');
  if(row)row.addEventListener('click',function(){window.openNodeModal(key);});
 });
-/* NARRACIÓN — Zara (voz oficial: natural, elegante, sin teatralidad) */
+/* NARRACIÓN — Graphy (misma voz que Zara en ElevenLabs; en la carta se presenta como Graphy) */
 (function(){
  var btn=document.getElementById('vbtn');
  if(!btn) return;
@@ -816,7 +816,7 @@ document.querySelectorAll('.nr-nm').forEach(function(el){
  var url=await fetchAudio(SECTIONS[idx]);
  if(aborted){return;}
  currentAudio=new Audio(url);
- newBtn.title='Detener narración';
+ newBtn.title='Graphy · Detener';
  currentAudio.onended=function(){setTimeout(function(){playSection(idx+1);},800);};
  currentAudio.onerror=function(){stopAll();};
  currentAudio.play();
@@ -829,7 +829,7 @@ document.querySelectorAll('.nr-nm').forEach(function(el){
  aborted=true; playing=false;
  if(currentAudio){currentAudio.pause();currentAudio=null;}
  newBtn.classList.remove('speaking');
- newBtn.title='Narrar carta';
+ newBtn.title='Narrar carta · Graphy';
  }
  newBtn.addEventListener('click',function(){
  if(playing){stopAll();return;}
