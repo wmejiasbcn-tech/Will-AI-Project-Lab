@@ -809,22 +809,6 @@ document.querySelectorAll('.nr-nm').forEach(function(el){
  cache[text]=url;
  return url;
  }
- function pickZaraVoice(){
- var voices=speechSynthesis.getVoices()||[];
- var es=voices.filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('es')===0;});
- var zaraRe=/monica|helena|paulina|sabina|luc[ií]a|dalia|elsa|google español|microsoft sabina|paloma|conchita/i;
- return es.find(function(v){return zaraRe.test(v.name);})||es.find(function(v){return /es-es/i.test(v.lang);})||es[0]||null;
- }
- function speakLocal(text, then){
- if(!window.speechSynthesis){ if(then) then(); return; }
- var utt=new SpeechSynthesisUtterance(text);
- var z=pickZaraVoice();
- if(z) utt.voice=z;
- utt.lang='es-ES'; utt.rate=0.92; utt.pitch=1.02;
- utt.onend=function(){ if(then) then(); };
- utt.onerror=function(){ if(then) then(); };
- speechSynthesis.speak(utt);
- }
  async function playSection(idx){
  if(aborted||idx>=SECTIONS.length){stopAll();return;}
  newBtn.title='Cargando...';
@@ -838,18 +822,12 @@ document.querySelectorAll('.nr-nm').forEach(function(el){
  currentAudio.play();
  }catch(e){
  console.error('ElevenLabs:',e);
- if(aborted){stopAll();return;}
- newBtn.title='Graphy · Detener';
- speakLocal(SECTIONS[idx], function(){
- if(aborted) return;
- setTimeout(function(){playSection(idx+1);},400);
- });
+ stopAll();
  }
  }
  function stopAll(){
  aborted=true; playing=false;
  if(currentAudio){currentAudio.pause();currentAudio=null;}
- if(window.speechSynthesis) speechSynthesis.cancel();
  newBtn.classList.remove('speaking');
  newBtn.title='Narrar carta · Graphy';
  }
