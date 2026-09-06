@@ -135,6 +135,10 @@ export function Deck() {
           className="size-7 object-contain"
         />
         <span className="font-sans text-[11px] font-medium tracking-[0.22em] text-ivory-dim">WAIPL</span>
+        <div className="pointer-events-auto ml-2 hidden items-center gap-3 font-sans text-[10px] tracking-wide text-ivory-dim sm:flex">
+          <a href="https://waipl.dev" className="hover:text-ivory">www.waipl.dev</a>
+          <a href="mailto:waipl@waipl.dev" className="hover:text-ivory">waipl@waipl.dev</a>
+        </div>
         <div className="pointer-events-auto ml-auto flex min-w-0 items-center gap-1">
           <GraphyPresence
             slideId={slide.id}
