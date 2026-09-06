@@ -3,5 +3,27 @@
   "framework": null,
   "buildCommand": "mkdir -p .vercel-static && cp index.html .vercel-static/index.html",
   "outputDirectory": ".vercel-static",
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/graph",
+      "destination": "https://graph.waipl.dev/",
+      "permanent": false
+    },
+    {
+      "source": "/graphy",
+      "destination": "https://graph.waipl.dev/",
+      "permanent": false
+    },
+    {
+      "source": "/inmersivo",
+      "destination": "https://graph.waipl.dev/",
+      "permanent": false
+    },
+    {
+      "source": "/ecosistema",
+      "destination": "https://graph.waipl.dev/",
+      "permanent": false
+    }
+  ]
 }
