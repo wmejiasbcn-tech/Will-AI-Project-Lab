@@ -4,6 +4,8 @@ const https = require('https');
 const ALLOWED_ORIGINS = [
   'https://will-ai-project-lab.vercel.app',
   'https://www.will-ai-project-lab.vercel.app',
+  'https://graph.waipl.dev',
+  'https://waipl.dev',
   'http://localhost:3000',
   'http://localhost:8080'
 ];
@@ -92,7 +94,8 @@ module.exports = async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests, please try again later' });
   }
 
-  const voiceId = 'l32B8XDoylOsZKiSdfhE';
+  // Zara is the official presentation voice. Override via ELEVENLABS_VOICE_ID.
+  const voiceId = process.env.ELEVENLABS_VOICE_ID || 'l32B8XDoylOsZKiSdfhE';
   const postData = JSON.stringify({
     text: text,
     model_id: 'eleven_multilingual_v2',
