@@ -94,12 +94,14 @@ module.exports = async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests, please try again later' });
   }
 
-  // Zara is the official presentation voice. Override via ELEVENLABS_VOICE_ID.
-  const voiceId = process.env.ELEVENLABS_VOICE_ID || 'l32B8XDoylOsZKiSdfhE';
+  // Zara / Graphy: same ElevenLabs voice. ID from env only.
+  const voiceId = String(process.env.ELEVENLABS_VOICE_ID || 'l32B8XDoylOsZKiSdfhE')
+    .trim()
+    .replace(/^["']|["']$/g, '');
   const postData = JSON.stringify({
     text: text,
     model_id: 'eleven_multilingual_v2',
-    voice_settings: { stability: 0.55, similarity_boost: 0.85, style: 0.18, use_speaker_boost: true }
+    voice_settings: { stability: 0.50, similarity_boost: 0.80 }
   });
 
   return new Promise((resolve) => {
