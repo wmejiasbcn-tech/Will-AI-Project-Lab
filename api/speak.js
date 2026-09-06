@@ -120,7 +120,7 @@ module.exports = async function handler(req, res) {
       r11.on('end', function() {
         const buf = Buffer.concat(chunks);
         if (r11.statusCode !== 200) {
-          const payload = { error: 'Failed to synthesize audio' };
+          const payload = { error: 'Failed to synthesize audio', status: r11.statusCode };
           if (process.env.NODE_ENV === 'development') {
             payload.details = buf.toString('utf-8').substring(0, 200);
           }
