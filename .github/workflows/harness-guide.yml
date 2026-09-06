@@ -50,7 +50,7 @@ jobs:
           PY
 
       - name: Publicar evidencia de carga
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: harness-guide-load-evidence-${{ github.run_id }}
           path: harness-feedforward.json
