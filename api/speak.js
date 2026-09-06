@@ -122,9 +122,17 @@ module.exports = async function handler(req, res) {
       r11.on('end', function() {
         const buf = Buffer.concat(chunks);
         if (r11.statusCode !== 200) {
+          let detail = '';
+          try {
+            const raw = buf.toString('utf-8').substring(0, 240);
+            const parsed = JSON.parse(raw);
+            detail = (parsed && parsed.detail && (parsed.detail.message || parsed.detail.status))
+              || parsed.message
+              || '';
+          } catch (e) { detail = ''; }
           const payload = { error: 'Failed to synthesize audio', status: r11.statusCode };
-          if (process.env.NODE_ENV === 'development') {
-            payload.details = buf.toString('utf-8').substring(0, 200);
+          if (detail && !/xi-api-key|api.key|sk_/i.test(String(detail))) {
+            payload.reason = String(detail).substring(0, 160);
           }
           res.status(r11.statusCode).json(payload);
         } else {
