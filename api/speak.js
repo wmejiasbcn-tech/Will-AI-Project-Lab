@@ -124,11 +124,14 @@ module.exports = async function handler(req, res) {
         if (r11.statusCode !== 200) {
           let detail = '';
           try {
-            const raw = buf.toString('utf-8').substring(0, 240);
+            const raw = buf.toString('utf-8').substring(0, 300);
             const parsed = JSON.parse(raw);
-            detail = (parsed && parsed.detail && (parsed.detail.message || parsed.detail.status))
-              || parsed.message
-              || '';
+            if (typeof parsed.detail === 'string') detail = parsed.detail;
+            else if (parsed.detail && typeof parsed.detail === 'object') {
+              detail = parsed.detail.message || parsed.detail.status || JSON.stringify(parsed.detail);
+            } else {
+              detail = parsed.message || parsed.error || '';
+            }
           } catch (e) { detail = ''; }
           const payload = { error: 'Failed to synthesize audio', status: r11.statusCode };
           if (detail && !/xi-api-key|api.key|sk_/i.test(String(detail))) {
