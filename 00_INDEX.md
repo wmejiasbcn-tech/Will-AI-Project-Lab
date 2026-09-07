@@ -17,6 +17,7 @@
    - **VAR/**: casa operativa y documental de VÁR / VAC-01.
 10. **07_FINANCIACION**: Gestión de activos y recursos del ecosistema.
 11. **08_MARKETING_PRESENTACION**: Identidad visual y proyección externa. Incluye el blasón oficial y el deck holográfico `principios-inteligencia-hibrida/` (núcleo 11+1; Emily es la sinapsis, no un anillo).
+    - **GRAPHY/**: casa canónica de Graphy 1.0. Producto `Graphy 0.1.dc.html` + `graphy-data.js`. No es Graphify. No hay relaciones entre Presence ni jerarquía núcleo/colaboradores.
 12. **09_DIARIO_LAB**: Crónica de la hibridación diaria.
 
 ### 📁 **Carpetas Especiales**

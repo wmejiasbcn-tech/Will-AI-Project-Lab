@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/tokens/colors.css">
+<link rel="stylesheet" href="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/tokens/typography.css">
+<link rel="stylesheet" href="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/tokens/effects.css">
+<link rel="stylesheet" href="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/styles.css">
+<script src="_ds/will-ai-project-lab-design-system-9c500662-45cf-4681-9a44-ef71bcfd7609/_ds_bundle.js"></script>
+<style>
+html,body{margin:0;background:#0C0C12;}
+a{color:var(--gold-300);text-decoration:none;border-bottom:1px solid rgba(201,168,76,0.28);}
+a:hover{color:var(--gold-100);border-bottom-color:rgba(201,168,76,0.6);}
+</style>
+</helmet>
+
+<div style="background:#0C0C12;color:var(--text-primary);font-family:var(--font-ui);min-height:100vh;position:relative">
+
+<sc-if value="{{ showGate }}" hint-placeholder-val="{{ true }}">
+<div style="position:absolute;inset:0;z-index:8;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center, #16121e, #0a0a0e)">
+<div style="max-width:560px;padding:0 32px;text-align:center">
+<x-import component-from-global-scope="WillAIProjectLabDesignSystem_9c5006.Logomark" size="{{ 72 }}" with-wordmark="{{ false }}" hint-size="auto,72px"></x-import>
+<h1 style="margin:28px 0 0;font-family:var(--font-display);font-weight:300;font-size:52px;line-height:1;letter-spacing:.12em;color:var(--gold-500)">GRAPHY</h1>
+<div style="margin-top:14px;display:flex;justify-content:center">
+<x-import component-from-global-scope="WillAIProjectLabDesignSystem_9c5006.Chip" tone="neutral" hint-size="auto,30px">0.1 · Fase experimental</x-import>
+</div>
+<p style="margin:26px 0 0;font-family:var(--font-display);font-weight:300;font-style:italic;font-size:21px;line-height:1.6;color:var(--text-primary)">Una representación viva y navegable del ecosistema WAIPL.</p>
+<p style="margin:14px 0 0;font-size:12.5px;line-height:1.8;color:var(--text-secondary)">El Laboratorio muestra el comportamiento. Graphy muestra la estructura relacional.</p>
+<div style="margin-top:30px;display:flex;justify-content:center">
+<button onClick="{{ onEnter }}" style="background:transparent;border:1px solid var(--gold-500);color:var(--text-primary);font-family:var(--font-ui);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:14px 30px;border-radius:var(--radius-md);cursor:pointer;white-space:nowrap" style-hover="background:rgba(201,168,76,0.12)">Ver el ecosistema</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 340px;min-height:100vh">
+
+<div style="position:relative;padding:26px 30px 34px;min-width:0">
+
+<div style="display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap">
+<div style="display:flex;align-items:baseline;gap:12px">
+<x-import component-from-global-scope="WillAIProjectLabDesignSystem_9c5006.Logomark" size="{{ 30 }}" with-wordmark="{{ false }}" hint-size="30px,30px"></x-import>
+<div style="font-family:var(--font-display);font-size:26px;font-weight:300;letter-spacing:.1em;color:var(--gold-500)">GRAPHY</div>
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)">Estructura relacional · WAIPL</div>
+</div>
+<div style="display:flex;align-items:center;gap:7px;flex-wrap:wrap">
+<sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ onBack }}" style="background:transparent;border:1px solid rgba(201,168,76,0.34);color:var(--gold-300);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer;white-space:nowrap" style-hover="background:rgba(201,168,76,0.12)">← Volver</button>
+</sc-if>
+<sc-for list="{{ trail }}" as="t" hint-placeholder-count="2">
+<button onClick="{{ t.go }}" style="background:{{ t.bg }};border:1px solid {{ t.border }};color:{{ t.color }};font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer;white-space:nowrap" style-hover="background:rgba(201,168,76,0.12)">{{ t.label }}</button>
+</sc-for>
+</div>
+</div>
+
+<div style="margin-top:22px;border:1px solid rgba(201,168,76,0.14);border-radius:var(--radius-xl);background:#0A0A0E;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,0.6), inset 0 1px 0 rgba(201,168,76,0.06)">
+<div style="position:relative;width:100%;padding-bottom:64%">
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 62% 46% at 50% 34%, rgba(46,38,62,0.9), rgba(16,14,22,0.96) 58%, #08080c)"></div>
+<div style="position:absolute;inset:0;opacity:.16;background-image:repeating-linear-gradient(to right, rgba(201,168,76,0.12) 0 1px, transparent 1px 64px), repeating-linear-gradient(to bottom, rgba(201,168,76,0.09) 0 1px, transparent 1px 64px);mask-image:radial-gradient(ellipse 58% 52% at 50% 46%, #000 20%, transparent 78%);-webkit-mask-image:radial-gradient(ellipse 58% 52% at 50% 46%, #000 20%, transparent 78%)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(to bottom, transparent, rgba(201,168,76,0.045) 62%, rgba(8,8,12,0.9))"></div>
+<div style="position:absolute;inset:0;background:radial-gradient(ellipse 78% 70% at 50% 44%, transparent 42%, rgba(6,6,9,0.72))"></div>
+<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+<circle cx="50" cy="50" r="27" fill="none" stroke="#C9A86A" stroke-width="0.12" stroke-opacity="0.16"></circle>
+<circle cx="50" cy="50" r="40" fill="none" stroke="#C9A86A" stroke-width="0.1" stroke-opacity="0.08"></circle>
+<sc-for list="{{ graphEdges }}" as="e" hint-placeholder-count="3">
+<line x1="{{ e.x1 }}" y1="{{ e.y1 }}" x2="{{ e.x2 }}" y2="{{ e.y2 }}" stroke="{{ e.stroke }}" stroke-width="{{ e.width }}" stroke-opacity="{{ e.opacity }}" stroke-dasharray="{{ e.dash }}" style="transition:stroke-opacity .2s cubic-bezier(0.4,0,0.2,1)"></line>
+</sc-for>
+<sc-for list="{{ graphNodes }}" as="n" hint-placeholder-count="4">
+<g onClick="{{ n.go }}" style="cursor:pointer;transition:opacity .2s cubic-bezier(0.4,0,0.2,1)">
+<circle cx="{{ n.x }}" cy="{{ n.y }}" r="{{ n.halo }}" fill="{{ n.color }}" fill-opacity="{{ n.haloOpacity }}"></circle>
+<circle cx="{{ n.x }}" cy="{{ n.y }}" r="{{ n.r }}" fill="#0C0C12" stroke="{{ n.color }}" stroke-width="{{ n.stroke }}" stroke-opacity="0.9"></circle>
+<circle cx="{{ n.x }}" cy="{{ n.y }}" r="{{ n.core }}" fill="{{ n.color }}" fill-opacity="{{ n.coreOpacity }}"></circle>
+
+</g>
+</sc-for>
+</svg>
+<sc-for list="{{ graphNodes }}" as="n" hint-placeholder-count="4">
+<div onClick="{{ n.go }}" style="position:absolute;left:{{ n.monoLeft }};top:{{ n.monoTop }};transform:translate(-50%,-50%);cursor:pointer;font-family:var(--font-display);font-size:{{ n.monoPx }};letter-spacing:.04em;color:{{ n.monoColor }};opacity:{{ n.monoOpacity }};pointer-events:none;transition:opacity .2s cubic-bezier(0.4,0,0.2,1)">{{ n.mono }}</div>
+</sc-for>
+<sc-for list="{{ graphNodes }}" as="n" hint-placeholder-count="4">
+<div onClick="{{ n.go }}" style="position:absolute;left:{{ n.labelLeft }};top:{{ n.labelTop }};transform:translateX(-50%);cursor:pointer;white-space:nowrap;font-family:var(--font-ui);font-size:{{ n.labelPx }};letter-spacing:.06em;color:{{ n.labelColor }};transition:color .2s cubic-bezier(0.4,0,0.2,1)">{{ n.label }}</div>
+</sc-for>
+<div style="position:absolute;left:20px;bottom:16px;font-family:var(--font-mono);font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,168,76,0.42)">{{ panelKicker }}</div>
+</div>
+</div>
+
+<div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:10.5px;color:var(--text-muted)">
+<sc-for list="{{ legend }}" as="g" hint-placeholder-count="4">
+<div style="display:flex;align-items:center;gap:7px">
+<span style="width:16px;height:0;border-top:1px {{ g.style }} {{ g.color }};display:inline-block"></span>
+<span style="letter-spacing:.06em">{{ g.label }}</span>
+</div>
+</sc-for>
+</div>
+
+</div>
+
+<div style="border-left:1px solid rgba(201,168,76,0.12);background:rgba(6,6,8,0.5);padding:26px 26px 40px;min-width:0;overflow-y:auto">
+
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-500)">{{ panelKicker }}</div>
+<div style="margin-top:10px;font-family:var(--font-display);font-weight:300;font-size:29px;line-height:1.12;color:var(--text-primary)">{{ panelName }}</div>
+<div style="margin-top:6px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--text-muted)">{{ panelKind }}</div>
+<p style="margin:16px 0 0;font-family:var(--font-display);font-style:italic;font-weight:300;font-size:16px;line-height:1.65;color:var(--text-secondary)">{{ panelNote }}</p>
+
+<div style="margin:24px 0 12px;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.34),transparent)"></div>
+
+<div style="margin-bottom:20px;padding:16px 17px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);background:var(--surface-card)">
+<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+<span style="font-family:var(--font-display);font-size:30px;line-height:1;color:var(--text-primary)">{{ summary.total }}</span>
+<span style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)">relaciones · {{ summary.estado }}</span>
+</div>
+<div style="margin-top:11px;display:flex;flex-wrap:wrap;gap:7px">
+<sc-for list="{{ summary.counts }}" as="c" hint-placeholder-count="2">
+<span style="font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:{{ c.color }};border:1px solid {{ c.color }};border-radius:var(--radius-pill);padding:3px 9px;opacity:.85;white-space:nowrap">{{ c.n }} {{ c.label }}</span>
+</sc-for>
+</div>
+<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:11px 14px">
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Predomina</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ summary.dominantType }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Procedencia</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ summary.dominantProvenance }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Más fuerte</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ summary.strongest }}</div>
+</div>
+</div>
+<div style="margin-top:13px;padding-top:12px;border-top:1px solid var(--border-subtle)">
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Conecta con</div>
+<div style="margin-top:4px;font-family:var(--font-ui);font-size:11.5px;line-height:1.6;color:var(--text-secondary);text-wrap:pretty">{{ summary.connects }}</div>
+</div>
+</div>
+<div style="margin-bottom:22px;padding:17px 18px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);background:var(--surface-card)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-500)">Mapa relacional</div>
+<button onClick="{{ onResetMap }}" style="background:transparent;border:1px solid rgba(201,168,76,0.24);color:var(--text-secondary);font-family:var(--font-ui);font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">Limpiar mapa</button>
+</div>
+<div style="margin-top:6px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">{{ map.depthLabel }}</div>
+<div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:7px">
+<sc-for list="{{ map.counts }}" as="c" hint-placeholder-count="2">
+<span style="font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:{{ c.color }};border:1px solid {{ c.color }};border-radius:var(--radius-pill);padding:3px 9px;opacity:.85;white-space:nowrap">{{ c.n }} {{ c.label }}</span>
+</sc-for>
+</div>
+<div style="margin-top:13px;position:relative;width:100%;padding-bottom:70%;border:1px solid rgba(201,168,76,0.1);border-radius:var(--radius-sm);background:radial-gradient(ellipse at 50% 46%, rgba(26,22,34,0.8), rgba(10,10,14,0.95))">
+<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" style="position:absolute;inset:0;width:100%;height:100%;display:block">
+<sc-for list="{{ map.edges }}" as="e" hint-placeholder-count="3">
+<line onClick="{{ e.select }}" x1="{{ e.x1 }}" y1="{{ e.y1 }}" x2="{{ e.x2 }}" y2="{{ e.y2 }}" stroke="{{ e.stroke }}" stroke-width="{{ e.width }}" stroke-opacity="{{ e.opacity }}" stroke-dasharray="{{ e.dash }}" style="cursor:pointer"></line>
+</sc-for>
+<sc-for list="{{ map.nodes }}" as="n" hint-placeholder-count="4">
+<g onClick="{{ n.go }}" style="cursor:pointer">
+<circle cx="{{ n.x }}" cy="{{ n.y }}" r="{{ n.halo }}" fill="{{ n.color }}" fill-opacity="{{ n.haloOpacity }}"></circle>
+<circle cx="{{ n.x }}" cy="{{ n.y }}" r="{{ n.r }}" fill="{{ n.color }}" fill-opacity="{{ n.opacity }}"></circle>
+</g>
+</sc-for>
+</svg>
+<sc-for list="{{ map.nodes }}" as="n" hint-placeholder-count="4">
+<div onClick="{{ n.expand }}" style="position:absolute;left:{{ n.labelLeft }};top:{{ n.labelTop }};transform:translateX(-50%);cursor:pointer;white-space:nowrap;font-family:var(--font-ui);font-size:9.5px;letter-spacing:.03em;color:var(--text-secondary);opacity:{{ n.labelOpacity }}" style-hover="color:var(--gold-300)">{{ n.label }}</div>
+</sc-for>
+</div>
+</div>
+
+<div style="margin-bottom:22px;padding:17px 18px;border:1px solid var(--border-subtle);border-radius:var(--radius-md);background:var(--surface-card)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap">
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-500)">Red relacional</div>
+<button onClick="{{ onResetNetwork }}" style="background:transparent;border:1px solid rgba(201,168,76,0.24);color:var(--text-secondary);font-family:var(--font-ui);font-size:9px;letter-spacing:.12em;text-transform:uppercase;padding:5px 11px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">Red global</button>
+</div>
+<div style="margin-top:9px;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+<span style="font-family:var(--font-display);font-size:22px;line-height:1.2;color:var(--text-primary)">{{ network.centerName }}</span>
+<span style="font-family:var(--font-mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">{{ network.centerKind }} · {{ network.total }} relaciones</span>
+</div>
+<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:7px">
+<sc-for list="{{ network.counts }}" as="c" hint-placeholder-count="2">
+<span style="font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:{{ c.color }};border:1px solid {{ c.color }};border-radius:var(--radius-pill);padding:3px 9px;opacity:.85;white-space:nowrap">{{ c.n }} {{ c.label }}</span>
+</sc-for>
+</div>
+<sc-if value="{{ network.hasRows }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:14px;display:grid;gap:6px">
+<sc-for list="{{ network.rows }}" as="r" hint-placeholder-count="3">
+<button onClick="{{ r.select }}" style="text-align:left;background:transparent;border:1px solid {{ r.border }};border-radius:var(--radius-sm);padding:9px 11px;cursor:pointer;opacity:{{ r.opacity }};display:grid;gap:3px" style-hover="background:rgba(201,168,76,0.06)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+<span style="font-family:var(--font-ui);font-size:12.5px;color:var(--text-secondary)">{{ r.name }}</span>
+<span style="font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:{{ r.provColor }}">{{ r.type }}</span>
+</div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">{{ r.prov }} · {{ r.state }} · peso {{ r.weight }} · {{ r.visibility }} · {{ r.dir }}</div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-300);opacity:.7" onClick="{{ r.go }}">Hacer foco →</div>
+</button>
+</sc-for>
+</div>
+</sc-if>
+</div>
+
+<sc-if value="{{ temporal.on }}" hint-placeholder-val="{{ false }}">
+<div style="margin-bottom:22px;padding:17px 18px;border:1px solid rgba(201,168,76,0.26);border-radius:var(--radius-md);background:var(--surface-card)">
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-500)">Evolución de la relación</div>
+<div style="margin-top:9px;font-family:var(--font-display);font-size:20px;line-height:1.3;color:var(--text-primary)">{{ temporal.source }} → {{ temporal.target }}</div>
+<div style="margin-top:5px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">{{ temporal.moment }}</div>
+<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px 14px">
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Tipo</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ temporal.type }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Procedencia</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ temporal.prov }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Estado</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ temporal.state }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Peso</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ temporal.weight }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Visibilidad</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">{{ temporal.visibility }}</div>
+</div>
+<div>
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">Sello · edad</div>
+<div style="margin-top:3px;font-family:var(--font-ui);font-size:12px;color:var(--text-secondary)">t{{ temporal.stamp }} · {{ temporal.age }}</div>
+</div>
+</div>
+<div style="margin-top:15px;display:flex;gap:7px;flex-wrap:wrap">
+<button onClick="{{ onCapture }}" style="background:transparent;border:1px solid rgba(201,168,76,0.34);color:var(--gold-300);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">Ver evolución</button>
+<button onClick="{{ onStepBack }}" style="background:transparent;border:1px solid rgba(201,168,76,0.24);color:var(--text-secondary);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">← Antes</button>
+<button onClick="{{ onStepFwd }}" style="background:transparent;border:1px solid rgba(201,168,76,0.24);color:var(--text-secondary);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">Después →</button>
+<button onClick="{{ onCurrent }}" style="background:transparent;border:1px solid rgba(201,168,76,0.24);color:var(--text-secondary);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">Actual</button>
+<button onClick="{{ onResetTime }}" style="background:transparent;border:1px solid rgba(156,129,189,0.34);color:var(--violet-300);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(156,129,189,0.12)">Limpiar</button>
+</div>
+<sc-if value="{{ temporal.hasSnaps }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:15px;padding-top:13px;border-top:1px solid var(--border-subtle)">
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted)">Snapshots · {{ temporal.count }}</div>
+<div style="margin-top:8px;display:grid;gap:5px">
+<sc-for list="{{ temporal.snaps }}" as="s" hint-placeholder-count="2">
+<button onClick="{{ s.pick }}" style="text-align:left;background:transparent;border:none;padding:0;cursor:pointer;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.04em;color:{{ s.color }}" style-hover="color:var(--gold-300)">{{ s.label }}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<div style="margin-bottom:20px;display:flex;gap:8px;flex-wrap:wrap">
+<button onClick="{{ onCompare }}" style="background:transparent;border:1px solid rgba(201,168,76,0.34);color:var(--gold-300);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(201,168,76,0.12)">Comparar con…</button>
+<sc-if value="{{ cmpOn }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ onClearCompare }}" style="background:transparent;border:1px solid rgba(156,129,189,0.34);color:var(--violet-300);font-family:var(--font-ui);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:var(--radius-pill);cursor:pointer" style-hover="background:rgba(156,129,189,0.12)">Limpiar comparación</button>
+</sc-if>
+</div>
+
+<sc-if value="{{ cmpWaiting }}" hint-placeholder-val="{{ false }}">
+<div style="margin-bottom:20px;padding:13px 15px;border:1px dashed rgba(201,168,76,0.34);border-radius:var(--radius-md)">
+<div style="font-family:var(--font-ui);font-size:12px;line-height:1.6;color:var(--text-secondary)">Elige el segundo nodo.</div>
+<div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:6px">
+<sc-for list="{{ cmpCandidates }}" as="c" hint-placeholder-count="4">
+<button onClick="{{ c.pick }}" style="background:transparent;border:1px solid rgba(201,168,76,0.24);color:var(--text-secondary);font-family:var(--font-ui);font-size:10.5px;padding:5px 11px;border-radius:var(--radius-pill);cursor:pointer;white-space:nowrap" style-hover="background:rgba(201,168,76,0.12)">{{ c.name }}</button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ cmpOn }}" hint-placeholder-val="{{ false }}">
+<div style="margin-bottom:22px;padding:17px 18px;border:1px solid rgba(201,168,76,0.26);border-radius:var(--radius-md);background:var(--surface-card)">
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-500)">Comparación</div>
+<div style="margin-top:9px;font-family:var(--font-display);font-size:22px;line-height:1.25;color:var(--text-primary)">{{ compare.aName }} ↔ {{ compare.bName }}</div>
+<div style="margin-top:6px;font-family:var(--font-mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">{{ compare.tally }}</div>
+
+<sc-if value="{{ compare.hasShared }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:17px">
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-300)">Relaciones compartidas</div>
+<div style="margin-top:8px;display:grid;gap:7px">
+<sc-for list="{{ compare.shared }}" as="s" hint-placeholder-count="2">
+<div style="border-left:1px solid {{ s.provColor }};padding-left:11px">
+<div style="font-family:var(--font-ui);font-size:12.5px;color:var(--text-secondary)">{{ s.other }} · {{ s.type }}</div>
+<div style="margin-top:3px;font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">{{ s.prov }} · {{ s.state }} · peso {{ s.weight }} / {{ s.bWeight }} · t{{ s.stamp }}</div>
+<sc-if value="{{ s.hasDiff }}" hint-placeholder-val="{{ false }}">
+<div style="margin-top:3px;font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--violet-300)">Difiere: {{ s.diff }}</div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ compare.hasOnlyA }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:17px">
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-300)">Solo {{ compare.aName }}</div>
+<div style="margin-top:8px;display:grid;gap:7px">
+<sc-for list="{{ compare.onlyA }}" as="s" hint-placeholder-count="2">
+<div style="border-left:1px solid {{ s.provColor }};padding-left:11px">
+<div style="font-family:var(--font-ui);font-size:12.5px;color:var(--text-secondary)">{{ s.other }} · {{ s.type }}</div>
+<div style="margin-top:3px;font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">{{ s.prov }} · {{ s.state }} · peso {{ s.weight }} · t{{ s.stamp }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ compare.hasOnlyB }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:17px">
+<div style="font-family:var(--font-mono);font-size:7.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet-300)">Solo {{ compare.bName }}</div>
+<div style="margin-top:8px;display:grid;gap:7px">
+<sc-for list="{{ compare.onlyB }}" as="s" hint-placeholder-count="2">
+<div style="border-left:1px solid {{ s.provColor }};padding-left:11px">
+<div style="font-family:var(--font-ui);font-size:12.5px;color:var(--text-secondary)">{{ s.other }} · {{ s.type }}</div>
+<div style="margin-top:3px;font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">{{ s.prov }} · {{ s.state }} · peso {{ s.weight }} · t{{ s.stamp }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-500)">Relaciones · {{ relCount }}</div>
+<sc-if value="{{ hasRelFocus }}" hint-placeholder-val="{{ false }}">
+<button onClick="{{ onClear }}" style="background:transparent;border:1px solid rgba(201,168,76,0.3);color:var(--gold-300);font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;padding:4px 9px;border-radius:var(--radius-pill);cursor:pointer;white-space:nowrap" style-hover="background:rgba(201,168,106,0.12)">Limpiar selección</button>
+</sc-if>
+</div>
+<div style="margin-top:14px;display:grid;gap:9px">
+<sc-for list="{{ relations }}" as="r" hint-placeholder-count="3">
+<button onClick="{{ r.select }}" style="text-align:left;background:var(--surface-card);border:1px solid {{ r.border }};border-radius:var(--radius-md);padding:11px 13px;cursor:pointer;font-family:var(--font-ui);width:100%;opacity:{{ r.opacity }}" style-hover="background:var(--surface-card-hover)">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+<span style="font-size:13.5px;color:var(--text-primary)">{{ r.name }}</span>
+<span style="font-family:var(--font-mono);font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:{{ r.tagColor }};white-space:nowrap">{{ r.rel }}</span>
+</div>
+<div style="margin-top:4px;font-size:11px;color:var(--text-muted)">{{ r.kind }}</div>
+<div style="margin-top:5px;font-family:var(--font-mono);font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:{{ r.tagColor }};opacity:.75">{{ r.prov }} · {{ r.provNote }}</div>
+<div style="margin-top:4px;display:flex;flex-wrap:wrap;gap:8px;font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)">
+<span>{{ r.state }}</span><span>peso {{ r.weight }}</span><span>{{ r.pair }}</span><span>t{{ r.stamp }}</span>
+</div>
+<div style="margin-top:6px;font-family:var(--font-mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-300);opacity:.7" onClick="{{ r.go }}">Ir al nodo →</div>
+</button>
+</sc-for>
+</div>
+
+<sc-if value="{{ hasAbsent }}" hint-placeholder-val="{{ true }}">
+<div style="margin-top:26px">
+<div style="font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet-300)">Ausente a propósito</div>
+<div style="margin-top:12px;display:grid;gap:11px">
+<sc-for list="{{ absent }}" as="a" hint-placeholder-count="2">
+<div style="border-left:1px solid rgba(156,129,189,0.35);padding-left:12px">
+<div style="font-size:12px;color:var(--text-secondary)">{{ a.what }}</div>
+<div style="margin-top:4px;font-size:11px;line-height:1.6;color:var(--text-muted)">{{ a.why }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<div style="margin-top:30px;font-size:11px;line-height:1.7;color:var(--text-muted)">Graphy 0.1 no es una física definitiva, ni una ontología canónica, ni un modelo validado, ni una arquitectura cerrada. El comportamiento se observa en <a href="WAIPL MVP.dc.html">el laboratorio</a>.</div>
+
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { entered: false, focus: 'waipl', relFocus: null, data: null };
+
+  componentDidMount() {
+    // La topologia se carga desde la capa de datos: la vista no la conoce.
+    import('./graphy-data.js').then((m) => this.setState({ data: m })).catch(() => {});
+  }
+
+  ACCENTS = { gold: '#C9A86A', violet: '#9C81BD', white: '#F2EFE9' };
+  SOURCE_COLOR = { master: '#C9A86A', mvp: '#C9A86A', experimental: '#9C81BD' };
+
+  // Historial de navegacion: pila de instantaneas del contexto, no de eventos.
+  pushHistory() {
+    const h = (this.state.hist || []).slice(-24);
+    h.push({ focus: this.state.focus, relFocus: this.state.relFocus,
+      cmpMode: this.state.cmpMode || false, cmpB: this.state.cmpB || null });
+    return h;
+  }
+
+  // ComparisonFocus: A es el nodo en foco; B se elige en modo comparacion.
+  startCompare = () => {
+    if (this.state.data) this.state.data.tickSimulated();
+    this.setState({ cmpMode: true, cmpB: null, relFocus: null, hist: this.pushHistory() });
+  };
+  pickCompare(id) {
+    if (id === this.state.focus) return;
+    this.setState({ cmpMode: false, cmpB: id, relFocus: null, hist: this.pushHistory() });
+  }
+  // ComparisonReset: devuelve al nodo A sin alterar el resto del contexto.
+  clearCompare = () => {
+    if (this.state.data) this.state.data.tickSimulated();
+    if (!this.state.cmpMode && !this.state.cmpB) return;
+    this.setState({ cmpMode: false, cmpB: null, hist: this.pushHistory() });
+  };
+
+  // RelationalMapContext: ensambla lo ya existente. Profundidad maxima de dos saltos.
+  relationalMapContext(data, focus, expandId) {
+    const all = data.relationships();
+    const around = (id) => all.filter((e) => e.source === id || e.target === id);
+    const other = (e, id) => (e.source === id ? e.target : e.source);
+    const first = around(focus);
+    const firstIds = first.map((e) => other(e, focus));
+    const second = expandId && firstIds.indexOf(expandId) >= 0
+      ? around(expandId).filter((e) => {
+        const o = other(e, expandId);
+        return o !== focus && firstIds.indexOf(o) < 0;
+      })
+      : [];
+    return { data, focus, center: data.nodeById(focus), first, second, expandId,
+      depth: second.length ? 2 : 1, other };
+  }
+
+  // RelationalMapResolver: RelationalMapNode + RelationalMapEdge. Sin fisica, sin inferencia.
+  relationalMapResolver(ctx, relFocus) {
+    const { data, focus, first, second, expandId, other } = ctx;
+    const PROV = data.PROVENANCE || {}, TYPE = data.RELATION_TYPES || {}, ST = data.REL_STATES || {};
+    const strokeOf = (p) => p === 'experimental' ? '#9C81BD' : p === 'derived' ? '#6E6E78' : '#C9A86A';
+    const dashOf = (t) => {
+      const s = (TYPE[t] || {}).stroke;
+      return s === 'dashed' ? '1.4 1.4' : s === 'dotted' ? '0.5 1.2' : 'none';
+    };
+    const opacityOf = (state, hop, hit) => {
+      const base = (ST[state] || {}).opacity != null ? ST[state].opacity : 0.7;
+      const byHop = hop === 2 ? base * 0.45 : base;
+      return (hit ? Math.min(1, byHop + 0.3) : byHop).toFixed(2);
+    };
+    const nodes = [], edges = [];
+    const cx = 50, cy = 50;
+    nodes.push({ id: focus, x: cx, y: cy, r: '3.4', halo: '7',
+      color: '#F2EFE9', haloOpacity: '0.14', opacity: '1',
+      label: ctx.center ? ctx.center.name : focus, size: '3.4',
+      labelLeft: '50%', labelTop: 'calc(50% + 6%)', labelOpacity: '1',
+      go: () => this.focusOn(focus) });
+    const n1 = first.length || 1;
+    first.forEach((e, i) => {
+      const id = other(e, focus);
+      const nd = data.nodeById(id);
+      const a = (-Math.PI / 2) + (i * 2 * Math.PI) / n1;
+      const x = cx + Math.cos(a) * 27, y = cy + Math.sin(a) * 24;
+      const rid = focus + '→' + id + ':' + e.type;
+      const hit = relFocus === rid;
+      edges.push({ x1: cx, y1: cy, x2: x, y2: y, stroke: strokeOf(e.provenance),
+        width: (0.25 + Number(e.weight || 0.2) * 2).toFixed(2), dash: dashOf(e.type),
+        opacity: opacityOf(e.state, 1, hit), select: () => this.focusRelation(rid) });
+      nodes.push({ id, x, y, r: expandId === id ? '2.8' : '2.2', halo: '5.4',
+        color: strokeOf(e.provenance), haloOpacity: expandId === id ? '0.2' : '0.1',
+        opacity: relFocus && !hit ? '0.55' : '1',
+        label: nd ? nd.name : id, size: '2.2',
+        labelLeft: x + '%', labelTop: (y + 5) + '%', labelOpacity: relFocus && !hit ? '0.55' : '0.85',
+        go: () => this.focusOn(id),
+        expand: (ev) => { if (ev && ev.stopPropagation) ev.stopPropagation();
+          this.setState({ mapExpand: this.state.mapExpand === id ? null : id }); } });
+    });
+    if (second.length && expandId) {
+      const base = nodes.find((n) => n.id === expandId);
+      const n2 = second.length;
+      second.forEach((e, i) => {
+        const id = other(e, expandId);
+        const nd = data.nodeById(id);
+        const spread = Math.min(Math.PI * 1.55, 0.4 * n2);
+        const a = Math.atan2(base.y - cy, base.x - cx) - spread / 2 + (n2 === 1 ? spread / 2 : (i * spread) / (n2 - 1));
+        const rr = i % 2 ? 24 : 15;
+        const x = base.x + Math.cos(a) * rr, y = base.y + Math.sin(a) * (rr * 0.86);
+        edges.push({ x1: base.x, y1: base.y, x2: x, y2: y, stroke: strokeOf(e.provenance),
+          width: (0.2 + Number(e.weight || 0.2) * 1.4).toFixed(2), dash: dashOf(e.type),
+          opacity: opacityOf(e.state, 2, false), select: () => this.focusOn(id) });
+        nodes.push({ id: id + '@2', x, y, r: '1.5', halo: '3.4',
+          color: strokeOf(e.provenance), haloOpacity: '0.07', opacity: '0.5',
+          label: nd ? nd.name : id, size: '1.5',
+          labelLeft: x + '%', labelTop: (y + (i % 2 ? 3.4 : -6.2)) + '%',
+          // Regla de presentacion determinista: con mas de ocho vecinos en el segundo salto
+          // la etiqueta se reserva para el nodo senalado. Ningun nodo ni relacion se elimina.
+          labelOpacity: n2 > 8 ? (relFocus && relFocus.indexOf(id) >= 0 ? '0.8' : '0') : '0.5',
+          go: () => this.focusOn(id), expand: () => this.focusOn(id) });
+      });
+    }
+    const by = (p) => first.filter((e) => e.provenance === p).length;
+    return { nodes, edges, depth: ctx.depth,
+      counts: [
+        { n: by('master'), label: 'declaradas', color: '#C9A86A' },
+        { n: by('experimental'), label: 'experimentales', color: '#9C81BD' },
+        { n: by('derived'), label: 'derivadas', color: '#6E6E78' }
+      ].filter((c) => c.n > 0),
+      first: first.length, second: second.length,
+      expandName: expandId ? (data.nodeById(expandId) || {}).name || expandId : '' };
+  }
+
+  // RelationalMapReset: suelta la expansion y devuelve el foco al ecosistema.
+  resetMap = () => {
+    if (this.state.data) this.state.data.tickSimulated();
+    this.setState({ focus: 'waipl', relFocus: null, mapExpand: null, hist: this.pushHistory() });
+  };
+
+  // NetworkContext: la estructura relacional del nodo en foco, leida de relationships().
+  networkContext(data, focus) {
+    const all = data.relationships().filter((e) => e.source === focus || e.target === focus);
+    return { data, center: data.nodeById(focus), focus, edges: all };
+  }
+
+  // NetworkResolver: NetworkNode + NetworkRelation existentes. No infiere, no agrupa por semantica.
+  networkResolver(ctx, relFocus) {
+    const { data, edges, focus } = ctx;
+    const PROV = data.PROVENANCE || {}, TYPE = data.RELATION_TYPES || {}, ST = data.REL_STATES || {};
+    const rows = edges.map((e) => {
+      const otherId = e.source === focus ? e.target : e.source;
+      const node = data.nodeById(otherId);
+      const rid = focus + '→' + otherId + ':' + e.type;
+      const hit = relFocus === rid;
+      return {
+        id: rid, otherId,
+        name: node ? node.name : otherId, kind: node ? node.kind : '',
+        type: (TYPE[e.type] || {}).label || e.type,
+        prov: (PROV[e.provenance] || {}).status || e.provenance,
+        provKey: e.provenance,
+        provColor: (PROV[e.provenance] || {}).color || '#C9A86A',
+        state: (ST[e.state] || {}).label || e.state,
+        weight: Number(e.weight || 0).toFixed(2),
+        visibility: e.visibility || 'visible',
+        dir: e.source === focus ? 'sale' : 'entra',
+        hit,
+        border: hit ? 'rgba(201,168,76,0.55)' : 'var(--border-subtle)',
+        opacity: relFocus && !hit ? '0.5' : '1',
+        select: () => this.focusRelation(rid),
+        go: (ev) => { if (ev && ev.stopPropagation) ev.stopPropagation(); this.focusOn(otherId); }
+      };
+    }).sort((x, y) => x.name.localeCompare(y.name) || x.type.localeCompare(y.type));
+    const by = (p) => rows.filter((r) => r.provKey === p).length;
+    return {
+      rows, total: rows.length,
+      counts: [
+        { n: by('master'), label: 'declaradas', color: '#C9A86A' },
+        { n: by('experimental'), label: 'experimentales', color: '#9C81BD' },
+        { n: by('derived'), label: 'derivadas', color: '#6E6E78' }
+      ].filter((c) => c.n > 0)
+    };
+  }
+
+  // NetworkReset: devuelve el foco al ecosistema y suelta el resaltado, sin tocar el resto.
+  resetNetwork = () => {
+    if (this.state.data) this.state.data.tickSimulated();
+    this.setState({ focus: 'waipl', relFocus: null, hist: this.pushHistory() });
+  };
+
+  // TemporalRelationContext: la relacion seleccionada tal como la emite la capa de datos.
+  temporalContext(data, relId, focus, relFocus) {
+    if (!relId) return null;
+    const head = String(relId).split(':');
+    const type = head[1];
+    const pair = head[0].split('→');
+    const rec = data.relationships().find((e) =>
+      ((e.source === pair[0] && e.target === pair[1]) || (e.source === pair[1] && e.target === pair[0])) && e.type === type);
+    if (!rec) return null;
+    const st = this.relStateFor({ node: data.nodeById(pair[1]), rel: type, source: rec.provenance }, focus, relFocus);
+    return { data, rec, type, a: data.nodeById(rec.source), b: data.nodeById(rec.target), liveState: st };
+  }
+
+  // TemporalRelationResolver: lee un instante simulado. No escribe en el dato fuente.
+  temporalResolver(ctx) {
+    const { data, rec, liveState } = ctx;
+    const ST = data.REL_STATES || {}, PROV = data.PROVENANCE || {}, TYPE = data.RELATION_TYPES || {};
+    return {
+      t: data.nowSimulated(),
+      state: liveState, stateLabel: (ST[liveState] || {}).label || liveState,
+      weight: Number(rec.weight || 0).toFixed(2),
+      visibility: rec.visibility || 'visible',
+      provenance: (PROV[rec.provenance] || {}).status || rec.provenance,
+      updatedAt: Number(rec.updatedAtSimulated || 0),
+      type: (TYPE[rec.type] || {}).label || rec.type
+    };
+  }
+
+  // TemporalRelationSnapshot: se registra solo cuando algo distinto del sello ha cambiado.
+  captureSnapshot = () => {
+    const data = this.state.data;
+    if (!data) return;
+    const relId = this.state.relFocus;
+    const ctx = this.temporalContext(data, relId, this.state.focus, relId);
+    if (!ctx) return;
+    data.tickSimulated();
+    const snaps = (this.state.relTimelineFor === relId ? (this.state.relTimeline || []) : []).slice(-24);
+    const shot = this.temporalResolver(ctx);
+    const last = snaps[snaps.length - 1];
+    const same = last && last.state === shot.state && last.weight === shot.weight
+      && last.visibility === shot.visibility && last.provenance === shot.provenance
+      && last.t === shot.t;
+    if (!same) snaps.push(shot);
+    this.setState({ relTimeline: snaps, relTimelineFor: relId, relCursor: null });
+  };
+  stepTime = (d) => {
+    const snaps = this.state.relTimeline || [];
+    if (!snaps.length) return;
+    const cur = this.state.relCursor == null ? snaps.length - 1 : this.state.relCursor;
+    const next = Math.max(0, Math.min(snaps.length - 1, cur + d));
+    this.setState({ relCursor: next });
+  };
+  stepBackTime = () => this.stepTime(-1);
+  stepFwdTime = () => this.stepTime(1);
+  toCurrentTime = () => this.setState({ relCursor: null });
+  // TemporalRelationReset: limpia snapshots y cursor sin tocar el dato.
+  resetTimeline = () => this.setState({ relTimeline: [], relTimelineFor: null, relCursor: null });
+
+  // ComparisonContext: las dos lecturas del master, sin derivar nada.
+  comparisonContext(data, aId, bId) {
+    const all = data.relationships();
+    const of = (id) => all.filter((e) => e.source === id || e.target === id)
+      .map((e) => ({ other: e.source === id ? e.target : e.source, type: e.type,
+        provenance: e.provenance, status: e.status, state: e.state, weight: e.weight,
+        stamp: e.updatedAtSimulated }));
+    return { data, a: data.nodeById(aId), b: data.nodeById(bId), aRels: of(aId), bRels: of(bId) };
+  }
+
+  // ComparisonResolver: clasifica relaciones existentes. No infiere por similitud.
+  comparisonResolver(ctx) {
+    const { data, aRels, bRels } = ctx;
+    const key = (r) => r.other + ':' + r.type;
+    const nameOf = (id) => { const n = data.nodeById(id); return n ? n.name : id; };
+    const PROV = data.PROVENANCE || {}, TYPE = data.RELATION_TYPES || {}, ST = data.REL_STATES || {};
+    const decorate = (r) => ({
+      other: nameOf(r.other), type: (TYPE[r.type] || {}).label || r.type,
+      prov: (PROV[r.provenance] || {}).status || r.provenance,
+      provColor: (PROV[r.provenance] || {}).color || '#C9A86A',
+      state: (ST[r.state] || {}).label || r.state,
+      weight: Number(r.weight || 0).toFixed(2),
+      stamp: Number(r.stamp || 0).toFixed(0)
+    });
+    const sorter = (x, y) => x.other.localeCompare(y.other) || x.type.localeCompare(y.type);
+    const bKeys = {}; bRels.forEach((r) => { bKeys[key(r)] = r; });
+    const aKeys = {}; aRels.forEach((r) => { aKeys[key(r)] = r; });
+    const shared = aRels.filter((r) => bKeys[key(r)]).map((r) => {
+      const o = bKeys[key(r)], da = decorate(r), db = decorate(o);
+      const diffs = [];
+      if (da.weight !== db.weight) diffs.push('peso ' + da.weight + ' / ' + db.weight);
+      if (da.prov !== db.prov) diffs.push('procedencia ' + da.prov + ' / ' + db.prov);
+      if (da.state !== db.state) diffs.push('estado ' + da.state + ' / ' + db.state);
+      return Object.assign(da, { bWeight: db.weight, bProv: db.prov, bState: db.state,
+        diff: diffs.join(' · '), hasDiff: diffs.length > 0 });
+    }).sort(sorter);
+    return {
+      shared,
+      onlyA: aRels.filter((r) => !bKeys[key(r)]).map(decorate).sort(sorter),
+      onlyB: bRels.filter((r) => !aKeys[key(r)]).map(decorate).sort(sorter)
+    };
+  }
+
+  // Seleccionar un nodo limpia la seleccion de relacion, y viceversa: el foco es uno.
+  focusOn = (id) => {
+    if (this.state.data) this.state.data.tickSimulated();
+    if (this.state.cmpMode) return this.pickCompare(id);
+    if (id === this.state.focus && !this.state.relFocus) return;
+    this.setState({ focus: id, relFocus: null, mapExpand: null, hist: this.pushHistory() });
+  };
+  focusRelation = (relId) => {
+    if (this.state.data) this.state.data.tickSimulated();
+    const next = this.state.relFocus === relId ? null : relId;
+    this.setState({ relFocus: next, hist: this.pushHistory() });
+  };
+  goBack = () => {
+    const h = (this.state.hist || []).slice();
+    if (!h.length) return;
+    if (this.state.data) this.state.data.tickSimulated();
+    const prev = h.pop();
+    this.setState({ focus: prev.focus, relFocus: prev.relFocus,
+      cmpMode: prev.cmpMode || false, cmpB: prev.cmpB || null, hist: h });
+  };
+  clearSelection = () => {
+    if (this.state.data) this.state.data.tickSimulated();
+    if (this.state.focus === 'waipl' && !this.state.relFocus) return;
+    this.setState({ focus: 'waipl', relFocus: null, hist: this.pushHistory() });
+  };
+
+  // RelationshipSummaryContext: todo lo que la sintesis necesita saber, sin tocar el motor.
+  summaryContext(data, focus, ring, stateOf) {
+    return { data, focus, ring, stateOf, node: data.nodeById(focus) };
+  }
+
+  // RelationshipSummaryResolver: cuenta y ordena lo que ya existe. No crea relaciones.
+  summaryResolver(ctx) {
+    const { data, ring, stateOf } = ctx;
+    const TYPE = data.RELATION_TYPES || {};
+    const PROV = data.PROVENANCE || {};
+    const states = ring.map(stateOf);
+    const byProv = (p) => ring.filter((r) => r.source === p).length;
+    const tally = {};
+    ring.forEach((r) => { tally[r.rel] = (tally[r.rel] || 0) + 1; });
+    const top = Object.keys(tally).sort((a, b) => tally[b] - tally[a] || a.localeCompare(b))[0];
+    const provTally = {};
+    ring.forEach((r) => { provTally[r.source] = (provTally[r.source] || 0) + 1; });
+    const topProv = Object.keys(provTally).sort((a, b) => provTally[b] - provTally[a] || a.localeCompare(b))[0];
+    const weighed = ring.slice().sort((a, b) => {
+      const wa = (TYPE[a.rel] || {}).width || 0, wb = (TYPE[b.rel] || {}).width || 0;
+      return wb - wa || a.node.name.localeCompare(b.node.name);
+    })[0];
+    return {
+      total: ring.length,
+      active: states.filter((s) => s === 'ACTIVE').length,
+      focused: states.filter((s) => s === 'FOCUSED').length,
+      dimmed: states.filter((s) => s === 'DIMMED').length,
+      declared: byProv('master'), experimental: byProv('experimental'), derived: byProv('derived'),
+      relatedNodes: ring.map((r) => r.node.name),
+      strongest: weighed ? weighed.node.name : '—',
+      dominantType: top ? ((TYPE[top] || {}).label || top) : '—',
+      dominantProvenance: topProv ? ((PROV[topProv] || {}).status || topProv) : '—'
+    };
+  }
+
+  // Estado relacional: lo fija la interaccion, no los datos. Sin memoria y sin bucles.
+  relStateFor(item, focusId, relFocus) {
+    const id = focusId + '→' + item.node.id + ':' + item.rel;
+    const rid = item.node.id + '→' + focusId + ':' + item.rel;
+    if (relFocus) return (relFocus === id || relFocus === rid) ? 'FOCUSED' : 'DIMMED';
+    return item.source === 'experimental' ? 'ACTIVE' : 'ACTIVE';
+  }
+
+  // Presentacion: posiciones deterministas derivadas del nivel y del indice. Sin fisica.
+  // En una presencia se muestran sus relaciones declaradas y, en un anillo exterior atenuado,
+  // las presencias con las que comparte laboratorio (relacion deducida, nunca declarada).
+  layoutPresence(data, focus) {
+    const rels = data.relationshipsOf(focus);
+    const declared = rels.filter((r) => r.provenance !== 'derived');
+    const derived = rels.filter((r) => r.provenance === 'derived');
+    const place = (list, rx, ry, offset) => list.map((r, i) => {
+      const node = data.nodeById(r.id);
+      const a = (-Math.PI / 2) + offset + (i * 2 * Math.PI) / (list.length || 1);
+      return node ? { node, rel: r.type, source: r.provenance, status: r.status,
+        x: 50 + Math.cos(a) * rx, y: 50 + Math.sin(a) * ry } : null;
+    }).filter(Boolean);
+    return {
+      center: { node: data.nodeById(focus), x: 50, y: 50 },
+      ring: place(declared, 20, 17, 0).concat(place(derived, 41, 36, 0.28))
+    };
+  }
+
+  layout(data, focus) {
+    const node = data.nodeById(focus);
+    if (node && node.level === 'presence') return this.layoutPresence(data, focus);
+    const neigh = data.neighborsOf(focus);
+    const center = data.nodeById(focus);
+    const ring = neigh.map((n) => data.nodeById(n.id)).filter(Boolean);
+    const n = ring.length || 1;
+    const rx = n > 6 ? 40 : 33, ry = n > 6 ? 35 : 30;
+    return {
+      center: { node: center, x: 50, y: 50 },
+      ring: ring.map((node, i) => {
+        const a = (-Math.PI / 2) + (i * 2 * Math.PI) / n;
+        return {
+          node,
+          rel: neigh[i].rel,
+          source: neigh[i].source,
+          x: 50 + Math.cos(a) * rx,
+          y: 50 + Math.sin(a) * ry
+        };
+      })
+    };
+  }
+
+  renderVals() {
+    const data = this.state.data;
+    if (!data) {
+      return { showGate: !this.state.entered, onEnter: () => this.setState({ entered: true }),
+        graphEdges: [], graphNodes: [], trail: [], legend: [], relations: [], absent: [], hasAbsent: false,
+        panelKicker: 'Cargando', panelName: 'Graphy', panelKind: '', panelNote: '', relCount: 0 };
+    }
+    const focus = this.state.focus;
+    const { center, ring } = this.layout(data, focus);
+    const acc = (k) => this.ACCENTS[k] || this.ACCENTS.gold;
+
+    // Geometria y estilo se precomputan aqui como numeros y cadenas; el SVG vive en la plantilla,
+    // de modo que cada nodo y cada arista siguen siendo elementos editables.
+    // El trazo distingue el tipo de relacion; el color, la procedencia. Lo deducido se atenua.
+    const TYPE = data.RELATION_TYPES || {};
+    const PROV = data.PROVENANCE || {};
+    const dashOf = (t) => {
+      const st = (TYPE[t] || {}).stroke;
+      return st === 'dashed' ? '1.4 1.4' : st === 'dotted' ? '0.5 1.2' : 'none';
+    };
+    const STATES = data.REL_STATES || {};
+    const relFocus = this.state.relFocus;
+    const stateOf = (r) => this.relStateFor(r, focus, relFocus);
+    const graphEdges = ring.map((r) => {
+      const st = stateOf(r);
+      const base = (STATES[st] || {}).opacity != null ? STATES[st].opacity : 0.7;
+      const w = (TYPE[r.rel] || {}).width || 0.2;
+      return {
+        x1: center.x, y1: center.y, x2: r.x, y2: r.y,
+        stroke: (PROV[r.source] || {}).color || '#C9A86A',
+        // El peso relativo se ve en el grosor; el estado, en la opacidad.
+        width: (st === 'FOCUSED' ? w * 1.9 : w).toFixed(3),
+        opacity: (r.source === 'experimental' ? base * 0.8 : base).toFixed(3),
+        dash: dashOf(r.rel)
+      };
+    });
+
+    const shortLabel = (name) => name === 'William Mejías Navarro' ? 'William'
+      : name === 'Will-AI Project Lab' ? 'Laboratorio' : name;
+
+    // Monograma: identidad de presentacion tomada del nombre del master. No es comportamiento.
+    const monoOf = (name) => {
+      const clean = String(name).replace(/Will-AI Project Lab/, 'Laboratorio').replace(/WAIPL/, 'W');
+      const parts = clean.split(/[\s-]+/).filter((w) => w.length > 2 && !/^(de|del|la|el|project)$/i.test(w));
+      if (!parts.length) return clean.slice(0, 1).toUpperCase();
+      // Una sola palabra: dos letras, para que ninguna presencia comparta monograma.
+      if (parts.length === 1) return parts[0][0].toUpperCase() + parts[0][1];
+      return parts.slice(0, 2).map((w) => w[0].toUpperCase()).join('');
+    };
+
+    const mark = (item, isCenter) => {
+      const nd = item.node;
+      const rad = isCenter ? 4.8 : 3.5;
+      return {
+        mono: monoOf(nd.name),
+        monoLeft: (18 + item.x * 0.64).toFixed(3) + '%',
+        monoTop: item.y.toFixed(3) + '%',
+        monoPx: isCenter ? '15px' : '11px',
+        monoColor: isCenter ? '#F2EFE9' : acc(nd.accent),
+        monoOpacity: isCenter ? '1' : '0.88',
+        x: item.x, y: item.y, r: rad, halo: rad + 3.4, core: 0,
+        haloOpacity: isCenter ? 0.13 : 0.08,
+        coreOpacity: isCenter ? 0.95 : 0.7,
+        stroke: isCenter ? 0.5 : 0.34,
+        color: acc(nd.accent),
+        // Las etiquetas se rotulan sobre el SVG como elementos de plantilla: el runtime envuelve
+        // cada interpolacion en un <span>, y dentro de <text> ese span no genera caja de texto.
+        // El viewBox 0-100 se ajusta con `meet` en un contenedor de 64% de alto, asi que la
+        // escala es 0.64 y queda centrado: left = 18% + x*0.64, top = y.
+        labelLeft: (18 + item.x * 0.64).toFixed(3) + '%',
+        labelTop: (item.y + rad + 3.6).toFixed(3) + '%',
+        labelPx: isCenter ? '11px' : '9.5px',
+        labelColor: isCenter ? '#F2EFE9' : 'rgba(242,239,233,0.72)',
+        label: shortLabel(nd.name),
+        go: () => this.focusOn(nd.id)
+      };
+    };
+
+    const graphNodes = ring.map((r) => {
+      const m = mark(r, false);
+      const st = stateOf(r);
+      // El estado se ve en el nodo: en foco destaca, atenuado retrocede sin desaparecer.
+      if (st === 'DIMMED') {
+        m.haloOpacity = 0.03; m.coreOpacity = 0.3; m.stroke = 0.2;
+        m.labelColor = 'rgba(242,239,233,0.3)'; m.labelPx = '8.5px'; m.monoOpacity = '0.32';
+      } else if (st === 'FOCUSED') {
+        m.haloOpacity = 0.2; m.coreOpacity = 1; m.stroke = 0.55;
+        m.labelColor = '#F2EFE9'; m.labelPx = '10.5px'; m.monoOpacity = '1';
+      }
+      return m;
+    });
+    if (center.node) graphNodes.push(mark(center, true));
+
+    // Migas: ecosistema siempre disponible; el nivel intermedio aparece cuando procede.
+    const trail = [];
+    const chip = (id, label, active) => ({
+      label, go: () => this.focusOn(id),
+      bg: active ? 'rgba(201,168,76,0.16)' : 'transparent',
+      border: active ? 'rgba(201,168,76,0.5)' : 'rgba(201,168,76,0.22)',
+      color: active ? '#F2EFE9' : 'rgba(242,239,233,0.66)'
+    });
+    trail.push(chip('waipl', 'Ecosistema', focus === 'waipl' && !relFocus));
+    const cur = data.nodeById(focus);
+    if (cur && cur.level === 'presence') trail.push(chip('lab', 'Laboratorio', false));
+    if (cur && cur.id !== 'waipl') trail.push(chip(cur.id, cur.name, !relFocus));
+    if (this.state.cmpMode) trail.push({ label: 'Comparación', go: this.clearCompare,
+      bg: 'rgba(201,168,76,0.16)', border: 'rgba(201,168,76,0.5)', color: '#F2EFE9' });
+    if (this.state.cmpB) {
+      const nb = data.nodeById(this.state.cmpB);
+      trail.push({ label: 'Comparación', go: this.clearCompare,
+        bg: 'transparent', border: 'rgba(201,168,76,0.22)', color: 'rgba(242,239,233,0.66)' });
+      trail.push({ label: nb ? nb.name : this.state.cmpB, go: () => this.focusOn(this.state.cmpB),
+        bg: 'rgba(201,168,76,0.16)', border: 'rgba(201,168,76,0.5)', color: '#F2EFE9' });
+    }
+    if (relFocus) {
+      const parts = String(relFocus).split(':')[0].split('→');
+      const other = data.nodeById(parts[1]);
+      trail.push({
+        label: 'Relación · ' + (other ? other.name : parts[1]),
+        go: () => this.focusOn(focus),
+        bg: 'rgba(201,168,76,0.16)', border: 'rgba(201,168,76,0.5)', color: '#F2EFE9'
+      });
+    }
+
+    const relations = ring.map((r) => {
+      const st = stateOf(r);
+      const rid = focus + '→' + r.node.id + ':' + r.rel;
+      return {
+        name: r.node.name, kind: r.node.kind,
+        rel: (TYPE[r.rel] || {}).label || r.rel,
+        prov: (PROV[r.source] || {}).status || 'sin clasificar',
+        provNote: (PROV[r.source] || {}).label || '',
+        tagColor: (PROV[r.source] || {}).color || '#C9A86A',
+        state: (STATES[st] || {}).label || st,
+        // Pares source → target explicitos, tal como los emite la capa de datos.
+        pair: focus + ' → ' + r.node.id,
+        weight: ((TYPE[r.rel] || {}).width || 0.2).toFixed(2),
+        stamp: data.nowSimulated(),
+        opacity: st === 'DIMMED' ? '0.5' : '1',
+        border: st === 'FOCUSED' ? 'rgba(201,168,76,0.55)'
+          : r.source === 'experimental' ? 'rgba(156,129,189,0.28)' : 'var(--border-subtle)',
+        go: (e) => { if (e && e.stopPropagation) e.stopPropagation(); this.focusOn(r.node.id); },
+        select: () => this.focusRelation(rid)
+      };
+    });
+
+    const showAbsent = focus === 'waipl' || focus === 'lab';
+    return {
+      showGate: !this.state.entered,
+      onEnter: () => this.setState({ entered: true }),
+      summary: (() => {
+        const s = this.summaryResolver(this.summaryContext(data, focus, ring, stateOf));
+        const counts = [
+          { n: s.declared, label: 'declaradas', color: '#C9A86A' },
+          { n: s.experimental, label: 'experimentales', color: '#9C81BD' },
+          { n: s.derived, label: 'derivadas', color: '#6E6E78' }
+        ].filter((c) => c.n > 0);
+        return {
+          total: s.total, counts,
+          estado: s.focused > 0 ? s.focused + ' en foco · ' + s.dimmed + ' atenuadas'
+            : s.active + (s.active === 1 ? ' activa' : ' activas'),
+          dominantType: s.dominantType, dominantProvenance: s.dominantProvenance,
+          strongest: s.strongest, connects: s.relatedNodes.join(' · ')
+        };
+      })(),
+      compare: (() => {
+        const bId = this.state.cmpB;
+        if (!bId) return { on: false, waiting: !!this.state.cmpMode, aName: center.node ? center.node.name : '',
+          bName: '', shared: [], onlyA: [], onlyB: [], hasShared: false, hasOnlyA: false, hasOnlyB: false };
+        const res = this.comparisonResolver(this.comparisonContext(data, focus, bId));
+        const nb = data.nodeById(bId);
+        return { on: true, waiting: false,
+          aName: center.node ? center.node.name : focus, bName: nb ? nb.name : bId,
+          shared: res.shared, onlyA: res.onlyA, onlyB: res.onlyB,
+          hasShared: res.shared.length > 0, hasOnlyA: res.onlyA.length > 0, hasOnlyB: res.onlyB.length > 0,
+          tally: res.shared.length + ' compartidas · ' + res.onlyA.length + ' solo A · ' + res.onlyB.length + ' solo B' };
+      })(),
+      map: (() => {
+        const ctx = this.relationalMapContext(data, focus, this.state.mapExpand || null);
+        const res = this.relationalMapResolver(ctx, relFocus);
+        return {
+          nodes: res.nodes, edges: res.edges, counts: res.counts,
+          depthLabel: 'profundidad ' + res.depth + ' · ' + res.first + ' vecinos'
+            + (res.second ? ' · ' + res.second + ' en segundo salto desde ' + res.expandName : ''),
+          expanded: !!this.state.mapExpand
+        };
+      })(),
+      onResetMap: this.resetMap,
+      network: (() => {
+        const net = this.networkResolver(this.networkContext(data, focus), relFocus);
+        return {
+          centerName: center.node ? center.node.name : focus,
+          centerKind: center.node ? center.node.kind : '',
+          total: net.total, counts: net.counts, rows: net.rows,
+          hasRows: net.rows.length > 0
+        };
+      })(),
+      onResetNetwork: this.resetNetwork,
+      temporal: (() => {
+        const ctx = this.temporalContext(data, relFocus, focus, relFocus);
+        if (!ctx) return { on: false, snaps: [], hasSnaps: false, count: 0 };
+        const live = this.temporalResolver(ctx);
+        const snaps = this.state.relTimelineFor === relFocus ? (this.state.relTimeline || []) : [];
+        const cursor = this.state.relCursor;
+        const shown = cursor != null && snaps[cursor] ? snaps[cursor] : live;
+        return {
+          on: true,
+          source: ctx.a ? ctx.a.name : ctx.rec.source, target: ctx.b ? ctx.b.name : ctx.rec.target,
+          type: live.type, prov: shown.provenance, state: shown.stateLabel,
+          weight: shown.weight, visibility: shown.visibility,
+          stamp: String(shown.updatedAt), age: String(Math.max(0, live.t - shown.updatedAt)),
+          moment: cursor != null ? 'snapshot ' + (cursor + 1) + ' de ' + snaps.length + ' · t' + shown.t
+            : 'estado actual · t' + live.t,
+          isPast: cursor != null,
+          snaps: snaps.map((s, i) => ({
+            label: 't' + s.t + ' · ' + s.stateLabel + ' · peso ' + s.weight + ' · ' + s.provenance + ' · ' + s.visibility,
+            color: cursor === i ? '#C9A86A' : 'rgba(242,239,233,0.55)',
+            pick: () => this.setState({ relCursor: i })
+          })),
+          hasSnaps: snaps.length > 0, count: snaps.length,
+          canBack: snaps.length > 0 && (cursor == null ? snaps.length > 1 : cursor > 0),
+          canFwd: snaps.length > 0 && cursor != null && cursor < snaps.length - 1
+        };
+      })(),
+      onCapture: this.captureSnapshot,
+      onStepBack: this.stepBackTime,
+      onStepFwd: this.stepFwdTime,
+      onCurrent: this.toCurrentTime,
+      onResetTime: this.resetTimeline,
+      cmpCandidates: this.state.cmpMode
+        ? data.nodes().filter((n) => n.id !== focus)
+          .map((n) => ({ name: n.name, pick: () => this.pickCompare(n.id) }))
+        : [],
+      cmpWaiting: !!this.state.cmpMode,
+      cmpOn: !!this.state.cmpB,
+      onCompare: this.startCompare,
+      onClearCompare: this.clearCompare,
+      graphEdges, graphNodes, trail, relations, relCount: relations.length,
+      hasRelFocus: !!relFocus,
+      canBack: (this.state.hist || []).length > 0,
+      onBack: this.goBack,
+      histDepth: (this.state.hist || []).length,
+      onClear: this.clearSelection,
+      simStamp: data.nowSimulated(),
+      panelKicker: data.LEVELS[cur ? cur.level : 'ecosystem'].label,
+      panelName: cur ? cur.name : '—',
+      panelKind: cur ? cur.kind : '',
+      panelNote: cur ? cur.note : '',
+      absent: showAbsent ? data.ABSENT : [],
+      hasAbsent: showAbsent,
+      legend: [
+        { label: 'Declarada en el master', color: '#C9A86A', style: 'solid' },
+        { label: 'Experimental', color: '#9C81BD', style: 'dashed' },
+        { label: 'Criterio humano', color: '#F2EFE9', style: 'solid' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

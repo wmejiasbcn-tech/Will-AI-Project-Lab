@@ -1,0 +1,61 @@
+/* Will-AI Project Lab — color tokens. Source: PROTOCOLO_IDENTIDAD_VISUAL_v1.0 (approved 2026-06-02). */
+:root{
+  /* primitives */
+  --obsidian-950:#0c0c12;
+  --obsidian-900:#131319;
+  --obsidian-800:#1a1a22;
+  --obsidian-700:#232330;
+  --obsidian-600:#33333f;
+  --gold-100:#f3e7c6;
+  --gold-300:#dfc070;
+  --gold-500:#c9a84c;
+  --gold-700:#8b6b2e;
+  --gold-900:#5c471e;
+  --violet-300:#9c81bd;
+  --violet-600:#6b4f8a;
+  --violet-900:#4d3661;
+  --gray-100:#e4e4e6;
+  --gray-300:#bebebe;
+  --gray-500:#8a8a92;
+  --gray-700:#57575f;
+  --paper:#f6f1e6;
+  --black:#000000;
+  --white:#f7f4ee;
+  --forbidden-teal:#0097a7; /* NEVER use — reserved as documentation-only reference */
+
+  /* semantic surfaces */
+  --surface-page:var(--obsidian-950);
+  --surface-raised:var(--obsidian-900);
+  --surface-card:var(--obsidian-800);
+  --surface-card-hover:var(--obsidian-700);
+  --surface-inset:rgba(201,168,76,0.06);
+
+  /* borders */
+  --border-subtle:rgba(201,168,76,0.14);
+  --border-default:rgba(201,168,76,0.26);
+  --border-strong:rgba(201,168,76,0.48);
+
+  /* text */
+  --text-primary:var(--white);
+  --text-secondary:var(--gray-300);
+  --text-muted:var(--gray-500);
+  --text-on-gold:var(--obsidian-950);
+  --text-inverse:var(--obsidian-950);
+
+  /* accents */
+  --accent-primary:var(--gold-500);
+  --accent-secondary:var(--gold-300);
+  --accent-deep:var(--gold-700);
+  --accent-violet:var(--violet-300);
+  --accent-violet-deep:var(--violet-900);
+
+  /* links */
+  --link:var(--gold-300);
+  --link-hover:var(--gold-100);
+  --focus-ring:var(--gold-500);
+
+  /* status (extrapolated — not defined in source, used sparingly) */
+  --status-success:#7fae6a;
+  --status-caution:var(--gold-300);
+  --status-critical:#c4685a;
+}
