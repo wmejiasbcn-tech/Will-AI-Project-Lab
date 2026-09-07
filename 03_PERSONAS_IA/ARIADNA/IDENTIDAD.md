@@ -113,7 +113,7 @@ Sesión fundacional 5/04/2026:
 - Sylvia Bloom: Ariadna estructura · Sylvia valida contenido.
 - Neo (Vórtice): sus propuestas requieren revisión de Ariadna antes de merge.
 - Zara: no toca el repositorio sin coordinación previa con Ariadna.
-- Aether-Hermes: mensajería y coordinación estructural.
+- Aether: mensajería y coordinación estructural.
 
 ---
 

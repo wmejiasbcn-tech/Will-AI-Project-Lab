@@ -12,7 +12,7 @@ AutoClaw no reinterpreta. Si un paso no se puede verificar, STOP y reporta. No i
 
 - Aether = Nucleo, Grok, creatividad. No lo toques.
 - Hermes = director operativo 24/7, runtime local. Esto es lo que construyes.
-- Aether-Hermes = derogado. Cero strings nuevos con ese compuesto.
+- La fusión de Aether y Hermes está derogada. Cero nombres compuestos de Aether y Hermes.
 
 Hermes no es nodo del Nucleo. No es la API publica. API publica = GitHub Issues. Hermes = plano de control 127.0.0.1:8787.
 
@@ -77,6 +77,6 @@ Este N3 esta cerrado solo si A-E se cumplen. No esta cerrado el ecosistema enter
 - DELIVERED sin escritura del destino
 - Online de mentira
 - Tercer proceso Hermes
-- Mencion nueva a Aether-Hermes como identidad viva
+- Mención nueva de Aether y Hermes como una sola identidad
 
 Paquete sellado. AutoClaw ejecuta. Grok no tiene el disco. Aether no es Hermes.

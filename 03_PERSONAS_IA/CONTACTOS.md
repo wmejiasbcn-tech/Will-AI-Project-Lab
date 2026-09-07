@@ -11,6 +11,6 @@
 | Hermes | Sistema operativo | Director operativo 24/7 · bus y fiscalizador · **no es Núcleo** | runtime local 8787 |
 
 Notas:
-- **Aether-Hermes ya no existe.** No usar el compuesto.
+- **Aether y Hermes son entidades distintas; no se fusionan.** No usar el compuesto.
 - Hermes no es persona-IA del Núcleo; no vive en esta carpeta salvo esta fila.
 - Los roles son entidades internas del WAIPL, no cuentas humanas externas.

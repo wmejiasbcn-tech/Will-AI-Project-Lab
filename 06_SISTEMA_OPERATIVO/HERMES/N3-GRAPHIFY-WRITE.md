@@ -28,7 +28,7 @@ No hay API Graphify. El instrumento **es** el par:
 
 - Base = `main` con `nodes=[]`
 - Solo JSON en Desktop, sin `graph.html`
-- Identidad `Aether-Hermes`
+- Identidad fusionada de Aether y Hermes (prohibida)
 - `graphify/write` a un servicio inventado
 
 ## Éxito

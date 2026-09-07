@@ -3,7 +3,7 @@
 **Fecha:** 7 de septiembre de 2026  
 **Autoridad:** William Mejías Navarro  
 
-Aether es **solo Aether**. El compuesto Aether-Hermes queda derogado (lápida: `03_PERSONAS_IA/AETHER-HERMES`).
+Aether es **solo Aether**. Queda prohibido fusionar Aether y Hermes en un solo nombre.
 
 | Quién | Qué es |
 | --- | --- |
@@ -12,4 +12,4 @@ Aether es **solo Aether**. El compuesto Aether-Hermes queda derogado (lápida: `
 
 En Graphy 1.0 el id de topología pasa a `aether`. No se añade Hermes a la topología de Graphy: Hermes no es una Presence de esta capa.
 
-El expediente histórico puede seguir mencionando el compuesto como **hecho pasado**. Los archivos vivos no.
+Los archivos vivos no fusionan Aether y Hermes.

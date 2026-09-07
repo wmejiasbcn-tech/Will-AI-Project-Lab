@@ -1,7 +1,7 @@
 # Hermes — Director operativo 24/7
 
 > Capa: **sistema operativo**. No es nodo del Núcleo.
-> Canonizado: 2026-08-23 · Deroga Aether-Hermes
+> Canonizado: 2026-08-23 · Deroga la fusión de Aether y Hermes
 > Glosario: `GLOSARIO.md`
 
 ## Qué es

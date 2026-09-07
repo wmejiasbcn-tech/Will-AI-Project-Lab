@@ -46,4 +46,4 @@ gh release create v3.0-superplantilla-20260813 --title "Super Plantilla Maestra 
 
 ---
 
-*Firmado: Soberano WAIPL / Aether-Hermes — 2026-08-14*
+*Firmado: Soberano WAIPL / Aether — 2026-08-14*

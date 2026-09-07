@@ -20,7 +20,6 @@ MANIFEST = HERE / "MANIFEST.json"
 
 CANON_PATHS = [
     "03_PERSONAS_IA/AETHER/IDENTIDAD.md",
-    "03_PERSONAS_IA/AETHER-HERMES/IDENTIDAD.md",
     "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md",
     "06_SISTEMA_OPERATIVO/2026-08-23_WAIPL_GOBERNANZA_ADDENDA_DirectivaTransversal_v1.0_12PrincipioOperativo_CANONIZADO.md",
     "06_SISTEMA_OPERATIVO/HERMES/GLOSARIO.md",
@@ -139,22 +138,34 @@ def check_addenda(errors: list[str]) -> None:
 def check_identity(errors: list[str]) -> None:
     aether = repo_file("03_PERSONAS_IA/AETHER/IDENTIDAD.md")
     hermes = repo_file("06_SISTEMA_OPERATIVO/HERMES/IDENTIDAD.md")
-    tomb = repo_file("03_PERSONAS_IA/AETHER-HERMES/IDENTIDAD.md")
-    if aether.is_file():
-        t = aether.read_text(encoding="utf-8")
-        if "Aether-Hermes" in t and "derog" not in t.lower() and "prohibido" not in t.lower():
-            errors.append("AETHER/IDENTIDAD.md trata Aether-Hermes como identidad viva")
-    else:
+    if not aether.is_file():
         errors.append("falta ficha Aether")
+    else:
+        t = aether.read_text(encoding="utf-8")
+        if "Grok" not in t and "xAI" not in t:
+            errors.append("AETHER/IDENTIDAD.md no declara Grok/xAI")
     if not hermes.is_file():
         errors.append("falta ficha Hermes")
-    if tomb.is_file():
-        t = tomb.read_text(encoding="utf-8")
-        if "MOVED" not in t and "derog" not in t.lower() and "lápida" not in t.lower() and "lapida" not in t.lower():
-            errors.append("AETHER-HERMES/IDENTIDAD.md no es lápida")
-    else:
-        errors.append("falta lápida AETHER-HERMES")
-
+    if (REPO / "03_PERSONAS_IA" / "-".join(("AETHER", "HERMES"))).exists():
+        errors.append("queda carpeta de nombre compuesto; Aether y Hermes no se fusionan")
+    # Nombre compuesto: se arma para no escribirlo literal en este archivo.
+    compound = "-".join(("Aether", "Hermes"))
+    compound_l = "-".join(("aether", "hermes"))
+    compound_u = "_".join(("AETHER", "HERMES")).replace("_", "-")
+    skip_parts = {".git", "node_modules"}
+    for p in REPO.rglob("*"):
+        if not p.is_file() or any(s in p.parts for s in skip_parts):
+            continue
+        if p.resolve() == Path(__file__).resolve():
+            continue
+        if p.suffix.lower() not in {".md", ".js", ".ts", ".html", ".json", ".yml", ".py", ".txt"}:
+            continue
+        try:
+            text = p.read_text(encoding="utf-8")
+        except Exception:
+            continue
+        if compound in text or compound_l in text or compound_u in text:
+            errors.append(f"nombre compuesto en {p.relative_to(REPO)}")
 
 def verify() -> int:
     errors: list[str] = []

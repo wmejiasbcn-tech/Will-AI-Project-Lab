@@ -3,7 +3,7 @@
 **Grantor:** Soberano  
 **Fecha:** 2026-08-23  
 **Implementa:** AutoClaw (runtime)  
-**No es:** el N3 de reboot. No es 24/7. No adelanta túnel. No fusiona Aether-Hermes.
+**No es:** el N3 de reboot. No es 24/7. No adelanta túnel. No fusiona Aether y Hermes.
 
 ## Objetivo
 

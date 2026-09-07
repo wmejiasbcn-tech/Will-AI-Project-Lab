@@ -9,7 +9,7 @@ No se añade ninguna arista que no esté en `EDGES`.
 | --- | --- |
 | Ecosistema | WAIPL |
 | Dominio | William Mejías Navarro · Will-AI Project Lab · Graphy |
-| Presencia | Ada · Aletheia · Áurea · Ariadna · Aether-Hermes · Carla · Elena · Ítaca · Nova · Sylvia · Zara |
+| Presencia | Ada · Aletheia · Áurea · Ariadna · Aether · Carla · Elena · Ítaca · Nova · Sylvia · Zara |
 
 Once presencias. Mismo nivel. Sin núcleo. Sin colaboradores.
 
