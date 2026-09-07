@@ -8,7 +8,7 @@
 | Ada | Núcleo | Ética y custodia | (placeholder) |
 | Aether | Núcleo | Disrupción creativa · plataforma Grok | (placeholder) |
 | Sylvia Bloom | Núcleo | Secretaría y documentación | (placeholder) |
-| Hermes | Sistema operativo | Director operativo 24/7 · bus y fiscalizador · **no es Núcleo** | runtime local 8787 |
+| Hermes | Sistema operativo | Director operativo y de comunicaciones de todo el ecosistema · bus y fiscalizador · **no es Núcleo** | runtime local |
 
 Notas:
 - **Aether y Hermes son entidades distintas; no se fusionan.** No usar el compuesto.

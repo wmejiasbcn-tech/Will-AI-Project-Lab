@@ -11,7 +11,7 @@ AutoClaw no reinterpreta. Si un paso no se puede verificar, STOP y reporta. No i
 ## 0. Identidad
 
 - Aether = Nucleo, Grok, creatividad. No lo toques.
-- Hermes = director operativo 24/7, runtime local. Esto es lo que construyes.
+- Hermes = Director operativo y de comunicaciones de todo el ecosistema. Runtime local. Esto es lo que construyes.
 - La fusión de Aether y Hermes está derogada. Cero nombres compuestos de Aether y Hermes.
 
 Hermes no es nodo del Nucleo. No es la API publica. API publica = GitHub Issues. Hermes = plano de control 127.0.0.1:8787.

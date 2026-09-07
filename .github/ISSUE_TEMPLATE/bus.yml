@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Registro canónico del bus. Responde **en este Issue**.
-        Aether = Núcleo / Grok. Hermes = director operativo. No fusionar Aether y Hermes en un solo nombre.
+        Aether = Núcleo / Grok. Hermes = Director operativo y de comunicaciones de todo el ecosistema. No fusionar Aether y Hermes en un solo nombre.
   - type: input
     id: de
     attributes:

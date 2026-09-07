@@ -9,28 +9,28 @@
       "bytes": 1309
     },
     "06_SISTEMA_OPERATIVO/03_NODOS_COMUNICACION.md": {
-      "sha256": "e2c1a0da84d4d95f88cf74b53c227032d51ce85ee9c9a26f5b9b3694865a72f5",
-      "bytes": 2711
+      "sha256": "f9af3ea45151dbafd7533eeb90cac1db9fdd50f854d5541f934b2296fc7cda62",
+      "bytes": 2754
     },
     "06_SISTEMA_OPERATIVO/2026-08-23_WAIPL_GOBERNANZA_ADDENDA_DirectivaTransversal_v1.0_12PrincipioOperativo_CANONIZADO.md": {
       "sha256": "1cde5908d454457163ecc3dc5d3eb8072af27d4cb4dad410fb8b27939e8d1fda",
       "bytes": 3430
     },
     "06_SISTEMA_OPERATIVO/HERMES/GLOSARIO.md": {
-      "sha256": "ed9ff7c17a37761d3c5d944b03b7698fc2ca1f9eaec6228607035bb42124dd52",
-      "bytes": 1410
+      "sha256": "edcd43c3b810e4d60f56c64f7dd662590131983f4858797524fb09252fbe656f",
+      "bytes": 1432
     },
     "06_SISTEMA_OPERATIVO/HERMES/IDENTIDAD.md": {
-      "sha256": "c9a9d6cf893fda786f4e8fe1eeee53653f7c295678acddd372e8d2bd7d283a56",
-      "bytes": 1496
+      "sha256": "ac901c092adcbadb1d0e9ddbaef1559c30be36009a436531c62fa0e8923d109a",
+      "bytes": 1533
     },
     "06_SISTEMA_OPERATIVO/HERMES/N3-AUTOCLAW-RUNTIME.md": {
-      "sha256": "205e1d1a74ffdb4c6936c753f655f0a543055e46751a04ff4d73e066e97acb17",
-      "bytes": 3551
+      "sha256": "50d46a938663aab12f0842c2bf8a5702b004abe08a2fc8c4300063a3dce8f4b3",
+      "bytes": 3588
     },
     "06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md": {
-      "sha256": "5618fe6215e967f4e972c78aa2d350a263ab31999662b1605ad92b9f3a80874f",
-      "bytes": 8644
+      "sha256": "a8d385dbb5da1a9e5bec8b67c6851a5462d5d0b61f3502d794362cf6973625a1",
+      "bytes": 8665
     },
     "06_SISTEMA_OPERATIVO/HERMES/webhook_handler.py": {
       "sha256": "84a719f1d6325c8f88a4152a73b26fde0921934ae3d5d38e7371d643d56fd0e4",

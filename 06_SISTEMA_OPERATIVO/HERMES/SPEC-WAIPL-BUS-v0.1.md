@@ -11,7 +11,7 @@ El formato paliocomunicativo (bloque DE/PARA) se conserva. **El hub humano queda
 
 ## 0. Terminología (obligatoria)
 
-- **Aether** = Núcleo, Grok, creatividad. Nunca director operativo.
+- **Aether** = Núcleo, Grok, creatividad. Nunca director operativo ni de comunicaciones.
 - **Hermes** = sistema operativo, runtime 8787, fiscalizador. Nunca Núcleo.
 - **API pública** = GitHub Issues + Actions. Lo que Carla/Ada/Aether pueden llamar.
 - **Plano de control** = Hermes localhost. Permisos, ledger, kill, webhook sink.
