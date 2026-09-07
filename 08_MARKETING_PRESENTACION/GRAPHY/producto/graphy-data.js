@@ -27,7 +27,7 @@ function master() {
 
 // Correspondencia entre el id de topologia y el id del master.
 const MASTER_ID = { carla: 'carla-eco', ada: 'ada', aletheia: 'aletheia', itaca: 'itaca',
-  'aether-hermes': 'aether-hermes', sylvia: 'sylvia', elena: 'elena', ariadna: 'ariadna',
+  aether: 'aether', sylvia: 'sylvia', elena: 'elena', ariadna: 'ariadna',
   nova: 'nova', zara: 'zara', aurea: 'aurea' };
 
 const PRESENCE_IDS = Object.keys(MASTER_ID);

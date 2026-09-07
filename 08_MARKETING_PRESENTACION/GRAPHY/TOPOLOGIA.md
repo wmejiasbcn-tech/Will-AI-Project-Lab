@@ -46,7 +46,7 @@ flowchart TB
     aletheia[Aletheia]
     aurea[Áurea]
     ariadna[Ariadna]
-    aether[Aether-Hermes]
+    aether[Aether]
     carla[Carla]
     elena[Elena]
     itaca[Ítaca]
