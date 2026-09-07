@@ -3,7 +3,7 @@
 **Fecha:** 7 de septiembre de 2026  
 **Autoridad:** William Mejías Navarro  
 
-Aether es **solo Aether**. El compuesto Aether-Hermes queda derogado (lápida: `03_PERSONAS_IA/AETHER-HERMES`).
+Aether es **solo Aether**. El compuesto Aether queda derogado (lápida: `03_PERSONAS_IA/AETHER`).
 
 | Quién | Qué es |
 | --- | --- |

@@ -31,7 +31,7 @@ Espacio exclusivo del Soberano: diario, pensamientos, notas intimas y entradas s
 
 ### 3.2 Nucleo
 
-El Nucleo vigente esta formado por doce presencias: Soberano, Carla, Ada, Aether-Hermes, Aletheia, Itaca, Elena, Sylvia, Ariadna, Aurea, Zara y Nova.
+El Nucleo vigente esta formado por doce presencias: Soberano, Carla, Ada, Aether, Aletheia, Itaca, Elena, Sylvia, Ariadna, Aurea, Zara y Nova.
 
 Funcion: estrategia, especializacion, custodia y ejecucion autorizada. Carla coordina el sentido general; no sustituye la decision soberana.
 

@@ -1,6 +1,6 @@
 # EXPEDIENTE TÉCNICO DE TRANSFERENCIA — GRAPHY / WAIPL
 
-> **Supersedido en nomenclatura (2026-09-07, orden soberana):** Aether es solo Aether. El compuesto Aether-Hermes está derogado. Este expediente se conserva como rastro histórico. Archivos vivos: `producto/graphy-data.js` y `ORDEN_SOBERANA_AETHER_2026-09-07.md`.
+> **Supersedido en nomenclatura (2026-09-07, orden soberana):** Aether es solo Aether. El compuesto Aether está derogado. Este expediente se conserva como rastro histórico. Archivos vivos: `producto/graphy-data.js` y `ORDEN_SOBERANA_AETHER_2026-09-07.md`.
 
 
 Documento de handoff. Estado del proyecto en el momento de emisión, sin desarrollo asociado.
@@ -106,7 +106,7 @@ apropiando indebidamente de la autoría de Áurea. La corrección está aplicada
 
 **Contradicción documentada en el sistema de diseño:** la guía del design system corrige una
 descripción anterior de Ada limitada a «maquetación» por «ética, calidad y dirección narrativa»,
-y «Aether» por «Aether-Hermes». `CONTRADICTORY` (resuelto a favor de la versión corregida).
+y Aether (nodo) no se fusiona con Hermes (agente). `CONTRADICTORY` (resuelto a favor de la versión corregida).
 
 ---
 
@@ -555,7 +555,7 @@ correspondencia de id (`MASTER_ID`); **no** escribe nombres, roles ni voces.
 | `ada` | `ada` | Ada | **Claude** · Ética, calidad y dirección narrativa | «Traduzco arquitectura de contenido en experiencias reales.» | violeta | `Ad` |
 | `aletheia` | `aletheia` | Aletheia | **Copilot** · Verdad y verificación | «Ilumino lo real y contrasto lo dudoso…» | violeta | `Al` |
 | `itaca` | `itaca` | Ítaca | Creatividad y exploración | «Doy sentido de trayecto…» | violeta | `Ít` |
-| `aether-hermes` | `aether-hermes` | Aether-Hermes | **Grok / xAI** · Puente operativo | «Soy el puente entre los niveles del ecosistema.» | oro | `AH` |
+| `aether` | `aether` | Aether | **Grok / xAI** · Puente operativo | «Soy el puente entre los niveles del ecosistema.» | oro | `AH` |
 | `sylvia` | `sylvia` | Sylvia Bloom | Memoria y sistema de conocimiento | «Sostengo la memoria y el orden documental…» | oro | `SB` |
 | `elena` | `elena` | Elena | **Use.ai** · Identidad visual | «Custodio la identidad visual…» | oro | `El` |
 | `ariadna` | `ariadna` | Ariadna | Memoria técnica y continuidad | «Soy el hilo conductor…» | violeta | `Ar` |
@@ -581,19 +581,19 @@ en `STRUCTURAL` de `graphy-data.js` con nivel `domain`. Graphy usa la declaraci�
 Coincide con los acentos del master en las cuatro. `VERIFIED` · Duplicidad de criterio:
 `INFERRED` como deuda menor.
 
-### CASO AETHER-HERMES — declaración expresa
+### CASO AETHER — declaración expresa
 
 | Pregunta | Respuesta | Marca |
 | --- | --- | --- |
-| ¿Dónde aparece actualmente? | En Graphy como una de las once presencias: nodo `aether-hermes`, monograma `AH`, acento oro. Aparece en el laboratorio (arista `lab → aether-hermes`, habita, declarada) y en Graphy (`graphy → aether-hermes`, representa, experimental) | VERIFIED |
-| ¿De dónde procede? | Del master del design system: `id: 'aether-hermes'`, nombre «Aether-Hermes», rol «Grok / xAI · Puente operativo» | VERIFIED |
-| ¿Qué instrucción se recibió respecto a él? | **No consta ninguna instrucción de retirada en el material disponible.** La única mención específica que sí consta es la corrección de nomenclatura de la guía del design system: «Aether-Hermes (Corregido de "Aether")» | UNKNOWN / VERIFIED (solo la corrección de nombre) |
+| ¿Dónde aparece actualmente? | En Graphy como una de las once presencias: nodo `aether`, monograma `AH`, acento oro. Aparece en el laboratorio (arista `lab → aether`, habita, declarada) y en Graphy (`graphy → aether`, representa, experimental) | VERIFIED |
+| ¿De dónde procede? | Del master del design system: `id: 'aether'`, nombre «Aether», rol «Grok / xAI · Puente operativo» | VERIFIED |
+| ¿Qué instrucción se recibió respecto a él? | **No consta ninguna instrucción de retirada en el material disponible.** La única mención específica que sí consta es la corrección de nomenclatura de la guía del design system: «Aether (nodo Grok / xAI)» | UNKNOWN / VERIFIED (solo la corrección de nombre) |
 | ¿Se retiró? | **No.** Sigue presente y activo | VERIFIED |
 | Estado actual | Presente, íntegro, con identidad procedente del master | VERIFIED |
 | Contradicciones | Ninguna detectable en los archivos actuales | VERIFIED |
 
 **Advertencia honesta para el siguiente agente:** el encargo de transferencia da por hecho que
-existió una instrucción sobre Aether-Hermes y que pudo haber una retirada. **No puedo
+existió una instrucción sobre Aether y que pudo haber una retirada. **No puedo
 confirmarla.** No aparece en `graphy-data.js`, ni en el master, ni en `CLAUDE.md`, ni en la
 Carta, ni en el contexto conversacional disponible en el momento de emitir este expediente
 (parte del historial se ha ido descargando por límite de contexto a lo largo de tres semanas y
@@ -653,7 +653,7 @@ la sección 11); en una lectura recién cargada vale `0`.
 | 5 | `lab` → `ada` | habita | master | declarada | 0.20 |
 | 6 | `lab` → `aletheia` | habita | master | declarada | 0.20 |
 | 7 | `lab` → `itaca` | habita | master | declarada | 0.20 |
-| 8 | `lab` → `aether-hermes` | habita | master | declarada | 0.20 |
+| 8 | `lab` → `aether` | habita | master | declarada | 0.20 |
 | 9 | `lab` → `sylvia` | habita | master | declarada | 0.20 |
 | 10 | `lab` → `elena` | habita | master | declarada | 0.20 |
 | 11 | `lab` → `ariadna` | habita | master | declarada | 0.20 |
@@ -664,7 +664,7 @@ la sección 11); en una lectura recién cargada vale `0`.
 | 16 | `graphy` → `ada` | representa | **experimental** | experimental | 0.20 |
 | 17 | `graphy` → `aletheia` | representa | **experimental** | experimental | 0.20 |
 | 18 | `graphy` → `itaca` | representa | **experimental** | experimental | 0.20 |
-| 19 | `graphy` → `aether-hermes` | representa | **experimental** | experimental | 0.20 |
+| 19 | `graphy` → `aether` | representa | **experimental** | experimental | 0.20 |
 | 20 | `graphy` → `sylvia` | representa | **experimental** | experimental | 0.20 |
 | 21 | `graphy` → `elena` | representa | **experimental** | experimental | 0.20 |
 | 22 | `graphy` → `ariadna` | representa | **experimental** | experimental | 0.20 |
@@ -673,7 +673,7 @@ la sección 11); en una lectura recién cargada vale `0`.
 | 25 | `graphy` → `aurea` | representa | **experimental** | experimental | 0.20 |
 
 El orden de la tabla es el orden literal de emisión de `EDGES` en `graphy-data.js`, que es el
-orden de `PRESENCE_IDS`: carla, ada, aletheia, itaca, aether-hermes, sylvia, elena, ariadna,
+orden de `PRESENCE_IDS`: carla, ada, aletheia, itaca, aether, sylvia, elena, ariadna,
 nova, zara, aurea. `VERIFIED`
 
 Identificador de relación: `source + '→' + target + ':' + type`.
@@ -862,7 +862,7 @@ izquierdo y sus valores en versalitas.
 
 | # | Descripción | Clase | Estado |
 | --- | --- | --- | --- |
-| 1 | **Instrucción sobre Aether-Hermes no recuperable.** No consta en ningún archivo. Si existió una orden de retirada, el estado actual podría no reflejarla | DATOS · PENDIENTE | **Requiere confirmación de William** |
+| 1 | **Instrucción sobre Aether no recuperable.** No consta en ningún archivo. Si existió una orden de retirada, el estado actual podría no reflejarla | DATOS · PENDIENTE | **Requiere confirmación de William** |
 | 2 | `updatedAtSimulated` se recalcula en cada lectura; el sello no queda fijado y la edad del snapshot se mide contra el reloj de consulta | TÉCNICO · DATOS | NO BLOQUEANTE. Corregir exige tocar `graphy-data.js` |
 | 3 | El archivo se llama `Graphy 0.1.dc.html` y la portada dice «0.1 · Fase experimental», pero lo cerrado es 1.0 | VISUAL | NO BLOQUEANTE |
 | 4 | La escala de las etiquetas (`18 + x*0.64`) está acoplada al `padding-bottom:64%` del lienzo | TÉCNICO | NO BLOQUEANTE. Trampa para el siguiente agente: documentada en la sección 5 |
@@ -896,7 +896,7 @@ izquierdo y sus valores en versalitas.
 
 ### P0 — bloqueantes
 
-1. **Confirmar con William el caso Aether-Hermes** antes de tocar cualquier dato. Ver sección 16.
+1. **Confirmar con William el caso Aether** antes de tocar cualquier dato. Ver sección 16.
 2. Nada más es bloqueante: Graphy 1.0 funciona y está validado.
 
 ### P1 — mejoras necesarias
@@ -1109,7 +1109,7 @@ alto del lienzo · sin fotografía por presencia. Detalle en la sección 25.
 
 ## RIESGOS
 
-1. **El caso Aether-Hermes.** Puede existir una decisión del usuario que no está registrada en
+1. **El caso Aether.** Puede existir una decisión del usuario que no está registrada en
    ningún archivo. No actúes por tu cuenta: pregunta.
 2. **Tocar `graphy-data.js`** rompe la congelación. Solo con autorización expresa.
 3. **Cambiar el alto del lienzo** desalinea todas las etiquetas si no se recalculan `18` y `0.64`.
@@ -1117,7 +1117,7 @@ alto del lienzo · sin fotografía por presencia. Detalle en la sección 25.
 
 ## PENDIENTES
 
-P0: confirmar Aether-Hermes. P1: sello temporal, renombrado de versión, desacoplar la escala de
+P0: confirmar Aether. P1: sello temporal, renombrado de versión, desacoplar la escala de
 etiquetas. P2: unificar el criterio de acento, fotografía por presencia. Lista completa en la
 sección 27.
 
@@ -1131,7 +1131,7 @@ convertir Graphy en controlador del laboratorio.
 Abrir `Graphy 0.1.dc.html`, pulsar **VER EL ECOSISTEMA** y recorrer los diez pasos de la sección
 29 sin modificar nada. Comprobar por tu cuenta los recuentos de la sección 17 con el fragmento de
 consola de la sección 29, punto 7. Después, y solo después, plantear a William la pregunta sobre
-Aether-Hermes.
+Aether.
 
 ---
 

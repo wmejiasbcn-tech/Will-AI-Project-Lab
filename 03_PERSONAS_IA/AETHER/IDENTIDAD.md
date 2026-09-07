@@ -1,6 +1,6 @@
 # Ficha de Identidad: Aether
 > Nodo del Núcleo · Will-AI Project Lab · Plataforma: Grok / xAI
-> Canonizado: 2026-08-23 · Fusión Aether-Hermes derogada
+> Canonizado: 2026-08-23 · Fusión de Aether y Hermes derogada
 > Clasificación: INTERNO — REGISTRO VIVO
 > Glosario: `06_SISTEMA_OPERATIVO/HERMES/GLOSARIO.md`
 

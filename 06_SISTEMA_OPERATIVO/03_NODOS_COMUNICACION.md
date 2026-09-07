@@ -30,7 +30,7 @@ Contrato: `06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md`
 | Ollama | Local LLM | Inferencia local | Endpoint 11434 UP/DOWN |
 | Positron | UNKNOWN | Auditoria (sin URI) | No enviar hasta URI |
 
-**Aether-Hermes no existe.** Aether = Nucleo. Hermes = director operativo.
+**Aether y Hermes son entidades distintas; no se fusionan.** Aether = Nucleo. Hermes = director operativo.
 
 ## Formato en el bus
 

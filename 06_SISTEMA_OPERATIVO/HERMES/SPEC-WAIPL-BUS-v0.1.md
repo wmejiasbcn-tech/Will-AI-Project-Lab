@@ -204,7 +204,7 @@ Base: `http://127.0.0.1:8787` · token por nodo, no en git.
 | Positrón | DENY hasta URI. |
 | Soberano | `to:soberano`. Dashboard. Grants. |
 
-> Eres el nodo `<id>`. Buzón = Issues `bus` + `to:<id>`. Responde **en el Issue**. No le pidas a William que copie. Si `RIESGO: high` o no hay permit, etiqueta `to:soberano` y no ejecutes. No eres Aether-Hermes. Aether y Hermes son entidades distintas.
+> Eres el nodo `<id>`. Buzón = Issues `bus` + `to:<id>`. Responde **en el Issue**. No le pidas a William que copie. Si `RIESGO: high` o no hay permit, etiqueta `to:soberano` y no ejecutes. Aether y Hermes son entidades distintas. Aether y Hermes son entidades distintas.
 
 ---
 
