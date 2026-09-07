@@ -17,12 +17,12 @@
       "bytes": 3430
     },
     "06_SISTEMA_OPERATIVO/HERMES/GLOSARIO.md": {
-      "sha256": "a1d9f3df80256964984dcedf36460f00ca26c5936eb0d38e76fc4b8506040610",
-      "bytes": 1370
+      "sha256": "ed9ff7c17a37761d3c5d944b03b7698fc2ca1f9eaec6228607035bb42124dd52",
+      "bytes": 1410
     },
     "06_SISTEMA_OPERATIVO/HERMES/IDENTIDAD.md": {
-      "sha256": "fa781b3de8c406e2179ac0c03f4f5dca6a005d58599fc8b3e361369287efe81f",
-      "bytes": 1436
+      "sha256": "c9a9d6cf893fda786f4e8fe1eeee53653f7c295678acddd372e8d2bd7d283a56",
+      "bytes": 1496
     },
     "06_SISTEMA_OPERATIVO/HERMES/N3-AUTOCLAW-RUNTIME.md": {
       "sha256": "205e1d1a74ffdb4c6936c753f655f0a543055e46751a04ff4d73e066e97acb17",

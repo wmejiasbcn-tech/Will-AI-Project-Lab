@@ -5,7 +5,7 @@ Canon 2026-08-23. Si un documento vivo contradice esta tabla, este archivo gana.
 | Término | Es | No es |
 |---|---|---|
 | **Aether** | Nodo del **Núcleo**. Plataforma Grok/xAI. Creatividad e innovación. | Mensajero. Director operativo. Runtime 8787. Fusionado con Hermes. |
-| **Hermes** | Agente 24/7 del **sistema operativo**. Fiscalizador del bus. Runtime local. | Nodo del Núcleo. Persona-IA. Aether. El Soberano. |
+| **Hermes** | Agente 24/7 del **sistema operativo**. Director operativo y de comunicaciones. Fiscalizador del bus. Runtime local. | Nodo del Núcleo. Persona-IA. Aether. El Soberano. |
 | **WAIPL-BUS** | Sistema telecomunicativo. Registro canónico = GitHub Issues. | Chat informal. WhatsApp. El Soberano copiando bloques. |
 | **API pública** | GitHub Issues + Actions (webhooks). Lo que los nodos cloud pueden llamar. | `127.0.0.1:8787` (eso es plano de control **local**). |
 | **Plano de control** | Hermes en 8787: permisos, ledger, kill, AEA. | Transporte público. |
