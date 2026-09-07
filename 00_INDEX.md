@@ -8,10 +8,13 @@
 3. **01_FUNDACION**: Documentos constituyentes y principios del Lab. Incluye `WAIPL_Principios_Inteligencia_Hibrida.pdf`, `Tabla_de_nodos_funcion_e_importancia.pdf` y `organismo-operativo.csv`.
 4. **02_ADMINISTRACION**: Registros operativos y diarios de evolución.
 5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad de los nodos.
+   - **CINTURON_DE_KUIPER/**: casa documental del Cinturón de Kuiper.
+   - **BORDE_EXTERIOR/**: casa documental del Borde Exterior.
 6. **04_DOCUMENTACION**: Archivo técnico y bases de conocimiento.
 7. **05_PROYECTOS**: Desarrollo de WILL App, Vértigo's y Campus Lab.
 8. **05_VORTICE**: Nodos de inteligencia artificial externa integrados (GPAI, NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY).
 9. **06_SISTEMA_OPERATIVO**: Protocolos de flujo (GitHub, Comunicación).
+   - **VAR/**: casa operativa y documental de VÁR / VAC-01.
 10. **07_FINANCIACION**: Gestión de activos y recursos del ecosistema.
 11. **08_MARKETING_PRESENTACION**: Identidad visual y proyección externa. Incluye el blasón oficial y el deck holográfico `principios-inteligencia-hibrida/` (núcleo 11+1; Emily es la sinapsis, no un anillo).
 12. **09_DIARIO_LAB**: Crónica de la hibridación diaria.
