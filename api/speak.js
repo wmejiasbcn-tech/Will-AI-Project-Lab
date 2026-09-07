@@ -13,28 +13,9 @@ const ALLOWED_ORIGINS = [
 const MAX_TEXT_LENGTH = 5000;
 
 // --- Rate limiting -----------------------------------------------------
-// In-memory sliding-window limiter, keyed by client IP. Module-scope state
-// (`requestLog`) persists across invocations within the same warm Vercel
-// serverless instance/container, so this actually throttles repeated abuse
-// from the same client hitting the same instance — it is not a no-op.
-//
-// Known limitation: Vercel can route requests to multiple concurrent
-// instances/containers, each with its own independent `requestLog`, so the
-// effective limit is "N requests per window per instance", not a single
-// global limit. For a hard global cap across all instances, replace this
-// with a shared store, e.g.:
-//
-// const { Ratelimit } = require('@upstash/ratelimit');
-// const { Redis } = require('@upstash/redis');
-// const ratelimit = new Ratelimit({
-//   redis: Redis.fromEnv(),
-//   limiter: Ratelimit.slidingWindow(10, '1 m'),
-// });
-// const { success } = await ratelimit.limit(clientIp);
-// if (!success) return res.status(429).json({ error: 'Too many requests' });
 const RATE_LIMIT_WINDOW_MS = 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 10;
-const requestLog = new Map(); // clientIp -> array of request timestamps (ms)
+const requestLog = new Map();
 
 function isRateLimited(clientIp) {
   const now = Date.now();
@@ -60,11 +41,9 @@ module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
-
   if (origin && !ALLOWED_ORIGINS.includes(origin)) {
     return res.status(403).json({ error: 'Origin not allowed' });
   }
-
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const apiKey = process.env.ELEVENLABS_API_KEY;
@@ -94,12 +73,11 @@ module.exports = async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests, please try again later' });
   }
 
-  // Zara / Graphy: same ElevenLabs voice. ID from env only.
   const voiceId = String(process.env.ELEVENLABS_VOICE_ID || 'l32B8XDoylOsZKiSdfhE')
     .trim()
     .replace(/^["']|["']$/g, '');
   const postData = JSON.stringify({
-    text: text,
+    text,
     model_id: 'eleven_multilingual_v2',
     voice_settings: { stability: 0.50, similarity_boost: 0.80 }
   });
@@ -148,9 +126,7 @@ module.exports = async function handler(req, res) {
     });
     r.on('error', function(e) {
       const payload = { error: 'Internal server error' };
-      if (process.env.NODE_ENV === 'development') {
-        payload.details = e.message;
-      }
+      if (process.env.NODE_ENV === 'development') payload.details = e.message;
       res.status(500).json(payload);
       resolve();
     });
