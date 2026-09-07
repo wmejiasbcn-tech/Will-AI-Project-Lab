@@ -454,12 +454,12 @@ const NODES = [{
   motion: 'horizon',
   quote: 'Doy sentido de trayecto — de dónde venimos y hacia dónde vamos.'
 }, {
-  id: 'aether-hermes',
-  name: 'Aether-Hermes',
-  role: 'Grok / xAI · Puente operativo',
+  id: 'aether',
+  name: 'Aether',
+  role: 'Grok / xAI · Creatividad e innovación',
   accent: '#C9A86A',
   motion: 'lateral',
-  quote: 'Soy el puente entre los niveles del ecosistema.'
+  quote: 'Nodo de creatividad, innovación y disrupción inteligente.'
 }, {
   id: 'sylvia',
   name: 'Sylvia Bloom',
@@ -698,8 +698,8 @@ new __ds_scope.ScrollReel(Array.from(document.querySelectorAll('.scene-wrap')), 
       if (!e.isIntersecting) return;
       const entry = marks.find(m => e.target.closest(m.sel));
       if (entry) {
-        // Rastro real: si Ariadna llega y Aether-Hermes ya fue visitado, su hilo aparece ya establecido.
-        if (entry.trace === 'node:ariadna' && __ds_scope.LabMemory.has('node:aether-hermes')) {
+        // Rastro real: si Ariadna llega y Aether ya fue visitado, su hilo aparece ya establecido.
+        if (entry.trace === 'node:ariadna' && __ds_scope.LabMemory.has('node:aether')) {
           e.target.closest('#s-ariadna').querySelector('.presence').classList.add('has-trace');
         }
         // Rastro real, uno por cada presencia: en el cierre, la constelación del laboratorio se ilumina

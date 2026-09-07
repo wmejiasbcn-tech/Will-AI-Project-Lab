@@ -36,6 +36,10 @@ Graphy **no** carga `WaiplLabEngine` ni el MVP.
 
 El reloj de Graphy es simulado. Avanza solo con interacción. No hay scheduler ni hora real.
 
+## Nombre de Aether
+
+Orden soberana 2026-09-07: Aether es solo Aether. Hermes es otro. Ver `ORDEN_SOBERANA_AETHER_2026-09-07.md`.
+
 ## Lectura para agentes
 
 Primero fuente → después representación → después interpretación.

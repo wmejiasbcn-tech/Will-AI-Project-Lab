@@ -1,5 +1,8 @@
 # EXPEDIENTE TÉCNICO DE TRANSFERENCIA — GRAPHY / WAIPL
 
+> **Supersedido en nomenclatura (2026-09-07, orden soberana):** Aether es solo Aether. El compuesto Aether-Hermes está derogado. Este expediente se conserva como rastro histórico. Archivos vivos: `producto/graphy-data.js` y `ORDEN_SOBERANA_AETHER_2026-09-07.md`.
+
+
 Documento de handoff. Estado del proyecto en el momento de emisión, sin desarrollo asociado.
 Ningún archivo del producto se ha modificado durante la redacción de este expediente.
 
