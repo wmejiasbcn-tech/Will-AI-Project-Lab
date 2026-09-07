@@ -1,0 +1,383 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/chat/ChatMessage/**",
+              "components/chat/SystemPromptBox/**",
+              "components/core/Button/**",
+              "components/core/Card/**",
+              "components/core/Chip/**",
+              "components/core/Input/**",
+              "components/core/Logomark/**",
+              "components/core/MetricStat/**",
+              "components/core/Textarea/**",
+              "ui_kits/carta-presentacion/**",
+              "ui_kits/portfolio-agent/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Inter|Cormorant Garamond|JetBrains Mono))/i]",
+        "message": "Font not provided by the design system. Available: Inter, Cormorant Garamond, JetBrains Mono."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:variant|size|disabled|type|onClick|children|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: variant, size, disabled, type, onClick, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost|violet)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost' | 'violet'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Button> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|padding|hoverable|style|key|ref|className|style|children)$/]",
+        "message": "<Card> doesn't accept that prop. Declared props: children, padding, hoverable, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Card'] > JSXAttribute[name.name='padding'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Card> padding must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChatMessage'] > JSXAttribute > JSXIdentifier[name!=/^(?:role|children|key|ref|className|style|children)$/]",
+        "message": "<ChatMessage> doesn't accept that prop. Declared props: role, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChatMessage'] > JSXAttribute[name.name='role'] > Literal[value!=/^(?:user|agent)$/]",
+        "message": "<ChatMessage> role must be one of 'user' | 'agent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChatPanelMessage'] > JSXAttribute > JSXIdentifier[name!=/^(?:role|text|key|ref|className|style|children)$/]",
+        "message": "<ChatPanelMessage> doesn't accept that prop. Declared props: role, text."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ChatPanelMessage'] > JSXAttribute[name.name='role'] > Literal[value!=/^(?:user|agent)$/]",
+        "message": "<ChatPanelMessage> role must be one of 'user' | 'agent'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|key|ref|className|style|children)$/]",
+        "message": "<Chip> doesn't accept that prop. Declared props: children, tone."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:neutral|gold)$/]",
+        "message": "<Chip> tone must be one of 'neutral' | 'gold'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:placeholder|value|onChange|type|style|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: placeholder, value, onChange, type, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='LeftPanel'] > JSXAttribute > JSXIdentifier[name!=/^(?:latency|onPreset|key|ref|className|style|children)$/]",
+        "message": "<LeftPanel> doesn't accept that prop. Declared props: latency, onPreset."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Logomark'] > JSXAttribute > JSXIdentifier[name!=/^(?:withWordmark|size|assetsBase|key|ref|className|style|children)$/]",
+        "message": "<Logomark> doesn't accept that prop. Declared props: withWordmark, size, assetsBase."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='MetricStat'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|key|ref|className|style|children)$/]",
+        "message": "<MetricStat> doesn't accept that prop. Declared props: value, label."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='SystemPromptBox'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|onChange|editable|key|ref|className|style|children)$/]",
+        "message": "<SystemPromptBox> doesn't accept that prop. Declared props: value, onChange, editable."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Textarea'] > JSXAttribute > JSXIdentifier[name!=/^(?:placeholder|value|onChange|rows|style|key|ref|className|style|children)$/]",
+        "message": "<Textarea> doesn't accept that prop. Declared props: placeholder, value, onChange, rows, style."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Card": {
+        "replaces": []
+      },
+      "ChatMessage": {
+        "replaces": []
+      },
+      "ChatPanelMessage": {
+        "replaces": []
+      },
+      "Chip": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": []
+      },
+      "LeftPanel": {
+        "replaces": []
+      },
+      "Logomark": {
+        "replaces": []
+      },
+      "MetricStat": {
+        "replaces": []
+      },
+      "PortfolioAgentApp": {
+        "replaces": []
+      },
+      "SystemPromptBox": {
+        "replaces": []
+      },
+      "Textarea": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent-deep",
+      "--accent-primary",
+      "--accent-secondary",
+      "--accent-violet",
+      "--accent-violet-deep",
+      "--black",
+      "--blur-glass",
+      "--border-default",
+      "--border-strong",
+      "--border-subtle",
+      "--container-max",
+      "--duration-base",
+      "--duration-fast",
+      "--duration-slow",
+      "--ease-out",
+      "--ease-standard",
+      "--focus-ring",
+      "--font-display",
+      "--font-mono",
+      "--font-ui",
+      "--forbidden-teal",
+      "--gold-100",
+      "--gold-300",
+      "--gold-500",
+      "--gold-700",
+      "--gold-900",
+      "--gray-100",
+      "--gray-300",
+      "--gray-500",
+      "--gray-700",
+      "--lh-body",
+      "--lh-caption",
+      "--lh-heading",
+      "--lh-tight",
+      "--link",
+      "--link-hover",
+      "--obsidian-600",
+      "--obsidian-700",
+      "--obsidian-800",
+      "--obsidian-900",
+      "--obsidian-950",
+      "--paper",
+      "--radius-full",
+      "--radius-lg",
+      "--radius-md",
+      "--radius-pill",
+      "--radius-sm",
+      "--radius-xl",
+      "--shadow-card",
+      "--shadow-glow-gold",
+      "--shadow-glow-violet",
+      "--shadow-inset-hairline",
+      "--shadow-raised",
+      "--space-1",
+      "--space-10",
+      "--space-12",
+      "--space-16",
+      "--space-2",
+      "--space-20",
+      "--space-24",
+      "--space-3",
+      "--space-32",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-8",
+      "--status-caution",
+      "--status-critical",
+      "--status-success",
+      "--surface-card",
+      "--surface-card-hover",
+      "--surface-inset",
+      "--surface-page",
+      "--surface-raised",
+      "--text-body",
+      "--text-body-l",
+      "--text-body-s",
+      "--text-caption",
+      "--text-display-l",
+      "--text-display-m",
+      "--text-display-s",
+      "--text-display-xl",
+      "--text-inverse",
+      "--text-muted",
+      "--text-on-gold",
+      "--text-primary",
+      "--text-secondary",
+      "--tracking-normal",
+      "--tracking-tight",
+      "--tracking-wide",
+      "--tracking-wider",
+      "--violet-300",
+      "--violet-600",
+      "--violet-900",
+      "--weight-black",
+      "--weight-bold",
+      "--weight-medium",
+      "--weight-regular",
+      "--weight-semibold",
+      "--white"
+    ],
+    "tokenKinds": {
+      "--obsidian-950": "color",
+      "--obsidian-900": "color",
+      "--obsidian-800": "color",
+      "--obsidian-700": "color",
+      "--obsidian-600": "color",
+      "--gold-100": "color",
+      "--gold-300": "color",
+      "--gold-500": "color",
+      "--gold-700": "color",
+      "--gold-900": "color",
+      "--violet-300": "color",
+      "--violet-600": "color",
+      "--violet-900": "color",
+      "--gray-100": "color",
+      "--gray-300": "color",
+      "--gray-500": "color",
+      "--gray-700": "color",
+      "--paper": "color",
+      "--black": "color",
+      "--white": "color",
+      "--forbidden-teal": "color",
+      "--surface-page": "color",
+      "--surface-raised": "color",
+      "--surface-card": "color",
+      "--surface-card-hover": "color",
+      "--surface-inset": "color",
+      "--border-subtle": "color",
+      "--border-default": "color",
+      "--border-strong": "color",
+      "--text-primary": "font",
+      "--text-secondary": "font",
+      "--text-muted": "font",
+      "--text-on-gold": "font",
+      "--text-inverse": "font",
+      "--accent-primary": "color",
+      "--accent-secondary": "color",
+      "--accent-deep": "color",
+      "--accent-violet": "color",
+      "--accent-violet-deep": "color",
+      "--link": "color",
+      "--link-hover": "color",
+      "--focus-ring": "color",
+      "--status-success": "color",
+      "--status-caution": "color",
+      "--status-critical": "color",
+      "--font-display": "font",
+      "--font-ui": "font",
+      "--font-mono": "font",
+      "--text-display-xl": "font",
+      "--text-display-l": "font",
+      "--text-display-m": "font",
+      "--text-display-s": "font",
+      "--text-body-l": "font",
+      "--text-body": "font",
+      "--text-body-s": "font",
+      "--text-caption": "font",
+      "--lh-tight": "other",
+      "--lh-heading": "other",
+      "--lh-body": "other",
+      "--lh-caption": "other",
+      "--tracking-tight": "font",
+      "--tracking-normal": "font",
+      "--tracking-wide": "font",
+      "--tracking-wider": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-semibold": "font",
+      "--weight-bold": "font",
+      "--weight-black": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-8": "spacing",
+      "--space-10": "spacing",
+      "--space-12": "spacing",
+      "--space-16": "spacing",
+      "--space-20": "spacing",
+      "--space-24": "spacing",
+      "--space-32": "spacing",
+      "--radius-sm": "radius",
+      "--radius-md": "radius",
+      "--radius-lg": "radius",
+      "--radius-xl": "radius",
+      "--radius-pill": "radius",
+      "--radius-full": "radius",
+      "--container-max": "spacing",
+      "--shadow-card": "shadow",
+      "--shadow-raised": "shadow",
+      "--shadow-glow-gold": "shadow",
+      "--shadow-glow-violet": "shadow",
+      "--shadow-inset-hairline": "shadow",
+      "--ease-standard": "other",
+      "--ease-out": "other",
+      "--duration-fast": "other",
+      "--duration-base": "other",
+      "--duration-slow": "other",
+      "--blur-glass": "spacing"
+    },
+    "fontFamilies": [
+      "Cormorant Garamond",
+      "Inter",
+      "JetBrains Mono"
+    ]
+  }
+}
