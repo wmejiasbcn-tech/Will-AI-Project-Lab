@@ -1,0 +1,1 @@
+Trabajo paralelo Fase 4 preparado. Ver runbook, casos, handoff y checklist.
