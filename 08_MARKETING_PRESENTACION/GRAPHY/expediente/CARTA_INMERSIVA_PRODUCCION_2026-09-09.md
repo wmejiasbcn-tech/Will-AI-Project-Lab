@@ -55,13 +55,28 @@ Se produjo y verificó un clip de 5 s de metamorfosis continua: Graphy corpórea
 
 Características verificadas: sin corte; sin fundido a negro; Graphy en el universo, no en laboratorio; transformación corpórea → grafo; continuidad espacial; grafo como vehículo hacia el siguiente nodo.
 
+### 4.4 Prueba de apertura del universo
+
+La generación iniciada previamente con `video/minimax-h3-max-turbo` quedó completada y produjo:
+
+`https://cdn.creativeclaw.co/u/16419b3d/videos/b8ef1678-4d1a-4315-b5ef-b441333a82c5.mp4`
+
+**Job:** `fbe75cdb-f7c9-4cb3-954f-0ea0a94561ad`  
+**Duración:** 5 s  
+**Modelo:** `video/minimax-h3-max-turbo`  
+**Créditos registrados por el job:** 25  
+**Prompt:** apertura del universo WAIPL, campo volumétrico vivo, constelación relacional de once presencias, estética cinematográfica holográfica/volumétrica, sin caja holográfica, sin texto y sin fundido a negro.
+
 ## 5. Consumo de créditos Creative Claw
 
+Registro confirmado de generaciones:
 - Keyframe Graphy: 30 créditos.
 - Keyframe grafo: 16 créditos.
 - Prueba Graphy → grafo: 25 créditos.
-- **Total consumido en esta fase:** 71 créditos.
-- **Saldo registrado tras la última generación:** 4 créditos.
+- Prueba de apertura del universo: 25 créditos.
+- **Consumo confirmado de estas cuatro operaciones:** 96 créditos.
+
+El registro anterior consignaba 71 créditos y saldo 4, pero no incluía correctamente el job de apertura de 5 s. Se corrige la trazabilidad: el consumo confirmado de estas cuatro operaciones es 96 créditos. El saldo actual debe tomarse del estado efectivo de Creative Claw, no de una estimación documental previa.
 
 ## 6. Voz
 
@@ -81,7 +96,7 @@ No se canoniza ninguna voz genérica como voz de Graphy. La referencia solicitad
 
 ## 8. Próxima producción
 
-Cuando estén disponibles los créditos previstos para el siguiente ciclo, producir los planos definitivos desde esta base; integrar las piezas de Aether con la continuación; resolver la voz canónica de Graphy; montar; verificar; y registrar cada resultado.
+Con el saldo real disponible, continuar la producción desde estas piezas base: pruebas de movimiento y continuidad; desarrollo de los espacios especializados de los nodos; integración de las piezas de Aether; resolución de la voz canónica de Graphy; montaje; verificación; y registro de cada resultado.
 
 ## 9. Trazabilidad
 
