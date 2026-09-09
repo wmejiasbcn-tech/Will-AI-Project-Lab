@@ -1,0 +1,1 @@
+SHA-256 calculable sobre el artefacto de repositorio tras checkout. Este sidecar no se usa como evidencia de ejecución; la evidencia de ejecución debe proceder de los artefactos producidos por la batería de pruebas.
