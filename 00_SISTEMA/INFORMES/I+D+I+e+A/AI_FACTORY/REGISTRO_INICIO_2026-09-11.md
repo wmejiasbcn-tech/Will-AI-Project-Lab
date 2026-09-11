@@ -1,13 +1,13 @@
 # REGISTRO DE INICIO — AF-01 AI FACTORY
 
 **Fecha:** 2026-09-11  
-**Área:** I+D+i+e+A  
+**Área:** I+D+I+e+A  
 **Línea:** AF-01 — WAIPL AI Factory  
 **Estado:** ABIERTA
 
 ## Hito de nacimiento
 
-Se registra formalmente el inicio de una tercera vía de investigación dentro de I+D+i+e+A, independiente de:
+Se registra formalmente el inicio de una tercera vía de investigación dentro de I+D+I+e+A, independiente de:
 
 1. G3 / ALNIRA
 2. Graphify / LLM / WikiSkill
