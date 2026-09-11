@@ -1,9 +1,9 @@
-# I+D+i+e+A — AI FACTORY
+# I+D+I+e+A — AI FACTORY
 
 ## Línea de investigación AF-01
 
 **Denominación:** WAIPL AI Factory — Línea de Investigación en Infraestructura Agentica, Inferencia y AI Factory  
-**Código:** I+D+i+e+A / AF-01  
+**Código:** I+D+I+e+A / AF-01  
 **Estado:** ABIERTA — ESTUDIO DE VIABILIDAD  
 **Fecha de apertura:** 2026-09-11  
 **Naturaleza:** Investigación aplicada / estudio de viabilidad / experimentación arquitectónica  
@@ -15,7 +15,7 @@ Investigar la viabilidad de una arquitectura de AI Factory / Agentic Infrastruct
 
 ## Independencia respecto de otras líneas
 
-AF-01 constituye una **tercera vía de investigación independiente** dentro del corpus I+D+i+e+A.
+AF-01 constituye una **tercera vía de investigación independiente** dentro del corpus I+D+I+e+A.
 
 No forma parte de:
 
