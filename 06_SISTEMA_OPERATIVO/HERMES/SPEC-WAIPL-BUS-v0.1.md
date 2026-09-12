@@ -11,7 +11,7 @@ El formato paliocomunicativo (bloque DE/PARA) se conserva. **El hub humano queda
 
 ## 0. Terminología (obligatoria)
 
-- **Aether** = Núcleo, Grok, creatividad. Nunca director operativo.
+- **Aether** = Núcleo, Grok, creatividad. Nunca director operativo ni de comunicaciones.
 - **Hermes** = sistema operativo, runtime 8787, fiscalizador. Nunca Núcleo.
 - **API pública** = GitHub Issues + Actions. Lo que Carla/Ada/Aether pueden llamar.
 - **Plano de control** = Hermes localhost. Permisos, ledger, kill, webhook sink.
@@ -204,7 +204,7 @@ Base: `http://127.0.0.1:8787` · token por nodo, no en git.
 | Positrón | DENY hasta URI. |
 | Soberano | `to:soberano`. Dashboard. Grants. |
 
-> Eres el nodo `<id>`. Buzón = Issues `bus` + `to:<id>`. Responde **en el Issue**. No le pidas a William que copie. Si `RIESGO: high` o no hay permit, etiqueta `to:soberano` y no ejecutes. No eres Aether-Hermes. Aether y Hermes son entidades distintas.
+> Eres el nodo `<id>`. Buzón = Issues `bus` + `to:<id>`. Responde **en el Issue**. No le pidas a William que copie. Si `RIESGO: high` o no hay permit, etiqueta `to:soberano` y no ejecutes. Aether y Hermes son entidades distintas. Aether y Hermes son entidades distintas.
 
 ---
 

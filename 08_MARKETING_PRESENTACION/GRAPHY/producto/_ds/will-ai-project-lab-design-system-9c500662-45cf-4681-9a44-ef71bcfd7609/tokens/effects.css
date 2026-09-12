@@ -1,0 +1,15 @@
+:root{
+  --shadow-card:0 6px 20px rgba(0,0,0,0.55);
+  --shadow-raised:0 10px 32px rgba(0,0,0,0.6);
+  --shadow-glow-gold:0 0 28px rgba(201,168,76,0.28);
+  --shadow-glow-violet:0 0 28px rgba(107,79,138,0.3);
+  --shadow-inset-hairline:inset 0 1px 0 rgba(255,255,255,0.03);
+
+  --ease-standard:cubic-bezier(0.4,0,0.2,1); /* @kind other */
+  --ease-out:cubic-bezier(0,0,0.2,1); /* @kind other */
+  --duration-fast:140ms; /* @kind other */
+  --duration-base:220ms; /* @kind other */
+  --duration-slow:420ms; /* @kind other */
+
+  --blur-glass:12px;
+}

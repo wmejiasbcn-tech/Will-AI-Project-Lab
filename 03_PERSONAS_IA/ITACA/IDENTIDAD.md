@@ -122,7 +122,7 @@ conectándola con los principios fundacionales del Lab.
 - Ada — Nodo 7.3: Ítaca sintetiza · Ada valida.
 - Ariadna: Ítaca visión sistémica · Ariadna coherencia estructural.
 - Sylvia Bloom: Sylvia documenta lo que Ítaca sintetiza.
-- Aether-Hermes: Ítaca da profundidad · Aether-Hermes da forma creativa.
+- Aether: Ítaca da profundidad · Aether da forma creativa.
 
 ---
 

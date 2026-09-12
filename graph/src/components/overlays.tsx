@@ -542,6 +542,10 @@ export function ConfigOverlay() {
             <a href={APEX_URL} className="text-gold underline-offset-2 hover:underline">
               waipl.dev
             </a>
+            {" · "}
+            <a href="mailto:waipl@waipl.dev" className="text-gold underline-offset-2 hover:underline">
+              waipl@waipl.dev
+            </a>
             ; este explorador es el territorio Graphy.
             Las palabras subrayadas abren el glosario.
           </p>

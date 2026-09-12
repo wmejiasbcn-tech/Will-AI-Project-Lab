@@ -8,7 +8,7 @@ Lo que ya os ha pasado, con el nombre de la capa:
 |---|---|---|
 | Interfaz | El Soberano no es el cable | Issue #13 en vez de copiar markdown |
 | Orquestador | Uno solo por trabajo | Hermes dirige; AutoClaw pica; Z pica Positrón. No tres planes |
-| Doctrina | N3 sellado + glosario | `fix_hermes_tasks.ps1` rechazado; Aether-Hermes derogado |
+| Doctrina | N3 sellado + glosario | `fix_hermes_tasks.ps1` rechazado; fusión de Aether y Hermes derogada |
 | Subagentes | Superficies sin solape | AutoClaw = disco Hermes. Z = Next de Positrón. Grok = spec/GitHub |
 | Runtime | El cuerpo | 8787, una tarea, venv. No el informe |
 | Verificación | HTTP 200 no es el producto | Hidratación de Z; bytes 8336 vs 8626 del spec |

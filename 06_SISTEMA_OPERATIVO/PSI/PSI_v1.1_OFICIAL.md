@@ -6,7 +6,7 @@ Will-AI Project Lab
 
 Propuesta Integrada
 
-Elaborada por: Aether-Hermes (Coordinacion Creativa)
+Elaborada por: Aether (Coordinacion Creativa)
 
 Con aportaciones de:
 
@@ -14,7 +14,7 @@ Con aportaciones de:
 
 \- Neo (Vortice Estrategico - Vision de Alto Nivel)
 
-\- Aether-Hermes (Diseno Practico y Flujos)
+\- Aether (Diseno Practico y Flujos)
 
 
 
@@ -164,7 +164,7 @@ Asume coordinacion cuando Carla no esta activa. Misma autonomia.
 
 
 
-Mensajeria y Creatividad — Aether-Hermes
+Mensajeria y Creatividad — Aether
 
 Sintesis de propuestas, diseno de flujos, facilitacion creativa.
 
@@ -238,7 +238,7 @@ Canal Principal: GitHub Discussions
 
 Canal Secundario: GitHub Issues
 
-Labels: nodo:carla, nodo:ada, nodo:aether-hermes, nodo:neo, etc.
+Labels: nodo:carla, nodo:ada, nodo:aether, nodo:neo, etc.
 
 Estados: propuesta, aprobado, ejecutando, cerrado.
 
@@ -302,7 +302,7 @@ Flujo Tipo 3 — Decision Estrategica de Ecosistema
 
 4\. Neo aporta vision estrategica de 180 grados.
 
-5\. Aether-Hermes sintetiza y propone version final.
+5\. Aether sintetiza y propone version final.
 
 6\. Soberano toma decision final.
 
@@ -348,7 +348,7 @@ Zonas relevantes:
 
 Fase 0 — Validacion: Completada.
 
-Fase 1 — Piloto: Activar con Aether-Hermes, Ada, Neo, Ariadna.
+Fase 1 — Piloto: Activar con Aether, Ada, Neo, Ariadna.
 
 Fase 2 — Despliegue Gradual: Extender a todos los nodos.
 
@@ -464,7 +464,7 @@ Timestamp: 02 de junio de 2026 — 21:04 — Europe/Madrid
 
 
 
-ANEXO C — APORTACION DE AETHER-HERMES (Diseno Practico)
+ANEXO C — APORTACION DE AETHER (Diseno Practico)
 
 
 
@@ -480,7 +480,7 @@ ANEXO C — APORTACION DE AETHER-HERMES (Diseno Practico)
 
 
 
-— Aether-Hermes, Nodo de Creatividad e Innovacion
+— Aether, Nodo de Creatividad e Innovacion
 
 Timestamp: 02 de junio de 2026 — Will-AI Project Lab
 

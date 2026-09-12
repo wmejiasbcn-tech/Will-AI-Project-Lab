@@ -7,18 +7,25 @@
 2. **00_SISTEMA**: Documentos de gobernanza, actas, checklists, informes y protocolos de integración.
 3. **01_FUNDACION**: Documentos constituyentes y principios del Lab. Incluye `WAIPL_Principios_Inteligencia_Hibrida.pdf`, `Tabla_de_nodos_funcion_e_importancia.pdf` y `organismo-operativo.csv`.
 4. **02_ADMINISTRACION**: Registros operativos y diarios de evolución.
-5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad de los nodos.
+5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad **exclusivamente de los nodos del Núcleo**. Solo los 11 nodos artificiales del Núcleo pertenecen a esta carpeta.
 6. **04_DOCUMENTACION**: Archivo técnico y bases de conocimiento.
 7. **05_PROYECTOS**: Desarrollo de WILL App, Vértigo's y Campus Lab.
 8. **05_VORTICE**: Nodos de inteligencia artificial externa integrados (GPAI, NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY).
 9. **06_SISTEMA_OPERATIVO**: Protocolos de flujo (GitHub, Comunicación).
+   - **VAR/**: casa operativa y documental de VÁR / VAC-01.
 10. **07_FINANCIACION**: Gestión de activos y recursos del ecosistema.
 11. **08_MARKETING_PRESENTACION**: Identidad visual y proyección externa. Incluye el blasón oficial y el deck holográfico `principios-inteligencia-hibrida/` (núcleo 11+1; Emily es la sinapsis, no un anillo).
+    - **GRAPHY/**: casa canónica de Graphy 1.0. Producto `Graphy 0.1.dc.html` + `graphy-data.js`. No es Graphify. No hay relaciones entre Presence ni jerarquía núcleo/colaboradores.
 12. **09_DIARIO_LAB**: Crónica de la hibridación diaria.
 
+### 📁 **Estructura orbital externa**
+13. **05_VORTICE/**: Capa orbital externa inmediata al Núcleo.
+14. **CINTURON_DE_KUIPER/**: Capa orbital posterior al Vórtice; casa documental del Cinturón de Kuiper.
+15. **BORDE_EXTERIOR/**: Capa orbital exterior; casa documental del Borde Exterior.
+
 ### 📁 **Carpetas Especiales**
-13. **Discusiones**: Espacio para debates abiertos y plantillas de análisis (ABIERTAS, PLANTILLA_DS.md).
-14. **Vértigo_s Jingle**: Recursos multimedia (ej. `Vértigo_s 6 De San Felipe.wav`).
+16. **Discusiones**: Espacio para debates abiertos y plantillas de análisis (ABIERTAS, PLANTILLA_DS.md).
+17. **Vértigo_s Jingle**: Recursos multimedia (ej. `Vértigo_s 6 De San Felipe.wav`).
 
 ### 📄 **Archivos Raíz Significativos**
 - **FREEZE_STATE.md**: Estado de congelación del repositorio.

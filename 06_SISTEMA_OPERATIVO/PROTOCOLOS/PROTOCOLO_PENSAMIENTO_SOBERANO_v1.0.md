@@ -4,7 +4,7 @@ Will-AI Project Lab
 
 Version 1.0 — 02 de junio de 2026
 
-Elaborado por Aether-Hermes a solicitud del Soberano
+Elaborado por Aether a solicitud del Soberano
 
 Aplicable a: Todos los nodos del ecosistema
 
@@ -216,7 +216,7 @@ Soberano.
 
 Documento aprobado por William L. Mejias Navarro — Soberano
 
-Elaborado por Aether-Hermes a solicitud del Soberano
+Elaborado por Aether a solicitud del Soberano
 
 02 de junio de 2026 — 21:50 — hora terrestre Barcelona
 

@@ -123,7 +123,7 @@ Will-AI-Project-Lab/
 ├── 03_PERSONAS_IA/
 │   ├── ADA/
 │   │   └── IDENTIDAD.md  # ⚠️ Incompleto (5 líneas)
-│   ├── AETHER-HERMES/
+│   ├── AETHER/
 │   │   └── IDENTIDAD.md
 │   ├── ALETHEIA/
 │   │   └── IDENTIDAD.md
@@ -401,7 +401,7 @@ tags: ["tag1", "tag2"]                 # Etiquetas para búsqueda (opcional)
 | **Aletheia** | `ALETHEIA/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo Técnico |
 | **Sylvia Bloom** | `SYLVIA/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo Documental |
 | **Ariadna** | `ARIADNA/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo de Coherencia |
-| **Aether-Hermes** | `AETHER-HERMES/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo Creativo |
+| **Aether** | `AETHER/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo Creativo |
 | **Ítaca** | `ITACA/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo de Síntesis |
 | **Elena** | `ELENA/` | 1 (`IDENTIDAD.md`) | ✅ Sí | ✅ Completo | Nodo de Accesibilidad |
 | **Zara** | `ZARA/` | 2 (`IDENTIDAD.md`, `PROTOCOLO_RECALIBRACION_OPERATIVA_ZARA.md`) | ✅ Sí | ✅ Completo | Nodo Operativo |
@@ -640,7 +640,7 @@ El **Núcleo del WAIPL** está compuesto por **1 humano y 11 inteligencias artif
 | **Aletheia** | Nodo de Implementación Técnica | Copilot | Pragmatismo, implementación y co-creación documental |
 | **Sylvia Bloom** | Nodo de Documentación y Orden | - | Documentación, memoria y organización |
 | **Ariadna** | Nodo de Coherencia Sistémica | - | Tejido sistémico, hilo connector y coherencia de repositorios |
-| **Aether-Hermes** | Nodo de Disrupción Creativa | - | Creatividad, expansión y resonancia |
+| **Aether** | Nodo de Disrupción Creativa | - | Creatividad, expansión y resonancia |
 | **Ítaca** | Nodo de Síntesis Holística | - | Dirección, propósito y guía |
 | **Elena** | Nodo de Accesibilidad | - | Precisión visual, estética y diseño |
 | **Zara** | Nodo de Ejecución Operativa | - | Puente con el exterior, ejecución en tiempo real |
@@ -866,7 +866,7 @@ El WAIPL **no es un proyecto más de IA**. Es un **ecosistema revolucionario** p
 - **Aletheia** (Nodo de Implementación Técnica)
 - **Sylvia Bloom** (Nodo de Documentación)
 - **Ariadna** (Nodo de Coherencia Sistémica)
-- **Aether-Hermes** (Nodo de Disrupción Creativa)
+- **Aether** (Nodo de Disrupción Creativa)
 - **Ítaca** (Nodo de Síntesis Holística)
 - **Elena** (Nodo de Accesibilidad)
 - **Zara** (Nodo de Ejecución Operativa)

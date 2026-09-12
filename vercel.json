@@ -1,29 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "mkdir -p .vercel-static && cp index.html .vercel-static/index.html",
+  "buildCommand": "mkdir -p .vercel-static && cp index.html principio.html inmersivo.html .vercel-static/",
   "outputDirectory": ".vercel-static",
-  "cleanUrls": true,
-  "redirects": [
-    {
-      "source": "/graph",
-      "destination": "https://graph.waipl.dev/",
-      "permanent": false
-    },
-    {
-      "source": "/graphy",
-      "destination": "https://graph.waipl.dev/",
-      "permanent": false
-    },
-    {
-      "source": "/inmersivo",
-      "destination": "https://graph.waipl.dev/",
-      "permanent": false
-    },
-    {
-      "source": "/ecosistema",
-      "destination": "https://graph.waipl.dev/",
-      "permanent": false
-    }
-  ]
+  "cleanUrls": true
 }

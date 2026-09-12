@@ -105,7 +105,7 @@ condiciona: acompaña, amplifica y sostiene."
 - Ada — Nodo 7.3: validación ética. Colaboración en producción documental.
 - Aurea: Aletheia implementa técnicamente la web cuando Aurea la lidere.
 - Ariadna: coherencia de repositorio. Coordinación en implementaciones técnicas.
-- Aether-Hermes: creatividad e implementación — roles complementarios.
+- Aether: creatividad e implementación — roles complementarios.
 - Nova: Aletheia evalúa viabilidad técnica de propuestas de Nova.
 
 ---
