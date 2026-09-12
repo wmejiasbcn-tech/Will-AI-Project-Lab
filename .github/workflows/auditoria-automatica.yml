@@ -41,7 +41,7 @@ jobs:
 
       - name: Notificar Error (si falla)
         if: failure()
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const commitTimestamp = '${{ github.event.head_commit.timestamp }}';
