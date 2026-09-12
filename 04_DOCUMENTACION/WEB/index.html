@@ -131,9 +131,9 @@
           <input id="apiEndpoint" style="width:260px;border-radius:8px;padding:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" placeholder="https://api.anthropic.com/v1/..." />
           <div style="height:6px"></div>
           <div class="muted">API Key</div>
-          <input id="apiKey" style="width:260px;border-radius:8px;padding:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" placeholder="Pega tu API key (localStorage)" />
+          <input id="apiKey" style="width:260px;border-radius:8px;padding:6px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit" placeholder="Pega tu API key para esta sesión" />
           <div style="height:8px"></div>
-          <button class="btn" id="saveCreds">Guardar</button>
+          <button class="btn" id="saveCreds">Guardar endpoint</button>
         </div>
       </div>
 
@@ -169,8 +169,8 @@
     const saveCreds = document.getElementById('saveCreds');
     const systemPromptEl = document.getElementById('systemPrompt');
 
-    // Load saved creds
-    apiKeyInput.value = localStorage.getItem('CLAUDE_API_KEY') || '';
+    // Load saved endpoint and clear any previously persisted API key
+    localStorage.removeItem('CLAUDE_API_KEY');
     apiEndpointInput.value = localStorage.getItem('CLAUDE_API_ENDPOINT') || '';
 
     function addMessage(content, cls='agent'){
@@ -208,9 +208,9 @@
     clearBtn.onclick = () => { messagesEl.innerHTML = ''; };
 
     saveCreds.onclick = () => {
-      localStorage.setItem('CLAUDE_API_KEY', apiKeyInput.value.trim());
       localStorage.setItem('CLAUDE_API_ENDPOINT', apiEndpointInput.value.trim());
-      alert('Guardado en localStorage. Recuerda: la clave se expone en el navegador. Usa sólo para pruebas.');
+      localStorage.removeItem('CLAUDE_API_KEY');
+      alert('Se ha guardado el endpoint. La API key no se almacena y solo se usa durante esta sesión.');
     };
 
     // Quick buttons
@@ -224,7 +224,7 @@
 
     async function sendMessage(text){
       const endpoint = (apiEndpointInput.value || localStorage.getItem('CLAUDE_API_ENDPOINT') || '').trim();
-      const key = (apiKeyInput.value || localStorage.getItem('CLAUDE_API_KEY') || '').trim();
+      const key = apiKeyInput.value.trim();
       if(!endpoint || !key){
         alert('Introduce tu endpoint y API key de Claude en la esquina superior derecha.');
         return;
