@@ -15,7 +15,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Usamos el PowerShell nativo del sistema directamente, sin intermediarios rotos
       - name: Ejecutar Auditoría Completa

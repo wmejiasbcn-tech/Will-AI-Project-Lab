@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
       - name: Load feedforward
         run: python3 06_SISTEMA_OPERATIVO/ARNES/harness_guide_loader.py
       - name: Consume feedforward in runtime context
