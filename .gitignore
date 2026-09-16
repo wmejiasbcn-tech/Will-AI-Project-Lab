@@ -1,0 +1,10 @@
+# Proteccion de secretos y artefactos pesados (AutoClaw)
+waipl/rag/secrets/
+waipl/rag/pgdata/
+**/venv/
+**/__pycache__/
+*.pyc
+.openclaw/
+.cluster/
+RECUPERACION/
+.openclaw-attachments/

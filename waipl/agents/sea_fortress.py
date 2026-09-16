@@ -8,7 +8,7 @@ Encargado de la seguridad, auditoría de integridad y protección de la infraest
 
 import logging
 from datetime import datetime
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger("SEA-01-Fortress")
 

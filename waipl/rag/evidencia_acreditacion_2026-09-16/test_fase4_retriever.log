@@ -1,0 +1,214 @@
+﻿# interpreter: C:\Program Files\AutoClaw\resources\python\python.exe
+# command: "C:\Program Files\AutoClaw\resources\python\python.exe" "waipl\scripts\test_fase4_retriever.py"  (cwd=C:\Users\USER\Desktop\AutoClaw)
+# started: 2026-09-16T16:12:21.1428572+02:00
+========================================================================
+WILL APP RAG ÔÇö FASE 4: RETRIEVER + CONTEXT BUILDER
+Bater├¡a de 25 tests con evidencia detallada
+========================================================================
+
+Store de prueba: {'sources': 3, 'documents': 6, 'versions': 7, 'acquisitions': 7, 'verifications': 7, 'human_decisions': 6, 'ingestions': 5, 'chunks': 5, 'embeddings': 5, 'aliases': 0, 'audit_log': 68}
+
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+ID       INPUT                                    EXPECTED                  PASS 
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+T01      query='profilaxis preexposici├│n PrEP'    domain includes MEDICO    Ô£à
+T02      query sem├ínticamente equivalente         concepts relacionados con Ô£à
+T03      consulta ambigua multidominio            len(domain) >= 2          Ô£à
+T04      consulta multidominio expl├¡cita          len(domain) >= 2          Ô£à
+T05      restricci├│n temporal 2024                temporal includes 2024    Ô£à
+T06      restricci├│n territorial Espa├▒a           ES in territory           Ô£à
+T07      v1 OBSOLETA, v2 VIGENTE                  v2 recuperable, v1 no     Ô£à
+T08      version REVOCADA                         0 leaked                  Ô£à
+T09      version CUARENTENA                       0 leaked                  Ô£à
+T10      version PENDIENTE_DECISION_HUMANA        0 leaked                  Ô£à
+T11      dedup: mismo hash                        sin hashes duplicados     Ô£à
+T12      evidencia parcial (solo 1 dominio cubier PARTIAL o INSUFFICIENT    Ô£à
+T13      sin conocimiento pertinente              NO_EVIDENCE               Ô£à
+T14      indicada vs contraindicada               CONTRADICTORY             Ô£à
+T15      pertinente (0.95) vs ruido (0.5)         pertinente primero        Ô£à
+T16      version=3e71be29...                      provenance completa       Ô£à
+T17      VIGENTE + CUARENTENA (sim mayor)         0 leaked items            Ô£à
+T18      4 chunks id├®nticos                       dedup reduce items        Ô£à
+T19      context packet con evidencia             permite reconstruir evide Ô£à
+T20      sin evidencia en RAG                     NO_EVIDENCE (no fabricaci Ô£à
+T21      8 queries concurrentes                   0 errores, 8 resultados   Ô£à
+T22      save + reload                            stats id├®nticos           Ô£à
+T23      regresi├│n Fase 1                         42/42 PASS, exit 0        Ô£à
+T24      regresi├│n Fase 2                         57/57 PASS, exit 0        Ô£à
+T25      regresi├│n Fase 3                         32/32 PASS, exit 0        Ô£à
+ÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇÔöÇ
+
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+EVIDENCIA DETALLADA
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+
+[T01] PASS
+  INPUT:    query='profilaxis preexposici├│n PrEP'
+  EXPECTED: domain includes MEDICO
+  ACTUAL:   domain=['MEDICO_CIENTIFICO_COMUNITARIO']
+  EVIDENCE: concepts=['profilaxis', 'preexposicio', 'prep', 'profilaxis preexposicio', 'preexposicio prep'], domain=['MEDICO_CIENTIFICO_COMUNITARIO']
+
+[T02] PASS
+  INPUT:    query sem├ínticamente equivalente
+  EXPECTED: concepts relacionados con VIH/PrEP
+  ACTUAL:   concepts=['prevencio', 'vih', 'medicacio', 'preventiva', 'prevencio vih']
+  EVIDENCE: concepts=['prevencio', 'vih', 'medicacio', 'preventiva', 'prevencio vih', 'vih medicacio', 'medicacio preventiva']
+
+[T03] PASS
+  INPUT:    consulta ambigua multidominio
+  EXPECTED: len(domain) >= 2
+  ACTUAL:   domain=['MEDICO_CIENTIFICO_COMUNITARIO', 'JURIDICO_NORMATIVO'], len=2
+  EVIDENCE: domain=['MEDICO_CIENTIFICO_COMUNITARIO', 'JURIDICO_NORMATIVO']
+
+[T04] PASS
+  INPUT:    consulta multidominio expl├¡cita
+  EXPECTED: len(domain) >= 2
+  ACTUAL:   domain=['MEDICO_CIENTIFICO_COMUNITARIO', 'JURIDICO_NORMATIVO']
+  EVIDENCE: domain=['MEDICO_CIENTIFICO_COMUNITARIO', 'JURIDICO_NORMATIVO'], subdomain=['PrEP', 'Protecci├│nDatos']
+
+[T05] PASS
+  INPUT:    restricci├│n temporal 2024
+  EXPECTED: temporal includes 2024
+  ACTUAL:   temporal=[TemporalConstraint(after=None, before=None, exact='2024', raw='2024')]
+  EVIDENCE: temporal=[TemporalConstraint(after=None, before=None, exact='2024', raw='2024')]
+
+[T06] PASS
+  INPUT:    restricci├│n territorial Espa├▒a
+  EXPECTED: ES in territory
+  ACTUAL:   territory=['ES']
+  EVIDENCE: territory=['ES']
+
+[T07] PASS
+  INPUT:    v1 OBSOLETA, v2 VIGENTE
+  EXPECTED: v2 recuperable, v1 no
+  ACTUAL:   obs_in_ret=0, vig=1
+  EVIDENCE: obs_count=1, vig_count=1
+
+[T08] PASS
+  INPUT:    version REVOCADA
+  EXPECTED: 0 leaked
+  ACTUAL:   leaked=0
+  EVIDENCE: revocadas=0
+
+[T09] PASS
+  INPUT:    version CUARENTENA
+  EXPECTED: 0 leaked
+  ACTUAL:   leaked=0
+  EVIDENCE: cuarentena=1
+
+[T10] PASS
+  INPUT:    version PENDIENTE_DECISION_HUMANA
+  EXPECTED: 0 leaked
+  ACTUAL:   leaked=0
+  EVIDENCE: pendientes=1
+
+[T11] PASS
+  INPUT:    dedup: mismo hash
+  EXPECTED: sin hashes duplicados
+  ACTUAL:   unique=4, total=4
+  EVIDENCE: aliases=0
+
+[T12] PASS
+  INPUT:    evidencia parcial (solo 1 dominio cubierto)
+  EXPECTED: PARTIAL o INSUFFICIENT
+  ACTUAL:   status=PARTIAL
+  EVIDENCE: ratio=0.2857142857142857, dims=7
+
+[T13] PASS
+  INPUT:    sin conocimiento pertinente
+  EXPECTED: NO_EVIDENCE
+  ACTUAL:   status=NO_EVIDENCE
+  EVIDENCE: reason=No se recuper├│ conocimiento autorizado pertinente
+
+[T14] PASS
+  INPUT:    indicada vs contraindicada
+  EXPECTED: CONTRADICTORY
+  ACTUAL:   status=CONTRADICTORY, pairs=1
+  EVIDENCE: pairs=1
+
+[T15] PASS
+  INPUT:    pertinente (0.95) vs ruido (0.5)
+  EXPECTED: pertinente primero
+  ACTUAL:   pos0_score=0.923
+  EVIDENCE: scores=(0.923, 0.540)
+
+[T16] PASS
+  INPUT:    version=3e71be29...
+  EXPECTED: provenance completa
+  ACTUAL:   keys=['agente_adquisicion', 'chunk_id', 'content_hash', 'document_id', 'domain', 'reemplaza_a', 'source_id', 'source_nombre', 'source_tipo', 'state', 'supervision_humana', 'verificacion', 'version_id', 'version_number']
+  EVIDENCE: provenance={'chunk_id': '401f7cbd-07e6-4033-b9c5-686df2da20c6', 'document_id': '62d05895-8c21-4f28-978f-968dce53dd39', 'version_id': '3e71be29-4426-4207-8b35-5744957c73d5', 'content_hash': 'b4e824201e1b4386665c09723c30b7b1464dbf537c6681eed26c6c7e2b51af7c', 'source_id': '02231dda-cb9c-46b7-8ce0-6c1a13d1057b', 'source_nombre': 'OMS PrEP', 'source_tipo': 'OMS', 'domain': 'MEDICO_CIENTIFICO_COMUNITARIO', 'state': 'VIGENTE', 'version_number': 1, 'verificacion': {'verifier': 'DIKE', 'result': 'CONFORME', 'confidence': 0.95, 'dictamen_id': None, 'auditor': None}, 'supervision_humana': {'human_reviewer_id': 'william_mnj', 'decision': 'ACCEPT', 'decision_timestamp': '2026-09-16T16:12:23.237728+02:00', 'decision_reason': 'Aprobado'}, 'agente_adquisicion': 'Kairos', 'reemplaza_a': None}
+
+[T17] PASS
+  INPUT:    VIGENTE + CUARENTENA (sim mayor)
+  EXPECTED: 0 leaked items
+  ACTUAL:   leaked=0
+  EVIDENCE: states=['VIGENTE']
+
+[T18] PASS
+  INPUT:    4 chunks id├®nticos
+  EXPECTED: dedup reduce items
+  ACTUAL:   cands=4, items=1
+  EVIDENCE: items=1
+
+[T19] PASS
+  INPUT:    context packet con evidencia
+  EXPECTED: permite reconstruir evidencia
+  ACTUAL:   can_trace=True
+  EVIDENCE: fp=57d77558a5427730, keys=['chunk_id', 'content_hash', 'document_id', 'domain', 'provenance', 'rerank_position', 'rerank_score', 'similarity', 'source_nombre', 'source_tipo', 'state', 'text', 'title', 'version_id', 'version_number']
+
+[T20] PASS
+  INPUT:    sin evidencia en RAG
+  EXPECTED: NO_EVIDENCE (no fabricaci├│n)
+  ACTUAL:   status=NO_EVIDENCE
+  EVIDENCE: reason=No se recuper├│ conocimiento autorizado pertinente
+
+[T21] PASS
+  INPUT:    8 queries concurrentes
+  EXPECTED: 0 errores, 8 resultados
+  ACTUAL:   results=8, errors=0
+  EVIDENCE: errors=[]
+
+[T22] PASS
+  INPUT:    save + reload
+  EXPECTED: stats id├®nticos
+  ACTUAL:   before={'sources': 3, 'documents': 6, 'versions': 7, 'acquisitions': 7, 'verifications': 7, 'human_decisions': 6, 'ingestions': 5, 'chunks': 5, 'embeddings': 5, 'aliases': 0, 'audit_log': 68}, after={'sources': 3, 'documents': 6, 'versions': 7, 'acquisitions': 7, 'verifications': 7, 'human_decisions': 6, 'ingestions': 5, 'chunks': 5, 'embeddings': 5, 'aliases': 0, 'audit_log': 68}
+  EVIDENCE: same=True
+
+[T23] PASS
+  INPUT:    regresi├│n Fase 1
+  EXPECTED: 42/42 PASS, exit 0
+  ACTUAL:   exit=0
+  EVIDENCE: tail= entre aperturas
+  [PASS] hash store estable (escritura at├│mica determinista)
+
+================================================================
+RESULTADO: OK ÔÇö 42/42 comprobaciones superadas (FASE 1)
+
+
+[T24] PASS
+  INPUT:    regresi├│n Fase 2
+  EXPECTED: 57/57 PASS, exit 0
+  ACTUAL:   exit=0
+  EVIDENCE: tail=gestions': 7, 'chunks': 13, 'embeddings': 13, 'aliases': 1, 'audit_log': 142}
+
+================================================================
+RESULTADO: OK ÔÇö 57/57 comprobaciones superadas (FASE 2)
+
+
+[T25] PASS
+  INPUT:    regresi├│n Fase 3
+  EXPECTED: 32/32 PASS, exit 0
+  ACTUAL:   exit=0
+  EVIDENCE: tail=o
+  [PASS] la vista de recuperaci├│n solo contiene VIGENTE ÔÇö [('VIGENTE', 44)]
+
+================================================================
+RESULTADO: OK ÔÇö 32/32 comprobaciones superadas (FASE 3)
+
+
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+RESULTADO: 25/25 PASS
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+Evidencia: C:\Users\USER\Desktop\AutoClaw\rag\evidencia_fase4_retriever.txt
+# exit_code: 0
+# ended: 2026-09-16T16:12:46.4463752+02:00

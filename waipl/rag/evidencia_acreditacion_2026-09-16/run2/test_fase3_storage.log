@@ -1,0 +1,65 @@
+﻿# interpreter: C:\Program Files\AutoClaw\resources\python\python.exe
+# command: "C:\Program Files\AutoClaw\resources\python\python.exe" "waipl\scripts\test_fase3_storage.py"  (cwd=C:\Users\USER\Desktop\AutoClaw)
+# started: 2026-09-16T16:15:38.2111346+02:00
+================================================================
+FASE 3 ÔÇö ALMACENAMIENTO PostgreSQL + pgvector (bater├¡a esencial)
+================================================================
+
+[A] Can├│nico v├ílido ÔåÆ persistido y recuperable
+  [PASS] versi├│n en retrievable_knowledge (PostgreSQL)
+  [PASS] embeddings de prueba solo para conocimiento operativo ÔÇö 25 embeddings
+  [PASS] b├║squeda vectorial pgvector operativa ÔÇö 3 resultados
+
+[B-E] Estados no can├│nicos ÔåÆ imposibles como conocimiento operativo
+  [PASS] PENDIENTE no recuperable
+  [PASS] CUARENTENA no recuperable
+  [PASS] trigger f├¡sico rechaza ingesta de versi├│n no-VIGENTE
+  [PASS] OBSOLETA persistida con estado correcto (Ôëá REVOCADA) ÔÇö OBSOLETA
+  [PASS] OBSOLETA no recuperable
+  [PASS] REVOCADA persistida (distinta de OBSOLETA) ÔÇö REVOCADA
+  [PASS] REVOCADA no recuperable
+
+[F/G] Duplicado ÔåÆ ALIAS, cero embeddings nuevos
+  [PASS] ALIAS en la capa de ingesta
+  [PASS] cero embeddings nuevos para el duplicado ÔÇö 26 ÔåÆ 26
+  [PASS] alias persistido apuntando a la can├│nica
+
+[H/I] Versionado y revocaci├│n con relaciones
+  [PASS] reemplaza_a persistido
+  [PASS] v1 obsoleta no recuperable; v2 s├¡
+
+[J] Integridad relacional: 0 hu├®rfanos
+  [PASS] 0 referencias colgantes ÔÇö []
+
+[K] Reinicio del servidor ÔåÆ datos intactos
+  [PASS] datos accesibles tras restart (persistencia) ÔÇö 46 versiones recuperables en la BD persistente
+
+[L/M] Concurrencia y reintentos ÔåÆ idempotente
+  [PASS] sincronizaci├│n concurrente sin duplicados ÔÇö (1, 1, 1)
+  [PASS] reintento idempotente ÔÇö (1, 1)
+
+[P/Q] Multimodal y procedencia preservados en PostgreSQL
+  [PASS] estructura multimodal persistida (tabla/nota/referencia) ÔÇö ['parrafo', 'tabla', 'nota', 'referencia']
+  [PASS] procedencia persistida (source/document/hash/verificaci├│n/supervisi├│n)
+
+[O] Seguridad: roles, m├¡nimo privilegio, credenciales
+  [PASS] conexi├│n con rol de app (credenciales separadas)
+  [PASS] app sin DELETE sobre audit_log (m├¡nimo privilegio)
+  [PASS] app sin DDL (m├¡nimo privilegio)
+  [PASS] contrase├▒a incorrecta rechazada (scram-sha-256)
+  [PASS] sin secretos hardcodeados (le├¡dos de secrets externo)
+
+[R/N] AuditLog persistido y backup/restauraci├│n verificado
+  [PASS] AuditLog persistido ÔÇö 1121 entradas
+  [PASS] pg_dump generado ÔÇö 142514 bytes
+  [PASS] todas las tablas conservan el mismo conteo tras restaurar ÔÇö {}
+  [PASS] AuditLog ├¡ntegro tras restaurar
+  [PASS] vista de recuperaci├│n restaurada
+
+[S] Barrido: ning├║n estado no-VIGENTE como conocimiento operativo
+  [PASS] la vista de recuperaci├│n solo contiene VIGENTE ÔÇö [('VIGENTE', 48)]
+
+================================================================
+RESULTADO: OK ÔÇö 32/32 comprobaciones superadas (FASE 3)
+# exit_code: 0
+# ended: 2026-09-16T16:15:51.4609296+02:00
