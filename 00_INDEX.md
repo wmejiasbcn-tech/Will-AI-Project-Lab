@@ -5,6 +5,7 @@
 ### 📁 **Carpetas del Sistema**
 1. **.github/**: Infraestructura técnica del repositorio (workflows, configuraciones GitHub).
 2. **00_SISTEMA**: Documentos de gobernanza, actas, checklists, informes y protocolos de integración.
+   - **VERIFICACION/**: Canon transversal del **WAIPL Verification System v1.0**. Registra el sistema de verificación como componente del ecosistema; las implementaciones operativas permanecen en sus repositorios respectivos.
 3. **01_FUNDACION**: Documentos constituyentes y principios del Lab. Incluye `WAIPL_Principios_Inteligencia_Hibrida.pdf`, `Tabla_de_nodos_funcion_e_importancia.pdf` y `organismo-operativo.csv`.
 4. **02_ADMINISTRACION**: Registros operativos y diarios de evolución.
 5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad **exclusivamente de los nodos del Núcleo**. Solo los 11 nodos artificiales del Núcleo pertenecen a esta carpeta.
