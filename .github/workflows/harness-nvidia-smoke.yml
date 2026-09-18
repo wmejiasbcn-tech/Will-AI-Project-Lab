@@ -1,0 +1,30 @@
+name: Arnés — NVIDIA API Smoke Test
+
+on:
+  push:
+    paths:
+      - '06_SISTEMA_OPERATIVO/ARNES/nvidia_inference.py'
+      - '.github/workflows/harness-nvidia-smoke.yml'
+  pull_request:
+    paths:
+      - '06_SISTEMA_OPERATIVO/ARNES/nvidia_inference.py'
+      - '.github/workflows/harness-nvidia-smoke.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  nvidia-smoke-test:
+    name: NVIDIA API channel
+    runs-on: ubuntu-latest
+    env:
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+      NVIDIA_MODEL: nvidia/nemotron-3-nano-30b-a3b
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Verify NVIDIA API channel
+        run: |
+          test -n "$NVIDIA_API_KEY"
+          python3 06_SISTEMA_OPERATIVO/ARNES/nvidia_inference.py "Di exactamente: NVIDIA OPERATIVO AHORA"
