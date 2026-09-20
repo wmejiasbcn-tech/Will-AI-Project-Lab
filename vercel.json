@@ -1,3 +1,8 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "mkdir -p .vercel-static && cp index.html principio.html inmersivo.html .vercel-static/",
+  "outputDirectory": ".vercel-static",
+  "cleanUrls": true,
   "ignoreCommand": "bash -c 'git diff --name-only HEAD^ HEAD | grep -qvE \"\\.(md|txt)$\" && exit 1 || exit 0'"
 }
