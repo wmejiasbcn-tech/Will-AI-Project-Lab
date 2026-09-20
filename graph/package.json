@@ -60,7 +60,7 @@
     "date-fns": "^4.0.0",
     "jose": "6.2.12",
     "kysely": "^0.29.5",
-    "lucide-react": "^1.46.0",
+    "lucide-react": "^1.47.0",
     "pg": "^8.16.3",
     "react": "^19.3.0",
     "react-day-picker": "^10.0.1",
