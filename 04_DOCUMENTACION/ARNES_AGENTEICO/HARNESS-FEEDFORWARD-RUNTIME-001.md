@@ -26,7 +26,7 @@ El consumidor no:
 - decide permisos;
 - comunica por SCI;
 - sustituye Vár/Yata;
-- establece integración física con Graphify, Positrón, Ollama, Emily o Hermes;
+- establece integración física con Graphy, Positrón, Ollama, Emily o Hermes;
 - define una FSM interna del Arnés.
 
 ## 4. Artefactos
