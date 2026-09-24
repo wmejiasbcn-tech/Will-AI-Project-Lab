@@ -5,16 +5,16 @@
 ## Posición arquitectónica
 
 ```
-WAIPL → ADN → GRAPHIFY → HARNESS + SCI → POSITRÓN → OLLAMA → AGENTES → GRAPHIFY
+WAIPL → ADN → GRAPHY → HARNESS + SCI → POSITRÓN → OLLAMA → AGENTES → GRAPHY
 ```
 
-Positrón es el **cerebro operativo**. Recibe del Arnés+SCI, procesa, devuelve a Graphify.
+Positrón es el **cerebro operativo**. Recibe del Arnés+SCI, procesa, devuelve a Graphy.
 
 ## Responsabilidad (Sección 45)
 
 | Capa | Responsabilidad |
 |------|----------------|
-| Graphify | Cartografía/contexto relacional |
+| Graphy | Cartografía/contexto relacional |
 | Harness | Contexto, reglas, autoridad, preparación, verificación |
 | SCI | Comunicación, coordinación, transporte, trazabilidad |
 | n8n | Orquestación/ejecución del flujo SCI |
@@ -55,7 +55,7 @@ El SCI/n8n ya tiene operativo:
 5. Kill Switch (sin bypass)
 6. Audit Log operativo
 7. Contingencia DS-07 (escalada a WILLIAM-SCY-01)
-8. Nomenclatura Graphify/Graphy corregida
+8. Nomenclatura canónica del SNC corregida: Graphy
 9. Ejecución E2E con respuesta de Carla
 10. Canal Emily → OpenAI → Carla verificado
 
@@ -75,7 +75,7 @@ Positrón NO debe duplicar estos mecanismos. Debe consumirlos via contrato SCI (
   "purpose": "...",
   "urgency_level": "N1",
   "authorization": { "status": "AUTHORIZED", "source": "...", "scope": "..." },
-  "context": { "graphify_reference": "...", "harness_profile": "...", "relevant_rules": [] },
+  "context": { "graphy_reference": "...", "harness_profile": "...", "relevant_rules": [] },
   "integrity": "...",
   "execution": { "status": "...", "result": "...", "evidence": [] },
   "verification": { "status": "...", "method": "..." },
@@ -103,13 +103,13 @@ Si Carla no responde, WILLIAM-SCY-01 actúa como contingencia.
 
 ## Nomenclatura (Sección 6)
 
-- Graphify = App/Plataforma
+- Graphy = App/Plataforma
 - Graphy = agente/sistema
 - "Graficar" = prohibido en este contexto
 
-## Divergencia graph/ vs graphify-out/ (Sección 33)
+## Divergencia graph/ vs graphy-out/ (Sección 33)
 
-El informe confirma: se describió graph/ pero físicamente se encontro graphify-out/.
+El informe confirma: se describió graph/ pero físicamente se encontro graphy-out/.
 Esto demuestra DOCUMENTADO no es EXISTENTE.
 El SCI debe poder transportar esa incertidumbre sin convertirla en falso hecho.
 
