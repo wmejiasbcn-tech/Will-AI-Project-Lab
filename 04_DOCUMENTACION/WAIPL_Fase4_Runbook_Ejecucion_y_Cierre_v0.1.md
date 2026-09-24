@@ -18,7 +18,7 @@ Este runbook NO modifica la implementación de AutoClaw.
 3. Ejecutar Fase 3 completa: 32/32 reales.
 4. Ejecutar T15–T19 de Fase 4 contra infraestructura real.
 5. Ejecutar T01–T25 completos.
-6. Ejecutar regresión F1/F2/F3 + Graphify + Kairos + DIKE + Smoke.
+6. Ejecutar regresión F1/F2/F3 + Graphy + Kairos + DIKE + Smoke.
 7. Recoger salida, logs, hashes y estado de entorno.
 8. Emitir informe de cierre.
 

@@ -57,7 +57,7 @@ El sensor observa el resultado del verificador; no lo sustituye ni añade autori
 
 **A:** Existe y se ejecutó el mecanismo mínimo de carga/preparación de Guide, con evidencia automatizada y artefacto retenido.
 
-Esto no demuestra por sí solo integración de Graphify, Positrón, Ollama, Vár/Yata ni ninguna otra pieza no acreditada.
+Esto no demuestra por sí solo integración de Graphy, Positrón, Ollama, Vár/Yata ni ninguna otra pieza no acreditada.
 
 ## 7. Límite alcanzado
 

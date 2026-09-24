@@ -14,7 +14,7 @@ Hermes, cuando hable en audio, suena **hombre, natural, de mesa de trabajo**. Nu
 ## Alcance
 
 **Dentro:** motor TTS del runtime Hermes (briefing, dashboard, alertas).
-**Fuera:** identidad, Graphify, Qwen, merge, GITHUB_TOKEN, tres tareas, GLOSARIO del repo GitHub (el del MANIFEST no se toca aquí).
+**Fuera:** identidad, Graphy, Qwen, merge, GITHUB_TOKEN, tres tareas, GLOSARIO del repo GitHub (el del MANIFEST no se toca aquí).
 
 ## Prohibido (STOP)
 

@@ -14,7 +14,7 @@
 
 | AGENTE | JURISDICCIÓN / DESTINO | FUNCIÓN DELIMITADA |
 |---|---|---|
-| **Positrón** | **NODO CENTRAL** | Centro Cognitivo del ecosistema. Vault inmutable (12 carpetas), memoria persistente, servidor local (Next.js / Prisma / SQLite) y APIs. Cerebro de la tríada fisiológica Positrón · Graphify · Ollama. |
+| **Positrón** | **NODO CENTRAL** | Centro Cognitivo del ecosistema. Vault inmutable (12 carpetas), memoria persistente, servidor local (Next.js / Prisma / SQLite) y APIs. Cerebro de la tríada fisiológica Positrón · Graphy · Ollama. |
 | **Codd** | **NODO CENTRAL** | Arquitecto de datos y esquemas única y exclusivamente para el explorador de archivos del Nodo Central. Jurisdicción estrictamente delimitada — no opera fuera de ese dominio. |
 | **Kairos** | **WILL APP** | Extrae e ingesta información médico-científica y comunitaria para alimentar el RAG de la Will App. |
 | **Dike** | **WILL APP + ECOSISTEMA** | Compliance, auditoría legal y cumplimiento normativo (RGPD / LOPDGDD / Ley de IA) para la Will App y el ecosistema WAIPL. Única agente con doble jurisdicción declarada. |
@@ -43,7 +43,7 @@
 
 **Resultado de Carla:** VALIDADA CON OBSERVACIONES MENORES.
 
-**Nota de alcance:** esta matriz es una matriz de **agentes**. No constituye la Matriz de Infraestructura/Arquitectura. Graphify, Ollama, Vault, APIs y servicios quedan fuera de esta matriz como entidades de infraestructura/arquitectura, sin perjuicio de las referencias funcionales necesarias dentro de las fichas de agentes.
+**Nota de alcance:** esta matriz es una matriz de **agentes**. No constituye la Matriz de Infraestructura/Arquitectura. Graphy, Ollama, Vault, APIs y servicios quedan fuera de esta matriz como entidades de infraestructura/arquitectura, sin perjuicio de las referencias funcionales necesarias dentro de las fichas de agentes.
 
 ---
 

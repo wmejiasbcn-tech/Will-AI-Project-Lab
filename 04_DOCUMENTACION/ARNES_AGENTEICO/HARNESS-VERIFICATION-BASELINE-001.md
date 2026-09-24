@@ -44,7 +44,7 @@ Este artefacto distingue:
 - **A:** su integración mínima con el Arnés está acreditada en el circuito documentado y probado.
 - **D:** no está determinada una meta-verificación adicional ni una arquitectura completa de Sensors/observabilidad.
 
-No se atribuye al mecanismo autoridad adicional ni integración con Graphify, Positrón, Ollama, Vár o Yata fuera de lo explícitamente acreditado.
+No se atribuye al mecanismo autoridad adicional ni integración con Graphy, Positrón, Ollama, Vár o Yata fuera de lo explícitamente acreditado.
 
 ## 5. Criterio de continuidad
 

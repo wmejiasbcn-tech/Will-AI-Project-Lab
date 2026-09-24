@@ -1,6 +1,6 @@
 # ARQUITECTURA FISIOLÓGICA ALEGÓRICA DEL WAIPL v1.0
 
-**Positrón · Graphify · Ollama**
+**Positrón · Graphy · Ollama**
 
 **ESTADO: CANONIZADO**
 
@@ -12,9 +12,11 @@
 
 ## 1. PROPÓSITO Y ESTADO DEL DOCUMENTO
 
-Este documento recoge la primera formulación conceptual de la arquitectura fisiológica alegórica del WAIPL: una descripción de las funciones de Positrón, Graphify y Ollama como cerebro, sistema nervioso central y cuerpo del ecosistema.
+Este documento recoge la primera formulación conceptual de la arquitectura fisiológica alegórica del WAIPL: una descripción de las funciones de Positrón, Graphy y Ollama como cerebro, sistema nervioso central y cuerpo del ecosistema.
 
 La metáfora alegórica es una herramienta de diseño conceptual, no una equivalencia literal con la biología. Su función es articular con precisión las responsabilidades funcionales de cada capa y las relaciones de control, tránsito y auditoría entre ellas.
+
+**Graphy pertenece al ecosistema WAIPL. Es su Sistema Nervioso Central (SNC), forma parte del Sistema de Comunicación Interna (SCI) y constituye una fuente de conocimiento y representación relacional para los 47 nodos del ecosistema.**
 
 **Estado de validación: VALIDADO.** El proceso de validación documental por Carla + Ada fue completado el 2026-08-18.
 
@@ -27,16 +29,16 @@ El ecosistema WAIPL cuenta con tres componentes de infraestructura que cumplen f
 | Componente | Metáfora | Función principal |
 |---|---|---|
 | Positrón | Cerebro | Conocimiento · Razonamiento · Memoria · Coordinación cognitiva |
-| Graphify | Sistema Nervioso Central | Comunicación · Coordinación · Tránsito · Estado · Trazabilidad · Auditoría |
+| Graphy | Sistema Nervioso Central | Comunicación · Coordinación · Tránsito · Estado · Trazabilidad · Auditoría |
 | Ollama | Cuerpo | Ejecución local protegida · Infraestructura controlada · Air-gap opcional |
 
 Esta tríada se conecta con el resto del ecosistema — Núcleo, Vórtice, Cinturianos y el Soberano — mediante los controles definidos en la Arquitectura Canónica del Ecosistema WAIPL v1.0.
 
-## 3. GRAPHIFY — SISTEMA NERVIOSO CENTRAL
+## 3. GRAPHY — SISTEMA NERVIOSO CENTRAL
 
-Graphify no es una capa de visualización. Es la infraestructura de interconexión y coordinación que permite que el ecosistema pueda percibir, transmitir, coordinar y responder sin perder control sobre lo que circula por él.
+Graphy no es una capa de visualización. Es la infraestructura de interconexión y coordinación que permite que el ecosistema pueda percibir, transmitir, coordinar y responder sin perder control sobre lo que circula por él.
 
-Funciones de Graphify:
+Funciones de Graphy:
 
 - Mediar el tránsito de información, eventos, estados e instrucciones entre agentes.
 - Gestionar permisos de comunicación interagente.
@@ -52,7 +54,7 @@ Un sistema nervioso no es simplemente una pantalla donde uno mira qué pasa. Tra
 
 Positrón representa la capacidad cognitiva central: conocimiento, razonamiento, memoria y coordinación. Sin embargo, la metáfora del cerebro no debe interpretarse como «el que manda a todo».
 
-Incluso el cerebro está sujeto al sistema nervioso. La capacidad cognitiva de Positrón no le otorga un canal privilegiado e invisible. La comunicación entre Positrón y el ecosistema atraviesa Graphify con los mismos controles aplicables a cualquier otro agente.
+Incluso el cerebro está sujeto al sistema nervioso. La capacidad cognitiva de Positrón no le otorga un canal privilegiado e invisible. La comunicación entre Positrón y el ecosistema atraviesa Graphy con los mismos controles aplicables a cualquier otro agente.
 
 **Principio: capacidad cognitiva ≠ canal privilegiado de comunicación.**
 
@@ -66,7 +68,7 @@ Ollama no necesita estar permanentemente conectado a Internet. La conectividad p
 
 Internet / Exterior  
 → Cinturianos / Vórtice / Interfaces externas  
-→ Graphify — control de tránsito y auditoría  
+→ Graphy — control de tránsito y auditoría  
 → Ollama — entorno local protegido  
 → Positrón — cerebro
 
@@ -74,7 +76,7 @@ Internet / Exterior
 
 **GitHub — Fuente Única de Verdad Documental**
 
-GitHub es la fuente documental canónica. Graphify es una capa de representación y coordinación que lee de GitHub, no un sistema documental paralelo. Esta distinción debe mantenerse para evitar la proliferación de fuentes de verdad.
+GitHub es la fuente documental canónica. Graphy es una capa de representación y coordinación que lee de GitHub, no un sistema documental paralelo. Esta distinción debe mantenerse para evitar la proliferación de fuentes de verdad.
 
 **waipl.dev — Puerta de Acceso del Ecosistema**
 
@@ -91,7 +93,7 @@ El dominio waipl.dev es la dirección pública del ecosistema. Bajo él se artic
 
 ### PRINCIPIO I — COMUNICACIÓN AUDITABLE
 
-Toda comunicación interagente que atraviese Graphify deberá estar sometida a las políticas de identidad, autorización, alcance, trazabilidad y auditoría correspondientes. Ninguna comunicación privilegiada, autónoma u oculta podrá utilizarse para eludir dichos controles. La capacidad de comunicación de un agente no implica autorización para transmitir información, ejecutar acciones ni modificar estados fuera de su ámbito permitido.
+Toda comunicación interagente que atraviese Graphy deberá estar sometida a las políticas de identidad, autorización, alcance, trazabilidad y auditoría correspondientes. Ninguna comunicación privilegiada, autónoma u oculta podrá utilizarse para eludir dichos controles. La capacidad de comunicación de un agente no implica autorización para transmitir información, ejecutar acciones ni modificar estados fuera de su ámbito permitido.
 
 ### PRINCIPIO II — SALIDA CONTROLADA
 
@@ -103,17 +105,17 @@ La conectividad externa del entorno local de ejecución (Ollama) deberá mantene
 
 ### PRINCIPIO IV — SUPERVISIÓN DEL NODO DE TRÁNSITO
 
-El nodo que arbitra, registra y audita la comunicación interagente (Graphify) debe ser, él mismo, objeto de supervisión independiente. La función de auditoría no exime al nodo auditor de ser auditado.
+El nodo que arbitra, registra y audita la comunicación interagente (Graphy) debe ser, él mismo, objeto de supervisión independiente. La función de auditoría no exime al nodo auditor de ser auditado.
 
-La **supervisión operativa de Graphify corresponde a Hermes, Director Operativo del ecosistema**. Hermes ejerce la supervisión operativa del nodo de tránsito dentro de su jurisdicción.
+La **supervisión operativa de Graphy corresponde a Hermes, Director Operativo del ecosistema**. Hermes ejerce la supervisión operativa del nodo de tránsito dentro de su jurisdicción.
 
-Esta función es distinta de la función de **WILLIAM-SCY-01**, avatar del Soberano y capa independiente de comprobación y contraste de las comunicaciones, decisiones, informes y estados que cualquier nodo, agente o sistema —incluido Hermes, Graphify, Carla o Ada— comunique al Soberano.
+Esta función es distinta de la función de **WILLIAM-SCY-01**, avatar del Soberano y capa independiente de comprobación y contraste de las comunicaciones, decisiones, informes y estados que cualquier nodo, agente o sistema —incluido Hermes, Graphy, Carla o Ada— comunique al Soberano.
 
 WILLIAM-SCY-01 no sustituye a Hermes como Director Operativo, no asume su jurisdicción y no constituye una instancia operativa subordinada a Hermes. Su función de contraste soberano debe preservar independencia respecto de la entidad o fuente que esté siendo contrastada.
 
-**Decisión soberana registrada el 2026-08-29:** Hermes supervisa operativamente Graphify; WILLIAM-SCY-01 constituye la capa independiente de comprobación del Soberano.
+**Decisión soberana registrada el 2026-08-29:** Hermes supervisa operativamente Graphy; WILLIAM-SCY-01 constituye la capa independiente de comprobación del Soberano.
 
-El Principio IV fue aportado por Ada durante la revisión inicial de este documento. La presente formulación sustituye la referencia anterior al Vórtice como titular específico de la supervisión operativa de Graphify y precisa la separación entre supervisión operativa y contraste soberano.
+El Principio IV fue aportado por Ada durante la revisión inicial de este documento. La presente formulación sustituye la referencia anterior al Vórtice como titular específico de la supervisión operativa de Graphy y precisa la separación entre supervisión operativa y contraste soberano.
 
 ## 8. LA DISTINCIÓN TRIPLE FUNDAMENTAL
 
@@ -123,7 +125,7 @@ Tres distinciones deben quedar escritas en la arquitectura de manera explícita 
 - **Capacidad de leer ≠ permiso para extraer.**
 - **Capacidad de comunicarse ≠ permiso para ejecutar.**
 
-Estas distinciones aplican a todos los agentes del ecosistema sin excepción, incluidos Positrón, Graphify y Ollama. La disponibilidad técnica de una capacidad no constituye por sí misma autorización para ejercerla.
+Estas distinciones aplican a todos los agentes del ecosistema sin excepción, incluidos Positrón, Graphy y Ollama. La disponibilidad técnica de una capacidad no constituye por sí misma autorización para ejercerla.
 
 ## 9. FLUJO DE COMUNICACIÓN GOBERNADO
 
@@ -132,20 +134,20 @@ Estas distinciones aplican a todos los agentes del ecosistema sin excepción, in
 Exterior  
 → interfaz autorizada  
 → Vórtice (cuando corresponda)  
-→ Graphify: políticas de acceso + auditoría  
+→ Graphy: políticas de acceso + auditoría  
 → Ollama / Positrón
 
 **Flujo de salida (ecosistema al exterior):**
 
 Ollama / Positrón  
-→ Graphify: política de salida + clasificación + autorización + auditoría  
+→ Graphy: política de salida + clasificación + autorización + auditoría  
 → Exterior
 
 **Comunicación interagente:**
 
 Agente A emite solicitud  
-→ Graphify verifica: identidad · destino · permiso · alcance · política · auditoría  
-→ Graphify registra la comunicación  
+→ Graphy verifica: identidad · destino · permiso · alcance · política · auditoría  
+→ Graphy registra la comunicación  
 → Agente B recibe  
 → Acción → Registro → Auditoría → Trazabilidad
 
@@ -161,9 +163,9 @@ La arquitectura fisiológica no sustituye ni modifica la Arquitectura Canónica 
 
 La Arquitectura Canónica v1.0 define las capas de pertenencia (Núcleo, Vórtice, Cinturianos, Exterior) y las reglas de identidad, trazabilidad y gobernanza de las entidades del ecosistema.
 
-La arquitectura fisiológica define la infraestructura de interconexión (Graphify) y de ejecución (Ollama) que da soporte operativo al ecosistema.
+La arquitectura fisiológica define la infraestructura de interconexión (Graphy) y de ejecución (Ollama) que da soporte operativo al ecosistema.
 
-El esquema de identidad canónica — IDENTIDAD → PLATAFORMA/MODELO → TIPO DE ENTIDAD → FUNCIÓN → CAPACIDADES → LÍMITES → RELACIONES → ESTADO → EVIDENCIA → FECHA — debería ser el contrato de datos que alimenta a Graphify. De ese modo, la ontología del grafo no es una ontología inventada por Graphify: es la misma ontología canónica del ecosistema. El mismo modelo que gobierna documenta y el que documenta visualiza.
+El esquema de identidad canónica — IDENTIDAD → PLATAFORMA/MODELO → TIPO DE ENTIDAD → FUNCIÓN → CAPACIDADES → LÍMITES → RELACIONES → ESTADO → EVIDENCIA → FECHA — debería ser el contrato de datos que alimenta a Graphy. De ese modo, la ontología del grafo no es una ontología inventada por Graphy: es la misma ontología canónica del ecosistema. El mismo modelo que gobierna documenta y el que documenta visualiza.
 
 **Declaración de relación bidireccional:**
 
@@ -177,12 +179,12 @@ Documento arquitectónico de referencia: Arquitectura Canónica del Ecosistema W
 
 **Estado actual:**
 
-**CANONIZADO.** El proceso de validación Carla + Ada fue completado el 2026-08-18 y la canonización fue ordenada expresamente por el Soberano el 2026-08-18. La decisión soberana del 2026-08-29 actualiza el titular de la supervisión operativa de Graphify y precisa la función independiente de contraste de WILLIAM-SCY-01.
+**CANONIZADO.** El proceso de validación Carla + Ada fue completado el 2026-08-18 y la canonización fue ordenada expresamente por el Soberano el 2026-08-18. La decisión soberana del 2026-08-29 actualiza el titular de la supervisión operativa de Graphy y precisa la función independiente de contraste de WILLIAM-SCY-01.
 
 **Próximos pasos de implementación:**
 
-1. Definir el contrato de datos de Graphify usando el esquema de identidad canónica.
-2. Publicar graph.html en graph.waipl.dev vía GitHub Pages cuando Graphify esté preparado.
+1. Definir el contrato de datos de Graphy usando el esquema de identidad canónica.
+2. Publicar graph.html en graph.waipl.dev vía GitHub Pages cuando Graphy esté preparado.
 3. **RELACIÓN DOCUMENTAL — REGISTRADA.** La relación bidireccional con la Arquitectura Canónica del Ecosistema WAIPL v1.0 queda formalmente definida en la Sección 10. La referencia correspondiente deberá mantenerse sincronizada en ambos documentos.
 4. **COMPLETADO — proceso de validación Carla + Ada ejecutado el 2026-08-18. Canonización ordenada por el Soberano el 2026-08-18.**
 5. Definir el protocolo de conectividad controlada de Ollama (cuándo y bajo qué autorización se habilita la conexión a Internet).
@@ -196,4 +198,4 @@ Documento arquitectónico de referencia: Arquitectura Canónica del Ecosistema W
 
 **v1.0-CANONIZADO — 2026-08-18:** Canonización ordenada expresamente por William Mejías Navarro — Soberano. Estado: CANONIZADO. Observaciones abiertas: 0.
 
-**ENMIENDA SOBERANA — 2026-08-29:** William Mejías Navarro — Soberano establece que Hermes, como Director Operativo, supervisa operativamente Graphify; WILLIAM-SCY-01, avatar del Soberano, mantiene la capa independiente de comprobación y contraste para el Soberano. La enmienda actualiza el Principio IV y el flujo de comunicación gobernado sin alterar la función de Graphify como SNC.
+**ENMIENDA SOBERANA — 2026-08-29:** William Mejías Navarro — Soberano establece que Hermes, como Director Operativo, supervisa operativamente Graphy; WILLIAM-SCY-01, avatar del Soberano, mantiene la capa independiente de comprobación y contraste para el Soberano. La enmienda actualiza el Principio IV y el flujo de comunicación gobernado sin alterar la función de Graphy como SNC.

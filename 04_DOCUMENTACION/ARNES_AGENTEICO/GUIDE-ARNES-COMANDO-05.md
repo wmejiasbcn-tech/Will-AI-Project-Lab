@@ -4,7 +4,7 @@
 
 **Capa:** Arnés Agéntico WAIPL · Guides / Feedforward
 **Ámbito:** preparación previa a ejecución
-**No sustituye:** SCI, Vár, Yata, Graphify, Positrón, Ollama ni la autoridad del Soberano.
+**No sustituye:** SCI, Vár, Yata, Graphy, Positrón, Ollama ni la autoridad del Soberano.
 
 ## 1. Finalidad
 

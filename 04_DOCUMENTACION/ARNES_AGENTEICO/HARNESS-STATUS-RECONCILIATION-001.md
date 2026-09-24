@@ -24,7 +24,7 @@ No se modificaron las fronteras de jurisdicción ni se elevaron a A los elemento
 - `GUIDE-ARNES-COMANDO-05.md` permanece C hasta disponer de evidencia de integración/carga operativa suficiente.
 - `HARNESS-GUIDE-EXECUTION-001.md` permanece C por la misma razón.
 - `HARNESS-MINIMUM-REGISTRY-001.md` permanece C porque registra conjuntamente piezas A y piezas C.
-- FSM interna completa, catálogo completo de Sensors, Context Engineering definitivo e integraciones Graphify/Positrón/Ollama permanecen D donde así se declara.
+- FSM interna completa, catálogo completo de Sensors, Context Engineering definitivo e integraciones Graphy/Positrón/Ollama permanecen D donde así se declara.
 
 ## 4. Resultado
 

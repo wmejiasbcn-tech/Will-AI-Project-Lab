@@ -554,7 +554,7 @@ Fase 4 queda técnicamente cerrada cuando exista evidencia de:
    - F2 57/57
    - F3 32/32
    - F4 25/25
-   - Graphify 34/34
+   - Graphy 34/34
    - Kairos 28/28
    - DIKE 40/40
    - Smoke 21/21
