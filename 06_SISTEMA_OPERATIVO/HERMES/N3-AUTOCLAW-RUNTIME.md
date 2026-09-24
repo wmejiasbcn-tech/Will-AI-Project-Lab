@@ -18,7 +18,7 @@ Hermes no es nodo del Nucleo. No es la API publica. API publica = GitHub Issues.
 
 ## 1. Fuera de alcance (STOP si lo tocas)
 
-- Graphify, logica AEA (STAT-01, SequenceDetector), carpeta Hermes_DEPRECATED
+- Graphy, logica AEA (STAT-01, SequenceDetector), carpeta Hermes_DEPRECATED
 - Las 3 tareas Enabled a la vez. El script fix_hermes_tasks.ps1 de 2026-08-23 esta rechazado
 - Declarar Qwen ONLINE, Positron conectado, socket a Carla, Discord, Matrix
 - Texto Online hardcodeado en el dashboard (DEUDA-UI-01: quitarlo)
