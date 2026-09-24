@@ -25,7 +25,7 @@ El loader:
 
 ## 3. Límite de autoridad
 
-El loader no ejecuta la Guide, no interpreta sus reglas, no concede autorización y no sustituye al Soberano, SCI, Aletheia, Vár, Yata, Graphify, Positrón u Ollama.
+El loader no ejecuta la Guide, no interpreta sus reglas, no concede autorización y no sustituye al Soberano, SCI, Aletheia, Vár, Yata, Graphy, Positrón u Ollama.
 
 `authority = NOT_GRANTED`
 
