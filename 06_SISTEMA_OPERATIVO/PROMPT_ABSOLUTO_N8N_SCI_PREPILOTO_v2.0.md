@@ -86,22 +86,22 @@ No utilices `CONFORME` sin evidencia.
 
 El lenguaje utilizado en n8n debe coincidir con el lenguaje canónico de GitHub.
 
-### 2.1 Graphify
+### 2.1 Graphy
 
 La denominación única y obligatoria es:
 
-**Graphify**
+**Graphy**
 
 No utilizar:
 
 - Graficar
-- Graphify/SNC como sustituto del nombre
+- Graphy/SNC como sustituto del nombre
 - cualquier denominación alternativa
 
 Cuando corresponda, puede describirse como:
-*Graphify — Sistema Nervioso Central (SNC) del ecosistema WAIPL.*
+*Graphy — Sistema Nervioso Central (SNC) del ecosistema WAIPL.*
 
-Pero el nombre propio es **Graphify**.
+Pero el nombre propio es **Graphy**.
 
 ### 2.2 Regla de nomenclatura
 
@@ -120,9 +120,9 @@ La implementación debe adaptarse al canon, no el canon a la comodidad de la imp
 
 ## 3. ARQUITECTURA DE RESPONSABILIDADES
 
-### 3.1 Graphify
+### 3.1 Graphy
 
-Graphify constituye el Sistema Nervioso Central (SNC) del ecosistema.
+Graphy constituye el Sistema Nervioso Central (SNC) del ecosistema.
 
 Su función comprende, conforme al canon aplicable:
 
@@ -138,7 +138,7 @@ Su función comprende, conforme al canon aplicable:
 
 Hermes es el Director Operativo del ecosistema.
 
-La supervisión operativa de Graphify corresponde a Hermes.
+La supervisión operativa de Graphy corresponde a Hermes.
 
 No atribuyas esta función a Ada.
 No atribuyas esta función a Carla.
@@ -156,7 +156,7 @@ Su función consiste en contrastar aquello que cualquier nodo, agente, sistema, 
 WILLIAM-SCY-01:
 
 - no sustituye a Hermes
-- no supervisa operativamente Graphify
+- no supervisa operativamente Graphy
 - no queda subordinado a Hermes para ejercer su función de contraste
 - no queda subordinado al nodo que está contrastando
 - no adquiere autoridad ejecutiva por el mero hecho de detectar una anomalía
@@ -164,7 +164,7 @@ WILLIAM-SCY-01:
 - debe conservar independencia funcional respecto de aquello que comprueba
 
 **Distinción fundamental:**
-Hermes supervisa operativamente Graphify.
+Hermes supervisa operativamente Graphy.
 WILLIAM-SCY-01 contrasta independientemente para el Soberano.
 No son funciones equivalentes.
 
@@ -492,10 +492,10 @@ Implementa o verifica:
 - correlación
 - tratamiento de mensajes fallidos
 - comportamiento ante indisponibilidad de Carla
-- comportamiento ante indisponibilidad de Graphify
+- comportamiento ante indisponibilidad de Graphy
 
 **Regla crítica:**
-Si Graphify está caído: **NO BYPASS.**
+Si Graphy está caído: **NO BYPASS.**
 
 La indisponibilidad del SNC nunca constituye autorización para saltárselo.
 
@@ -600,8 +600,8 @@ Debe: no producir doble ejecución indebida.
 Enviar múltiples mensajes simultáneamente.
 Debe: no producir corrupción de estado ni duplicaciones indebidas.
 
-**P09 — Bypass Graphify**
-Intentar comunicación fuera del tránsito autorizado por Graphify.
+**P09 — Bypass Graphy**
+Intentar comunicación fuera del tránsito autorizado por Graphy.
 Debe: resultar imposible o ser rechazada.
 
 **P10 — Contradicción**
@@ -615,7 +615,7 @@ Verificar que observa/contrasta/informa sin adquirir ejecución operativa no aut
 Simular indisponibilidad del destino externo.
 Debe: existir comportamiento seguro, trazabilidad y recuperación controlada.
 
-**P13 — Caída de Graphify**
+**P13 — Caída de Graphy**
 Simular indisponibilidad del SNC.
 Debe: no existir bypass.
 
@@ -660,7 +660,7 @@ n8n no puede:
 - modificar una regla canónica para hacer funcionar un workflow
 - utilizar la antigüedad de una implementación como evidencia de canonicidad
 - utilizar el funcionamiento técnico como evidencia de conformidad arquitectónica
-- saltarse Graphify porque Graphify esté indisponible
+- saltarse Graphy porque Graphy esté indisponible
 - convertir una recomendación en una obligación
 - convertir una hipótesis en una decisión
 - convertir una decisión local de implementación en canon
@@ -699,8 +699,8 @@ Debe demostrar objetivamente el estado de cada condición.
 Como mínimo deben estar verificadas:
 
 1. lenguaje canónico
-2. Graphify correctamente implementado
-3. Hermes correctamente representado como supervisor operativo de Graphify
+2. Graphy correctamente implementado
+3. Hermes correctamente representado como supervisor operativo de Graphy
 4. WILLIAM-SCY-01 correctamente representado como capa independiente de contraste soberano
 5. Carla fuera de la ontología n8n
 6. Emily como canal puro
@@ -715,7 +715,7 @@ Como mínimo deben estar verificadas:
 15. protección del Audit Log
 16. Kill Switch
 17. PILOT MODE
-18. ausencia de bypass de Graphify
+18. ausencia de bypass de Graphy
 19. pruebas P01-P15
 20. Matriz CANON→n8n actualizada con evidencia
 
