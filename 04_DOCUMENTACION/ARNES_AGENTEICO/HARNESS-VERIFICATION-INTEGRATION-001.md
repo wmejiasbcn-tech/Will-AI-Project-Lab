@@ -42,7 +42,7 @@ La evidencia identifica, como mínimo:
 - archivos de log y código de salida;
 - feedback observado por el sensor.
 
-La evidencia demuestra la ejecución del mecanismo en el run acreditado y la observación/persistencia del feedback. No demuestra por sí sola autorización, verdad material de los contenidos verificados, integración con Graphify, Positrón u Ollama, ni funcionamiento de un catálogo completo de sensores del Arnés.
+La evidencia demuestra la ejecución del mecanismo en el run acreditado y la observación/persistencia del feedback. No demuestra por sí sola autorización, verdad material de los contenidos verificados, integración con Graphy, Positrón u Ollama, ni funcionamiento de un catálogo completo de sensores del Arnés.
 
 ## 5. Límites
 
