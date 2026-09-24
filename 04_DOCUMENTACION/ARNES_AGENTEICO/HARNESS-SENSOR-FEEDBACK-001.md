@@ -54,7 +54,7 @@ El sensor:
 - no decide autoridad;
 - no determina verdad epistemológica;
 - no sustituye a Vár/Yata;
-- no modifica Graphify, Positrón u Ollama;
+- no modifica Graphy, Positrón u Ollama;
 - no crea una FSM interna del Arnés;
 - no define nuevas reglas de gobernanza.
 
