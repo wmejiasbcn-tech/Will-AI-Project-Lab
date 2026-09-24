@@ -26,21 +26,21 @@ La discrepancia debe quedar identificada como `DERIVA`, `AUSENTE`, `PENDIENTE_DE
 
 # 1. CANON ARQUITECTÓNICO QUE DEBES RESPETAR
 
-## 1.1 Graphify
+## 1.1 Graphy
 
 El nombre canónico es:
 
-**Graphify**
+**Graphy**
 
 Nunca utilizar como denominación arquitectónica alternativa `Graficar`.
 
-Graphify es el **Sistema Nervioso Central (SNC)** del WAIPL y su función comprende comunicación, coordinación, tránsito, estado, trazabilidad y auditoría.
+Graphy es el **Sistema Nervioso Central (SNC)** del WAIPL y su función comprende comunicación, coordinación, tránsito, estado, trazabilidad y auditoría.
 
 ## 1.2 Hermes
 
 **Hermes es el Director Operativo del ecosistema.**
 
-La **supervisión operativa de Graphify corresponde a Hermes**.
+La **supervisión operativa de Graphy corresponde a Hermes**.
 
 No atribuyas esta función a Ada, al Vórtice, a Carla ni a WILLIAM-SCY-01.
 
@@ -53,10 +53,10 @@ Su función es constituir la **capa independiente de comprobación y contraste d
 WILLIAM-SCY-01:
 
 - no sustituye a Hermes;
-- no supervisa operativamente Graphify;
+- no supervisa operativamente Graphy;
 - no ejecuta por iniciativa propia;
 - no queda subordinado a la entidad cuya información está contrastando;
-- no debe depender jerárquicamente de Hermes, Graphify, Carla o Ada para ejercer su función de contraste soberano.
+- no debe depender jerárquicamente de Hermes, Graphy, Carla o Ada para ejercer su función de contraste soberano.
 
 Comunicación operativa y contraste soberano son funciones distintas.
 
@@ -66,7 +66,7 @@ Carla **no es un agente n8n**.
 
 Carla vive en su entorno nativo.
 
-Emily es infraestructura/puente para permitir la comunicación entre Graphify/n8n y Carla.
+Emily es infraestructura/puente para permitir la comunicación entre Graphy/n8n y Carla.
 
 No crees ni mantengas una segunda identidad operativa de Carla en n8n salvo mandato soberano explícito.
 
@@ -154,7 +154,7 @@ No delegues la decisión de autorización a Carla ni a otro LLM cuando pueda res
 El SCI debe respetar como mínimo:
 
 ### Principio I — Comunicación auditable
-Toda comunicación que atraviese Graphify debe estar sometida a identidad, autorización, alcance, trazabilidad y auditoría.
+Toda comunicación que atraviese Graphy debe estar sometida a identidad, autorización, alcance, trazabilidad y auditoría.
 
 ### Principio II — Salida controlada
 Ninguna información sale hacia sistemas externos únicamente porque técnicamente sea posible.
@@ -163,7 +163,7 @@ Ninguna información sale hacia sistemas externos únicamente porque técnicamen
 La conectividad externa debe limitarse a lo necesario para una función autorizada.
 
 ### Principio IV — Supervisión del nodo de tránsito
-Hermes supervisa operativamente Graphify.
+Hermes supervisa operativamente Graphy.
 
 WILLIAM-SCY-01 ejerce el contraste independiente para el Soberano.
 
@@ -247,9 +247,9 @@ Implementa o verifica:
 - correlación petición/respuesta;
 - recuperación segura;
 - comportamiento definido ante caída de Carla;
-- comportamiento definido ante caída de Graphify.
+- comportamiento definido ante caída de Graphy.
 
-Si Graphify está caído:
+Si Graphy está caído:
 
 > **NO BYPASS. NO ENVÍES DIRECTAMENTE.**
 
@@ -285,7 +285,7 @@ El mismo `message_id` dos veces no debe ejecutar dos veces.
 ### P08 — Concurrencia
 Mensajes simultáneos sin corrupción de estado.
 
-### P09 — Bypass Graphify
+### P09 — Bypass Graphy
 Debe resultar imposible o ser rechazado.
 
 ### P10 — Contradicción
@@ -297,7 +297,7 @@ Debe observar/contrastar/informar y no adquirir ejecución operativa por defecto
 ### P12 — Caída de Carla
 Debe existir comportamiento seguro.
 
-### P13 — Caída de Graphify
+### P13 — Caída de Graphy
 No debe existir bypass.
 
 ### P14 — Integridad de auditoría
@@ -347,7 +347,7 @@ Cuando encuentres una contradicción:
 El SCI podrá pasar de PRE-PILOTO a PILOTO únicamente cuando:
 
 1. No existan P0 en estado `DERIVA`, `AUSENTE`, `PENDIENTE_DE_DECISION_SOBERANA` o `PENDIENTE_DE_EVIDENCIA` sin excepción explícita del Soberano.
-2. Graphify esté nombrado y tratado canónicamente.
+2. Graphy esté nombrado y tratado canónicamente.
 3. Hermes tenga implementada su jurisdicción de supervisión operativa.
 4. WILLIAM-SCY-01 tenga implementada su función de contraste soberano independiente.
 5. Carla permanezca fuera de la ontología de agentes n8n salvo decisión soberana explícita.
