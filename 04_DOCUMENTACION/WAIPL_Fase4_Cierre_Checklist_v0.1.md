@@ -28,7 +28,7 @@
 - [ ] grounding probado
 
 ### Regresión
-- [ ] Graphify 34/34
+- [ ] Graphy 34/34
 - [ ] Kairos 28/28
 - [ ] DIKE 40/40
 - [ ] Knowledge Model 42/42
