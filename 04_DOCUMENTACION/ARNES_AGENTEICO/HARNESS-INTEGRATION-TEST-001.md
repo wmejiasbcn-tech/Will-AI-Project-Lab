@@ -65,7 +65,7 @@ Acredita únicamente la integración mínima ejecutada entre verificación, evid
 
 No acredita:
 
-- integración física Graphify ↔ Arnés;
+- integración física Graphy ↔ Arnés;
 - integración física Positrón ↔ Arnés;
 - integración física Ollama ↔ Arnés;
 - operación de Vár/Yata dentro de este circuito;
