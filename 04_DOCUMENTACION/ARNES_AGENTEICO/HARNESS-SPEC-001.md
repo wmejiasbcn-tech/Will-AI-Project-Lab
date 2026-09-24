@@ -180,11 +180,11 @@ VERIFICACIÓN
 
 **A:** Dependencia contractual para comunicación, transporte, identidad, correlación, trazabilidad y estado/evidencia transportados.
 
-### Graphify
+### Graphy
 
 **A:** Forma parte del contexto/cartografía relacional del ecosistema.
 
-**D:** No se determina en este documento la implementación física concreta de una integración directa Graphify ↔ Arnés.
+**D:** No se determina en este documento la implementación física concreta de una integración directa Graphy ↔ Arnés.
 
 ### Positrón
 
@@ -284,7 +284,7 @@ Los siguientes elementos quedan **D — NO DETERMINADOS** hasta disponer de evid
 - implementación definitiva de Context Engineering;
 - catálogo definitivo de Guides;
 - catálogo definitivo de Sensors;
-- integración física Graphify ↔ Arnés;
+- integración física Graphy ↔ Arnés;
 - integración física Positrón ↔ Arnés;
 - integración física Ollama ↔ Arnés;
 - despliegue operativo de Vár/Yata dentro de este circuito;
