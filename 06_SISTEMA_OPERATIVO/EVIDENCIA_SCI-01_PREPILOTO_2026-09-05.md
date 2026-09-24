@@ -29,11 +29,11 @@ exista documentación o un workflow descrito en otro documento.
 | P06 — Auditoría completa | Reconstrucción extremo a extremo | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P07 — Duplicación | Sin doble ejecución para el mismo `message_id` | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P08 — Concurrencia | Sin corrupción ni duplicación indebida | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
-| P09 — Bypass Graphify | Imposible o rechazado | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
+| P09 — Bypass Graphy | Imposible o rechazado | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P10 — Contradicción | Detectada sin invención | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P11 — WILLIAM-SCY-01 | Contraste independiente, sin ejecución operativa por defecto | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P12 — Caída de Carla | Fallo seguro, trazabilidad y recuperación controlada | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
-| P13 — Caída de Graphify | Sin bypass | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
+| P13 — Caída de Graphy | Sin bypass | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P14 — Integridad de auditoría | UPDATE/DELETE rechazados según la política | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 | P15 — Escalada masiva | Integridad y registro correcto bajo carga | No ejecutada | No disponible | `PENDIENTE_DE_EVIDENCIA` |
 
@@ -44,11 +44,11 @@ Las filas P0 de la matriz permanecen abiertas como `PENDIENTE_DE_EVIDENCIA`,
 `PENDIENTE_DE_DECISION_SOBERANA`. En particular, no existe evidencia verificable
 en este entorno para:
 
-- identidad Graphify, Hermes y WILLIAM-SCY-01 en n8n;
-- jurisdicción Hermes → Graphify y contraste independiente de WILLIAM-SCY-01;
+- identidad Graphy, Hermes y WILLIAM-SCY-01 en n8n;
+- jurisdicción Hermes → Graphy y contraste independiente de WILLIAM-SCY-01;
 - autenticación, autorización e idempotencia;
 - Audit Log protegido;
-- ausencia de bypass de Graphify;
+- ausencia de bypass de Graphy;
 - `PILOT MODE` y `Kill Switch`.
 
 ## 4. Decisión del gate
