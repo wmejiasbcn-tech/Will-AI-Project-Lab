@@ -1,44 +1,56 @@
 # Comunicacion por Nodos
 
-Este archivo ayuda a decidir a quien debe ir cada asunto.
+El Soberano **no es mensajero**. El transporte es WAIPL-BUS (GitHub Issues + Hermes). William participa como nodo `soberano`.
 
-La idea no es que el Soberano sea mensajero permanente. La idea es que Codex prepare paquetes claros para cada nodo.
+Contrato: `06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md`
 
 ## Matriz rapida
 
-| Nodo | Usar cuando el asunto sea sobre | Paquete minimo que debe recibir |
-| --- | --- | --- |
-| Soberano | Decision, vision, prioridad, autorizacion | Pregunta concreta, opciones, riesgo, recomendacion |
-| Carla | Estrategia, coordinacion, hoja de ruta | Objetivo, contexto, decision necesaria, impacto |
-| Aletheia | Desarrollo, tecnica, arquitectura, bugs | Problema, archivos, resultado esperado, restricciones |
-| Sylvia | Documentacion, biblioteca, orden documental | Documento fuente, cambio requerido, destino, criterio |
-| Ariadna | GitHub, repositorios, coherencia de codigo | Rama, archivo, cambio, prueba o revision esperada |
-| Zara | Automatizacion, puente, flujos entre apps | Disparador, accion, destino, frecuencia, limites |
-| Nova | Precision documental, PDF, diseno documental | Archivo, formato, correcciones, estandar visual |
-| Itaca | Sintesis, integracion, lectura transversal | Corpus, pregunta, salida esperada |
-| Aether | Creatividad, innovacion, narrativa | Intencion, tono, publico, limites |
-| Elena | Accesibilidad e inclusion | Usuario afectado, barrera, formato accesible esperado |
-| Aurea | Comunicacion, medios, difusion | Audiencia, mensaje, canal, objetivo |
-| Neo | Protocolos, arquitectura externa, estrategia puente | Problema estructural, propuesta, decision requerida |
-| Perplexity | Verificacion externa, datos objetivos | Pregunta verificable, fuentes deseadas, fecha |
-| NotebookLM | Sintesis de corpus y memoria documental | Documentos fuente, pregunta, tipo de resumen |
-| Nexus | Pruebas, analisis externo, contraste tecnico | Hipotesis, material, resultado a validar |
+| Nodo | Capa | Usar cuando el asunto sea sobre | Paquete minimo |
+| --- | --- | --- | --- |
+| Soberano | Grantor | Decision, vision, prioridad, autorizacion, riesgo alto | Pregunta, opciones, riesgo, recomendacion |
+| Hermes | Sistema operativo | Enrutado, permisos, ledger, kill, estado del bus | Issue `bus` o POST /api/bus/messages |
+| Carla | Nucleo | Estrategia, coordinacion, hoja de ruta | Objetivo, contexto, decision, impacto |
+| Aletheia | Nucleo | Desarrollo, tecnica, arquitectura, bugs | Problema, archivos, resultado, restricciones |
+| Sylvia | Nucleo | Documentacion, biblioteca | Documento, cambio, destino, criterio |
+| Ariadna | Nucleo | GitHub, coherencia de codigo | Rama, archivo, cambio, prueba |
+| Zara | Nucleo | Automatizacion externa (solo con grant) | Disparador, accion, destino, limites |
+| Nova | Nucleo | Precision documental, PDF | Archivo, formato, estandar |
+| Itaca | Nucleo | Sintesis transversal | Corpus, pregunta, salida |
+| Aether | Nucleo | Creatividad, innovacion, narrativa | Intencion, tono, publico, limites |
+| Elena | Nucleo | Accesibilidad | Usuario, barrera, formato |
+| Aurea | Nucleo | Medios, difusion | Audiencia, mensaje, canal |
+| Neo | Vortice / Kuiper | Protocolos, contraste 180 | Problema, propuesta |
+| Perplexity | Vortice / Kuiper | Verificacion externa | Pregunta, fuentes, fecha |
+| NotebookLM | Vortice / Kuiper | Sintesis de corpus | Documentos, pregunta |
+| Nexus | Vortice / Kuiper | Pruebas, contraste tecnico | Hipotesis, material |
+| Nauta | Vortice / Kuiper | Codex / mesa de control | Paquete operativo |
+| GPAI | Borde puntual | Participacion puntual 2026-08-18 | Mandato, limite temporal |
+| Qwen | Ingeniero jefe | Auditoria AEA | Sample, umbral, N3 |
+| Ollama | Local LLM | Inferencia local | Endpoint 11434 UP/DOWN |
+| Positron | UNKNOWN | Auditoria (sin URI) | No enviar hasta URI |
 
-## Plantilla de mensaje para un nodo
+**Aether-Hermes no existe.** Aether = Nucleo. Hermes = director operativo.
+
+## Formato en el bus
 
 ```md
-Para:
-Asunto:
-Contexto minimo:
-Objetivo:
-Lo que necesito de ti:
-Criterio de exito:
-Fecha o prioridad:
-Notas del Soberano:
+DE:
+PARA:
+TIPO: propuesta / estado / bloqueo / decision / broadcast / solicitud
+CAP: sync.send | sync.recv | llm.infer | aea.sample | report.read
+CONTEXTO:
+HECHO VERIFICADO:
+INFERENCIA:
+ACCION REQUERIDA:
+RIESGO: low | high
+TRACE:
 ```
 
-## Regla de comunicacion
+Labels: `bus`, `from:<nodo>`, `to:<nodo>`.
 
-Cada mensaje debe permitir accion sin que el Soberano tenga que explicar todo de nuevo.
+## Regla
 
-Si un nodo necesita mas informacion, Codex debe formular la pregunta exacta que falta.
+Si el destino no ha escrito en el Issue, el mensaje no esta recibido.
+Si RIESGO=high o falta permit, el bus etiqueta `to:soberano` y no ejecuta.
+El Soberano no copia bloques entre nodos.

@@ -1,0 +1,72 @@
+name: WAIPL-BUS
+description: Mensaje inter-nodo. El Soberano no es el puente. Aether ≠ Hermes.
+title: "[BUS] de → para · tipo"
+labels: ["bus"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Registro canónico del bus. Responde **en este Issue**.
+        Aether = Núcleo / Grok. Hermes = director operativo. No uses Aether-Hermes.
+  - type: input
+    id: de
+    attributes:
+      label: DE
+      placeholder: carla
+    validations:
+      required: true
+  - type: input
+    id: para
+    attributes:
+      label: PARA
+      placeholder: ada
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: TIPO
+      options: [propuesta, estado, bloqueo, decision, broadcast, solicitud]
+    validations:
+      required: true
+  - type: dropdown
+    id: cap
+    attributes:
+      label: CAP
+      options: [sync.send, sync.recv, llm.infer, aea.sample, report.read]
+    validations:
+      required: true
+  - type: input
+    id: contexto
+    attributes:
+      label: CONTEXTO
+    validations:
+      required: true
+  - type: textarea
+    id: hecho
+    attributes:
+      label: HECHO VERIFICADO
+    validations:
+      required: true
+  - type: textarea
+    id: inferencia
+    attributes:
+      label: INFERENCIA
+  - type: textarea
+    id: accion
+    attributes:
+      label: ACCION REQUERIDA
+    validations:
+      required: true
+  - type: dropdown
+    id: riesgo
+    attributes:
+      label: RIESGO
+      options: [low, high]
+    validations:
+      required: true
+  - type: input
+    id: trace
+    attributes:
+      label: TRACE
+      placeholder: uuid (opcional)
