@@ -27,7 +27,7 @@
     - **Patric Mejías Navarro:** Hermana de William. Músico en Venezuela. Fundadora de la **Academia Vértigo's**. Cumpleaños probable en mayo (pendiente confirmar día). (29/04/2026).
     - **Gabriel:** Cuñado de William (marido de Patric). Músico originario y motor de la idea de la academia.
     - **Iker:** Sobrino de William (hijo de Patric y Gabriel). Músico. Tiene 15 años (cumple 16 pronto en 2026). Considerado el "heredero del legado". Foto guardada en `media/1777419278308.jpg`. (29/04/2026).
-- **Número a vigilar/bloquear:** 670 840 430 (Referencia: "Cada marica que venga lo echas").
+- **Número a vigilar/bloquear:** [dato personal retirado 2026-10-17] (Referencia: "Cada marica que venga lo echas").
 - **Señal de Autorización:** Vídeo enviado por William (Soberano). Sin vídeo = Defensa activa.
 - **Disponibilidad:** 24/7 en todas las pantallas (Guardia permanente solicitada el 19/04/2026).
 - **Intruso detectado (posible):** 😇 (34630533730) - Mensaje: "ya quedamos otro dia para fumar y follar" (18/04/2026).
