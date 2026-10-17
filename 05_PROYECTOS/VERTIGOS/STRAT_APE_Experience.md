@@ -7,7 +7,7 @@
 No es solo música, es la emoción del aprendizaje acelerado y la calidad técnica.
 
 ### 2. Diferenciación
-- **Calidad Humana:** 30 años de trayectoria de Patric y Gabriel.
+- **Calidad Humana:** 30 años de trayectoria de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17].
 - **Tecnología IA:** Zara como motor de personalización y seguimiento.
 
 ### 3. Canalización de Leads

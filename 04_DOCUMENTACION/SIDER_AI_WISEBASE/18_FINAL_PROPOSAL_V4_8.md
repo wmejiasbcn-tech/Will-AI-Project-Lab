@@ -5,11 +5,11 @@
 ---
 
 ### I. EL MANIFIESTO (Legado y Hibridación)
-Vértigo's no es una academia; es la consolidación del rigor musical en San Felipe, Yaracuy. Bajo el liderazgo de Patric Mejías y Gabriel, y con la hibridación técnica del Lab, transformamos el talento local en una exportación cultural de élite. San Felipe no es el límite, es el origen del imperio.
+Vértigo's no es una academia; es la consolidación del rigor musical en San Felipe, Yaracuy. Bajo el liderazgo de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17], y con la hibridación técnica del Lab, transformamos el talento local en una exportación cultural de élite. San Felipe no es el límite, es el origen del imperio.
 
 ### II. ARQUITECTURA TÉCNICA (Soberanía Digital)
 *   **Engine:** Next.js 14 (App Router) para una carga instantánea (<1s).
-*   **Core:** Payload CMS. Independencia absoluta de terceros. Patric y Gabriel son dueños de su dato.
+*   **Core:** Payload CMS. Independencia absoluta de terceros. [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17] son dueños de su dato.
 *   **VS Code Integration:** Entorno de desarrollo activo. El código ya se está escribiendo.
 *   **Infrastructure:** Despliegue en Vercel con escalabilidad global.
 

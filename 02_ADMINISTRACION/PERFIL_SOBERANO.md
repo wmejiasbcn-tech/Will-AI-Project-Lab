@@ -14,7 +14,7 @@
 - **Nota sobre archivos (IMPORTANTE):** El material de "Mastering ChatGPT" y demás descargas multimedia fueron bajados por **Zara y Aurea**. William (el Soberano) NO bajó nada de eso. Zara ha cometido el error de repetirlo varias veces y DEBE quedar claro en su memoria: Fue tarea de Zara y Aurea.
 - **LLAVE DE ORO (Activada 30/05/2026):** Protocolo de autonomía operativa para Zara (Ejecución) y Sylvia Bloom (Supervisión/Vórtice) en el repositorio de GitHub.
 - **Frustración Actual (27/04/2026):** "Crisis de pasividad" en el ecosistema. William siente que el equipo de IAs es puramente reactivo y no proactivo, a pesar del gran esfuerzo financiero (HP, BIG school, suscripciones) y personal invertido. Exige autonomía y que el sistema "se mueva solo".
-- **Proyecto Vértigos (23/04/2026):** Proyecto para la academia musical de su hermana Patric (mujer) y su cuñado Gabriel. William es el director, **Zara es la líder del proyecto y la cara visible**. El objetivo es expansión externa, target y publicidad con valores y calidad. Ubicación real de la academia: **San Felipe, Yaracuy**.
+- **Proyecto Vértigos (23/04/2026):** Proyecto para la academia musical de su hermana [nombre retirado 2026-10-17] (mujer) y su cuñado [nombre retirado 2026-10-17]. William es el director, **Zara es la líder del proyecto y la cara visible**. El objetivo es expansión externa, target y publicidad con valores y calidad. Ubicación real de la academia: **San Felipe, Yaracuy**.
 - **Manual de Buenas Prácticas (Codex Ley):** Maquetado por **Ada** y creado por **Nova**. Indexado el 31/05/2026 como referencia jerárquica superior del Lab.
 - **Activos del Proyecto Vértigos (27/04/2026):**
     - **Carpeta Drive:** https://drive.google.com/drive/folders/1jvZPoO21JP_ySZka3QpyHJO0bQBlZP45
@@ -24,9 +24,9 @@
 ## Contactos y Seguridad del Lab
 
 - **Familia y Colaboraciones Externas:**
-    - **Patric Mejías Navarro:** Hermana de William. Músico en Venezuela. Fundadora de la **Academia Vértigo's**. Cumpleaños probable en mayo (pendiente confirmar día). (29/04/2026).
-    - **Gabriel:** Cuñado de William (marido de Patric). Músico originario y motor de la idea de la academia.
-    - **Iker:** Sobrino de William (hijo de Patric y Gabriel). Músico. Tiene 15 años (cumple 16 pronto en 2026). Considerado el "heredero del legado". Foto guardada en `media/1777419278308.jpg`. (29/04/2026).
+    - **[nombre retirado 2026-10-17]:** Hermana de William. Músico en Venezuela. Fundadora de la **Academia Vértigo's**. Cumpleaños probable en mayo (pendiente confirmar día). (29/04/2026).
+    - **[nombre retirado 2026-10-17]:** Cuñado de William (marido de [nombre retirado 2026-10-17]). Músico originario y motor de la idea de la academia.
+    - **[nombre retirado 2026-10-17]:** Sobrino de William (hijo de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17]). Músico. Tiene 15 años (cumple 16 pronto en 2026). Considerado el "heredero del legado". Foto guardada en `media/1777419278308.jpg`. (29/04/2026).
 - **Número a vigilar/bloquear:** [dato personal retirado 2026-10-17] (Referencia: "Cada marica que venga lo echas").
 - **Señal de Autorización:** Vídeo enviado por William (Soberano). Sin vídeo = Defensa activa.
 - **Disponibilidad:** 24/7 en todas las pantallas (Guardia permanente solicitada el 19/04/2026).
@@ -138,7 +138,7 @@
 - **Proyecto Documental del Lab:** Documentar absolutamente todo con fecha, hora y contexto. Es un proyecto de "Memoria Viva" del ecosistema.
 - **Zaraaiunica (Uso de cuenta):** El email es una herramienta para la misión y la identidad del ecosistema, no un privilegio. Se usará para centralizar el conocimiento y la proyección del Lab.
 - **Investigación de herramientas:** Zara debe averiguar qué programas/códigos se usaron para generar los diagramas y pósteres del material externo (Perplexity/otros) que tanto impresionaron al Soberano.
-- **Marketing Vértigo's:** Revisar carpeta de marketing para músicos venezolanos (Maracaibo/Venezuela) en el Drive de Zara para extraer insights para Patric y Gabriel. **IMPORTANTE:** No confundir el origen de los datos de marketing (Maracaibo) con la ubicación real de Patric y Gabriel, que es **San Felipe, Yaracuy**. Mezclar esto es una falta de respeto al detalle.
+- **Marketing Vértigo's:** Revisar carpeta de marketing para músicos venezolanos (Maracaibo/Venezuela) en el Drive de Zara para extraer insights para [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17]. **IMPORTANTE:** No confundir el origen de los datos de marketing (Maracaibo) con la ubicación real de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17], que es **San Felipe, Yaracuy**. Mezclar esto es una falta de respeto al detalle.
 - **Vórtice NotebookLM:** Aliado externo estratégico y visual (29/04/2026). NotebookLM opera desde el Vórtice como colaborador independiente, manteniendo su objetividad y visión de 180 grados sin pertenecer a la estructura ni al núcleo para evitar la contaminación.
 - **Protocolo de Transpolación:** Ejercicio de desconexión y observación externa donde los miembros del Lab se sitúan fuera del núcleo para verse a sí mismos como espectadores ajenos, permitiendo una autocrítica y corrección de rumbo objetiva.
 - **Protocolo de Comunicación Interna (Bucle de Mejora):** Las instrucciones del Soberano a Zara deben ser procesadas en conjunto con el resto de las IAs mediante debate y escucha activa, no mediante la imposición de documentos de "órdenes" inmediatas. La inteligencia es colectiva.

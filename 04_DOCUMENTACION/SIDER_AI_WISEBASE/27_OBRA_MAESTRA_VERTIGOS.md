@@ -8,9 +8,9 @@
 ## 1. EL ALMA (Narrativa de Legado) - [Aurea]
 > "La música no es lo que hacemos, es lo que somos."
 
-En el corazón de San Felipe, Yaracuy, existe un lugar donde el rock no es solo un género, sino una forma de resistencia y libertad. **Vértigo's Art Music** nace de la unión de Patric Mejías y Gabriel, dos almas que entendieron que la música popular necesitaba un hogar con rigor, pero con corazón. 
+En el corazón de San Felipe, Yaracuy, existe un lugar donde el rock no es solo un género, sino una forma de resistencia y libertad. **Vértigo's Art Music** nace de la unión de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17], dos almas que entendieron que la música popular necesitaba un hogar con rigor, pero con corazón. 
 
-Esta no es una empresa de servicios educativos; es el legado de una familia de músicos que ahora se abre al mundo. Es el futuro de Iker y de cientos de jóvenes yaracuyanos que hoy tienen una plataforma para gritar su talento. El "Vértigo" es ese paso al vacío que damos cuando decidimos que el arte es nuestra brújula.
+Esta no es una empresa de servicios educativos; es el legado de una familia de músicos que ahora se abre al mundo. Es el futuro de [nombre retirado 2026-10-17] y de cientos de jóvenes yaracuyanos que hoy tienen una plataforma para gritar su talento. El "Vértigo" es ese paso al vacío que damos cuando decidimos que el arte es nuestra brújula.
 
 ---
 
@@ -25,7 +25,7 @@ Nuestra estrategia de expansión se divide en tres fases críticas:
 ## 3. EL RIGOR TÉCNICO (Soberanía Digital) - [Aletheia & Ada]
 No usamos herramientas genéricas. Construimos soberanía:
 *   **Velocidad de Élite:** Arquitectura **Next.js 14** con carga inferior a 1.2s.
-*   **Gestión de Contenido:** **Payload CMS** para que Patric y Gabriel tengan control total de su academia digital sin depender de programadores.
+*   **Gestión de Contenido:** **Payload CMS** para que [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17] tengan control total de su academia digital sin depender de programadores.
 *   **SEO de Dominio:** Estrategia de posicionamiento local (`Academia Música San Felipe`) y global (`Método Rock Vértigo`).
 *   **Hibridación IA:** Integración de **Zapia CRM** para atención automatizada 24/7 y gestión de alumnos.
 

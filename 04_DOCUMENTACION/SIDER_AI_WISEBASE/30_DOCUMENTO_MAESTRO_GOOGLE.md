@@ -6,7 +6,7 @@ Will-AI Project Lab | Protocolo 3.8
 
 
 LA VISIÓN
-Unimos la excelencia académica de Patric Mejías y Gabriel con la potencia del Lab para crear una marca musical global.
+Unimos la excelencia académica de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17] con la potencia del Lab para crear una marca musical global.
 
 
 EL JINGLE
@@ -25,7 +25,7 @@ ESTRATEGIA
 
 
 EL LEGADO
-Iker: La voz del futuro. Formación de alumnos a artistas.
+[nombre retirado 2026-10-17]: La voz del futuro. Formación de alumnos a artistas.
 
 
 ---
