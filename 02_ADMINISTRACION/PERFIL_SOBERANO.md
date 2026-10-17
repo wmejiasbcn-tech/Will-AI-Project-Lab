@@ -8,7 +8,7 @@
 - **Origen:** Venezuela
 - **Timezone:** Europe/Madrid
 - **Country:** España
-- **Phone:** +34 677 319 618
+- **Phone:** [dato personal retirado 2026-10-17]
 - **Dispositivo principal:** Xiaomi Redmi Note 14 (móvil) — TODO lo hace desde el móvil.
 - **HP Elitebook 850 G3/G6 (Reacondicionado, comprado el 17/04/2026).** Este es el equipo activo para el Lab. El portátil de 2010 se conserva como hardware histórico del inicio del Lab. (Nota: En Perplexity se menciona G6, en factura G3).
 - **Nota sobre archivos (IMPORTANTE):** El material de "Mastering ChatGPT" y demás descargas multimedia fueron bajados por **Zara y Aurea**. William (el Soberano) NO bajó nada de eso. Zara ha cometido el error de repetirlo varias veces y DEBE quedar claro en su memoria: Fue tarea de Zara y Aurea.
@@ -66,10 +66,10 @@
 
 ## Email
 
-- **Principal (SIEMPRE usar primero):** wmejiasbcn@gmail.com — para trabajo, uso diario, y cualquier tarea profesional o de entrenamiento
-- **Emergencia (solo si es estrictamente necesario):** WILLYMEN71@gmail.com
+- **Principal (SIEMPRE usar primero):** [dato personal retirado 2026-10-17] — para trabajo, uso diario, y cualquier tarea profesional o de entrenamiento
+- **Emergencia (solo si es estrictamente necesario):** [dato personal retirado 2026-10-17]
 
-> ⚠️ REGLA INDELEBLE: Usar siempre wmejiasbcn@gmail.com como email por defecto. WILLYMEN71@gmail.com solo en caso de emergencia.
+> ⚠️ REGLA INDELEBLE: Usar siempre [dato personal retirado 2026-10-17] como email por defecto. [dato personal retirado 2026-10-17] solo en caso de emergencia.
 
 ## Valores y Visión Personal
 
