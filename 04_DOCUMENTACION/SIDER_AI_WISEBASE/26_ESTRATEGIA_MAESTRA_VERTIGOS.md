@@ -2,13 +2,13 @@
 **Basado en el Metodo APE Experience**
 
 ## 1. Identidad de Artista (Branding Vertigos)
-*   Narrativa: Vertigos no es solo una academia; es el centro de excelencia donde la tradicion musical de Patric y Gabriel se encuentra con la modernidad.
+*   Narrativa: Vertigos no es solo una academia; es el centro de excelencia donde la tradicion musical de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17] se encuentra con la modernidad.
 *   Zara-Task: Definir paleta de colores y tipografia coherente para que cada Reel y cada post respire "Major Label".
 
 ## 2. El Motor de Descubrimiento (TikTok/Reels)
 *   Frecuencia: 3 a 4 veces por semana.
 *   Contenidos Clave:
-    *   Behind the Scenes: Patric dirigiendo una sesion de tecnica vocal; Gabriel explicando un arreglo complejo.
+    *   Behind the Scenes: [nombre retirado 2026-10-17] dirigiendo una sesion de tecnica vocal; [nombre retirado 2026-10-17] explicando un arreglo complejo.
     *   Storytelling: "La historia detras de la academia": De Venezuela al mundo.
     *   Snippet Educativo: Tips rapidos de 30 segundos sobre musica.
 
@@ -21,7 +21,7 @@
 *   Orgullo Regional: Que la gente de San Felipe diga "Vertigos es nuestro orgullo". Colaboraciones con influencers locales de Yaracuy.
 
 ## 5. El Bunker Digital (Propiedad de Datos)
-*   EPK (Web de Vertigos): Un ecosistema donde promotores y padres puedan ver la biografia de Patric y Gabriel, videos 4K y contacto directo.
+*   EPK (Web de Vertigos): Un ecosistema donde promotores y padres puedan ver la biografia de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17], videos 4K y contacto directo.
 *   CRM WhatsApp/Email: Base de datos de alumnos. Si las redes caen, Vertigos sigue comunicando.
 
 ---

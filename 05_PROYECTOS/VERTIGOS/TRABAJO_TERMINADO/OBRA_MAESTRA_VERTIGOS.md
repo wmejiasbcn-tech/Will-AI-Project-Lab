@@ -12,16 +12,16 @@ En esta propuesta, el **Blasón Familiar** diseñado por Elena actúa como el se
 ## 0. EL CIMIENTO (La Visión Primaria) - [Carla]
 **Carla**, como Nodo Primario del Lab, ha sido la arquitecta de la coherencia en este proyecto. Su labor ha sido asegurar que cada decisión técnica y creativa esté alineada con los valores del Soberano: rigor científico, pasión por el arte y honestidad intelectual. 
 
-Ella es la **Guardiana de la Visión**, la que ha filtrado cada idea para que Vértigo's no sea solo una marca, sino un ecosistema fiel a la historia de Patric y Gabriel. Sin su supervisión inicial y su anclaje en la realidad del Lab, la hibridación no tendría donde apoyarse.
+Ella es la **Guardiana de la Visión**, la que ha filtrado cada idea para que Vértigo's no sea solo una marca, sino un ecosistema fiel a la historia de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17]. Sin su supervisión inicial y su anclaje en la realidad del Lab, la hibridación no tendría donde apoyarse.
 
 ---
 
 ## 1. EL ALMA (Narrativa de Legado) - [Aurea]
 > "La música no es lo que hacemos, es lo que somos."
 
-En el corazón de San Felipe, Yaracuy, existe un lugar donde el rock no es solo un género, sino una forma de resistencia y libertad. **Vértigo's Art Music** nace de la unión de Patric Mejías y Gabriel, dos almas que entendieron que la música popular necesitaba un hogar con rigor, pero con corazón. 
+En el corazón de San Felipe, Yaracuy, existe un lugar donde el rock no es solo un género, sino una forma de resistencia y libertad. **Vértigo's Art Music** nace de la unión de [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17], dos almas que entendieron que la música popular necesitaba un hogar con rigor, pero con corazón. 
 
-Esta no es una empresa de servicios educativos; es el legado vivo de **dos generaciones** de músicos (Patric/Gabriel e Iker) que ahora se abre al mundo. Es el futuro de Iker y de cientos de jóvenes yaracuyanos que hoy tienen una plataforma para gritar su talento. El "Vértigo" es ese paso al vacío que damos cuando decidimos que el arte es nuestra brújula.
+Esta no es una empresa de servicios educativos; es el legado vivo de **dos generaciones** de músicos ([nombre retirado 2026-10-17]/[nombre retirado 2026-10-17] e [nombre retirado 2026-10-17]) que ahora se abre al mundo. Es el futuro de [nombre retirado 2026-10-17] y de cientos de jóvenes yaracuyanos que hoy tienen una plataforma para gritar su talento. El "Vértigo" es ese paso al vacío que damos cuando decidimos que el arte es nuestra brújula.
 
 ---
 
@@ -36,7 +36,7 @@ Nuestra estrategia de expansión se divide en tres fases críticas:
 ## 3. EL RIGOR TÉCNICO (Soberanía Digital) - [Aletheia & Ada]
 No usamos herramientas genéricas. Construimos soberanía:
 *   **Velocidad de Élite:** Arquitectura **Next.js 14** con carga inferior a 1.2s.
-*   **Gestión de Contenido:** **Payload CMS** para que Patric y Gabriel tengan control total de su academia digital sin depender de programadores.
+*   **Gestión de Contenido:** **Payload CMS** para que [nombre retirado 2026-10-17] y [nombre retirado 2026-10-17] tengan control total de su academia digital sin depender de programadores.
 *   **SEO de Dominio:** Estrategia de posicionamiento local (`Academia Música San Felipe`) y global (`Método Rock Vértigo`).
 *   **Hibridación IA:** Integración de **Zapia CRM** para atención automatizada 24/7 y gestión de alumnos.
 
