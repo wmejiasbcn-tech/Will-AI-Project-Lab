@@ -66,10 +66,10 @@
 
 ## Email
 
-- **Principal (SIEMPRE usar primero):** [dato personal retirado 2026-10-17] — para trabajo, uso diario, y cualquier tarea profesional o de entrenamiento
-- **Emergencia (solo si es estrictamente necesario):** [dato personal retirado 2026-10-17]
+- **Principal (SIEMPRE usar primero):** wmejiasbcn@gmail.com — para trabajo, uso diario, y cualquier tarea profesional o de entrenamiento
+- **Emergencia (solo si es estrictamente necesario):** WILLYMEN71@gmail.com
 
-> ⚠️ REGLA INDELEBLE: Usar siempre [dato personal retirado 2026-10-17] como email por defecto. [dato personal retirado 2026-10-17] solo en caso de emergencia.
+> ⚠️ REGLA INDELEBLE: Usar siempre wmejiasbcn@gmail.com como email por defecto. WILLYMEN71@gmail.com solo en caso de emergencia.
 
 ## Valores y Visión Personal
 
