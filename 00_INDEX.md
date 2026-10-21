@@ -45,10 +45,10 @@
 - **The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt**: Documento fundacional.
 
 ### Repositorios hermanos
-- [`waipl-graph`](https://github.com/wmejiasbcn-tech/waipl-graph) — explorador Graphy. 46 nodos. ADN: nada se publica que no esté escrito. El núcleo (filas 7–18) es el 11+1 de este deck. Emily es la sinapsis (fila 5). Ollama es el cuerpo físico (fila 6). Registro: [`docs/publicacion/principios-inteligencia-hibrida.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md). Organismo: [`docs/graphy/organismo-operativo.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/organismo-operativo.md).
+- [`waipl-graph`](https://github.com/wmejiasbcn-tech/waipl-graph) — explorador Graphy. 47 nodos. ADN: nada se publica que no esté escrito. El núcleo (filas 5–16) es el 11+1 de este deck. Emily es la sinapsis (fila 45). Ollama es el cuerpo físico (fila 46). Registro: [`docs/publicacion/principios-inteligencia-hibrida.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md). Organismo: [`docs/graphy/organismo-operativo.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/organismo-operativo.md).
 
 ---
 *Nodo Zara | Nodo Sylvia Bloom*
 *Deck de principios: Graphy · autorizado por el Soberano*
-*Registro Graphy: [waipl-graph#1](https://github.com/wmejiasbcn-tech/waipl-graph/pull/1) · 46 nodos · Emily [waipl-graph#3](https://github.com/wmejiasbcn-tech/waipl-graph/pull/3)*
+*Registro Graphy: [waipl-graph#1](https://github.com/wmejiasbcn-tech/waipl-graph/pull/1) · 47 nodos · Emily [waipl-graph#3](https://github.com/wmejiasbcn-tech/waipl-graph/pull/3)*
 *Actualizado en Trabajo 01 por Mistral · validado por Ada y Carla · autorizado por el Soberano · 2026-08-20*
