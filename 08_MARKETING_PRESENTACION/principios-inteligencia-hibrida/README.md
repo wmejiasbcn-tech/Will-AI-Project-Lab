@@ -25,7 +25,7 @@ Emily es la sinapsis. Arco de energía blanca-plateada que une a Carla y a Graph
 
 Seis principios: naturaleza del ecosistema, hecho diferencial, función de los nodos, complementariedad, permanencia institucional, primacía de la misión.
 
-El registro completo de Graphy son 46 nodos ([`waipl-graph` · índice](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/nodos.md)). Este deck muestra el núcleo: filas 7–18. 46 no entra aquí.
+El registro completo de Graphy son 47 nodos ([`waipl-graph` · índice](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/nodos.md)). Este deck muestra el núcleo: filas 5–16. 47 no entra aquí.
 
 ## Enlace público
 
