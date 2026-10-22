@@ -1,0 +1,12 @@
+{
+  "_nota": "DENY por defecto. Piloto de SPEC-WAIPL-BUS-v0.1 §9 (7 días). expires_at = PENDIENTE: ningún permiso vale hasta que William fije la fecha al activar. Los permisos son direccionales: 'carla ↔ ada' son dos filas. Solo cambia por PR aprobada por William.",
+  "permits": [
+    { "id": "P-001", "src": "soberano", "dst": "*",       "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" },
+    { "id": "P-002", "src": "aether",   "dst": "ada",     "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" },
+    { "id": "P-003", "src": "ada",      "dst": "aether",  "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" },
+    { "id": "P-004", "src": "carla",    "dst": "ada",     "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" },
+    { "id": "P-005", "src": "ada",      "dst": "carla",   "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" },
+    { "id": "P-006", "src": "ariadna",  "dst": "hermes",  "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" },
+    { "id": "P-007", "src": "hermes",   "dst": "ariadna", "cap": "*", "granted_by": "soberano", "expires_at": "PENDIENTE" }
+  ]
+}
