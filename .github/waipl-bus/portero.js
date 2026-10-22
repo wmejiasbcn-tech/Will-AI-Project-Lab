@@ -34,7 +34,12 @@ async function ensureLabels(github, repo, names) {
       await github.rest.issues.getLabel({ ...repo, name });
     } catch (e) {
       if (e.status !== 404) throw e;
-      await github.rest.issues.createLabel({ ...repo, name, color: name === 'bus' ? '0E4D6C' : 'BFD4F2', description: 'WAIPL-BUS' });
+      try {
+        await github.rest.issues.createLabel({ ...repo, name, color: name === 'bus' ? '0E4D6C' : 'BFD4F2', description: 'WAIPL-BUS' });
+      } catch (e2) {
+        // Dos ejecuciones a la vez pueden crear la misma etiqueta: si ya existe, no es un error (hallado en la prueba real del 2026-10-22).
+        if (e2.status !== 422) throw e2;
+      }
     }
   }
 }

@@ -62,7 +62,7 @@ Idempotencia: un Issue con asiento no se vuelve a decidir (las ediciones posteri
 
 ## 4. Controles: probados y solo descritos
 
-Probados (`node --test .github/waipl-bus/test/portero.test.js`, 30 pruebas, GitHub falso en memoria): DENY por defecto, caducidad, permiso de no-soberano, identidad (DE falso, cuenta sin nodo), formato, riesgo alto, límite 30/31, apagado, libro y asignación, idempotencia, apagado y recuperación, recuperación tras caída, recibido solo del destino, atasco, Hermes sin URL o con secreto corto, que con los archivos reales todo sale DENY y, del sello: válido, alterado, falso, sin secreto, viejo, TRACE repetido, doble comprobación y que `sello.py` (Python) y el portero (JS) calculan lo mismo.
+Probados (`node --test .github/waipl-bus/test/portero.test.js`, 31 pruebas, GitHub falso en memoria): DENY por defecto, caducidad, permiso de no-soberano, identidad (DE falso, cuenta sin nodo), formato, riesgo alto, límite 30/31, apagado, libro y asignación, idempotencia, apagado y recuperación, recuperación tras caída, recibido solo del destino, atasco, Hermes sin URL o con secreto corto, que con los archivos reales todo sale DENY y, del sello: válido, alterado, falso, sin secreto, viejo, TRACE repetido, doble comprobación y que `sello.py` (Python) y el portero (JS) calculan lo mismo.
 
 Solo descritos (requieren GitHub de verdad y activación): que los disparadores corran en `main`, la latencia del cron (GitHub puede retrasarlo), notificaciones reales a William, límites de la API.
 

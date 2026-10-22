@@ -314,3 +314,13 @@ test('Flujo: el barrido rechaza un segundo Issue con el mismo TRACE sellado', as
   await portero.processIssue({ github, repo: REPO, issue: b, config: cfg, killed: false, now: NOW });
   assert.ok(b.labels.includes('bus:denied'));
 });
+
+test('Carrera real: si otra ejecución crea la etiqueta a la vez (422), el portero sigue', async () => {
+  const { github, state, addIssue } = fakeGithub();
+  const orig = github.rest.issues.createLabel;
+  github.rest.issues.createLabel = async (a) => { await orig(a); const e = new Error('already_exists'); e.status = 422; throw e; };
+  const issue = addIssue(20, 'carla-bot', body({ de: 'carla', para: 'ada' }));
+  const r = await portero.processIssue({ github, repo: REPO, issue, config: CONFIG, killed: false, now: NOW });
+  assert.equal(r.decision.verdict, 'ALLOW');
+  assert.equal(ledgers(state, 20).length, 1);
+});
