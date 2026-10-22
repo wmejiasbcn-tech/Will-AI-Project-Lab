@@ -53,6 +53,7 @@ jobs:
           BUS_SEAL_CARLA: ${{ secrets.BUS_SEAL_CARLA }}
           BUS_SEAL_HERMES: ${{ secrets.BUS_SEAL_HERMES }}
           BUS_SEAL_SENTINEL: ${{ secrets.BUS_SEAL_SENTINEL }}
+          BUS_SEAL_HARK: ${{ secrets.BUS_SEAL_HARK }}
           BUS_SEAL_ZARA: ${{ secrets.BUS_SEAL_ZARA }}
           HERMES_WEBHOOK_URL: ${{ secrets.HERMES_WEBHOOK_URL }}
           HERMES_WEBHOOK_SECRET: ${{ secrets.HERMES_WEBHOOK_SECRET }}
