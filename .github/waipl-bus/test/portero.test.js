@@ -241,3 +241,76 @@ test('Archivos reales: con permits.json del piloto (PENDIENTE) todo es DENY, inc
   const d = policy.decide({ actorLogin: 'wmejiasbcn-tech', body: body({ de: 'soberano', para: 'ada' }), nodes, permits, now: NOW });
   assert.equal(d.verdict, 'DENY');
 });
+
+// ---------- Sello por nodo (identidad aunque se escriba con la cuenta del soberano) ----------
+const { execFileSync } = require('node:child_process');
+const path = require('node:path');
+const SECRET_CARLA = 'c'.repeat(64);
+const SEALS = { carla: SECRET_CARLA };
+const CREATED = '2026-11-01T09:55:00Z';
+function sealed(extra = {}) {
+  const raw = body({ de: 'carla', para: 'ada' }).replace('TRACE: t-1', 'TRACE: ' + (extra.trace || 'carla-0001')) + '\nFECHA: ' + (extra.fecha || '2026-11-01T10:54:00+01:00') + '\nACCION REQUERIDA: revisar el borrador';
+  return raw + '\nSELLO: ' + policy.computeSeal(raw, extra.secret || SECRET_CARLA);
+}
+const sealInput = (b, more = {}) => ({ actorLogin: 'wmejiasbcn-tech', body: b, ...CONFIG, seals: SEALS, issueCreatedAt: CREATED, now: NOW, ...more });
+
+test('Sello: carla escribe por la cuenta del soberano con sello válido → ALLOW, identidad = sello', () => {
+  const d = policy.decide(sealInput(sealed()));
+  assert.equal(d.verdict, 'ALLOW');
+  assert.equal(d.identity, 'sello (transportado por soberano)');
+  assert.match(policy.ledgerEntry(d, { issueNumber: 1, actorLogin: 'wmejiasbcn-tech', now: NOW }), /"identity":"sello \(transportado por soberano\)"/);
+});
+
+test('Sello: mensaje alterado después de sellar → DENY', () => {
+  const d = policy.decide(sealInput(sealed().replace('revisar el borrador', 'fusionar el borrador')));
+  assert.equal(d.verdict, 'DENY');
+  assert.match(d.reason, /SELLO no válido/);
+});
+
+test('Sello: firmado con otro secreto (sello falso) → DENY', () => {
+  assert.equal(policy.decide(sealInput(sealed({ secret: 'x'.repeat(64) }))).verdict, 'DENY');
+});
+
+test('Sello: nodo sin secreto configurado → DENY', () => {
+  assert.equal(policy.decide(sealInput(sealed(), { seals: {} })).verdict, 'DENY');
+});
+
+test('Sello: mensaje viejo reenviado (FECHA fuera de 24 h) → DENY', () => {
+  const d = policy.decide(sealInput(sealed({ fecha: '2026-10-29T10:00:00Z' })));
+  assert.equal(d.verdict, 'DENY');
+  assert.match(d.reason, /ventana/);
+});
+
+test('Sello: TRACE repetido → DENY', () => {
+  const d = policy.decide(sealInput(sealed(), { traceSeen: true }));
+  assert.equal(d.verdict, 'DENY');
+  assert.match(d.reason, /ya se usó/);
+});
+
+test('Doble comprobación: cuenta propia del nodo + sello; si el nodo tiene sello, la cuenta sola no basta', () => {
+  const ok = policy.decide(sealInput(sealed(), { actorLogin: 'carla-bot' }));
+  assert.equal(ok.verdict, 'ALLOW');
+  assert.equal(ok.identity, 'cuenta+sello');
+  const sinSello = policy.decide(sealInput(body({ de: 'carla', para: 'ada' }), { actorLogin: 'carla-bot' }));
+  assert.equal(sinSello.verdict, 'DENY');
+});
+
+test('Sello: sello.py (Python) y el portero (JS) calculan exactamente lo mismo', () => {
+  const raw = 'DE: carla\r\nPARA: ada  \nCAP: sync.send\nTRACE: carla-0002\nFECHA: 2026-11-01T10:00:00Z\nCONTEXTO: ñandú · acentos «ok»\n';
+  const out = execFileSync('python3', [path.join(__dirname, '..', 'sello.py')], { input: raw, env: { ...process.env, BUS_SEAL: SECRET_CARLA } }).toString();
+  const pySeal = out.match(/SELLO: (\S+)/)[1];
+  assert.equal(pySeal, policy.computeSeal(raw, SECRET_CARLA));
+  const d = policy.decide({ actorLogin: 'wmejiasbcn-tech', body: out, ...CONFIG, seals: SEALS, issueCreatedAt: '2026-11-01T10:05:00Z', now: NOW });
+  assert.equal(d.verdict, 'ALLOW');
+});
+
+test('Flujo: el barrido rechaza un segundo Issue con el mismo TRACE sellado', async () => {
+  const { github, state, addIssue } = fakeGithub();
+  const cfg = { ...CONFIG, seals: SEALS };
+  const a = addIssue(10, 'wmejiasbcn-tech', sealed({ trace: 'carla-dup' }), { created_at: CREATED });
+  await portero.processIssue({ github, repo: REPO, issue: a, config: cfg, killed: false, now: NOW });
+  assert.ok(a.labels.includes('bus:allowed'));
+  const b = addIssue(11, 'wmejiasbcn-tech', sealed({ trace: 'carla-dup' }), { created_at: CREATED });
+  await portero.processIssue({ github, repo: REPO, issue: b, config: cfg, killed: false, now: NOW });
+  assert.ok(b.labels.includes('bus:denied'));
+});

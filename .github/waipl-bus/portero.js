@@ -64,6 +64,13 @@ async function sentLastHour(github, repo, node, now) {
   return issues.filter((i) => Date.parse(i.created_at) >= since.getTime()).length;
 }
 
+// Antirreenvío: ¿otro Issue del bus de las últimas 48 h usa el mismo TRACE?
+async function traceUsedElsewhere(github, repo, trace, issueNumber, now) {
+  const since = new Date(now.getTime() - 2 * policy.SEAL_WINDOW_HOURS * 3600 * 1000);
+  const issues = await github.paginate(github.rest.issues.listForRepo, { ...repo, state: 'all', labels: 'bus', since: since.toISOString(), per_page: 100 });
+  return issues.some((i) => i.number !== issueNumber && policy.parseMessage(i.body).trace === trace);
+}
+
 // Aviso opcional a Hermes (comportamiento heredado de waipl-bus.yml). Solo si hay URL y secreto ≥ 32.
 async function forwardToHermes(env, payloadObj, fetchImpl) {
   const url = env.HERMES_WEBHOOK_URL;
@@ -98,6 +105,7 @@ async function processIssue({ github, repo, issue, config, killed, now, runId, e
 
   const msg = policy.parseMessage(issue.body);
   const count = msg.de ? await sentLastHour(github, repo, msg.de, now) : 0;
+  const traceSeen = msg.trace ? await traceUsedElsewhere(github, repo, msg.trace, issue.number, now) : false;
   const actorLogin = issue.user && issue.user.login;
   const decision = policy.decide({
     killed,
@@ -107,6 +115,9 @@ async function processIssue({ github, repo, issue, config, killed, now, runId, e
     permits: config.permits,
     now,
     sentLastHour: count,
+    seals: config.seals || {},
+    issueCreatedAt: issue.created_at,
+    traceSeen,
   });
 
   await setStateLabels(github, repo, issue, policy.labelsFor(decision));

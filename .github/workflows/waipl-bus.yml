@@ -5,7 +5,7 @@ name: WAIPL-BUS portero
 #
 # Portero del bus según SPEC-WAIPL-BUS-v0.1 §9, sin Hermes ni túnel:
 # DENY por defecto, permisos por pares (permits.json), identidad por cuenta (nodes.json),
-# libro en el Issue, aviso al soberano, límite de 30/h, interruptor BUS_KILL y barrido cada 15 min.
+# sello secreto por nodo (HMAC), libro en el Issue, aviso al soberano, límite de 30/h, interruptor BUS_KILL y barrido cada 15 min.
 # Si existe HERMES_WEBHOOK_URL, también avisa a Hermes (comportamiento heredado).
 
 on:
@@ -46,6 +46,14 @@ jobs:
         env:
           BUS_KILL: ${{ vars.BUS_KILL }}
           BUS_STALL_HOURS: ${{ vars.BUS_STALL_HOURS }}
+          # Sello de cada nodo (secretos del repo). Un nodo sin secreto no puede hablar a través de la cuenta del soberano.
+          BUS_SEAL_ADA: ${{ secrets.BUS_SEAL_ADA }}
+          BUS_SEAL_AETHER: ${{ secrets.BUS_SEAL_AETHER }}
+          BUS_SEAL_ARIADNA: ${{ secrets.BUS_SEAL_ARIADNA }}
+          BUS_SEAL_CARLA: ${{ secrets.BUS_SEAL_CARLA }}
+          BUS_SEAL_HERMES: ${{ secrets.BUS_SEAL_HERMES }}
+          BUS_SEAL_SENTINEL: ${{ secrets.BUS_SEAL_SENTINEL }}
+          BUS_SEAL_ZARA: ${{ secrets.BUS_SEAL_ZARA }}
           HERMES_WEBHOOK_URL: ${{ secrets.HERMES_WEBHOOK_URL }}
           HERMES_WEBHOOK_SECRET: ${{ secrets.HERMES_WEBHOOK_SECRET }}
         with:
@@ -55,6 +63,7 @@ jobs:
             const config = {
               nodes: Object.fromEntries(Object.entries(require(dir + 'nodes.json')).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k.toLowerCase(), v])),
               permits: require(dir + 'permits.json').permits,
+              seals: Object.fromEntries(Object.entries(process.env).filter(([k, v]) => k.startsWith('BUS_SEAL_') && v && v.length >= 32).map(([k, v]) => [k.slice(9).toLowerCase(), v])),
             };
             const killed = String(process.env.BUS_KILL || '').toLowerCase() === 'true';
             const stallHours = Number(process.env.BUS_STALL_HOURS || 24);

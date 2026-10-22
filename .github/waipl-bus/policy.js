@@ -3,8 +3,11 @@
 // notify_soberano = risk:high OR grant OR deadlock (y DENY, según §2); max_msg_per_node_hour = 30.
 'use strict';
 
+const crypto = require('crypto');
+
 const LEDGER_MARKER = '<!-- waipl-bus:portero v1 -->';
 const MAX_MSG_PER_NODE_HOUR = 30;
+const SEAL_WINDOW_HOURS = 24; // un sello solo vale si FECHA está a ±24 h de la creación del Issue
 
 const VERDICT = Object.freeze({
   ALLOW: 'ALLOW',
@@ -37,6 +40,8 @@ function parseMessage(body) {
     cap: norm(field(body, 'CAP')),
     riesgo: norm(field(body, 'RIESGO')),
     trace: field(body, 'TRACE') || null,
+    fecha: field(body, 'FECHA') || null,
+    sello: field(body, 'SELLO') || null,
   };
 }
 
@@ -55,6 +60,42 @@ function findPermit(permits, msg, now) {
     const exp = Date.parse(p.expires_at);
     if (!p.expires_at || Number.isNaN(exp) || exp <= t) continue;
     return p;
+  }
+  return null;
+}
+
+// ---------- Sello por nodo (HMAC-SHA256) ----------
+// Texto sellado = cuerpo completo del Issue sin la línea SELLO, con saltos \n y sin espacios finales.
+// Así el sello cubre DE, PARA, TRACE, FECHA y todo el contenido: si alguien cambia una letra, deja de valer.
+function sealPayload(body) {
+  return String(body || '')
+    .replace(/\r\n/g, '\n')
+    .split('\n')
+    .filter((l) => !/^\s*SELLO:/i.test(l))
+    .map((l) => l.replace(/\s+$/, ''))
+    .join('\n')
+    .trim();
+}
+
+function computeSeal(body, secret) {
+  return 'v1:' + crypto.createHmac('sha256', secret).update('WAIPL-SELLO-v1\n' + sealPayload(body)).digest('hex');
+}
+
+// Devuelve null si el sello es válido, o el motivo del rechazo.
+function checkSeal({ msg, body, secret, issueCreatedAt, traceSeen }) {
+  if (!secret) return 'El nodo "' + msg.de + '" no tiene sello configurado (secreto BUS_SEAL_' + msg.de.toUpperCase() + ').';
+  if (!msg.sello) return 'Falta SELLO del nodo "' + msg.de + '".';
+  if (!msg.trace || !msg.fecha) return 'Un mensaje sellado necesita TRACE y FECHA.';
+  const f = Date.parse(msg.fecha);
+  const c = Date.parse(issueCreatedAt);
+  if (Number.isNaN(f) || Number.isNaN(c) || Math.abs(c - f) > SEAL_WINDOW_HOURS * 3600 * 1000) {
+    return 'FECHA fuera de la ventana de ' + SEAL_WINDOW_HOURS + ' h: posible reenvío de un mensaje viejo.';
+  }
+  if (traceSeen) return 'TRACE "' + msg.trace + '" ya se usó en otro mensaje: posible reenvío.';
+  const expected = Buffer.from(computeSeal(body, secret));
+  const given = Buffer.from(String(msg.sello).trim());
+  if (expected.length !== given.length || !crypto.timingSafeEqual(expected, given)) {
+    return 'SELLO no válido para el nodo "' + msg.de + '" (mensaje alterado o sello falso).';
   }
   return null;
 }
@@ -84,15 +125,33 @@ function decide(input) {
     return out(VERDICT.INVALID, 'RIESGO debe ser low o high.');
   }
 
-  // Identidad: DE no autentica. El nodo real es el que tiene asignada la cuenta de GitHub que escribió.
+  // Identidad: DE no autentica. Dos comprobaciones que se suman (mezcla acordada el 2026-10-22):
+  //  1) la cuenta de GitHub que escribe (nodes.json);
+  //  2) el sello secreto del nodo (seals: nodo → secreto), obligatorio para todo nodo que tenga sello.
+  // Caso A: la cuenta es del propio nodo (DE = nodo de la cuenta) → si el nodo tiene sello, se verifica.
+  // Caso B: la cuenta es del soberano y DE es otro nodo (el soberano transporta) → el sello del nodo es obligatorio.
   const nodes = input.nodes || {};
+  const seals = input.seals || {};
   const actorNode = norm(nodes[norm(input.actorLogin)] || '');
+  const sealArgs = { msg, body: input.body, secret: seals[msg.de], issueCreatedAt: input.issueCreatedAt, traceSeen: input.traceSeen };
+  let identity;
   if (!actorNode) {
-    return out(VERDICT.DENY, 'La cuenta "' + input.actorLogin + '" no tiene nodo asignado en nodes.json.', {
-      notifySoberano: true,
-    });
-  }
-  if (actorNode !== msg.de) {
+    return out(VERDICT.DENY, 'La cuenta "' + input.actorLogin + '" no tiene nodo asignado en nodes.json.', { notifySoberano: true });
+  } else if (actorNode === msg.de) {
+    if (seals[msg.de] || msg.sello) {
+      const bad = checkSeal(sealArgs);
+      if (bad) return out(VERDICT.DENY, bad, { notifySoberano: true });
+      identity = 'cuenta+sello';
+    } else {
+      identity = 'cuenta';
+    }
+  } else if (actorNode === 'soberano') {
+    const bad = checkSeal(sealArgs);
+    if (bad) {
+      return out(VERDICT.DENY, 'Identidad no verificada: escrito con la cuenta del soberano como "' + msg.de + '". ' + bad, { notifySoberano: true });
+    }
+    identity = 'sello (transportado por soberano)';
+  } else {
     return out(
       VERDICT.DENY,
       'Identidad no verificada: DE="' + msg.de + '" pero la cuenta "' + input.actorLogin + '" pertenece al nodo "' + actorNode + '".',
@@ -113,8 +172,9 @@ function decide(input) {
     });
   }
 
-  return out(VERDICT.ALLOW, 'Permiso ' + permit.id + ' (' + permit.src + ' → ' + permit.dst + ').', {
+  return out(VERDICT.ALLOW, 'Permiso ' + permit.id + ' (' + permit.src + ' → ' + permit.dst + '). Identidad: ' + identity + '.', {
     permitId: permit.id,
+    identity,
     notifySoberano: msg.riesgo === 'high',
   });
 }
@@ -151,6 +211,8 @@ function ledgerEntry(decision, ctx) {
     verdict: decision.verdict,
     reason: decision.reason,
     permit: decision.permitId || null,
+    identity: decision.identity || null,
+    sealed: Boolean(decision.msg.sello),
     notify_soberano: decision.notifySoberano,
     run: ctx.runId || null,
   };
@@ -191,4 +253,8 @@ module.exports = {
   ledgerEntry,
   hasLedger,
   isStalled,
+  sealPayload,
+  computeSeal,
+  checkSeal,
+  SEAL_WINDOW_HOURS,
 };

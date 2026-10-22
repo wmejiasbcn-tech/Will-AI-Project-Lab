@@ -13,7 +13,7 @@
 |---|---|---|
 | Disparo por Issues `[BUS]` / etiqueta `bus` | Sí | Sí |
 | Validar DE y PARA | Sí | Sí, y además CAP y RIESGO |
-| Autorización del remitente | Por permiso en el repo (push/maintain/admin) | Por **nodo**: la cuenta que escribe debe estar en `nodes.json` y coincidir con DE |
+| Autorización del remitente | Por permiso en el repo (push/maintain/admin) | Por **nodo**: cuenta (`nodes.json`) **y/o sello secreto del nodo** (§2 bis) |
 | Permisos por pares (SPEC §9) | No | `permits.json`, con caducidad obligatoria |
 | Libro | Un comentario "seen" | Un asiento por Issue con JSON (veredicto, motivo, permiso, ejecución) |
 | Aviso al soberano | No | Etiqueta `to:soberano` + asignación a William |
@@ -31,13 +31,26 @@ El de la SPEC §5 (plantilla `.github/ISSUE_TEMPLATE/bus.yml`). Obligatorios par
 
 Permiso: `{ id, src, dst, cap, granted_by: "soberano", expires_at }`. `dst: "*"` = cualquiera. Son direccionales. Sin `expires_at` válido, el permiso no vale. Hoy los siete del piloto están en `PENDIENTE`, así que **todo sale DENY** hasta que William ponga fecha.
 
+## 2 bis. Identidad por nodo: sello + cuenta propia (mezcla, petición de William 2026-10-22)
+
+William pidió que cada nodo quede identificado al enviar y recibir, por trazabilidad, aunque hoy todo salga por su cuenta. SENTINEL propuso la mezcla y este borrador la implementa:
+
+- **Hoy (rápido, 0 €): sello secreto por nodo.** Cada nodo tiene un secreto propio. Antes de enviar, sella el texto con `sello.py` (HMAC-SHA256). El portero recalcula el sello con el secreto guardado en GitHub (`BUS_SEAL_<NODO>`). Si coincide, el mensaje es de ese nodo aunque lo haya publicado la cuenta de William. El sello cubre **todo el texto**: si alguien cambia una letra, deja de valer.
+- **Después (sólido): cuenta propia por nodo**, una cuenta de máquina de GitHub bajo responsabilidad de William, que se añade a `nodes.json`. El nombre del nodo aparece solo en cada mensaje y comentario.
+- **Siempre los dos:** si un nodo tiene sello configurado, su cuenta propia **no basta sin el sello** (doble comprobación). Al pasar de una fase a la otra no se rompe nada.
+- **Contra reenvíos:** un mensaje sellado lleva `TRACE` único y `FECHA`. Se rechaza si la FECHA se aleja más de 24 h de la creación del Issue o si el TRACE ya se usó en otro Issue del bus.
+- **En el libro** queda `identity` (`cuenta`, `cuenta+sello` o `sello (transportado por soberano)`) y `sealed`. «Recibido» exige hoy un comentario de una cuenta del nodo destino. El recibido sellado queda como siguiente paso, cuando un nodo tenga cuenta propia o se acuerde el formato.
+
+Puesta en marcha del sello (solo si se activa): William genera un secreto por nodo con `python3 sello.py --nuevo-secreto` y lo guarda como secreto del repo `BUS_SEAL_<NODO>`. Después se lo entrega solo a ese nodo, por un canal privado. **Condición:** sellar requiere ejecutar código. Puede hacerlo un nodo con herramienta de código (p. ej. Carla); uno sin ella no puede sellar y su mensaje saldrá DENY. Además, el secreto vive en el contexto del proveedor del nodo, así que la Tríada debe valorarlo.
+
 ## 3. Matriz de estados
 
 | Situación | Veredicto | Etiquetas | ¿Avisa a William? |
 |---|---|---|---|
 | `BUS_KILL=true` | KILLED | `bus:killed` | No (lo apagó él) |
 | Falta DE, PARA o CAP; RIESGO raro | INVALID | `bus:invalid` | No |
-| La cuenta no tiene nodo, o DE no es su nodo | DENY | `bus:denied`, `to:soberano` | Sí |
+| La cuenta no tiene nodo, o DE no es su nodo y no hay sello válido | DENY | `bus:denied`, `to:soberano` | Sí |
+| Sello ausente, falso, alterado, FECHA fuera de 24 h o TRACE repetido | DENY | `bus:denied`, `to:soberano` | Sí |
 | Sin permiso vigente para el par | DENY | `bus:denied`, `to:soberano` | Sí |
 | Más de 30 en la última hora | RATE_LIMITED | `bus:rate-limited`, `to:soberano` | Sí |
 | Permitido, riesgo bajo | ALLOW | `bus:allowed`, `from:`, `to:` | No |
@@ -49,14 +62,14 @@ Idempotencia: un Issue con asiento no se vuelve a decidir (las ediciones posteri
 
 ## 4. Controles: probados y solo descritos
 
-Probados (`node --test .github/waipl-bus/test/portero.test.js`, 21 pruebas, GitHub falso en memoria): DENY por defecto, caducidad, permiso de no-soberano, identidad (DE falso, cuenta sin nodo), formato, riesgo alto, límite 30/31, apagado, libro y asignación, idempotencia, apagado y recuperación, recuperación tras caída, recibido solo del destino, atasco, Hermes sin URL o con secreto corto, y que con los archivos reales todo sale DENY.
+Probados (`node --test .github/waipl-bus/test/portero.test.js`, 30 pruebas, GitHub falso en memoria): DENY por defecto, caducidad, permiso de no-soberano, identidad (DE falso, cuenta sin nodo), formato, riesgo alto, límite 30/31, apagado, libro y asignación, idempotencia, apagado y recuperación, recuperación tras caída, recibido solo del destino, atasco, Hermes sin URL o con secreto corto, que con los archivos reales todo sale DENY y, del sello: válido, alterado, falso, sin secreto, viejo, TRACE repetido, doble comprobación y que `sello.py` (Python) y el portero (JS) calculan lo mismo.
 
 Solo descritos (requieren GitHub de verdad y activación): que los disparadores corran en `main`, la latencia del cron (GitHub puede retrasarlo), notificaciones reales a William, límites de la API.
 
 ## 5. Lo que no resuelve
 
 1. **Emitir.** Los nodos tienen que poder abrir y comentar Issues por sí mismos: Carla con una GPT Action, Ada probablemente no en plan gratuito, Zara solo con permiso (SPEC §8).
-2. **Identidad.** Hoy solo existe la cuenta de William (`nodes.json`). Con ella solo pasa el nodo `soberano`; si un nodo escribe con la cuenta de William y firma como otro, sale DENY. Para que un nodo hable hace falta una cuenta o un token propio, y que William la añada.
+2. **Identidad.** Queda resuelta en el diseño (§2 bis), pero depende de que cada nodo pueda sellar o tenga cuenta propia. Hoy ningún nodo tiene ni secreto ni cuenta, así que solo habla el soberano.
 3. **Procesar y responder.** El portero autoriza y vigila; no hace que el destinatario lea ni conteste.
 4. **Tiempo real.** No lo hay.
 5. **Gobernanza.** La tensión entre la SPEC (Issues cerrado) y el MAPA v0.2 (transporte abierto) no se resuelve con código.
