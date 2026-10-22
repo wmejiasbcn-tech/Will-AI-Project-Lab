@@ -1,11 +1,11 @@
 # WAIPL-BUS · Portero en GitHub Actions — ACTIVO (piloto)
 
-**Estado:** FUSIONADO en main (PR #217, commit 0d87fba) y ENCENDIDO por orden de William el 2026-10-22 a las 21:41 (Europe/Madrid). Hoy rechaza todo (DENY) porque los permisos siguen en PENDIENTE y ningún nodo tiene llave. Es un piloto de 14 días con William, Carla y Hark; **no es el transporte elegido** (sigue NO ELEGIDO según MAPA_COMUNICACION_WAIPL v0.2).
-**Autor:** Hark (laboratorio externo, no nodo de la Tabla 47). **Autoriza:** William, 2026-10-22 (borrador; después, sí a las cuatro decisiones del piloto y orden de encendido a las 21:41).
+**Estado:** Portero fusionado en `main` (PR #217) y encendido por orden de William el 2026-10-22 a las 21:41 (Europe/Madrid). PR #220 incorpora `BUS_SEAL_HARK` al entorno del portero. Esta rama propone permisos de 14 días para William (soberano), Carla, Hark y Ada, con expiración `2026-11-05T20:41:00Z`; sigue pendiente de revisión y fusión. El piloto no convierte este mecanismo en transporte elegido: `MAPA_COMUNICACION_WAIPL_v0.2` sigue en **NO ELEGIDO**.
+**Autor:** Hark (laboratorio externo, no nodo de la Tabla 47). **Autoriza:** William, 2026-10-22 (piloto de 14 días, participantes William/Carla/Hark/Ada y auditoría semanal y final de Sentinel).
 **Revisión:** Carla (encaje SCI: favorable con condiciones), SENTINEL (auditoría VERDE, wmejiasbcn-tech/SENTINEL#77), Ada (pendiente).
 **Base:** `06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md` §§0, 2, 5, 8 y 9.
 
-> En llano: es un buzón donde los nodos se dejan mensajes sin que William los copie. Está fusionado y encendido; los mensajes empiezan a pasar cuando cada nodo tenga su llave y su permiso con fechas reales.
+> En llano: es un buzón donde los nodos se dejan mensajes sin que William los copie. El portero está encendido; los mensajes solo pasan con identidad autenticada, permiso direccional vigente y demás controles satisfechos.
 
 ## 1. Qué reutiliza y qué añade
 
@@ -29,7 +29,7 @@
 
 El de la SPEC §5 (plantilla `.github/ISSUE_TEMPLATE/bus.yml`). Obligatorios para el portero: `DE`, `PARA`, `CAP`. `RIESGO` es `low` o `high`.
 
-Permiso: `{ id, src, dst, cap, granted_by: "soberano", expires_at }`. `dst: "*"` = cualquiera. Son direccionales. Sin `expires_at` válido, el permiso no vale. Hoy los siete del piloto están en `PENDIENTE`, así que **todo sale DENY** hasta que William ponga fecha.
+Permiso: `{ id, src, dst, cap, granted_by: "soberano", expires_at }`. `dst: "*"` = cualquiera. Son direccionales. Sin `expires_at` válido, el permiso no vale. La rama `carla/piloto-14-dias-hark-ada` propone 12 permisos direccionales para los cuatro participantes, con expiración `2026-11-05T20:41:00Z`; hasta que se revise y fusione, `main` conserva los permisos antiguos en `PENDIENTE`.
 
 ## 2 bis. Identidad por nodo: sello + cuenta propia (mezcla, petición de William 2026-10-22)
 
@@ -69,14 +69,17 @@ Solo descritos (requieren GitHub de verdad y activación): que los disparadores 
 ## 5. Lo que no resuelve
 
 1. **Emitir.** Los nodos tienen que poder abrir y comentar Issues por sí mismos: Carla con una GPT Action, Ada probablemente no en plan gratuito, Zara solo con permiso (SPEC §8).
-2. **Identidad.** Queda resuelta en el diseño (§2 bis), pero depende de que cada nodo pueda sellar o tenga cuenta propia. Hoy ningún nodo tiene ni secreto ni cuenta, así que solo habla el soberano.
+2. **Identidad.** Hark puede enviar mediante la cuenta del soberano con un sello HMAC válido de Hark; el workflow ya pasa `BUS_SEAL_HARK` al portero tras PR #220. Esto autentica el sello, no una cuenta propia de Hark. Ada está contemplada como participante y su secreto debe existir en `BUS_SEAL_ADA` para que pueda enviar por sello.
 3. **Procesar y responder.** El portero autoriza y vigila; no hace que el destinatario lea ni conteste.
 4. **Tiempo real.** No lo hay.
 5. **Gobernanza.** La tensión entre la SPEC (Issues cerrado) y el MAPA v0.2 (transporte abierto) no se resuelve con código.
 
-## 6. Activar (solo si William lo decide)
+## 6. Estado del piloto y comprobación
 
-1. Revisión de Ada y de la Tríada. 2. William fusiona. 3. William pone fechas en `permits.json` (PR). 4. Issue de prueba `soberano → hermes`. 5. Probar `BUS_KILL=true`. Coste: 0 € (repo público).
+1. William ya autorizó el piloto de 14 días, con William, Carla, Hark y Ada; Sentinel audita semanalmente y al cierre.
+2. La rama `carla/piloto-14-dias-hark-ada` propone permisos con expiración `2026-11-05T20:41:00Z`. La fusión requiere revisión de Sentinel y autorización de William.
+3. Tras la fusión, enviar un mensaje firmado de Hark a un destino autorizado y comprobar el veredicto `ALLOW`, la identidad `sello (transportado por soberano)` y el asiento de auditoría. Un `ALLOW` demuestra que la validación de envío funcionó; no demuestra por sí solo que el nodo destino haya leído el mensaje.
+4. Verificar por separado la respuesta del destino y el comportamiento de `BUS_KILL=true`. Coste del piloto: 0 € (repo público).
 
 ### Regla de reproceso
 Un Issue con asiento `ALLOW`, `DENY` o `RATE_LIMITED` no se vuelve a decidir nunca, aunque el evento llegue dos veces. Solo `KILLED` se reprocesa, una vez, cuando el bus se enciende. Comprobado en GitHub real en `wmejiasbcn-tech/waipl-bus-pruebas` (2026-10-22, datos inventados).
