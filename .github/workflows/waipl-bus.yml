@@ -64,6 +64,7 @@ jobs:
             const config = {
               nodes: Object.fromEntries(Object.entries(require(dir + 'nodes.json')).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k.toLowerCase(), v])),
               permits: require(dir + 'permits.json').permits,
+              apps: Object.fromEntries(Object.entries(require(dir + 'apps.json')).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k.toLowerCase(), v])),
               seals: Object.fromEntries(Object.entries(process.env).filter(([k, v]) => k.startsWith('BUS_SEAL_') && v && v.length >= 32).map(([k, v]) => [k.slice(9).toLowerCase(), v])),
             };
             const killed = String(process.env.BUS_KILL || '').toLowerCase() === 'true';

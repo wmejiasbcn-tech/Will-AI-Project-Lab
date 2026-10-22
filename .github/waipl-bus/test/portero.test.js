@@ -327,3 +327,46 @@ test('Carrera real: si otra ejecución crea la etiqueta a la vez (422), el porte
   assert.equal(r.decision.verdict, 'ALLOW');
   assert.equal(ledgers(state, 20).length, 1);
 });
+
+test('Recibido por app: la cuenta del soberano vía la app de Carla cuenta como Carla; sin app o con otra app, no', async () => {
+  const { github, addIssue } = fakeGithub();
+  const config = { ...CONFIG, apps: { 'chatgpt-codex-connector': 'carla' } };
+  const issue = addIssue(20, 'wmejiasbcn-tech', body({ de: 'soberano', para: 'carla' }));
+  await portero.processIssue({ github, repo: REPO, issue, config, killed: false, now: NOW });
+  const plain = await portero.processComment({ github, repo: REPO, issue, comment: { user: { login: 'wmejiasbcn-tech' } }, config });
+  assert.equal(plain.received, false);
+  const other = await portero.processComment({ github, repo: REPO, issue, comment: { user: { login: 'wmejiasbcn-tech' }, performed_via_github_app: { slug: 'hark' } }, config });
+  assert.equal(other.received, false);
+  const yes = await portero.processComment({ github, repo: REPO, issue, comment: { user: { login: 'wmejiasbcn-tech' }, performed_via_github_app: { slug: 'chatgpt-codex-connector' } }, config });
+  assert.equal(yes.received, true);
+  assert.ok(issue.labels.includes('bus:received'));
+});
+
+test('Recibido por app: la app desde una cuenta que no es del soberano no cuenta, y el mensaje para otro nodo tampoco', async () => {
+  const { github, addIssue } = fakeGithub();
+  const config = { ...CONFIG, apps: { 'chatgpt-codex-connector': 'carla' } };
+  const toAda = addIssue(21, 'wmejiasbcn-tech', body({ de: 'soberano', para: 'ada' }));
+  await portero.processIssue({ github, repo: REPO, issue: toAda, config, killed: false, now: NOW });
+  const r1 = await portero.processComment({ github, repo: REPO, issue: toAda, comment: { user: { login: 'wmejiasbcn-tech' }, performed_via_github_app: { slug: 'chatgpt-codex-connector' } }, config });
+  assert.equal(r1.received, false);
+  const toCarla = addIssue(22, 'wmejiasbcn-tech', body({ de: 'soberano', para: 'carla' }));
+  await portero.processIssue({ github, repo: REPO, issue: toCarla, config, killed: false, now: NOW });
+  const r2 = await portero.processComment({ github, repo: REPO, issue: toCarla, comment: { user: { login: 'extrano' }, performed_via_github_app: { slug: 'chatgpt-codex-connector' } }, config });
+  assert.equal(r2.received, false);
+});
+
+test('Atasco: una respuesta de Carla vía su app evita bus:stalled', () => {
+  const allowedAt = '2026-11-01T10:00:00Z';
+  const now = new Date('2026-11-02T12:00:00Z');
+  const apps = { 'chatgpt-codex-connector': 'carla' };
+  const c = [{ user: { login: 'wmejiasbcn-tech' }, performed_via_github_app: { slug: 'chatgpt-codex-connector' }, created_at: '2026-11-01T11:00:00Z' }];
+  assert.equal(policy.isStalled({ allowedAt, comments: c, destNode: 'carla', nodes: NODES, apps, now, hours: 24 }), false);
+  // Sin apps.json, esa misma respuesta no cuenta como de Carla → atascado.
+  assert.equal(policy.isStalled({ allowedAt, comments: c, destNode: 'carla', nodes: NODES, apps: {}, now, hours: 24 }), true);
+});
+
+test('Archivo real apps.json: solo mapea la conexión de ChatGPT a carla', () => {
+  const apps = require('../apps.json');
+  const entries = Object.entries(apps).filter(([k]) => !k.startsWith('_'));
+  assert.deepEqual(entries, [['chatgpt-codex-connector', 'carla']]);
+});

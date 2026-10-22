@@ -230,14 +230,24 @@ function hasLedger(comments) {
 }
 
 // Un mensaje ALLOW está atascado si pasan más de `hours` horas sin comentario de una cuenta del nodo destino.
-function isStalled({ allowedAt, comments, destNode, nodes, now, hours }) {
+// Nodo que firma un comentario, solo para «recibido»:
+//  1) la cuenta propia del nodo (nodes.json), o
+//  2) si comenta la cuenta del soberano A TRAVÉS de una app registrada en apps.json, el nodo de esa app.
+// La app solo cuenta junto con la cuenta del soberano; una app usada desde otra cuenta no cuenta.
+function commentNode(comment, nodes, apps) {
+  if (!comment) return '';
+  const accountNode = norm((nodes || {})[norm(comment.user && comment.user.login)] || '');
+  const app = comment.performed_via_github_app;
+  const slug = norm(app && (app.slug || app.name));
+  if (accountNode === 'soberano' && slug && (apps || {})[slug]) return norm(apps[slug]);
+  return accountNode;
+}
+
+function isStalled({ allowedAt, comments, destNode, nodes, apps, now, hours }) {
   const t = now instanceof Date ? now.getTime() : Date.parse(now);
   if (t - Date.parse(allowedAt) < hours * 3600 * 1000) return false;
-  const destLogins = Object.entries(nodes || {})
-    .filter(([, n]) => norm(n) === norm(destNode))
-    .map(([login]) => norm(login));
   return !(comments || []).some(
-    (c) => destLogins.includes(norm(c.user && c.user.login)) && Date.parse(c.created_at) > Date.parse(allowedAt)
+    (c) => commentNode(c, nodes, apps) === norm(destNode) && Date.parse(c.created_at) > Date.parse(allowedAt)
   );
 }
 
@@ -253,6 +263,7 @@ module.exports = {
   ledgerEntry,
   hasLedger,
   isStalled,
+  commentNode,
   sealPayload,
   computeSeal,
   checkSeal,
