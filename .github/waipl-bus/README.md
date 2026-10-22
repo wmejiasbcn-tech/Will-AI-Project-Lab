@@ -77,3 +77,6 @@ Solo descritos (requieren GitHub de verdad y activación): que los disparadores 
 ## 6. Activar (solo si William lo decide)
 
 1. Revisión de Ada y de la Tríada. 2. William fusiona. 3. William pone fechas en `permits.json` (PR). 4. Issue de prueba `soberano → hermes`. 5. Probar `BUS_KILL=true`. Coste: 0 € (repo público).
+
+### Regla de reproceso
+Un Issue con asiento `ALLOW`, `DENY` o `RATE_LIMITED` no se vuelve a decidir nunca, aunque el evento llegue dos veces. Solo `KILLED` se reprocesa, una vez, cuando el bus se enciende. Comprobado en GitHub real en `wmejiasbcn-tech/waipl-bus-pruebas` (2026-10-22, datos inventados).
