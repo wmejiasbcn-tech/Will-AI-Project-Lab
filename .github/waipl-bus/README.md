@@ -1,11 +1,11 @@
-# WAIPL-BUS · Portero en GitHub Actions — BORRADOR
+# WAIPL-BUS · Portero en GitHub Actions — ACTIVO (piloto)
 
-**Estado:** BORRADOR en una rama. **No está activo, no está fusionado y no es el transporte elegido** (el transporte sigue NO ELEGIDO según MAPA_COMUNICACION_WAIPL v0.2).
-**Autor:** Hark (laboratorio externo, no nodo de la Tabla 47). **Autoriza el borrador:** William, 2026-10-22 (sí al borrador en una rama, sin activarlo).
+**Estado:** FUSIONADO en main (PR #217, commit 0d87fba) y ENCENDIDO por orden de William el 2026-10-22 a las 21:41 (Europe/Madrid). Hoy rechaza todo (DENY) porque los permisos siguen en PENDIENTE y ningún nodo tiene llave. Es un piloto de 14 días con William, Carla y Hark; **no es el transporte elegido** (sigue NO ELEGIDO según MAPA_COMUNICACION_WAIPL v0.2).
+**Autor:** Hark (laboratorio externo, no nodo de la Tabla 47). **Autoriza:** William, 2026-10-22 (borrador; después, sí a las cuatro decisiones del piloto y orden de encendido a las 21:41).
 **Revisión:** Carla (encaje SCI: favorable con condiciones), SENTINEL (auditoría VERDE, wmejiasbcn-tech/SENTINEL#77), Ada (pendiente).
 **Base:** `06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md` §§0, 2, 5, 8 y 9.
 
-> En llano: es un buzón donde los nodos se dejan mensajes sin que William los copie. Aquí está escrito, probado con datos de mentira y apagado. Solo funcionaría si William fusiona la rama.
+> En llano: es un buzón donde los nodos se dejan mensajes sin que William los copie. Está fusionado y encendido; los mensajes empiezan a pasar cuando cada nodo tenga su llave y su permiso con fechas reales.
 
 ## 1. Qué reutiliza y qué añade
 
@@ -41,7 +41,7 @@ William pidió que cada nodo quede identificado al enviar y recibir, por trazabi
 - **Contra reenvíos:** un mensaje sellado lleva `TRACE` único y `FECHA`. Se rechaza si la FECHA se aleja más de 24 h de la creación del Issue o si el TRACE ya se usó en otro Issue del bus.
 - **En el libro** queda `identity` (`cuenta`, `cuenta+sello` o `sello (transportado por soberano)`) y `sealed`. «Recibido» exige hoy un comentario de una cuenta del nodo destino. El recibido sellado queda como siguiente paso, cuando un nodo tenga cuenta propia o se acuerde el formato.
 
-Puesta en marcha del sello (solo si se activa): William genera un secreto por nodo con `python3 sello.py --nuevo-secreto` y lo guarda como secreto del repo `BUS_SEAL_<NODO>`. Después se lo entrega solo a ese nodo, por un canal privado. **Condición:** sellar requiere ejecutar código. Puede hacerlo un nodo con herramienta de código (p. ej. Carla); uno sin ella no puede sellar y su mensaje saldrá DENY. Además, el secreto vive en el contexto del proveedor del nodo, así que la Tríada debe valorarlo.
+Puesta en marcha del sello (regla de William, 2026-10-22: cada nodo tiene su propia llave y solo la tiene su dueño): cada nodo genera su secreto con `python3 sello.py --nuevo-secreto` y lo guarda él mismo como secreto del repo `BUS_SEAL_<NODO>`, sin que nadie más lo vea y sin pasarlo por ningún chat. Si un nodo no puede guardarlo directamente, lo cifra con la clave pública de secretos del repo y entrega solo el paquete cifrado a quien lo sube (SENTINEL), que no puede leerlo. **Condición:** sellar requiere ejecutar código. Si un nodo no puede ejecutarlo y otro sella por él, el sello demuestra quién llevó el mensaje, no quién lo escribió, y eso se indica en el campo `PORTADOR:`.
 
 ## 3. Matriz de estados
 
