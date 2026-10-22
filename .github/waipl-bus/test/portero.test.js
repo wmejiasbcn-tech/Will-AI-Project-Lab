@@ -235,11 +235,14 @@ test('Hermes: sin URL no se envía nada; con secreto corto tampoco', async () =>
   assert.equal((await portero.forwardToHermes({ HERMES_WEBHOOK_URL: 'https://x', HERMES_WEBHOOK_SECRET: 'x'.repeat(32) }, {}, f)).sent, true);
 });
 
-test('Archivos reales: con permits.json del piloto (PENDIENTE) todo es DENY, incluido el soberano', () => {
+test('Archivos reales: piloto 14 días — permiso vigente ALLOW, sin permiso DENY, caducado DENY', () => {
   const nodes = require('../nodes.json');
   const permits = require('../permits.json').permits;
-  const d = policy.decide({ actorLogin: 'wmejiasbcn-tech', body: body({ de: 'soberano', para: 'ada' }), nodes, permits, now: NOW });
-  assert.equal(d.verdict, 'DENY');
+  const dentro = new Date('2026-10-23T10:00:00Z');
+  const fuera = new Date('2026-11-05T20:42:00Z');
+  assert.equal(policy.decide({ actorLogin: 'wmejiasbcn-tech', body: body({ de: 'soberano', para: 'ada' }), nodes, permits, now: dentro }).verdict, 'ALLOW');
+  assert.equal(policy.decide({ actorLogin: 'wmejiasbcn-tech', body: body({ de: 'soberano', para: 'hermes' }), nodes, permits, now: dentro }).verdict, 'DENY');
+  assert.equal(policy.decide({ actorLogin: 'wmejiasbcn-tech', body: body({ de: 'soberano', para: 'ada' }), nodes, permits, now: fuera }).verdict, 'DENY');
 });
 
 // ---------- Sello por nodo (identidad aunque se escriba con la cuenta del soberano) ----------
