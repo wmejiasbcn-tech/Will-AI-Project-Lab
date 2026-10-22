@@ -142,12 +142,13 @@ async function processIssue({ github, repo, issue, config, killed, now, runId, e
   return { skipped: false, decision, hermes };
 }
 
-// Un comentario de una cuenta del nodo destino = recibido (SPEC §0).
+// Un comentario del nodo destino = recibido (SPEC §0): de su cuenta propia, o de la cuenta del
+// soberano a través de la app de ese nodo (apps.json). Ver policy.commentNode.
 async function processComment({ github, repo, issue, comment, config }) {
   const comments = await listComments(github, repo, issue.number);
   const prev = lastLedger(comments);
   if (!prev || prev.verdict !== 'ALLOW') return { received: false };
-  const node = String((config.nodes || {})[String(comment.user.login).toLowerCase()] || '').toLowerCase();
+  const node = policy.commentNode(comment, config.nodes, config.apps);
   if (node && node === prev.para) {
     await setStateLabels(github, repo, issue, ['bus:received']);
     return { received: true };
@@ -173,7 +174,7 @@ async function sweep({ github, repo, config, killed, now, runId, env, stallHours
     if (labels.includes('bus:allowed') && !labels.includes('bus:received') && !labels.includes('bus:stalled')) {
       const comments = await listComments(github, repo, issue.number);
       const prev = lastLedger(comments);
-      if (prev && policy.isStalled({ allowedAt: prev.at, comments, destNode: prev.para, nodes: config.nodes, now, hours: stallHours })) {
+      if (prev && policy.isStalled({ allowedAt: prev.at, comments, destNode: prev.para, nodes: config.nodes, apps: config.apps, now, hours: stallHours })) {
         await ensureLabels(github, repo, ['bus:stalled', 'to:soberano']);
         await github.rest.issues.addLabels({ ...repo, issue_number: issue.number, labels: ['bus:stalled', 'to:soberano'] });
         const sob = soberanoLogins(config.nodes);

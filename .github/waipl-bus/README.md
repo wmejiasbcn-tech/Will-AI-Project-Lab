@@ -83,3 +83,6 @@ Solo descritos (requieren GitHub de verdad y activación): que los disparadores 
 
 ### Regla de reproceso
 Un Issue con asiento `ALLOW`, `DENY` o `RATE_LIMITED` no se vuelve a decidir nunca, aunque el evento llegue dos veces. Solo `KILLED` se reprocesa, una vez, cuando el bus se enciende. Comprobado en GitHub real en `wmejiasbcn-tech/waipl-bus-pruebas` (2026-10-22, datos inventados).
+
+## Recibido de un nodo sin cuenta propia (apps.json)
+Si un nodo no tiene cuenta de GitHub propia, pero comenta con la cuenta del soberano a través de su propia conexión (app), el portero lo reconoce gracias al campo `performed_via_github_app` del comentario. Esto **solo** sirve para marcar `bus:received`: no permite enviar mensajes nuevos. Hoy mapea `chatgpt-codex-connector` → `carla`. Riesgo conocido: si alguien más usa esa app con la cuenta del soberano, cuenta como Carla.
