@@ -1,4 +1,0 @@
-{
-  "_nota": "App de GitHub → nodo. SOLO sirve para marcar «recibido» (bus:received) cuando un nodo sin cuenta propia comenta con la cuenta del soberano a través de su conexión. No autoriza a enviar mensajes nuevos. GitHub registra la app en el campo performed_via_github_app del comentario. Riesgo conocido: si alguien más usa esa misma app con la cuenta del soberano, el portero lo tomará por ese nodo. Solo el soberano cambia este archivo (PR aprobada por William).",
-  "chatgpt-codex-connector": "carla"
-}
