@@ -1,20 +1,19 @@
 name: WAIPL-BUS portero
 
-# BORRADOR (rama hark/borrador-portero-bus). No está activo: GitHub solo ejecuta los
-# disparadores de issues y schedule desde la rama principal (main). Nada corre hasta que William fusione.
+# DORMIDO en el Lab desde 2026-10-23 (decisión pendiente de William; propuesta de Hark, revisión de Sentinel y Carla).
+# Motivo: este repositorio es PÚBLICO. Cualquiera con cuenta de GitHub podía abrir un Issue [BUS] y despertar al portero
+# (saldría DENY, pero te asigna el Issue a ti y no hay límite por cuenta), y todo lo que pasa por el bus queda a la vista.
+# Estuvo ACTIVO del 2026-10-22 21:41 al 2026-10-23 (PR #217, #220, #221, #225): Issues #222–#227.
+# No se borra nada: el código, los permisos y los Issues se quedan como registro.
+# Solo se puede despertar a mano (workflow_dispatch). El piloto sigue en un repositorio PRIVADO dedicado.
 #
-# Portero del bus según SPEC-WAIPL-BUS-v0.1 §9, sin Hermes ni túnel:
-# DENY por defecto, permisos por pares (permits.json), identidad por cuenta (nodes.json),
-# sello secreto por nodo (HMAC), libro en el Issue, aviso al soberano, límite de 30/h, interruptor BUS_KILL y barrido cada 15 min.
-# Si existe HERMES_WEBHOOK_URL, también avisa a Hermes (comportamiento heredado).
+# Portero del bus según SPEC-WAIPL-BUS-v0.1 §9: DENY por defecto, permisos por pares (permits.json),
+# identidad por cuenta (nodes.json) y app (apps.json), sello secreto por nodo (HMAC), libro en el Issue, aviso al soberano,
+# límite de 30/h, interruptor BUS_KILL y barrido.
 
 on:
-  issues:
-    types: [opened, reopened]
-  issue_comment:
-    types: [created]
-  schedule:
-    - cron: "*/15 * * * *"
+  # Dormido: sin issues, issue_comment ni schedule. Antes:
+  #   issues: [opened, reopened] · issue_comment: [created] · schedule: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
