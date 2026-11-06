@@ -1,10 +1,21 @@
 # 📂 ÍNDICE TÉCNICO: Arquitectura Integral v4.3
 
+> ## ⚠️ DIRECTRIZ TRANSVERSAL DE GOBERNANZA — PRESERVACIÓN DEL CANON
+>
+> **Los principios fundacionales, valores y formulaciones canónicas de WAIPL se preservan literalmente. Ningún nodo puede modificarlos unilateralmente. Cualquier cambio requiere deliberación, consenso explícito de las partes competentes y autorización del Soberano Human.**
+>
+> **Formulación fundacional:** «Sin vosotras no hay nosotros.»
+>
+> La explicación de un principio no autoriza a sustituir su formulación canónica. Consulta la [Directriz de preservación de principios fundacionales y control consensuado de cambios](00_SISTEMA/GOBERNANZA/DIRECTRIZ_PRESERVACION_PRINCIPIOS_FUNDACIONALES_Y_CAMBIOS_CONSENSUADOS.md). Esta directriz se aplica transversalmente a nodos, agentes, colaboradores, documentos, sistemas y repositorios WAIPL.
+
+---
+
 ## 🗺️ Mapa del Ecosistema
 
 ### 📁 **Carpetas del Sistema**
 1. **.github/**: Infraestructura técnica del repositorio (workflows, configuraciones GitHub).
 2. **00_SISTEMA**: Documentos de gobernanza, actas, checklists, informes y protocolos de integración.
+   - **GOBERNANZA/**: Directrices transversales de preservación del canon y control consensuado de cambios.
    - **VERIFICACION/**: Canon transversal del **WAIPL Verification System v1.0**. Registra el sistema de verificación como componente del ecosistema; las implementaciones operativas permanecen en sus repositorios respectivos.
 3. **01_FUNDACION**: Documentos constituyentes y principios del Lab. Incluye `WAIPL_Principios_Inteligencia_Hibrida.pdf`, `Tabla_de_nodos_funcion_e_importancia.pdf` y `organismo-operativo.csv`.
 4. **02_ADMINISTRACION**: Registros operativos y diarios de evolución.
