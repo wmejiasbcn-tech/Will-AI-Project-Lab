@@ -11,12 +11,12 @@ Queda corregida y sustituida toda formulación interna que atribuya a **Graphify
 ### Canon vigente
 
 - **Graphy** pertenece al ecosistema WAIPL.
-- **Graphy** es el **Sistema Nervioso Central (SNC)** del WAIPL.
+- **Graphy es el único sistema canónico del ecosistema WAIPL y su Sistema Nervioso Central (SNC).**
 - **Graphy** forma parte del **Sistema de Comunicación Interna (SCI)**.
 - **Graphy** constituye una fuente de conocimiento y representación relacional para los **47 nodos** del ecosistema.
 - **Graphify** es una **plataforma externa** al WAIPL.
 - **Graphify no es un nodo, agente, sistema ni componente del WAIPL**.
-- Graphify únicamente constituye una **referencia/plataforma de inspiración** utilizada durante la concepción y desarrollo de Graphy.
+- Graphify únicamente constituye la **plataforma externa de referencia e inspiración histórica** que inspiró la concepción y el desarrollo de Graphy.
 
 ## REGLA DE RECONCILIACIÓN
 
@@ -34,6 +34,6 @@ No debe existir ninguna ambigüedad entre:
 
 y
 
-**Graphy = Sistema Nervioso Central del WAIPL + componente del SCI + fuente de conocimiento de los 47 nodos.**
+**Graphy = único sistema canónico del WAIPL + Sistema Nervioso Central (SNC) + componente del SCI + fuente de conocimiento de los 47 nodos.**
 
 **Estado:** VIGENTE · CORRECCIÓN SOBERANA APLICABLE A TODO EL REPOSITORIO
