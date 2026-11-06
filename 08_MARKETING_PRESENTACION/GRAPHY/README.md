@@ -2,7 +2,7 @@
 
 **Estado:** 1.0 cerrado y validado. Archivo rotulado `Graphy 0.1.dc.html` (el nombre no se renombró al cerrar).
 **Naturaleza:** capa visual, navegable y relacional del ecosistema WAIPL.
-**Naturaleza canónica:** Graphy pertenece al ecosistema WAIPL. Es su Sistema Nervioso Central (SNC), forma parte del Sistema de Comunicación Interna (SCI) y participa en la cartografía y representación del conocimiento de los 47 nodos. Esta carpeta contiene su capa visual y navegable. Graphy no es el laboratorio ni un validador, y no ejerce autoridad sobre VÁR/YATA.
+**Naturaleza canónica:** Graphy pertenece al ecosistema WAIPL y es su único sistema canónico. Es su Sistema Nervioso Central (SNC), forma parte del Sistema de Comunicación Interna (SCI) y participa en la cartografía y representación del conocimiento de los 47 nodos. Esta carpeta contiene su capa visual y navegable. Graphy no es el laboratorio ni un validador, y no ejerce autoridad sobre VÁR/YATA.
 
 > El Laboratorio muestra el comportamiento. Graphy muestra la estructura relacional.
 
