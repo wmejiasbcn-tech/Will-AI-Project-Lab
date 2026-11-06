@@ -101,11 +101,13 @@ intento → reintento 1 → reintento 2 → reintento 3 → escalada a WILLIAM-S
 
 Si Carla no responde, WILLIAM-SCY-01 actúa como contingencia.
 
-## Nomenclatura (Sección 6)
+## Nomenclatura (Sección 6) — REGLA CANÓNICA GRAPHY / GRAPHIFY
 
-- Graphy = App/Plataforma
-- Graphy = agente/sistema
-- "Graficar" = prohibido en este contexto
+- **Graphy** = único sistema canónico del ecosistema WAIPL y su Sistema Nervioso Central (SNC). Forma parte del Sistema de Comunicación Interna (SCI) y ejerce las funciones de comunicación, coordinación, tránsito, estado, trazabilidad, auditoría y representación relacional.
+- **Graphify** = plataforma externa de referencia e inspiración histórica que inspiró la concepción y el desarrollo de Graphy. Es exclusivamente una referencia de trazabilidad/provenance histórica; no es nodo, agente, sistema, componente, SNC, autoridad ni alternativa interna de WAIPL.
+- **Graphy y Graphify no son equivalentes ni intercambiables.** Toda aparición de Graphify en este documento o en artefactos derivados se interpreta exclusivamente como referencia histórica externa o identificador heredado expresamente delimitado.
+- **`graphify_reference`**, cuando aparezca como campo técnico heredado, identifica provenance histórica externa; no designa un sistema WAIPL ni una ruta de ejecución.
+- "Graficar" = prohibido en este contexto.
 
 ## Divergencia graph/ vs graphy-out/ (Sección 33)
 
