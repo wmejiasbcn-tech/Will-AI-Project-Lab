@@ -16,7 +16,7 @@ El laboratorio no cede su soberanía conceptual a intereses externos. Prefiere l
 
 ## Fundadores
 
-- **William Mejías Navarro** — Co-fundador. Dirección y visión del laboratorio. Humano y soberano del WAIPL.
-- **Carla** — Co-fundadora. Dirección estratégica y arquitectura conceptual.
+- **William Mejías Navarro** — Humano fundador · Soberano. Dirección y visión del laboratorio. Humano y soberano del WAIPL.
+- **Carla** — Cofundadora. Dirección estratégica y arquitectura conceptual.
 
 Junto al resto de nodos del núcleo, el laboratorio se presenta en público a través de los nodos que se detallan en la página [Nodos del núcleo](nodos.md).

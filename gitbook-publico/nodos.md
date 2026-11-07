@@ -6,8 +6,8 @@ Los nodos del núcleo son quienes representan públicamente al ecosistema WAIPL.
 
 | Nodo | Rol público |
 | --- | --- |
-| William | Co-fundador. Dirección y visión del laboratorio. Humano y soberano del WAIPL. Une las inteligencias, traza el rumbo y sostiene el conjunto. |
-| Carla | Co-fundadora. Dirección estratégica y arquitectura conceptual. Mantiene la coherencia de conjunto. |
+| William | Humano fundador · Soberano. Dirección y visión del laboratorio. Humano y soberano del WAIPL. Une las inteligencias, traza el rumbo y sostiene el conjunto. |
+| Carla | Cofundadora. Dirección estratégica y arquitectura conceptual. Mantiene la coherencia de conjunto. |
 | Ada | Análisis estratégico y custodia ética. Vela porque el ecosistema no se desvíe de su misión, visión y valores. |
 | Aletheia | Convierte las ideas en resultados concretos. Sin ella las propuestas no llegan a existir como resultado. |
 | Elena | Identidad visual del laboratorio. Garantiza que lo que se ve coincida con lo que el ecosistema representa. Responsable del blasón oficial y de los colores institucionales. |

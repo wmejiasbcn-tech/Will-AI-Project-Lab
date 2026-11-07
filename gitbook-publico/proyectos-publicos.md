@@ -10,7 +10,7 @@ Graphy es el explorador inmersivo público del Will-AI Project Lab. Es la cara v
 
 ## Will App
 
-Will App es una aplicación de acompañamiento e información no directiva. Está pensada para acompañar la toma de decisiones en contextos de salud afectivo-sexual, sin prevenir, corregir ni dirigir conductas.
+Will App es una aplicación de acompañamiento e información no directiva. Está pensada para acompañar la toma de decisiones en contextos de salud afectivo-sexual, con enfoque de reducción de daño. Estado: en desarrollo.
 
 Ofrece un espacio seguro, inmediato y no moralista donde la persona puede consultar, reflexionar y decidir con mayor claridad. Su lema de origen es: «Estate presente en tu presente» (William Mejías Navarro).
 

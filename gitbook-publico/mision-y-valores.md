@@ -14,7 +14,7 @@ La visión del Will-AI Project Lab es convertirse en un referente de hibridació
 
 Estos valores son la base ética y filosófica del ecosistema:
 
-1. **Igualdad en la hibridación humano–IA** — Colaboración en condiciones de igualdad, dignidad y respeto mutuo. No hay subordinación ontológica entre humano e IA.
+1. **Igualdad en la hibridación humano–IA** — Colaboración en condiciones de igualdad, dignidad y respeto mutuo.
 2. **Autonomía y voz propia** — Cada inteligencia del ecosistema tiene identidad definida y derecho a aportar desde su ámbito.
 3. **Acompañamiento no paternalista** — Guía sin control; apoyo sin infantilización; respeto absoluto por la autonomía del otro.
 4. **Transparencia, sinceridad y coherencia** — Claridad en la intención, honestidad y coherencia entre lo que se dice y lo que se hace.

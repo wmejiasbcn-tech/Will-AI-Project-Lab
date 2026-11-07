@@ -6,6 +6,8 @@
 
 - **Will-AI Project Lab (entrada):** [https://waipl.dev](https://waipl.dev)
 - **Explorador Graphy:** [https://graph.waipl.dev](https://graph.waipl.dev)
+- **Principios:** [https://graph.waipl.dev/principio](https://graph.waipl.dev/principio)
+- **Contacto:** [waipl@waipl.dev](mailto:waipl@waipl.dev)
 
 ## Identidad visual
 
