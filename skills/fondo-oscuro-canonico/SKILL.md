@@ -7,7 +7,7 @@ description: Orden permanente de William (09-11-2026, in aeternum) — ningún d
 
 ## Orden soberana (in aeternum)
 
-Orden permanente de William Mejías Navarro (09-11-2026): **ningún documento o informe que él deba leer puede tener fondo blanco**. Fondo siempre oscuro por salud visual (fotosensibilidad).
+Orden permanente de William Mejías Navarro (09-11-2026): **ningún documento o informe del ecosistema puede tener fondo blanco**. Fondo siempre oscuro, para que sea accesible a personas con dificultades visuales o fotosensibles.
 
 Esta skill es la referencia técnica para nodos y agentes del WAIPL. No sustituye el [CANON_IDENTIDAD_VISUAL_DOCUMENTAL_WAIPL_v1.0](../../00_SISTEMA/GOBERNANZA/CANON_IDENTIDAD_VISUAL_DOCUMENTAL_WAIPL_v1.0.md); lo completa en el punto del fondo de página y del método de impresión a PDF.
 
