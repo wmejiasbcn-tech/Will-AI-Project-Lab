@@ -1,5 +1,5 @@
 # HARNESS-FEEDFORWARD-RUNTIME-EXECUTION-001
 
-**Estado:** C — PROPUESTA / NO VALIDADA.
+**Estado:** A — ACREDITADO.
 
-Registro reservado para la ejecución real del consumidor runtime y su evidencia. No se afirma operación antes de esa ejecución.
+Ejecución real en `main`: runs `33621691846` (2026-09-02, 12:52:22 CEST) y `35987054626` (2026-09-24, 12:24:41 CEST). Artefacto `harness-feedforward-runtime-evidence-35987054626` (id 10802227813), estado `CONSUMED_FOR_RUNTIME_CONTEXT`. El consumidor no ejecuta la Guide (`GUIDE-ARNES-COMANDO-05.md` permanece en C) ni concede autoridad (`authority = NOT_GRANTED`).

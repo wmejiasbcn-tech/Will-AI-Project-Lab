@@ -1,6 +1,6 @@
 # HARNESS-FEEDFORWARD-RUNTIME-001 — Consumidor runtime mínimo
 
-**Estado:** C — PROPUESTA / NO VALIDADA hasta ejecución real y contraste.
+**Estado:** A — ACREDITADO. Criterio de la §5 cumplido por los runs 33621691846 (2026-09-02, 12:52:22 CEST) y 35987054626 (2026-09-24, 12:24:41 CEST) en `main`, artefacto `harness-feedforward-runtime-evidence-35987054626`. El consumidor no ejecuta la Guide (`GUIDE-ARNES-COMANDO-05.md` permanece en C) ni concede autoridad (`authority = NOT_GRANTED`).
 
 ## 1. Propósito
 
