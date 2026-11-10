@@ -24,6 +24,10 @@ Registrar únicamente piezas físicamente localizadas que forman parte del mater
 | `HARNESS-VERIFICATION-INTEGRATION-001.md` | C | repositorio | propuesta documental de integración |
 | `HARNESS-SENSOR-FEEDBACK-001.md` | C | repositorio | especificación documental del sensor |
 | `HARNESS-INTEGRATION-TEST-001.md` | A | repositorio + ejecución real | A — prueba mínima acreditada |
+| `06_SISTEMA_OPERATIVO/ARNES/harness_feedforward_runtime.py` | A | repositorio + ejecución real | A — consumidor mínimo del payload; no ejecuta la Guide ni concede autoridad |
+| `06_SISTEMA_OPERATIVO/ARNES/harness_feedforward_runtime_test.py` | A | repositorio + ejecución real | A — prueba mínima acreditada (`FEEDFORWARD_RUNTIME_CONSUMED`) |
+| `.github/workflows/harness-feedforward-runtime.yml` | A | workflow + ejecución real | A — consumo automatizado del payload |
+| `HARNESS-FEEDFORWARD-RUNTIME-001.md` | A | repositorio + ejecución real | A — especificación acreditada del consumidor mínimo |
 
 ## 3. Evidencia de ejecución existente
 
@@ -34,6 +38,8 @@ La ejecución acreditó verificación de integridad, código de salida 0, sensor
 **A:** Workflow `Arnés — Guide Load`, run `33606459694`, sobre `main` en commit `cac1fa094d0e28a0113a94e3b0cf559765c12c9e`.
 
 La ejecución acreditó el loader, validación del payload, correspondencia SHA-256 y conservación del artefacto `harness-guide-load-evidence-33606459694` (ID `9837196795`, digest `sha256:1c639dda30ea837cab5cf9bcf0c227b161f6dd0775a62ed13903b42ffb91f0d7`).
+
+**A:** Workflow `Arnés — Feedforward Runtime`, runs `33621691846` (2026-09-02, 12:52:22 CEST) y `35987054626` (2026-09-24, 12:24:41 CEST), sobre `main`. Artefacto `harness-feedforward-runtime-evidence-35987054626` (ID `10802227813`). Estado `CONSUMED_FOR_RUNTIME_CONTEXT`. El consumidor no ejecuta la Guide (`GUIDE-ARNES-COMANDO-05.md` permanece en C) ni concede autoridad (`authority = NOT_GRANTED`).
 
 ## 4. Regla de no sobreinterpretación
 
@@ -63,7 +69,7 @@ Esto no demuestra por sí solo integración de Graphy, Positrón, Ollama, Vár/Y
 
 El mínimo físico ya acreditado cubre estructura documental/contractual, contrato SCI ↔ Arnés, Guide documental, carga/preparación de Guide, Sensors/Feedback mínimo, verificación e integración mínima.
 
-La carga/preparación de Guide queda cerrada como mecanismo físico acreditado. **No queda cerrada la integración de consumo del payload por un runtime de agente concreto**, porque la ejecución realizada no demuestra ese consumo.
+La carga/preparación de Guide queda cerrada como mecanismo físico acreditado. El consumo mínimo del payload por el consumidor feedforward queda acreditado por las ejecuciones en `main` del workflow `Arnés — Feedforward Runtime` (runs `33621691846`, 2026-09-02, 12:52:22 CEST, y `35987054626`, 2026-09-24, 12:24:41 CEST; artefacto `harness-feedforward-runtime-evidence-35987054626`). El consumidor no ejecuta la Guide (`GUIDE-ARNES-COMANDO-05.md` permanece en C) ni concede autoridad (`authority = NOT_GRANTED`). No se acredita un runtime de agente más amplio ni la ejecución de la Guide.
 
 Permanecen D la FSM interna completa, catálogo completo de Sensors, Context Engineering definitivo e integraciones no acreditadas.
 
