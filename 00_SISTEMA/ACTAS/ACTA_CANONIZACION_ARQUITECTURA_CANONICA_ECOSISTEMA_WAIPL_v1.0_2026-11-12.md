@@ -1,7 +1,7 @@
 # ACTA DE CANONIZACIÓN
 
 **ID:** `ACTA-CANON-2026-11-12-001`  
-**Estado documental:** `AUTORIZADA PARA PUBLICACIÓN — LA INTEGRACIÓN EN main MATERIALIZA SU PUBLICACIÓN`  
+**Estado documental:** `PUBLICADA Y VERIFICADA EN main`  
 **Expediente:** Canonización de la Arquitectura Canónica del Ecosistema WAIPL v1.0
 
 ## 1. Documento objeto de canonización
@@ -135,7 +135,11 @@ La función de Gate es verificar la suficiencia del expediente y gobernar la con
 ### Cierre formal del expediente
 
 - Autorización soberana para publicar acta y registro técnico: **HECHO**.
-- Publicación en `main`: **se materializa mediante la integración de esta entrega; su verificación posterior queda a cargo de Carla**.
+- Acta formal: **PUBLICADA Y VERIFICADA EN `main`**, mediante PR #264.
+- Registro técnico: **PUBLICADO Y VERIFICADO EN `main`**, mediante PR #264.
+- Blob SHA del acta: `0f6f1a7a3772bf5659c2a5baf265fdb6a159dec2`.
+- Blob SHA del registro técnico: `94fe5bd6f9469b53205e79df2a0039fc794e5b3a`.
+- Commit de publicación: `f51c5b2f0b0aff8b01fd72e9dd5f20a86f4435a9`.
 - Nota de alineación Copilot Free localizada y actualizada: **PENDIENTE**.
 - Dictamen de Aether: **EMITIDO / NO PERSISTIDO, según comunicación de Nexus; objeto primario pendiente de entrega**.
 - Persistencia mediante receipts/SENTINEL: **PENDIENTE / BLOQUEADA, según comunicación de Nexus**.
@@ -145,14 +149,13 @@ La función de Gate es verificar la suficiencia del expediente y gobernar la con
 
 ## 9. Requisitos pendientes para el cierre formal del expediente
 
-1. Verificación de que esta acta y el registro técnico quedaron integrados y legibles en `main`.
-2. Localización y actualización de la nota original de alineación Copilot Free, sin crear duplicados.
-3. Entrega y persistencia del objeto primario del dictamen Gate; acreditación de la disponibilidad de la clave y el runtime de receipts o declaración verificable de un mecanismo alternativo autorizado.
-4. Nueva revisión de Gate sobre el estado resultante y persistencia del objeto de estado final.
-5. Emisión de `AUTHORIZED` por el Gate designado, si y solo si se satisfacen los predicados de cierre aplicables.
+1. Localización y actualización de la nota original de alineación Copilot Free, sin crear duplicados.
+2. Entrega y persistencia del objeto primario del dictamen Gate; acreditación de la disponibilidad de la clave y el runtime de receipts o declaración verificable de un mecanismo alternativo autorizado.
+3. Nueva revisión de Gate sobre el estado resultante y persistencia del objeto de estado final.
+4. Emisión de `AUTHORIZED` por el Gate designado, si y solo si se satisfacen los predicados de cierre aplicables.
 
 ## 10. Control de cambios de esta acta
 
-Este borrador incorpora la comparación reproducible de checks y commit statuses sobre el head de la PR y el commit de integración; la reconciliación de la diferencia por SHA; y el límite de atribución entre el material técnico de Aether y el dictamen Gate resumido por Nexus. No modifica ni reabre el fondo arquitectónico ni la decisión soberana de canonización.
+Esta acta incorpora la comparación reproducible de checks y commit statuses sobre el head de la PR y el commit de integración; la reconciliación de la diferencia por SHA; el límite de atribución entre el material técnico de Aether y el dictamen Gate resumido por Nexus; y la publicación verificada de esta acta y de su registro técnico mediante PR #264. No modifica ni reabre el fondo arquitectónico ni la decisión soberana de canonización.
 
-**Estado de publicación de esta acta:** `AUTORIZADA — LA INTEGRACIÓN EN main MATERIALIZA LA PUBLICACIÓN`.
+**Estado de publicación de esta acta:** `PUBLICADA Y VERIFICADA EN main` — PR [#264](https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/264).
