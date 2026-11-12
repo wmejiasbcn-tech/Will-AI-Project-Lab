@@ -2,7 +2,7 @@
 
 **ID:** ACTA-INTEGRIDAD-2026-11-12-001  
 **Fecha:** 12 de noviembre de 2026  
-**Estado:** AUTORIZADA · ACTA Y EVIDENCIA PUBLICADAS EN `main` · CORRECCIÓN EN FUENTE ACTIVA Y REEMISIÓN DE NUEVE HASHES PENDIENTES
+**Estado:** ACTA Y EVIDENCIA PUBLICADAS EN `main` · KIT P1 PUBLICADO · PRUEBAS UNITARIAS LINUX 5/5 PASS · GATE `AMARILLO/BLOCKED`
 
 ## 1. Objeto
 
@@ -53,20 +53,31 @@ Tampoco están disponibles aquí los nueve archivos físicos y el inventario ind
 
 ## 7. Gate y cierre
 
-- Gate designado: Aether, por designación soberana.
-- Dictamen: PENDIENTE.
-- `gate_ref`: PENDIENTE DE EMISIÓN POR AETHER.
-- Contrato: `WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT.md`.
-- Principio: «No Gate authorization, no closure».
+## 7. Gate y cierre
 
+- **Gate designado:** Aether.
+- **Respuesta recibida:** 12-11-2026, 23:28 Europe/Madrid, remitida por William a Carla en WAIPL-BUS #269.
+- **Acta:** `ACTA-INTEGRIDAD-2026-11-12-001`.
+- **gate_ref:** `AETHER-GATE-P1-CRLF-LF-2026-11-12-001`.
+- **Objeto final emitido:** `state=AMARILLO`, `closed=false`, `open=true`, `result_status=AUSENTE`, `evidence_status=INSUFICIENTE`, `verification_status=PARCIAL`, `dictamen_status=NO_CERRABLE`, `gate_status=BLOCKED`.
+- **Requisitos declarados por Aether:** corrección no aplicada a fuente activa; nueve hashes no reemitidos; regresión Windows/Linux no ejecutada; persistencia receipts/SENTINEL no disponible.
+- **Autorización:** `AUTHORIZED` no emitido.
+- **Receipt HMAC:** no acreditado como emitido ni persistido.
+
+Carla archivó el objeto en SENTINEL/main: [captura de los tres dictámenes](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/07_ACCIONES_Y_VERIFICACIONES/GATE/cases/2026-11-12_AETHER_GATE_DICTAMENES_CAPTURA.md). Esta captura no es receipt HMAC.
+
+**Contrato aplicable:** `WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT.md`. La respuesta de Gate mantiene el expediente P1 abierto y bloqueado.
 ## 8. Estado
 
 - Autorización soberana: HECHA.
 - Diagnóstico del patrón CRLF/LF en el código disponible: HECHO.
 - Corrección técnica preparada: HECHA.
-- Aplicación a la fuente activa del nodo central: PENDIENTE.
-- Identificación y reemisión byte a byte de los nueve hashes: PENDIENTE.
-- Evidencia antes/después en fuente activa: PENDIENTE.
+- Kit ejecutable `tools/p1_dike_crlf_lf/` publicado en Will-App-WAIPL-RAG mediante PR #6: HECHO.
+- Cinco pruebas unitarias del kit ejecutadas por Carla en Linux: **5/5 PASS** (Python 3.13.5; Linux 6.18.57 x86_64). Esta prueba no sustituye una ejecución funcional en Windows.
+- Aplicación a la fuente activa del nodo central: NO EJECUTADA.
+- Identificación y reemisión byte a byte de los nueve hashes: NO EJECUTADAS.
+- Evidencia antes/después en fuente activa: NO DISPONIBLE.
 - Publicación de este expediente en `main`: HECHA mediante PR #262, merge commit `bd7ccb1d5546779a38aceaf6e7d3d0ba412fe3d6` (2026-11-12 20:52:03 Europe/Madrid).
-- Dictamen de Gate Aether: PENDIENTE.
-- Cierre formal: PENDIENTE.
+- Dictamen de Gate Aether: **RECIBIDO — AMARILLO/BLOCKED**.
+- Receipt HMAC y persistencia del objeto primario: **NO DISPONIBLES, según Aether**.
+- Cierre formal: **BLOQUEADO**.
