@@ -61,6 +61,10 @@ El inventario individual y los bytes originales de los nueve artefactos afectado
 - reemisión de nueve hashes: **PENDIENTE**;
 - pruebas reales Windows/Linux: **PENDIENTE**.
 
-## 5. Resultado
+## 5. Publicación del expediente
+
+El acta y esta evidencia se publicaron en `main` mediante Lab PR #262, squash merge commit `bd7ccb1d5546779a38aceaf6e7d3d0ba412fe3d6` (2026-11-12 20:52:03 Europe/Madrid). Esta publicación es documental: no modifica la fuente activa de DIKE ni reemite los nueve hashes.
+
+## 6. Resultado
 
 El defecto de implementación está localizado en la secuencia hash-texto / escritura en modo texto de `ingest_corpus_document()` en la copia identificada. La corrección está preparada, pero no aplicada a la fuente activa. El P1 permanece abierto y no se solicita cierre hasta disponer de la ejecución real, la reemisión verificable de los nueve hashes y el dictamen de Aether.
