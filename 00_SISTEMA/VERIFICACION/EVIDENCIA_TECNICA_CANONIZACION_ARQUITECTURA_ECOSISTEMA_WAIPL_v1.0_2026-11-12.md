@@ -3,7 +3,7 @@
 **Objeto:** Canonización de la Arquitectura Canónica del Ecosistema WAIPL v1.0  
 **Fecha del expediente:** 2026-11-12  
 **Responsable de ejecución y verificación de publicación:** Carla  
-**Estado:** `AUTORIZADA PARA PUBLICACIÓN — LA INTEGRACIÓN EN main MATERIALIZA SU PUBLICACIÓN`
+**Estado:** `PUBLICADA Y VERIFICADA EN main`
 
 ## 1. Datos de integración
 
@@ -128,7 +128,12 @@ Este registro no acredita:
 - Commit Status API del commit de integración: **failure**, debido al context `GitBook Site` (`gitbook-docs.yaml` ausente), registrado 11 segundos después de la fusión.
 - Dictamen Aether: **EMITIDO / NO PERSISTIDO — `BLOCKED`, según resumen de Nexus; objeto primario del Gate pendiente de entrega**.
 - Nota Copilot Free: **PENDIENTE DE LOCALIZAR**.
-- Autorización soberana para publicar acta y evidencia: **HECHO**. La integración de esta entrega en `main` materializa la publicación; la comprobación posterior de rutas y contenidos queda a cargo de Carla.
+- Autorización soberana para publicar acta y evidencia: **HECHO**.
+- Acta y registro técnico: **PUBLICADOS Y VERIFICADOS EN `main`** mediante PR [#264](https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/264), fusionada el `2026-11-12T21:14:19Z` (`22:14:19 Europe/Madrid`).
+- Commit de publicación: `f51c5b2f0b0aff8b01fd72e9dd5f20a86f4435a9`.
+- Blob SHA del acta: `0f6f1a7a3772bf5659c2a5baf265fdb6a159dec2`.
+- Blob SHA de la evidencia: `94fe5bd6f9469b53205e79df2a0039fc794e5b3a`.
+- Estado del commit de publicación: `Vercel = success`; `GitBook Site = failure`. La fusión se completó; el fallo de GitBook queda registrado y no se declara CI plenamente satisfactorio.
 - Cierre formal: **BLOQUEADO**.
 
 **No se declara cierre, persistencia ni autorización que no estén acreditados.**
