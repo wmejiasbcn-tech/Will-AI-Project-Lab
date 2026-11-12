@@ -2,14 +2,15 @@
 
 **Will-AI Project Lab (WAIPL)**  
 **Estado de validación:** `VALIDADO`  
-**Estado de canonización:** `PENDIENTE DE CANONIZACIÓN`  
+**Estado de canonización:** `CANONIZADO`  
 **Autoría de trabajo:** William Mejías Navarro + Carla  
 **Validación documental:** Ada — `VALIDADO`  
 **Validación del Soberano:** William Mejías Navarro — `CONFIRMADA`  
 **Posición normativa:** documento complementario de referencia arquitectónica especializada  
-**Fecha de consolidación:** 2026-08-18
+**Fecha de consolidación:** 2026-08-18  
+**Fecha de canonización:** 2026-11-12
 
-> **REGLA FUNDAMENTAL DE ESTADO:** `VALIDADO` y `CANONIZADO` son estados distintos. Este documento está validado documentalmente, pero no se considera canónico hasta que exista una orden explícita de canonización del Soberano.
+> **REGLA FUNDAMENTAL DE ESTADO:** `VALIDADO` y `CANONIZADO` son estados distintos. Este documento ha sido validado documentalmente y canonizado mediante autorización expresa del Soberano Human de fecha 2026-11-12.
 
 ---
 
@@ -24,7 +25,7 @@ El estado del documento se expresa mediante **dos campos independientes y obliga
 | Campo | Valor actual | Significado |
 |---|---|---|
 | **Estado de validación** | `VALIDADO` | La revisión documental requerida ha concluido satisfactoriamente. |
-| **Estado de canonización** | `PENDIENTE DE CANONIZACIÓN` | Todavía no existe una orden explícita de canonización. |
+| **Estado de canonización** | `CANONIZADO` | La canonización ha sido autorizada expresamente por el Soberano Human el 2026-11-12. |
 
 ### 0.2 Regla de interpretación
 
@@ -518,7 +519,7 @@ Ningún agente externo deberá inferir pertenencia, autoridad o canonización ú
 `VALIDADO`
 
 ### Canonización
-`PENDIENTE DE CANONIZACIÓN`
+`CANONIZADO`
 
 ### Observaciones de validación
 `CERRADAS`
@@ -534,7 +535,7 @@ Ningún agente externo deberá inferir pertenencia, autoridad o canonización ú
 
 No existen observaciones de validación abiertas que impidan considerar este documento **VALIDADO**.
 
-La canonización continúa siendo un estado separado y requiere orden explícita del Soberano.
+La canonización fue autorizada expresamente por el Soberano Human el 2026-11-12. La autorización y su alcance constan en el registro de canonización incorporado al final de este documento.
 
 ---
 
@@ -559,8 +560,26 @@ Cuando exista conflicto con la jerarquía normativa superior, prevalecerá dicha
 ## CONTROL FINAL DE ESTADO
 
 **ESTADO DE VALIDACIÓN:** `VALIDADO`  
-**ESTADO DE CANONIZACIÓN:** `PENDIENTE DE CANONIZACIÓN`  
+**ESTADO DE CANONIZACIÓN:** `CANONIZADO`  
 **DOCUMENTO DE REFERENCIA ACTUAL:** `ARQUITECTURA_CANONICA_ECOSISTEMA_WAIPL_v1.0.md`  
 **POSICIÓN NORMATIVA:** documento complementario especializado, no quinto nivel  
 **AUTORIDAD:** pertenencia, identidad ecosistémica, clasificación, relaciones y trazabilidad  
-**FECHA:** 2026-08-18
+**FECHA DE CONSOLIDACIÓN:** 2026-08-18  
+**FECHA DE CANONIZACIÓN:** 2026-11-12
+
+---
+
+## REGISTRO DE CANONIZACIÓN — AUTORIZACIÓN SOBERANA
+
+**Documento:** ARQUITECTURA CANÓNICA DEL ECOSISTEMA WAIPL v1.0  
+**Ruta:** `01_FUNDACION/ARQUITECTURA_CANONICA_ECOSISTEMA_WAIPL_v1.0.md`  
+**Autoridad autorizante:** William Mejías Navarro — Soberano Human del ecosistema WAIPL  
+**Lugar declarado:** Barcelona  
+**Fecha declarada:** 2026-11-12  
+**Hora declarada:** 18:55 (Europe/Madrid)  
+**Decisión:** CANONIZACIÓN AUTORIZADA  
+**Alcance:** fijar este documento como referencia canónica especializada en arquitectura de pertenencia, identidad ecosistémica, clasificación de entidades, relaciones y trazabilidad.
+
+La autorización soberana confirma la canonización de la versión validada v1.0. Esta decisión no altera su posición normativa: continúa siendo un documento complementario de referencia arquitectónica especializada y no constituye un quinto nivel de la jerarquía normativa general.
+
+**Estado resultante:** `VALIDADO` + `CANONIZADO`.
