@@ -2,7 +2,7 @@
 
 **ID:** ACTA-DIKE-2026-11-12-001  
 **Fecha:** 12 de noviembre de 2026  
-**Estado:** AUTORIZADA · ACTUALIZACIÓN DOCUMENTAL PREPARADA EN RAMA · PUBLICACIÓN EN `main` Y DICTAMEN DE GATE PENDIENTES
+**Estado:** AUTORIZADA · ACTUALIZACIÓN DOCUMENTAL PUBLICADA EN `main` · DICTAMEN DE GATE PENDIENTE
 
 ## 1. Objeto
 
@@ -64,6 +64,6 @@ La ficha mantiene el significado funcional de la **Tabla 47, nodo 40 (DIKE)**: �
 - Autorización soberana: HECHA.
 - Preparación de ficha v2.2 en rama de trabajo: HECHA.
 - Registro del checksum de v2.2 en `docs/governance/version.json`: HECHO en rama de trabajo.
-- Publicación en `main`: PENDIENTE DE INTEGRACIÓN.
+- Publicación en `main`: HECHA mediante PR #261, merge commit `71f7b43903579d448a754ed7702c3535d63f1d9e` (2026-11-12 20:51:59 Europe/Madrid).
 - Dictamen de Gate Aether: PENDIENTE.
 - Cierre formal: PENDIENTE.

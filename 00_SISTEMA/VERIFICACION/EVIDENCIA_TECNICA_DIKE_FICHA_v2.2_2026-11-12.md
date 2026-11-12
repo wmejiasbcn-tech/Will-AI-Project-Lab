@@ -3,7 +3,7 @@
 **Expediente:** ACTA-DIKE-2026-11-12-001  
 **Fecha:** 2026-11-12  
 **Responsable de ejecución documental:** Carla  
-**Estado:** ACTUALIZACIÓN REALIZADA EN RAMA · INTEGRACIÓN EN `main` Y GATE PENDIENTES
+**Estado:** ACTUALIZACIÓN DOCUMENTAL PUBLICADA EN `main` · GATE PENDIENTE
 
 ## 1. Fuentes contrastadas
 
@@ -32,6 +32,6 @@ Commit de actualización de `version.json`: `beb6ba62cdf110143c92a6e3755130a4938
 
 ## 4. Límites de esta evidencia
 
-La ficha v2.2 y el registro de versión se han creado y guardado en la rama `dike-ficha-v2.2-2026-11-12`. En el momento de emitir este registro, la rama todavía no está integrada en `main`; por tanto, no se declara publicación en la rama canónica ni cierre formal.
+La ficha v2.2 y el registro de versión se prepararon en la rama `dike-ficha-v2.2-2026-11-12` y se publicaron en `main` mediante SENTINEL PR #192, squash merge commit `c67c65e13c54320b12bb18f6a3acf5c8ce4bc513` (2026-11-12 20:51:55 Europe/Madrid). La acta y esta evidencia se publicaron en el Lab mediante PR #261, squash merge commit `71f7b43903579d448a754ed7702c3535d63f1d9e` (2026-11-12 20:51:59 Europe/Madrid). El dictamen de Gate Aether continúa pendiente y no se declara cierre formal.
 
 No se ha cambiado el código de DIKE, no se ha declarado `APPROVED` y no se ha declarado despliegue.
