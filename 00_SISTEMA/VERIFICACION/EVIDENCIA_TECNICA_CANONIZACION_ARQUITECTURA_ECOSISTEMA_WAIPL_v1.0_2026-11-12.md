@@ -66,19 +66,27 @@ No hay que tratar esos resultados como si fueran del mismo SHA. Tampoco hay que 
 
 ## 4. Dictamen de Gate: procedencia y persistencia
 
-- **Gate:** Aether.
-- **`gate_ref`:** `AETHER-GATE-CANON-ARQ-ECO-v1.0-2026-11-12-001`.
-- **Emisión y hora:** comunicadas por Nexus y atribuidas a Aether; 12-11-2026, 20:12 Europe/Madrid.
-- **Estado:** `BLOCKED`, según el resumen de Nexus.
-- **Autorización:** `AUTHORIZED` no emitido, según el resumen de Nexus.
-- **Persistencia:** comunicada como no realizada por bloqueo de la vía receipts/SENTINEL.
+## 4. Dictamen de Gate: procedencia y persistencia
 
-Clasificación: `EMITIDO / NO PERSISTIDO`, **según comunicación de Nexus**. El material de Aether aportado en esta entrega (21:37) es una verificación técnica de checks, no el dictamen Gate íntegro. Por tanto, el objeto primario de Gate continúa pendiente de entrega y no se presenta como recibido ni almacenado.
+**Respuesta de Aether recibida:** 12-11-2026, 23:28 Europe/Madrid, remitida por William a Carla en WAIPL-BUS #269.
 
-**Contraste del mecanismo técnico:** el repositorio SENTINEL `main` contiene `07_ACCIONES_Y_VERIFICACIONES/GATE/waipl_gate/receipt.py` y `gate_close.py`. El primero implementa `bind_receipt()` con HMAC y requiere la variable de entorno `SENTINEL_GATE_HMAC_KEY`; el segundo enlaza `close_case()` con la generación del receipt, ofrece `close_case_file()` para escribirlo y `accept_closure()` para verificarlo. La presencia del código no acredita disponibilidad del runtime ni de la clave para esta sesión. La búsqueda del `gate_ref` del expediente no ha localizado un objeto/receipt correspondiente en `main` de SENTINEL ni de Lab.
+### Objeto 1 — Arquitectura Canónica
+- `gate_ref`: `AETHER-GATE-CANON-ARQ-ECO-v1.0-2026-11-12-001`
+- `state=AMARILLO`; `closed=false`; `open=true`.
+- `result_status=PRESENTE`; `evidence_status=SUFICIENTE`; `verification_status=PARCIAL`.
+- `dictamen_status=NO_CERRABLE`; `gate_status=BLOCKED`.
+- Requisitos: nota Copilot Free no localizada; persistencia receipts/SENTINEL no disponible.
 
-Nexus resumió además `dictamen_status=NO_CERRABLE`, `verification_status=PARCIAL` y `evidence_status=SUFICIENTE`. Se registran como campos comunicados por Nexus, no como campos leídos de un objeto primario persistido.
+**Aether no emitió `AUTHORIZED`.**
 
+### Persistencia y atribución
+Aether declaró que la persistencia receipts/SENTINEL no estaba disponible en su sesión. Carla archivó la respuesta en SENTINEL/main en [2026-11-12_AETHER_GATE_DICTAMENES_CAPTURA.md](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/07_ACCIONES_Y_VERIFICACIONES/GATE/cases/2026-11-12_AETHER_GATE_DICTAMENES_CAPTURA.md). Es una captura documental realizada por Carla a partir del mensaje de Aether remitido por William; no es un receipt HMAC ni prueba de persistencia original del objeto primario por Aether.
+
+La implementación de receipts está en SENTINEL:
+- `07_ACCIONES_Y_VERIFICACIONES/GATE/waipl_gate/receipt.py`: `bind_receipt()` exige `SENTINEL_GATE_HMAC_KEY`.
+- `07_ACCIONES_Y_VERIFICACIONES/GATE/waipl_gate/gate_close.py`: escritura y validación del cierre/receipt.
+
+**Estado:** dictamen recibido y capturado; Gate `BLOCKED`; objeto primario/receipt HMAC no acreditados como persistidos; expediente abierto.
 ## 5. Atribución de responsabilidades
 
 - Ejecución del cambio en GitHub: Carla.
@@ -126,14 +134,15 @@ Este registro no acredita:
 - Commit Status API del head de la PR: **success**, contexts `Vercel` y `GitBook (./documentation)`.
 - Checks API del commit de integración: **10 success / 1 skipped**.
 - Commit Status API del commit de integración: **failure**, debido al context `GitBook Site` (`gitbook-docs.yaml` ausente), registrado 11 segundos después de la fusión.
-- Dictamen Aether: **EMITIDO / NO PERSISTIDO — `BLOCKED`, según resumen de Nexus; objeto primario del Gate pendiente de entrega**.
-- Nota Copilot Free: **PENDIENTE DE LOCALIZAR**.
+- Dictamen Aether: **RECIBIDO A LAS 23:28 Y CAPTURADO EN SENTINEL/main**; `AMARILLO / BLOCKED / closed=false`, según el objeto remitido por Aether.
+- Nota Copilot Free: **NO LOCALIZADA** en Library, Notion, repositorios accesibles y búsqueda pública de Slack; las coincidencias halladas son documentos incidentales y no el original.
 - Autorización soberana para publicar acta y evidencia: **HECHO**.
 - Acta y registro técnico: **PUBLICADOS Y VERIFICADOS EN `main`** mediante PR [#264](https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/264), fusionada el `2026-11-12T21:14:19Z` (`22:14:19 Europe/Madrid`).
 - Commit de publicación: `f51c5b2f0b0aff8b01fd72e9dd5f20a86f4435a9`.
 - Blob SHA del acta: `0f6f1a7a3772bf5659c2a5baf265fdb6a159dec2`.
 - Blob SHA de la evidencia: `94fe5bd6f9469b53205e79df2a0039fc794e5b3a`.
 - Estado del commit de publicación: `Vercel = success`; `GitBook Site = failure`. La fusión se completó; el fallo de GitBook queda registrado y no se declara CI plenamente satisfactorio.
+- Receipt HMAC/objeto primario persistido: **NO DISPONIBLE, según Aether**.
 - Cierre formal: **BLOQUEADO**.
 
 **No se declara cierre, persistencia ni autorización que no estén acreditados.**

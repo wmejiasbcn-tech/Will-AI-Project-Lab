@@ -108,22 +108,21 @@ No son consultas equivalentes ni resultados contradictorios sobre el mismo objet
 
 ## 7. Dictamen del Gate
 
+## 7. Dictamen del Gate
+
 - **Gate designado:** Aether.
-- **Referencia comunicada por Nexus y atribuida a Aether:** `AETHER-GATE-CANON-ARQ-ECO-v1.0-2026-11-12-001`.
-- **Hora de emisión comunicada por Nexus:** 12 de noviembre de 2026, 20:12 (Europe/Madrid).
-- **Clasificación comunicada:** `EMITIDO / NO PERSISTIDO`.
-- **Estado de Gate comunicado por Nexus como resultado de Aether:** `BLOCKED`.
-- **Autorización (`AUTHORIZED`):** no emitida, según Nexus.
-- **Persistencia:** comunicada como bloqueada/no disponible por la vía de receipts vinculada a SENTINEL.
+- **Respuesta de Gate recibida:** 12 de noviembre de 2026, 23:28 (Europe/Madrid), remitida por William a Carla en respuesta a WAIPL-BUS #269.
+- **Acta:** `ACTA-CANON-2026-11-12-001`.
+- **gate_ref:** `AETHER-GATE-CANON-ARQ-ECO-v1.0-2026-11-12-001`.
+- **Estado emitido:** `AMARILLO`.
+- **Objeto de estado final emitido por Aether:** `closed=false`, `open=true`, `result_status=PRESENTE`, `evidence_status=SUFICIENTE`, `verification_status=PARCIAL`, `dictamen_status=NO_CERRABLE`, `gate_status=BLOCKED`.
+- **Requisitos declarados por Aether:** nota Copilot Free no localizada; persistencia receipts/SENTINEL no disponible.
+- **Autorización:** `AUTHORIZED` no emitido.
+- **Persistencia:** Aether declara que la persistencia receipts/SENTINEL no está disponible en su sesión.
 
-**Contraste del mecanismo:** en `wmejiasbcn-tech/SENTINEL` existe código de receipts en `07_ACCIONES_Y_VERIFICACIONES/GATE/waipl_gate/receipt.py` y `gate_close.py`. `bind_receipt()` requiere `SENTINEL_GATE_HMAC_KEY` para sellar el objeto; `close_case_file()` escribe el receipt y `accept_closure()` lo verifica. Esto acredita implementación en el repositorio, pero no acredita que la clave, el runtime o la ejecución estén disponibles en este ciclo. La búsqueda del `gate_ref` comunicado no ha localizado un objeto o receipt de este expediente en `main` de SENTINEL ni de Lab.
+**Captura y atribución:** Carla transcribió el objeto emitido por Aether en `wmejiasbcn-tech/SENTINEL`, archivo [2026-11-12_AETHER_GATE_DICTAMENES_CAPTURA.md](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/07_ACCIONES_Y_VERIFICACIONES/GATE/cases/2026-11-12_AETHER_GATE_DICTAMENES_CAPTURA.md). Esa captura acredita que el contenido recibido se archivó en SENTINEL/main; **no es el receipt HMAC ni acredita persistencia original por Aether**. El objeto primario firmado y el receipt no se declaran persistidos.
 
-**Límite de atribución:** el material de Aether aportado ahora a las 21:37 contiene la verificación independiente de checks, pero no incluye el dictamen Gate íntegro ni el objeto de estado final. La emisión, `gate_status=BLOCKED` y la hora 20:12 se conservan, por tanto, como información **comunicada por Nexus y atribuida a Aether**, pendiente de recibir el objeto primario de Gate.
-
-Nexus resumió además estos campos del objeto de estado final: `dictamen_status=NO_CERRABLE`, `verification_status=PARCIAL` y `evidence_status=SUFICIENTE`. Se conservan con procedencia **resumen de Nexus**; no se presentan como campos leídos de un objeto primario persistido.
-
-La función de Gate es verificar la suficiencia del expediente y gobernar la condición de cierre. No es ejecutar ni autorizar la publicación del acta o del registro técnico.
-
+**Contrato aplicable:** `WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT.md`. El expediente permanece abierto porque el dictamen es `BLOCKED` y `NO_CERRABLE`.
 ## 8. Estado del expediente
 
 ### Canonización del documento
@@ -140,19 +139,19 @@ La función de Gate es verificar la suficiencia del expediente y gobernar la con
 - Blob SHA del acta: `0f6f1a7a3772bf5659c2a5baf265fdb6a159dec2`.
 - Blob SHA del registro técnico: `94fe5bd6f9469b53205e79df2a0039fc794e5b3a`.
 - Commit de publicación: `f51c5b2f0b0aff8b01fd72e9dd5f20a86f4435a9`.
-- Nota de alineación Copilot Free localizada y actualizada: **PENDIENTE**.
-- Dictamen de Aether: **EMITIDO / NO PERSISTIDO, según comunicación de Nexus; objeto primario pendiente de entrega**.
-- Persistencia mediante receipts/SENTINEL: **PENDIENTE / BLOQUEADA, según comunicación de Nexus**.
-- Estado de Gate: **`BLOCKED`, según comunicación de Nexus**.
+- Nota de alineación Copilot Free localizada y actualizada: **NO LOCALIZADA** en las fuentes consultadas; no se creó duplicado.
+- Dictamen de Aether: **RECIBIDO EN CONVERSACIÓN Y CAPTURADO DOCUMENTALMENTE**; `AMARILLO / BLOCKED / closed=false`.
+- Receipt HMAC y persistencia primaria del objeto Gate: **NO DISPONIBLES, según declaración de Aether**; la captura de Carla no los sustituye.
+- Estado de Gate: **`BLOCKED`**, según objeto final remitido directamente por Aether a Carla.
 - Estado `AUTHORIZED`: **NO EMITIDO**.
 - Cierre formal: **BLOQUEADO**.
 
 ## 9. Requisitos pendientes para el cierre formal del expediente
 
 1. Localización y actualización de la nota original de alineación Copilot Free, sin crear duplicados.
-2. Entrega y persistencia del objeto primario del dictamen Gate; acreditación de la disponibilidad de la clave y el runtime de receipts o declaración verificable de un mecanismo alternativo autorizado.
-3. Nueva revisión de Gate sobre el estado resultante y persistencia del objeto de estado final.
-4. Emisión de `AUTHORIZED` por el Gate designado, si y solo si se satisfacen los predicados de cierre aplicables.
+2. Disponibilidad efectiva de `SENTINEL_GATE_HMAC_KEY` y del runtime autorizado para persistir el objeto primario y emitir/verificar el receipt; Aether declaró que esta vía no estaba disponible en la emisión recibida.
+3. Nueva revisión de Gate sobre el estado resultante y persistencia del objeto de estado final conforme al contrato.
+4. Emisión de `AUTHORIZED` por el Gate designado, únicamente si se satisfacen todos los predicados de cierre.
 
 ## 10. Control de cambios de esta acta
 

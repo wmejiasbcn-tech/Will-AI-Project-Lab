@@ -2,7 +2,7 @@
 
 **ID:** ACTA-DIKE-2026-11-12-001  
 **Fecha:** 12 de noviembre de 2026  
-**Estado:** AUTORIZADA · ACTUALIZACIÓN DOCUMENTAL PUBLICADA EN `main` · DICTAMEN DE GATE PENDIENTE
+**Estado:** ACTUALIZACIÓN DOCUMENTAL PUBLICADA EN `main` · DICTAMEN RECIBIDO `AMARILLO/BLOCKED` · RECEIPT HMAC NO PERSISTIDO
 
 ## 1. Objeto
 
@@ -53,17 +53,26 @@ La ficha mantiene el significado funcional de la **Tabla 47, nodo 40 (DIKE)**: �
 
 ## 6. Gate y cierre
 
-- Gate designado: Aether, por designación soberana para este expediente.
-- Dictamen de Aether sobre esta actuación: PENDIENTE.
-- `gate_ref`: PENDIENTE DE EMISIÓN POR AETHER.
-- Contrato aplicable: `WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT.md`.
-- Principio: «No Gate authorization, no closure».
+## 6. Gate y cierre
 
+- **Gate designado:** Aether.
+- **Respuesta recibida:** 12-11-2026, 23:28 Europe/Madrid, remitida por William a Carla en WAIPL-BUS #269.
+- **Acta:** `ACTA-DIKE-2026-11-12-001`.
+- **gate_ref:** `AETHER-GATE-DIKE-v2.2-2026-11-12-001`.
+- **Objeto final emitido:** `state=AMARILLO`, `closed=false`, `open=true`, `result_status=PRESENTE`, `evidence_status=SUFICIENTE`, `verification_status=PARCIAL`, `dictamen_status=NO_CERRABLE`, `gate_status=BLOCKED`.
+- **Requisito declarado por Aether:** persistencia receipts/SENTINEL no disponible.
+- **Autorización:** `AUTHORIZED` no emitido.
+- **Receipt HMAC:** no acreditado como emitido ni persistido.
+
+Carla archivó el objeto remitido por Aether en SENTINEL/main: [captura de los tres dictámenes](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/07_ACCIONES_Y_VERIFICACIONES/GATE/cases/2026-11-12_AETHER_GATE_DICTAMENES_CAPTURA.md). La captura no sustituye al receipt HMAC ni acredita persistencia original por Aether.
+
+**Contrato aplicable:** `WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT.md`. La actualización documental de DIKE v2.2 permanece publicada y no implica `APPROVED` ni despliegue.
 ## 7. Estado de ejecución
 
 - Autorización soberana: HECHA.
 - Preparación de ficha v2.2 en rama de trabajo: HECHA.
 - Registro del checksum de v2.2 en `docs/governance/version.json`: HECHO en rama de trabajo.
 - Publicación en `main`: HECHA mediante PR #261, merge commit `71f7b43903579d448a754ed7702c3535d63f1d9e` (2026-11-12 20:51:59 Europe/Madrid).
-- Dictamen de Gate Aether: PENDIENTE.
-- Cierre formal: PENDIENTE.
+- Dictamen de Gate Aether: **RECIBIDO — BLOCKED**.
+- Receipt HMAC y persistencia del objeto primario: **NO DISPONIBLES, según Aether**.
+- Cierre formal: **BLOQUEADO**.
