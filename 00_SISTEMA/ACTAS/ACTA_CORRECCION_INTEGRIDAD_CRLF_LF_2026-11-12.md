@@ -2,7 +2,7 @@
 
 **ID:** ACTA-INTEGRIDAD-2026-11-12-001  
 **Fecha:** 12 de noviembre de 2026  
-**Estado:** AUTORIZADA · DEFECTO LOCALIZADO · CORRECCIÓN EN FUENTE ACTIVA Y REEMISIÓN DE NUEVE HASHES PENDIENTES
+**Estado:** AUTORIZADA · ACTA Y EVIDENCIA PUBLICADAS EN `main` · CORRECCIÓN EN FUENTE ACTIVA Y REEMISIÓN DE NUEVE HASHES PENDIENTES
 
 ## 1. Objeto
 
@@ -67,6 +67,6 @@ Tampoco están disponibles aquí los nueve archivos físicos y el inventario ind
 - Aplicación a la fuente activa del nodo central: PENDIENTE.
 - Identificación y reemisión byte a byte de los nueve hashes: PENDIENTE.
 - Evidencia antes/después en fuente activa: PENDIENTE.
-- Publicación de este expediente en `main`: PENDIENTE DE INTEGRACIÓN.
+- Publicación de este expediente en `main`: HECHA mediante PR #262, merge commit `bd7ccb1d5546779a38aceaf6e7d3d0ba412fe3d6` (2026-11-12 20:52:03 Europe/Madrid).
 - Dictamen de Gate Aether: PENDIENTE.
 - Cierre formal: PENDIENTE.
