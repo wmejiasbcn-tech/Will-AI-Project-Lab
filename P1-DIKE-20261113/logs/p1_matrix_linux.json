@@ -1,0 +1,90 @@
+{
+  "label": "linux-github-actions",
+  "platform": "Linux-7.0.0-1019-azure-x86_64-with-glibc2.43",
+  "python": "3.12.16 (main, Oct 26 2026, 02:48:44) [GCC 15.2.0]",
+  "source": "/home/runner/work/Will-AI-Project-Lab/Will-AI-Project-Lab/P1-DIKE-20261113/source/dike_auditora.py",
+  "source_sha256": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
+  "expected_sha256": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
+  "source_match": true,
+  "cases": [
+    {
+      "case": "lf_final_newline",
+      "input_bytes": 41,
+      "stored_bytes": 41,
+      "index_size_bytes": 41,
+      "bytes_equal": true,
+      "sha256_disk": "6f10d7b3d32dec8bad1b281bf0e6670e4318c18f77e3217024877341cb3b6344",
+      "sha256_index": "6f10d7b3d32dec8bad1b281bf0e6670e4318c18f77e3217024877341cb3b6344",
+      "sha256_equal": true,
+      "length_equal": true,
+      "has_final_newline": true,
+      "has_crlf": false
+    },
+    {
+      "case": "crlf_final_newline",
+      "input_bytes": 43,
+      "stored_bytes": 43,
+      "index_size_bytes": 43,
+      "bytes_equal": true,
+      "sha256_disk": "c61f77f24f39689ce222680e8fad40e31dd3ffd963a92c413ebad0b10751725e",
+      "sha256_index": "c61f77f24f39689ce222680e8fad40e31dd3ffd963a92c413ebad0b10751725e",
+      "sha256_equal": true,
+      "length_equal": true,
+      "has_final_newline": true,
+      "has_crlf": true
+    },
+    {
+      "case": "mixed_final_newline",
+      "input_bytes": 28,
+      "stored_bytes": 28,
+      "index_size_bytes": 28,
+      "bytes_equal": true,
+      "sha256_disk": "0860c51f3327a2d450e86b9b67c2f35b31fce179016dac06d3007e7c57ccb4aa",
+      "sha256_index": "0860c51f3327a2d450e86b9b67c2f35b31fce179016dac06d3007e7c57ccb4aa",
+      "sha256_equal": true,
+      "length_equal": true,
+      "has_final_newline": true,
+      "has_crlf": true
+    },
+    {
+      "case": "utf8_non_ascii_final_newline",
+      "input_bytes": 35,
+      "stored_bytes": 35,
+      "index_size_bytes": 35,
+      "bytes_equal": true,
+      "sha256_disk": "16f382a970aa4d3b71342834c3a1717e53c095c77b1ff212155e9b0a3681ae91",
+      "sha256_index": "16f382a970aa4d3b71342834c3a1717e53c095c77b1ff212155e9b0a3681ae91",
+      "sha256_equal": true,
+      "length_equal": true,
+      "has_final_newline": true,
+      "has_crlf": false
+    },
+    {
+      "case": "lf_no_final_newline",
+      "input_bytes": 17,
+      "stored_bytes": 17,
+      "index_size_bytes": 17,
+      "bytes_equal": true,
+      "sha256_disk": "bd25eba160d5a1a25a188a0bc871fe49ef27b9f40f6b1658b4e55b71009dcecc",
+      "sha256_index": "bd25eba160d5a1a25a188a0bc871fe49ef27b9f40f6b1658b4e55b71009dcecc",
+      "sha256_equal": true,
+      "length_equal": true,
+      "has_final_newline": false,
+      "has_crlf": false
+    },
+    {
+      "case": "crlf_no_final_newline",
+      "input_bytes": 18,
+      "stored_bytes": 18,
+      "index_size_bytes": 18,
+      "bytes_equal": true,
+      "sha256_disk": "ee14177ae96a19a61248924ed5e0cc1d985871a08e80cdb92f57a74aac834910",
+      "sha256_index": "ee14177ae96a19a61248924ed5e0cc1d985871a08e80cdb92f57a74aac834910",
+      "sha256_equal": true,
+      "length_equal": true,
+      "has_final_newline": false,
+      "has_crlf": true
+    }
+  ],
+  "result": "PASS"
+}
