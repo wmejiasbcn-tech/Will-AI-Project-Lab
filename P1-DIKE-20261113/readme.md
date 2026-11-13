@@ -37,12 +37,13 @@ El Python embebido de AutoClaw no añade el directorio del script a `sys.path`. 
 ## Publicación
 
 - PR: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/283
-- Run Linux: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/actions/runs/43478621382
+- Run Linux definitivo sobre el commit final de la PR: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/actions/runs/43480321239
+- Artefacto Linux: `p1-dike-linux-evidence-43480321239` (subida completada; no caducado).
 - Sin merge y sin push a `main`. P1 no se declara cerrado.
 
 ## Límites
 
 - No se tocó `_HISTORICO-MASTER`, Vár, Gate HMAC, secretos, receipts, SENTINEL ni SCI.
-- No se creó PR nueva ni se publicó en `main`; el cambio queda en el working tree para revisión de Carla.
-- No consta un log Linux separado en el kit ni en el PR #6; no se inventa esa evidencia.
+- La PR #283 contiene la entrega y el workflow Linux. La publicación está realizada en la rama de la PR; `main` permanece intacta.
+- La ejecución Linux definitiva verificó el SHA-256 esperado, ejecutó 5/5 pruebas unitarias y la matriz funcional 6/6, y publicó el artefacto de evidencias.
 - P1 no se declara cerrado.
