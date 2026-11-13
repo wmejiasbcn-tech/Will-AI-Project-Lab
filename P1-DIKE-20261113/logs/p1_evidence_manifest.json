@@ -224,11 +224,6 @@
       "sin_cambios": true
     }
   ],
-  "evidencia_linux": {
-    "estado": "no consta log Linux separado en el kit ni en el PR #6",
-    "detalle": "El cuerpo del PR #6 declara 5 pruebas locales sin especificar sistema operativo; no hay checks de CI. No se inventa una ejecución Linux.",
-    "pr_url": "https://github.com/wmejiasbcn-tech/Will-App-WAIPL-RAG/pull/6"
-  },
   "logs": [
     "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_tests_windows.log",
     "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_dry_run.log",
@@ -247,7 +242,7 @@
     "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_linux_source_sha.txt"
   ],
   "entrega_documental": "C:\\Users\\USER\\Desktop\\AutoClaw\\DELIVERY\\P1-DIKE-20261113",
-  "nota_cierre": "No se hace merge ni se declara P1 cerrado. Carla revisa y acepta.",
+  "nota_cierre": "Paquete probatorio publicado en PR #283. Ejecución Linux final 43480321239 completada con éxito. No se hace merge ni se declara P1 cerrado hasta la aceptación formal.",
   "pr_url": "https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/283",
   "linux_ci": {
     "entorno": "GitHub Actions — ubuntu-latest",
@@ -256,12 +251,13 @@
     "source_sha256": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
     "source_match": true,
     "pruebas_kit": "5/5 OK",
-    "matriz": "PASS",
-    "run_url": "https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/actions/runs/43478621382",
-    "artifact": "p1-dike-linux-evidence-43478621382",
-    "matrix_json": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\linux_ci\\p1-dike-linux-evidence-43478621382\\p1_matrix_linux.json",
-    "log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\linux_ci\\p1-dike-linux-evidence-43478621382\\p1_matrix_linux.log",
-    "tests_log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\linux_ci\\p1-dike-linux-evidence-43478621382\\p1_tests_linux.log"
+    "matriz": "6/6 PASS",
+    "run_id": 43480321239,
+    "run_url": "https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/actions/runs/43480321239",
+    "artifact": "p1-dike-linux-evidence-43480321239",
+    "artifact_expired": false,
+    "commit": "ff154b4103e72adede47820f40f15afeb0e7c50f",
+    "evidencia_publicada_en_pr": 283
   },
   "matriz_windows": {
     "label": "windows",
