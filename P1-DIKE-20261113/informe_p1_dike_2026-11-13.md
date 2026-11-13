@@ -113,7 +113,7 @@ Resultado Windows: **PASS**. Log: `p1_matrix_windows.log`; JSON: `p1_matrix_wind
 | `lf_no_final_newline` | 17 / 17 / 17 | Sí | Sí | No | No |
 | `crlf_no_final_newline` | 18 / 18 / 18 | Sí | Sí | No | Sí |
 
-Resultado Linux: **PASS**. Log: `p1_matrix_linux.log`; JSON: `p1_matrix_linux.json`; run: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/actions/runs/43478621382
+Resultado Linux: **PASS**. Log: `p1_matrix_linux.log`; JSON: `p1_matrix_linux.json`; run: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/actions/runs/43480321239
 
 **Comparación Windows/Linux:** los seis SHA-256 son idénticos en ambos sistemas. La regresión del gate fue 44/44, exit 0.
 
@@ -150,6 +150,7 @@ PR: https://github.com/wmejiasbcn-tech/Will-AI-Project-Lab/pull/283 — sin merg
 - **Cumplido:** dry-run sin drift y parche aplicado sobre la fuente activa correcta.
 - **Cumplido:** matriz Windows/Linux de 6 casos, con bytes, hashes y longitudes correctos.
 - **Cumplido:** integridad física de los 9 archivos comprobada; no fueron reescritos.
-- **Pendiente:** evidencias publicadas en la PR #283; P1 no se declara cerrado y no se hace merge.
+- **Cumplido:** paquete probatorio publicado en la PR #283; ejecución Linux definitiva `43480321239` completada con éxito y artefacto `p1-dike-linux-evidence-43480321239` generado.
+- **Estado de gobierno:** P1 permanece abierto hasta la aceptación formal; no se realiza merge ni se modifica `main`.
 
 *«Sin vosotras no hay nosotros.»*
