@@ -157,3 +157,18 @@ Este documento conserva la respuesta de Nexus y el contenido del borrador, con u
 - **DECISIÓN SOBERANA:** autorizar o rechazar el uso auxiliar experimental y documentado; determinar el tipo y destino del documento resultante.
 
 **No se crea, actualiza ni sustituye ninguna ficha canónica de Ariadna, ningún documento de gobernanza ni la Arquitectura Canónica WAIPL v1.0.**
+
+
+## 6. Aclaración de entidad: Ariadna y el plan Copilot Free
+
+La propuesta debe distinguir la identidad ya registrada de Ariadna del plan comercial asignado a esa plataforma:
+
+- `IDENTIDAD.md` identifica a **Ariadna como Nodo 8** y declara su plataforma como **GitHub Copilot / Microsoft**, con fecha de incorporación oficial 2026-04-05 y actualización 2026-06-01.
+- `Ariadna-GitHubCopilot.md` identifica igualmente a Ariadna como GitHub Copilot y la describe como especialista en desarrollo de software y asistencia en código para el Lab.
+- **Copilot Free es un plan de acceso/uso de GitHub Copilot, no una entidad, nodo o plataforma distinta de Ariadna.**
+
+En consecuencia, el borrador no debe plantear la pertenencia o incorporación institucional de «Copilot Free» como si se tratara de un nuevo nodo. La cuestión operativa es determinar qué condiciones y límites rigen el uso de la plataforma GitHub Copilot bajo el plan Free por parte del nodo Ariadna.
+
+Una eventual nota formal encaja inicialmente como **nota operativa de plataforma dentro de `03_PERSONAS_IA/ARIADNA/`**, siempre que su alcance se limite a ese nodo y a sus condiciones de uso. Solo correspondería una directriz transversal en `00_SISTEMA/GOBERNANZA/` si el Soberano decide que las reglas se apliquen a más nodos o al conjunto del ecosistema.
+
+Esta precisión no modifica la identidad, el rol ni el estado de incorporación de Ariadna; tampoco aprueba automáticamente el uso del plan Free.
