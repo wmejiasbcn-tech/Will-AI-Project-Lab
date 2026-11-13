@@ -1,0 +1,245 @@
+{
+  "delivery_id": "P1-DIKE-20261113",
+  "expediente": "P1 · Corrección CRLF/LF y verificación de integridad en Windows",
+  "fecha_ejecucion": "2026-11-13T17:22:51.388494+01:00",
+  "responsable": "AutoClaw — operador del nodo Windows",
+  "supervision_y_aceptacion": "Carla",
+  "estado": "P1_ABIERTO_PENDIENTE_ACEPTACION",
+  "kit": {
+    "repo": "wmejiasbcn-tech/Will-App-WAIPL-RAG",
+    "pr": 6,
+    "merge_commit": "966a8ca525315314d50a9bfcaa9c0bab8b1d4cac",
+    "ruta_local": "C:\\Users\\USER\\Desktop\\AutoClaw\\Will-App-WAIPL-RAG\\tools\\p1_dike_crlf_lf",
+    "archivos": {
+      "README.md": {
+        "bytes": 2717,
+        "sha256": "cae68d2cd5ba8f76cf932def1b830e81ae55c7c0e04f30d7a1a1413971126ee0"
+      },
+      "apply_p1_patch.py": {
+        "bytes": 4773,
+        "sha256": "7c5596bf33808bbbcc2cd13f0d2ded47f12112151287329eb21372f2833c4c98"
+      },
+      "test_apply_p1_patch.py": {
+        "bytes": 2563,
+        "sha256": "8af6e40df68657ce36c1963a86ba7ff99b4300ad1878fbd19c285b06600e3b32"
+      }
+    }
+  },
+  "fuente_activa": {
+    "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\agents\\dike_auditora.py",
+    "antes": {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\agents\\dike_auditora.py",
+      "bytes": 33647,
+      "sha256_physical": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+      "sha256_lf": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+      "crlf": 0,
+      "mtime": "2026-08-10T05:56:46.834122"
+    },
+    "despues": {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\agents\\dike_auditora.py",
+      "bytes": 34119,
+      "sha256_physical": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
+      "sha256_lf": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
+      "crlf": 0,
+      "mtime": "2026-11-13T17:20:05.708548"
+    },
+    "backup": {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\agents\\dike_auditora.py.before-p1-crlf-lf.bak",
+      "bytes": 33647,
+      "sha256_physical": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+      "sha256_lf": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+      "crlf": 0,
+      "mtime": "2026-08-10T05:56:46.834122"
+    },
+    "estilo_finales_linea": "LF preservado; CRLF=0"
+  },
+  "pruebas_unitarias": {
+    "comando": "python run_p1_tests.py (unittest, 5 tests)",
+    "nota_runner": "El runner solo inserta la ruta del kit en sys.path para el Python embebido de AutoClaw; no modifica las pruebas del kit.",
+    "resultado": "5/5 OK",
+    "exit": 0,
+    "log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_tests_windows.log"
+  },
+  "dry_run": {
+    "resultado": "DRY_RUN_OK",
+    "changed": true,
+    "original_sha256": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+    "patched_sha256": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
+    "log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_dry_run.log"
+  },
+  "apply": {
+    "resultado": "PATCH_APPLIED_VERIFIED",
+    "original_sha256": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+    "patched_sha256": "f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9",
+    "log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_apply.log"
+  },
+  "funcional_windows": {
+    "resultado": "PASS",
+    "casos": [
+      {
+        "caso": "LF",
+        "bytes": 45,
+        "sha256": "fd9925afe740473e5ca0ff81d3b7115b61e91a1a6eaf7cc1142152bc96ece8a7",
+        "bytes_iguales": true
+      },
+      {
+        "caso": "CRLF",
+        "bytes": 47,
+        "sha256": "585922054c541bfedf9affa34e5a57267351e6295b04ecf950f9737cbb301967",
+        "bytes_iguales": true
+      }
+    ],
+    "log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_functional_windows.log"
+  },
+  "regresion_gate": {
+    "resultado": "44/44 OK",
+    "exit": 0,
+    "log": "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_regression_gate_windows.log"
+  },
+  "nueve_archivos": [
+    {
+      "uuid": "c5319ca5-b617-4492-b6ce-7423ffdbc183",
+      "titulo": "AESIA — Pagina principal oficial",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_c5319ca5-b617-4492-b6ce-7423ffdbc183.txt",
+      "bytes_antes": 7563,
+      "sha256_antes": "a1dc4f4a0ee2e261b761db9d00cc58cebc8ca6b8b095acfd36ed4d01175361bd",
+      "sha256_lf_antes": "f90a8dc06c4c24016b2b20825883b2cb396afa2a4aeb5311d9cee3a3a6dca8ee",
+      "crlf_antes": 142,
+      "bytes_despues": 7563,
+      "sha256_despues": "a1dc4f4a0ee2e261b761db9d00cc58cebc8ca6b8b095acfd36ed4d01175361bd",
+      "sha256_lf_despues": "f90a8dc06c4c24016b2b20825883b2cb396afa2a4aeb5311d9cee3a3a6dca8ee",
+      "crlf_despues": 142,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "d713e0ab-af4e-4700-8750-441d8acfe91b",
+      "titulo": "AESIA — Guias oficiales",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_d713e0ab-af4e-4700-8750-441d8acfe91b.txt",
+      "bytes_antes": 6330,
+      "sha256_antes": "75db8b174e52ae3a12fd042e8901c2a17cfc25aa7848c16ce1d6cea637685997",
+      "sha256_lf_antes": "3c0db5d849b6904495fcade97e0dc40a7b3378a1b4d980fe797a03fee83eaed4",
+      "crlf_antes": 85,
+      "bytes_despues": 6330,
+      "sha256_despues": "75db8b174e52ae3a12fd042e8901c2a17cfc25aa7848c16ce1d6cea637685997",
+      "sha256_lf_despues": "3c0db5d849b6904495fcade97e0dc40a7b3378a1b4d980fe797a03fee83eaed4",
+      "crlf_despues": 85,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "c66e6ce8-151b-4353-bd55-94d5f063d486",
+      "titulo": "AESIA — Divulgacion",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_c66e6ce8-151b-4353-bd55-94d5f063d486.txt",
+      "bytes_antes": 4370,
+      "sha256_antes": "f6b56c24e45a8d60948c25c9a071a5f994d3ddf23185dfa3080c898f8225e6de",
+      "sha256_lf_antes": "d4180dfa546e7bcc9fb5341666c6318aa1c26bdefdb1ed56a8c59221f0c0be8c",
+      "crlf_antes": 81,
+      "bytes_despues": 4370,
+      "sha256_despues": "f6b56c24e45a8d60948c25c9a071a5f994d3ddf23185dfa3080c898f8225e6de",
+      "sha256_lf_despues": "d4180dfa546e7bcc9fb5341666c6318aa1c26bdefdb1ed56a8c59221f0c0be8c",
+      "crlf_despues": 81,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "3b4cb911-f756-4671-9793-b3c8f9ba72f6",
+      "titulo": "AESIA — RIA: Sistemas de Alto Riesgo",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_3b4cb911-f756-4671-9793-b3c8f9ba72f6.txt",
+      "bytes_antes": 9284,
+      "sha256_antes": "0e1a1fb2d12a2c6d40cb71026f5b6b691f6f1d71008d44d2997c8f81189b6a7e",
+      "sha256_lf_antes": "abb0bdf321d9d8faeec07a45d012370194f978cc3f17a5465ff1accfaa244c32",
+      "crlf_antes": 135,
+      "bytes_despues": 9284,
+      "sha256_despues": "0e1a1fb2d12a2c6d40cb71026f5b6b691f6f1d71008d44d2997c8f81189b6a7e",
+      "sha256_lf_despues": "abb0bdf321d9d8faeec07a45d012370194f978cc3f17a5465ff1accfaa244c32",
+      "crlf_despues": 135,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "4e53e5b5-a2ba-4a78-9744-5290e5e372f7",
+      "titulo": "AESIA — Actualidad y novedades",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_4e53e5b5-a2ba-4a78-9744-5290e5e372f7.txt",
+      "bytes_antes": 6728,
+      "sha256_antes": "712fd3cfba5082f355df022b49d43aca0398d02a0f212f2517794ece451a39e4",
+      "sha256_lf_antes": "059d63482318cf9be272d8e5a7005c5f1dd700287dba2fad1173e0c4c26c675c",
+      "crlf_antes": 111,
+      "bytes_despues": 6728,
+      "sha256_despues": "712fd3cfba5082f355df022b49d43aca0398d02a0f212f2517794ece451a39e4",
+      "sha256_lf_despues": "059d63482318cf9be272d8e5a7005c5f1dd700287dba2fad1173e0c4c26c675c",
+      "crlf_despues": 111,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "bb1e6b7a-5397-4bd5-9661-ffa6cb30ec0a",
+      "titulo": "RGPD — Reglamento (UE) 2016/679 texto oficial completo",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\rgpd_bb1e6b7a-5397-4bd5-9661-ffa6cb30ec0a.txt",
+      "bytes_antes": 408024,
+      "sha256_antes": "959fdd9d8fecf562fff37658fac5f47cf9a24e765b0e6aebb3fde8732fff5beb",
+      "sha256_lf_antes": "f8bbc9a915e5fe040035bbff6bfb2ecbbb31c198264b8e618615673ece88fd1b",
+      "crlf_antes": 4084,
+      "bytes_despues": 408024,
+      "sha256_despues": "959fdd9d8fecf562fff37658fac5f47cf9a24e765b0e6aebb3fde8732fff5beb",
+      "sha256_lf_despues": "f8bbc9a915e5fe040035bbff6bfb2ecbbb31c198264b8e618615673ece88fd1b",
+      "crlf_despues": 4084,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "137c461c-c4dd-4695-a176-9236021298a8",
+      "titulo": "LOPDGDD — Ley Organica 3/2018 texto consolidado",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\lopdgdd_137c461c-c4dd-4695-a176-9236021298a8.txt",
+      "bytes_antes": 270433,
+      "sha256_antes": "aa21f0ae9fbbb80a50bc583e3b6edac8e8e35656589686b38e45e351eeff8d72",
+      "sha256_lf_antes": "a0ce53a1f43fa8f495a37fd660b3847f2f83af3d07e11a18fa7b64132b36a46f",
+      "crlf_antes": 3564,
+      "bytes_despues": 270433,
+      "sha256_despues": "aa21f0ae9fbbb80a50bc583e3b6edac8e8e35656589686b38e45e351eeff8d72",
+      "sha256_lf_despues": "a0ce53a1f43fa8f495a37fd660b3847f2f83af3d07e11a18fa7b64132b36a46f",
+      "crlf_despues": 3564,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "7c4555bd-4468-4ae3-bba2-8818440ade1c",
+      "titulo": "AESIA — Real Decreto 729/2023 Estatuto de la Agencia texto consolidado",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_7c4555bd-4468-4ae3-bba2-8818440ade1c.txt",
+      "bytes_antes": 108439,
+      "sha256_antes": "538b468cf2559811614290afaae847c166994750e0f73dac18fe9bb91cdebc98",
+      "sha256_lf_antes": "f17fd8bcbc038a0fb35e58d86d32aae089ca7cc0a8d0c95a64853aec171c239d",
+      "crlf_antes": 1466,
+      "bytes_despues": 108439,
+      "sha256_despues": "538b468cf2559811614290afaae847c166994750e0f73dac18fe9bb91cdebc98",
+      "sha256_lf_despues": "f17fd8bcbc038a0fb35e58d86d32aae089ca7cc0a8d0c95a64853aec171c239d",
+      "crlf_despues": 1466,
+      "sin_cambios": true
+    },
+    {
+      "uuid": "6bda7d60-9756-43a1-8866-f16d91168cea",
+      "titulo": "Dossier juridico-operativo AESIA / RGPD / LOPDGDD (elaborado por Zara)",
+      "ruta": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\dossier_6bda7d60-9756-43a1-8866-f16d91168cea.txt",
+      "bytes_antes": 15935,
+      "sha256_antes": "af5cd674a9ee7b65cb0f698ed267007b73c0523ff33cae26b773b117e30af92c",
+      "sha256_lf_antes": "bcbe128c07da3218f41105d0ffdaf9baa91de6b985c7bb2af982f0236b8e485e",
+      "crlf_antes": 447,
+      "bytes_despues": 15935,
+      "sha256_despues": "af5cd674a9ee7b65cb0f698ed267007b73c0523ff33cae26b773b117e30af92c",
+      "sha256_lf_despues": "bcbe128c07da3218f41105d0ffdaf9baa91de6b985c7bb2af982f0236b8e485e",
+      "crlf_despues": 447,
+      "sin_cambios": true
+    }
+  ],
+  "evidencia_linux": {
+    "estado": "no consta log Linux separado en el kit ni en el PR #6",
+    "detalle": "El cuerpo del PR #6 declara 5 pruebas locales sin especificar sistema operativo; no hay checks de CI. No se inventa una ejecución Linux.",
+    "pr_url": "https://github.com/wmejiasbcn-tech/Will-App-WAIPL-RAG/pull/6"
+  },
+  "logs": [
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_tests_windows.log",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_dry_run.log",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_apply.log",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_functional_windows.log",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_regression_gate_windows.log",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_source_diff.txt",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\initial_hashes.json",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\after_hashes.json",
+    "C:\\Users\\USER\\Desktop\\AutoClaw\\.cluster\\p1-dike-20261113\\evidence\\p1_nine_files_hashes.csv"
+  ],
+  "entrega_documental": "C:\\Users\\USER\\Desktop\\AutoClaw\\DELIVERY\\P1-DIKE-20261113",
+  "nota_cierre": "No se hace merge ni se declara P1 cerrado. Carla revisa y acepta."
+}

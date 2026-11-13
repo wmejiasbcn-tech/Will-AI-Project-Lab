@@ -1,0 +1,136 @@
+![Financiado por la Unión Europea](https://aesia.digital.gob.es/img/logos_ue.png)
+
+[![AESIA](https://aesia.digital.gob.es/img/logo.png)](https://aesia.digital.gob.es/es)
+
+[Recursos europeos](https://aesia.digital.gob.es/es/recursos)
+
+## El Reglamento Europeo de Inteligencia Artificial: Sistemas de alto riesgo
+
+El **Capítulo III** del [Reglamento (UE) 2024/1689 de Inteligencia Artificial](https://www.boe.es/buscar/doc.php?id=DOUE-L-2024-81079) regula los sistemas de inteligencia artificial de alto riesgo (HRAIS, por sus siglas en inglés - _High Risk Artificial Intelligence System_-). Se trata de aquellos sistemas que pueden afectar a la salud o a los derechos fundamentales de las personas, por lo que deben cumplir unos requisitos y obligaciones concretas para acceder al mercado de la Unión Europea; además, están sujetos a **supervisión** por autoridades administrativas.
+
+Para la introducción en el mercado requieren, como norma general, una autoevaluación técnica y legal, conforme al procedimiento del Anexo VII. En los sectores armonizados del Anexo I, Sección A, se regirán por su normativa especial.
+
+**Gobernanza**
+
+|     |     |     |
+| --- | --- | --- |
+|  |  | Sistemas de gestión de riesgos (artículo 9) |
+|  |  | Datos y Gobernanza de datos (artículo 10) |
+|  |  | Documentación técnica (artículo 11) |
+|  |  | Conservación de registros (artículo 12) |
+|  |  | Transparencia (artículo 13) |
+|  |  | Supervisión humana (artículo 14) |
+|  |  | Precisión solidez y ciberseguridad (artículo 15) |
+
+**Vigilancia de Mercado**
+
+La **supervisión, inspección y sanción** en la poscomercialización se llevará a cabo por diferentes Autoridades de Vigilancia de Mercado (AVMs), según el objeto y efectos del sistema de IA: AESIA, AEPD, Banco de España, Consejo General del Poder Judicial y las AVMs de los sectores armonizados del Anexo I, Sección A del Reglamento.
+
+**Ejemplos de Sistemas de Alto Riesgo**
+
+|     |     |     |
+| --- | --- | --- |
+|  | ![](https://aesia.developallin.com/storage/media/927d5197-a34e-4906-aa13-40965731a285.png) | Sistema de IA que regula el tráfico en una ciudad mediante la adaptación del estado de los semáforos en función del tráfico y de los peatones. |
+|  |  |
+|  | ![](https://aesia.developallin.com/storage/media/377c3063-feb2-494a-b0a6-680ca12a9279.png) | Sistema de IA que analiza en tiempo real las actividades del alumnado durante un examen con el objetivo de saber si están copiando. |
+|  |  |
+|  | ![](https://aesia.developallin.com/storage/media/c3e13d24-67ea-420f-84db-c0cda8fec300.png) | Sistema de IA que analiza de forma constante y autónoma la calidad y potabilidad del agua de una ciudad, haciendo las correcciones necesarias para alcanzar su potabilidad. |
+|  |  |
+|  | ![](https://aesia.developallin.com/storage/media/648e86af-60ff-48cd-98f8-757e18f5cdc8.png) | Juguete infantil que se comunica con el niño o niña por medio de voz y que habla con él o ella con el fin de animar cuando estén tristes. |
+|  |  |
+
+**Anexo I, Sección A**
+
+Este anexo enumera diversas leyes de armonización de la UE basados en el nuevo marco legislativo. Se trata de actos legislativos que abarcan una gran variedad de ámbitos y que tienen como objeto normalizar las normas en todos los Estados miembros.
+
+Componentes de seguridad de productos, sólo en aquellos productos ya sujetos a evaluación por terceros en sectores armonizados:
+
+|     |     |     |
+| --- | --- | --- |
+|  |  | Industriales (máquinas, ascensores, sistemas de protección -epis-, equipos a presión o aparatos a gas) |
+|  |  | Juguetes |
+|  |  | Embarcaciones de recreo |
+|  |  | Equipos radioeléctricos |
+|  |  | Para transporte por cable |
+|  |  | Sanitarios, incluyendo diagnósticos in vitro |
+|  |  | Transportes (aviación, ferroviario, equipos marinos y homologación de vehículos a motor de 2 y 3 ruedas y agrícolas) |
+
+**Anexo III**
+
+Sistemas de IA de alto riesgo a que se refiere el artículo 6, apartado 2.
+
+|     |     |     |
+| --- | --- | --- |
+|  |  | **1\. Biometría no prohibida**: Sistemas de IA que identifican remotamente, que categorizan sobre la base de características sensibles o reconocen emociones. |
+|  |  | **2\. Infraestructuras críticas**: si son elementos de seguridad en infraestructuras de tráfico rodado o suministro de gas, agua, calefacción o electricidad. |
+|  |  | **3\. Educación y formación profesional**: si decide la admisión, evalúa el aprendizaje o el nivel de educación que recibirá, o si detecta comportamientos prohibidos en exámenes. |
+|  |  | **4\. Empleo, gestión de los trabajadores y acceso al autoempleo**: Si decide la contratación, filtra y evalúa candidatos, o si decide condiciones de trabajo, tareas, el rendimiento, ascensos o despidos. |
+|  |  | **5\. Acceso a servicios privados esenciales y a servicios y prestaciones públicos esenciales y disfrute de estos servicios y prestaciones**: como la asistencia sanitaria, incluyendo la reducción o retirada de dichos servicios. Además, si evalúa la solvencia crediticia o evalúa riesgos y fija precios en seguros de vida y salud. También, si evalúa llamadas de emergencia y prioriza servicios. |
+|  |  | **6\. Garantías de cumplimiento del Derecho**: Si evalúa pruebas, o el riesgo de ser víctima, o que alguien cometa un delito. También si elabora perfiles. |
+|  |  | **7\. Migración, asilo y gestión del control fronterizo**: Si ayuda a las autoridades como herramienta, evalúa riesgos para la seguridad o la salud, o si examina solicitudes. |
+|  |  | **8\. Administración de justicia y procesos democráticos**: Si ayuda a los Jueces a investigar o a interpretar hechos o la Ley. También si se utiliza para influir el resultado de unas elecciones o en el comportamiento electoral de votantes, salvo que se utilice para organizar, optimizar o estructurar la logística en campañas electorales. |
+
+![](https://aesia.digital.gob.es/curator/media/ria-piramide-sistemas-de-alto-riesgo.png?crop=400%2C800&h=800&w=400&s=37f9eeec3f2e568f02999c3c297355db)
+
+## Actualidad
+
+* * *
+
+En nuestra sección de Actualidad podrás encontrar información sobre los eventos, charlas y conferencias más relevantes en el ámbito de la inteligencia artificial.
+
+[Ver todas](https://aesia.digital.gob.es/es/actualidad)
+
+[![](https://aesia.digital.gob.es/curator/media/faqs-cop-transparencia.png?crop=350%2C175&fit=crop&h=175&w=350&s=a9aec512232822250d8175825647506e)](https://aesia.digital.gob.es/es/recursos/ria-articulo-50-faqs-directrices-sobre-transparencia)
+
+[Recursos europeos](https://aesia.digital.gob.es/es/recursos)
+
+### [FAQs: Directrices de la Comisión sobre la transparencia del contenido generado por IA](https://aesia.digital.gob.es/es/recursos/ria-articulo-50-faqs-directrices-sobre-transparencia)
+
+Preguntas y respuestas sobre las Directrices de la Comisión sobre...
+
+[![](https://aesia.digital.gob.es/curator/media/faqs-cop-transparencia.png?crop=350%2C175&fit=crop&h=175&w=350&s=a9aec512232822250d8175825647506e)](https://aesia.digital.gob.es/es/actualidad/recursos/ria-articulo-50-faqs-codigo-de-buenas-practicas)
+
+[Recursos europeos](https://aesia.digital.gob.es/es/recursos)
+
+### [FAQs: Código de Buenas Prácticas sobre la Transparencia del Contenido Generado por IA](https://aesia.digital.gob.es/es/actualidad/recursos/ria-articulo-50-faqs-codigo-de-buenas-practicas)
+
+Preguntas y respuestas sobre el Código de Buenas Prácticas sobre...
+
+[![](https://aesia.digital.gob.es/curator/media/3937db54-8766-40d9-ada6-db20066176b6.png?crop=350%2C175&fit=crop&h=175&w=350&s=c24d01d7d4d03bfab6abd0f77c178ca8)](https://aesia.digital.gob.es/es/actualidad/recursos/guias-practicas-para-el-cumplimiento-del-ria)
+
+[Recursos europeos](https://aesia.digital.gob.es/es/recursos)
+
+### [Guías prácticas para el cumplimiento del RIA](https://aesia.digital.gob.es/es/actualidad/recursos/guias-practicas-para-el-cumplimiento-del-ria)
+
+Guías prácticas para el cumplimiento del Reglamento europeo de Inteligencia...
+
+[Ver todas](https://aesia.digital.gob.es/es/actualidad)
+
+![AESIA](https://aesia.digital.gob.es/img/logo-footer.png)
+
+Transparencia, compromiso e innovación.
+
+
+- [info@aesia.gob.es](mailto:info@aesia.gob.es)
+- [rrhh@aesia.gob.es](mailto:rrhh@aesia.gob.es)
+
+- Navegación
+  - [Política de cookies](https://aesia.digital.gob.es/es/politica-de-cookies)
+  - [Gestión de cookies](https://aesia.digital.gob.es/es/gestion-de-cookies)
+  - [Política de privacidad y aviso legal](https://aesia.digital.gob.es/es/aviso-legal)
+  - [Aviso de seguridad](https://aesia.digital.gob.es/es/aviso-de-seguridad)
+  - [Requisitos técnicos](https://aesia.digital.gob.es/es/requisitos-tecnicos)
+- Ayuda y soporte
+  - [Accesibilidad](https://aesia.digital.gob.es/es/accesibilidad)
+  - [Contacto](https://aesia.digital.gob.es/es/contacto)
+
+Copyright© 2025 AESIA - Todos los derechos reservados.
+
+
+Usamos cookies de terceros con fines analíticos, en resumen solo usamos las cookies de Google Analytics para poder analizar nuestro tráfico.
+
+
+[Más información](https://aesia.digital.gob.es/es/ofertas-funcionarios/concurso-especifico-1e2025)
+Rechazar
+
+Aceptar

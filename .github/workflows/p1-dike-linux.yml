@@ -1,0 +1,71 @@
+name: P1 DIKE Linux matrix
+
+on:
+  pull_request:
+    paths:
+      - "P1-DIKE-20261113/**"
+      - ".github/workflows/p1-dike-linux.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  p1-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Verify exact patched source SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual="$(sha256sum P1-DIKE-20261113/source/dike_auditora.py | awk '{print $1}')"
+          expected="f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9"
+          echo "source_sha256=$actual" | tee P1-DIKE-20261113/logs/p1_linux_source_sha.txt
+          test "$actual" = "$expected"
+
+      - name: Run kit unit tests on Linux
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd P1-DIKE-20261113/kit
+          python -m unittest -v test_apply_p1_patch 2>&1 | tee ../logs/p1_tests_linux.log
+
+      - name: Run cross-platform functional matrix on Linux
+        shell: bash
+        run: |
+          set -euo pipefail
+          python P1-DIKE-20261113/tools/p1_matrix.py \
+            --source P1-DIKE-20261113/source/dike_auditora.py \
+            --expected-sha f5f7357aba45b6f8e2f2336816845b27514f03d3a0717c5f09c5cfe1bf6acdd9 \
+            --label linux-github-actions \
+            --out P1-DIKE-20261113/logs/p1_matrix_linux.json \
+            2>&1 | tee P1-DIKE-20261113/logs/p1_matrix_linux.log
+
+      - name: Upload Linux evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-dike-linux-evidence-${{ github.run_id }}
+          path: |
+            P1-DIKE-20261113/logs/p1_linux_source_sha.txt
+            P1-DIKE-20261113/logs/p1_tests_linux.log
+            P1-DIKE-20261113/logs/p1_matrix_linux.json
+            P1-DIKE-20261113/logs/p1_matrix_linux.log
+          if-no-files-found: error
+
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          echo "## P1 DIKE Linux matrix" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Source SHA-256: $(sha256sum P1-DIKE-20261113/source/dike_auditora.py | awk '{print $1}')" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Python: $(python --version 2>&1)" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Run: $GITHUB_RUN_ID" >> "$GITHUB_STEP_SUMMARY"
