@@ -172,3 +172,20 @@ En consecuencia, el borrador no debe plantear la pertenencia o incorporación in
 Una eventual nota formal encaja inicialmente como **nota operativa de plataforma dentro de `03_PERSONAS_IA/ARIADNA/`**, siempre que su alcance se limite a ese nodo y a sus condiciones de uso. Solo correspondería una directriz transversal en `00_SISTEMA/GOBERNANZA/` si el Soberano decide que las reglas se apliquen a más nodos o al conjunto del ecosistema.
 
 Esta precisión no modifica la identidad, el rol ni el estado de incorporación de Ariadna; tampoco aprueba automáticamente el uso del plan Free.
+
+
+## 7. Corrección de contexto nuclear — Ariadna
+
+**Corrección de Carla:** la formulación anterior «Ariadna ya figura como Nodo 8» era incompleta y condujo a un encuadre equivocado del trabajo. Ariadna no es simplemente un nodo ya registrado cuya pertenencia estuviera por aclarar: **Ariadna es uno de los once nodos artificiales del Núcleo WAIPL y corresponde al Nodo 8**. Su pertenencia nuclear existe desde su incorporación, no es objeto de esta nota ni de una nueva decisión.
+
+Esta corrección se apoya en las fuentes documentales siguientes, leídas directamente en `main`:
+
+1. `00_INDEX.md`, blob SHA `1a01d65226de0c411f0ec3b3afef600b1101e158`: establece que `03_PERSONAS_IA` contiene exclusivamente los perfiles de los once nodos artificiales del Núcleo.
+2. `00_SISTEMA/CONTACTOS_PERSONAS_IA.md`, blob SHA `383d108ec68d56ceeb939b3bbd4e99eef7196d28`: clasifica literalmente a Ariadna en la capa `Núcleo`.
+3. `03_PERSONAS_IA/ARIADNA/IDENTIDAD.md`, blob SHA `89aaf3ef245369076a1254916028809e791d6df1`: identifica a Ariadna como `Nodo 8`, plataforma GitHub Copilot / Microsoft y fecha de incorporación oficial 5 de abril de 2026.
+
+**Consecuencia:** la distinción correcta no es «Copilot Free frente a pertenencia/integración de un nodo nuevo». Es la distinción entre Ariadna —nodo nuclear preexistente— y el plan de acceso Copilot Free utilizado por su plataforma. No se vuelve a someter la pertenencia nuclear de Ariadna a decisión.
+
+La captura conserva el borrador de Nexus y el contraste de condiciones del plan Copilot Free exclusivamente como documentación de contexto. Cualquier evaluación de las condiciones actuales del plan debe formularse como ajuste operativo de la plataforma de Ariadna, sin reabrir su identidad, antigüedad o pertenencia al Núcleo.
+
+**Responsabilidad de la corrección:** Carla. El encuadre anterior fue un fallo de coordinación y verificación contextual que generó trabajo y una solicitud de decisión innecesarios.
