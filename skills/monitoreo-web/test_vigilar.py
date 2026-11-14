@@ -39,6 +39,76 @@ class HuellaStreamTests(unittest.TestCase):
         self.assertEqual(heredada, huella_legacy(cuerpo))
 
 
+class IncompleteResponseTests(unittest.TestCase):
+    def test_rejects_content_length_truncation(self) -> None:
+        with self.assertRaisesRegex(ValueError, "respuesta truncada"):
+            huellas_de_stream(
+                io.BytesIO(b"contenido corto"),
+                tamano=4,
+                longitud_esperada=30,
+            )
+
+    def test_incomplete_read_is_not_treated_as_empty_body(self) -> None:
+        empty_hash = hashlib.sha256(b"").hexdigest()
+        anterior = {
+            "estado": "200",
+            "huella": empty_hash,
+            "huella_version": VERSION_HUELLA,
+        }
+        fila = {
+            "estado": "200",
+            "huella": None,
+            "huella_legacy": None,
+            "ms": "120",
+        }
+
+        cambio, fallo = detectar(anterior, fila, aviso=800, corte=2000)
+
+        self.assertIn("cuerpo incompleto", cambio)
+        self.assertIn("revisión necesaria", cambio)
+        self.assertTrue(requiere_revision_migracion(anterior, cambio))
+        self.assertTrue(fallo)
+
+    def test_empty_and_nonempty_bodies_are_distinct_in_both_directions(self) -> None:
+        empty_hash = hashlib.sha256(b"").hexdigest()
+        body_hash = hashlib.sha256(b"contenido").hexdigest()
+        for old_hash, new_hash in ((empty_hash, body_hash), (body_hash, empty_hash)):
+            anterior = {
+                "estado": "200",
+                "huella": old_hash,
+                "huella_version": VERSION_HUELLA,
+            }
+            fila = {
+                "estado": "200",
+                "huella": new_hash,
+                "huella_legacy": hashlib.sha256(b"contenido").hexdigest(),
+                "ms": "120",
+            }
+
+            cambio, fallo = detectar(anterior, fila, aviso=800, corte=2000)
+
+            self.assertIn("cambió el contenido", cambio)
+            self.assertFalse(fallo)
+
+    def test_status_change_during_legacy_migration_requires_review(self) -> None:
+        body = b"contenido estable"
+        legacy = huella_legacy(body)
+        anterior = {"estado": "200", "huella": legacy}
+        fila = {
+            "estado": "404",
+            "huella": hashlib.sha256(body).hexdigest(),
+            "huella_legacy": legacy,
+            "ms": "120",
+        }
+
+        cambio, fallo = detectar(anterior, fila, aviso=800, corte=2000)
+
+        self.assertIn("estado 200 → 404", cambio)
+        self.assertIn("revisión necesaria", cambio)
+        self.assertTrue(requiere_revision_migracion(anterior, cambio))
+        self.assertFalse(fallo)
+
+
 class FingerprintMigrationTests(unittest.TestCase):
     def test_unchanged_legacy_fingerprint_is_verified_before_rebase(self) -> None:
         cuerpo = b"texto   con\nespacios y \xff"
