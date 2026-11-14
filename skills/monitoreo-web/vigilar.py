@@ -18,6 +18,8 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+VERSION_HUELLA = "sha256-bytes-v1"
+
 def leer_lineas(ruta: Path) -> list[str]:
     if not ruta.exists():
         return []
@@ -118,7 +120,11 @@ def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[st
     else:
         if antes.get("estado") != fila["estado"]:
             partes.append(f"estado {antes.get('estado')} → {fila['estado']}")
-        if "huella" not in antes:
+        if antes.get("huella_version") != VERSION_HUELLA:
+            # Las huellas previas usaban otra normalización. Renovar la referencia
+            # evita presentar el cambio de algoritmo como un cambio real de la página.
+            partes.append("referencia renovada (cambio de algoritmo de huella)")
+        elif "huella" not in antes:
             partes.append("sin huella anterior")
         elif antes.get("huella") != fila["huella"]:
             partes.append("cambió el contenido")
@@ -212,7 +218,7 @@ def main() -> None:
         fila["cambio"] = cambio
         fila["fallo"] = tardo
         filas.append(fila)
-        nuevo[url] = {"estado": fila["estado"], "huella": fila["huella"], "ms": fila["ms"], "cuando": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+        nuevo[url] = {"estado": fila["estado"], "huella": fila["huella"], "huella_version": VERSION_HUELLA, "ms": fila["ms"], "cuando": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
         if not str(fila["estado"]).startswith("2") or tardo:
             fallo = True
         try:
