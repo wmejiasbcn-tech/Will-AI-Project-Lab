@@ -51,14 +51,22 @@ def leer_umbrales(ruta: Path, aviso: int | None, corte: int | None) -> tuple[int
         raise SystemExit("el corte tiene que ser mayor o igual que el aviso, y ninguno negativo")
     return valores["aviso"], valores["corte"]
 
-def huella_de(cuerpo: bytes) -> str:
-    # Se conserva el contenido numérico: puede representar precios, versiones o años.
-    # Solo se normalizan espacios; el cuerpo completo se lee antes de calcular la huella.
-    plano = " ".join(cuerpo.decode("utf-8", "replace").split())
-    return hashlib.sha256(plano.encode("utf-8")).hexdigest()
+def huella_de_stream(flujo, tamano: int = 64 * 1024) -> str:
+    """Calcula la huella incrementalmente sobre los bytes originales de la respuesta.
+
+    No decodifica el contenido ni lo copia en memoria: conserva cualquier charset
+    y permite detectar cambios en respuestas de cualquier tamaño.
+    """
+    digest = hashlib.sha256()
+    while True:
+        bloque = flujo.read(tamano)
+        if not bloque:
+            break
+        digest.update(bloque)
+    return digest.hexdigest()
 
 def mirar(url: str, espera: float) -> dict:
-    fila = {"url": url, "estado": "—", "ms": "—", "candado": "—", "huella": "", "nota": ""}
+    fila = {"url": url, "estado": "—", "ms": "—", "candado": "—", "huella": hashlib.sha256(b"").hexdigest(), "nota": ""}
     try:
         partes = urllib.parse.urlsplit(url)
         if partes.scheme not in ("https", "http") or not partes.hostname or partes.username or partes.password:
@@ -73,20 +81,18 @@ def mirar(url: str, espera: float) -> dict:
     try:
         req = urllib.request.Request(url, method="GET", headers={"User-Agent": "waipl-vigilar/1"})
         with urllib.request.urlopen(req, timeout=espera) as resp:
-            cuerpo = resp.read()
+            fila["huella"] = huella_de_stream(resp)
             fila["estado"] = str(resp.status)
     except urllib.error.HTTPError as exc:
         fila["estado"] = str(exc.code)
         fila["nota"] = "respondió con error"
         try:
-            cuerpo = exc.read()
+            fila["huella"] = huella_de_stream(exc)
         except Exception:
-            cuerpo = b""
+            fila["huella"] = hashlib.sha256(b"").hexdigest()
     except Exception as exc:
-        cuerpo = b""
         fila["nota"] = type(exc).__name__
     fila["ms"] = str(int((time.perf_counter() - inicio) * 1000))
-    fila["huella"] = huella_de(cuerpo)
 
     if partes.scheme == "http":
         fila["candado"] = "no aplica"
