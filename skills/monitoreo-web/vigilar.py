@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Mira unas direcciones web y deja un informe de fondo oscuro.
 
-Comprueba tres cosas: si la página responde, cuánto tarda y cuántos días
-le quedan al candado (el certificado que cifra la visita). No entra en
-cuentas y no guarda secretos.
+Anota si responden, cuánto tardan, los días del candado y si cambiaron
+respecto a la mirada anterior. No entra en cuentas y no guarda secretos.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
+import re
 import ssl
 import time
 import urllib.error
@@ -15,36 +17,76 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+TOPE = 65536
+
+
+def leer_lineas(ruta: Path) -> list[str]:
+    if not ruta.exists():
+        return []
+    lineas = []
+    for linea in ruta.read_text(encoding="utf-8").splitlines():
+        linea = linea.strip()
+        if linea and not linea.startswith("#"):
+            lineas.append(linea)
+    return lineas
+
 
 def leer_objetivos(ruta: Path, extras: list[str]) -> list[str]:
-    vistos: list[str] = []
-    if ruta.exists():
-        for linea in ruta.read_text(encoding="utf-8").splitlines():
-            linea = linea.strip()
-            if linea and not linea.startswith("#"):
-                vistos.append(linea)
-    vistos.extend(extras)
     unicos: list[str] = []
-    for url in vistos:
+    for url in leer_lineas(ruta) + extras:
         if url not in unicos:
             unicos.append(url)
     return unicos
 
 
+def leer_umbrales(ruta: Path, aviso: int | None, corte: int | None) -> tuple[int, int]:
+    valores = {"aviso": 800, "corte": 2000}
+    for linea in leer_lineas(ruta):
+        if "=" not in linea:
+            continue
+        clave, valor = linea.split("=", 1)
+        clave = clave.strip()
+        if clave in valores:
+            valores[clave] = int(valor.strip())
+    if aviso is not None:
+        valores["aviso"] = aviso
+    if corte is not None:
+        valores["corte"] = corte
+    if valores["aviso"] < 0 or valores["corte"] < valores["aviso"]:
+        raise SystemExit("el corte tiene que ser mayor o igual que el aviso, y ninguno negativo")
+    return valores["aviso"], valores["corte"]
+
+
+def huella_de(cuerpo: bytes) -> str:
+    if not cuerpo:
+        return ""
+    # Los números sueltos (un reloj, un contador) no cuentan como cambio.
+    plano = " ".join(cuerpo.decode("utf-8", "replace").split())
+    plano = re.sub(r"\d+", "0", plano)
+    return hashlib.sha256(plano.encode("utf-8")).hexdigest()
+
+
 def mirar(url: str, espera: float) -> dict:
-    fila = {"url": url, "estado": "—", "ms": "—", "candado": "—", "nota": ""}
+    fila = {"url": url, "estado": "—", "ms": "—", "candado": "—", "huella": "", "nota": ""}
+    cuerpo = b""
     inicio = time.perf_counter()
     try:
         req = urllib.request.Request(url, method="GET", headers={"User-Agent": "waipl-vigilar/1"})
         with urllib.request.urlopen(req, timeout=espera) as resp:
-            resp.read(1024)
+            cuerpo = resp.read(TOPE)
             fila["estado"] = str(resp.status)
     except urllib.error.HTTPError as exc:
         fila["estado"] = str(exc.code)
         fila["nota"] = "respondió con error"
+        try:
+            cuerpo = exc.read(TOPE)
+        except Exception:
+            cuerpo = b""
     except Exception as exc:
         fila["nota"] = type(exc).__name__
     fila["ms"] = str(int((time.perf_counter() - inicio) * 1000))
+    if cuerpo:
+        fila["huella"] = huella_de(cuerpo)
 
     host = url.split("://", 1)[-1].split("/", 1)[0].split(":", 1)[0]
     try:
@@ -52,8 +94,7 @@ def mirar(url: str, espera: float) -> dict:
         with ctx.wrap_socket(__import__("socket").create_connection((host, 443), espera), server_hostname=host) as sock:
             cert = sock.getpeercert()
         caduca = datetime.strptime(cert["notAfter"], "%b %d %H:%M:%S %Y %Z").replace(tzinfo=timezone.utc)
-        dias = (caduca - datetime.now(timezone.utc)).days
-        fila["candado"] = str(dias)
+        fila["candado"] = str((caduca - datetime.now(timezone.utc)).days)
     except Exception as exc:
         if fila["candado"] == "—":
             fila["candado"] = "sin dato"
@@ -62,20 +103,45 @@ def mirar(url: str, espera: float) -> dict:
     return fila
 
 
-def html(filas: list[dict], minimo: int) -> str:
+def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[str, bool]:
+    partes: list[str] = []
+    fallo = False
+    if antes is None:
+        partes.append("primera mirada")
+    else:
+        if antes.get("estado") != fila["estado"]:
+            partes.append(f"estado {antes.get('estado')} → {fila['estado']}")
+        if antes.get("huella") and fila["huella"] and antes.get("huella") != fila["huella"]:
+            partes.append("cambió el contenido")
+        if not partes:
+            partes.append("igual")
+    try:
+        ms = int(fila["ms"])
+    except ValueError:
+        ms = None
+    if ms is not None and ms >= corte:
+        partes.append(f"pasó el corte de {corte} ms")
+        fallo = True
+    elif ms is not None and ms >= aviso:
+        partes.append(f"pasó el aviso de {aviso} ms")
+    return "; ".join(partes), fallo
+
+
+def html(filas: list[dict], minimo: int, aviso: int, corte: int) -> str:
     ahora = datetime.now().strftime("%Y-%m-%d %H:%M")
     cuerpo = []
     for f in filas:
-        malo = not str(f["estado"]).startswith("2")
+        malo = not str(f["estado"]).startswith("2") or f["fallo"]
         try:
             candado_mal = int(f["candado"]) < minimo
         except ValueError:
             candado_mal = True
-        color = "#E6E6E6" if not (malo or candado_mal) else "#F0C674"
+        color = "#F0C674" if (malo or candado_mal or "pasó el aviso" in f["cambio"] or "cambió" in f["cambio"] or "estado" in f["cambio"]) else "#E6E6E6"
         cuerpo.append(
             "<tr>"
             f"<td>{f['url']}</td><td>{f['estado']}</td><td>{f['ms']}</td>"
-            f"<td style=\"color:{color}\">{f['candado']}</td><td>{f['nota']}</td>"
+            f"<td style=\"color:{color}\">{f['candado']}</td>"
+            f"<td style=\"color:{color}\">{f['cambio']}</td><td>{f['nota']}</td>"
             "</tr>"
         )
     return f"""<!DOCTYPE html>
@@ -96,9 +162,9 @@ tr:nth-child(even) td{{background:#181818}}
 </head>
 <body>
 <h1>Vigilancia web</h1>
-<p>{ahora}. Un candado con menos de {minimo} días se marca. Estado 2xx es respuesta normal.</p>
+<p>{ahora}. Aviso de tardanza: {aviso} ms. Corte: {corte} ms. Candado marcado por debajo de {minimo} días. Estado 2xx es respuesta normal.</p>
 <table>
-<tr><th>Dirección</th><th>Estado</th><th>Milisegundos</th><th>Días de candado</th><th>Nota</th></tr>
+<tr><th>Dirección</th><th>Estado</th><th>Milisegundos</th><th>Días de candado</th><th>Cambio</th><th>Nota</th></tr>
 {''.join(cuerpo)}
 </table>
 </body>
@@ -107,33 +173,56 @@ tr:nth-child(even) td{{background:#181818}}
 
 
 def main() -> None:
+    aqui = Path(__file__).parent
     p = argparse.ArgumentParser(description="Vigila direcciones web.")
-    p.add_argument("--lista", default=str(Path(__file__).with_name("objetivos.txt")))
+    p.add_argument("--lista", default=str(aqui / "objetivos.txt"))
+    p.add_argument("--umbrales", default=str(aqui / "umbrales.txt"))
+    p.add_argument("--estado", default=str(aqui / "estado.json"))
     p.add_argument("--url", action="append", default=[])
     p.add_argument("--espera", type=float, default=12)
     p.add_argument("--dias", type=int, default=14, help="Por debajo de estos días el candado se marca.")
+    p.add_argument("--aviso", type=int, default=None, help="Milisegundos a partir de los que se marca la tardanza.")
+    p.add_argument("--corte", type=int, default=None, help="Milisegundos a partir de los que la vigilancia falla.")
     p.add_argument("--salida", default="")
     args = p.parse_args()
 
+    aviso, corte = leer_umbrales(Path(args.umbrales), args.aviso, args.corte)
     urls = leer_objetivos(Path(args.lista), args.url)
     if not urls:
         raise SystemExit("no hay direcciones")
-    filas = [mirar(url, args.espera) for url in urls]
-    informe = html(filas, args.dias)
+
+    ruta_estado = Path(args.estado)
+    anterior = {}
+    if ruta_estado.exists():
+        anterior = json.loads(ruta_estado.read_text(encoding="utf-8"))
+
+    filas = []
+    nuevo = {}
+    fallo = False
+    for url in urls:
+        fila = mirar(url, args.espera)
+        cambio, tardo = detectar(anterior.get(url), fila, aviso, corte)
+        fila["cambio"] = cambio
+        fila["fallo"] = tardo
+        filas.append(fila)
+        nuevo[url] = {"estado": fila["estado"], "huella": fila["huella"], "ms": fila["ms"], "cuando": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+        if not str(fila["estado"]).startswith("2") or tardo:
+            fallo = True
+        try:
+            if int(fila["candado"]) < args.dias:
+                fallo = True
+        except ValueError:
+            fallo = True
+
+    ruta_estado.write_text(json.dumps(nuevo, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    informe = html(filas, args.dias, aviso, corte)
     if args.salida:
         Path(args.salida).write_text(informe, encoding="utf-8")
         print(args.salida)
     else:
         print(informe)
-    fallo = False
     for f in filas:
-        if not str(f["estado"]).startswith("2"):
-            fallo = True
-        try:
-            if int(f["candado"]) < args.dias:
-                fallo = True
-        except ValueError:
-            fallo = True
+        print(f"{f['url']}  {f['estado']}  {f['ms']} ms  {f['cambio']}")
     raise SystemExit(1 if fallo else 0)
 
 
