@@ -1,0 +1,3 @@
+# Tardanza en milisegundos. Aviso marca. Corte hace fallar la vigilancia.
+aviso=800
+corte=2000
