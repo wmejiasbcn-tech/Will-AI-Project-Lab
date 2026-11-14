@@ -27,7 +27,7 @@ Están en `umbrales.txt`. Se cambian ahí, o en la llamada con `--aviso` y `--co
 1. Solo direcciones públicas. Una por línea en `objetivos.txt`. Lo que empieza por `#` no se mira.
 2. De cada una se anota: el estado, los milisegundos, los días de candado y el cambio.
 3. La primera mirada dice «primera mirada». La siguiente dice «igual», «cambió el contenido» o «estado A → B».
-4. La huella se calcula sobre el cuerpo completo de la respuesta. Se normalizan espacios, pero se conservan los números porque pueden ser precios, versiones o años. Si una página incluye contadores o relojes dinámicos, su exclusión requiere una regla específica para esa página; no se eliminan todos los números indiscriminadamente.
+4. La huella se calcula incrementalmente sobre todos los bytes originales de la respuesta, sin decodificar ni almacenar el cuerpo completo en memoria. Así se conservan caracteres de cualquier codificación y se detectan cambios también en respuestas grandes. Los cambios de espacios o de codificación también cuentan como cambios; no se eliminan números ni otros contenidos indiscriminadamente.
 5. La referencia queda en `estado.json`, al lado del script. No se deposita en el repositorio: es de la máquina que vigila, no del canon.
 6. Si el candado tiene menos de 14 días, se marca. El número se cambia con `--dias`.
 7. El informe lleva fondo `#121212`. Lo dice la skill `fondo-oscuro-canonico`.
