@@ -120,14 +120,14 @@ def requiere_revision_migracion(antes: dict | None, cambio: str) -> bool:
     if antes is None:
         return False
     return (
-        "cambió el contenido (huella heredada)" in cambio
+        "revisión necesaria" in cambio
+        or "cambió el contenido (huella heredada)" in cambio
         or "versión de huella no compatible" in cambio
         or "no se pudo comparar la huella heredada" in cambio
     )
 
 
 def mirar(url: str, espera: float) -> dict:
-    vacia = hashlib.sha256(b"").hexdigest()
     fila = {
         "url": url,
         "estado": "—",
