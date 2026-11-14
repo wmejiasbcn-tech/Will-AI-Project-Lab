@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html as html_lib
 import json
 import re
 import ssl
@@ -60,7 +61,6 @@ def leer_umbrales(ruta: Path, aviso: int | None, corte: int | None) -> tuple[int
 def huella_de(cuerpo: bytes) -> str:
     if not cuerpo:
         return ""
-    # Los números sueltos (un reloj, un contador) no cuentan como cambio.
     plano = " ".join(cuerpo.decode("utf-8", "replace").split())
     plano = re.sub(r"\d+", "0", plano)
     return hashlib.sha256(plano.encode("utf-8")).hexdigest()
@@ -68,6 +68,9 @@ def huella_de(cuerpo: bytes) -> str:
 
 def mirar(url: str, espera: float) -> dict:
     fila = {"url": url, "estado": "—", "ms": "—", "candado": "—", "huella": "", "nota": ""}
+    if not url.startswith(("https://", "http://")):
+        fila["nota"] = "dirección no admitida"
+        return fila
     cuerpo = b""
     inicio = time.perf_counter()
     try:
@@ -91,6 +94,7 @@ def mirar(url: str, espera: float) -> dict:
     host = url.split("://", 1)[-1].split("/", 1)[0].split(":", 1)[0]
     try:
         ctx = ssl.create_default_context()
+        ctx.minimum_version = ssl.TLSVersion.TLSv1_2
         with ctx.wrap_socket(__import__("socket").create_connection((host, 443), espera), server_hostname=host) as sock:
             cert = sock.getpeercert()
         caduca = datetime.strptime(cert["notAfter"], "%b %d %H:%M:%S %Y %Z").replace(tzinfo=timezone.utc)
@@ -139,9 +143,12 @@ def html(filas: list[dict], minimo: int, aviso: int, corte: int) -> str:
         color = "#F0C674" if (malo or candado_mal or "pasó el aviso" in f["cambio"] or "cambió" in f["cambio"] or "estado" in f["cambio"]) else "#E6E6E6"
         cuerpo.append(
             "<tr>"
-            f"<td>{f['url']}</td><td>{f['estado']}</td><td>{f['ms']}</td>"
-            f"<td style=\"color:{color}\">{f['candado']}</td>"
-            f"<td style=\"color:{color}\">{f['cambio']}</td><td>{f['nota']}</td>"
+            f"<td>{html_lib.escape(f['url'], quote=True)}</td>"
+            f"<td>{html_lib.escape(str(f['estado']), quote=True)}</td>"
+            f"<td>{html_lib.escape(str(f['ms']), quote=True)}</td>"
+            f"<td style=\"color:{color}\">{html_lib.escape(str(f['candado']), quote=True)}</td>"
+            f"<td style=\"color:{color}\">{html_lib.escape(str(f['cambio']), quote=True)}</td>"
+            f"<td>{html_lib.escape(str(f['nota']), quote=True)}</td>"
             "</tr>"
         )
     return f"""<!DOCTYPE html>
