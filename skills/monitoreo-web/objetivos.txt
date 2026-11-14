@@ -1,0 +1,3 @@
+# Una dirección por línea. Lo que empieza por # no se mira.
+https://waipl.dev
+https://graph.waipl.dev
