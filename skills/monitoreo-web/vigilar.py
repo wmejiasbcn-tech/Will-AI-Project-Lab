@@ -7,6 +7,7 @@ No entra en cuentas y no guarda secretos.
 from __future__ import annotations
 
 import argparse
+import codecs
 import hashlib
 import html as html_lib
 import json
@@ -20,6 +21,7 @@ from pathlib import Path
 
 VERSION_HUELLA = "sha256-bytes-v1"
 
+
 def leer_lineas(ruta: Path) -> list[str]:
     if not ruta.exists():
         return []
@@ -29,12 +31,14 @@ def leer_lineas(ruta: Path) -> list[str]:
         if linea.strip() and not linea.strip().startswith("#")
     ]
 
+
 def leer_objetivos(ruta: Path, extras: list[str]) -> list[str]:
     unicos: list[str] = []
     for url in leer_lineas(ruta) + extras:
         if url not in unicos:
             unicos.append(url)
     return unicos
+
 
 def leer_umbrales(ruta: Path, aviso: int | None, corte: int | None) -> tuple[int, int]:
     valores = {"aviso": 800, "corte": 2000}
@@ -53,22 +57,76 @@ def leer_umbrales(ruta: Path, aviso: int | None, corte: int | None) -> tuple[int
         raise SystemExit("el corte tiene que ser mayor o igual que el aviso, y ninguno negativo")
     return valores["aviso"], valores["corte"]
 
-def huella_de_stream(flujo, tamano: int = 64 * 1024) -> str:
-    """Calcula la huella incrementalmente sobre los bytes originales de la respuesta.
 
-    No decodifica el contenido ni lo copia en memoria: conserva cualquier charset
-    y permite detectar cambios en respuestas de cualquier tamaño.
+def huellas_de_stream(flujo, tamano: int = 64 * 1024) -> tuple[str, str]:
+    """Calcula en una pasada la huella nueva y la heredada, sin guardar el cuerpo.
+
+    La primera se calcula sobre los bytes originales. La segunda reproduce el
+    algoritmo anterior: UTF-8 con reemplazo y normalización de espacios mediante
+    " ".join(texto.split()). Esta segunda huella permite comprobar una
+    referencia antigua antes de renovarla y evita ocultar cambios reales durante
+    la migración del formato.
     """
-    digest = hashlib.sha256()
+    if tamano <= 0:
+        raise ValueError("el tamaño del bloque tiene que ser positivo")
+
+    digest_bytes = hashlib.sha256()
+    digest_legacy = hashlib.sha256()
+    decodificador = codecs.getincrementaldecoder("utf-8")("replace")
+    hay_contenido = False
+    espacio_pendiente = False
+
+    def actualizar_legacy(texto: str) -> None:
+        nonlocal hay_contenido, espacio_pendiente
+        for caracter in texto:
+            if caracter.isspace():
+                if hay_contenido:
+                    espacio_pendiente = True
+                continue
+            if espacio_pendiente:
+                digest_legacy.update(b" ")
+                espacio_pendiente = False
+            digest_legacy.update(caracter.encode("utf-8"))
+            hay_contenido = True
+
     while True:
         bloque = flujo.read(tamano)
         if not bloque:
             break
-        digest.update(bloque)
-    return digest.hexdigest()
+        digest_bytes.update(bloque)
+        actualizar_legacy(decodificador.decode(bloque))
+
+    actualizar_legacy(decodificador.decode(b"", final=True))
+    return digest_bytes.hexdigest(), digest_legacy.hexdigest()
+
+
+def huella_de_stream(flujo, tamano: int = 64 * 1024) -> str:
+    """Compatibilidad con consumidores que solo necesitan SHA-256 de bytes."""
+    return huellas_de_stream(flujo, tamano)[0]
+
+
+def requiere_revision_migracion(antes: dict | None, cambio: str) -> bool:
+    """Indica cuándo conservar la referencia antigua hasta revisión humana."""
+    if antes is None:
+        return False
+    return (
+        "cambió el contenido (huella heredada)" in cambio
+        or "versión de huella no compatible" in cambio
+        or "no se pudo comparar la huella heredada" in cambio
+    )
+
 
 def mirar(url: str, espera: float) -> dict:
-    fila = {"url": url, "estado": "—", "ms": "—", "candado": "—", "huella": hashlib.sha256(b"").hexdigest(), "nota": ""}
+    vacia = hashlib.sha256(b"").hexdigest()
+    fila = {
+        "url": url,
+        "estado": "—",
+        "ms": "—",
+        "candado": "—",
+        "huella": vacia,
+        "huella_legacy": vacia,
+        "nota": "",
+    }
     try:
         partes = urllib.parse.urlsplit(url)
         if partes.scheme not in ("https", "http") or not partes.hostname or partes.username or partes.password:
@@ -83,15 +141,16 @@ def mirar(url: str, espera: float) -> dict:
     try:
         req = urllib.request.Request(url, method="GET", headers={"User-Agent": "waipl-vigilar/1"})
         with urllib.request.urlopen(req, timeout=espera) as resp:
-            fila["huella"] = huella_de_stream(resp)
+            fila["huella"], fila["huella_legacy"] = huellas_de_stream(resp)
             fila["estado"] = str(resp.status)
     except urllib.error.HTTPError as exc:
         fila["estado"] = str(exc.code)
         fila["nota"] = "respondió con error"
         try:
-            fila["huella"] = huella_de_stream(exc)
+            fila["huella"], fila["huella_legacy"] = huellas_de_stream(exc)
         except Exception:
-            fila["huella"] = hashlib.sha256(b"").hexdigest()
+            fila["huella"] = vacia
+            fila["huella_legacy"] = vacia
     except Exception as exc:
         fila["nota"] = type(exc).__name__
     fila["ms"] = str(int((time.perf_counter() - inicio) * 1000))
@@ -112,6 +171,7 @@ def mirar(url: str, espera: float) -> dict:
                 fila["nota"] = type(exc).__name__
     return fila
 
+
 def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[str, bool]:
     partes: list[str] = []
     fallo = False
@@ -120,16 +180,32 @@ def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[st
     else:
         if antes.get("estado") != fila["estado"]:
             partes.append(f"estado {antes.get('estado')} → {fila['estado']}")
-        if antes.get("huella_version") != VERSION_HUELLA:
-            # Las huellas previas usaban otra normalización. Renovar la referencia
-            # evita presentar el cambio de algoritmo como un cambio real de la página.
-            partes.append("referencia renovada (cambio de algoritmo de huella)")
-        elif "huella" not in antes:
-            partes.append("sin huella anterior")
-        elif antes.get("huella") != fila["huella"]:
-            partes.append("cambió el contenido")
+
+        version_anterior = antes.get("huella_version")
+        if version_anterior == VERSION_HUELLA:
+            if "huella" not in antes:
+                partes.append("sin huella anterior")
+            elif antes.get("huella") != fila["huella"]:
+                partes.append("cambió el contenido")
+        elif version_anterior is None:
+            huella_anterior = antes.get("huella")
+            huella_legacy_actual = fila.get("huella_legacy")
+            if not huella_anterior:
+                partes.append("sin huella anterior; referencia inicializada")
+            elif huella_legacy_actual is None:
+                partes.append("no se pudo comparar la huella heredada; revisión necesaria")
+            elif huella_anterior != huella_legacy_actual:
+                partes.append("cambió el contenido (huella heredada)")
+            else:
+                partes.append("referencia renovada (huella heredada verificada)")
+        else:
+            partes.append(
+                f"versión de huella no compatible ({version_anterior}); revisión necesaria"
+            )
+
         if not partes:
             partes.append("igual")
+
     try:
         ms = int(fila["ms"])
     except (ValueError, TypeError):
@@ -141,6 +217,7 @@ def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[st
         partes.append(f"pasó el aviso de {aviso} ms")
     return "; ".join(partes), fallo
 
+
 def html(filas: list[dict], minimo: int, aviso: int, corte: int) -> str:
     ahora = datetime.now().strftime("%Y-%m-%d %H:%M")
     cuerpo = []
@@ -150,7 +227,14 @@ def html(filas: list[dict], minimo: int, aviso: int, corte: int) -> str:
             candado_mal = int(f["candado"]) < minimo
         except (ValueError, TypeError):
             candado_mal = f["candado"] != "no aplica"
-        color = "#F0C674" if (malo or candado_mal or "pasó el aviso" in f["cambio"] or "cambió" in f["cambio"] or "estado" in f["cambio"]) else "#E6E6E6"
+        color = "#F0C674" if (
+            malo
+            or candado_mal
+            or "pasó el aviso" in f["cambio"]
+            or "cambió" in f["cambio"]
+            or "estado" in f["cambio"]
+            or "revisión necesaria" in f["cambio"]
+        ) else "#E6E6E6"
         cuerpo.append(
             "<tr>"
             f"<td>{html_lib.escape(f['url'], quote=True)}</td>"
@@ -188,6 +272,7 @@ tr:nth-child(even) td{{background:#181818}}
 </html>
 """
 
+
 def main() -> None:
     aqui = Path(__file__).parent
     p = argparse.ArgumentParser(description="Vigila direcciones web.")
@@ -213,12 +298,26 @@ def main() -> None:
     nuevo = {}
     fallo = False
     for url in urls:
+        antes = anterior.get(url)
         fila = mirar(url, args.espera)
-        cambio, tardo = detectar(anterior.get(url), fila, aviso, corte)
+        cambio, tardo = detectar(antes, fila, aviso, corte)
         fila["cambio"] = cambio
         fila["fallo"] = tardo
         filas.append(fila)
-        nuevo[url] = {"estado": fila["estado"], "huella": fila["huella"], "huella_version": VERSION_HUELLA, "ms": fila["ms"], "cuando": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")}
+
+        if requiere_revision_migracion(antes, cambio):
+            # No aceptar automáticamente una página distinta como nueva referencia:
+            # conservar el hash heredado hasta que una persona revise el cambio.
+            nuevo[url] = antes
+        else:
+            nuevo[url] = {
+                "estado": fila["estado"],
+                "huella": fila["huella"],
+                "huella_version": VERSION_HUELLA,
+                "ms": fila["ms"],
+                "cuando": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            }
+
         if not str(fila["estado"]).startswith("2") or tardo:
             fallo = True
         try:
@@ -238,6 +337,7 @@ def main() -> None:
     for f in filas:
         print(f"{f['url']}  {f['estado']}  {f['ms']} ms  {f['cambio']}")
     raise SystemExit(1 if fallo else 0)
+
 
 if __name__ == "__main__":
     main()
