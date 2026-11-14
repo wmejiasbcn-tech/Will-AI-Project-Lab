@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: Probar huellas de monitoreo web
+        run: python3 skills/monitoreo-web/test_vigilar.py
+
       - name: Verificar SHA-256 del manifiesto
         id: integrity
         shell: bash
