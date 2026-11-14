@@ -198,7 +198,7 @@ def mirar(url: str, espera: float) -> dict:
 def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[str, bool]:
     partes: list[str] = []
     fallo = False
-    cuerpo_completo = fila.get("huella") is not None and fila.get("huella_legacy") is not None
+    cuerpo_completo = fila.get("huella") is not None
 
     if antes is None:
         partes.append("primera mirada")
@@ -344,7 +344,7 @@ def main() -> None:
         fila["fallo"] = tardo
         filas.append(fila)
 
-        if fila["huella"] is None or fila["huella_legacy"] is None:
+        if fila["huella"] is None:
             # Una lectura fallida o truncada nunca se convierte en una huella vacía.
             # Conservamos la referencia previa; si no existía, no creamos una.
             if antes is not None:
