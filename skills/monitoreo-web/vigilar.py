@@ -58,7 +58,11 @@ def leer_umbrales(ruta: Path, aviso: int | None, corte: int | None) -> tuple[int
     return valores["aviso"], valores["corte"]
 
 
-def huellas_de_stream(flujo, tamano: int = 64 * 1024) -> tuple[str, str]:
+def huellas_de_stream(
+    flujo,
+    tamano: int = 64 * 1024,
+    longitud_esperada: int | None = None,
+) -> tuple[str, str]:
     """Calcula en una pasada la huella nueva y la heredada, sin guardar el cuerpo.
 
     La primera se calcula sobre los bytes originales. La segunda reproduce el
@@ -75,6 +79,7 @@ def huellas_de_stream(flujo, tamano: int = 64 * 1024) -> tuple[str, str]:
     decodificador = codecs.getincrementaldecoder("utf-8")("replace")
     hay_contenido = False
     espacio_pendiente = False
+    total_leido = 0
 
     def actualizar_legacy(texto: str) -> None:
         nonlocal hay_contenido, espacio_pendiente
@@ -93,10 +98,15 @@ def huellas_de_stream(flujo, tamano: int = 64 * 1024) -> tuple[str, str]:
         bloque = flujo.read(tamano)
         if not bloque:
             break
+        total_leido += len(bloque)
         digest_bytes.update(bloque)
         actualizar_legacy(decodificador.decode(bloque))
 
     actualizar_legacy(decodificador.decode(b"", final=True))
+    if longitud_esperada is not None and total_leido != longitud_esperada:
+        raise ValueError(
+            f"respuesta truncada: se recibieron {total_leido} de {longitud_esperada} bytes"
+        )
     return digest_bytes.hexdigest(), digest_legacy.hexdigest()
 
 
@@ -123,8 +133,8 @@ def mirar(url: str, espera: float) -> dict:
         "estado": "—",
         "ms": "—",
         "candado": "—",
-        "huella": vacia,
-        "huella_legacy": vacia,
+        "huella": None,
+        "huella_legacy": None,
         "nota": "",
     }
     try:
@@ -141,18 +151,31 @@ def mirar(url: str, espera: float) -> dict:
     try:
         req = urllib.request.Request(url, method="GET", headers={"User-Agent": "waipl-vigilar/1"})
         with urllib.request.urlopen(req, timeout=espera) as resp:
-            fila["huella"], fila["huella_legacy"] = huellas_de_stream(resp)
             fila["estado"] = str(resp.status)
+            contenido = resp.headers.get("Content-Length")
+            longitud_esperada = int(contenido) if contenido is not None else None
+            if longitud_esperada is not None and longitud_esperada < 0:
+                raise ValueError("Content-Length negativo")
+            fila["huella"], fila["huella_legacy"] = huellas_de_stream(
+                resp, longitud_esperada=longitud_esperada
+            )
     except urllib.error.HTTPError as exc:
         fila["estado"] = str(exc.code)
         fila["nota"] = "respondió con error"
         try:
-            fila["huella"], fila["huella_legacy"] = huellas_de_stream(exc)
-        except Exception:
-            fila["huella"] = vacia
-            fila["huella_legacy"] = vacia
+            contenido = exc.headers.get("Content-Length") if exc.headers else None
+            longitud_esperada = int(contenido) if contenido is not None else None
+            if longitud_esperada is not None and longitud_esperada < 0:
+                raise ValueError("Content-Length negativo")
+            fila["huella"], fila["huella_legacy"] = huellas_de_stream(
+                exc, longitud_esperada=longitud_esperada
+            )
+        except Exception as error_lectura:
+            fila["huella"] = None
+            fila["huella_legacy"] = None
+            fila["nota"] = f"cuerpo HTTP incompleto: {type(error_lectura).__name__}"
     except Exception as exc:
-        fila["nota"] = type(exc).__name__
+        fila["nota"] = f"lectura incompleta o error de respuesta: {type(exc).__name__}"
     fila["ms"] = str(int((time.perf_counter() - inicio) * 1000))
 
     if partes.scheme == "http":
@@ -175,36 +198,52 @@ def mirar(url: str, espera: float) -> dict:
 def detectar(antes: dict | None, fila: dict, aviso: int, corte: int) -> tuple[str, bool]:
     partes: list[str] = []
     fallo = False
+    cuerpo_completo = fila.get("huella") is not None and fila.get("huella_legacy") is not None
+
     if antes is None:
         partes.append("primera mirada")
     else:
-        if antes.get("estado") != fila["estado"]:
-            partes.append(f"estado {antes.get('estado')} → {fila['estado']}")
-
-        version_anterior = antes.get("huella_version")
-        if version_anterior == VERSION_HUELLA:
-            if "huella" not in antes:
-                partes.append("sin huella anterior")
-            elif antes.get("huella") != fila["huella"]:
-                partes.append("cambió el contenido")
-        elif version_anterior is None:
-            huella_anterior = antes.get("huella")
-            huella_legacy_actual = fila.get("huella_legacy")
-            if not huella_anterior:
-                partes.append("sin huella anterior; referencia inicializada")
-            elif huella_legacy_actual is None:
-                partes.append("no se pudo comparar la huella heredada; revisión necesaria")
-            elif huella_anterior != huella_legacy_actual:
-                partes.append("cambió el contenido (huella heredada)")
-            else:
-                partes.append("referencia renovada (huella heredada verificada)")
-        else:
+        estado_cambio = antes.get("estado") != fila["estado"]
+        if estado_cambio:
             partes.append(
-                f"versión de huella no compatible ({version_anterior}); revisión necesaria"
+                f"estado {antes.get('estado')} → {fila['estado']}; revisión necesaria"
             )
+
+        if cuerpo_completo:
+            version_anterior = antes.get("huella_version")
+            if version_anterior == VERSION_HUELLA:
+                if "huella" not in antes or antes.get("huella") is None:
+                    partes.append("sin huella anterior; revisión necesaria")
+                elif antes.get("huella") != fila["huella"]:
+                    partes.append("cambió el contenido")
+            elif version_anterior is None:
+                huella_anterior = antes.get("huella")
+                huella_legacy_actual = fila.get("huella_legacy")
+                if not huella_anterior:
+                    partes.append("sin huella anterior; referencia inicializada")
+                elif huella_legacy_actual is None:
+                    partes.append("no se pudo comparar la huella heredada; revisión necesaria")
+                elif huella_anterior != huella_legacy_actual:
+                    partes.append("cambió el contenido (huella heredada)")
+                elif estado_cambio:
+                    partes.append("huella heredada coincide; revisión necesaria por cambio de estado")
+                else:
+                    partes.append("referencia renovada (huella heredada verificada)")
+            else:
+                partes.append(
+                    f"versión de huella no compatible ({version_anterior}); revisión necesaria"
+                )
+        else:
+            partes.append("cuerpo incompleto o no disponible; revisión necesaria")
+            fallo = True
 
         if not partes:
             partes.append("igual")
+
+    if not cuerpo_completo:
+        if "cuerpo incompleto o no disponible; revisión necesaria" not in partes:
+            partes.append("cuerpo incompleto o no disponible; revisión necesaria")
+        fallo = True
 
     try:
         ms = int(fila["ms"])
@@ -305,9 +344,14 @@ def main() -> None:
         fila["fallo"] = tardo
         filas.append(fila)
 
-        if requiere_revision_migracion(antes, cambio):
-            # No aceptar automáticamente una página distinta como nueva referencia:
-            # conservar el hash heredado hasta que una persona revise el cambio.
+        if fila["huella"] is None or fila["huella_legacy"] is None:
+            # Una lectura fallida o truncada nunca se convierte en una huella vacía.
+            # Conservamos la referencia previa; si no existía, no creamos una.
+            if antes is not None:
+                nuevo[url] = antes
+        elif requiere_revision_migracion(antes, cambio):
+            # No aceptar automáticamente contenido o estados distintos:
+            # conservar la referencia hasta una revisión humana.
             nuevo[url] = antes
         else:
             nuevo[url] = {
@@ -319,6 +363,8 @@ def main() -> None:
             }
 
         if not str(fila["estado"]).startswith("2") or tardo:
+            fallo = True
+        if fila["huella"] is None or fila["huella_legacy"] is None:
             fallo = True
         try:
             if int(fila["candado"]) < args.dias:
