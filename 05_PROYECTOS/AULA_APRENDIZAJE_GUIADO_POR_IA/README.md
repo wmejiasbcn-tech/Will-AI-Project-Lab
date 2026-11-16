@@ -7,7 +7,6 @@ Este directorio contiene únicamente documentación institucional. **El código 
 ## Identidad y denominación
 
 - **Nombre oficial del proyecto:** Aula de Aprendizaje Guiado por IA.
-- **Nombre anterior del proyecto en Lovable:** Aula Progreso Guiado.
 - **Texto que todavía aparece en la entrada de la aplicación:** Aula de Aprendizaje.
 - La armonización del nombre en la plataforma queda pendiente; este README establece la denominación institucional, pero no afirma que la interfaz ya se haya renombrado.
 
