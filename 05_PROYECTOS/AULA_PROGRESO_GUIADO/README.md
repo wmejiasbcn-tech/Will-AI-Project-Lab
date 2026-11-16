@@ -1,88 +1,131 @@
-# Aula Progreso Guiado
+# Aula de Aprendizaje Guiado por IA
 
-Proyecto del ecosistema WAIPL registrado por decisión de William (16-11-2026). Este directorio contiene solo este README: el código del proyecto no está en este repositorio.
+**Proyecto aplicativo del ecosistema WAIPL**, vinculado al Laboratorio **I+D+I+e+A** en sus dimensiones de **e-Learning** e **Inteligencia Artificial**. Se concibe como proyecto embrionario y precursor del futuro **Campus IA de WAIPL**, manteniendo autonomía funcional y documental.
+
+Este directorio contiene únicamente documentación institucional. **El código fuente y la documentación técnica de desarrollo no están en este repositorio.**
+
+## Identidad y denominación
+
+- **Nombre oficial del proyecto:** Aula de Aprendizaje Guiado por IA.
+- **Nombre anterior del proyecto en Lovable:** Aula Progreso Guiado.
+- **Texto que todavía aparece en la entrada de la aplicación:** Aula de Aprendizaje.
+- La armonización del nombre en la plataforma queda pendiente; este README establece la denominación institucional, pero no afirma que la interfaz ya se haya renombrado.
 
 ## Qué es
 
-Una plataforma personal de aprendizaje, en español, para estudiar el **Hugging Face Agents Course** empezando por Python desde cero. Organiza el plan de estudio, la sesión de cada día, la comprobación semanal y el registro del progreso.
+Un entorno digital de aprendizaje guiado, desarrollado inicialmente para organizar un itinerario formativo en español sobre el **Hugging Face Agents Course**, comenzando por fundamentos de Python.
 
-El tutor de la aplicación se presenta como **«modo guiado fijo, sin IA»**: no hay ningún proveedor de IA configurado.
+La primera aplicación reúne planificación formativa, sesiones, contenidos, seguimiento, comprobaciones y registro del progreso. Su uso inicial es personal y sirve como experiencia aplicada para investigar y mejorar metodologías de aprendizaje digital.
 
-## Para quién
+### Capacidad actual y orientación de IA
 
-Para William. Es un espacio privado de un solo usuario: para entrar hace falta iniciar sesión con su cuenta.
+La denominación expresa la dirección estratégica del proyecto. **La versión actualmente verificada mantiene el tutor en «modo guiado fijo, sin IA» y no tiene ningún proveedor de IA conectado.** Por tanto, no se atribuye a la aplicación una tutorización generativa ni una capacidad de IA que todavía no está implementada.
 
-## Estado actual
+La futura incorporación de capacidades de IA requerirá investigación, diseño, pruebas, evaluación, autorización expresa y documentación independiente.
 
-A fecha de 16-11-2026, 03:09 (hora de Madrid):
+## Vinculación con I+D+I+e+A
 
-- Proyecto Lovable «Aula Progreso Guiado», creado el 15-11-2026 a las 14:22 (hora de Madrid).
-- Último commit: `61b7e2bb04ed40567c350387be59684a62a09a41` (16-11-2026, 03:09, hora de Madrid). Solo añade el plan del siguiente bloque (`.lovable/plan.md`); no cambia código.
-- Último cambio funcional: Bloque 1, commit `7ec3721bea1663d409fc2c3cfe40d8bc74f983f4`.
-- Publicado en <https://aula-progreso-guiado.lovable.app>. La dirección es pública, pero para entrar hace falta iniciar sesión con la cuenta de William.
-- Sesiones cargadas: 120 (100 de estudio y 20 revisiones semanales), ninguna de demostración, todas en estado «planificada».
+El proyecto se vincula al corpus propio del Laboratorio I+D+I+e+A:
 
-## Cómo funciona
+- **e — e-Learning:** educación, formación, transferencia de conocimiento y aprendizaje mediante entornos y metodologías digitales.
+- **A — Inteligencia Artificial:** estudio de agentes, tutorización asistida, personalización, evaluación y sistemas basados en IA.
 
-- **Duración:** 20 semanas, del lunes 16-11-2026 al viernes 02-04-2027.
-- **Sesión diaria:** de lunes a viernes, de 16:00 a 16:45 (hora de Madrid), en cuatro bloques:
-  1. 5 minutos: recordar lo hecho y situar la tarea del día.
-  2. 20 minutos: aprender el contenido del día, en español.
-  3. 15 minutos: practicar o hacer la comprobación que toque.
-  4. 5 minutos: registrar lo aprendido, la práctica, la dificultad y el siguiente paso.
-- **Comprobación semanal:** el viernes de cada semana.
-- **Revisión semanal:** el domingo a las 18:00 (hora de Madrid), del 22-11-2026 al 04-04-2027.
-- **Primera semana:** el lunes 16-11 es la bienvenida (presentación del curso y del Aula, sin Python). Python empieza el martes 17-11, en Google Colab.
-- **Fases del plan:**
-  - Semanas 1–4: Python desde cero, solo en Google Colab.
-  - Semanas 5–8: unidades 0 y 1; certificado de fundamentos en la semana 8.
-  - Semanas 9–14: smolagents, LlamaIndex y LangGraph, dos semanas cada uno.
-  - Semanas 15–16: unidad 3, RAG con agentes.
-  - Semanas 17–20: unidad 4, proyecto GAIA y certificado de finalización.
-- **Hitos:** semanas 4, 8, 14, 16 y 20.
+La definición vigente del laboratorio es **Investigación, Desarrollo, Innovación, e-Learning e Inteligencia Artificial**, conforme a su [Acta Fundacional canonizada](https://github.com/wmejiasbcn-tech/I-D-I-e-A/blob/main/00_GOBERNANZA/ACTA_FUNDACIONAL_IDIEA_WAIPL-2026-09-11_v01_APPROVED.md).
 
-## Arquitectura
+La relación es de adscripción temática, investigación aplicada y posible transferencia de conocimiento. El Aula conserva su autonomía como proyecto aplicativo. Sus datos personales de estudio no se incorporan al corpus de I+D+I+e+A.
 
-- Construido en Lovable.
-- TanStack Start (React y TypeScript).
-- Supabase (base de datos PostgreSQL e inicio de sesión).
-- Drizzle para el esquema y las migraciones (`0000` a `0010`).
-- Pruebas automáticas con Vitest.
+La existencia de esta relación no transfiere automáticamente resultados, prototipos ni capacidades al núcleo canónico de WAIPL.
 
-Este README no incluye claves, direcciones internas ni datos de acceso.
+## Proyección: proyecto precursor del Campus IA
 
-## Qué se ha hecho
+El Aula se identifica como **proyecto embrionario y experiencia piloto precursora del futuro Campus IA de WAIPL**. Permite disponer de una primera experiencia concreta sobre la que investigar, diseñar y evaluar aspectos de una futura plataforma formativa más amplia.
 
-Horas en hora de Madrid.
+Como líneas potenciales de evolución e investigación —no como capacidades ya existentes— se contemplan:
 
-| Fecha | Hora | Hecho | Commit |
-|---|---|---|---|
-| 15-11-2026 | 14:22 | Creación del proyecto en Lovable. | — |
-| 15-11-2026 | 14:45 | Primera versión completa de la aplicación, con reglas en base de datos, pruebas y documentación. | `9a6791f6` |
-| 15-11-2026 | 18:13 | William autoriza el plan del Aula unificada (documento `docs/11-plan-aula-unificada.md` del proyecto). | `20d44dd9` |
-| 15-11-2026 | 18:23–19:36 | Aplicación del plan: tema oscuro por defecto, tutor «modo guiado fijo, sin IA», contenido y calendario de las 20 semanas (migraciones `0008` y `0009`) y registro de la comprobación semanal (migración `0010`). | `71b2b3bb` a `97f10029` |
-| 16-11-2026 | 02:21 | **Prioridad A:** bienvenida dentro del Aula, tarea concreta de cada día de la semana 1 en Inicio y detalle de la semana actual en Itinerario. | `e97726bc` |
-| 16-11-2026 | 02:47 | **Bloque 1:** fecha de la comprobación semanal visible, enlaces de práctica ocultos el día de bienvenida, género correcto en los botones «Nuevo/Nueva», nombre completo del itinerario en su gráfico y «Empieza aquí» sin animaciones. | `7ec3721b` |
-| 16-11-2026 | 03:09 | Plan del siguiente bloque registrado, sin cambios de código. | `61b7e2bb` |
+- itinerarios formativos adaptativos y personalizados;
+- tutorización y acompañamiento mediante IA, con supervisión humana;
+- organización y recuperación contextual de materiales de aprendizaje;
+- evaluación de competencias y evidencias de aprendizaje;
+- seguimiento del progreso y recomendaciones pedagógicas;
+- experiencias formativas sobre agentes, sistemas multiagente y otras tecnologías de IA;
+- transferencia de métodos y componentes validados hacia el futuro Campus IA.
 
-Resultados registrados en el informe del Bloque 1 (`tests/reports/2026-11-16-bloque1.md` del proyecto):
+El Aula **no es el Campus IA**, no constituye por sí sola su arquitectura ni presupone que el diseño futuro esté aprobado. Su condición de precursor identifica una línea de evolución y aprendizaje del ecosistema.
 
-- Vitest: 11 archivos y 103 pruebas superadas.
-- Lint: 0 errores.
-- Comprobación de tipos: sin errores.
-- Las 120 sesiones siguen intactas antes y después del cambio.
+## Alcance funcional de la primera versión
+
+- Itinerario de aprendizaje de 20 semanas.
+- Organización de sesiones y bloques diarios de estudio.
+- Recursos y referencias formativas en español.
+- Comprobación semanal y revisión del progreso.
+- Registro de actividades y seguimiento.
+- Tutor de funcionamiento guiado determinista, sin proveedor de IA conectado.
+
+Los contenidos, calendarios, hitos y datos personales de progreso pertenecen al entorno de la aplicación. Este README no reproduce registros personales ni datos de acceso.
+
+## Plataforma y arquitectura técnica conocida
+
+- Plataforma de construcción y alojamiento actual: Lovable.
+- Aplicación desarrollada con TanStack Start, React y TypeScript.
+- Supabase para PostgreSQL y autenticación.
+- Drizzle para esquema y migraciones.
+- Vitest para pruebas automatizadas.
+
+La documentación técnica detallada, el código fuente, las decisiones de arquitectura, los procedimientos de desarrollo y el expediente de evolución se custodiarán en un **repositorio propio privado**. Su creación está autorizada y queda pendiente de ejecución.
+
+Las credenciales, claves, tokens y otros secretos operativos no se almacenarán en archivos versionados, tampoco en un repositorio privado. Se custodiarán mediante mecanismos seguros de secretos y variables de entorno, con permisos restringidos.
+
+## Estado y trazabilidad
+
+**Estado documentado a 16-11-2026:**
+
+- Proyecto construido en Lovable y disponible en [Aula de Aprendizaje](https://aula-progreso-guiado.lovable.app/). El acceso a la aplicación requiere autenticación.
+- Último cambio funcional verificado: **Bloque 1**, SHA completo `7ec3721bea1663d409fc2c3cfe40d8bc74f983f4`.
+- SHA documental posterior: `61b7e2bb04ed40567c350387be59684a62a09a41`; no añadió cambios funcionales a la aplicación.
+- Las comprobaciones registradas para el Bloque 1 incluyeron 103 pruebas Vitest superadas, lint sin errores y comprobación de tipos sin errores.
+- La consulta de integridad del Bloque 1 confirmó 120 sesiones: 100 de estudio y 20 revisiones semanales. No se reproducen aquí sus datos individuales.
+- **Bloque 1-bis:** pendiente de ejecución. No se considera implementado ni verificado.
+- **Prioridades B y C:** no iniciadas.
+
+### Hitos principales
+
+| Fecha | Hito | Referencia |
+|---|---|---|
+| 15-11-2026 | Creación e implementación inicial del Aula en Lovable. | `9a6791f6` |
+| 15-11-2026 | Aprobación y aplicación del plan del Aula unificada, calendario de 20 semanas y comprobación semanal. | `20d44dd9` · `71b2b3bb`–`97f10029` |
+| 16-11-2026 | Prioridad A: bienvenida, tarea diaria de la primera semana y detalle de semana actual. | `e97726bc` |
+| 16-11-2026 | Bloque 1: ajustes de bienvenida, comprobación, textos de botones, gráfico y navegación accesible. | `7ec3721b` |
+
+## Clasificación dentro de WAIPL
+
+| Campo | Clasificación |
+|---|---|
+| Ecosistema | WAIPL |
+| Laboratorio vinculado | I+D+I+e+A |
+| Dimensiones | e-Learning e Inteligencia Artificial |
+| Tipo | Proyecto aplicativo autónomo |
+| Ámbito | Aprendizaje personal, educación digital y formación en IA |
+| Proyección | Proyecto embrionario precursor del futuro Campus IA |
+| Plataforma actual | Lovable |
+| Repositorio de código propio | Privado, autorizado y pendiente de creación |
+| Registro institucional | `05_PROYECTOS/AULA_APRENDIZAJE_GUIADO_IA/` |
 
 ## Gobernanza y límites
 
-- **Roles:** Carla construye y documenta en Lovable. SENTINEL verifica cada entrega y da su dictamen. William decide y autoriza.
-- **Coste: 0 €.** Sin pagos, compras, créditos adicionales ni ampliaciones. Si algo pide pago, se para y se avisa a William.
-- **Nada se publica** sin el sí expreso de William. Tampoco se cambian audiencia, permisos, accesos ni contraseñas.
-- **Sin IA conectada.** Ningún proveedor de IA se activa sin el sí expreso de William.
-- **No se borra nada:** lo que sobra se oculta.
-- **Nada blanco:** sin superficies blancas ni destellos claros en ninguna pantalla.
-- **FREEZE:** este registro es documentación, permitida durante el FREEZE (`FREEZE_STATE.md`).
+- **William:** autoridad de decisión y autorización del proyecto.
+- **Carla:** coordinación, construcción y documentación dentro del alcance autorizado.
+- **SENTINEL:** verificación de entregas y contraste de evidencias.
+- Coste objetivo: **0 €**. No se compran créditos ni se amplían planes sin autorización expresa.
+- No se conecta un proveedor de IA ni se habilitan capacidades de IA sin autorización expresa.
+- No se publican nuevas versiones ni se alteran permisos, audiencia o accesos sin autorización.
+- Los datos personales de aprendizaje se mantienen en el entorno correspondiente y no se trasladan al corpus del laboratorio.
+- Los cambios y resultados se documentan distinguiendo lo propuesto, implementado, probado, validado y autorizado.
 
-## Dónde está el código
+## Dónde reside cada parte
 
-- En Lovable, proyecto `eb435952-20bd-4104-8ceb-bf38048470f7`.
-- A fecha de 16-11-2026 no tiene repositorio propio en GitHub.
+- **Registro institucional:** este directorio del repositorio madre `Will-AI-Project-Lab`.
+- **Investigación y relación metodológica:** corpus del Laboratorio I+D+I+e+A, sin incorporación automática de datos personales.
+- **Aplicación en ejecución:** proyecto Lovable.
+- **Código fuente y expediente técnico-comercial:** repositorio GitHub propio, privado, pendiente de creación.
+
+Este README es una ficha institucional de proyecto; no sustituye al código, al expediente técnico ni a la documentación operativa privada.
