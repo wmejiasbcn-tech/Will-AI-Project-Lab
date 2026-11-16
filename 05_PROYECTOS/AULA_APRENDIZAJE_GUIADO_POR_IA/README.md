@@ -80,8 +80,7 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 **Estado documentado a 16-11-2026:**
 
 - Proyecto construido en Lovable y disponible en [Aula de Aprendizaje](https://aula-progreso-guiado.lovable.app/). El acceso a la aplicación requiere autenticación.
-- Último cambio funcional verificado: **Bloque 1**, SHA completo `7ec3721bea1663d409fc2c3cfe40d8bc74f983f4`.
-- SHA documental posterior: `61b7e2bb04ed40567c350387be59684a62a09a41`; no añadió cambios funcionales a la aplicación.
+- Último cambio funcional verificado: **Bloque 1** (16-11-2026).
 - Las comprobaciones registradas para el Bloque 1 incluyeron 103 pruebas Vitest superadas, lint sin errores y comprobación de tipos sin errores.
 - La consulta de integridad del Bloque 1 confirmó 120 sesiones: 100 de estudio y 20 revisiones semanales. No se reproducen aquí sus datos individuales.
 - **Bloque 1-bis:** pendiente de ejecución. No se considera implementado ni verificado.
@@ -89,12 +88,12 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 
 ### Hitos principales
 
-| Fecha | Hito | Referencia |
-|---|---|---|
-| 15-11-2026 | Creación e implementación inicial del Aula en Lovable. | `9a6791f6` |
-| 15-11-2026 | Aprobación y aplicación del plan del Aula unificada, calendario de 20 semanas y comprobación semanal. | `20d44dd9` · `71b2b3bb`–`97f10029` |
-| 16-11-2026 | Prioridad A: bienvenida, tarea diaria de la primera semana y detalle de semana actual. | `e97726bc` |
-| 16-11-2026 | Bloque 1: ajustes de bienvenida, comprobación, textos de botones, gráfico y navegación accesible. | `7ec3721b` |
+| Fecha | Hito |
+|---|---|
+| 15-11-2026 | Creación e implementación inicial del Aula en Lovable. |
+| 15-11-2026 | Aprobación y aplicación del plan del Aula unificada, calendario de 20 semanas y comprobación semanal. |
+| 16-11-2026 | Prioridad A: bienvenida, tarea diaria de la primera semana y detalle de semana actual. |
+| 16-11-2026 | Bloque 1: ajustes de bienvenida, comprobación, textos de botones, gráfico y navegación accesible. |
 
 ## Clasificación dentro de WAIPL
 
@@ -108,7 +107,7 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 | Proyección | Proyecto embrionario precursor del futuro Campus IA |
 | Plataforma actual | Lovable |
 | Repositorio de código propio | Privado, autorizado y pendiente de creación |
-| Registro institucional | `05_PROYECTOS/AULA_PROGRESO_GUIADO/` |
+| Registro institucional | `05_PROYECTOS/AULA_APRENDIZAJE_GUIADO_POR_IA/` |
 
 ## Gobernanza y límites
 
