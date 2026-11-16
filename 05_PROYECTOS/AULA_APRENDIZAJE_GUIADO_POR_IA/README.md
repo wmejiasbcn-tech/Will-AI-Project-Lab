@@ -78,7 +78,7 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 
 **Estado documentado a 16-11-2026:**
 
-- Proyecto construido en Lovable y disponible en [Aula de Aprendizaje](https://aula-progreso-guiado.lovable.app/). El acceso a la aplicación requiere autenticación.
+- Proyecto construido en Lovable y disponible en [Aula de Aprendizaje Guiado por IA](https://aula-progreso-guiado.lovable.app/). El acceso a la aplicación requiere autenticación.
 - Último cambio funcional verificado: **Bloque 1** (16-11-2026).
 - Las comprobaciones registradas para el Bloque 1 incluyeron 103 pruebas Vitest superadas, lint sin errores y comprobación de tipos sin errores.
 - La consulta de integridad del Bloque 1 confirmó 120 sesiones: 100 de estudio y 20 revisiones semanales. No se reproducen aquí sus datos individuales.
