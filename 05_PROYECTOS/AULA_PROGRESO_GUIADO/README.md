@@ -108,7 +108,7 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 | Proyección | Proyecto embrionario precursor del futuro Campus IA |
 | Plataforma actual | Lovable |
 | Repositorio de código propio | Privado, autorizado y pendiente de creación |
-| Registro institucional | `05_PROYECTOS/AULA_APRENDIZAJE_GUIADO_IA/` |
+| Registro institucional | `05_PROYECTOS/AULA_PROGRESO_GUIADO/` |
 
 ## Gobernanza y límites
 
