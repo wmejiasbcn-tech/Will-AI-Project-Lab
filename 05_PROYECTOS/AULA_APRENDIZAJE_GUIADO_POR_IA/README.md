@@ -71,7 +71,7 @@ Los contenidos, calendarios, hitos y datos personales de progreso pertenecen al 
 - Drizzle para esquema y migraciones.
 - Vitest para pruebas automatizadas.
 
-La documentación técnica detallada, el código fuente, las decisiones de arquitectura, los procedimientos de desarrollo y el expediente de evolución se custodiarán en un **repositorio propio privado**. Su creación está autorizada y queda pendiente de ejecución.
+La documentación técnica detallada, el código fuente, las decisiones de arquitectura, los procedimientos de desarrollo y el expediente de evolución se custodiarán en un **repositorio propio privado**. Ese repositorio ya está creado (16-11-2026) y es privado.
 
 Las credenciales, claves, tokens y otros secretos operativos no se almacenarán en archivos versionados, tampoco en un repositorio privado. Se custodiarán mediante mecanismos seguros de secretos y variables de entorno, con permisos restringidos.
 
@@ -106,7 +106,7 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 | Ámbito | Aprendizaje personal, educación digital y formación en IA |
 | Proyección | Proyecto embrionario precursor del futuro Campus IA |
 | Plataforma actual | Lovable |
-| Repositorio de código propio | Privado, autorizado y pendiente de creación |
+| Repositorio de código propio | Privado y creado (16-11-2026) |
 | Registro institucional | `05_PROYECTOS/AULA_APRENDIZAJE_GUIADO_POR_IA/` |
 
 ## Gobernanza y límites
@@ -125,6 +125,6 @@ Las credenciales, claves, tokens y otros secretos operativos no se almacenarán 
 - **Registro institucional:** este directorio del repositorio madre `Will-AI-Project-Lab`.
 - **Investigación y relación metodológica:** corpus del Laboratorio I+D+I+e+A, sin incorporación automática de datos personales.
 - **Aplicación en ejecución:** proyecto Lovable.
-- **Código fuente y expediente técnico-comercial:** repositorio GitHub propio, privado, pendiente de creación.
+- **Código fuente y expediente técnico-comercial:** repositorio GitHub propio y privado, creado el 16-11-2026.
 
 Este README es una ficha institucional de proyecto; no sustituye al código, al expediente técnico ni a la documentación operativa privada.
