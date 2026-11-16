@@ -19,7 +19,7 @@ A fecha de 16-11-2026, 03:09 (hora de Madrid):
 - Proyecto Lovable «Aula Progreso Guiado», creado el 15-11-2026 a las 14:22 (hora de Madrid).
 - Último commit: `61b7e2bb04ed40567c350387be59684a62a09a41` (16-11-2026, 03:09, hora de Madrid). Solo añade el plan del siguiente bloque (`.lovable/plan.md`); no cambia código.
 - Último cambio funcional: Bloque 1, commit `7ec3721bea1663d409fc2c3cfe40d8bc74f983f4`.
-- Publicado en <https://aula-progreso-guiado.lovable.app>, con acceso privado.
+- Publicado en <https://aula-progreso-guiado.lovable.app>. La dirección es pública, pero para entrar hace falta iniciar sesión con la cuenta de William.
 - Sesiones cargadas: 120 (100 de estudio y 20 revisiones semanales), ninguna de demostración, todas en estado «planificada».
 
 ## Cómo funciona
