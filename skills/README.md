@@ -15,6 +15,7 @@ Carpeta pública de skills del ecosistema Will-AI Project Lab (WAIPL).
 | [fondo-oscuro-canonico](fondo-oscuro-canonico/SKILL.md) | Activa | Orden permanente: documentos para William con fondo `#121212` hasta el borde; método Chromium/WeasyPrint. |
 | [alertas-automaticas](alertas-automaticas/SKILL.md) | Activa | Arma avisos a hora fija, con 30 y 10 minutos antes, y el texto para el calendario y para Sentinel. |
 | [monitoreo-web](monitoreo-web/SKILL.md) | Activa | Mira páginas públicas: respuesta, tiempo, cambios y días de candado; aplica umbrales configurables. |
+| [escritura-creativa](escritura-creativa/SKILL.md) | Canonizada | Didáctica y educativa de técnicas de escritura creativa para Aether: estructura, voz, inmersión, transmedia y restricción. Canonizada por orden soberana 17-11-2026. |
 | diagram-design | Pendiente | (contenido aún no depositado aquí) |
 | lineas-pr | Pendiente | (contenido aún no depositado aquí) |
 
