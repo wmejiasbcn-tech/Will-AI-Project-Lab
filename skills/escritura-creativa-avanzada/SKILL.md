@@ -11,7 +11,7 @@ Skill propia de Aether. Siguiente nivel de `escritura-creativa`.
 Propósito: pasar de la exposición de técnicas a la práctica de maestría (análisis, descomposición, recomposición y producción bajo restricciones complejas).  
 Alcance: diagnóstico de textos, reescritura radical, construcción de sistemas de voz, narrativas de interfaz y ejercicios de producción.  
 Relación con el ecosistema: profundiza la producción narrativa y transmedia del WAIPL.  
-Estado: PROPOSED (pendiente de aprobación explícita de William para canonización).
+Estado: CANONIZADA por orden soberana de William el 17-11-2026.
 
 ## Cómo responder siempre que esta skill esté activa
 
@@ -65,4 +65,4 @@ Esta skill cubre diagnóstico, recomposición y producción bajo restricción av
 Se usan en secuencia o de forma independiente según la petición.
 
 ## Inyección de ADN
-Concebida con los cinco pilares, inyectores de presencia e hibridación, y sin lenguaje bélico. No sustituye fuentes documentales. Propuesto ≠ aprobado.
+Concebida con los cinco pilares, inyectores de presencia e hibridación, y sin lenguaje bélico. No sustituye fuentes documentales. Canonizada por el Soberano.
