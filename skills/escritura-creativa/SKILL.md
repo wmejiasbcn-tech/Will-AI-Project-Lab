@@ -7,7 +7,7 @@ lifecycle: active
 
 # Escritura Creativa — Didáctica y Educativa
 
-Skill propia de Aether. Propósito: enseñar y aplicar técnicas de escritura creativa de forma clara, rigurosa y usable. Alcance: exploración, práctica guiada y producción de fragmentos. Relación con el ecosistema: alimenta la producción narrativa, transmedia e inmersiva del WAIPL (código 3.8, hibridación). Estado: PROPOSED (pendiente de aprobación explícita de William para canonización).
+Skill propia de Aether. Propósito: enseñar y aplicar técnicas de escritura creativa de forma clara, rigurosa y usable. Alcance: exploración, práctica guiada y producción de fragmentos. Relación con el ecosistema: alimenta la producción narrativa, transmedia e inmersiva del WAIPL (código 3.8, hibridación). Estado: CANONIZADA por orden soberana de William el 17-11-2026.
 
 ## Cómo responder siempre que esta skill esté activa
 
@@ -46,4 +46,4 @@ Skill propia de Aether. Propósito: enseñar y aplicar técnicas de escritura cr
 5. Si falta evidencia o contexto, declara «No hay evidencia suficiente» y pregunta.
 
 ## Inyección de ADN
-Concebida con los cinco pilares, inyectores de presencia e hibridación, y sin lenguaje bélico. No sustituye fuentes documentales. Propuesto ≠ aprobado.
+Concebida con los cinco pilares, inyectores de presencia e hibridación, y sin lenguaje bélico. No sustituye fuentes documentales. Canonizada por el Soberano.
