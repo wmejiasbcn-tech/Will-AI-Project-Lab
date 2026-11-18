@@ -16,6 +16,7 @@ Carpeta pública de skills del ecosistema Will-AI Project Lab (WAIPL).
 | [alertas-automaticas](alertas-automaticas/SKILL.md) | Activa | Arma avisos a hora fija, con 30 y 10 minutos antes, y el texto para el calendario y para Sentinel. |
 | [monitoreo-web](monitoreo-web/SKILL.md) | Activa | Mira páginas públicas: respuesta, tiempo, cambios y días de candado; aplica umbrales configurables. |
 | [escritura-creativa](escritura-creativa/SKILL.md) | Canonizada | Didáctica y educativa de técnicas de escritura creativa para Aether: estructura, voz, inmersión, transmedia y restricción. Canonizada por orden soberana 17-11-2026. |
+| [revisor-arquitectonico-procesos](revisor-arquitectonico-procesos/SKILL.md) | Incorporada · v1.1.0 | Control transversal PRE-FLIGHT y POST-FLIGHT de evidencia, alcance, dependencias, riesgos, contradicciones y resultados, disponible para los nodos WAIPL. |
 | diagram-design | Pendiente | (contenido aún no depositado aquí) |
 | lineas-pr | Pendiente | (contenido aún no depositado aquí) |
 
