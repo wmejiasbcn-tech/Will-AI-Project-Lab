@@ -7,6 +7,9 @@ Carpeta pública de skills del ecosistema Will-AI Project Lab (WAIPL).
 - Una subcarpeta por skill.
 - Cada skill contiene un `SKILL.md` con frontmatter (`name`, `description`) y el cuerpo en español.
 - Sin secretos, tokens ni datos sensibles (este repositorio es público).
+- El `name` coincide con el nombre de la carpeta: minúsculas y guiones.
+- El índice de abajo enlaza cada ficha que exista. `type`, `lifecycle` y `version` son opcionales: unas fichas los traen y otras no.
+- La comprobación automática está en `.github/workflows/validar-skills.yml`. Corre al cambiar esta carpeta. No publica el sitio.
 
 ## Índice
 

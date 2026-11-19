@@ -1,0 +1,28 @@
+name: Validar skills
+
+on:
+  pull_request:
+    paths:
+      - "skills/**"
+      - ".github/workflows/validar-skills.yml"
+      - ".github/scripts/validar_skills.py"
+  push:
+    branches:
+      - main
+    paths:
+      - "skills/**"
+      - ".github/workflows/validar-skills.yml"
+      - ".github/scripts/validar_skills.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Comprobar cada SKILL.md
+        run: python3 .github/scripts/validar_skills.py
