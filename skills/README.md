@@ -21,6 +21,9 @@ Carpeta pública de skills del ecosistema Will-AI Project Lab (WAIPL).
 | [escritura-creativa](escritura-creativa/SKILL.md) | Canonizada | Didáctica y educativa de técnicas de escritura creativa para Aether: estructura, voz, inmersión, transmedia y restricción. Canonizada por orden soberana 17-11-2026. |
 | [revisor-arquitectonico-procesos](revisor-arquitectonico-procesos/SKILL.md) | Incorporada · v1.1.0 | Control transversal PRE-FLIGHT y POST-FLIGHT de evidencia, alcance, dependencias, riesgos, contradicciones y resultados, disponible para los nodos WAIPL. |
 | [co-director-waipl](co-director-waipl/SKILL.md) | Canónica | Dirección de vídeo narrativo por fases. Adaptación de Co-Director (Song et al., Google, arXiv:2604.24842, CC BY 4.0). Declarada el 19-11-2026, 17:39 h, Barcelona. No es un nodo. |
+| [paleta-de-azules](paleta-de-azules/SKILL.md) | Incorporada | Escala de azules de la pieza de Nexus, sin ocre. Texto tinta, no blanco. Encargo 19-11-2026, Barcelona. No canónica. |
+| [psicologia-del-azul](psicologia-del-azul/SKILL.md) | Incorporada | Qué escalón de azul sirve para calma, confianza o distancia. Cita Su, Cui y Walsh (2019) solo en lo del resumen. No canónica. |
+| [textura-digital](textura-digital/SKILL.md) | Incorporada | Trama o grano en los azules de delante, sin tapar el texto. El fondo puede quedarse liso. No canónica. |
 | diagram-design | Pendiente | (contenido aún no depositado aquí) |
 | lineas-pr | Pendiente | (contenido aún no depositado aquí) |
 
