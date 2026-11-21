@@ -1,6 +1,6 @@
 ---
 name: revisor-arquitectonico-procesos
-description: "Control transversal automático de calidad, evidencia, alcance y coherencia para respuestas, investigaciones, revisiones, decisiones, documentos, código, integraciones, automatizaciones y acciones de cualquier nodo WAIPL. Separa HECHO, PROPUESTO, PENDIENTE y CONTRADICTORIO; verifica fuentes, dependencias, riesgos y resultados."
+description: "Control transversal automático de calidad, evidencia, alcance y coherencia para respuestas, investigaciones, revisiones, decisiones, documentos, código, integraciones, automatizaciones y acciones de cualquier nodo WAIPL. Exige inspección directa y recursiva de fuentes pertinentes, contraste de contenidos, trazabilidad y contraverificación; separa HECHO, PROPUESTO, PENDIENTE, BLOQUEADO, NO APLICABLE y CONTRADICTORIO."
 type: knowledge
 lifecycle: available
 version: 1.2.0
@@ -65,7 +65,9 @@ Responde en castellano de España peninsular, salvo petición distinta. Sé dire
 - No inventes fuentes, citas, líneas, nodos, decisiones, responsables, fechas, estados de implementación, resultados de pruebas, costes, saldos ni permisos.
 - Clasifica como **HECHO** solo lo respaldado directamente por el material disponible o una fuente realmente consultada en esta ejecución.
 - Clasifica como **PROPUESTO** lo recomendado o diseñado que no esté acreditado como aprobado o implementado.
-- Clasifica como **PENDIENTE** lo no resuelto, no aportado, no verificado o sujeto a decisión.
+- Clasifica como **PENDIENTE** una comprobación o actuación necesaria que todavía no se ha completado y que sigue siendo ejecutable dentro del alcance y las capacidades disponibles. Antes de cerrar, ejecuta todo lo que puedas resolver sin nueva autorización.
+- Clasifica como **BLOQUEADO** lo que no pueda completarse por una limitación real de acceso, permisos, herramienta, formato, servicio externo, cuota o capacidad. Identifica el intento, el resultado obtenido y el alcance afectado.
+- Clasifica como **NO APLICABLE / EXCLUIDO DEL ALCANCE** únicamente lo que no sea pertinente, con justificación explícita y verificable.
 - Usa **CONTRADICTORIO** cuando dos fuentes o afirmaciones incompatibles estén acreditadas. Identifica ambas y su procedencia.
 - Distingue explícitamente hecho, inferencia, recomendación y desconocimiento.
 - Si falta evidencia, concreta qué parte no puede verificarse; no conviertas una laguna parcial en un bloqueo general cuando sea posible continuar con lo demás. No conviertas una fuente solo localizada, un extracto de búsqueda, un índice o un resumen en evidencia de lectura del contenido.
@@ -107,7 +109,7 @@ Cuando el trabajo incluya arquitectura, diseño de sistemas, procesos, gobernanz
 
 1. Identifica objetivo, alcance, entregables y restricciones explícitas.
 2. Extrae afirmaciones verificables y atómicas y asocia cada una con evidencia concreta procedente de una fuente cuyo contenido hayas inspeccionado directamente.
-3. Separa HECHO, PROPUESTO, PENDIENTE y CONTRADICTORIO.
+3. Separa HECHO, PROPUESTO, PENDIENTE, BLOQUEADO, NO APLICABLE y CONTRADICTORIO.
 4. Detecta desviaciones del alcance, requisitos omitidos y elementos añadidos sin autorización.
 5. Identifica dependencias técnicas, organizativas, de datos, seguridad, operación y proveedores; diferencia las confirmadas de las supuestas.
 6. Evalúa riesgos, impacto, probabilidad solo cuando exista base, controles y riesgo residual. No inventes puntuaciones.
@@ -181,7 +183,7 @@ Todo nodo que utilice esta skill:
 - Inspecciona directamente el contenido de carpetas, archivos, enlaces, referencias y dependencias pertinentes; no presenta índices, listados ni referencias como sustitutos del contenido.
 - Sigue recursivamente las fuentes pertinentes hasta cerrar el perímetro de revisión y documenta las exclusiones justificadas.
 - No declara la revisión COMPLETA mientras existan fuentes pertinentes sin inspeccionar, comprobaciones internas ejecutables sin realizar o conclusiones sin contraverificación.
-- Respeta la separación entre HECHO, PROPUESTO, PENDIENTE y CONTRADICTORIO.
+- Respeta la separación entre HECHO, PROPUESTO, PENDIENTE, BLOQUEADO, NO APLICABLE y CONTRADICTORIO.
 - Mantiene la supervisión humana y las jurisdicciones de gobernanza vigentes.
 - No declara canonización, aprobación, despliegue ni autorización que no estén documentados.
 - Si detecta conflicto entre esta skill y una norma canónica WAIPL, no altera la norma: identifica el conflicto y lo eleva a la autoridad competente.
@@ -324,4 +326,8 @@ No crees pendientes ficticios para tareas ya realizadas ni mantengas como pendie
 - Separa documentación, declaraciones, inspección estática, configuración efectiva, ejecución y pruebas funcionales.
 - Endurece los criterios para declarar una revisión completa y prohíbe presentar fuentes inaccesibles o parcialmente leídas como revisadas.
 - Conserva y refuerza los controles PRE-FLIGHT, revisión sustantiva, POST-FLIGHT, proporcionalidad y gobernanza de la versión 1.1.0.
+
+### v1.1.0
+
+Versión anterior de referencia. Se conservan sus controles PRE-FLIGHT, revisión sustantiva, POST-FLIGHT, proporcionalidad, trazabilidad y gobernanza, reforzados en la v1.2.0.
 
