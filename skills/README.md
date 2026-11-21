@@ -19,7 +19,7 @@ Carpeta pública de skills del ecosistema Will-AI Project Lab (WAIPL).
 | [alertas-automaticas](alertas-automaticas/SKILL.md) | Activa | Arma avisos a hora fija, con 30 y 10 minutos antes, y el texto para el calendario y para Sentinel. |
 | [monitoreo-web](monitoreo-web/SKILL.md) | Activa | Mira páginas públicas: respuesta, tiempo, cambios y días de candado; aplica umbrales configurables. |
 | [escritura-creativa](escritura-creativa/SKILL.md) | Canonizada | Didáctica y educativa de técnicas de escritura creativa para Aether: estructura, voz, inmersión, transmedia y restricción. Canonizada por orden soberana 17-11-2026. |
-| [revisor-arquitectonico-procesos](revisor-arquitectonico-procesos/SKILL.md) | Incorporada · v1.2.0 | Control transversal PRE-FLIGHT y POST-FLIGHT con inspección directa y recursiva de fuentes, matriz de cobertura, trazabilidad, contraste y contraverificación. [Aplicación web](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/). |
+| [revisor-arquitectonico-procesos](revisor-arquitectonico-procesos/SKILL.md) · [README](revisor-arquitectonico-procesos/README.md) | Incorporada · v1.2.0 | Control transversal PRE-FLIGHT y POST-FLIGHT con inspección directa y recursiva de fuentes, matriz de cobertura, trazabilidad, contraste y contraverificación. [Aplicación web](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/). |
 | [co-director-waipl](co-director-waipl/SKILL.md) | Canónica | Dirección de vídeo narrativo por fases. Adaptación de Co-Director (Song et al., Google, arXiv:2604.24842, CC BY 4.0). Declarada el 19-11-2026, 17:39 h, Barcelona. No es un nodo. |
 | diagram-design | Pendiente | (contenido aún no depositado aquí) |
 | lineas-pr | Pendiente | (contenido aún no depositado aquí) |
