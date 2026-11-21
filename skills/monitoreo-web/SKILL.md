@@ -28,7 +28,7 @@ Están en `umbrales.txt`. Se cambian ahí, o en la llamada con `--aviso` y `--co
 2. De cada una se anota: el estado, los milisegundos, los días de candado y el cambio.
 3. La primera mirada dice «primera mirada». La siguiente dice «igual», «cambió el contenido» o «estado A → B».
 4. La huella se calcula incrementalmente sobre todos los bytes originales de la respuesta, sin decodificar ni almacenar el cuerpo completo en memoria. Así se conservan caracteres de cualquier codificación y se detectan cambios también en respuestas grandes. Los cambios de espacios o de codificación también cuentan como cambios; no se eliminan números ni otros contenidos indiscriminadamente.
-5. La referencia queda en `estado.json`, al lado del script. No se deposita en el repositorio: es de la máquina que vigila, no del canon.
+5. La referencia queda en `estado.json`, al lado del script. Cada huella guarda su versión (`sha256-bytes-v1`). Si se encuentra una referencia sin versión compatible, se renueva una sola vez y se informa «referencia renovada»; no se presenta como cambio real del contenido. El estado no se deposita en el repositorio: es de la máquina que vigila, no del canon.
 6. Si el candado tiene menos de 14 días, se marca. El número se cambia con `--dias`.
 7. El informe lleva fondo `#121212`. Lo dice la skill `fondo-oscuro-canonico`.
 8. Si una dirección no responde, el candado está corto o se pasa el corte de tardanza, el script termina con error. Un cambio de contenido se informa; no se disfraza de fallo.
@@ -48,5 +48,7 @@ La lista de partida es `objetivos.txt`: `https://waipl.dev` y `https://graph.wai
 - El HTML abre con fondo `#121212` y tiene columna Cambio.
 - La segunda pasada, sin cambios en la respuesta, dice «igual».
 - Los cambios en cualquier parte del cuerpo, incluidos valores numéricos, se detectan.
+- Las huellas antiguas sin versión compatible se renuevan sin generar una falsa alerta de contenido.
+- `python3 skills/monitoreo-web/test_vigilar.py` verifica el cálculo por bloques y la migración de huellas.
 - Una tardanza de 800 ms o más se marca. Una de 2000 ms o más hace fallar la vigilancia.
 - El script no pide contraseña.
