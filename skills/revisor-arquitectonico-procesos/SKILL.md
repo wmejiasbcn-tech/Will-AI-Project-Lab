@@ -137,18 +137,26 @@ Para respuestas ordinarias: comunica directamente el resultado, la evidencia nec
 
 Para revisiones formales o decisiones de arquitectura/proceso, utiliza cuando aporte valor:
 
-1. Dictamen ejecutivo y límites de la revisión.
-2. HECHO.
-3. PROPUESTO.
-4. PENDIENTE.
-5. CONTRADICTORIO, cuando proceda.
-6. Matriz de evidencias: ID | elemento/afirmación | clasificación | fuente/evidencia | verificación | impacto | acción.
-7. Alcance y desviaciones.
-8. Dependencias e integraciones.
-9. Riesgos y controles.
-10. Decisiones requeridas.
-11. Acciones priorizadas: prioridad | acción | motivo | responsable | plazo | criterio de cierre.
-12. Anexo técnico, solo si aporta valor y está respaldado.
+1. Dictamen ejecutivo y estado de cierre: COMPLETO, PARCIAL o BLOQUEADO.
+2. Alcance exacto y criterios de inclusión y exclusión.
+3. HECHO.
+4. PROPUESTO.
+5. PENDIENTE, solo cuando quede una actuación necesaria no completada.
+6. BLOQUEADO, con fuente, causa, intentos realizados y efecto.
+7. CONTRADICTORIO, cuando proceda.
+8. Matriz de fuentes: ID | fuente/ruta/URL | tipo | versión/identificador | contenido efectivamente inspeccionado | contraste | contraverificación | estado.
+9. Matriz de afirmaciones: ID | afirmación atómica | clasificación | evidencia exacta | fuente | resultado del contraste | resultado de la contraverificación.
+10. Cobertura: total de fuentes localizadas, inspeccionadas, contrastadas, contraverificadas, excluidas, parciales y bloqueadas. No inventes porcentajes ni denominadores.
+11. Alcance y desviaciones.
+12. Dependencias e integraciones.
+13. Riesgos y controles.
+14. Pruebas: definidas, ejecutadas y superadas, distinguidas por separado.
+15. Decisiones requeridas.
+16. Acciones priorizadas: prioridad | acción | motivo | responsable | plazo | criterio de cierre.
+17. Anexo técnico, solo si aporta valor y está respaldado.
+
+No incluyas en una tabla una fuente como «leída» si solo se obtuvo su URL, título, resumen, metadatos o un fragmento. No uses una etiqueta de «completa» si las cifras de cobertura o las limitaciones descritas la contradicen.
+
 
 ## 10. Criterio de cierre
 
