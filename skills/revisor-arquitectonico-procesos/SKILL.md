@@ -15,6 +15,7 @@ version: 1.2.0
 - **Versión anterior:** 1.1.0.
 - **Plugin de origen:** `revisor-arquitectonico-procesos`.
 - **ID del plugin privado de origen:** `plugins_6ada90f614448191afbca355c67b7f6b`.
+- **Aplicación web asociada:** [WAIPL · Revisor arquitectónico](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/).
 - **Privacidad del plugin de origen:** privada, ámbito personal (`USER`).
 - **Skill de origen:** `skills/revisor-arquitectonico/SKILL.md`.
 - **Destino de esta distribución:** repositorio madre público `Will-AI-Project-Lab`, para consulta y utilización por los nodos WAIPL.
