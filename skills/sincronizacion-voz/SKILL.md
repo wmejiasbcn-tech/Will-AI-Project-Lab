@@ -32,20 +32,25 @@ Complementa `voice-creator-waipl`. No sustituye la guía de Nova.
 4. **Verificación acústica**  
    Reproduce los puntos de unión. No certifiques continuidad sin reproducción.
 
-5. **Marcadores de revisión**  
+5. **Verificación visual de lip-sync** (cuando aplique)  
+   Si el encargo incluye sincronización labial, compara visualmente el movimiento de los labios con el audio en los puntos de unión. No certifiques lip-sync sin esta comprobación visual.
+
+6. **Marcadores de revisión**  
    Anota timestamps de fragmentos modificados para revisión posterior.
 
 ## Flujo recomendado
 
 1. Identifica fragmentos editados y su origen (humano / sintético).
 2. Mide duración antes y después.
-3. Reproduce uniones.
-4. Documenta limitaciones (voz predeterminada, silencio residual, etc.).
-5. Entrega informe corto: HECHO / PENDIENTE por segmento.
+3. Reproduce uniones (acústico).
+4. Si se solicita lip-sync, realiza comprobación visual.
+5. Documenta limitaciones (voz predeterminada, silencio residual, etc.).
+6. Entrega informe corto: HECHO / PENDIENTE por segmento.
 
 ## Output esperado
 
 - Tabla de segmentos editados con timestamp, tipo de voz y estado.
 - Duración original vs. actual.
 - Lista de uniones que requieren revisión acústica.
+- Si aplica: estado de verificación visual de lip-sync.
 - Recomendación: publicar / revisar / rehacer fragmento.
