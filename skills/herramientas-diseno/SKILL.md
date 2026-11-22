@@ -11,7 +11,7 @@ Skill para decisiones de diseño de interfaz, especialmente en el contexto del A
 
 ## Principios canónicos
 
-- **Fondo oscuro obligatorio** para cualquier material que Will lea (ver skill `fondo-oscuro-canonico`).
+- **Fondo oscuro obligatorio** para cualquier material que Will lea (ver skill `fondo-oscuro-canonico`): usar `#121212`.
 - Preferir claridad sobre decoración.
 - Máximo 1-2 colores de acento por pantalla.
 - Jerarquía tipográfica clara (título → subtítulo → cuerpo).
@@ -21,7 +21,7 @@ Skill para decisiones de diseño de interfaz, especialmente en el contexto del A
 
 1. **Definir objetivo de la pantalla** (qué debe lograr el usuario en 5 segundos).
 2. **Establecer jerarquía** (qué es lo más importante).
-3. **Aplicar tokens** (ver `references/tokens-aula.md`).
+3. **Aplicar tokens** (ver `references/tokens-aula.md` si existe; en su defecto usar la tabla inferior).
 4. **Verificar contraste y dark mode**.
 5. **Entregar especificación** lista para implementar (valores exactos).
 
@@ -29,7 +29,8 @@ Skill para decisiones de diseño de interfaz, especialmente en el contexto del A
 
 | Rol | Valor sugerido | Uso |
 |-----|----------------|-----|
-| Fondo | `#0f172a` / `#121212` | Fondo principal |
+| Fondo (materiales para Will) | `#121212` | Fondo principal obligatorio según fondo-oscuro-canonico |
+| Fondo (interfaces Aula, alternativa) | `#0f172a` | Solo si no es un documento que Will deba leer directamente |
 | Superficie | `#1e293b` | Cards, paneles |
 | Texto primario | `#f1f5f9` | Títulos y cuerpo |
 | Texto secundario | `#94a3b8` | Metadatos, hints |
