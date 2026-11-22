@@ -75,10 +75,11 @@ El cambio está completo cuando [resultado verificable].
 - Reintentos con el mismo texto tras un error.
 - Mezclar cambios visuales simples con lógica compleja en el mismo prompt sin separarlos.
 
-## Referencias
+## Notas de costes (orientativas)
 
-- Ver `references/plantillas.md` para plantillas por tipo de cambio.
-- Ver `references/lovable-credits.md` para costos aproximados y modos.
+- Plan mode: 1 crédito fijo.
+- Build mode: variable según complejidad (típicamente 0.5–2+ créditos).
+- Editor visual y “Try to fix”: 0 créditos.
 
 ## Output esperado
 
