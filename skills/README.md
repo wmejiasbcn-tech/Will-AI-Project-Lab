@@ -21,6 +21,12 @@ Carpeta pública de skills del ecosistema Will-AI Project Lab (WAIPL).
 | [escritura-creativa](escritura-creativa/SKILL.md) | Canonizada | Didáctica y educativa de técnicas de escritura creativa para Aether: estructura, voz, inmersión, transmedia y restricción. Canonizada por orden soberana 17-11-2026. |
 | [revisor-arquitectonico-procesos](revisor-arquitectonico-procesos/SKILL.md) · [README](revisor-arquitectonico-procesos/README.md) | Incorporada · v1.2.0 | Control transversal PRE-FLIGHT y POST-FLIGHT con inspección directa y recursiva de fuentes, matriz de cobertura, trazabilidad, contraste y contraverificación. [Aplicación web](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/). |
 | [co-director-waipl](co-director-waipl/SKILL.md) | Canónica | Dirección de vídeo narrativo por fases. Adaptación de Co-Director (Song et al., Google, arXiv:2604.24842, CC BY 4.0). Declarada el 19-11-2026, 17:39 h, Barcelona. No es un nodo. |
+| [optimizacion-prompts](optimizacion-prompts/SKILL.md) · [README](optimizacion-prompts/README.md) | Activa | Optimiza prompts para reducir consumo de créditos y mejorar precisión en Lovable y otros agentes. |
+| [herramientas-diseno](herramientas-diseno/SKILL.md) · [README](herramientas-diseno/README.md) | Activa | Herramientas y flujos de diseño para UI, consistencia visual, dark mode y jerarquía. |
+| [sincronizacion-voz](sincronizacion-voz/SKILL.md) · [README](sincronizacion-voz/README.md) | Activa | Técnicas de sincronización de voz, continuidad acústica y control de duración. |
+| [auditoria-codigo](auditoria-codigo/SKILL.md) · [README](auditoria-codigo/README.md) | Activa | Flujos de auditoría de código con separación HECHO/PROPUESTO/PENDIENTE y trazabilidad de estados. |
+| [interpolacion-voz](interpolacion-voz/SKILL.md) · [README](interpolacion-voz/README.md) | Activa | Técnicas de interpolación de voz para suavizar uniones humano-sintético. |
+| [herramientas-sincronizacion-voz](herramientas-sincronizacion-voz/SKILL.md) · [README](herramientas-sincronizacion-voz/README.md) | Activa | Checklist operativo de sincronización de voz y controles audiovisuales. |
 | diagram-design | Pendiente | (contenido aún no depositado aquí) |
 | lineas-pr | Pendiente | (contenido aún no depositado aquí) |
 
