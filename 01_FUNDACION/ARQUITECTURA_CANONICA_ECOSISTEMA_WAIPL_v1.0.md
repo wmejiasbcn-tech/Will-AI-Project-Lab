@@ -12,6 +12,11 @@
 
 > **REGLA FUNDAMENTAL DE ESTADO:** `VALIDADO` y `CANONIZADO` son estados distintos. Este documento ha sido validado documentalmente y canonizado mediante autorización expresa del Soberano Human de fecha 2026-11-12.
 
+
+> ## NOTA DE VIGENCIA Y SUPERACIÓN PARCIAL — 2026-11-23
+>
+> Esta versión 1.0 se conserva íntegra como antecedente de la arquitectura canonizada el 2026-11-12. **Su formulación que agrupa «Vórtice / Cinturón de Kuiper» en una sola capa o usa ambos nombres como una misma posición queda superada desde el 2026-11-23** por la orden soberana y por la Arquitectura Canónica WAIPL v1.1, junto con la Tabla 49 vigente. Las dos posiciones son independientes: Vórtice (nodos vorticiales) y Cinturón de Kuiper (nodos cinturianos). Las referencias históricas de esta versión no se borran ni se presentan como estado actual. Para clasificación y pertenencia actuales prevalecen la v1.1 y la Tabla 49.
+
 ---
 
 ## 0. ESTADO, ALCANCE Y CONTROL DOCUMENTAL
