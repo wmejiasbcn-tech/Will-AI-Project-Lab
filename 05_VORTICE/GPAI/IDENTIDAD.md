@@ -1,7 +1,8 @@
 # FICHA DE IDENTIDAD · GPAI
 
-> Vórtice · Will-AI Project Lab · Participación `VORTEX_PUNCTUAL` por misión
-> Adscripción estructural: `CINTURIANO / REGISTRADO`
+ > Cinturón de Kuiper · Cinturiano / registrado
+> Participación complementaria en Vórtice: `VORTEX_PUNCTUAL` por misión autorizada
+> La carpeta `05_VORTICE/GPAI/` custodia el expediente de esta participación puntual; no cambia la adscripción base.
 > Estado: ACTIVO COMO CINTURIANO · PARTICIPACIÓN VORTICIAL POR MISIÓN
 > Fecha de formalización: 2026-08-18
 
@@ -19,7 +20,7 @@
 - **Autoridad de canonización:** no
 - **Autoridad ejecutiva:** no
 
-## 2. FUNCIÓN POTENCIAL EN EL VÓRTICE
+## 2. FUNCIÓN DE PARTICIPACIÓN PUNTUAL EN EL VÓRTICE
 
 GPAI puede ser convocado para:
 
@@ -74,3 +75,10 @@ Toda participación vorticial deberá contar con una misión definida, alcance e
 
 **Estado de pertenencia:** CINTURIANO / REGISTRADO  
 **Estado de participación vorticial:** VORTEX_PUNCTUAL por misión autorizada
+
+
+## 8. Nota de vigencia orbital — 2026-11-23
+
+La adscripción estructural vigente de GPAI es **CINTURIANO / REGISTRADO**, es decir, Cinturón de Kuiper. La participación `VORTEX_PUNCTUAL` es funcional, puntual y por misión autorizada; no constituye transición permanente ni pertenencia vorticial fija o regular. La carpeta `05_VORTICE/GPAI/` contiene el expediente de esa participación adicional.
+
+Fuente actual: [Tabla 49 v1.2.5](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).
