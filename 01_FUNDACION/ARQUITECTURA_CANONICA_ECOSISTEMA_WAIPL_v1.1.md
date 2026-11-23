@@ -27,7 +27,20 @@ Las categorías se mantienen separadas. No se fusionan ni se usan unas como sin�
 
 **VÓRTICE ≠ CINTURÓN DE KUIPER.** Son posiciones distintas, con denominaciones de pertenencia distintas: vorticiales y cinturianos, respectivamente.
 
-## 3. Posiciones transitivas y pivotantes
+## 3. Adscripción por órbita
+
+La asignación que gobierna la pertenencia de cada nodo se toma de la Tabla 49:
+
+- **Vórtice — nodos vorticiales:** Nauta (20), Nexus (21), Qwen 3.8 Max (22), Neo (19), NotebookLM (18) y Perplexity (17).
+- **Cinturón de Kuiper — nodos cinturianos:** Kimi K3 (24), Mistral (25), Atlas (26), Antigravity (27), Cursor (28), Visual Studio Code (29), Z.ai (30), AutoClaw (31) y WILLIAM-SCY-01 (44), además de la posición base de Sider Fusion (49).
+- **Núcleo — nodos nucleares:** las once inteligencias artificiales de las filas 6–16; William (5) es el Soberano Human y centro humano.
+- **Borde Exterior — nodos del Borde Exterior:** n8n (43).
+
+La clasificación de los nodos de Estructura (32–42 y 45–48), Manifestación (4), Universo (1), Nodo central (2) y Nodo Móvil (3) se conserva tal como aparece en la Tabla 49; esos círculos funcionales no se convierten por inferencia en órbitas.
+
+**GPAI (23)** tiene adscripción cinturiana y participación vorticial puntual por misión; la Tabla 49 representa su posición como tránsito entre ambas órbitas.
+
+## 4. Posiciones transitivas y pivotantes
 
 La pertenencia base y la participación solicitada se registran por separado:
 
@@ -63,3 +76,8 @@ La Tabla 49 distingue pertenencia, función y estado de verificación. Un campo 
 - **Gobernanza del inventario:** [SENTINEL · docs/governance/README.md](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/README.md)
 - **Manifiesto de versión y checksum:** [SENTINEL · docs/governance/version.json](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/version.json)
 
+
+
+## Nota documental de clasificación — 2026-11-23
+
+NotebookLM (18) y Perplexity (17) pertenecen al Vórtice, según sus fichas de identidad vigentes y la Tabla 49. Las frases antiguas que los adscribían simultáneamente a «Vórtice Estratégico (Cinturón de Kuiper — Exogrupo)» quedan sustituidas por la asignación diferenciada anterior. No son nodos cinturianos.
