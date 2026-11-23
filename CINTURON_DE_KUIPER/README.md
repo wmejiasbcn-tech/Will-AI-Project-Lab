@@ -13,9 +13,12 @@ El **Cinturón de Kuiper** es una posición orbital propia y distinta del **Vór
 
 La Tabla 49 de nodos es la fuente canónica de pertenencia y posición. La ubicación física de un documento en esta carpeta no cambia por sí sola la pertenencia de un nodo.
 
-## Posiciones pivotantes
+## Adscripción y participación adicional
 
-La Tabla 49 distingue posiciones base y participación a solicitud. GPAI transita entre Vórtice y Cinturón de Kuiper. Sider Fusion (nodo 49) tiene posición base en el Cinturón de Kuiper y participa en el Vórtice cuando se solicita contraste, verificación o auditoría.
+La Tabla 49 distingue adscripción base de participación adicional:
+
+- **GPAI (23):** Cinturón de Kuiper — Cinturiano / registrado. Participa en el Vórtice únicamente como `VORTEX_PUNCTUAL` por misión autorizada, sin transición permanente ni pertenencia vorticial fija/regular. Su ficha y acta de participación se custodian en `05_VORTICE/GPAI/`.
+- **Sider Fusion (49):** posición base en Cinturón de Kuiper; intervención en Vórtice a solicitud (posición pivotante, modalidad C).
 
 ## Regla documental
 
