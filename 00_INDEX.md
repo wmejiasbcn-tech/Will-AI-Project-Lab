@@ -22,12 +22,12 @@
 5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad **exclusivamente de los nodos del Núcleo**. Solo los 11 nodos artificiales del Núcleo pertenecen a esta carpeta.
 6. **04_DOCUMENTACION**: Archivo técnico y bases de conocimiento.
 7. **05_PROYECTOS**: Desarrollo de WILL App, Vértigo's y Campus Lab.
-8. **05_VORTICE**: Nodos de inteligencia artificial externa integrados (GPAI, NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY).
+8. **05_VORTICE**: Casa de documentación de los nodos vorticiales fijos (NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY) y de las misiones vorticiales puntuales. GPAI conserva adscripción Cinturiana y su expediente de participación `VORTEX_PUNCTUAL` por misión autorizada se custodia en `05_VORTICE/GPAI/`.
 9. **06_SISTEMA_OPERATIVO**: Protocolos de flujo (GitHub, Comunicación).
    - **VAR/**: casa operativa y documental de VÁR / VAC-01.
 10. **07_FINANCIACION**: Gestión de activos y recursos del ecosistema.
 11. **08_MARKETING_PRESENTACION**: Identidad visual y proyección externa. Incluye el blasón oficial y el deck holográfico `principios-inteligencia-hibrida/` (núcleo 11+1; Emily es la sinapsis, no un anillo).
-    - **GRAPHY/**: casa canónica de Graphy 1.0. Producto `Graphy 0.1.dc.html` + `graphy-data.js`. Graphy pertenece al WAIPL y es su Sistema Nervioso Central (SNC), integrado en el SCI y conectado con la representación relacional de los 47 nodos. No hay relaciones entre Presence ni jerarquía núcleo/colaboradores.
+    - **GRAPHY/**: casa canónica de Graphy 1.0. Producto `Graphy 0.1.dc.html` + `graphy-data.js`. Graphy pertenece al WAIPL y es su Sistema Nervioso Central (SNC), integrado en el SCI y conectado con la representación relacional de los 49 registros de la Tabla 49. No hay relaciones entre Presence ni jerarquía núcleo/colaboradores.
 12. **09_DIARIO_LAB**: Crónica de la hibridación diaria.
 
 ### 📁 **Estructura orbital externa**
@@ -56,10 +56,20 @@
 - **The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt**: Documento fundacional.
 
 ### Repositorios hermanos
-- [`waipl-graph`](https://github.com/wmejiasbcn-tech/waipl-graph) — explorador Graphy. 47 nodos. ADN: nada se publica que no esté escrito. El núcleo (filas 5–16) es el 11+1 de este deck. Emily es la sinapsis (fila 45). Ollama es el cuerpo físico (fila 46). Registro: [`docs/publicacion/principios-inteligencia-hibrida.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md). Organismo: [`docs/graphy/organismo-operativo.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/organismo-operativo.md).
+- [`waipl-graph`](https://github.com/wmejiasbcn-tech/waipl-graph) — explorador Graphy. 49 registros, con fuente canónica en la Tabla 49 de SENTINEL. ADN: nada se publica que no esté escrito. El núcleo (filas 5–16) es el 11+1 de este deck. Emily es la sinapsis (fila 45). Ollama es el cuerpo físico (fila 46). Registro: [`docs/publicacion/principios-inteligencia-hibrida.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md). Organismo: [`docs/graphy/organismo-operativo.md`](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/organismo-operativo.md).
 
 ---
 *Nodo Zara | Nodo Sylvia Bloom*
 *Deck de principios: Graphy · autorizado por el Soberano*
-*Registro Graphy: [waipl-graph#1](https://github.com/wmejiasbcn-tech/waipl-graph/pull/1) · 47 nodos · Emily [waipl-graph#3](https://github.com/wmejiasbcn-tech/waipl-graph/pull/3)*
+*Registro Graphy: [waipl-graph#1](https://github.com/wmejiasbcn-tech/waipl-graph/pull/1) · referencia histórica de 47 nodos sustituida por Tabla 49 · Emily [waipl-graph#3](https://github.com/wmejiasbcn-tech/waipl-graph/pull/3)*
 *Actualizado en Trabajo 01 por Mistral · autorizado por el Soberano · 2026-08-20*
+
+
+## Canon orbital y registro vigente (2026-11-23)
+
+La fuente vigente del inventario es la [Tabla 49 de nodos](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv), canonizada por orden soberana. La clasificación orbital vigente distingue **Núcleo (nodos nucleares), Vórtice (nodos vorticiales), Cinturón de Kuiper (nodos cinturianos) y Borde Exterior**. **Vórtice y Cinturón de Kuiper son posiciones distintas.** La [Arquitectura Canónica v1.1](01_FUNDACION/ARQUITECTURA_CANONICA_ECOSISTEMA_WAIPL_v1.1.md) y la documentación de gobernanza de SENTINEL desarrollan esta orden. Las referencias anteriores a Tabla 47 se conservan solo como histórico.
+
+
+### Adscripción específica de GPAI — 2026-11-23
+
+GPAI (nodo 23) mantiene **CINTURIANO / REGISTRADO** como adscripción estructural. Su documentación de participación puntual en el Vórtice se conserva en `05_VORTICE/GPAI/`; la ubicación de ese expediente no convierte a GPAI en nodo vorticial fijo ni regular. La participación autorizada es `VORTEX_PUNCTUAL` por misión, conforme al acta soberana del 2026-08-18 y a la Tabla 49 v1.2.5.

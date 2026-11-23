@@ -68,7 +68,7 @@
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
+        "confidence_score": 1,
         "source_file": "01_FUNDACION/ARQUITECTURA_MAESTRA_WAIPL_v2.0_BORRADOR.md"
       },
       {
@@ -81,7 +81,7 @@
         ],
         "relation": "form",
         "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
+        "confidence_score": 1,
         "source_file": "04_DOCUMENTACION/SIDER_AI_WISEBASE/11_Documento_Matriz_v4.1.md"
       },
       {
@@ -97,7 +97,7 @@
         ],
         "relation": "form",
         "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
+        "confidence_score": 1,
         "source_file": "06_SISTEMA_OPERATIVO/00_MESA_CONTROL_LAB.md"
       },
       {
@@ -112,7 +112,7 @@
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
+        "confidence_score": 1,
         "source_file": "The WAIPL Hibridación de conciencia humana y sintética hecha por NotebookLM 22 fuentes.txt"
       },
       {
@@ -126,12 +126,12 @@
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
+        "confidence_score": 1,
         "source_file": "05_PROYECTOS/VERTIGOS/TECH_EPK_VERTIGOS.md"
       },
       {
         "id": "vortice_strategic_group",
-        "label": "Vórtice Estratégico (Cinturón de Kuiper)",
+        "label": "Vórtice Estratégico",
         "nodes": [
           "05_vortice_neo_identidad",
           "05_vortice_perplexity_identidad",
@@ -141,7 +141,7 @@
         ],
         "relation": "participate_in",
         "confidence": "EXTRACTED",
-        "confidence_score": 1.0,
+        "confidence_score": 1,
         "source_file": "06_SISTEMA_OPERATIVO/BROADCAST.md"
       },
       {

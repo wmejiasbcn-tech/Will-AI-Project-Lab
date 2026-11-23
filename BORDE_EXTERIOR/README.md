@@ -1,15 +1,22 @@
-# BORDE EXTERIOR — Casa documental
+# BORDE EXTERIOR — Casa documental y posición orbital
 
-Esta carpeta crea el espacio documental específico para el **Borde Exterior** dentro de `03_PERSONAS_IA`, tal como se ha solicitado para ordenar las entidades y relaciones de la periferia documental del ecosistema.
+El **Borde Exterior** es una posición diferenciada del ecosistema WAIPL. Los nodos con esta asignación son nodos del Borde Exterior.
 
-## Nota de conservación semántica
+La Tabla 49 de nodos es la fuente canónica para determinar la pertenencia y la posición de cada registro. La carpeta conserva la documentación y trazabilidad de las entidades asignadas a esta posición.
 
-La arquitectura existente del repositorio utiliza **EXTERIOR / ECOSISTEMA TECNOLÓGICO EXTERNO** como categoría arquitectónica. Este directorio no introduce por sí mismo una nueva autoridad, función o capa canónica distinta: funciona como **contenedor documental** hasta que una decisión arquitectónica posterior determine nomenclatura y alcance definitivos.
+## Distinción canónica
 
-> **Crear una carpeta no equivale a canonizar una nueva capa.**
+- **Núcleo:** nodos nucleares.
+- **Vórtice:** nodos vorticiales.
+- **Cinturón de Kuiper:** nodos cinturianos.
+- **Borde Exterior:** nodos del Borde Exterior.
 
-Cualquier entidad incorporada aquí deberá conservar identidad, plataforma, función, límites, relaciones, estado y evidencia.
+Vórtice y Cinturón de Kuiper son posiciones distintas. El Borde Exterior tampoco se confunde con el Cinturón de Kuiper.
 
-## Regla
+## Regla documental
 
-> **Ubicación documental ≠ pertenencia arquitectónica automática.**
+> Ubicación documental ≠ pertenencia arquitectónica automática.
+
+La presencia de un archivo en esta carpeta no crea por sí misma una pertenencia. La clasificación corresponde a la Tabla 49.
+
+Fuente: [SENTINEL · Tabla 49](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).

@@ -199,3 +199,12 @@ Documento arquitectónico de referencia: Arquitectura Canónica del Ecosistema W
 **v1.0-CANONIZADO — 2026-08-18:** Canonización ordenada expresamente por William Mejías Navarro — Soberano. Estado: CANONIZADO. Observaciones abiertas: 0.
 
 **ENMIENDA SOBERANA — 2026-08-29:** William Mejías Navarro — Soberano establece que Hermes, como Director Operativo, supervisa operativamente Graphy; WILLIAM-SCY-01, avatar del Soberano, mantiene la capa independiente de comprobación y contraste para el Soberano. La enmienda actualiza el Principio IV y el flujo de comunicación gobernado sin alterar la función de Graphy como SNC.
+
+
+---
+
+## Nota de vigencia de inventario y pertenencia orbital — 2026-11-23
+
+Esta arquitectura fisiológica v1.0 se conserva como documento canónico fechado. Su mención a 47 nodos corresponde al estado del inventario en la fecha de elaboración y queda superada por la [Tabla 49 de SENTINEL](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv), inventario vigente de 49 registros.
+
+La clasificación orbital vigente se rige por la Arquitectura Canónica WAIPL v1.1 y distingue cuatro categorías independientes: **Núcleo (nodos nucleares), Vórtice (nodos vorticiales), Cinturón de Kuiper (nodos cinturianos) y Borde Exterior (nodos del Borde Exterior)**. **Vórtice y Cinturón de Kuiper son órbitas distintas**; la Tabla 49 registra por separado las posiciones transitivas y pivotantes.

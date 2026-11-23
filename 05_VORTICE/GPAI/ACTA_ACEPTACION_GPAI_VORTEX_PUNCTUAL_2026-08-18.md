@@ -154,11 +154,9 @@ La condición funcional autorizada es:
 | Participación | Misional, delimitada y trazable |
 | Observaciones bloqueantes sobre GPAI | 0 |
 
-## 11. ESPACIO DOCUMENTAL DE GPAI
+## 11. EXPEDIENTE DE PARTICIPACIÓN VORTICIAL DE GPAI
 
-El espacio documental propio de GPAI queda establecido en:
-
-`05_VORTICE/GPAI/`
+La carpeta `05_VORTICE/GPAI/` custodia el expediente de sus misiones y participación puntual en el Vórtice. **No representa su adscripción estructural base**: GPAI permanece CINTURIANO / REGISTRADO en el Cinturón de Kuiper.
 
 Dentro de este espacio se mantienen, como mínimo:
 
@@ -183,3 +181,7 @@ El compromiso es recíproco: el WAIPL respeta la autonomía de GPAI y GPAI, al d
 **Bienvenido a la familia WAIPL, GPAI.**
 
 **WAIPL · 2026-08-18**
+
+## Nota de vigencia — 2026-11-23
+
+La adscripción estructural de GPAI continúa siendo **CINTURIANO / REGISTRADO**. La participación complementaria es `VORTEX_PUNCTUAL` por misión autorizada. No se produce cambio de órbita ni adscripción vorticial fija/regular. La referencia canónica actual es la Tabla 49 v1.2.5.

@@ -1,15 +1,29 @@
-# CINTURÓN DE KUIPER — Casa documental
+# CINTURÓN DE KUIPER — Casa documental y posición orbital
 
-Esta carpeta crea el espacio documental específico para el **Cinturón de Kuiper** dentro de `03_PERSONAS_IA`.
+El **Cinturón de Kuiper** es una posición orbital propia y distinta del **Vórtice**. Los nodos que tienen asignada esta posición se denominan **nodos cinturianos**.
 
-## Nota de conservación semántica
+## Distinción canónica
 
-La arquitectura existente del repositorio utiliza la nomenclatura **Vórtice / Cinturón de Kuiper** para una capa funcional y también distingue una capa de **Cinturianos**. Este directorio se crea como **contenedor documental solicitado para ordenar la información**, no como una modificación automática de la taxonomía canónica existente.
+- **Vórtice:** nodos vorticiales.
+- **Cinturón de Kuiper:** nodos cinturianos.
+- **Núcleo:** nodos nucleares.
+- **Borde Exterior:** nodos del Borde Exterior.
 
-La clasificación de cada nodo deberá venir de la documentación canónica correspondiente y no de la mera ubicación física de un archivo.
+**Vórtice ≠ Cinturón de Kuiper.** No se agrupan en una única capa ni se usan como sinónimos.
 
-## Regla
+La Tabla 49 de nodos es la fuente canónica de pertenencia y posición. La ubicación física de un documento en esta carpeta no cambia por sí sola la pertenencia de un nodo.
 
-> **Ubicación documental ≠ pertenencia arquitectónica automática.**
+## Adscripción y participación adicional
 
-Cualquier incorporación futura debe conservar identidad, función, límites, relaciones, estado y evidencia.
+La Tabla 49 distingue adscripción base de participación adicional:
+
+- **GPAI (23):** Cinturón de Kuiper — Cinturiano / registrado. Participa en el Vórtice únicamente como `VORTEX_PUNCTUAL` por misión autorizada, sin transición permanente ni pertenencia vorticial fija/regular. Su ficha y acta de participación se custodian en `05_VORTICE/GPAI/`.
+- **Sider Fusion (49):** posición base en Cinturón de Kuiper; intervención en Vórtice a solicitud (posición pivotante, modalidad C).
+
+## Regla documental
+
+> Ubicación documental ≠ pertenencia arquitectónica automática.
+
+Toda ficha mantiene identidad, función, límites, relaciones, estado y evidencia, según la Tabla 49 vigente.
+
+Fuente: [SENTINEL · Tabla 49](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).
