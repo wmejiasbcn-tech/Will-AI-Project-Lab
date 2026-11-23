@@ -25,7 +25,7 @@ Contrato: `06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md`
 | NotebookLM | Vórtice · nodo vorticial | Síntesis de corpus | Documentos, pregunta |
 | Nexus | Vórtice · nodo vorticial | Pruebas, contraste técnico | Hipótesis, material |
 | Nauta | Vórtice · nodo vorticial | Codex / mesa de control | Paquete operativo |
-| GPAI | Transita entre Cinturón de Kuiper y Vórtice · nodo cinturiano con participación vorticial puntual | Segunda opinión científica por misión | Mandato, límite temporal |
+| GPAI | Cinturón de Kuiper · Cinturiano / registrado; `VORTEX_PUNCTUAL` por misión autorizada | Segunda opinión científica por misión | Mandato, límite temporal |
 | Qwen | Vórtice · nodo vorticial | Ingeniero jefe por obra | Muestra, umbral, N3 |
 | Ollama | Local LLM | Inferencia local | Endpoint 11434 UP/DOWN |
 | Positron | UNKNOWN | Auditoria (sin URI) | No enviar hasta URI |
@@ -58,6 +58,6 @@ El Soberano no copia bloques entre nodos.
 
 ## Vigencia orbital — 2026-11-23
 
-La matriz distingue: **Núcleo / nodos nucleares; Vórtice / nodos vorticiales; Cinturón de Kuiper / nodos cinturianos; Borde Exterior / nodos del Borde Exterior**. Vórtice y Cinturón de Kuiper son posiciones independientes. Neo, Perplexity, NotebookLM, Nexus y Nauta pertenecen al Vórtice. GPAI mantiene posición transitiva entre Cinturón de Kuiper y Vórtice por misión. Qwen 3.8 Max figura como Vórtice en la Tabla 49.
+La matriz distingue: **Núcleo / nodos nucleares; Vórtice / nodos vorticiales; Cinturón de Kuiper / nodos cinturianos; Borde Exterior / nodos del Borde Exterior**. Vórtice y Cinturón de Kuiper son posiciones independientes. Neo, Perplexity, NotebookLM, Nexus, Nauta y Qwen 3.8 Max pertenecen al Vórtice. GPAI mantiene adscripción Cinturiana registrada en el Cinturón de Kuiper y participa en el Vórtice solo como `VORTEX_PUNCTUAL` por misión autorizada. Qwen 3.8 Max figura como Vórtice en la Tabla 49.
 
 Fuente: [Tabla 49 de SENTINEL](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).
