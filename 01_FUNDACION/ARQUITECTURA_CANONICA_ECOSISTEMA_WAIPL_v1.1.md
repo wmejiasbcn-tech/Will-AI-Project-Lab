@@ -5,8 +5,8 @@
 **Autoridad:** William Mejías Navarro — Soberano Human  
 **Fecha de canonización:** 2026-11-23  
 **Fuente canónica del inventario:** [Tabla 49 de nodos](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv)  
-**Versión de gobernanza del inventario:** 1.2.0  
-**SHA-256 de Tabla 49:** `8f4732161460617b7f292afb2ae23abc6c8621bfa6ff33c3e5a2cbba34c9d98d`
+**Versión de gobernanza del inventario:** 1.2.3  
+**SHA-256 de Tabla 49:** `8ee66ccb999a47713674a994436d34d7027411ab53ebd8b106584ac48735f381`
 
 ## 1. Objeto y prevalencia
 
