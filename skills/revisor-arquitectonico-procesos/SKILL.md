@@ -12,7 +12,7 @@ version: 1.3.0
 
 - **Nombre:** Revisor Arquitectónico y de Procesos.
 - **Versión de referencia:** 1.3.0.
-- **Versión anterior:** 1.1.0.
+- **Versión anterior:** 1.2.0.
 - **Plugin de origen:** `revisor-arquitectonico-procesos`.
 - **ID del plugin privado de origen:** `plugins_6ada90f614448191afbca355c67b7f6b`.
 - **Aplicación web asociada:** [WAIPL · Revisor arquitectónico](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/).
