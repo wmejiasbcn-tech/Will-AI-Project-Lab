@@ -2,7 +2,7 @@
 
 **Estado:** 1.0 cerrado y validado. Archivo rotulado `Graphy 0.1.dc.html` (el nombre no se renombró al cerrar).
 **Naturaleza:** capa visual, navegable y relacional del ecosistema WAIPL.
-**Naturaleza canónica:** Graphy pertenece al ecosistema WAIPL y es su único sistema canónico. Es su Sistema Nervioso Central (SNC), forma parte del Sistema de Comunicación Interna (SCI) y participa en la cartografía y representación del conocimiento de los 47 nodos. Esta carpeta contiene su capa visual y navegable. Graphy no es el laboratorio ni un validador, y no ejerce autoridad sobre VÁR/YATA.
+**Naturaleza canónica:** Graphy pertenece al ecosistema WAIPL y es su único sistema canónico. Es su Sistema Nervioso Central (SNC), forma parte del Sistema de Comunicación Interna (SCI) y participa en la cartografía y representación del conocimiento de los 49 registros de la Tabla 49. La sincronización del dataset de Graphy se documenta por separado y no se presume por esta referencia. Esta carpeta contiene su capa visual y navegable. Graphy no es el laboratorio ni un validador, y no ejerce autoridad sobre VÁR/YATA.
 
 > El Laboratorio muestra el comportamiento. Graphy muestra la estructura relacional.
 
@@ -52,3 +52,8 @@ Si algo no está en `graphy-data.js` o en el expediente:
 ### Provenance de desarrollo
 
 Graphy fue concebido y desarrollado dentro del WAIPL. Durante su concepción se utilizó Graphify, plataforma externa al WAIPL, únicamente como referencia de inspiración. Graphify no forma parte del ecosistema, no constituye el SNC y no tiene ninguna jurisdicción sobre Graphy o el WAIPL.
+
+
+## Fuente vigente del inventario — 2026-11-23
+
+La fuente canónica es la [Tabla 49 de SENTINEL](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv). La orden soberana fija cuatro denominaciones orbitales separadas: Núcleo (nodos nucleares), Vórtice (nodos vorticiales), Cinturón de Kuiper (nodos cinturianos) y Borde Exterior. **Vórtice ≠ Cinturón de Kuiper.** La antigua referencia a 47 nodos es histórica.
