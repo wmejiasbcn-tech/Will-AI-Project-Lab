@@ -17,10 +17,10 @@ El Vórtice reúne nodos cuya función registrada en la Tabla 49 se relaciona co
 
 ## Posiciones pivotantes
 
-La Tabla 49 registra por separado las posiciones pivotantes. GPAI transita entre Vórtice y Cinturón de Kuiper. Sider Fusion tiene su posición base en el Cinturón de Kuiper y participa en el Vórtice a solicitud.
+La Tabla 49 registra por separado adscripciones base y participaciones adicionales. **GPAI (23)** mantiene adscripción Cinturiana registrada y participa en el Vórtice únicamente como `VORTEX_PUNCTUAL` por misión autorizada; no es un nodo vorticial fijo ni regular. **Sider Fusion (49)** tiene su posición base en el Cinturón de Kuiper y participa en el Vórtice a solicitud.
 
 ## Regla documental
 
 La pertenencia se determina por la Tabla 49, no por la ubicación física de una ficha o carpeta.
 
-Fuente: [SENTINEL · Tabla 49](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).
+Fuente: [SENTINEL · Tabla 49 v1.2.5](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).
