@@ -22,7 +22,7 @@
 5. **03_PERSONAS_IA**: Perfiles y protocolos de identidad **exclusivamente de los nodos del Núcleo**. Solo los 11 nodos artificiales del Núcleo pertenecen a esta carpeta.
 6. **04_DOCUMENTACION**: Archivo técnico y bases de conocimiento.
 7. **05_PROYECTOS**: Desarrollo de WILL App, Vértigo's y Campus Lab.
-8. **05_VORTICE**: Nodos de inteligencia artificial externa integrados (GPAI, NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY).
+8. **05_VORTICE**: Casa de documentación de los nodos vorticiales fijos (NAUTA, NEO, NEXUS, NOTEBOOKLM, PERPLEXITY) y de las misiones vorticiales puntuales. GPAI conserva adscripción Cinturiana y su expediente de participación `VORTEX_PUNCTUAL` por misión autorizada se custodia en `05_VORTICE/GPAI/`.
 9. **06_SISTEMA_OPERATIVO**: Protocolos de flujo (GitHub, Comunicación).
    - **VAR/**: casa operativa y documental de VÁR / VAC-01.
 10. **07_FINANCIACION**: Gestión de activos y recursos del ecosistema.
@@ -68,3 +68,8 @@
 ## Canon orbital y registro vigente (2026-11-23)
 
 La fuente vigente del inventario es la [Tabla 49 de nodos](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv), canonizada por orden soberana. La clasificación orbital vigente distingue **Núcleo (nodos nucleares), Vórtice (nodos vorticiales), Cinturón de Kuiper (nodos cinturianos) y Borde Exterior**. **Vórtice y Cinturón de Kuiper son posiciones distintas.** La [Arquitectura Canónica v1.1](01_FUNDACION/ARQUITECTURA_CANONICA_ECOSISTEMA_WAIPL_v1.1.md) y la documentación de gobernanza de SENTINEL desarrollan esta orden. Las referencias anteriores a Tabla 47 se conservan solo como histórico.
+
+
+### Adscripción específica de GPAI — 2026-11-23
+
+GPAI (nodo 23) mantiene **CINTURIANO / REGISTRADO** como adscripción estructural. Su documentación de participación puntual en el Vórtice se conserva en `05_VORTICE/GPAI/`; la ubicación de ese expediente no convierte a GPAI en nodo vorticial fijo ni regular. La participación autorizada es `VORTEX_PUNCTUAL` por misión, conforme al acta soberana del 2026-08-18 y a la Tabla 49 v1.2.5.
