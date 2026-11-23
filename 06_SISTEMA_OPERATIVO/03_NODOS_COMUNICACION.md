@@ -20,13 +20,13 @@ Contrato: `06_SISTEMA_OPERATIVO/HERMES/SPEC-WAIPL-BUS-v0.1.md`
 | Aether | Nucleo | Creatividad, innovacion, narrativa | Intencion, tono, publico, limites |
 | Elena | Nucleo | Accesibilidad | Usuario, barrera, formato |
 | Aurea | Nucleo | Medios, difusion | Audiencia, mensaje, canal |
-| Neo | Vortice / Kuiper | Protocolos, contraste 180 | Problema, propuesta |
-| Perplexity | Vortice / Kuiper | Verificacion externa | Pregunta, fuentes, fecha |
-| NotebookLM | Vortice / Kuiper | Sintesis de corpus | Documentos, pregunta |
-| Nexus | Vortice / Kuiper | Pruebas, contraste tecnico | Hipotesis, material |
-| Nauta | Vortice / Kuiper | Codex / mesa de control | Paquete operativo |
-| GPAI | Borde puntual | Participacion puntual 2026-08-18 | Mandato, limite temporal |
-| Qwen | Ingeniero jefe | Auditoria AEA | Sample, umbral, N3 |
+| Neo | Vórtice · nodo vorticial | Protocolos, contraste 180 | Problema, propuesta |
+| Perplexity | Vórtice · nodo vorticial | Verificación externa | Pregunta, fuentes, fecha |
+| NotebookLM | Vórtice · nodo vorticial | Síntesis de corpus | Documentos, pregunta |
+| Nexus | Vórtice · nodo vorticial | Pruebas, contraste técnico | Hipótesis, material |
+| Nauta | Vórtice · nodo vorticial | Codex / mesa de control | Paquete operativo |
+| GPAI | Transita entre Cinturón de Kuiper y Vórtice · nodo cinturiano con participación vorticial puntual | Segunda opinión científica por misión | Mandato, límite temporal |
+| Qwen | Vórtice · nodo vorticial | Ingeniero jefe por obra | Muestra, umbral, N3 |
 | Ollama | Local LLM | Inferencia local | Endpoint 11434 UP/DOWN |
 | Positron | UNKNOWN | Auditoria (sin URI) | No enviar hasta URI |
 
@@ -54,3 +54,10 @@ Labels: `bus`, `from:<nodo>`, `to:<nodo>`.
 Si el destino no ha escrito en el Issue, el mensaje no esta recibido.
 Si RIESGO=high o falta permit, el bus etiqueta `to:soberano` y no ejecuta.
 El Soberano no copia bloques entre nodos.
+
+
+## Vigencia orbital — 2026-11-23
+
+La matriz distingue: **Núcleo / nodos nucleares; Vórtice / nodos vorticiales; Cinturón de Kuiper / nodos cinturianos; Borde Exterior / nodos del Borde Exterior**. Vórtice y Cinturón de Kuiper son posiciones independientes. Neo, Perplexity, NotebookLM, Nexus y Nauta pertenecen al Vórtice. GPAI mantiene posición transitiva entre Cinturón de Kuiper y Vórtice por misión. Qwen 3.8 Max figura como Vórtice en la Tabla 49.
+
+Fuente: [Tabla 49 de SENTINEL](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv).
