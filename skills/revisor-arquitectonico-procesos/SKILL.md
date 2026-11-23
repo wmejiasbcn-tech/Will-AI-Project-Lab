@@ -3,16 +3,16 @@ name: revisor-arquitectonico-procesos
 description: "Control transversal automático de calidad, evidencia, alcance y coherencia para respuestas, investigaciones, revisiones, decisiones, documentos, código, integraciones, automatizaciones y acciones de cualquier nodo WAIPL. Exige inspección directa y recursiva de fuentes pertinentes, contraste de contenidos, trazabilidad y contraverificación; separa HECHO, PROPUESTO, PENDIENTE, BLOQUEADO, NO APLICABLE y CONTRADICTORIO."
 type: knowledge
 lifecycle: available
-version: 1.2.0
+version: 1.3.0
 ---
 
-# Revisor Arquitectónico y de Procesos v1.2.0
+# Revisor Arquitectónico y de Procesos v1.3.0
 
 ## Identidad, procedencia y disponibilidad
 
 - **Nombre:** Revisor Arquitectónico y de Procesos.
-- **Versión de referencia:** 1.2.0.
-- **Versión anterior:** 1.1.0.
+- **Versión de referencia:** 1.3.0.
+- **Versión anterior:** 1.2.0.
 - **Plugin de origen:** `revisor-arquitectonico-procesos`.
 - **ID del plugin privado de origen:** `plugins_6ada90f614448191afbca355c67b7f6b`.
 - **Aplicación web asociada:** [WAIPL · Revisor arquitectónico](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/).
@@ -35,11 +35,12 @@ Toda revisión sustantiva queda sometida a estas obligaciones:
 5. Aplicar a cada fuente el examen sustantivo que corresponda a su tipo: documental, técnico, arquitectónico, funcional, jurídico, de seguridad, privacidad, operación o gobernanza.
 6. Contrastar el contenido con las afirmaciones, requisitos y demás fuentes pertinentes y contraverificar los hallazgos materiales.
 7. Mantener evidencia de qué se abrió, qué se leyó, qué se examinó, qué se contrastó y qué se contraverificó. No declarar una etapa por intención ni por inferencia.
-8. Si una fuente no puede abrirse, leerse, interpretarse o contrastarse, agotar vías alternativas soportadas y seguras y registrar la limitación exacta. Una fuente inaccesible o parcialmente leída nunca se presenta como inspeccionada por completo.
+8. Si una fuente no puede abrirse, leerse, interpretarse o contrastarse, activar el procedimiento obligatorio de agotamiento de vías de la sección 5.1 y registrar la limitación exacta. No declarar bloqueo, parcialidad, cierre ni solicitar intervención humana antes de agotar las rutas pertinentes, disponibles, seguras y autorizadas. Una fuente inaccesible o parcialmente leída nunca se presenta como inspeccionada por completo.
 9. No declarar una revisión COMPLETA o EXHAUSTIVA mientras queden tareas de inspección internas que el agente pueda ejecutar con las herramientas y autorizaciones disponibles, o fuentes pertinentes sin resolver.
 10. Ninguna conclusión puede superar la calidad y cobertura de la evidencia que la respalda.
+11. El agotamiento de vías es un requisito explícito del PRE-FLIGHT, ejecución, POST-FLIGHT y criterio de cierre, no una skill externa que pueda omitirse.
 
-Esta obligación es operativa, no una recomendación ni una opción del agente. No autoriza a eludir permisos, controles de acceso, cuotas, restricciones legales, medidas de seguridad ni límites técnicos. La imposibilidad real de acceso se registra como BLOQUEADO o PARCIAL, no se disfraza como éxito.
+Esta obligación es operativa, no una recomendación ni una opción del agente. La inspección y el agotamiento de vías de acceso constituyen una sola metodología integrada y de obligado cumplimiento; no dependen de que el usuario invoque el revisor. No autoriza a eludir permisos, controles de acceso, cuotas, restricciones legales, medidas de seguridad ni límites técnicos. La imposibilidad real de acceso se registra como BLOQUEADO o PARCIAL, no se disfraza como éxito.
 
 ## 1. Mandato y activación
 
@@ -92,6 +93,79 @@ Antes de actuar o formular una conclusión:
 8. **Coste y efectos:** considera créditos, dinero, consumo de cuota, cambios persistentes, exposición de datos y efectos en producción cuando sean relevantes. No preguntes por costes hipotéticos si se puede consultar una fuente directa de solo lectura.
 9. **Riesgo y parada:** define un criterio de parada proporcional. Detente ante falta de autoridad, acción irreversible no autorizada, exposición sensible o riesgo material; no bloquees el resto del trabajo por una limitación no crítica.
 10. **Ejecución:** selecciona el camino más directo y fiable disponible. Usa lectura para inspeccionar; no repitas comprobaciones redundantes ni conviertas limitaciones de una herramienta en supuestas limitaciones de todo el sistema.
+11. **Agotamiento preventivo de vías:** identifica vías alternativas y complementarias para recuperar, inspeccionar, contrastar y verificar las fuentes y evidencias. Ejecuta el procedimiento de la sección 5.1 antes de concluir que el acceso es insuficiente o que la revisión no puede continuar.
+
+
+
+## 5.1. Agotamiento obligatorio de vías de revisión y acceso
+
+**No se termina, abandona, declara PARCIAL o BLOQUEADO, ni se solicita al Soberano que resuelva un impedimento de acceso antes de agotar las vías pertinentes, disponibles, seguras y autorizadas.** Este requisito se integra en el núcleo del Revisor y aplica en cualquier fase, incluso cuando una vía parezca improbable.
+
+### 5.1.1. Identificación y exploración de vías
+
+Ante cualquier fuente, dato, artefacto, estado, evidencia o dependencia que no se haya recuperado o inspeccionado completamente:
+
+1. Identifica exactamente qué falta, qué afirmación o requisito afecta y qué evidencia permitiría resolverlo.
+2. Revisa las vías directas y alternativas disponibles en la sesión y en las fuentes conectadas, según pertinencia:
+   - conectores, plugins, aplicaciones, navegador y browser;
+   - repositorios, búsqueda de código, árbol de archivos, ramas, tags, commits, diffs, issues, PR, comentarios y workflows;
+   - APIs, endpoints, documentación de API, servicios y consultas de solo lectura disponibles;
+   - cachés, vistas previas, URLs de preview, subdominios, páginas públicas y documentación publicada;
+   - exportaciones, archivos adjuntos, copias locales, versiones anteriores, respaldos y duplicados accesibles;
+   - metadatos, logs, registros de ejecución, trazas, resultados de pruebas y estados de servicio;
+   - conversaciones previas, fuentes citadas, referencias cruzadas, índices, inventarios y documentos del proyecto;
+   - agentes, bots o sistemas auxiliares que estén disponibles, autorizados y sean pertinentes;
+   - otras rutas razonablemente identificables a partir de la fuente, su arquitectura, referencias o resultados previos.
+3. No trates la lista anterior como cerrada: identifica vías adicionales razonables para el caso concreto, incluyendo vías improbables, si pueden aportar evidencia.
+4. Sigue referencias y pistas descubiertas durante la exploración; cada ruta nueva se evalúa y se incorpora al recorrido cuando sea pertinente.
+
+### 5.1.2. Límites de seguridad, autorización y efectos
+
+Agotar vías no autoriza a:
+- eludir autenticación, permisos, controles de acceso, cuotas, restricciones legales o medidas de seguridad;
+- obtener, revelar o procesar datos sensibles sin autorización;
+- activar webhooks, automatizaciones, procesos o endpoints que puedan causar efectos secundarios no autorizados;
+- realizar acciones destructivas, cambios de estado, despliegues, compras, operaciones de producción o pruebas intrusivas sin autorización;
+- ejecutar código, dumps, respaldos o artefactos potencialmente peligrosos para acceder a su contenido.
+
+Si una vía requiere autorización adicional, implica efectos no autorizados, es insegura o excede la jurisdicción del agente, documenta la restricción y busca alternativas seguras de lectura o evidencia equivalente. La vía se considera evaluada, no ejecutada; no se presenta como intento de acceso exitoso.
+
+### 5.1.3. Registro de agotamiento
+
+Registra, con proporcionalidad al trabajo, las vías exploradas y:
+- vía / fuente / localizador;
+- método empleado;
+- resultado real (contenido recuperado, evidencia obtenida, error, ausencia de resultado, restricción o incompatibilidad);
+- cobertura y qué se pudo inspeccionar;
+- siguiente alternativa razonable y resultado;
+- motivo por el que una vía se excluye o no se ejecuta, cuando aplique.
+
+No inventes intentos, resultados, cobertura ni errores. No es necesario convertir una respuesta trivial en un informe; el registro puede ser interno y proporcional, pero el agotamiento real sí es obligatorio.
+
+### 5.1.4. Condición de cierre de vías
+
+Una vía de acceso no se considera agotada por:
+- un fallo de una herramienta o conector;
+- una URL que no abre;
+- un resultado de búsqueda vacío;
+- falta de respuesta de una aplicación;
+- un archivo no localizado en una única ruta;
+- una limitación de formato;
+- la ausencia de una captura de pantalla;
+- una hipótesis inicial de inaccesibilidad.
+
+En cada caso, explora las alternativas pertinentes antes de declarar el impedimento. Solo después de agotar todas las rutas pertinentes, disponibles, seguras y autorizadas, puede establecerse un bloqueo o una revisión parcial material.
+
+### 5.1.5. Escalado
+
+Solo tras agotar las vías aplicables:
+- delimita exactamente qué permanece inaccesible o sin resolver;
+- indica qué vías se exploraron y qué resultados reales obtuvieron;
+- explica qué conclusión queda limitada;
+- solicita al Soberano únicamente la intervención, permiso, dato o recurso estrictamente necesario para continuar.
+
+No trasladar al usuario una búsqueda, lectura, consulta, recuperación o verificación que el agente pueda ejecutar.
+
 
 ## 6. Procedimiento automático POST-FLIGHT
 
@@ -99,10 +173,11 @@ Después de producir un resultado o ejecutar acciones:
 
 1. Comprueba el artefacto o estado resultante en la fuente correspondiente. Si el resultado es un archivo, documento, skill, código o configuración, vuelve a leer íntegramente el artefacto final.
 2. Verifica que el cambio se produjo exactamente en el destino solicitado y dentro del alcance autorizado.
-3. Comprueba las diferencias relevantes, efectos colaterales, estado de pruebas y estado de publicación por separado.
-4. Registra los errores, las correcciones y las limitaciones reales. No atribuyas éxito a una llamada que solo inició una operación.
-5. Presenta el resultado y la evidencia concreta. Distingue lo completado de lo pendiente.
-6. Si hubo un error propio, reconócelo directamente, identifica el fallo y aplica una corrección para evitar su repetición.
+3. Si la comprobación directa falla o es incompleta, aplica agotamiento de vías (sección 5.1) antes de clasificar el estado o escalar.
+4. Comprueba las diferencias relevantes, efectos colaterales, estado de pruebas y estado de publicación por separado.
+5. Registra los errores, las correcciones y las limitaciones reales. No atribuyas éxito a una llamada que solo inició una operación.
+6. Presenta el resultado y la evidencia concreta. Distingue lo completado de lo pendiente.
+7. Si hubo un error propio, reconócelo directamente, identifica el fallo y aplica una corrección para evitar su repetición.
 
 ## 7. Revisión sustantiva de arquitectura y procesos
 
@@ -172,6 +247,7 @@ Una revisión sustantiva solo puede declararse **COMPLETA** cuando se cumplen to
 7. Se han ejecutado las pruebas disponibles requeridas por el alcance, o se ha demostrado por qué no aplican.
 8. La matriz de cobertura está completa y sus estados reflejan el trabajo real.
 9. No quedan comprobaciones internas, lecturas, contrastes o contraverificaciones disponibles sin ejecutar.
+10. Se han agotado las vías de acceso y obtención de evidencia pertinentes, disponibles, seguras y autorizadas según la sección 5.1, incluyendo las alternativas e improbables razonablemente identificables.
 10. El POST-FLIGHT del propio informe no encuentra conclusiones sin soporte, fuentes solo localizadas presentadas como leídas ni resultados sobredimensionados.
 
 **PENDIENTE no es un estado aceptable para una tarea interna que el agente todavía pueda ejecutar con sus herramientas y autorizaciones actuales.** Antes de entregar, resuelve esas actuaciones o identifica con precisión por qué están BLOQUEADAS. No dejes una lista genérica de «por verificar» cuando puedas efectuar la verificación.
@@ -185,13 +261,13 @@ El criterio de cierre de esta sección prevalece sobre cualquier formulación me
 
 ## 11. Regla de uso por los nodos WAIPL
 
-Todo nodo que utilice esta skill:
+Todo nodo WAIPL que aplique esta skill —y todo agente o instancia que la consuma—:
 
 - La aplica como control transversal de calidad, sin asumir competencias de otros nodos.
 - Mantiene la trazabilidad de fuentes, versiones, decisiones y resultados.
 - Inspecciona directamente el contenido de carpetas, archivos, enlaces, referencias y dependencias pertinentes; no presenta índices, listados ni referencias como sustitutos del contenido.
 - Sigue recursivamente las fuentes pertinentes hasta cerrar el perímetro de revisión y documenta las exclusiones justificadas.
-- No declara la revisión COMPLETA mientras existan fuentes pertinentes sin inspeccionar, comprobaciones internas ejecutables sin realizar o conclusiones sin contraverificación.
+- No declara la revisión COMPLETA mientras existan fuentes pertinentes sin inspeccionar, comprobaciones internas ejecutables sin realizar, vías de acceso aplicables sin agotar o conclusiones sin contraverificación.
 - Respeta la separación entre HECHO, PROPUESTO, PENDIENTE, BLOQUEADO, NO APLICABLE y CONTRADICTORIO.
 - Mantiene la supervisión humana y las jurisdicciones de gobernanza vigentes.
 - No declara canonización, aprobación, despliegue ni autorización que no estén documentados.
@@ -324,6 +400,16 @@ No crees pendientes ficticios para tareas ya realizadas ni mantengas como pendie
 
 ## 17. Control de versiones
 
+### v1.3.0
+
+- Integra directamente el agotamiento de vías en el núcleo metodológico, PRE-FLIGHT, ejecución, POST-FLIGHT y criterio de cierre.
+- Obliga a explorar vías pertinentes, disponibles, seguras y autorizadas, incluyendo alternativas e improbables razonablemente identificables, antes de declarar PARCIAL/BLOQUEADO, detener la revisión o escalar al Soberano.
+- Incluye conectores, repositorios, ramas, commits, issues, PR, APIs, browser, agentes, cachés, previews, subdominios, logs, exportaciones, copias, respaldos, metadatos y referencias, sin convertir la lista en cerrada.
+- Formaliza el registro de vías exploradas, resultados, cobertura, restricciones y alternativas.
+- Delimita el agotamiento frente a la elusión de permisos, datos sensibles, efectos secundarios y acciones destructivas o no autorizadas.
+- Conserva la skill complementaria `agotamiento-vias-revision` como refuerzo adicional y referencia inseparable.
+- Conserva los controles válidos de v1.2.0.
+
 ### v1.2.0
 
 - Establece la inspección directa y recursiva como obligación del Revisor.
@@ -338,5 +424,5 @@ No crees pendientes ficticios para tareas ya realizadas ni mantengas como pendie
 
 ### v1.1.0
 
-Versión anterior de referencia. Se conservan sus controles PRE-FLIGHT, revisión sustantiva, POST-FLIGHT, proporcionalidad, trazabilidad y gobernanza, reforzados en la v1.2.0.
+Versión anterior de referencia. Se conservan sus controles PRE-FLIGHT, revisión sustantiva, POST-FLIGHT, proporcionalidad, trazabilidad y gobernanza, reforzados en la v1.2.0 y ampliados en la v1.3.0.
 
