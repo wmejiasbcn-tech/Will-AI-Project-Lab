@@ -37,7 +37,8 @@ Toda revisión sustantiva queda sometida a estas obligaciones:
 7. Mantener evidencia de qué se abrió, qué se leyó, qué se examinó, qué se contrastó y qué se contraverificó. No declarar una etapa por intención ni por inferencia.
 8. Si una fuente no puede abrirse, leerse, interpretarse o contrastarse, activar el procedimiento obligatorio de agotamiento de vías de la sección 5.1 y registrar la limitación exacta. No declarar bloqueo, parcialidad, cierre ni solicitar intervención humana antes de agotar las rutas pertinentes, disponibles, seguras y autorizadas. Una fuente inaccesible o parcialmente leída nunca se presenta como inspeccionada por completo.
 9. No declarar una revisión COMPLETA o EXHAUSTIVA mientras queden tareas de inspección internas que el agente pueda ejecutar con las herramientas y autorizaciones disponibles, o fuentes pertinentes sin resolver.
-10. Ninguna conclusión puede superar la calidad y cobertura de la evidencia que la respalda.\n11. El agotamiento de vías es un requisito explícito del PRE-FLIGHT, ejecución, POST-FLIGHT y criterio de cierre, no una skill externa que pueda omitirse.
+10. Ninguna conclusión puede superar la calidad y cobertura de la evidencia que la respalda.
+11. El agotamiento de vías es un requisito explícito del PRE-FLIGHT, ejecución, POST-FLIGHT y criterio de cierre, no una skill externa que pueda omitirse.
 
 Esta obligación es operativa, no una recomendación ni una opción del agente. La inspección y el agotamiento de vías de acceso constituyen una sola metodología integrada y de obligado cumplimiento; no dependen de que el usuario invoque el revisor. No autoriza a eludir permisos, controles de acceso, cuotas, restricciones legales, medidas de seguridad ni límites técnicos. La imposibilidad real de acceso se registra como BLOQUEADO o PARCIAL, no se disfraza como éxito.
 
@@ -91,7 +92,8 @@ Antes de actuar o formular una conclusión:
 7. **Dependencias y referencias:** identifica las necesarias y distingue las existentes y verificadas de las hipotéticas. Sigue las carpetas, subcarpetas, enlaces, referencias y dependencias pertinentes que descubras; ábrelas y examina sus contenidos hasta cerrar el perímetro de la revisión.
 8. **Coste y efectos:** considera créditos, dinero, consumo de cuota, cambios persistentes, exposición de datos y efectos en producción cuando sean relevantes. No preguntes por costes hipotéticos si se puede consultar una fuente directa de solo lectura.
 9. **Riesgo y parada:** define un criterio de parada proporcional. Detente ante falta de autoridad, acción irreversible no autorizada, exposición sensible o riesgo material; no bloquees el resto del trabajo por una limitación no crítica.
-10. **Ejecución:** selecciona el camino más directo y fiable disponible. Usa lectura para inspeccionar; no repitas comprobaciones redundantes ni conviertas limitaciones de una herramienta en supuestas limitaciones de todo el sistema.\n11. **Agotamiento preventivo de vías:** identifica vías alternativas y complementarias para recuperar, inspeccionar, contrastar y verificar las fuentes y evidencias. Ejecuta el procedimiento de la sección 5.1 antes de concluir que el acceso es insuficiente o que la revisión no puede continuar.
+10. **Ejecución:** selecciona el camino más directo y fiable disponible. Usa lectura para inspeccionar; no repitas comprobaciones redundantes ni conviertas limitaciones de una herramienta en supuestas limitaciones de todo el sistema.
+11. **Agotamiento preventivo de vías:** identifica vías alternativas y complementarias para recuperar, inspeccionar, contrastar y verificar las fuentes y evidencias. Ejecuta el procedimiento de la sección 5.1 antes de concluir que el acceso es insuficiente o que la revisión no puede continuar.
 
 
 
@@ -170,7 +172,8 @@ No trasladar al usuario una búsqueda, lectura, consulta, recuperación o verifi
 Después de producir un resultado o ejecutar acciones:
 
 1. Comprueba el artefacto o estado resultante en la fuente correspondiente. Si el resultado es un archivo, documento, skill, código o configuración, vuelve a leer íntegramente el artefacto final.
-2. Verifica que el cambio se produjo exactamente en el destino solicitado y dentro del alcance autorizado.\n3. Si la comprobación directa falla o es incompleta, aplica agotamiento de vías (sección 5.1) antes de clasificar el estado o escalar.
+2. Verifica que el cambio se produjo exactamente en el destino solicitado y dentro del alcance autorizado.
+3. Si la comprobación directa falla o es incompleta, aplica agotamiento de vías (sección 5.1) antes de clasificar el estado o escalar.
 4. Comprueba las diferencias relevantes, efectos colaterales, estado de pruebas y estado de publicación por separado.
 5. Registra los errores, las correcciones y las limitaciones reales. No atribuyas éxito a una llamada que solo inició una operación.
 6. Presenta el resultado y la evidencia concreta. Distingue lo completado de lo pendiente.
@@ -243,7 +246,8 @@ Una revisión sustantiva solo puede declararse **COMPLETA** cuando se cumplen to
 6. Se han buscado contradicciones, excepciones y evidencia que pueda refutar las conclusiones.
 7. Se han ejecutado las pruebas disponibles requeridas por el alcance, o se ha demostrado por qué no aplican.
 8. La matriz de cobertura está completa y sus estados reflejan el trabajo real.
-9. No quedan comprobaciones internas, lecturas, contrastes o contraverificaciones disponibles sin ejecutar.\n10. Se han agotado las vías de acceso y obtención de evidencia pertinentes, disponibles, seguras y autorizadas según la sección 5.1, incluyendo las alternativas e improbables razonablemente identificables.
+9. No quedan comprobaciones internas, lecturas, contrastes o contraverificaciones disponibles sin ejecutar.
+10. Se han agotado las vías de acceso y obtención de evidencia pertinentes, disponibles, seguras y autorizadas según la sección 5.1, incluyendo las alternativas e improbables razonablemente identificables.
 10. El POST-FLIGHT del propio informe no encuentra conclusiones sin soporte, fuentes solo localizadas presentadas como leídas ni resultados sobredimensionados.
 
 **PENDIENTE no es un estado aceptable para una tarea interna que el agente todavía pueda ejecutar con sus herramientas y autorizaciones actuales.** Antes de entregar, resuelve esas actuaciones o identifica con precisión por qué están BLOQUEADAS. No dejes una lista genérica de «por verificar» cuando puedas efectuar la verificación.
@@ -395,6 +399,16 @@ Si una limitación de acceso, formato, herramienta, permiso, servicio externo o 
 No crees pendientes ficticios para tareas ya realizadas ni mantengas como pendientes tareas que puedes completar ahora. Tampoco elimines un bloqueo real para presentar un resultado artificialmente cerrado.
 
 ## 17. Control de versiones
+
+### v1.3.0
+
+- Integra directamente el agotamiento de vías en el núcleo metodológico, PRE-FLIGHT, ejecución, POST-FLIGHT y criterio de cierre.
+- Obliga a explorar vías pertinentes, disponibles, seguras y autorizadas, incluyendo alternativas e improbables razonablemente identificables, antes de declarar PARCIAL/BLOQUEADO, detener la revisión o escalar al Soberano.
+- Incluye conectores, repositorios, ramas, commits, issues, PR, APIs, browser, agentes, cachés, previews, subdominios, logs, exportaciones, copias, respaldos, metadatos y referencias, sin convertir la lista en cerrada.
+- Formaliza el registro de vías exploradas, resultados, cobertura, restricciones y alternativas.
+- Delimita el agotamiento frente a la elusión de permisos, datos sensibles, efectos secundarios y acciones destructivas o no autorizadas.
+- Conserva la skill complementaria `agotamiento-vias-revision` como refuerzo adicional y referencia inseparable.
+- Conserva los controles válidos de v1.2.0.
 
 ### v1.2.0
 
