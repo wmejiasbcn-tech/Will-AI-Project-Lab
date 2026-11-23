@@ -40,7 +40,7 @@ La clasificación de los nodos de Estructura (32–42 y 45–48), Manifestación
 
 **GPAI (23)** conserva adscripción estructural **CINTURIANO / REGISTRADO** y participa adicionalmente en el Vórtice solo mediante misiones autorizadas bajo `VORTEX_PUNCTUAL`. No es miembro vorticial fijo ni regular. Esta condición consta en `05_VORTICE/GPAI/IDENTIDAD.md` y en el acta soberana de aceptación del 2026-08-18.
 
-## 4. Posiciones transitivas y pivotantes
+## 4. Adscripciones adicionales y posiciones pivotantes
 
 La pertenencia base y la participación solicitada se registran por separado:
 
