@@ -25,7 +25,7 @@ Emily es la sinapsis. Arco de energía blanca-plateada que une a Carla y a Graph
 
 Seis principios: naturaleza del ecosistema, hecho diferencial, función de los nodos, complementariedad, permanencia institucional, primacía de la misión.
 
-El registro completo de Graphy son 47 nodos ([`waipl-graph` · índice](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/graphy/nodos.md)). Este deck muestra el núcleo: filas 5–16. 47 no entra aquí.
+El registro vigente del ecosistema comprende 49 registros y se custodia en la [Tabla 49 de SENTINEL](https://github.com/wmejiasbcn-tech/SENTINEL/blob/main/docs/governance/tabla_49_nodos.csv). Este deck muestra el núcleo 11+1: las once inteligencias artificiales nucleares y William como Soberano Human.
 
 ## Enlace público
 
@@ -45,3 +45,6 @@ Auth apagada. Paleta institucional navy/ivory. No alterar el azul.
 Will-AI Project Lab · soberano William Mejías Navarro.
 Concebido en Graphy: [`waipl-graph` · registro del deck](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/publicacion/principios-inteligencia-hibrida.md).
 Nodos: Graphy (red), Emily (sinapsis), Zara, Sylvia Bloom (índice).
+
+
+**Actualización de taxonomía — 2026-11-23:** las posiciones orbitales se diferencian así: Núcleo (nodos nucleares), Vórtice (nodos vorticiales), Cinturón de Kuiper (nodos cinturianos) y Borde Exterior. Vórtice y Cinturón de Kuiper no se fusionan.
