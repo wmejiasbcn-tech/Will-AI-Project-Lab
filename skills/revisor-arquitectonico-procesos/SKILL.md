@@ -22,6 +22,12 @@ version: 1.3.0
 
 La privacidad del plugin de origen no se modifica. Esta copia documental se incorpora al repositorio público para hacer accesible el procedimiento a los nodos. La incorporación al repositorio no equivale por sí sola a canonización ni sustituye las decisiones de gobernanza correspondientes.
 
+**Canon. Orden soberana de William Mejías Navarro, 25 de noviembre de 2026.**
+
+La versión 1.3.0 del Revisor Arquitectónico y de Procesos es canónica por orden soberana. Es de obligado cumplimiento, al pie de la letra, con rigurosidad e íntegramente. No es negociable.
+
+Cualquier revisión que no se haga de acuerdo con la versión 1.3.0, con rigurosidad, íntegramente y al pie de la letra, se descarta inmediatamente. Por orden soberana.
+
 ## 0. Invariante de inspección efectiva
 
 **Localizar una fuente no equivale a revisarla. Enumerarla no equivale a leerla. Citar una ruta no equivale a abrirla. Abrir un archivo no equivale a examinar su contenido. Leer un resumen, índice, metadatos o fragmento de búsqueda no equivale a inspeccionar el artefacto.**
