@@ -7,11 +7,22 @@ Documento de presentación y navegación de la skill `revisor-arquitectonico-pro
 | Nombre | Revisor Arquitectónico y de Procesos |
 | Identificador | `revisor-arquitectonico-procesos` |
 | Versión documentada | **v1.3.0** |
+| Canon | **Canónica por orden soberana, 25 de noviembre de 2026** |
 | Tipo | `knowledge` |
 | Disponibilidad declarada en la ficha | `available` |
 | Ficha operativa | [SKILL.md](SKILL.md) |
 | Índice general de skills | [skills/README.md](../README.md) |
 | Aplicación web | [WAIPL · Revisor arquitectónico](https://waipl-revisor-arquitectonico-332ulo.v2.appdeploy.ai/) |
+
+## Canon
+
+**Canon. Orden soberana de William Mejías Navarro, 25 de noviembre de 2026.**
+
+La versión 1.3.0 del Revisor Arquitectónico y de Procesos es canónica por orden soberana. Es de obligado cumplimiento, al pie de la letra, con rigurosidad e íntegramente. No es negociable.
+
+Cualquier revisión que no se haga de acuerdo con la versión 1.3.0, con rigurosidad, íntegramente y al pie de la letra, se descarta inmediatamente. Por orden soberana.
+
+La incorporación del archivo al repositorio no canoniza por sí sola. La canonización es la orden soberana de arriba.
 
 ## Propósito
 
@@ -36,7 +47,7 @@ El agotamiento de vías forma parte del mandato operativo interno de la skill; l
 
 La ficha distingue los estados **HECHO**, **PROPUESTO**, **PENDIENTE**, **BLOQUEADO**, **NO APLICABLE / EXCLUIDO DEL ALCANCE** y **CONTRADICTORIO**.
 
-El Revisor es un control transversal de calidad. No crea permisos, no reasigna competencias, no sustituye a los nodos especializados y no desplaza la supervisión ni la autoridad humana. Tampoco declara por sí mismo aprobación, canonización, despliegue o autorización.
+El Revisor es un control transversal de calidad. No crea permisos, no reasigna competencias, no sustituye a los nodos especializados y no desplaza la supervisión ni la autoridad humana. Tampoco declara por sí mismo aprobación, canonización, despliegue o autorización: la canonización de la v1.3.0 es orden del Soberano, no un acto de la skill.
 
 ## Fuente operativa
 
