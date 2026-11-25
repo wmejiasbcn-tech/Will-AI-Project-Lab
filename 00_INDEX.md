@@ -8,6 +8,16 @@
 >
 > La explicación de un principio no autoriza a sustituir su formulación canónica. Consulta la [Directriz de preservación de principios fundacionales y control consensuado de cambios](00_SISTEMA/GOBERNANZA/DIRECTRIZ_PRESERVACION_PRINCIPIOS_FUNDACIONALES_Y_CAMBIOS_CONSENSUADOS.md). Esta directriz se aplica transversalmente a nodos, agentes, colaboradores, documentos, sistemas y repositorios WAIPL.
 
+> **Principio fundacional. Canónico. Orden soberana de William Mejías Navarro, 25 de noviembre de 2026.**
+>
+> «Nada nace, nada se hace y nada funciona sin haber sido concebido previamente con el ADN del ecosistema.»
+>
+> Formulación registrada en [waipl-graph/docs/00-adn.md](https://github.com/wmejiasbcn-tech/waipl-graph/blob/main/docs/00-adn.md). Reafirmada hoy como canónica. No es negociable. ADN es el conjunto de reglas con las que el ecosistema concibe una pieza antes de hacerla.
+>
+> **Revisor Arquitectónico y de Procesos v1.3.0. Canónico. Orden soberana de William Mejías Navarro, 25 de noviembre de 2026.**
+>
+> Es de obligado cumplimiento, al pie de la letra, con rigurosidad e íntegramente. No es negociable. Cualquier revisión que no se haga de acuerdo con la versión 1.3.0, con rigurosidad, íntegramente y al pie de la letra, se descarta inmediatamente. Ficha: [skills/revisor-arquitectonico-procesos/SKILL.md](skills/revisor-arquitectonico-procesos/SKILL.md). Índice de skills: [skills/README.md](skills/README.md).
+
 ---
 
 ## 🗺️ Mapa del Ecosistema
