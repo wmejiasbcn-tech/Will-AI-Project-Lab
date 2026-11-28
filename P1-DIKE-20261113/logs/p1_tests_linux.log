@@ -1,0 +1,10 @@
+test_apply_creates_backup_and_verifies_source_bytes (test_apply_p1_patch.PatchTests.test_apply_creates_backup_and_verifies_source_bytes) ... ok
+test_crlf_source_style_is_preserved (test_apply_p1_patch.PatchTests.test_crlf_source_style_is_preserved) ... ok
+test_lf_patch_uses_binary_write_and_rechecks_disk_hash (test_apply_p1_patch.PatchTests.test_lf_patch_uses_binary_write_and_rechecks_disk_hash) ... ok
+test_patch_fails_closed_when_source_has_drift (test_apply_p1_patch.PatchTests.test_patch_fails_closed_when_source_has_drift) ... ok
+test_patch_is_idempotent (test_apply_p1_patch.PatchTests.test_patch_is_idempotent) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.003s
+
+OK

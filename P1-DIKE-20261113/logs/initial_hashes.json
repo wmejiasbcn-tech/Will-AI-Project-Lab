@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-11-13T17:19:37.620445+01:00",
+  "active_source": {
+    "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\agents\\dike_auditora.py",
+    "bytes": 33647,
+    "sha256_physical": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+    "sha256_lf": "2471a5dda3953bdd05e05b378534a9e085dfb853d4cd3addf72453d84808d335",
+    "crlf": 0,
+    "mtime": "2026-08-10T05:56:46.834122"
+  },
+  "historical_documents": [
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_c5319ca5-b617-4492-b6ce-7423ffdbc183.txt",
+      "bytes": 7563,
+      "sha256_physical": "a1dc4f4a0ee2e261b761db9d00cc58cebc8ca6b8b095acfd36ed4d01175361bd",
+      "sha256_lf": "f90a8dc06c4c24016b2b20825883b2cb396afa2a4aeb5311d9cee3a3a6dca8ee",
+      "crlf": 142,
+      "mtime": "2026-08-10T05:13:13.412171",
+      "uuid": "c5319ca5-b617-4492-b6ce-7423ffdbc183",
+      "registered_sha256": "f90a8dc06c4c24016b2b20825883b2cb396afa2a4aeb5311d9cee3a3a6dca8ee",
+      "registered_bytes": 7421,
+      "title": "AESIA — Pagina principal oficial"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_d713e0ab-af4e-4700-8750-441d8acfe91b.txt",
+      "bytes": 6330,
+      "sha256_physical": "75db8b174e52ae3a12fd042e8901c2a17cfc25aa7848c16ce1d6cea637685997",
+      "sha256_lf": "3c0db5d849b6904495fcade97e0dc40a7b3378a1b4d980fe797a03fee83eaed4",
+      "crlf": 85,
+      "mtime": "2026-08-10T05:13:13.672236",
+      "uuid": "d713e0ab-af4e-4700-8750-441d8acfe91b",
+      "registered_sha256": "3c0db5d849b6904495fcade97e0dc40a7b3378a1b4d980fe797a03fee83eaed4",
+      "registered_bytes": 6245,
+      "title": "AESIA — Guias oficiales"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_c66e6ce8-151b-4353-bd55-94d5f063d486.txt",
+      "bytes": 4370,
+      "sha256_physical": "f6b56c24e45a8d60948c25c9a071a5f994d3ddf23185dfa3080c898f8225e6de",
+      "sha256_lf": "d4180dfa546e7bcc9fb5341666c6318aa1c26bdefdb1ed56a8c59221f0c0be8c",
+      "crlf": 81,
+      "mtime": "2026-08-10T05:13:16.705614",
+      "uuid": "c66e6ce8-151b-4353-bd55-94d5f063d486",
+      "registered_sha256": "d4180dfa546e7bcc9fb5341666c6318aa1c26bdefdb1ed56a8c59221f0c0be8c",
+      "registered_bytes": 4289,
+      "title": "AESIA — Divulgacion"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_3b4cb911-f756-4671-9793-b3c8f9ba72f6.txt",
+      "bytes": 9284,
+      "sha256_physical": "0e1a1fb2d12a2c6d40cb71026f5b6b691f6f1d71008d44d2997c8f81189b6a7e",
+      "sha256_lf": "abb0bdf321d9d8faeec07a45d012370194f978cc3f17a5465ff1accfaa244c32",
+      "crlf": 135,
+      "mtime": "2026-08-10T05:13:17.276065",
+      "uuid": "3b4cb911-f756-4671-9793-b3c8f9ba72f6",
+      "registered_sha256": "abb0bdf321d9d8faeec07a45d012370194f978cc3f17a5465ff1accfaa244c32",
+      "registered_bytes": 9149,
+      "title": "AESIA — RIA: Sistemas de Alto Riesgo"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_4e53e5b5-a2ba-4a78-9744-5290e5e372f7.txt",
+      "bytes": 6728,
+      "sha256_physical": "712fd3cfba5082f355df022b49d43aca0398d02a0f212f2517794ece451a39e4",
+      "sha256_lf": "059d63482318cf9be272d8e5a7005c5f1dd700287dba2fad1173e0c4c26c675c",
+      "crlf": 111,
+      "mtime": "2026-08-10T05:13:17.654985",
+      "uuid": "4e53e5b5-a2ba-4a78-9744-5290e5e372f7",
+      "registered_sha256": "059d63482318cf9be272d8e5a7005c5f1dd700287dba2fad1173e0c4c26c675c",
+      "registered_bytes": 6617,
+      "title": "AESIA — Actualidad y novedades"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\rgpd_bb1e6b7a-5397-4bd5-9661-ffa6cb30ec0a.txt",
+      "bytes": 408024,
+      "sha256_physical": "959fdd9d8fecf562fff37658fac5f47cf9a24e765b0e6aebb3fde8732fff5beb",
+      "sha256_lf": "f8bbc9a915e5fe040035bbff6bfb2ecbbb31c198264b8e618615673ece88fd1b",
+      "crlf": 4084,
+      "mtime": "2026-08-10T05:34:13.521777",
+      "uuid": "bb1e6b7a-5397-4bd5-9661-ffa6cb30ec0a",
+      "registered_sha256": "f8bbc9a915e5fe040035bbff6bfb2ecbbb31c198264b8e618615673ece88fd1b",
+      "registered_bytes": 403940,
+      "title": "RGPD — Reglamento (UE) 2016/679 texto oficial completo"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\lopdgdd_137c461c-c4dd-4695-a176-9236021298a8.txt",
+      "bytes": 270433,
+      "sha256_physical": "aa21f0ae9fbbb80a50bc583e3b6edac8e8e35656589686b38e45e351eeff8d72",
+      "sha256_lf": "a0ce53a1f43fa8f495a37fd660b3847f2f83af3d07e11a18fa7b64132b36a46f",
+      "crlf": 3564,
+      "mtime": "2026-08-10T05:34:20.021109",
+      "uuid": "137c461c-c4dd-4695-a176-9236021298a8",
+      "registered_sha256": "a0ce53a1f43fa8f495a37fd660b3847f2f83af3d07e11a18fa7b64132b36a46f",
+      "registered_bytes": 266869,
+      "title": "LOPDGDD — Ley Organica 3/2018 texto consolidado"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\aesia_7c4555bd-4468-4ae3-bba2-8818440ade1c.txt",
+      "bytes": 108439,
+      "sha256_physical": "538b468cf2559811614290afaae847c166994750e0f73dac18fe9bb91cdebc98",
+      "sha256_lf": "f17fd8bcbc038a0fb35e58d86d32aae089ca7cc0a8d0c95a64853aec171c239d",
+      "crlf": 1466,
+      "mtime": "2026-08-10T05:34:22.040155",
+      "uuid": "7c4555bd-4468-4ae3-bba2-8818440ade1c",
+      "registered_sha256": "f17fd8bcbc038a0fb35e58d86d32aae089ca7cc0a8d0c95a64853aec171c239d",
+      "registered_bytes": 106973,
+      "title": "AESIA — Real Decreto 729/2023 Estatuto de la Agencia texto consolidado"
+    },
+    {
+      "path": "C:\\Users\\USER\\Desktop\\AutoClaw\\waipl\\vaults\\dike\\04-PROFESIONAL\\dossier_6bda7d60-9756-43a1-8866-f16d91168cea.txt",
+      "bytes": 15935,
+      "sha256_physical": "af5cd674a9ee7b65cb0f698ed267007b73c0523ff33cae26b773b117e30af92c",
+      "sha256_lf": "bcbe128c07da3218f41105d0ffdaf9baa91de6b985c7bb2af982f0236b8e485e",
+      "crlf": 447,
+      "mtime": "2026-08-10T05:34:22.467494",
+      "uuid": "6bda7d60-9756-43a1-8866-f16d91168cea",
+      "registered_sha256": "bcbe128c07da3218f41105d0ffdaf9baa91de6b985c7bb2af982f0236b8e485e",
+      "registered_bytes": 15488,
+      "title": "Dossier juridico-operativo AESIA / RGPD / LOPDGDD (elaborado por Zara)"
+    }
+  ]
+}

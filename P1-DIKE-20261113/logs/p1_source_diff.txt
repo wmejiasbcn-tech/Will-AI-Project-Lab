@@ -1,0 +1,42 @@
+--- dike_auditora.py.before-p1
++++ dike_auditora.py.after-p1
+@@ -164,14 +164,27 @@
+             normative_type: "AESIA" o "RGPD"
+         """
+         doc_uuid = str(uuidlib.uuid4())
+-        doc_hash = hashlib.sha256(content_text.encode("utf-8")).hexdigest()
++        content_bytes = content_text.encode("utf-8")
++        doc_hash = hashlib.sha256(content_bytes).hexdigest()
+         timestamp = datetime.now(timezone(timedelta(hours=2))).isoformat()
+ 
+         # Almacenar documento
+         corpus_file = os.path.join(self.corpus_dir, f"{normative_type.lower()}_{doc_uuid}.txt")
+         os.makedirs(self.corpus_dir, exist_ok=True)
+-        with open(corpus_file, "w", encoding="utf-8") as f:
+-            f.write(content_text)
++        with open(corpus_file, "wb") as f:
++            f.write(content_bytes)
++            f.flush()
++            os.fsync(f.fileno())
++
++        # Verify the physical bytes before registering the index entry.
++        with open(corpus_file, "rb") as f:
++            stored_bytes = f.read()
++        stored_hash = hashlib.sha256(stored_bytes).hexdigest()
++        if stored_hash != doc_hash:
++            try:
++                os.remove(corpus_file)
++            finally:
++                raise IOError("DIKE integrity error: persisted SHA-256 mismatch")
+ 
+         # Registrar en índice
+         entry = {
+@@ -182,7 +195,7 @@
+             "sha256": doc_hash,
+             "stored_path": corpus_file,
+             "timestamp": timestamp,
+-            "size_bytes": len(content_text.encode("utf-8")),
++            "size_bytes": len(content_bytes),
+         }
+         self.corpus_index["documentos"].append(entry)
+ 

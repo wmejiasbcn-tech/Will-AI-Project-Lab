@@ -1,0 +1,447 @@
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+1
+DOSSIER JURÍDICO-OPERATIVO
+ AESIA · RGPD · LOPDGDD
+ 
+Marco oficial para el diseño, documentación y defensa de un proyecto de
+ inteligencia artificial con tratamiento de datos personales
+ 
+Documento de trabajo fundamentado exclusivamente en textos oficiales
+recuperados del BOE y del DOUE a través de la base oficial del BOE.
+ 
+Fecha de elaboración: 10 de agosto de 2026
+Versión: 1.0 · Preparado para revisión jurídica especializada
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+2
+0. Nota de rigor y alcance
+Este dossier no reproduce íntegramente las normas ni sustituye el asesoramiento de una autoridad de
+protección de datos o de un profesional jurídico. Su finalidad es ordenar las fuentes oficiales, explicar
+su relación y ofrecer una matriz de trabajo verificable para la preparación del proyecto. No se han
+añadido obligaciones, artículos ni interpretaciones que no estén anclados en las fuentes citadas.
+Regla de lectura: el RGPD es la norma central cuando existe tratamiento de datos
+personales; la LOPDGDD complementa su aplicación en España; y el Estatuto de
+AESIA define la naturaleza, fines y competencias de la Agencia en materia de
+inteligencia artificial. Son capas normativas distintas y pueden aplicarse
+conjuntamente.
+Advertencia sobre textos consolidados: el propio BOE indica que sus textos consolidados son
+informativos y no tienen valor jurídico oficial. Para una presentación formal deben conservarse
+también las publicaciones originales.
+Corte documental
+La investigación se cerró con las fichas oficiales recuperadas el 10/08/2026. La vigencia material de
+cualquier requisito debe comprobarse de nuevo antes de presentar el expediente, especialmente si se
+incorporan normas europeas posteriores o cambios sectoriales.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+3
+1. Mapa de fuentes oficiales
+Instrumento
+Naturaleza y función
+Fuente oficial
+Real Decreto 729/2023
+Aprueba el Estatuto de AESIA. Regula naturaleza, fines,
+competencias, organización y régimen interno.
+BOE-A-2023-18911
+Reglamento (UE) 2016/679
+RGPD. Regula el tratamiento de datos personales y la
+libre circulación de esos datos.
+DOUE-L-2016-80807
+Ley Orgánica 3/2018
+LOPDGDD. Adapta y complementa el marco español de
+protección de datos y derechos digitales.
+BOE-A-2018-16673
+AESIA no es una ley general de protección de datos. El Estatuto le atribuye tareas de supervisión,
+asesoramiento, concienciación, formación, inspección y, cuando proceda, sanción en el ámbito de la
+inteligencia artificial. El RGPD, en cambio, regula las condiciones del tratamiento de datos personales,
+los derechos de las personas y las obligaciones de responsables y encargados.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+4
+2. AESIA: lectura estructural
+Fuente primaria: Real Decreto 729/2023, de 22 de agosto, publicado en el BOE núm. 210 de 2 de
+septiembre de 2023. La ficha oficial ofrece texto original, PDF, XML y texto consolidado.
+Bloque
+Contenido
+Relevancia para el proyecto
+Arts. 1–7
+Naturaleza jurídica, sede, régimen jurídico, objeto,
+cooperación, potestades y transparencia.
+Identificar qué autoridad es AESIA y cuál es el marco
+institucional aplicable.
+Arts. 8–10
+Principios de actuación y competencias.
+Traducir IA responsable, supervisión, evaluación de
+riesgos, formación y coordinación a controles
+documentados.
+Cap. III
+Estructura orgánica y órganos de gobierno, control
+y ejecución.
+Determinar interlocución institucional y trazabilidad
+de decisiones.
+Cap. IV
+Personal al servicio de la Agencia.
+Contexto organizativo, no requisito técnico directo del
+producto.
+Caps. V–VII
+Gestión, régimen económico y asesoramiento
+jurídico.
+Contexto de funcionamiento de la Agencia.
+Artículos especialmente relevantes
+Artículo 1: AESIA es una entidad de derecho público con personalidad jurídica pública, patrimonio
+propio y autonomía de gestión. Artículo 3: su actuación debe sujetarse a la normativa europea sobre
+supervisión de sistemas de IA. Artículo 4: fija objeto y fines, incluyendo reducción de riesgos para la
+intimidad, igualdad y derechos fundamentales. Artículo 10: enumera competencias, entre ellas la
+supervisión de sistemas de IA y la eventual sanción conforme a la normativa aplicable.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+5
+3. RGPD: arquitectura de cumplimiento
+El RGPD contiene 99 artículos y 173 considerandos. Para un proyecto de IA con datos personales, el
+cumplimiento no se reduce a obtener un consentimiento: exige justificar la base jurídica, limitar la
+finalidad, minimizar datos, aplicar seguridad, documentar decisiones y poder demostrar el
+cumplimiento.
+Zona del RGPD
+Artículos
+Pregunta operativa
+Alcance y definiciones
+1–4
+¿Qué tratamiento se realiza, sobre qué datos y con qué alcance territorial?
+Principios y licitud
+5–11
+¿Por qué es lícito, necesario, proporcional y compatible con la finalidad?
+Derechos
+12–22
+¿Puede la persona ejercer acceso, rectificación, supresión, oposición,
+limitación y portabilidad?
+Responsabilidad
+24–31
+¿Quién decide fines y medios? ¿Qué encargados intervienen? ¿Existe registro?
+Seguridad e incidentes
+32–34
+¿Qué medidas existen y cómo se notifican las brechas?
+Riesgo y DPD
+35–39
+¿Hace falta evaluación de impacto? ¿Quién asesora y supervisa?
+Transferencias
+44–50
+¿Salen datos fuera del EEE o se utilizan proveedores internacionales?
+Control y sanciones
+51–84
+¿Qué autoridad interviene, qué recursos existen y qué responsabilidad se
+asume?
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+6
+4. LOPDGDD: adaptación española
+La LOPDGDD desarrolla el marco nacional en materias que el RGPD deja a los Estados miembros,
+regula la autoridad española y reconoce derechos digitales. Su texto consolidado consultado en el BOE
+indica como última actualización publicada el 27/12/2025; para uso formal debe revisarse siempre la
+publicación oficial correspondiente.
+Bloque
+Artículos
+Función
+Disposiciones generales
+1–11
+Objeto, ámbito, fallecidos, exactitud, confidencialidad, consentimiento,
+menores, bases jurídicas y categorías especiales.
+Derechos
+12–18
+Forma de ejercicio de acceso, rectificación, supresión, limitación, portabilidad
+y oposición.
+Tratamientos específicos
+19–27
+Supuestos concretos como videovigilancia, operaciones mercantiles y otros
+tratamientos regulados.
+Responsables y DPD
+28–40
+Obligaciones, bloqueo, encargado, delegado, cualificación, reclamaciones,
+códigos y certificación.
+AEPD y procedimientos
+44–69
+Régimen institucional, potestades, cooperación, procedimientos y
+reclamaciones.
+Régimen sancionador
+70–78
+Sujetos responsables, infracciones, sanciones, prescripción y procedimiento.
+Derechos digitales
+79–97
+Marco de derechos en el entorno digital, incluida protección de menores,
+desconexión y otros ámbitos.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+7
+5. Matriz comparativa de artículos clave
+La siguiente matriz no afirma equivalencia entre artículos. Relaciona funciones normativas: un artículo
+del Estatuto de AESIA puede servir para identificar la autoridad y sus competencias, mientras que los
+artículos del RGPD y la LOPDGDD imponen obligaciones o reconocen derechos sobre datos personales.
+Materia
+AESIA
+RGPD
+LOPDGDD
+Objeto y alcance
+AESIA 1–4: Agencia, régimen y
+fines de supervisión de IA.
+RGPD 1–4: objeto, ámbito
+material/territorial y definiciones.
+LOPDGDD 1–3: objeto, ámbito de
+títulos y datos de fallecidos.
+Principios
+AESIA 8: autonomía, independencia
+técnica, transparencia, eficacia,
+eficiencia, cooperación e igualdad.
+RGPD 5–6: principios y licitud del
+tratamiento.
+LOPDGDD 4–9: exactitud,
+confidencialidad, consentimiento,
+menores, bases jurídicas y
+categorías especiales.
+Finalidad y
+minimización
+AESIA 4 y 10: reducir riesgos y
+supervisar IA.
+RGPD 5.1.b–c: limitación de
+finalidad y minimización.
+LOPDGDD complementa el
+ejercicio nacional de esos
+principios.
+Derechos
+individuales
+AESIA 4.2: intimidad, igualdad y
+derechos fundamentales como
+fines de protección.
+RGPD 12–22: información y
+derechos del interesado.
+LOPDGDD 12–18: reglas españolas
+de ejercicio de derechos.
+Diseño
+responsable
+AESIA 10: entornos de prueba,
+confianza y evaluación de impacto
+social.
+RGPD 25: protección desde el
+diseño y por defecto.
+LOPDGDD 28: obligaciones
+generales de responsable y
+encargado.
+Responsables y
+proveedores
+AESIA 5: cooperación y convenios
+con entidades públicas o privadas.
+RGPD 24–30: responsable,
+corresponsables, encargado y
+registro.
+LOPDGDD 28–33: desarrollo
+nacional de obligaciones y bloqueo.
+Seguridad
+AESIA 4: minimización de riesgos
+para derechos.
+RGPD 32–34: seguridad y brechas.
+LOPDGDD 28 y 32–33: obligaciones
+y bloqueo/encargo.
+Evaluación de
+impacto
+AESIA 10: evaluación de impacto
+social y supervisión.
+RGPD 35–36: EIPD y consulta
+previa.
+LOPDGDD completa el marco
+organizativo español.
+Delegado de
+protección de
+datos
+El Estatuto define AESIA; no
+sustituye el análisis de DPD del
+RGPD.
+RGPD 37–39: designación, posición
+y funciones del DPD.
+LOPDGDD 34–37: designación,
+cualificación e intervención.
+Autoridades
+AESIA 4, 6 y 10: supervisión y
+potestades en IA.
+RGPD 51–59: autoridad de control,
+independencia, funciones y
+poderes.
+LOPDGDD 44–69: AEPD, potestades
+y procedimientos.
+Responsabilidad y
+sanción
+AESIA 4 y 10: inspección y sanción
+cuando lo atribuya la normativa
+aplicable.
+RGPD 77–84: reclamaciones,
+tutela, indemnización y multas.
+LOPDGDD 70–78: infracciones,
+sanciones y procedimiento.
+Derechos
+digitales
+AESIA 4: derechos fundamentales
+como finalidad de protección.
+RGPD 85–91: situaciones
+específicas.
+LOPDGDD 79–97: derechos
+digitales en España.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+8
+6. Matriz de cumplimiento para el proyecto
+Esta matriz convierte las normas en evidencias que deberían existir en el expediente. No presupone
+que el proyecto ya cumpla: sirve para detectar ausencias y ordenar el trabajo.
+Control
+Base normativa
+Evidencia que debe prepararse
+Estado
+Inventario de
+tratamientos
+RGPD 4, 24, 30; LOPDGDD 28
+Registro de tratamientos, flujos, finalidades, categorías,
+plazos y destinatarios.
+Pendiente
+de
+verificación
+Base jurídica
+RGPD 5–6; LOPDGDD 6–9
+Matriz por finalidad: base jurídica, necesidad,
+proporcionalidad y compatibilidad.
+Pendiente
+de
+verificación
+Datos especiales
+RGPD 9–10; LOPDGDD 9
+Identificación de datos de salud, vida sexual, biométricos
+u otros; excepción habilitante.
+Pendiente
+de
+verificación
+Información a personas
+RGPD 12–14
+Capas informativas, lenguaje claro, responsable, fines,
+derechos y conservación.
+Pendiente
+de
+verificación
+Derechos
+RGPD 15–22; LOPDGDD 12–18
+Procedimiento, canal, identidad, plazos, respuestas y
+registro de solicitudes.
+Pendiente
+de
+verificación
+IA y decisiones
+RGPD 22, 25, 35; AESIA 4, 10
+Descripción del sistema, intervención humana,
+explicación, evaluación de impacto y controles de sesgo.
+Pendiente
+de
+verificación
+Seguridad
+RGPD 32–34
+Medidas técnicas/organizativas, control de acceso,
+cifrado, copias, incidentes y notificación.
+Pendiente
+de
+verificación
+Proveedores
+RGPD 26–30; LOPDGDD 28–33
+Contratos de encargo, subencargados, ubicación,
+instrucciones y devolución/supresión.
+Pendiente
+de
+verificación
+Transferencias
+RGPD 44–50
+Mapa de países, proveedor, mecanismo de transferencia
+y garantías.
+Pendiente
+de
+verificación
+Gobernanza
+RGPD 37–39; LOPDGDD 34–37
+Análisis de necesidad de DPD, independencia, funciones
+y contacto.
+Pendiente
+de
+verificación
+Supervisión IA
+AESIA 4, 6, 10
+Clasificación del sistema, riesgos, documentación técnica
+y canal de cooperación.
+Pendiente
+de
+verificación
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+9
+7. Ruta de preparación del expediente
+Para defender el proyecto ante una autoridad de protección de datos o ante una autoridad europea, el
+expediente debería permitir responder rápidamente a cinco preguntas: qué hace el sistema, qué datos
+usa, por qué puede usarlos, qué riesgos produce y cómo se demuestra el control.
+Fase
+Resultado mínimo
+1. Delimitación
+Descripción funcional, usuarios, finalidades, límites y exclusiones del sistema.
+2. Mapa de datos
+Origen, categorías, sensibilidad, flujos, proveedores, países y conservación.
+3. Base jurídica
+Matriz de bases jurídicas por finalidad y análisis de necesidad/proporcionalidad.
+4. Riesgos
+EIPD cuando proceda, riesgos para derechos, sesgos, seguridad, confidencialidad y abuso.
+5. Arquitectura de control
+Privacidad desde el diseño, minimización, permisos, trazabilidad, supervisión humana y borrado.
+6. Documentación contractual
+Encargados, subencargados, transferencias, confidencialidad y asistencia.
+7. Derechos y transparencia
+Avisos, interfaz de derechos, plazos, respuestas, reclamaciones y registro.
+8. Incidentes
+Plan de detección, evaluación, escalado, notificación y comunicación.
+9. Gobierno
+Responsables internos, DPD si procede, revisión independiente y control de cambios.
+10. Evidencia viva
+Versionado, actas, pruebas, auditorías, decisiones y revisiones periódicas.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+10
+8. Límites, ausencias y puntos que no deben
+inventarse
+Para conservar rigor profesional, este dossier no determina por sí solo:
+• La clasificación concreta del sistema de IA sin conocer sus funcionalidades, usuarios, finalidad, sector
+y nivel de riesgo.
+• Si el proyecto está obligado a designar un delegado de protección de datos: depende del
+responsable, actividad principal, tratamiento y demás circunstancias jurídicas.
+• La base jurídica válida de cada tratamiento sin disponer del mapa real de datos y finalidades.
+• Si existe una transferencia internacional sin identificar proveedores, infraestructura y localización
+efectiva.
+• La necesidad definitiva de una evaluación de impacto sin analizar el tratamiento concreto y sus
+riesgos.
+• La posición exacta de AESIA frente a un caso concreto sin consultar la normativa europea de IA
+aplicable, su desarrollo y las autoridades competentes.
+Estas cuestiones deben quedar marcadas como pendientes de verificación, nunca
+completarse con suposiciones.
+
+
+Dossier jurídico-operativo · AESIA · RGPD · LOPDGDD
+11
+9. Fuentes recuperadas y trazabilidad
+Fuente 1 — AESIA, texto consolidado: https://www.boe.es/buscar/act.php?id=BOE-A-2023-18911
+Fuente 2 — AESIA, publicación original PDF: https://www.boe.es/boe/dias/2023/09/02/pdfs/BOE-A-2023-18911.pdf
+Fuente 3 — RGPD, ficha y texto oficial: https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807
+Fuente 4 — RGPD, PDF oficial DOUE: https://www.boe.es/doue/2016/119/L00001-00088.pdf
+Fuente 5 — LOPDGDD, texto consolidado: https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673
+Fuente 6 — LOPDGDD, PDF consolidado: https://www.boe.es/buscar/pdf/2018/BOE-A-2018-16673-consolidado.pdf
+AUSENCIAS DECLARADAS
+No se ha incorporado como fuente principal el Reglamento europeo de Inteligencia Artificial ni
+normativa sectorial. Son piezas conexas que deben añadirse en una segunda fase si el proyecto lo
+requiere. No se han inventado conclusiones sobre su aplicación.
+Documento preparado con criterio de trazabilidad: toda afirmación normativa debe
+poder retroceder hasta una fuente oficial identificada.
+
+
