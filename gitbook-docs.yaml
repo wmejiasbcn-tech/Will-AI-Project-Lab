@@ -1,0 +1,12 @@
+$schema: https://api.gitbook.com/gitbook-docs.yaml
+site:
+  title: Will-AI Project Lab Docs
+  structure:
+    - type: space
+      key: waipl-public-documentation
+      title: Documentation
+      path: documentation
+      default: true
+      content:
+        directory: ./gitbook-publico
+        language: es
